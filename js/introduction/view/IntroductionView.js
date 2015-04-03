@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AppliedForceControlPanel = require( 'HOOKES_LAW/common/view/AppliedForceControlPanel' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -45,6 +46,15 @@ define( function( require ) {
       }
     );
     this.addChild( visibilityControlPanel );
+
+    // Applied Force control for spring 1
+    var appliedForceControl1 = new AppliedForceControlPanel( model.spring1.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
+      bottom: this.layoutBounds.bottom - 20,
+      left: this.layoutBounds.left + 20
+    } );
+    this.addChild( appliedForceControl1 );
+
+    //TODO appliedForceControl1 for spring2
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {

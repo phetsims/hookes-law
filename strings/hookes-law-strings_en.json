@@ -4,6 +4,7 @@
   "systems": "Systems",
   "energy": "Energy",
   "appliedForce": "Applied Force",
+  "appliedForceColon": "Applied Force:",
   "springForce": "Spring Force",
   "displacement": "Displacement",
   "equilibriumPosition": "Equilibrium Position",
@@ -12,5 +13,7 @@
   "small": "Small",
   "large": "Large",
   "return": "Return",
-  "units.newtons": "N"
+  "units.newtons": "N",
+  "units.meters": "m",
+  "pattern.0value.1units": "{0} {1}"
 }
