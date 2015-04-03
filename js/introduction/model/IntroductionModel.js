@@ -11,20 +11,20 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
+  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
    * @constructor
    */
   function IntroductionModel() {
+
     PropertySet.call( this, {
-      //TODO
+      numberOfSystems: 1  // {number} 1 or 2
     } );
+
+    this.spring1 = new Spring();
+    this.spring2 = new Spring();
   }
 
-  return inherit( PropertySet, IntroductionModel, {
-
-    step: function( dt ) {
-      //TODO
-    }
-  } );
+  return inherit( PropertySet, IntroductionModel );
 } );
