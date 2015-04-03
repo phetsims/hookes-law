@@ -28,11 +28,6 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    this.addChild( new Text( 'Introduction: under construction', {
-      font: new HookesLawFont( 32 ),
-      center: this.layoutBounds.center
-    } ) );
-
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
       listener: function() {
