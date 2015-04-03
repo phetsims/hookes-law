@@ -9,7 +9,10 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var CheckBox = require( 'SUN/CheckBox' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
@@ -44,10 +47,10 @@ define( function( require ) {
       yMargin: 15
     }, options );
 
-    var appliedForceCheckBox = new CheckBox( new Text( appliedForceString, TEXT_OPTIONS ), appliedForceVectorVisibleProperty, CHECK_BOX_OPTIONS );
-    var springForceCheckBox = new CheckBox( new Text( springForceString, TEXT_OPTIONS ), springForceVectorVisibleProperty, CHECK_BOX_OPTIONS );
-    var displacementCheckBox = new CheckBox( new Text( displacementString, TEXT_OPTIONS ), displacementVectorVisibleProperty, CHECK_BOX_OPTIONS );
-    var equilibriumPositionCheckBox = new CheckBox( new Text( equilibriumPositionString, TEXT_OPTIONS ), equilibriumPositionVisibleProperty, CHECK_BOX_OPTIONS );
+    var appliedForceCheckBox = createVectorCheckBox( appliedForceVectorVisibleProperty, appliedForceString, HookesLawColors.APPLIED_FORCE_VECTOR );
+    var springForceCheckBox = createVectorCheckBox( springForceVectorVisibleProperty, springForceString, HookesLawColors.SPRING_FORCE_VECTOR );
+    var displacementCheckBox = createVectorCheckBox( displacementVectorVisibleProperty, displacementString, HookesLawColors.DISPLACEMENT_VECTOR );
+    var equilibriumPositionCheckBox = new CheckBox( new Text( equilibriumPositionString, TEXT_OPTIONS ), equilibriumPositionVisibleProperty );
     var valuesCheckBox = new CheckBox( new Text( valuesString, TEXT_OPTIONS ), valuesVisibleProperty, CHECK_BOX_OPTIONS );
 
     var content = new VBox( {
@@ -64,6 +67,39 @@ define( function( require ) {
 
     Panel.call( this, content, options );
   }
+
+  /**
+   * Creates a check box for controlling visibility of a vector
+   *
+   * @param {Property.<boolean>} property
+   * @param {string} text text, positioned to the left of the vector
+   * @param {string|Color} vectorColor vector color
+   * @param {string} vectorDirection direction that the vector points, 'left' or 'right'
+   */
+  var createVectorCheckBox = function( property, text, vectorColor, options ) {
+
+    options = _.extend( {
+      textVectorSpacing: 10, // {number} horizontal space between the text and vector
+      vectorDirection: 'right' // {string} direction that the vector points, 'left' or 'right'
+    }, options );
+
+    // text and vector
+    var icon = new HBox( {
+      children: [
+        new Text( text, TEXT_OPTIONS ),
+        new ArrowNode( 0, 0, ( options.vectorDirection === 'left' ? -30 : 30 ), 0, {
+          fill: vectorColor,
+          headWidth: 20,
+          headHeight: 10,
+          tailWidth: 10
+        } )
+      ],
+      align: 'center',
+      spacing: options.textVectorSpacing
+    } );
+
+    return new CheckBox( icon, property, CHECK_BOX_OPTIONS );
+  };
 
   return inherit( Panel, VisibilityControlPanel );
 } );
