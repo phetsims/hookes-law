@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var EnergyScreen = require( 'HOOKES_LAW/energy/EnergyScreen' );
   var IntroductionScreen = require( 'HOOKES_LAW/introduction/IntroductionScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
@@ -19,10 +20,11 @@ define( function( require ) {
 
   var screens = [
     new IntroductionScreen(),
-    new SystemsScreen()
+    new SystemsScreen(),
+    new EnergyScreen()
   ];
 
-  var simOptions = {
+  var options = {
     credits: {
       //TODO
       leadDesign: '',
@@ -35,7 +37,7 @@ define( function( require ) {
   };
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, screens, simOptions );
+    var sim = new Sim( simTitle, screens, options );
     sim.start();
   } );
 } );
