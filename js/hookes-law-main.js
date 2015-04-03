@@ -12,9 +12,15 @@ define( function( require ) {
   var IntroductionScreen = require( 'HOOKES_LAW/introduction/IntroductionScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
+  var SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
 
   // strings
   var simTitle = require( 'string!HOOKES_LAW/hookes-law.name' );
+
+  var screens = [
+    new IntroductionScreen(),
+    new SystemsScreen()
+  ];
 
   var simOptions = {
     credits: {
@@ -29,7 +35,7 @@ define( function( require ) {
   };
 
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new IntroductionScreen() ], simOptions );
+    var sim = new Sim( simTitle, screens, simOptions );
     sim.start();
   } );
 } );
