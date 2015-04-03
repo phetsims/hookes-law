@@ -26,13 +26,11 @@ define( function( require ) {
 
   var options = {
     credits: {
-      //TODO
-      leadDesign: '',
-      softwareDevelopment: '',
-      team: '',
-      qualityAssurance: '',
-      graphicArts: '',
-      thanks: ''
+      leadDesign: 'Amy Rouinfar',
+      softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
+      team: 'Mike Dubson, Ariel Paul, Kathy Perkins',
+      qualityAssurance: '', //TODO
+      graphicArts: '' //TODO
     }
   };
 
