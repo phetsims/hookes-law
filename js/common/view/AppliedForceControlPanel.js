@@ -10,12 +10,16 @@ define( function( require ) {
 
   // modules
   var ArrowButton = require( 'SCENERY_PHET/buttons/ArrowButton' );
+  var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
+  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var Util = require( 'DOT/Util' );
   var ValueDisplay = require( 'HOOKES_LAW/common/view/ValueDisplay' );
 
   // strings
@@ -26,6 +30,7 @@ define( function( require ) {
   // constants
   var ARROW_BUTTON_OPTIONS = { /* TODO */ };
   var ARROW_BUTTON_DELTA = 1;
+  var MAJOR_TICK_LABEL_OPTIONS = { font: new HookesLawFont( 16 ) };
 
   /**
    * @param {Property.<number>} appliedForceProperty units = N
@@ -38,7 +43,9 @@ define( function( require ) {
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
       xMargin: 15,
-      yMargin: 15
+      yMargin: 15,
+      resize: false,
+      decimalPlaces: 0
     }, options );
 
     var titleNode = new Text( appliedForceColonString, { font: new HookesLawFont( 24 ) } );
@@ -53,16 +60,25 @@ define( function( require ) {
 
     var valueDisplay = new ValueDisplay( appliedForceProperty, appliedForceRange, unitsNewtons, pattern_0value_1units );
 
-    //TODO HSlider
+    var slider = new HSlider( appliedForceProperty, appliedForceRange, {
+      trackSize: new Dimension2( 150, 5 ),
+      thumbFillEnabled: PhetColorScheme.RED_COLORBLIND,
+      thumbFillHighlighted: PhetColorScheme.RED_COLORBLIND.brighterColor()
+    } );
+    slider.addMajorTick( appliedForceRange.min, new Text( Util.toFixed( appliedForceRange.min, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
+    slider.addMajorTick( 0, new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) );
+    slider.addMajorTick( appliedForceRange.max, new Text( Util.toFixed( appliedForceRange.max, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
 
     var content = new HBox( {
       children: [
         titleNode,
         valueDisplay,
         leftArrowButton,
+        slider,
         rightArrowButton
       ],
-      spacing: 15
+      spacing: 20,
+      resize: false
     } );
 
     Panel.call( this, content, options );
