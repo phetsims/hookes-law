@@ -43,6 +43,7 @@ define( function( require ) {
                                    equilibriumPositionVisibleProperty, valuesVisibleProperty, options ) {
 
     options = _.extend( {
+      fill: HookesLawColors.CONTROL_PANEL_FILL,
       xMargin: 15,
       yMargin: 15
     }, options );
