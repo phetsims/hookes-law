@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var HookesLawScreen = require( 'HOOKES_LAW/hookes-law/HookesLawScreen' );
+  var IntroductionScreen = require( 'HOOKES_LAW/introduction/IntroductionScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
 
@@ -18,7 +18,7 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
-      //TODO fill in proper credits, all of these fields are optional, see joist.AboutDialog
+      //TODO
       leadDesign: '',
       softwareDevelopment: '',
       team: '',
@@ -28,15 +28,8 @@ define( function( require ) {
     }
   };
 
-  // Appending '?dev' to the URL will enable developer-only features.
-  if ( phet.chipper.getQueryParameter( 'dev' ) ) {
-    simOptions = _.extend( {
-      // add dev-specific options here
-    }, simOptions );
-  }
-
   SimLauncher.launch( function() {
-    var sim = new Sim( simTitle, [ new HookesLawScreen() ], simOptions );
+    var sim = new Sim( simTitle, [ new IntroductionScreen() ], simOptions );
     sim.start();
   } );
 } );

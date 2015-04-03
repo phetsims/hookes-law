@@ -1,6 +1,7 @@
 //  Copyright 2002-2015, University of Colorado Boulder
 
 /**
+ * View for the "Introduction" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -9,21 +10,21 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var ScreenView = require( 'JOIST/ScreenView' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  var ScreenView = require( 'JOIST/ScreenView' );
 
   /**
-   * @param {HookesLawModel} hookesLawModel
+   * @param {IntroductionModel} model
    * @constructor
    */
-  function HookesLawScreenView( hookesLawModel ) {
+  function IntroductionView( model ) {
 
     ScreenView.call( this );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {
       listener: function() {
-        hookesLawModel.reset();
+        model.reset();
       },
       right:  this.layoutBounds.maxX - 10,
       bottom: this.layoutBounds.maxY - 10
@@ -31,11 +32,10 @@ define( function( require ) {
     this.addChild( resetAllButton );
   }
 
-  return inherit( ScreenView, HookesLawScreenView, {
+  return inherit( ScreenView, IntroductionView, {
 
-    // Called by the animation loop. Optional, so if your view has no animation, you can omit this.
     step: function( dt ) {
-      // Handle view animation here.
+      //TODO
     }
   } );
 } );

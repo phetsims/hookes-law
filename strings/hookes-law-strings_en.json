@@ -1,3 +1,16 @@
 {
-  "hookes-law.name": "Hooke's Law"
+  "hookes-law.name": "Hooke's Law",
+  "introduction": "Introduction",
+  "systems": "Systems",
+  "energy": "Energy",
+  "appliedForce": "Applied Force",
+  "springForce": "Spring Force",
+  "displacement": "Displacement",
+  "equilibriumPosition": "Equilibrium Position",
+  "values": "Values",
+  "springConstant": "springConstant",
+  "small": "Small",
+  "large": "Large",
+  "return": "Return",
+  "units.newtons": "N"
 }
