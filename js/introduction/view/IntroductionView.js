@@ -12,6 +12,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var PropertySet = require( 'AXON/PropertySet' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
@@ -28,10 +29,20 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
+    // Properties that are specific to the view
+    var viewProperties = new PropertySet( {
+      appliedForceVectorVisible: false,
+      springForceVectorVisible: false,
+      displacementVectorVisible: false,
+      equilibriumPositionVisible: false,
+      valuesVisible: false
+    } );
+
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
+        viewProperties.reset();
       },
       right: this.layoutBounds.maxX - 10,
       bottom: this.layoutBounds.maxY - 10
