@@ -14,11 +14,11 @@ define( function( require ) {
 
   function ViewProperties() {
     PropertySet.call( this, {
-      appliedForceVectorVisible: false,
-      springForceVectorVisible: false,
-      displacementVectorVisible: false,
-      equilibriumPositionVisible: false,
-      valuesVisible: false
+      appliedForceVectorVisible: false, // {boolean} is the applied force vector visible?
+      springForceVectorVisible: false, // {boolean} is the spring force vector visible?
+      displacementVectorVisible: false, // {boolean} is the displacement vector visible?
+      equilibriumPositionVisible: false, // {boolean} is the equilibrium position visible?
+      valuesVisible: false  // {boolean} are numeric values visible?
     } );
   }
 
