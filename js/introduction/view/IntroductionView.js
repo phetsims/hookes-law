@@ -17,6 +17,8 @@ define( function( require ) {
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var VisibilityControlPanel = require( 'HOOKES_LAW/common/view/VisibilityControlPanel' );
+  var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   // strings
   var returnString = require( 'string!HOOKES_LAW/return' );
@@ -30,13 +32,20 @@ define( function( require ) {
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // Properties that are specific to the view
-    var viewProperties = new PropertySet( {
-      appliedForceVectorVisible: false,
-      springForceVectorVisible: false,
-      displacementVectorVisible: false,
-      equilibriumPositionVisible: false,
-      valuesVisible: false
-    } );
+    var viewProperties = new ViewProperties();
+
+    // Visibility controls
+    var visibilityControlPanel = new VisibilityControlPanel(
+      viewProperties.appliedForceVectorVisibleProperty,
+      viewProperties.springForceVectorVisibleProperty,
+      viewProperties.displacementVectorVisibleProperty,
+      viewProperties.equilibriumPositionVisibleProperty,
+      viewProperties.valuesVisibleProperty, {
+        top: this.layoutBounds.top + 10,
+        right: this.layoutBounds.right - 10
+      }
+    );
+    this.addChild( visibilityControlPanel );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
