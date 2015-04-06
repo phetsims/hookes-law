@@ -16,6 +16,7 @@ define( function( require ) {
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
+  var SpringConstantPanel = require( 'HOOKES_LAW/common/view/SpringConstantPanel' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
   var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
@@ -46,6 +47,13 @@ define( function( require ) {
       }
     );
     this.addChild( visibilityPanel );
+
+    // Spring constant for spring 1
+    var springConstantPanel1 = new SpringConstantPanel( model.spring1.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
+      right: visibilityPanel.right,
+      top: visibilityPanel.bottom + 20
+    } );
+    this.addChild( springConstantPanel1 );
 
     // Applied Force control for spring 1
     var appliedForcePanel1 = new AppliedForcePanel( model.spring1.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
