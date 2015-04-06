@@ -50,7 +50,7 @@ define( function( require ) {
       decimalPlaces: 0
     }, options );
 
-    this.titleNode = new Text( options.title, { font: new HookesLawFont( 24 ) } );
+    this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       appliedForceProperty.set( Math.max( appliedForceProperty.get() - ARROW_BUTTON_DELTA, appliedForceRange.min ) );
@@ -63,7 +63,7 @@ define( function( require ) {
     var valueDisplay = new ValueDisplay( appliedForceProperty, appliedForceRange, unitsNewtons, pattern_0value_1units );
 
     var slider = new HSlider( appliedForceProperty, appliedForceRange, {
-      trackSize: new Dimension2( 150, 5 ),
+      trackSize: new Dimension2( 175, 5 ),
       thumbFillEnabled: PhetColorScheme.RED_COLORBLIND,
       thumbFillHighlighted: PhetColorScheme.RED_COLORBLIND.brighterColor()
     } );
@@ -83,7 +83,7 @@ define( function( require ) {
         slider,
         rightArrowButton
       ],
-      spacing: 20,
+      spacing: 15,
       resize: false
     } );
 

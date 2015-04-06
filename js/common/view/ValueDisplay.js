@@ -29,7 +29,7 @@ define( function( require ) {
   function ValueDisplay( valueProperty, valueRange, units, pattern, options ) {
 
     options = _.extend( {
-      font: new PhetFont( 24 ),
+      font: new PhetFont( 20 ),
       decimalPlaces: 0
     }, options );
 

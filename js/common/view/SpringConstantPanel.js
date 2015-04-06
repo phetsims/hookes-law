@@ -43,10 +43,10 @@ define( function( require ) {
       resize: false
     }, options );
 
-   this.titleNode = new Text( options.title, { font: new HookesLawFont( 24 ) } ); // @private
+   this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } ); // @private
 
     var slider = new HSlider( springConstantProperty, springConstantRange, {
-      trackSize: new Dimension2( 150, 5 ),
+      trackSize: new Dimension2( 175, 5 ),
       thumbFillEnabled: 'rgb(50,145,184)',
       thumbFillHighlighted: 'rgb(71,207,255)'
     } );
