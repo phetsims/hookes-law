@@ -20,7 +20,7 @@ define( function( require ) {
   function IntroductionModel() {
 
     PropertySet.call( this, {
-      numberOfSystems: 1  // {number} 1 or 2
+      numberOfSystems: 2  // {number} 1 or 2
     } );
 
     this.spring1 = new Spring( HookesLawConstants.SPRING_CONSTANT_RANGE.min );

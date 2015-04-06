@@ -23,7 +23,7 @@ define( function( require ) {
     Node.call( this );
 
     //TODO temporary
-    var outline = new Rectangle( 0, 0, 725, 150, { stroke: 'rgb( 230, 230, 230 )' } );
+    var outline = new Rectangle( 0, 0, 725, 170, { stroke: 'rgb( 230, 230, 230 )' } );
     this.addChild( outline );
 
     this.mutate( options );
