@@ -26,11 +26,11 @@ define( function( require ) {
       spacing: 20
     }, options );
 
-    var oneSystemButton = new RectangularStickyToggleButton( 1, 2, numberOfSystemsProperty, {
+    var oneSystemButton = new RectangularStickyToggleButton( 2, 1, numberOfSystemsProperty, {
       content: new Text( 1, { font: new HookesLawFont( 20 ) } )
     } );
 
-    var twoSystemsButton = new RectangularStickyToggleButton( 2, 1, numberOfSystemsProperty, {
+    var twoSystemsButton = new RectangularStickyToggleButton( 1, 2, numberOfSystemsProperty, {
       content: new Text( 2, { font: new HookesLawFont( 20 ) } )
     } );
 

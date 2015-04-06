@@ -56,7 +56,7 @@ define( function( require ) {
     var springConstantPanel1 = new SpringConstantPanel( model.spring1.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
       title: StringUtils.format( springConstantNumberString, 1 ),
       right: visibilityPanel.right,
-      top: visibilityPanel.bottom + 20
+      top: visibilityPanel.bottom + 10
     } );
     this.addChild( springConstantPanel1 );
 
@@ -64,7 +64,7 @@ define( function( require ) {
     var springConstantPanel2 = new SpringConstantPanel( model.spring2.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
       title: StringUtils.format( springConstantNumberString, 2 ),
       right: springConstantPanel1.right,
-      top: springConstantPanel1.bottom + 20
+      top: springConstantPanel1.bottom + 10
     } );
     this.addChild( springConstantPanel2 );
 
@@ -87,7 +87,7 @@ define( function( require ) {
 
     // Number of systems
     var numberOfSystemsControl = new NumberOfSystemsControl( model.numberOfSystemsProperty, {
-      right: visibilityPanel.right,
+      centerX: visibilityPanel.centerX,
       top: springConstantPanel2.bottom + 10
     } );
     this.addChild( numberOfSystemsControl );
