@@ -15,8 +15,8 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Multilink = require( 'AXON/Multilink' );
   var Panel = require( 'SUN/Panel' );
+  var Property = require( 'AXON/Property' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -56,7 +56,7 @@ define( function( require ) {
     var valuesCheckBox = new CheckBox( new Text( valuesString, TEXT_OPTIONS ), valuesVisibleProperty, CHECK_BOX_OPTIONS );
 
     // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
-    new Multilink( [ appliedForceVectorVisibleProperty, springForceVectorVisibleProperty, displacementVectorVisibleProperty ],
+    Property.multilink( [ appliedForceVectorVisibleProperty, springForceVectorVisibleProperty, displacementVectorVisibleProperty ],
       function( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) {
         valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
