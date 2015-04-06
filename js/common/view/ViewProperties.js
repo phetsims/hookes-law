@@ -12,6 +12,9 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
 
+  /**
+   * @constructor
+   */
   function ViewProperties() {
     PropertySet.call( this, {
       appliedForceVectorVisible: false, // {boolean} is the applied force vector visible?
