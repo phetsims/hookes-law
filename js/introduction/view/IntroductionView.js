@@ -51,7 +51,7 @@ define( function( require ) {
     );
     this.addChild( visibilityPanel );
 
-    // Spring constant for spring 2
+    // Spring constant control for spring 2
     var springConstantPanel2 = new SpringConstantPanel( model.spring2.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
       title: StringUtils.format( springConstantNumberString, 2 ),
       right: visibilityPanel.right,
@@ -59,7 +59,7 @@ define( function( require ) {
     } );
     this.addChild( springConstantPanel2 );
 
-    // Spring constant for spring 1
+    // Spring constant control for spring 1
     var springConstantPanel1 = new SpringConstantPanel( model.spring1.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
       title: StringUtils.format( springConstantNumberString, 1 ),
       right: springConstantPanel2.right,
