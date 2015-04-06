@@ -82,7 +82,7 @@ define( function( require ) {
    * @param {Property.<boolean>} property
    * @param {string} text text, positioned to the left of the vector
    * @param {string|Color} vectorColor vector color
-   * @param {string} vectorDirection direction that the vector points, 'left' or 'right'
+   * @param {Object} [options]
    */
   var createVectorCheckBox = function( property, text, vectorColor, options ) {
 
