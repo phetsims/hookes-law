@@ -51,37 +51,38 @@ define( function( require ) {
     );
     this.addChild( visibilityPanel );
 
-    // Spring constant control for spring 2
-    var springConstantPanel2 = new SpringConstantPanel( model.spring2.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
-      title: StringUtils.format( springConstantNumberString, 2 ),
-      right: visibilityPanel.right,
-      top: visibilityPanel.bottom + 20
-    } );
-    this.addChild( springConstantPanel2 );
-
     // Spring constant control for spring 1
     var springConstantPanel1 = new SpringConstantPanel( model.spring1.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
       title: StringUtils.format( springConstantNumberString, 1 ),
-      right: springConstantPanel2.right,
-      top: springConstantPanel2.bottom + 20
+      right: visibilityPanel.right,
+      top: visibilityPanel.bottom + 20
     } );
     this.addChild( springConstantPanel1 );
 
-    // Applied Force control for spring 2
-    var appliedForcePanel2 = new AppliedForcePanel( model.spring2.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
-      title: StringUtils.format( appliedForceNumberString, 2 ),
-      top: this.layoutBounds.top + 20,
-      left: this.layoutBounds.left + 20
+    // Spring constant control for spring 2
+    var springConstantPanel2 = new SpringConstantPanel( model.spring2.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
+      title: StringUtils.format( springConstantNumberString, 2 ),
+      right: springConstantPanel1.right,
+      top: springConstantPanel1.bottom + 20
     } );
-    this.addChild( appliedForcePanel2 );
+    this.addChild( springConstantPanel2 );
 
     // Applied Force control for spring 1
     var appliedForcePanel1 = new AppliedForcePanel( model.spring1.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
       title: StringUtils.format( appliedForceNumberString, 1 ),
-      top: appliedForcePanel2.bottom + 20,
-      left: appliedForcePanel2.left
+      top: this.layoutBounds.top + 20,
+      left: this.layoutBounds.left + 20
+
     } );
     this.addChild( appliedForcePanel1 );
+
+    // Applied Force control for spring 2
+    var appliedForcePanel2 = new AppliedForcePanel( model.spring2.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
+      title: StringUtils.format( appliedForceNumberString, 2 ),
+      top: appliedForcePanel1.bottom + 20,
+      left: appliedForcePanel1.left
+    } );
+    this.addChild( appliedForcePanel2 );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
