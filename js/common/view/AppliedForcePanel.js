@@ -42,6 +42,7 @@ define( function( require ) {
   function AppliedForcePanel( appliedForceProperty, appliedForceRange, options ) {
 
     options = _.extend( {
+      title: appliedForceColonString,
       fill: HookesLawColors.CONTROL_PANEL_FILL,
       xMargin: 15,
       yMargin: 15,
@@ -49,7 +50,7 @@ define( function( require ) {
       decimalPlaces: 0
     }, options );
 
-    this.titleNode = new Text( appliedForceColonString, { font: new HookesLawFont( 24 ) } );
+    this.titleNode = new Text( options.title, { font: new HookesLawFont( 24 ) } );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       appliedForceProperty.set( Math.max( appliedForceProperty.get() - ARROW_BUTTON_DELTA, appliedForceRange.min ) );
@@ -69,13 +70,9 @@ define( function( require ) {
     slider.addMajorTick( appliedForceRange.min, new Text( Util.toFixed( appliedForceRange.min, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
     slider.addMajorTick( 0, new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) );
     slider.addMajorTick( appliedForceRange.max, new Text( Util.toFixed( appliedForceRange.max, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
-    for ( var i = 0; i < appliedForceRange.max; ) {
+    for ( var i = appliedForceRange.min; i < appliedForceRange.max; ) {
       slider.addMinorTick( i );
       i += MINOR_TICK_SPACING;
-    }
-    for ( var i = 0; i > appliedForceRange.min; ) {
-      slider.addMinorTick( i );
-      i -= MINOR_TICK_SPACING;
     }
 
     var content = new HBox( {

@@ -36,13 +36,14 @@ define( function( require ) {
   function SpringConstantPanel( springConstantProperty, springConstantRange, options ) {
 
     options = _.extend( {
+      title: springConstantString,
       fill: HookesLawColors.CONTROL_PANEL_FILL,
       xMargin: 15,
       yMargin: 15,
       resize: false
     }, options );
 
-   this.titleNode = new Text( springConstantString, { font: new HookesLawFont( 24 ) } ); // @private
+   this.titleNode = new Text( options.title, { font: new HookesLawFont( 24 ) } ); // @private
 
     var slider = new HSlider( springConstantProperty, springConstantRange, {
       trackSize: new Dimension2( 150, 5 ),
