@@ -49,7 +49,7 @@ define( function( require ) {
       decimalPlaces: 0
     }, options );
 
-    var titleNode = new Text( appliedForceColonString, { font: new HookesLawFont( 24 ) } );
+    this.titleNode = new Text( appliedForceColonString, { font: new HookesLawFont( 24 ) } );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       appliedForceProperty.set( Math.max( appliedForceProperty.get() - ARROW_BUTTON_DELTA, appliedForceRange.min ) );
@@ -80,7 +80,7 @@ define( function( require ) {
 
     var content = new HBox( {
       children: [
-        titleNode,
+        this.titleNode,
         valueDisplay,
         leftArrowButton,
         slider,
@@ -98,5 +98,16 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Panel, AppliedForcePanel );
+  return inherit( Panel, AppliedForcePanel, {
+
+    setTitle: function( title ) {
+      this.titleNode.text = title;
+    },
+    set title( value ) { this.setTitle( value ); },
+
+    getTitle: function() {
+      return this.titleNode.text;
+    },
+    get title() { return this.getTitle(); }
+  } );
 } );
