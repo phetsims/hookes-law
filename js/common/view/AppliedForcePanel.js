@@ -50,7 +50,7 @@ define( function( require ) {
       decimalPlaces: 0
     }, options );
 
-    this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } );
+    this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } ); // @private
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       appliedForceProperty.set( Math.max( appliedForceProperty.get() - ARROW_BUTTON_DELTA, appliedForceRange.min ) );
