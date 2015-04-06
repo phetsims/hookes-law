@@ -19,6 +19,7 @@ define( function( require ) {
   var ScreenView = require( 'JOIST/ScreenView' );
   var SpringConstantPanel = require( 'HOOKES_LAW/common/view/SpringConstantPanel' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var SystemNode = require( 'HOOKES_LAW/common/view/SystemNode' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
   var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
@@ -70,20 +71,33 @@ define( function( require ) {
     } );
     this.addChild( springConstantPanel2 );
 
+    // System 1
+    var system1 = new SystemNode( model.spring1, {
+      left: this.layoutBounds.left + 20,
+      top: this.layoutBounds.top + 20
+    } );
+    this.addChild( system1 );
+
     // Applied Force control for spring 1
     var appliedForcePanel1 = new AppliedForcePanel( model.spring1.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
       title: StringUtils.format( appliedForceNumberString, 1 ),
-      top: this.layoutBounds.top + 20,
-      left: this.layoutBounds.left + 20
-
+      left: system1.left,
+      top: system1.bottom + 10
     } );
     this.addChild( appliedForcePanel1 );
+
+    // System 2
+    var system2 = new SystemNode( model.spring2, {
+      left: system1.left,
+      top: appliedForcePanel1.bottom + 10
+    } );
+    this.addChild( system2 );
 
     // Applied Force control for spring 2
     var appliedForcePanel2 = new AppliedForcePanel( model.spring2.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
       title: StringUtils.format( appliedForceNumberString, 2 ),
-      top: appliedForcePanel1.bottom + 20,
-      left: appliedForcePanel1.left
+      left: system1.left,
+      top: system2.bottom + 10
     } );
     this.addChild( appliedForcePanel2 );
 
@@ -124,8 +138,7 @@ define( function( require ) {
       appliedForcePanel1.title = ( numberOfSystems === 1 ) ? appliedForceStringColon : StringUtils.format( appliedForceNumberString, 1 );
 
       // hide system 2
-      springConstantPanel2.visible = ( numberOfSystems === 2 );
-      appliedForcePanel2.visible = ( numberOfSystems === 2 );
+      system2.visible = appliedForcePanel2.visible = springConstantPanel2.visible = ( numberOfSystems === 2 );
     } );
   }
 

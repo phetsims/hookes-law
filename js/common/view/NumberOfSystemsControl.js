@@ -23,18 +23,23 @@ define( function( require ) {
   function NumberOfSystemsControl( numberOfSystemsProperty, options ) {
 
     options = _.extend( {
-      spacing: 20
+      spacing: 15
     }, options );
 
+    //TODO dump this label
+    var titleNode = new Text( 'Systems: ', { font: new HookesLawFont( 20 ) } );
+
+    //TODO replace text with icon
     var oneSystemButton = new RectangularStickyToggleButton( 2, 1, numberOfSystemsProperty, {
       content: new Text( 1, { font: new HookesLawFont( 20 ) } )
     } );
 
+    //TODO replace text with icon
     var twoSystemsButton = new RectangularStickyToggleButton( 1, 2, numberOfSystemsProperty, {
       content: new Text( 2, { font: new HookesLawFont( 20 ) } )
     } );
 
-    options.children = [ oneSystemButton, twoSystemsButton ];
+    options.children = [ titleNode, oneSystemButton, twoSystemsButton ];
     HBox.call( this, options );
   }
 
