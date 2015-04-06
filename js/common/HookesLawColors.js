@@ -12,7 +12,7 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   return {
-    CONTROL_PANEL_FILL: 'rgb( 245, 245, 245 )',
+    CONTROL_PANEL_FILL: 'rgb( 248, 248, 248 )',
     APPLIED_FORCE_VECTOR: PhetColorScheme.RED_COLORBLIND,
     SPRING_FORCE_VECTOR: 'blue',
     DISPLACEMENT_VECTOR: 'green'
