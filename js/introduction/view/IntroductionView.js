@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var AppliedForceControlPanel = require( 'HOOKES_LAW/common/view/AppliedForceControlPanel' );
+  var AppliedForcePanel = require( 'HOOKES_LAW/common/view/AppliedForcePanel' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -17,7 +17,7 @@ define( function( require ) {
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var VisibilityControlPanel = require( 'HOOKES_LAW/common/view/VisibilityControlPanel' );
+  var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
   var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   // strings
@@ -35,7 +35,7 @@ define( function( require ) {
     var viewProperties = new ViewProperties();
 
     // Visibility controls
-    var visibilityControlPanel = new VisibilityControlPanel(
+    var visibilityPanel = new VisibilityPanel(
       viewProperties.appliedForceVectorVisibleProperty,
       viewProperties.springForceVectorVisibleProperty,
       viewProperties.displacementVectorVisibleProperty,
@@ -45,16 +45,16 @@ define( function( require ) {
         right: this.layoutBounds.right - 10
       }
     );
-    this.addChild( visibilityControlPanel );
+    this.addChild( visibilityPanel );
 
     // Applied Force control for spring 1
-    var appliedForceControl1 = new AppliedForceControlPanel( model.spring1.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
+    var appliedForcePanel1 = new AppliedForcePanel( model.spring1.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
       bottom: this.layoutBounds.bottom - 20,
       left: this.layoutBounds.left + 20
     } );
-    this.addChild( appliedForceControl1 );
+    this.addChild( appliedForcePanel1 );
 
-    //TODO appliedForceControl1 for spring2
+    //TODO appliedForcePanel2 for spring2
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {

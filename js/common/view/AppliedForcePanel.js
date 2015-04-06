@@ -39,7 +39,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function AppliedForceControlPanel( appliedForceProperty, appliedForceRange, options ) {
+  function AppliedForcePanel( appliedForceProperty, appliedForceRange, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -98,5 +98,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Panel, AppliedForceControlPanel );
+  return inherit( Panel, AppliedForcePanel );
 } );
