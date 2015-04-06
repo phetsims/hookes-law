@@ -142,10 +142,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( ScreenView, IntroductionView, {
-
-    step: function( dt ) {
-      //TODO
-    }
-  } );
+  return inherit( ScreenView, IntroductionView );
 } );
