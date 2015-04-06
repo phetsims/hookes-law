@@ -42,7 +42,7 @@ define( function( require ) {
       resize: false
     }, options );
 
-    var titleNode = new Text( springConstantString, { font: new HookesLawFont( 24 ) } );
+   this.titleNode = new Text( springConstantString, { font: new HookesLawFont( 24 ) } ); // @private
 
     var slider = new HSlider( springConstantProperty, springConstantRange, {
       trackSize: new Dimension2( 150, 5 ),
@@ -58,7 +58,7 @@ define( function( require ) {
 
     var content = new VBox( {
       children: [
-        titleNode,
+        this.titleNode,
         slider
       ],
       align: 'center',
@@ -69,5 +69,17 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  return inherit( Panel, SpringConstantPanel );
+  return inherit( Panel, SpringConstantPanel, {
+
+    setTitle: function( title ) {
+       this.titleNode.text = title;
+    },
+    set title(value) { this.setTitle( value ); },
+
+    getTitle: function() {
+      return this.titleNode.text;
+    },
+    get title() { return this.getTitle(); }
+
+  } );
 } );
