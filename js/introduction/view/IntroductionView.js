@@ -24,8 +24,10 @@ define( function( require ) {
   var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   // strings
+  var appliedForceStringColon = require( 'string!HOOKES_LAW/appliedForceColon' );
   var appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
   var returnString = require( 'string!HOOKES_LAW/return' );
+  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
   var springConstantNumberString = require( 'string!HOOKES_LAW/springConstantNumber' );
 
   /**
@@ -114,6 +116,17 @@ define( function( require ) {
       }
     } );
     this.addChild( returnButton );
+
+    model.numberOfSystemsProperty.link( function( numberOfSystems ) {
+
+      // adjust title on system 1
+      springConstantPanel1.title = ( numberOfSystems === 1 ) ? springConstantString : StringUtils.format( springConstantNumberString, 1 );
+      appliedForcePanel1.title = ( numberOfSystems === 1 ) ? appliedForceStringColon : StringUtils.format( appliedForceNumberString, 1 );
+
+      // hide system 2
+      springConstantPanel2.visible = ( numberOfSystems === 2 );
+      appliedForcePanel2.visible = ( numberOfSystems === 2 );
+    } );
   }
 
   return inherit( ScreenView, IntroductionView, {
