@@ -14,7 +14,10 @@ define( function( require ) {
 
   return {
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
-    APPLIED_FORCE_RANGE: new Range( -50, 50 ),
-    APPLIED_FORCE_DECIMAL_PLACES: 0
+    APPLIED_FORCE_RANGE: new Range( -50, 50 ), // N
+    APPLIED_FORCE_DECIMAL_PLACES: 0,
+    SPRING_CONSTANT_RANGE: new Range( 5, 55 ), // N/m
+    SPRING_FORCE_DECIMAL_PLACES: 0,
+    DISPLACEMENT_DECIMAL_PLACES: 0
   };
 } );
