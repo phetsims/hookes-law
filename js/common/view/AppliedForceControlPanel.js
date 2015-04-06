@@ -31,6 +31,7 @@ define( function( require ) {
   var ARROW_BUTTON_OPTIONS = { /* TODO */ };
   var ARROW_BUTTON_DELTA = 1;
   var MAJOR_TICK_LABEL_OPTIONS = { font: new HookesLawFont( 16 ) };
+  var MINOR_TICK_SPACING = 10;
 
   /**
    * @param {Property.<number>} appliedForceProperty units = N
@@ -68,6 +69,14 @@ define( function( require ) {
     slider.addMajorTick( appliedForceRange.min, new Text( Util.toFixed( appliedForceRange.min, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
     slider.addMajorTick( 0, new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) );
     slider.addMajorTick( appliedForceRange.max, new Text( Util.toFixed( appliedForceRange.max, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
+    for ( var i = 0; i < appliedForceRange.max; ) {
+      slider.addMinorTick( i );
+      i += MINOR_TICK_SPACING;
+    }
+    for ( var i = 0; i > appliedForceRange.min; ) {
+      slider.addMinorTick( i );
+      i -= MINOR_TICK_SPACING;
+    }
 
     var content = new HBox( {
       children: [
