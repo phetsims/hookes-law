@@ -13,6 +13,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var NumberOfSystemsControl = require( 'HOOKES_LAW/common/view/NumberOfSystemsControl' );
   var RectangularPushButton = require( 'SUN/buttons/RectangularPushButton' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
@@ -83,6 +84,13 @@ define( function( require ) {
       left: appliedForcePanel1.left
     } );
     this.addChild( appliedForcePanel2 );
+
+    // Number of systems
+    var numberOfSystemsControl = new NumberOfSystemsControl( model.numberOfSystemsProperty, {
+      right: visibilityPanel.right,
+      top: springConstantPanel2.bottom + 10
+    } );
+    this.addChild( numberOfSystemsControl );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
