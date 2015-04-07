@@ -13,7 +13,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
-  var Subpath = require( 'KITE/util/Subpath' );
 
   // constants
   var NUMBER_OF_COILS = 10;

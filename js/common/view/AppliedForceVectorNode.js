@@ -12,7 +12,7 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawFont= require( 'HOOKES_LAW/common/HookesLawFont' );
+  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
@@ -69,7 +69,7 @@ define( function( require ) {
 
     valuesVisibleProperty.link( function( visible ) {
       valueNode.visible = visible;
-    })
+    } );
   }
 
   return inherit( Node, AppliedForceVectorNode );

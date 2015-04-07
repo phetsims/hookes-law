@@ -62,7 +62,7 @@ define( function( require ) {
 
     valuesVisibleProperty.link( function( visible ) {
       valueNode.visible = visible;
-    })
+    } );
   }
 
   return inherit( Node, DisplacementVectorNode );
