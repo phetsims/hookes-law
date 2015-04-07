@@ -9,9 +9,11 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Dimension2 = require( 'DOT/Dimension2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   /**
    * @param {Spring} spring
@@ -25,6 +27,12 @@ define( function( require ) {
     //TODO temporary
     var outline = new Rectangle( 0, 0, 725, 170, { stroke: 'rgb( 230, 230, 230 )' } );
     this.addChild( outline );
+
+    var wallNode = new WallNode( new Dimension2( 25, outline.height ), {
+      left: outline.left,
+      centerY: outline.centerY
+    } );
+    this.addChild( wallNode );
 
     this.mutate( options );
   }
