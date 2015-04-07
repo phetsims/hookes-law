@@ -22,7 +22,7 @@ define( function( require ) {
   var SystemNode = require( 'HOOKES_LAW/common/view/SystemNode' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
-  var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
+  var VisibilityProperties = require( 'HOOKES_LAW/common/view/VisibilityProperties' );
 
   // strings
   var appliedForceStringColon = require( 'string!HOOKES_LAW/appliedForceColon' );
@@ -40,20 +40,14 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    // Properties that are specific to the view
-    var viewProperties = new ViewProperties();
+    // Properties that are specific to the visibility of things in the view
+    var visibilityProperties = new VisibilityProperties();
 
     // Visibility controls
-    var visibilityPanel = new VisibilityPanel(
-      viewProperties.appliedForceVectorVisibleProperty,
-      viewProperties.springForceVectorVisibleProperty,
-      viewProperties.displacementVectorVisibleProperty,
-      viewProperties.equilibriumPositionVisibleProperty,
-      viewProperties.valuesVisibleProperty, {
-        top: this.layoutBounds.top + 10,
-        right: this.layoutBounds.right - 10
-      }
-    );
+    var visibilityPanel = new VisibilityPanel( visibilityProperties, {
+      top: this.layoutBounds.top + 10,
+      right: this.layoutBounds.right - 10
+    } );
     this.addChild( visibilityPanel );
 
     // Spring constant control for spring 1
@@ -73,7 +67,7 @@ define( function( require ) {
     this.addChild( springConstantPanel2 );
 
     // System 1
-    var system1 = new SystemNode( model.spring1, HookesLawConstants.DISPLACEMENT_RANGE, modelViewTransform, viewProperties.equilibriumPositionVisibleProperty, {
+    var system1 = new SystemNode( model.spring1, HookesLawConstants.DISPLACEMENT_RANGE, modelViewTransform, visibilityProperties, {
       left: this.layoutBounds.left + 20,
       top: this.layoutBounds.top + 20
     } );
@@ -88,7 +82,7 @@ define( function( require ) {
     this.addChild( appliedForcePanel1 );
 
     // System 2
-    var system2 = new SystemNode( model.spring2, HookesLawConstants.DISPLACEMENT_RANGE, modelViewTransform, viewProperties.equilibriumPositionVisibleProperty, {
+    var system2 = new SystemNode( model.spring2, HookesLawConstants.DISPLACEMENT_RANGE, modelViewTransform, visibilityProperties, {
       left: system1.left,
       top: appliedForcePanel1.bottom + 10
     } );
@@ -113,7 +107,7 @@ define( function( require ) {
     var resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
-        viewProperties.reset();
+        visibilityProperties.reset();
       },
       right: this.layoutBounds.maxX - 10,
       bottom: this.layoutBounds.maxY - 10

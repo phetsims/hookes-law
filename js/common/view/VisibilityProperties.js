@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Properties that are specific to the view.
+ * Properties that are specific to visibility of things in the view.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -15,7 +15,7 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function ViewProperties() {
+  function VisibilityProperties() {
     PropertySet.call( this, {
       appliedForceVectorVisible: false, // {boolean} is the applied force vector visible?
       springForceVectorVisible: false, // {boolean} is the spring force vector visible?
@@ -25,5 +25,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, ViewProperties );
+  return inherit( PropertySet, VisibilityProperties );
 } );

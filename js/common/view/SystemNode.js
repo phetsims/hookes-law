@@ -27,11 +27,11 @@ define( function( require ) {
    * @param {Spring} spring
    * @param {Range} displacementRange
    * @param {ModelViewTransform2} modelViewTransform
-   * @param {Property.<boolean>} equilibriumPositionVisibleProperty
+   * @param {VisibilityProperties} visibilityProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SystemNode( spring, displacementRange, modelViewTransform, equilibriumPositionVisibleProperty, options ) {
+  function SystemNode( spring, displacementRange, modelViewTransform, visibilityProperties, options ) {
 
     Node.call( this );
 
@@ -61,7 +61,7 @@ define( function( require ) {
     options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode ];
     this.mutate( options );
 
-    equilibriumPositionVisibleProperty.link( function( visible ) {
+    visibilityProperties.equilibriumPositionVisibleProperty.link( function( visible ) {
       equilibriumPositionNode.visible = visible;
     } );
   }

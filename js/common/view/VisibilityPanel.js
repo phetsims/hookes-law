@@ -32,16 +32,11 @@ define( function( require ) {
   var TEXT_OPTIONS = { font: new HookesLawFont( 20 ) };
 
   /**
-   * @param {Property.<boolean>} appliedForceVectorVisibleProperty
-   * @param {Property.<boolean>} springForceVectorVisibleProperty
-   * @param {Property.<boolean>} displacementVectorVisibleProperty
-   * @param {Property.<boolean>} equilibriumPositionVisibleProperty
-   * @param {Property.<boolean>} valuesVisibleProperty
+   * @param {VisibilityProperties} visibilityProperties
    * @param {Object} [options]
    * @constructor
    */
-  function VisibilityPanel( appliedForceVectorVisibleProperty, springForceVectorVisibleProperty, displacementVectorVisibleProperty,
-                                   equilibriumPositionVisibleProperty, valuesVisibleProperty, options ) {
+  function VisibilityPanel( visibilityProperties, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -49,14 +44,15 @@ define( function( require ) {
       yMargin: 15
     }, options );
 
-    var appliedForceCheckBox = createVectorCheckBox( appliedForceVectorVisibleProperty, appliedForceString, HookesLawColors.APPLIED_FORCE_VECTOR );
-    var springForceCheckBox = createVectorCheckBox( springForceVectorVisibleProperty, springForceString, HookesLawColors.SPRING_FORCE_VECTOR );
-    var displacementCheckBox = createVectorCheckBox( displacementVectorVisibleProperty, displacementString, HookesLawColors.DISPLACEMENT_VECTOR );
-    var equilibriumPositionCheckBox = new CheckBox( new Text( equilibriumPositionString, TEXT_OPTIONS ), equilibriumPositionVisibleProperty );
-    var valuesCheckBox = new CheckBox( new Text( valuesString, TEXT_OPTIONS ), valuesVisibleProperty, CHECK_BOX_OPTIONS );
+    var appliedForceCheckBox = createVectorCheckBox( visibilityProperties.appliedForceVectorVisibleProperty, appliedForceString, HookesLawColors.APPLIED_FORCE_VECTOR );
+    var springForceCheckBox = createVectorCheckBox( visibilityProperties.springForceVectorVisibleProperty, springForceString, HookesLawColors.SPRING_FORCE_VECTOR );
+    var displacementCheckBox = createVectorCheckBox( visibilityProperties.displacementVectorVisibleProperty, displacementString, HookesLawColors.DISPLACEMENT_VECTOR );
+    var equilibriumPositionCheckBox = new CheckBox( new Text( equilibriumPositionString, TEXT_OPTIONS ), visibilityProperties.equilibriumPositionVisibleProperty );
+    var valuesCheckBox = new CheckBox( new Text( valuesString, TEXT_OPTIONS ), visibilityProperties.valuesVisibleProperty, CHECK_BOX_OPTIONS );
 
     // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
-    Property.multilink( [ appliedForceVectorVisibleProperty, springForceVectorVisibleProperty, displacementVectorVisibleProperty ],
+    Property.multilink(
+      [ visibilityProperties.appliedForceVectorVisibleProperty, visibilityProperties.springForceVectorVisibleProperty, visibilityProperties.displacementVectorVisibleProperty ],
       function( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) {
         valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
