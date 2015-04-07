@@ -14,6 +14,7 @@ define( function( require ) {
   var HookNode = require( 'HOOKES_LAW/common/view/HookNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   // constants
@@ -34,14 +35,18 @@ define( function( require ) {
       right: 0,
       centerY: 0
     } );
-    this.addChild( wallNode );
 
-    var hookNode = new HookNode( spring.displacementProperty, displacementRange, modelViewTransform, {
-      left: 0,
+    var springNode = new SpringNode( spring.lengthProperty, modelViewTransform, {
+      left: wallNode.right,
       centerY: wallNode.centerY
     } );
-    this.addChild( hookNode );
 
+    var hookNode = new HookNode( spring.displacementProperty, displacementRange, modelViewTransform, {
+      left: wallNode.right,
+      centerY: wallNode.centerY
+    } );
+
+    options.children = [ wallNode, springNode, hookNode ];
     this.mutate( options );
   }
 

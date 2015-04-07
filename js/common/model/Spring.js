@@ -27,7 +27,7 @@ define( function( require ) {
       springForce: 0 // {number} force applied by the spring, units = N
     } );
 
-    this.equilibriumPosition = 10; // {number} horizontal location of equilibrium, units = m, read-only
+    this.equilibriumPosition = 20; // {number} horizontal location of equilibrium, units = m, read-only
 
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
       return thisSpring.equilibriumPosition + displacement;

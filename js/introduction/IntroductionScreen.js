@@ -30,8 +30,8 @@ define( function( require ) {
    */
   function IntroductionScreen() {
 
-    // No offset, scale 10x when going from model to view
-    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( new Vector2( 0, 0 ), 125 );
+    // Scale up for the view
+    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, 5 );
 
     Screen.call( this,
       introductionString,
