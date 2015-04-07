@@ -15,9 +15,10 @@ define( function( require ) {
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
+   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function IntroductionModel() {
+  function IntroductionModel( modelViewTransform ) {
 
     PropertySet.call( this, {
       numberOfSystems: 2  // {number} 1 or 2

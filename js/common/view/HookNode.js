@@ -19,10 +19,11 @@ define( function( require ) {
   /**
    * @param {Property.<number>} displacementProperty
    * @param {Range} displacementRange
+   * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function HookNode( displacementProperty, displacementRange, options ) {
+  function HookNode( displacementProperty, displacementRange, modelViewTransform, options ) {
 
     options = _.extend( {
       stroke: 'red',

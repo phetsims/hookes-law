@@ -12,13 +12,17 @@ define( function( require ) {
 
   /**
    * @param {Dimension2} size
+   * @param {Object} [options]
    * @constructor
    */
-  function WallNode( size ) {
-    Rectangle.call( this, 0, 0, size.width, size.height, {
+  function WallNode( size, options ) {
+
+    options = _.extend( {
       fill: 'rgb( 150, 150, 150 )',
       stroke: 'black'
-    } );
+    }, options );
+
+    Rectangle.call( this, 0, 0, size.width, size.height, options );
   }
 
   return inherit( Rectangle, WallNode );

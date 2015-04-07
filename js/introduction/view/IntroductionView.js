@@ -33,9 +33,10 @@ define( function( require ) {
 
   /**
    * @param {IntroductionModel} model
+   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function IntroductionView( model ) {
+  function IntroductionView( model, modelViewTransform ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
@@ -72,7 +73,7 @@ define( function( require ) {
     this.addChild( springConstantPanel2 );
 
     // System 1
-    var system1 = new SystemNode( model.spring1, HookesLawConstants.DISPLACEMENT_RANGE, {
+    var system1 = new SystemNode( model.spring1, HookesLawConstants.DISPLACEMENT_RANGE, modelViewTransform, {
       left: this.layoutBounds.left + 20,
       top: this.layoutBounds.top + 20
     } );
@@ -87,7 +88,7 @@ define( function( require ) {
     this.addChild( appliedForcePanel1 );
 
     // System 2
-    var system2 = new SystemNode( model.spring2, HookesLawConstants.DISPLACEMENT_RANGE, {
+    var system2 = new SystemNode( model.spring2, HookesLawConstants.DISPLACEMENT_RANGE, modelViewTransform, {
       left: system1.left,
       top: appliedForcePanel1.bottom + 10
     } );
