@@ -1,5 +1,6 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
+//TODO this is a quick-&-dirty temporary implementation
 /**
  * A coiled spring.
  *
