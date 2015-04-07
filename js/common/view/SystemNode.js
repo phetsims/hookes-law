@@ -10,6 +10,8 @@ define( function( require ) {
 
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
+  var HookNode = require( 'HOOKES_LAW/common/view/HookNode' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -17,10 +19,11 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {Range} displacementRange
    * @param {Object} [options]
    * @constructor
    */
-  function SystemNode( spring, options ) {
+  function SystemNode( spring, displacementRange, options ) {
 
     Node.call( this );
 
@@ -33,6 +36,11 @@ define( function( require ) {
       centerY: outline.centerY
     } );
     this.addChild( wallNode );
+
+    var hookNode = new HookNode( spring.displacementProperty, displacementRange, {
+      centerY: outline.centerY
+    } );
+    this.addChild( hookNode );
 
     this.mutate( options );
   }

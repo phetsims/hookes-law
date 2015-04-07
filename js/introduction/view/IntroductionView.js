@@ -72,7 +72,7 @@ define( function( require ) {
     this.addChild( springConstantPanel2 );
 
     // System 1
-    var system1 = new SystemNode( model.spring1, {
+    var system1 = new SystemNode( model.spring1, HookesLawConstants.DISPLACEMENT_RANGE, {
       left: this.layoutBounds.left + 20,
       top: this.layoutBounds.top + 20
     } );
@@ -87,7 +87,7 @@ define( function( require ) {
     this.addChild( appliedForcePanel1 );
 
     // System 2
-    var system2 = new SystemNode( model.spring2, {
+    var system2 = new SystemNode( model.spring2, HookesLawConstants.DISPLACEMENT_RANGE, {
       left: system1.left,
       top: appliedForcePanel1.bottom + 10
     } );
