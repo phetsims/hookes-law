@@ -37,12 +37,15 @@ define( function( require ) {
     Path.call( this );
 
     spring.lengthProperty.link( function( length ) {
-      var radiusX = modelViewTransform.modelToViewX( length ) / ( NUMBER_OF_COILS + 1 );
+      var viewLength = modelViewTransform.modelToViewX( length );
+      var radiusX = viewLength / ( NUMBER_OF_COILS + 1 );
       var shape = new Shape();
       for ( var i = 0; i < NUMBER_OF_COILS; i++ ) {
-        if ( i > 0 ) { shape.subpath(); }  // prevent line between ellipses
         shape.ellipse( radiusX * ( i + 1 ), 0, radiusX, RADIUS_Y, 0 );
+        shape.subpath(); // prevent line between ellipses
       }
+      shape.moveTo( viewLength, 0 );
+      shape.lineTo( viewLength + 6, 0 );
       thisNode.shape = shape;
     } );
 

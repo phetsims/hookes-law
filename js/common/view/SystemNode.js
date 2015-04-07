@@ -36,17 +36,17 @@ define( function( require ) {
       centerY: 0
     } );
 
-    var springNode = new SpringNode( spring, modelViewTransform, {
-      left: wallNode.right,
-      centerY: wallNode.centerY
-    } );
-
     var hookNode = new HookNode( spring, modelViewTransform, displacementRange, {
       left: wallNode.right,
       centerY: wallNode.centerY
     } );
 
-    options.children = [ wallNode, springNode, hookNode ];
+    var springNode = new SpringNode( spring, modelViewTransform, {
+      left: wallNode.right,
+      centerY: wallNode.centerY
+    } );
+
+    options.children = [ wallNode, hookNode, springNode ];
     this.mutate( options );
   }
 
