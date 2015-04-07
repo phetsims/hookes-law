@@ -18,6 +18,7 @@ define( function( require ) {
   // constants
   var NUMBER_OF_COILS = 10;
   var RADIUS_Y = 40;
+  var NIB_LENGTH = 6;
 
   /**
    * @param {Spring} spring
@@ -37,15 +38,26 @@ define( function( require ) {
     Path.call( this );
 
     spring.lengthProperty.link( function( length ) {
+
       var viewLength = modelViewTransform.modelToViewX( length );
-      var radiusX = viewLength / ( NUMBER_OF_COILS + 1 );
+      var radiusX = ( viewLength - 2 * NIB_LENGTH ) / ( NUMBER_OF_COILS + 1 );
       var shape = new Shape();
+
+      // nib at left end of spring
+      shape.moveTo( 0, 0 );
+      shape.lineTo( NIB_LENGTH, 0 );
+      shape.subpath(); // prevent line between ellipses
+
+      // coils
       for ( var i = 0; i < NUMBER_OF_COILS; i++ ) {
-        shape.ellipse( radiusX * ( i + 1 ), 0, radiusX, RADIUS_Y, 0 );
+        shape.ellipse( radiusX * ( i + 1 ) + NIB_LENGTH, 0, radiusX, RADIUS_Y, 0 );
         shape.subpath(); // prevent line between ellipses
       }
-      shape.moveTo( viewLength, 0 );
-      shape.lineTo( viewLength + 6, 0 );
+
+      // nib at right end of spring
+      shape.moveTo( viewLength - NIB_LENGTH, 0 );
+      shape.lineTo( viewLength, 0 );
+
       thisNode.shape = shape;
     } );
 
