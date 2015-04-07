@@ -22,15 +22,20 @@ define( function( require ) {
 
     PropertySet.call( this, {
       springConstant: springConstant,  // {number} spring constant, units = N/m
-      displacement: 0,  // {number} horizontal displacement from equilibrium, units = m
       appliedForce: 0, // {number} force applied to the spring, units = N
-      springForce: 0 // {number} force applied by the spring, units = N
+      displacement: 0  // {number} horizontal displacement from equilibrium, units = m
     } );
 
     this.equilibriumPosition = 0.5; // {number} horizontal location of equilibrium, units = m, read-only
 
+    // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
       return thisSpring.equilibriumPosition + displacement;
+    } );
+
+    // force applied by the spring, opposes the applied force, units = N
+    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
+      return -appliedForce;
     } );
 
     this.springConstantProperty.link( function( springConstant ) {
