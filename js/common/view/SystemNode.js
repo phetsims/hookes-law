@@ -11,23 +11,27 @@ define( function( require ) {
 
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookNode = require( 'HOOKES_LAW/common/view/HookNode' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   // constants
   var WALL_SIZE = new Dimension2( 25, 170 );
+  var EQUILIBRIUM_LINE_LENGTH = WALL_SIZE.height;
 
   /**
    * @param {Spring} spring
    * @param {Range} displacementRange
    * @param {ModelViewTransform2} modelViewTransform
+   * @param {Property.<boolean>} equilibriumPositionVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function SystemNode( spring, displacementRange, modelViewTransform, options ) {
+  function SystemNode( spring, displacementRange, modelViewTransform, equilibriumPositionVisibleProperty, options ) {
 
     Node.call( this );
 
@@ -46,8 +50,20 @@ define( function( require ) {
       centerY: wallNode.centerY
     } );
 
-    options.children = [ wallNode, hookNode, springNode ];
+    var equilibriumX = modelViewTransform.modelToViewX( spring.equilibriumPosition );
+    var equilibriumPositionNode = new Line( equilibriumX, 0, equilibriumX, EQUILIBRIUM_LINE_LENGTH, {
+      stroke: HookesLawColors.EQUILIBRIUM_POSITION,
+      lineWidth: 2,
+      lineDash: [ 3, 3 ],
+      centerY: wallNode.centerY
+    } );
+
+    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode ];
     this.mutate( options );
+
+    equilibriumPositionVisibleProperty.link( function( visible ) {
+      equilibriumPositionNode.visible = visible;
+    } );
   }
 
   return inherit( Node, SystemNode, {
