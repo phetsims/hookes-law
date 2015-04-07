@@ -17,7 +17,7 @@ define( function( require ) {
 
   // constants
   var NUMBER_OF_COILS = 10;
-  var RADIUS_Y = 40;
+  var RADIUS_Y = 35;
   var NIB_LENGTH = 6;
 
   /**
