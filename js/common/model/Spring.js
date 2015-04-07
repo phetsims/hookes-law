@@ -34,8 +34,12 @@ define( function( require ) {
     } );
 
     this.springConstantProperty.link( function( springConstant ) {
-      thisSpring.displacementProperty.set( thisSpring.appliedForceProperty.get() / springConstant ); // x = F/k
+      thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
     } );
+
+    this.appliedForceProperty.link( function( appliedForce ) {
+      thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
+    });
   }
 
   return inherit( PropertySet, Spring, {
