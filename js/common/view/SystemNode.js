@@ -18,6 +18,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -60,17 +61,29 @@ define( function( require ) {
       centerY: wallNode.centerY
     } );
 
+    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
+      bottom: springNode.top - 5
+    } );
+
+    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
+      bottom: springNode.top - 5
+    } );
+
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
       x: equilibriumX,
       top: springNode.bottom + 5
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
-      bottom: springNode.top - 5
+    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode, appliedForceVectorNode, springForceVectorNode, displacementVectorNode ];
+    this.mutate( options );
+
+    visibilityProperties.appliedForceVectorVisibleProperty.link( function( visible ) {
+      appliedForceVectorNode.visible = visible;
     } );
 
-    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode, displacementVectorNode, appliedForceVectorNode ];
-    this.mutate( options );
+    visibilityProperties.springForceVectorVisibleProperty.link( function( visible ) {
+      springForceVectorNode.visible = visible;
+    } );
 
     visibilityProperties.displacementVectorVisibleProperty.link( function( visible ) {
       displacementVectorNode.visible = visible;
