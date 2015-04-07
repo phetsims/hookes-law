@@ -15,7 +15,7 @@ define( function( require ) {
   var Subpath = require( 'KITE/util/Subpath' );
 
   // constants
-  var NUMBER_OF_COILS = 5;
+  var NUMBER_OF_COILS = 10;
   var RADIUS_Y = 40;
 
   /**

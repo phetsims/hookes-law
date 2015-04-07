@@ -19,6 +19,6 @@ define( function( require ) {
     SPRING_CONSTANT_RANGE: new Range( 5, 55 ), // N/m
     SPRING_FORCE_DECIMAL_PLACES: 0,
     DISPLACEMENT_DECIMAL_PLACES: 0,
-    DISPLACEMENT_RANGE: new Range( -5, 20 ) // m
+    DISPLACEMENT_RANGE: new Range( -0.25, 0.25 ) // m
   };
 } );
