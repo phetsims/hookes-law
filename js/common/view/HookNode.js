@@ -9,12 +9,16 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Circle = require( 'SCENERY/nodes/Circle' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
+  var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
   // constants
-  var RADIUS = 30;
+  var HOOK_RADIUS = 30;
+  var HANDLE_RADIUS = 15;
 
   /**
    * @param {Property.<number>} displacementProperty
@@ -26,18 +30,26 @@ define( function( require ) {
   function HookNode( displacementProperty, displacementRange, modelViewTransform, options ) {
 
     options = _.extend( {
-      stroke: 'red',
-      lineWidth: 8
+      cursor: 'pointer'
     }, options );
 
-    Path.call( this,
-      new Shape()
-        .arc( RADIUS, 0, RADIUS, Math.PI / 2, 0 )
-        .lineTo( 200, 0 ),
-      options );
+    var hook = new Path( new Shape().arc( HOOK_RADIUS, 0, HOOK_RADIUS, Math.PI / 2, 0 ).lineTo( 200, 0 ), {
+      stroke: 'red',
+      lineWidth: 6
+    });
 
-    //TODO addInputListener to manipulate displacementProperty, constrained to displacementRange
+    var handle = new Circle( HANDLE_RADIUS, {
+      fill: 'red',
+      centerX: hook.right,
+      centerY: 0
+    } );
+
+    options.children = [ hook, handle ];
+    Node.call( this, options );
+
+    //TODO manipulate displacementProperty, constrained to displacementRange
+    this.addInputListener( new SimpleDragHandler() );
   }
 
-  return inherit( Path, HookNode );
+  return inherit( Node, HookNode );
 } );
