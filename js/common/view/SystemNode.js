@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -64,7 +65,11 @@ define( function( require ) {
       top: springNode.bottom + 5
     } );
 
-    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode, displacementVectorNode ];
+    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
+      bottom: springNode.top - 5
+    } );
+
+    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode, displacementVectorNode, appliedForceVectorNode ];
     this.mutate( options );
 
     visibilityProperties.displacementVectorVisibleProperty.link( function( visible ) {
