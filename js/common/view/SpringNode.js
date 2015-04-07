@@ -20,12 +20,12 @@ define( function( require ) {
   var RADIUS_Y = 40;
 
   /**
-   * @param {Property.<number>} lengthProperty
+   * @param {Spring} spring
    * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function SpringNode( lengthProperty, modelViewTransform, options ) {
+  function SpringNode( spring, modelViewTransform, options ) {
 
     options = _.extend( {
       lineWidth: 2,
@@ -36,7 +36,7 @@ define( function( require ) {
 
     Path.call( this );
 
-    lengthProperty.link( function( length ) {
+    spring.lengthProperty.link( function( length ) {
       var radiusX = modelViewTransform.modelToViewX( length ) / ( NUMBER_OF_COILS + 1 );
       var shape = new Shape();
       for ( var i = 0; i < NUMBER_OF_COILS; i++ ) {
@@ -49,7 +49,5 @@ define( function( require ) {
     this.mutate( options );
   }
 
-  return inherit( Path, SpringNode, {
-    //TODO prototype functions
-  } );
+  return inherit( Path, SpringNode );
 } );

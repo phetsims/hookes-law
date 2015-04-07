@@ -22,17 +22,19 @@ define( function( require ) {
   var HANDLE_RADIUS = 15;
 
   /**
-   * @param {Property.<number>} displacementProperty
-   * @param {Range} displacementRange
+   * @param {Spring} spring
    * @param {ModelViewTransform2} modelViewTransform
+   * @param {Range} displacementRange
    * @param {Object} [options]
    * @constructor
    */
-  function HookNode( displacementProperty, displacementRange, modelViewTransform, options ) {
+  function HookNode( spring, modelViewTransform, displacementRange, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
     }, options );
+
+    var thisNode = this;
 
     var hook = new Path( new Shape().arc( HOOK_RADIUS, 0, HOOK_RADIUS, Math.PI / 2, 0 ).lineTo( 200, 0 ), {
       stroke: 'red',
@@ -48,7 +50,11 @@ define( function( require ) {
     options.children = [ hook, handle ];
     Node.call( this, options );
 
-    //TODO manipulate displacementProperty, constrained to displacementRange
+    spring.lengthProperty.link( function( length ) {
+      thisNode.left = modelViewTransform.modelToViewX( length );
+    } );
+
+    //TODO manipulate spring.displacementProperty, constrained to displacementRange
     this.addInputListener( new SimpleDragHandler() );
   }
 
