@@ -39,7 +39,7 @@ define( function( require ) {
     var hook = new Path( new Shape().arc( HOOK_RADIUS, 0, HOOK_RADIUS, Math.PI / 2, 0 ).lineTo( 200, 0 ), {
       stroke: 'red',
       lineWidth: 6
-    });
+    } );
 
     var handle = new Circle( HANDLE_RADIUS, {
       fill: 'red',
@@ -55,7 +55,28 @@ define( function( require ) {
     } );
 
     //TODO manipulate spring.displacementProperty, constrained to displacementRange
-    this.addInputListener( new SimpleDragHandler() );
+    this.addInputListener( new SimpleDragHandler( {
+
+        //TODO this handler is broken
+
+        //allowTouchSnag: true,
+        //
+        //startOffsetX: 0,  // where the drag started relative to locationProperty, in parent view coordinate
+        //
+        //start: function( event ) {
+        //  var locationX = modelViewTransform.modelToViewX( spring.lengthProperty.get() );
+        //  this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - locationX;
+        //},
+        //
+        //drag: function( event ) {
+        //  var parentPoint = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
+        //  var displacement = modelViewTransform.viewToModelPosition( parentPoint ).x - spring.equilibriumX;
+        //  spring.displacementProperty.set( displacement );
+        //},
+        //
+        //end: function( event ) {}
+      }
+    ) );
   }
 
   return inherit( Node, HookNode );

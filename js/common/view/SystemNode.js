@@ -53,8 +53,8 @@ define( function( require ) {
       centerY: wallNode.centerY
     } );
 
-    var equilibriumX = modelViewTransform.modelToViewX( spring.equilibriumPosition );
-    var equilibriumPositionNode = new Line( equilibriumX, 0, equilibriumX, EQUILIBRIUM_LINE_LENGTH, {
+    var viewEquilibriumX = modelViewTransform.modelToViewX( spring.equilibriumX );
+    var equilibriumPositionNode = new Line( viewEquilibriumX, 0, viewEquilibriumX, EQUILIBRIUM_LINE_LENGTH, {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
@@ -70,7 +70,7 @@ define( function( require ) {
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
-      x: equilibriumX,
+      x: viewEquilibriumX,
       top: springNode.bottom + 5
     } );
 

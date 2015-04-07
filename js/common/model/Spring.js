@@ -26,11 +26,11 @@ define( function( require ) {
       displacement: 0  // {number} horizontal displacement from equilibrium, units = m
     } );
 
-    this.equilibriumPosition = 0.5; // {number} horizontal location of equilibrium, units = m, read-only
+    this.equilibriumX = 0.5; // {number} horizontal location of equilibrium, units = m, read-only
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
-      return thisSpring.equilibriumPosition + displacement;
+      return thisSpring.equilibriumX + displacement;
     } );
 
     // spring force opposes the applied force, units = N
