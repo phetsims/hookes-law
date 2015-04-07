@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
+  var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookNode = require( 'HOOKES_LAW/common/view/HookNode' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -58,15 +59,22 @@ define( function( require ) {
       centerY: wallNode.centerY
     } );
 
-    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode ];
+    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
+      x: equilibriumX,
+      top: springNode.bottom + 5
+    } );
+
+    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode, displacementVectorNode ];
     this.mutate( options );
+
+    visibilityProperties.displacementVectorVisibleProperty.link( function( visible ) {
+      displacementVectorNode.visible = visible;
+    } );
 
     visibilityProperties.equilibriumPositionVisibleProperty.link( function( visible ) {
       equilibriumPositionNode.visible = visible;
     } );
   }
 
-  return inherit( Node, SystemNode, {
-    //TODO prototype functions
-  } );
+  return inherit( Node, SystemNode );
 } );
