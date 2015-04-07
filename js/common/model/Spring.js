@@ -47,7 +47,5 @@ define( function( require ) {
     });
   }
 
-  return inherit( PropertySet, Spring, {
-    //TODO
-  } );
+  return inherit( PropertySet, Spring );
 } );
