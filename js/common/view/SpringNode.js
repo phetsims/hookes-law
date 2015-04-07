@@ -39,7 +39,7 @@ define( function( require ) {
       var radiusX = modelViewTransform.modelToViewX( length ) / ( NUMBER_OF_COILS + 1 );
       var shape = new Shape();
       for ( var i = 0; i < NUMBER_OF_COILS; i++ ) {
-        if ( i > 0 ) { shape.subpath(); }
+        if ( i > 0 ) { shape.subpath(); }  // prevent line between ellipses
         shape.ellipse( radiusX * ( i + 1 ), 0, radiusX, RADIUS_Y, 0 );
       }
       thisNode.shape = shape;
