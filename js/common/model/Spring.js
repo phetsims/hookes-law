@@ -32,6 +32,10 @@ define( function( require ) {
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
       return thisSpring.equilibriumPosition + displacement;
     } );
+
+    this.springConstantProperty.link( function( springConstant ) {
+      thisSpring.displacementProperty.set( thisSpring.appliedForceProperty.get() / springConstant ); // x = F/k
+    } );
   }
 
   return inherit( PropertySet, Spring, {
