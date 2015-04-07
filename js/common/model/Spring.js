@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
 
@@ -17,6 +18,8 @@ define( function( require ) {
    */
   function Spring( springConstant ) {
 
+    var thisSpring = this;
+
     PropertySet.call( this, {
       springConstant: springConstant,  // {number} spring constant, units = N/m
       displacement: 0,  // {number} horizontal displacement from equilibrium, units = m
@@ -24,8 +27,11 @@ define( function( require ) {
       springForce: 0 // {number} force applied by the spring, units = N
     } );
 
-    //TODO is this derived from other things?
-    this.equilibriumPosition = 10; // {number} horizontal location of equilibrium, units = m
+    this.equilibriumPosition = 10; // {number} horizontal location of equilibrium, units = m, read-only
+
+    this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
+      return thisSpring.equilibriumPosition + displacement;
+    } );
   }
 
   return inherit( PropertySet, Spring, {
