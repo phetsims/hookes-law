@@ -134,7 +134,8 @@ define( function( require ) {
 
     model.numberOfSystemsProperty.link( function( numberOfSystems ) {
 
-      // adjust title on system 1
+      //TODO this seems like it could be confusing to students
+      // adjust titles for system 1
       springConstantPanel1.title = ( numberOfSystems === 1 ) ? springConstantString : StringUtils.format( springConstantNumberString, 1 );
       appliedForcePanel1.title = ( numberOfSystems === 1 ) ? appliedForceStringColon : StringUtils.format( appliedForceNumberString, 1 );
 
