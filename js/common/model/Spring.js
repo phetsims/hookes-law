@@ -33,7 +33,7 @@ define( function( require ) {
       return thisSpring.equilibriumPosition + displacement;
     } );
 
-    // force applied by the spring, opposes the applied force, units = N
+    // spring force opposes the applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
       return -appliedForce;
     } );
@@ -44,7 +44,11 @@ define( function( require ) {
 
     this.appliedForceProperty.link( function( appliedForce ) {
       thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
-    });
+    } );
+
+    this.displacementProperty.link( function( displacement ) {
+      thisSpring.appliedForce = thisSpring.springConstant * displacement; // F = kx
+    } );
   }
 
   return inherit( PropertySet, Spring );
