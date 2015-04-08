@@ -24,11 +24,10 @@ define( function( require ) {
   /**
    * @param {Spring} spring
    * @param {ModelViewTransform2} modelViewTransform
-   * @param {Range} displacementRange
    * @param {Object} [options]
    * @constructor
    */
-  function HookNode( spring, modelViewTransform, displacementRange, options ) {
+  function HookNode( spring, modelViewTransform, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
@@ -54,7 +53,7 @@ define( function( require ) {
       thisNode.left = modelViewTransform.modelToViewX( length );
     } );
 
-    //TODO manipulate spring.displacementProperty, constrained to displacementRange
+    //TODO manipulate spring.displacementProperty, constrained to Spring.getMaxDisplacement
     this.addInputListener( new SimpleDragHandler( {
 
         //TODO this handler is broken

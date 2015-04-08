@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
 
@@ -21,12 +22,13 @@ define( function( require ) {
     var thisSpring = this;
 
     PropertySet.call( this, {
-      springConstant: springConstant,  // {number} spring constant, units = N/m
-      appliedForce: 0, // {number} force applied to the spring, units = N
-      displacement: 0  // {number} horizontal displacement from equilibrium, units = m
+      springConstant: springConstant,  // {number} k, spring constant, units = N/m
+      appliedForce: 0, // {number} F, force applied to the spring, units = N
+      displacement: 0  // {number} x, horizontal displacement from equilibrium position, units = m
     } );
 
-    this.equilibriumX = 0.5; // {number} horizontal location of equilibrium, units = m, read-only
+    // {number} horizontal location of equilibrium, units = m, read-only
+    this.equilibriumX = 1.2 * Spring.getMaxDisplacement(); // largest F/k
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
@@ -51,5 +53,12 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, Spring );
+  return inherit( PropertySet, Spring, {}, {
+
+    // @static Gets the maximum displacement, x = F/k
+    getMaxDisplacement: function() {
+      assert && assert( HookesLawConstants.APPLIED_FORCE_RANGE.max === -HookesLawConstants.APPLIED_FORCE_RANGE.min );
+      return HookesLawConstants.APPLIED_FORCE_RANGE.max / HookesLawConstants.SPRING_CONSTANT_RANGE.min;
+    }
+  } );
 } );

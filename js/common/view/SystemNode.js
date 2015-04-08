@@ -28,13 +28,12 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
-   * @param {Range} displacementRange
    * @param {ModelViewTransform2} modelViewTransform
    * @param {VisibilityProperties} visibilityProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SystemNode( spring, displacementRange, modelViewTransform, visibilityProperties, options ) {
+  function SystemNode( spring, modelViewTransform, visibilityProperties, options ) {
 
     Node.call( this );
 
@@ -43,7 +42,7 @@ define( function( require ) {
       centerY: 0
     } );
 
-    var hookNode = new HookNode( spring, modelViewTransform, displacementRange, {
+    var hookNode = new HookNode( spring, modelViewTransform, {
       left: wallNode.right,
       centerY: wallNode.centerY
     } );
