@@ -17,11 +17,11 @@ define( function( require ) {
    */
   function VisibilityProperties() {
     PropertySet.call( this, {
-      appliedForceVectorVisible: true, // {boolean} is the applied force vector visible?
-      springForceVectorVisible: true, // {boolean} is the spring force vector visible?
-      displacementVectorVisible: true, // {boolean} is the displacement vector visible?
-      equilibriumPositionVisible: true, // {boolean} is the equilibrium position visible?
-      valuesVisible: true  // {boolean} are numeric values visible?
+      appliedForceVectorVisible: false, // {boolean} is the applied force vector visible?
+      springForceVectorVisible: false, // {boolean} is the spring force vector visible?
+      displacementVectorVisible: false, // {boolean} is the displacement vector visible?
+      equilibriumPositionVisible: false, // {boolean} is the equilibrium position visible?
+      valuesVisible: false  // {boolean} are numeric values visible?
     } );
   }
 
