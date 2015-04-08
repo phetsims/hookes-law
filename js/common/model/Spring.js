@@ -58,8 +58,13 @@ define( function( require ) {
 
     // @static Gets the maximum displacement, x = F/k
     getMaxDisplacement: function() {
-      assert && assert( HookesLawConstants.APPLIED_FORCE_RANGE.max === -HookesLawConstants.APPLIED_FORCE_RANGE.min );
       return HookesLawConstants.APPLIED_FORCE_RANGE.max / HookesLawConstants.SPRING_CONSTANT_RANGE.min;
+    },
+
+    // @static Gets the minimum displacement, x = F/k
+    getMinDisplacement: function() {
+      return HookesLawConstants.APPLIED_FORCE_RANGE.min / HookesLawConstants.SPRING_CONSTANT_RANGE.min;
     }
+
   } );
 } );

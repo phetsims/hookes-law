@@ -16,6 +16,7 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   // constants
   var HOOK_RADIUS = 30;
@@ -58,22 +59,23 @@ define( function( require ) {
 
         //TODO this handler is broken
 
-        //allowTouchSnag: true,
-        //
-        //startOffsetX: 0,  // where the drag started relative to locationProperty, in parent view coordinate
-        //
-        //start: function( event ) {
-        //  var locationX = modelViewTransform.modelToViewX( spring.lengthProperty.get() );
-        //  this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - locationX;
-        //},
-        //
-        //drag: function( event ) {
-        //  var parentPoint = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
-        //  var displacement = modelViewTransform.viewToModelPosition( parentPoint ).x - spring.equilibriumX;
-        //  spring.displacementProperty.set( displacement );
-        //},
-        //
-        //end: function( event ) {}
+        allowTouchSnag: true,
+
+        startOffsetX: 0,  // where the drag started relative to locationProperty, in parent view coordinate
+
+        start: function( event ) {
+          var locationX = modelViewTransform.modelToViewX( spring.lengthProperty.get() );
+          this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - locationX;
+        },
+
+        drag: function( event ) {
+          var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
+          var displacement = modelViewTransform.viewToModelX( parentX ) - spring.equilibriumX;
+          displacement = Math.max( Math.min( displacement, Spring.getMaxDisplacement() ), Spring.getMinDisplacement() );
+          spring.displacementProperty.set( displacement );
+        },
+
+        end: function( event ) {}
       }
     ) );
   }
