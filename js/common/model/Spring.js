@@ -15,6 +15,7 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
 
   /**
+   * @param {number} springConstant spring constant, units = N/m
    * @constructor
    */
   function Spring( springConstant ) {
