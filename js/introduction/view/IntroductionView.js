@@ -121,7 +121,9 @@ define( function( require ) {
       right: resetAllButton.left - 30,
       centerY: resetAllButton.centerY,
       listener: function() {
-        //TODO
+        //TODO is this what the Return button is supposed to do?
+        model.spring1.appliedForceProperty.set( 0 );
+        model.spring2.appliedForceProperty.set( 0 );
       }
     } );
     this.addChild( returnButton );
