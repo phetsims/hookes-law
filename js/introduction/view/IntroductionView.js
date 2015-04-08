@@ -130,10 +130,12 @@ define( function( require ) {
 
     model.numberOfSystemsProperty.link( function( numberOfSystems ) {
 
+      assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
+
       //TODO this seems like it could be confusing to students
       // adjust titles for system 1
-      //springConstantPanel1.title = ( numberOfSystems === 1 ) ? springConstantString : StringUtils.format( springConstantNumberString, 1 );
-      //appliedForcePanel1.title = ( numberOfSystems === 1 ) ? appliedForceStringColon : StringUtils.format( appliedForceNumberString, 1 );
+      springConstantPanel1.title = ( numberOfSystems === 1 ) ? springConstantString : StringUtils.format( springConstantNumberString, 1 );
+      appliedForcePanel1.title = ( numberOfSystems === 1 ) ? appliedForceStringColon : StringUtils.format( appliedForceNumberString, 1 );
 
       // hide system 2
       system2.visible = appliedForcePanel2.visible = springConstantPanel2.visible = ( numberOfSystems === 2 );
