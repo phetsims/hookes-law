@@ -47,7 +47,7 @@ define( function( require ) {
 
     var valueNode = new Text( '', {
       font: new HookesLawFont( 14 ),
-      bottom: arrowNode.top + 3 // above the arrow
+      bottom: arrowNode.top - 3 // above the arrow
     } );
 
     options.children = [ arrowNode, valueNode ];
@@ -60,7 +60,18 @@ define( function( require ) {
         arrowNode.setTailAndTip( 0, 0, appliedForceView, 0 );
       }
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( appliedForce, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), unitsNewtonsString );
-      valueNode.centerX = ( appliedForceView > 0 ) ? arrowNode.right : arrowNode.left;
+      if ( appliedForce === 0 ) {
+        valueNode.centerX = 0;
+      }
+      else if ( valueNode.width < arrowNode.width ) {
+        valueNode.centerX = arrowNode.centerX;
+      }
+      else if ( appliedForce > 0 ) {
+        valueNode.left = 3;
+      }
+      else {
+        valueNode.right = -3;
+      }
     } );
 
     displacementProperty.link( function( displacement ) {

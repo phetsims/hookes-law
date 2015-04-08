@@ -57,7 +57,18 @@ define( function( require ) {
         arrowNode.setTailAndTip( 0, 0, displacementView, 0 );
       }
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), unitsMetersString );
-      valueNode.centerX = ( displacement > 0 ) ? arrowNode.right : arrowNode.left;
+      if ( displacement === 0 ) {
+        valueNode.centerX = 0;
+      }
+      else if ( valueNode.width < arrowNode.width ) {
+        valueNode.centerX = arrowNode.centerX;
+      }
+      else if ( displacement > 0 ) {
+        valueNode.left = 3;
+      }
+      else {
+        valueNode.right = -3;
+      }
     } );
 
     valuesVisibleProperty.link( function( visible ) {
