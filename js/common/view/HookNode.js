@@ -14,6 +14,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
+  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
@@ -37,12 +38,12 @@ define( function( require ) {
     var thisNode = this;
 
     var hook = new Path( new Shape().arc( HOOK_RADIUS, 0, HOOK_RADIUS, Math.PI / 2, 0 ).lineTo( 200, 0 ), {
-      stroke: 'red',
+      stroke: PhetColorScheme.RED_COLORBLIND,
       lineWidth: 6
     } );
 
     var handle = new Circle( HANDLE_RADIUS, {
-      fill: 'red',
+      fill: PhetColorScheme.RED_COLORBLIND,
       centerX: hook.right,
       centerY: 0
     } );
