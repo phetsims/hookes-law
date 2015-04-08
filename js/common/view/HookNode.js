@@ -54,10 +54,8 @@ define( function( require ) {
       thisNode.left = modelViewTransform.modelToViewX( length );
     } );
 
-    //TODO manipulate spring.displacementProperty, constrained to Spring.getMaxDisplacement
+    // Drag the hook to change displacement
     this.addInputListener( new SimpleDragHandler( {
-
-        //TODO this handler is broken
 
         allowTouchSnag: true,
 
