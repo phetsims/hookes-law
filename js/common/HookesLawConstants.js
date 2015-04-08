@@ -18,7 +18,7 @@ define( function( require ) {
     APPLIED_FORCE_DECIMAL_PLACES: 0,
     SPRING_CONSTANT_RANGE: new Range( 5, 55 ), // N/m
     SPRING_FORCE_DECIMAL_PLACES: 0,
-    DISPLACEMENT_DECIMAL_PLACES: 2,
+    DISPLACEMENT_DECIMAL_PLACES: 3,
     UNIT_FORCE_VECTOR_LENGTH: 2  // view length of a force vector whose magnitude is 1 N
   };
 } );
