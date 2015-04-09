@@ -17,7 +17,6 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
-  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   // constants
   var HOOK_RADIUS = 30;
