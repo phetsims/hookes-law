@@ -70,7 +70,7 @@ define( function( require ) {
         drag: function( event ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
           var displacement = modelViewTransform.viewToModelX( parentX ) - spring.equilibriumX;
-          displacement = Math.max( Math.min( displacement, Spring.getMaxDisplacement() ), Spring.getMinDisplacement() );
+          displacement = Math.max( Math.min( displacement, spring.getMaxDisplacement() ), spring.getMinDisplacement() );
           spring.displacementProperty.set( displacement );
         },
 

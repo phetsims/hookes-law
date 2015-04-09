@@ -29,7 +29,7 @@ define( function( require ) {
     } );
 
     // {number} horizontal location of equilibrium, units = m, read-only
-    this.equilibriumX = 1.2 * Spring.getMaxDisplacement(); // largest F/k
+    this.equilibriumX = 1.2 * ( HookesLawConstants.APPLIED_FORCE_RANGE.max / HookesLawConstants.SPRING_CONSTANT_RANGE.min ); // largest F/k
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
@@ -54,17 +54,16 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, Spring, {}, {
+  return inherit( PropertySet, Spring, {
 
-    // @static Gets the maximum displacement, x = F/k
+    // Gets the maximum displacement, x = F/k
     getMaxDisplacement: function() {
-      return HookesLawConstants.APPLIED_FORCE_RANGE.max / HookesLawConstants.SPRING_CONSTANT_RANGE.min;
+      return HookesLawConstants.APPLIED_FORCE_RANGE.max / this.springConstantProperty.get();
     },
 
-    // @static Gets the minimum displacement, x = F/k
+    // Gets the minimum displacement, x = F/k
     getMinDisplacement: function() {
-      return HookesLawConstants.APPLIED_FORCE_RANGE.min / HookesLawConstants.SPRING_CONSTANT_RANGE.min;
+      return HookesLawConstants.APPLIED_FORCE_RANGE.min / this.springConstantProperty.get();
     }
-
   } );
 } );
