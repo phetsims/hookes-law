@@ -58,8 +58,13 @@ define( function( require ) {
     Node.call( this, options );
 
     displacementProperty.link( function( displacement ) {
+
       var displacementView = modelViewTransform.modelToViewX( displacement );
+
+      // if displacement is zero, hide everything except the value
       arrowNode.visible = verticalLine.visible = ( displacementView !== 0 );
+
+      // update the vector and value
       if ( displacementView !== 0 ) {
         arrowNode.setTailAndTip( 0, 0, displacementView, 0 );
       }
