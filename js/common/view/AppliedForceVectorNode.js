@@ -54,24 +54,18 @@ define( function( require ) {
     Node.call( this, options );
 
     appliedForceProperty.link( function( appliedForce ) {
-      var appliedForceView = appliedForce * HookesLawConstants.UNIT_FORCE_VECTOR_LENGTH;
-      arrowNode.visible = ( appliedForceView !== 0 );
-      if ( appliedForceView !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, appliedForceView, 0 );
+
+      // update the vector
+      arrowNode.visible = ( appliedForce !== 0 ); // since we can't draw a zero-length arrow
+      if ( appliedForce !== 0 ) {
+        arrowNode.setTailAndTip( 0, 0, appliedForce * HookesLawConstants.UNIT_FORCE_VECTOR_LENGTH, 0 );
       }
+
+      // update the value
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( appliedForce, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), unitsNewtonsString );
-      if ( appliedForce === 0 ) {
-        valueNode.centerX = 0;
-      }
-      else if ( valueNode.width < arrowNode.width ) {
-        valueNode.centerX = arrowNode.centerX;
-      }
-      else if ( appliedForce > 0 ) {
-        valueNode.left = 3;
-      }
-      else {
-        valueNode.right = -3;
-      }
+
+      // center value on arrow
+      valueNode.centerX = ( appliedForce === 0 ) ? 0 : arrowNode.centerX;
     } );
 
     displacementProperty.link( function( displacement ) {

@@ -59,28 +59,17 @@ define( function( require ) {
 
     displacementProperty.link( function( displacement ) {
 
-      var displacementView = modelViewTransform.modelToViewX( displacement );
-
-      // if displacement is zero, hide everything except the value
-      arrowNode.visible = verticalLine.visible = ( displacementView !== 0 );
-
-      // update the vector and value
-      if ( displacementView !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, displacementView, 0 );
+      // update the vector
+      arrowNode.visible = ( displacement !== 0 ); // since we can't draw a zero-length arrow
+      if ( displacement !== 0 ) {
+        arrowNode.setTailAndTip( 0, 0, modelViewTransform.modelToViewX( displacement ), 0 );
       }
+
+      // update the value
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), unitsMetersString );
-      if ( displacement === 0 ) {
-        valueNode.centerX = 0;
-      }
-      else if ( valueNode.width < arrowNode.width ) {
-        valueNode.centerX = arrowNode.centerX;
-      }
-      else if ( displacement > 0 ) {
-        valueNode.left = 3;
-      }
-      else {
-        valueNode.right = -3;
-      }
+
+      // center value on arrow
+      valueNode.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
     } );
 
     valuesVisibleProperty.link( function( visible ) {
