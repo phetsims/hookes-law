@@ -30,7 +30,7 @@ define( function( require ) {
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
       team: 'Mike Dubson, Ariel Paul, Kathy Perkins, Martin Veillette',
       qualityAssurance: '', //TODO
-      graphicArts: '' //TODO
+      graphicArts: 'Mariah Hermsmeyer'
     }
   };
 
