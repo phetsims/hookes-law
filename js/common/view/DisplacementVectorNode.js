@@ -14,6 +14,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont= require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -47,12 +48,18 @@ define( function( require ) {
       top: arrowNode.bottom + 3 // below the arrow
     } );
 
-    options.children = [ arrowNode, valueNode ];
+    var verticalLine = new Line( 0, 0, 0, 20, {
+      stroke: 'black',
+      lineWidth: 2,
+      centerY: arrowNode.centerY
+    } );
+
+    options.children = [ verticalLine, arrowNode, valueNode ];
     Node.call( this, options );
 
     displacementProperty.link( function( displacement ) {
       var displacementView = modelViewTransform.modelToViewX( displacement );
-      arrowNode.visible = ( displacementView !== 0 );
+      arrowNode.visible = verticalLine.visible = ( displacementView !== 0 );
       if ( displacementView !== 0 ) {
         arrowNode.setTailAndTip( 0, 0, displacementView, 0 );
       }
