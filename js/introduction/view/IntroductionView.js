@@ -27,7 +27,6 @@ define( function( require ) {
   // strings
   var appliedForceStringColon = require( 'string!HOOKES_LAW/appliedForceColon' );
   var appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
-  var returnString = require( 'string!HOOKES_LAW/return' );
   var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
   var springConstantNumberString = require( 'string!HOOKES_LAW/springConstantNumber' );
 
@@ -113,20 +112,6 @@ define( function( require ) {
       bottom: this.layoutBounds.maxY - 10
     } );
     this.addChild( resetAllButton );
-
-    // Return button
-    var returnButton = new RectangularPushButton( {
-      content: new Text( returnString, { font: new HookesLawFont( 24 ) } ),
-      baseColor: 'rgb( 230, 230, 230 )',
-      right: resetAllButton.left - 30,
-      centerY: resetAllButton.centerY,
-      listener: function() {
-        //TODO is this what the Return button is supposed to do?
-        model.spring1.appliedForceProperty.set( 0 );
-        model.spring2.appliedForceProperty.set( 0 );
-      }
-    } );
-    this.addChild( returnButton );
 
     model.numberOfSystemsProperty.link( function( numberOfSystems ) {
 
