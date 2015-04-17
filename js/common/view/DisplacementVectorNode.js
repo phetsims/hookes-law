@@ -44,6 +44,7 @@ define( function( require ) {
     } );
 
     var valueNode = new Text( '', {
+      fill: HookesLawColors.DISPLACEMENT_VECTOR,
       font: new HookesLawFont( 14 ),
       top: arrowNode.bottom + 3 // below the arrow
     } );
@@ -57,19 +58,19 @@ define( function( require ) {
     options.children = [ verticalLine, arrowNode, valueNode ];
     Node.call( this, options );
 
-    displacementProperty.link( function( displacement ) {
+    displacementProperty.link( function( value ) {
 
       // update the vector
-      arrowNode.visible = ( displacement !== 0 ); // since we can't draw a zero-length arrow
-      if ( displacement !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, modelViewTransform.modelToViewX( displacement ), 0 );
+      arrowNode.visible = ( value !== 0 ); // since we can't draw a zero-length arrow
+      if ( value !== 0 ) {
+        arrowNode.setTailAndTip( 0, 0, modelViewTransform.modelToViewX( value ), 0 );
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), unitsMetersString );
+      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( value, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), unitsMetersString );
 
       // center value on arrow
-      valueNode.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
+      valueNode.centerX = ( value === 0 ) ? 0 : arrowNode.centerX;
     } );
 
     valuesVisibleProperty.link( function( visible ) {

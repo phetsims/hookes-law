@@ -46,6 +46,7 @@ define( function( require ) {
     } );
 
     var valueNode = new Text( '', {
+      fill: HookesLawColors.SPRING_FORCE_VECTOR,
       font: new HookesLawFont( 14 ),
       bottom: arrowNode.top - 3 // above the arrow
     } );
@@ -53,19 +54,31 @@ define( function( require ) {
     options.children = [ arrowNode, valueNode ];
     Node.call( this, options );
 
-    springForceProperty.link( function( springForce ) {
+    springForceProperty.link( function( value ) {
 
       // update the vector
-      arrowNode.visible = ( springForce !== 0 ); // since we can't draw a zero-length arrow
-      if ( springForce !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, springForce * HookesLawConstants.UNIT_FORCE_VECTOR_LENGTH, 0 );
+      arrowNode.visible = ( value !== 0 ); // since we can't draw a zero-length arrow
+      if ( value !== 0 ) {
+        arrowNode.setTailAndTip( 0, 0, value * HookesLawConstants.UNIT_FORCE_VECTOR_LENGTH, 0 );
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( springForce, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), unitsNewtonsString );
+      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( value, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), unitsNewtonsString );
 
-      // center value on arrow
-      valueNode.centerX = ( springForce === 0 ) ? 0 : arrowNode.centerX;
+      // value position
+      var margin = 5;
+      if ( value == 0 ) {
+        valueNode.right = -margin; // toward the left, so it doesn't overlap with spring force
+      }
+      else if ( valueNode.width + ( 2 * margin ) < arrowNode.width ) {
+        valueNode.centerX = arrowNode.centerX;
+      }
+      else if ( value > 0 ) {
+        valueNode.left = margin;
+      }
+      else {
+        valueNode.right = -margin;
+      }
     } );
 
     displacementProperty.link( function( displacement ) {

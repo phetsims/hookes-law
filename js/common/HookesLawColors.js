@@ -15,7 +15,7 @@ define( function( require ) {
     CONTROL_PANEL_FILL: 'rgb( 248, 248, 248 )',
     APPLIED_FORCE_VECTOR: PhetColorScheme.RED_COLORBLIND,
     SPRING_FORCE_VECTOR: 'rgb( 11, 37, 251 )',
-    DISPLACEMENT_VECTOR: 'rgb( 41, 253, 46 )',
-    EQUILIBRIUM_POSITION: 'green'
+    DISPLACEMENT_VECTOR: 'rgb( 0, 180, 0 )',
+    EQUILIBRIUM_POSITION: 'rgb( 0, 180, 0 )'
   };
 } );
