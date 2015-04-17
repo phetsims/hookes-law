@@ -67,7 +67,7 @@ define( function( require ) {
 
       // value position
       var margin = 5;
-      if ( value == 0 ) {
+      if ( value === 0 ) {
         valueNode.left = margin; // toward the right, so it doesn't overlap with spring force
       }
       else if ( valueNode.width + ( 2 * margin ) < arrowNode.width ) {
