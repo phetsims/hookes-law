@@ -13,7 +13,7 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -29,7 +29,7 @@ define( function( require ) {
   // constants
   var ARROW_BUTTON_OPTIONS = { /* TODO */ };
   var ARROW_BUTTON_DELTA = 1;
-  var MAJOR_TICK_LABEL_OPTIONS = { font: new HookesLawFont( 16 ) };
+  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
   var MINOR_TICK_SPACING = 10;
 
   /**
@@ -46,9 +46,11 @@ define( function( require ) {
       spacing: 5
     }, options );
 
-    this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } ); // @private
+    this.titleNode = new Text( options.title, { font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT } ); // @private
 
-    var valueDisplay = new ValueDisplay( appliedForceProperty, appliedForceRange, unitsNewtons, pattern_0value_1units );
+    var valueDisplay = new ValueDisplay( appliedForceProperty, appliedForceRange, unitsNewtons, pattern_0value_1units, {
+      font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
+    } );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       appliedForceProperty.set( Math.max( appliedForceProperty.get() - ARROW_BUTTON_DELTA, appliedForceRange.min ) );
@@ -59,7 +61,9 @@ define( function( require ) {
     }, ARROW_BUTTON_OPTIONS );
 
     var slider = new HSlider( appliedForceProperty, appliedForceRange, {
-      trackSize: new Dimension2( 200, 5 ),
+      trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
+      thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
+      majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR,
       thumbFillHighlighted: HookesLawColors.APPLIED_FORCE_VECTOR.brighterColor()
     } );

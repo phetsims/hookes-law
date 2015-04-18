@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -23,7 +23,7 @@ define( function( require ) {
   var largeString = require( 'string!HOOKES_LAW/large' );
 
   // constants
-  var MAJOR_TICK_LABEL_OPTIONS = { font: new HookesLawFont( 16 ) };
+  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
   var MINOR_TICK_SPACING = 5;
 
   /**
@@ -40,10 +40,12 @@ define( function( require ) {
       spacing: 10
     }, options );
 
-    this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } ); // @private
+    this.titleNode = new Text( options.title, { font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT } ); // @private
 
     var slider = new HSlider( springConstantProperty, springConstantRange, {
-      trackSize: new Dimension2( 200, 5 ),
+      trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
+      thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
+      majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
       thumbFillEnabled: HookesLawColors.SPRING_FORCE_VECTOR,
       thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor()
     } );

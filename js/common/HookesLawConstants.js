@@ -10,6 +10,8 @@ define( function( require ) {
 
   // modules
   var Bounds2 = require( 'DOT/Bounds2' );
+  var Dimension2 = require( 'DOT/Dimension2' );
+  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var Range = require( 'DOT/Range' );
 
   return {
@@ -19,6 +21,11 @@ define( function( require ) {
     SPRING_CONSTANT_RANGE: new Range( 5, 55 ), // N/m
     SPRING_FORCE_DECIMAL_PLACES: 0,
     DISPLACEMENT_DECIMAL_PLACES: 3,
-    UNIT_FORCE_VECTOR_LENGTH: 2  // view length of a force vector whose magnitude is 1 N
+    UNIT_FORCE_VECTOR_LENGTH: 2,  // view length of a force vector whose magnitude is 1 N
+    CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
+    SLIDER_TICK_LABEL_FONT: new HookesLawFont( 14 ),
+    SLIDER_THUMB_SIZE: new Dimension2( 17, 34 ),
+    SLIDER_TRACK_SIZE: new Dimension2( 200, 3 ),
+    SLIDER_MAJOR_TICK_LENGTH: 20
   };
 } );

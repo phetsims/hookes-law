@@ -34,7 +34,7 @@ define( function( require ) {
     // System 1
     var system1 = new SystemNode( model.spring1, modelViewTransform, visibilityProperties, {
       left: this.layoutBounds.left + 20,
-      top: this.layoutBounds.top + 20
+      top: this.layoutBounds.top + 15
     } );
     this.addChild( system1 );
 
@@ -48,7 +48,7 @@ define( function( require ) {
     // System 2
     var system2 = new SystemNode( model.spring2, modelViewTransform, visibilityProperties, {
       left: system1.left,
-      top: springControlPanel1.bottom + 10
+      top: springControlPanel1.bottom + 15
     } );
     this.addChild( system2 );
 
