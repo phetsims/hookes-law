@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var ArrowButton = require( 'SCENERY_PHET/buttons/ArrowButton' );
-  var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
