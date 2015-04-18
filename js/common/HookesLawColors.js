@@ -9,13 +9,14 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Color = require( 'SCENERY/util/Color' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   return {
-    CONTROL_PANEL_FILL: 'rgb( 248, 248, 248 )',
+    CONTROL_PANEL_FILL: new Color( 248, 248, 248 ),
     APPLIED_FORCE_VECTOR: PhetColorScheme.RED_COLORBLIND,
-    SPRING_FORCE_VECTOR: 'rgb( 11, 37, 251 )',
-    DISPLACEMENT_VECTOR: 'rgb( 0, 180, 0 )',
-    EQUILIBRIUM_POSITION: 'rgb( 0, 180, 0 )'
+    SPRING_FORCE_VECTOR: new Color( 11, 37, 251 ),
+    DISPLACEMENT_VECTOR: new Color( 0, 180, 0 ),
+    EQUILIBRIUM_POSITION: new Color( 0, 180, 0 )
   };
 } );

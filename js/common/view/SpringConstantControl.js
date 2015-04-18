@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control panel for visibility of various representations in the view.
+ * Control for spring constant.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -14,7 +14,6 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -33,22 +32,20 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function SpringConstantPanel( springConstantProperty, springConstantRange, options ) {
+  function SpringConstantControl( springConstantProperty, springConstantRange, options ) {
 
     options = _.extend( {
       title: springConstantString,
-      fill: HookesLawColors.CONTROL_PANEL_FILL,
-      xMargin: 15,
-      yMargin: 15,
-      resize: false
+      align: 'center',
+      spacing: 10
     }, options );
 
-   this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } ); // @private
+    this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } ); // @private
 
     var slider = new HSlider( springConstantProperty, springConstantRange, {
-      trackSize: new Dimension2( 175, 5 ),
-      thumbFillEnabled: 'rgb(50,145,184)',
-      thumbFillHighlighted: 'rgb(71,207,255)'
+      trackSize: new Dimension2( 200, 5 ),
+      thumbFillEnabled: HookesLawColors.SPRING_FORCE_VECTOR,
+      thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor()
     } );
     slider.addMajorTick( springConstantRange.min, new Text( smallString, MAJOR_TICK_LABEL_OPTIONS ) );
     slider.addMajorTick( springConstantRange.max, new Text( largeString, MAJOR_TICK_LABEL_OPTIONS ) );
@@ -57,25 +54,20 @@ define( function( require ) {
       i += MINOR_TICK_SPACING;
     }
 
-    var content = new VBox( {
-      children: [
-        this.titleNode,
-        slider
-      ],
-      align: 'center',
-      spacing: 10,
-      resize: false
-    } );
-
-    Panel.call( this, content, options );
+    options.resize = false; // workaround for slider
+    options.children = [
+      this.titleNode,
+      slider
+    ];
+    VBox.call( this, options );
   }
 
-  return inherit( Panel, SpringConstantPanel, {
+  return inherit( VBox, SpringConstantControl, {
 
     setTitle: function( title ) {
-       this.titleNode.text = title;
+      this.titleNode.text = title;
     },
-    set title(value) { this.setTitle( value ); },
+    set title( value ) { this.setTitle( value ); },
 
     getTitle: function() {
       return this.titleNode.text;

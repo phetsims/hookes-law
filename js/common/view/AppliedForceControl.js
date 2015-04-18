@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control panel for changing applied force.
+ * Control for applied force.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -16,11 +16,10 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
   var ValueDisplay = require( 'HOOKES_LAW/common/view/ValueDisplay' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
   var appliedForceColonString = require( 'string!HOOKES_LAW/appliedForceColon' );
@@ -39,18 +38,17 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function AppliedForcePanel( appliedForceProperty, appliedForceRange, options ) {
+  function AppliedForceControl( appliedForceProperty, appliedForceRange, options ) {
 
     options = _.extend( {
       title: appliedForceColonString,
-      fill: HookesLawColors.CONTROL_PANEL_FILL,
-      xMargin: 15,
-      yMargin: 15,
-      resize: false,
-      decimalPlaces: 0
+      decimalPlaces: 0,
+      spacing: 5
     }, options );
 
     this.titleNode = new Text( options.title, { font: new HookesLawFont( 20 ) } ); // @private
+
+    var valueDisplay = new ValueDisplay( appliedForceProperty, appliedForceRange, unitsNewtons, pattern_0value_1units );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       appliedForceProperty.set( Math.max( appliedForceProperty.get() - ARROW_BUTTON_DELTA, appliedForceRange.min ) );
@@ -60,12 +58,10 @@ define( function( require ) {
       appliedForceProperty.set( Math.min( appliedForceProperty.get() + ARROW_BUTTON_DELTA, appliedForceRange.max ) );
     }, ARROW_BUTTON_OPTIONS );
 
-    var valueDisplay = new ValueDisplay( appliedForceProperty, appliedForceRange, unitsNewtons, pattern_0value_1units );
-
     var slider = new HSlider( appliedForceProperty, appliedForceRange, {
-      trackSize: new Dimension2( 175, 5 ),
-      thumbFillEnabled: PhetColorScheme.RED_COLORBLIND,
-      thumbFillHighlighted: PhetColorScheme.RED_COLORBLIND.brighterColor()
+      trackSize: new Dimension2( 200, 5 ),
+      thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR,
+      thumbFillHighlighted: HookesLawColors.APPLIED_FORCE_VECTOR.brighterColor()
     } );
     slider.addMajorTick( appliedForceRange.min, new Text( Util.toFixed( appliedForceRange.min, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
     slider.addMajorTick( 0, new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) );
@@ -75,19 +71,19 @@ define( function( require ) {
       i += MINOR_TICK_SPACING;
     }
 
-    var content = new HBox( {
-      children: [
-        this.titleNode,
-        valueDisplay,
-        leftArrowButton,
-        slider,
-        rightArrowButton
-      ],
-      spacing: 15,
-      resize: false
-    } );
-
-    Panel.call( this, content, options );
+    options.resize = false; // workaround for slider
+    options.children = [
+      new HBox( {
+        spacing: 5,
+        children: [ this.titleNode, valueDisplay ]
+      } ),
+      new HBox( {
+        spacing: 15,
+        resize: false,
+        children: [ leftArrowButton, slider, rightArrowButton ]
+      } )
+    ];
+    VBox.call( this, options );
 
     appliedForceProperty.link( function( appliedForce ) {
       leftArrowButton.enabled = ( appliedForce > appliedForceRange.min );
@@ -95,7 +91,7 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Panel, AppliedForcePanel, {
+  return inherit( VBox, AppliedForceControl, {
 
     setTitle: function( title ) {
       this.titleNode.text = title;
