@@ -13,7 +13,7 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   return {
-    CONTROL_PANEL_FILL: new Color( 248, 248, 248 ),
+    CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),
     APPLIED_FORCE_VECTOR: PhetColorScheme.RED_COLORBLIND,
     SPRING_FORCE_VECTOR: new Color( 11, 37, 251 ),
     DISPLACEMENT_VECTOR: new Color( 0, 180, 0 ),
