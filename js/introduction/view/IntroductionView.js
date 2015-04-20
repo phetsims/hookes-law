@@ -46,11 +46,11 @@ define( function( require ) {
     } );
 
     var systemsParent = new Node( {
-      left: 10,
+      left: 75,
       centerY: this.layoutBounds.centerY,
       children: [
         system1,
-        system2,
+        system2
       ]
     } );
     this.addChild( systemsParent );
