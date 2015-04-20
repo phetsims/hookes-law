@@ -9,11 +9,13 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var RectangularStickyToggleButton = require( 'SUN/buttons/RectangularStickyToggleButton' );
-  var Text = require( 'SCENERY/nodes/Text' );
+  var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
+
+  // images
+  var oneSystemIcon = require( 'image!HOOKES_LAW/one-system-icon.png' );
+  var twoSystemIcon = require( 'image!HOOKES_LAW/two-system-icon.png' );
 
   /**
    * @param {Property.<number>} numberOfSystemsProperty
@@ -23,25 +25,17 @@ define( function( require ) {
   function NumberOfSystemsControl( numberOfSystemsProperty, options ) {
 
     options = _.extend( {
-      spacing: 15
+      scale: 0.75, //TODO scale image files
+      deselectedButtonOpacity: 0.4,
+      deselectedContentOpacity: 1
     }, options );
 
-    //TODO dump this label
-    var titleNode = new Text( 'Systems: ', { font: new HookesLawFont( 20 ) } );
-
-    //TODO replace text with icon
-    var oneSystemButton = new RectangularStickyToggleButton( 2, 1, numberOfSystemsProperty, {
-      content: new Text( 1, { font: new HookesLawFont( 20 ) } )
-    } );
-
-    //TODO replace text with icon
-    var twoSystemsButton = new RectangularStickyToggleButton( 1, 2, numberOfSystemsProperty, {
-      content: new Text( 2, { font: new HookesLawFont( 20 ) } )
-    } );
-
-    options.children = [ titleNode, oneSystemButton, twoSystemsButton ];
-    HBox.call( this, options );
+    options.orientation = 'horizontal';
+    RadioButtonGroup.call( this, numberOfSystemsProperty, [
+      { value: 1, node: new Image( oneSystemIcon ) },
+      { value: 2, node: new Image( twoSystemIcon ) }
+    ], options );
   }
 
-  return inherit( HBox, NumberOfSystemsControl );
+  return inherit( RadioButtonGroup, NumberOfSystemsControl );
 } );

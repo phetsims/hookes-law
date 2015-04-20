@@ -8,7 +8,6 @@ Change range for applied force
 Change range for spring constant
 Compute range for displacement
 Move various ranges into Spring
-Use icons in control for selecting # systems
 Telescoping hook
 SpringNode
 
