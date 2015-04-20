@@ -54,22 +54,27 @@ define( function( require ) {
     } ).width;
 
     // vector check boxes, with left-aligned vector icons
-    var minTextArrowSpacing = 10;
-    var appliedForceCheckBox = createVectorCheckBox( visibilityProperties.appliedForceVectorVisibleProperty, appliedForceTextNode, {
-      vectorColor: HookesLawColors.APPLIED_FORCE_VECTOR,
-      textVectorSpacing: maxTextWidth - appliedForceTextNode.width + minTextArrowSpacing
-    } );
-    var springForceCheckBox = createVectorCheckBox( visibilityProperties.springForceVectorVisibleProperty, springForceTextNode, {
-      vectorColor: HookesLawColors.SPRING_FORCE_VECTOR,
-      textVectorSpacing: maxTextWidth - springForceTextNode.width + minTextArrowSpacing
-    } );
-    var displacementCheckBox = createVectorCheckBox( visibilityProperties.displacementVectorVisibleProperty, displacementTextNode, {
-      vectorColor: HookesLawColors.DISPLACEMENT_VECTOR,
-      textVectorSpacing: maxTextWidth - displacementTextNode.width + minTextArrowSpacing
-    } );
+    var appliedForceCheckBox = new CheckBox(
+      createVectorCheckBoxContent( appliedForceTextNode, maxTextWidth, HookesLawColors.APPLIED_FORCE_VECTOR ),
+      visibilityProperties.appliedForceVectorVisibleProperty,
+      CHECK_BOX_OPTIONS );
+    var springForceCheckBox = new CheckBox(
+      createVectorCheckBoxContent( springForceTextNode, maxTextWidth, HookesLawColors.SPRING_FORCE_VECTOR ),
+      visibilityProperties.springForceVectorVisibleProperty,
+      CHECK_BOX_OPTIONS );
+    var displacementCheckBox = new CheckBox(
+      createVectorCheckBoxContent( displacementTextNode, maxTextWidth, HookesLawColors.DISPLACEMENT_VECTOR ),
+      visibilityProperties.displacementVectorVisibleProperty,
+      CHECK_BOX_OPTIONS );
 
-    var equilibriumPositionCheckBox = new CheckBox( new Text( equilibriumPositionString, TEXT_OPTIONS ), visibilityProperties.equilibriumPositionVisibleProperty );
-    var valuesCheckBox = new CheckBox( new Text( valuesString, TEXT_OPTIONS ), visibilityProperties.valuesVisibleProperty, CHECK_BOX_OPTIONS );
+    var equilibriumPositionCheckBox = new CheckBox(
+      new Text( equilibriumPositionString, TEXT_OPTIONS ),
+      visibilityProperties.equilibriumPositionVisibleProperty,
+      CHECK_BOX_OPTIONS );
+    var valuesCheckBox = new CheckBox(
+      new Text( valuesString, TEXT_OPTIONS ),
+      visibilityProperties.valuesVisibleProperty,
+      CHECK_BOX_OPTIONS );
 
     // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
     Property.multilink(
@@ -101,27 +106,30 @@ define( function( require ) {
   }
 
   /**
-   * Creates a check box for controlling visibility of a vector
+   * Creates the content for a vector check box, consisting of a text and an arrow.
    *
-   * @param {Property.<boolean>} property
    * @param {Node} textNode text, positioned to the left of the vector
+   * @param {number} maxTextWidth width of the max text used to label a vector check box
+   * @param {string|Color} vectorColor
    * @param {Object} [options]
    */
-  var createVectorCheckBox = function( property, textNode, options ) {
+  var createVectorCheckBoxContent = function( textNode, maxTextWidth, vectorColor, options ) {
 
     options = _.extend( {
-      vectorColor: 'white', // {string|Color}
-      textVectorSpacing: 10, // {number} horizontal space between the text and vector
+      minSpacing: 10, // {number} minimum space between text and vector
+      vectorLength: 30, // {number}
       vectorDirection: 'right' // {string} direction that the vector points, 'left' or 'right'
     }, options );
 
+    var spacing = maxTextWidth - textNode.width + options.minSpacing;
+
     // text and vector
-    var icon = new HBox( {
+    return new HBox( {
       children: [
         textNode,
-        new HStrut( options.textVectorSpacing ),
-        new ArrowNode( 0, 0, ( options.vectorDirection === 'left' ? -30 : 30 ), 0, {
-          fill: options.vectorColor,
+        new HStrut( spacing ),
+        new ArrowNode( 0, 0, ( options.vectorDirection === 'left' ? -options.vectorLength : options.vectorLength ), 0, {
+          fill: vectorColor,
           headWidth: 20,
           headHeight: 10,
           tailWidth: 10
@@ -129,8 +137,6 @@ define( function( require ) {
       ],
       align: 'center'
     } );
-
-    return new CheckBox( icon, property, CHECK_BOX_OPTIONS );
   };
 
   return inherit( Panel, VisibilityPanel );
