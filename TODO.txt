@@ -9,6 +9,7 @@ Change range for spring constant
 Compute range for displacement
 Telescoping hook
 SpringNode
+Left align vector icons in control panel
 
 Systems screen:
 
