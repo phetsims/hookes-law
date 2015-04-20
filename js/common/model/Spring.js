@@ -23,7 +23,7 @@ define( function( require ) {
     options = _.extend( {
       springConstant: 5,
       springConstantRange: new Range( 5, 55 ), // N/m
-      appliedForceRange: new Range( -50, 50 ) // N
+      appliedForceRange: new Range( -100, 100 ) // N
     }, options );
     assert && assert( options.springConstantRange.contains( options.springConstant ) );
 

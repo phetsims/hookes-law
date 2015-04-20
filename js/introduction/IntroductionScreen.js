@@ -31,7 +31,7 @@ define( function( require ) {
   function IntroductionScreen() {
 
     // Scale up for the view
-    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, 30 );
+    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, 15 );
 
     Screen.call( this,
       introductionString,

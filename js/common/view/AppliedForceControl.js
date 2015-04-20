@@ -29,7 +29,7 @@ define( function( require ) {
   var ARROW_BUTTON_OPTIONS = { /* TODO */ };
   var ARROW_BUTTON_DELTA = 1;
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
-  var MINOR_TICK_SPACING = 10;
+  var MINOR_TICK_SPACING = 20;
 
   /**
    * @param {Property.<number>} appliedForceProperty units = N

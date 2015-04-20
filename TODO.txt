@@ -4,7 +4,6 @@ Introduction screen:
 
 Change titles based on number of systems selected
 Change layout based on number of systems selected (vertically center single system)
-Change range for applied force
 Change range for spring constant
 Compute range for displacement
 Telescoping hook
