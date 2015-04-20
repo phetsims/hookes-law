@@ -79,19 +79,19 @@ define( function( require ) {
       } );
 
     var spacing = 20;
-    var children = [
+    var checkBoxes = [
       appliedForceCheckBox,
       springForceCheckBox,
       displacementCheckBox,
       equilibriumPositionCheckBox,
       valuesCheckBox
     ];
-    for ( var i = 0; i < children.length; i++ ) {
-      children[ i ].touchArea = children[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+    for ( var i = 0; i < checkBoxes.length; i++ ) {
+      checkBoxes[ i ].touchArea = checkBoxes[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
     var content = new VBox( {
-      children: children,
+      children: checkBoxes,
       align: 'left',
       spacing: spacing
     } );
