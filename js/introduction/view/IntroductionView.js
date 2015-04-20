@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Node = require( 'SCENERY/nodes/Node' );
   var NumberOfSystemsControl = require( 'HOOKES_LAW/common/view/NumberOfSystemsControl' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
@@ -36,28 +37,36 @@ define( function( require ) {
       left: this.layoutBounds.left + 20,
       top: this.layoutBounds.top + 15
     } );
-    this.addChild( system1 );
 
     // Controls for spring 1
     var springControlPanel1 = new SpringControlPanel( model.spring1, {
       left: system1.left,
       top: system1.bottom + 10
     } );
-    this.addChild( springControlPanel1 );
 
     // System 2
     var system2 = new SystemNode( model.spring2, modelViewTransform, visibilityProperties, {
       left: system1.left,
       top: springControlPanel1.bottom + 15
     } );
-    this.addChild( system2 );
 
     // Controls for spring 2
     var springControlPanel2 = new SpringControlPanel( model.spring2, {
       left: springControlPanel1.left,
       top: system2.bottom + 10
     } );
-    this.addChild( springControlPanel2 );
+
+    var systemsParent = new Node( {
+      left: 10,
+      centerY: this.layoutBounds.centerY,
+      children: [
+        system1,
+        springControlPanel1,
+        system2,
+        springControlPanel2
+      ]
+    } );
+    this.addChild( systemsParent );
 
     // Visibility controls
     var visibilityPanel = new VisibilityPanel( visibilityProperties, {
@@ -79,8 +88,8 @@ define( function( require ) {
         model.reset();
         visibilityProperties.reset();
       },
-      right: this.layoutBounds.maxX - 10,
-      bottom: this.layoutBounds.maxY - 10
+      right: this.layoutBounds.maxX - 15,
+      bottom: this.layoutBounds.maxY - 15
     } );
     this.addChild( resetAllButton );
 
