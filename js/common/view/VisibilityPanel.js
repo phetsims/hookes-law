@@ -78,6 +78,7 @@ define( function( require ) {
         valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
+    // Adjust touch areas
     var spacing = 20;
     var checkBoxes = [
       appliedForceCheckBox,
