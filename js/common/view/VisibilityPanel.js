@@ -78,16 +78,22 @@ define( function( require ) {
         valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
+    var spacing = 20;
+    var children = [
+      appliedForceCheckBox,
+      springForceCheckBox,
+      displacementCheckBox,
+      equilibriumPositionCheckBox,
+      valuesCheckBox
+    ];
+    for ( var i = 0; i < children.length; i++ ) {
+      children[ i ].touchArea = children[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+    }
+
     var content = new VBox( {
-      children: [
-        appliedForceCheckBox,
-        springForceCheckBox,
-        displacementCheckBox,
-        equilibriumPositionCheckBox,
-        valuesCheckBox
-      ],
+      children: children,
       align: 'left',
-      spacing: 10
+      spacing: spacing
     } );
 
     Panel.call( this, content, options );
