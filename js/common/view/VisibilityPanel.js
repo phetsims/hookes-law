@@ -110,17 +110,18 @@ define( function( require ) {
    *
    * @param {Node} textNode text, positioned to the left of the vector
    * @param {number} maxTextWidth width of the max text used to label a vector check box
-   * @param {string|Color} vectorColor
+   * @param {string|Color} arrowFill
    * @param {Object} [options]
    */
-  var createVectorCheckBoxContent = function( textNode, maxTextWidth, vectorColor, options ) {
+  var createVectorCheckBoxContent = function( textNode, maxTextWidth, arrowFill, options ) {
 
     options = _.extend( {
       minSpacing: 10, // {number} minimum space between text and vector
-      vectorLength: 30, // {number}
-      vectorDirection: 'right' // {string} direction that the vector points, 'left' or 'right'
+      arrowLength: 30, // {number}
+      arrowDirection: 'right' // {string} direction that the vector points, 'left' or 'right'
     }, options );
 
+    // compute spacing so that arrows on all check boxes will ultimately be left aligned
     var spacing = maxTextWidth - textNode.width + options.minSpacing;
 
     // text and vector
@@ -128,8 +129,8 @@ define( function( require ) {
       children: [
         textNode,
         new HStrut( spacing ),
-        new ArrowNode( 0, 0, ( options.vectorDirection === 'left' ? -options.vectorLength : options.vectorLength ), 0, {
-          fill: vectorColor,
+        new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
+          fill: arrowFill,
           headWidth: 20,
           headHeight: 10,
           tailWidth: 10
