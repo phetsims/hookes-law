@@ -13,3 +13,6 @@ SpringNode
 Systems screen:
 
 See design doc
+
+General:
+constraint text sizes for i18n
