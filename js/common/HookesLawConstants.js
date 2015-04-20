@@ -12,13 +12,10 @@ define( function( require ) {
   var Bounds2 = require( 'DOT/Bounds2' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
-  var Range = require( 'DOT/Range' );
 
   return {
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
-    APPLIED_FORCE_RANGE: new Range( -50, 50 ), // N
     APPLIED_FORCE_DECIMAL_PLACES: 0,
-    SPRING_CONSTANT_RANGE: new Range( 5, 55 ), // N/m
     SPRING_FORCE_DECIMAL_PLACES: 0,
     DISPLACEMENT_DECIMAL_PLACES: 3,
     UNIT_FORCE_VECTOR_LENGTH: 2,  // view length of a force vector whose magnitude is 1 N

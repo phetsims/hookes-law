@@ -7,7 +7,6 @@ Change layout based on number of systems selected (vertically center single syst
 Change range for applied force
 Change range for spring constant
 Compute range for displacement
-Move various ranges into Spring
 Telescoping hook
 SpringNode
 

@@ -36,7 +36,7 @@ define( function( require ) {
     Screen.call( this,
       introductionString,
       createIcon(),
-      function() { return new IntroductionModel( modelViewTransform ); },
+      function() { return new IntroductionModel(); },
       function( model ) { return new IntroductionView( model, modelViewTransform ); },
       { backgroundColor: 'white' }
     );

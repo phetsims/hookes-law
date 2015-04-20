@@ -9,23 +9,21 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
-   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function IntroductionModel( modelViewTransform ) {
+  function IntroductionModel() {
 
     PropertySet.call( this, {
       numberOfSystems: 1  // {number} 1 or 2
     } );
 
-    this.spring1 = new Spring( HookesLawConstants.SPRING_CONSTANT_RANGE.min );
-    this.spring2 = new Spring( HookesLawConstants.SPRING_CONSTANT_RANGE.min );
+    this.spring1 = new Spring();
+    this.spring2 = new Spring();
   }
 
   return inherit( PropertySet, IntroductionModel, {

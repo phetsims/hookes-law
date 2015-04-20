@@ -10,26 +10,36 @@ define( function( require ) {
 
   // modules
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
+  var Range = require( 'DOT/Range' );
 
   /**
-   * @param {number} springConstant spring constant, units = N/m
+   * @param {Object} [options]
    * @constructor
    */
-  function Spring( springConstant ) {
+  function Spring( options ) {
+
+    options = _.extend( {
+      springConstant: 5,
+      springConstantRange: new Range( 5, 55 ), // N/m
+      appliedForceRange: new Range( -50, 50 ) // N
+    }, options );
+    assert && assert( options.springConstantRange.contains( options.springConstant ) );
 
     var thisSpring = this;
 
+    this.springConstantRange = options.springConstantRange; // read-only
+    this.appliedForceRange = options.appliedForceRange; // read-only
+
     PropertySet.call( this, {
-      springConstant: springConstant,  // {number} k, spring constant, units = N/m
+      springConstant: options.springConstant,  // {number} k, spring constant, units = N/m
       appliedForce: 0, // {number} F, force applied to the spring, units = N
       displacement: 0  // {number} x, horizontal displacement from equilibrium position, units = m
     } );
 
     // {number} horizontal location of equilibrium, units = m, read-only
-    this.equilibriumX = 1.2 * ( HookesLawConstants.APPLIED_FORCE_RANGE.max / HookesLawConstants.SPRING_CONSTANT_RANGE.min ); // largest F/k
+    this.equilibriumX = 1.2 * ( this.appliedForceRange.max / this.springConstantRange.min ); // largest F/k
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
@@ -58,12 +68,12 @@ define( function( require ) {
 
     // Gets the maximum displacement, x = F/k
     getMaxDisplacement: function() {
-      return HookesLawConstants.APPLIED_FORCE_RANGE.max / this.springConstantProperty.get();
+      return this.appliedForceRange.max / this.springConstantProperty.get();
     },
 
     // Gets the minimum displacement, x = F/k
     getMinDisplacement: function() {
-      return HookesLawConstants.APPLIED_FORCE_RANGE.min / this.springConstantProperty.get();
+      return this.appliedForceRange.min / this.springConstantProperty.get();
     }
   } );
 } );
