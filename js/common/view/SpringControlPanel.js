@@ -11,11 +11,12 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
-  var appliedForceStringColon = require( 'string!HOOKES_LAW/appliedForceColon' );
-  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
+  var appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
+  var springConstantNumberString = require( 'string!HOOKES_LAW/springConstantNumber' );
 
   /**
    * @param {Spring} spring
@@ -25,17 +26,18 @@ define( function( require ) {
   function SpringControlPanel( spring, options ) {
 
     options = _.extend( {
+      number: 1,
       xMargin: 20,
       yMargin: 5,
       fill: HookesLawColors.CONTROL_PANEL_FILL
     }, options );
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, HookesLawConstants.SPRING_CONSTANT_RANGE, {
-      title: springConstantString
+      title: StringUtils.format( springConstantNumberString, options.number )
     } );
 
     var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, HookesLawConstants.APPLIED_FORCE_RANGE, {
-      title: appliedForceStringColon
+      title: StringUtils.format( appliedForceNumberString, options.number )
     } );
 
     var verticalSeparator = new VSeparator( Math.max( springConstantControl.height, appliedForceControl.height ) );

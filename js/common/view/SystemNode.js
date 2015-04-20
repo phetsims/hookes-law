@@ -19,6 +19,7 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
+  var SpringControlPanel = require( 'HOOKES_LAW/common/view/SpringControlPanel' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -34,6 +35,10 @@ define( function( require ) {
    * @constructor
    */
   function SystemNode( spring, modelViewTransform, visibilityProperties, options ) {
+
+    options = _.extend( {
+      number: 1 // integer used to label the system
+    }, options );
 
     Node.call( this );
 
@@ -73,7 +78,17 @@ define( function( require ) {
       top: springNode.bottom + 5
     } );
 
-    options.children = [ wallNode, equilibriumPositionNode, hookNode, springNode, appliedForceVectorNode, springForceVectorNode, displacementVectorNode ];
+    var controlPanel = new SpringControlPanel( spring, {
+      number: options.number,
+      left: wallNode.left,
+      top: wallNode.bottom + 10
+    } );
+
+    options.children = [
+      wallNode, equilibriumPositionNode, hookNode, springNode,
+      appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
+      controlPanel
+    ];
     this.mutate( options );
 
     visibilityProperties.appliedForceVectorVisibleProperty.link( function( visible ) {

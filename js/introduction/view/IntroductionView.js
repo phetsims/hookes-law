@@ -15,7 +15,6 @@ define( function( require ) {
   var NumberOfSystemsControl = require( 'HOOKES_LAW/common/view/NumberOfSystemsControl' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var SpringControlPanel = require( 'HOOKES_LAW/common/view/SpringControlPanel' );
   var SystemNode = require( 'HOOKES_LAW/common/view/SystemNode' );
   var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
   var VisibilityProperties = require( 'HOOKES_LAW/common/view/VisibilityProperties' );
@@ -34,26 +33,16 @@ define( function( require ) {
 
     // System 1
     var system1 = new SystemNode( model.spring1, modelViewTransform, visibilityProperties, {
+      number: 1,
       left: this.layoutBounds.left + 20,
       top: this.layoutBounds.top + 15
     } );
 
-    // Controls for spring 1
-    var springControlPanel1 = new SpringControlPanel( model.spring1, {
-      left: system1.left,
-      top: system1.bottom + 10
-    } );
-
     // System 2
     var system2 = new SystemNode( model.spring2, modelViewTransform, visibilityProperties, {
+      number: 2,
       left: system1.left,
-      top: springControlPanel1.bottom + 15
-    } );
-
-    // Controls for spring 2
-    var springControlPanel2 = new SpringControlPanel( model.spring2, {
-      left: springControlPanel1.left,
-      top: system2.bottom + 10
+      top: system1.bottom + 15
     } );
 
     var systemsParent = new Node( {
@@ -61,9 +50,7 @@ define( function( require ) {
       centerY: this.layoutBounds.centerY,
       children: [
         system1,
-        springControlPanel1,
         system2,
-        springControlPanel2
       ]
     } );
     this.addChild( systemsParent );
@@ -99,8 +86,8 @@ define( function( require ) {
 
       //TODO adjust titles for system 1
 
-      // hide system 2
-      system2.visible = springControlPanel2.visible = ( numberOfSystems === 2 );
+      // visibility of system 2
+      system2.visible = ( numberOfSystems === 2 );
     } );
   }
 
