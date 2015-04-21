@@ -36,7 +36,7 @@ define( function( require ) {
 
     var thisNode = this;
 
-    var hook = new Path( new Shape().arc( HOOK_RADIUS, 0, HOOK_RADIUS, Math.PI / 2, 0 ).lineTo( 200, 0 ), {
+    var hook = new Path( new Shape().arc( HOOK_RADIUS, 0, HOOK_RADIUS, Math.PI / 2, 0 ).lineTo( 100, 0 ), {
       stroke: PhetColorScheme.RED_COLORBLIND,
       lineWidth: 6
     } );
