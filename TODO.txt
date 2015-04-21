@@ -15,6 +15,7 @@ What should the spring look like?
 Cannot meet color requirements of 'number of systems' buttons with RadioButtonGroup.
 Spring constant slider with disabled 0-100 subrange is not supported by HSlider.
 Units for spring constant are not shown anywhere.
+Multitouch issue: can't disable controls based on usage of other controls
 
 -----------------------------------------------------------------------------------
 Systems screen
