@@ -79,7 +79,7 @@ define( function( require ) {
       { value:  appliedForceRange.max, label: new Text( Util.toFixed( appliedForceRange.max, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) }
     ];
     for ( var i = 0; i < majorTicks.length; i++ ) {
-      slider.addMajorTick( majorTicks[ i ].value, MAJOR_TICK_LABEL_OPTIONS.label );
+      slider.addMajorTick( majorTicks[ i ].value, majorTicks[ i ].label );
     }
     for ( var minorTickValue = appliedForceRange.min; minorTickValue <= appliedForceRange.max; ) {
       // exclude values where we already have major ticks
