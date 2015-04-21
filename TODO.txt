@@ -5,12 +5,12 @@ Introduction screen
 -----------------------------------------------------------------------------------
 
 Telescoping hook
-SpringNode
 put a transparent background on values
 
 Design questions:
 Change titles based on number of systems selected?
 Change layout based on number of systems selected (vertically center single system)?
+What should the spring look like?
 
 -----------------------------------------------------------------------------------
 Systems screen
