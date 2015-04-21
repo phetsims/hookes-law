@@ -7,9 +7,10 @@ Introduction screen
 Compute range for displacement
 Telescoping hook
 SpringNode
+
+Design questions:
 Change titles based on number of systems selected?
 Change layout based on number of systems selected (vertically center single system)?
-Does model have 2 or 3 springs?
 
 -----------------------------------------------------------------------------------
 Systems screen
