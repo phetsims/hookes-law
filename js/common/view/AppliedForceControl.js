@@ -63,7 +63,6 @@ define( function( require ) {
       trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
       thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
       majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
-      minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR,
       thumbFillHighlighted: HookesLawColors.APPLIED_FORCE_VECTOR.brighterColor()
     } );
@@ -72,14 +71,22 @@ define( function( require ) {
     assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
     assert && assert( Util.isInteger( appliedForceRange.max ) && Util.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
     assert && assert( Util.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
-    slider.addMajorTick( appliedForceRange.min, new Text( Util.toFixed( appliedForceRange.min, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
-    slider.addMajorTick( appliedForceRange.min / 2 );
-    slider.addMajorTick( 0, new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) );
-    slider.addMajorTick( appliedForceRange.max / 2 );
-    slider.addMajorTick( appliedForceRange.max, new Text( Util.toFixed( appliedForceRange.max, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
-    for ( var i = appliedForceRange.min; i < appliedForceRange.max; ) {
-      slider.addMinorTick( i );
-      i += MINOR_TICK_SPACING;
+    var majorTicks = [
+      { value: appliedForceRange.min, label: new Text( Util.toFixed( appliedForceRange.min, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) },
+      { value: appliedForceRange.min / 2, label: null },
+      { value: 0, label: new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) },
+      { value: appliedForceRange.max / 2, label: null },
+      { value:  appliedForceRange.max, label: new Text( Util.toFixed( appliedForceRange.max, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) }
+    ];
+    for ( var i = 0; i < majorTicks.length; i++ ) {
+      slider.addMajorTick( majorTicks[ i ].value, MAJOR_TICK_LABEL_OPTIONS.label );
+    }
+    for ( var minorTickValue = appliedForceRange.min; minorTickValue <= appliedForceRange.max; ) {
+      // exclude values where we already have major ticks
+      if ( ! _.find( majorTicks, function( majorTick) { return majorTick.value === minorTickValue; } ) ) {
+        slider.addMinorTick( minorTickValue );
+      }
+      minorTickValue += MINOR_TICK_SPACING;
     }
 
     options.resize = false; // workaround for slider
