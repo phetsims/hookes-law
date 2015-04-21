@@ -12,6 +12,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var IntroductionModel = require( 'HOOKES_LAW/introduction/model/IntroductionModel' );
   var IntroductionView = require( 'HOOKES_LAW/introduction/view/IntroductionView' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
@@ -31,7 +32,7 @@ define( function( require ) {
   function IntroductionScreen() {
 
     // Scale up for the view
-    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, 200 );
+    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, HookesLawConstants.UNIT_DISPLACEMENT_VECTOR_LENGTH );
 
     Screen.call( this,
       introductionString,
