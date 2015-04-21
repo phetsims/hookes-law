@@ -12,6 +12,7 @@ Design questions:
 Change titles based on number of systems selected?
 Change layout based on number of systems selected (vertically center single system)?
 What should the spring look like?
+Cannot meet color requirements of 'number of systems' buttons with RadioButtonGroup.
 
 -----------------------------------------------------------------------------------
 Systems screen
