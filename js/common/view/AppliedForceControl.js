@@ -29,7 +29,7 @@ define( function( require ) {
   var ARROW_BUTTON_OPTIONS = { /* TODO */ };
   var ARROW_BUTTON_DELTA = 1;
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
-  var MINOR_TICK_SPACING = 20;
+  var MINOR_TICK_SPACING = 10;
 
   /**
    * @param {Property.<number>} appliedForceProperty units = N
@@ -66,8 +66,15 @@ define( function( require ) {
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR,
       thumbFillHighlighted: HookesLawColors.APPLIED_FORCE_VECTOR.brighterColor()
     } );
+
+    // slider tick marks
+    assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
+    assert && assert( Util.isInteger( appliedForceRange.max ) && Util.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
+    assert && assert( Util.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
     slider.addMajorTick( appliedForceRange.min, new Text( Util.toFixed( appliedForceRange.min, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
+    slider.addMajorTick( appliedForceRange.min / 2 );
     slider.addMajorTick( 0, new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) );
+    slider.addMajorTick( appliedForceRange.max / 2 );
     slider.addMajorTick( appliedForceRange.max, new Text( Util.toFixed( appliedForceRange.max, options.decimalPlaces ), MAJOR_TICK_LABEL_OPTIONS ) );
     for ( var i = appliedForceRange.min; i < appliedForceRange.max; ) {
       slider.addMinorTick( i );
