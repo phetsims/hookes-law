@@ -4,6 +4,7 @@ TODO list for hookes-law
 Introduction screen
 -----------------------------------------------------------------------------------
 
+Increase coil thickness based on spring constant (lineWidth=1 for min, +0.5 for each 10 N/m)
 Compute range for displacement
 Telescoping hook
 SpringNode
