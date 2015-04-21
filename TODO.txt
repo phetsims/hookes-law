@@ -8,6 +8,7 @@ Telescoping hook
 put a transparent background on values
 
 Design questions:
+2px/N is too long for applied force and spring constant vectors.
 Change titles based on number of systems selected?
 Change layout based on number of systems selected (vertically center single system)?
 What should the spring look like?
