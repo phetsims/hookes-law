@@ -32,6 +32,9 @@ define( function( require ) {
     this.springConstantRange = options.springConstantRange; // read-only
     this.appliedForceRange = options.appliedForceRange; // read-only
 
+    // For internal validation, x = F/k
+    var displacementRange = new Range( this.appliedForceRange.max / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
+
     PropertySet.call( this, {
       springConstant: options.springConstant,  // {number} k, spring constant, units = N/m
       appliedForce: 0, // {number} F, force applied to the spring, units = N
@@ -52,14 +55,17 @@ define( function( require ) {
     } );
 
     this.springConstantProperty.link( function( springConstant ) {
+      assert && assert( springConstantRange.contains( springConstant ) );
       thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
     } );
 
     this.appliedForceProperty.link( function( appliedForce ) {
+      assert && assert( appliedForceRange.contains( appliedForce ) );
       thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
     } );
 
     this.displacementProperty.link( function( displacement ) {
+      assert && assert( displacementRange.contains( displacement ) );
       thisSpring.appliedForce = thisSpring.springConstant * displacement; // F = kx
     } );
   }
