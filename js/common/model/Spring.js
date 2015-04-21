@@ -61,12 +61,12 @@ define( function( require ) {
     } );
 
     this.springConstantProperty.link( function( springConstant ) {
-      assert && assert( this.springConstantRange.contains( springConstant ) );
+      assert && assert( thisSpring.springConstantRange.contains( springConstant ) );
       thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
     } );
 
     this.appliedForceProperty.link( function( appliedForce ) {
-      assert && assert( this.appliedForceRange.contains( appliedForce ) );
+      assert && assert( thisSpring.appliedForceRange.contains( appliedForce ) );
       thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
     } );
 
