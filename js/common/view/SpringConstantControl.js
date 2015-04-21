@@ -23,7 +23,7 @@ define( function( require ) {
 
   // constants
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
-  var MINOR_TICK_SPACING = 5;
+  var MINOR_TICK_SPACING = 100;
 
   /**
    * @param {Property.<boolean>} springConstantProperty
