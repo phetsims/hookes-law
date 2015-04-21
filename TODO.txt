@@ -4,7 +4,6 @@ TODO list for hookes-law
 Introduction screen
 -----------------------------------------------------------------------------------
 
-Compute range for displacement
 Telescoping hook
 SpringNode
 put a transparent background on values
