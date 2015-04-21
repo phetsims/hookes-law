@@ -39,7 +39,7 @@ define( function( require ) {
     } );
 
     // {number} horizontal location of equilibrium, units = m, read-only
-    this.equilibriumX = 1.2 * ( this.appliedForceRange.max / this.springConstantRange.min ); // largest F/k
+    this.equilibriumX = 1.5 * ( this.appliedForceRange.max / this.springConstantRange.min ); // largest F/k
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
