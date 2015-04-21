@@ -63,6 +63,7 @@ define( function( require ) {
       trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
       thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
       majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
+      minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR,
       thumbFillHighlighted: HookesLawColors.APPLIED_FORCE_VECTOR.brighterColor()
     } );
