@@ -4,7 +4,6 @@ TODO list for hookes-law
 Introduction screen
 -----------------------------------------------------------------------------------
 
-Change range for spring constant
 Compute range for displacement
 Telescoping hook
 SpringNode
