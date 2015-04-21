@@ -15,9 +15,11 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
 
   // constants
-  var NUMBER_OF_COILS = 10;
-  var RADIUS_Y = 35;
-  var NIB_LENGTH = 6;
+  var NUMBER_OF_COILS = 10; // number of coils in the spring
+  var RADIUS_Y = 35; // vertical radius of the spring
+  var MIN_LINE_WIDTH = 1; // lineWidth for minimum spring constant
+  var DELTA_LINE_WIDTH = 0.005; // increase in line width per 1 unit of spring constant increase
+  var NIB_LENGTH = 6; // length of the small pieces of wire (nib) at either end of the coil
 
   /**
    * @param {Spring} spring
@@ -28,7 +30,6 @@ define( function( require ) {
   function SpringNode( spring, modelViewTransform, options ) {
 
     options = _.extend( {
-      lineWidth: 2,
       stroke: 'blue'
     }, options );
 
@@ -58,6 +59,10 @@ define( function( require ) {
       shape.lineTo( viewLength, 0 );
 
       thisNode.shape = shape;
+    } );
+
+    spring.springConstantProperty.link( function( springConstant ) {
+      thisNode.lineWidth = MIN_LINE_WIDTH + DELTA_LINE_WIDTH * ( springConstant - spring.springConstantRange.min );
     } );
 
     this.mutate( options );
