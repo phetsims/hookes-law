@@ -18,7 +18,7 @@ define( function( require ) {
     APPLIED_FORCE_DECIMAL_PLACES: 0,
     SPRING_FORCE_DECIMAL_PLACES: 0,
     DISPLACEMENT_DECIMAL_PLACES: 3,
-    UNIT_FORCE_VECTOR_LENGTH: 1.5,  // view length of a force vector whose magnitude is 1 N
+    UNIT_FORCE_VECTOR_LENGTH: 2,  // view length of a force vector whose magnitude is 1 N
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
     SLIDER_TICK_LABEL_FONT: new HookesLawFont( 14 ),
     SLIDER_THUMB_SIZE: new Dimension2( 17, 34 ),
