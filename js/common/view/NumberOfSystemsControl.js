@@ -26,8 +26,8 @@ define( function( require ) {
 
     options = _.extend( {
       scale: 0.75, //TODO scale image files
-      deselectedButtonOpacity: 0.4,
-      deselectedContentOpacity: 1
+      deselectedButtonOpacity: 0.6,
+      deselectedContentOpacity: 0.6
     }, options );
 
     options.orientation = 'horizontal';
