@@ -5,17 +5,26 @@ Introduction screen
 -----------------------------------------------------------------------------------
 
 Telescoping hook
-put a transparent background on values
 
 Design questions:
-2px/N is too long for applied force and spring constant vectors. 1.75 is doable.
-Change titles based on number of systems selected?
-Change layout based on number of systems selected (vertically center single system)?
-What should the spring look like?
-Cannot meet color requirements of 'number of systems' buttons with RadioButtonGroup.
-Spring constant slider with disabled 0-100 subrange is not supported by HSlider.
-Units for spring constant are not shown anywhere.
-Multitouch issue: can't disable controls based on usage of other controls
+• Do you like the color-coding of the values? It seems necessary when vectors are very small.
+• Values are difficult to see when they pass over some objects. Should we put a translucent white background behind them?
+• The design doc requests 2px/N for applied force and spring constant vectors. It’s currently set to 1.75px/N. If you want 2px/N,
+  we’ll need to shrink the font considerably in the upper-right control panel.
+• Should we change titles based on number of systems selected? Eg, “Spring Constant” vs “Spring Constant 1”. Will changing the label make
+  students think that it’s a different system? (It is the same system as in the 2-system configuration.)
+• Should we change layout based on number of systems selected? Ie, should the single system be vertically centered? Will changing its position make
+  students think that it’s a different system? (It is the same system as in the 2-system configuration.)
+• Requirements for the 'number of systems’ radio buttons cannot be met with the standard sun.RadioButtonGroup. Specifically, the selected and
+  unselected buttons cannot be different colors; they must be the same color with different opacity. I was not involved in formulating the
+  requirements for RadioButtonGroup, so I don’t know what was considered. Can we work within the constraints on RadioButtonGroup?
+• Units for applied force and displacement are shown, but units for spring constant are not. Is this a pedagogical problem?
+• Multitouch issues: I can't disable controls based on whether other controls are in use.  For example, I current have no way to know that the
+  applied force slider is being used, in order to disable dragging of the hook. I suggest that we see how the sim behaves when attempting to
+  manipulate all 3 variables simultaneously, before we embark on what will be a difficult project.  I don’t recommend disabling multitouch.
+• Disabling part of a slider range is not supported by sun.HSlider. A slider with “0 to small” range disabled, (as shown in the design document) will
+  be a custom, nontrivial project. Let’s discuss why/whether this is needed, and seek alternative solutions.
+• What should the spring look like?
 
 -----------------------------------------------------------------------------------
 Systems screen
