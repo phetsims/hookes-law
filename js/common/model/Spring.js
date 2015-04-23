@@ -31,7 +31,7 @@ define( function( require ) {
       springConstantRange: new Range( 100, 1000 ), // N/m
       appliedForceRange: new Range( -100, 100 ) // N
     }, options );
-    assert && assert( options.springConstantRange.contains( options.springConstant ) );
+    assert && assert( options.springConstantRange.contains( options.springConstant ), 'springConstant out of range: ' + options.springConstant );
 
     var thisSpring = this;
 
