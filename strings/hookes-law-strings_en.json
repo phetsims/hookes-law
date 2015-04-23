@@ -1,20 +1,56 @@
 {
-  "hookes-law.name": "Hooke's Law",
-  "introduction": "Introduction",
-  "systems": "Systems",
-  "energy": "Energy",
-  "appliedForce": "Applied Force",
-  "appliedForceNumber": "Applied Force {0}:",
-  "appliedForceColon": "Applied Force:",
-  "springForce": "Spring Force",
-  "displacement": "Displacement",
-  "equilibriumPosition": "Equilibrium Position",
-  "values": "Values",
-  "springConstant": "Spring Constant",
-  "springConstantNumber": "Spring Constant {0}",
-  "small": "small",
-  "large": "large",
-  "units.newtons": "N",
-  "units.meters": "m",
-  "pattern.0value.1units": "{0} {1}"
+  "hookes-law.name": {
+    "value": "Hooke's Law"
+  },
+  "introduction": {
+    "value": "Introduction"
+  },
+  "systems": {
+    "value": "Systems"
+  },
+  "energy": {
+    "value": "Energy"
+  },
+  "appliedForce": {
+    "value": "Applied Force"
+  },
+  "appliedForceNumber": {
+    "value": "Applied Force {0}:"
+  },
+  "appliedForceColon": {
+    "value": "Applied Force:"
+  },
+  "springForce": {
+    "value": "Spring Force"
+  },
+  "displacement": {
+    "value": "Displacement"
+  },
+  "equilibriumPosition": {
+    "value": "Equilibrium Position"
+  },
+  "values": {
+    "value": "Values"
+  },
+  "springConstant": {
+    "value": "Spring Constant"
+  },
+  "springConstantNumber": {
+    "value": "Spring Constant {0}"
+  },
+  "small": {
+    "value": "small"
+  },
+  "large": {
+    "value": "large"
+  },
+  "units.newtons": {
+    "value": "N"
+  },
+  "units.meters": {
+    "value": "m"
+  },
+  "pattern.0value.1units": {
+    "value": "{0} {1}"
+  }
 }
