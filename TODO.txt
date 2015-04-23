@@ -5,6 +5,7 @@ Introduction screen
 -----------------------------------------------------------------------------------
 
 Telescoping hook
+Prevent range exceptions due to rounding
 
 Design questions:
 • Do you like the color-coding of the values? It seems necessary when vectors are very small.
