@@ -58,7 +58,10 @@ define( function( require ) {
         majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
         minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
         thumbFillEnabled: HookesLawColors.SPRING_FORCE_VECTOR,
-        thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor()
+        thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor(),
+        constrainValue: function( value ) {
+          return Math.round( value / HookesLawConstants.SPRING_FORCE_DELTA ) * HookesLawConstants.SPRING_FORCE_DELTA;
+        }
       }
     }, options );
 
