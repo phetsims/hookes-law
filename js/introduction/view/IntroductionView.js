@@ -79,7 +79,7 @@ define( function( require ) {
       // visibility of system 2
       system2.visible = ( numberOfSystems === 2 );
 
-      // vertically centers
+      // vertical location of system 1
       if ( numberOfSystems === 1 ) {
         system1.centerY = thisView.layoutBounds.centerY;
       }
