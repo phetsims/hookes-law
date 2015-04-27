@@ -1,2 +1,4 @@
 one-system-icon.png source=PhET author=Amy Rouinfar
+robotic-arm-hinge.png source=PhET author=Mariah Hermsmeyer
+robotic-arm-hook.png source=PhET author=Mariah Hermsmeyer
 two-system-icon.png source=PhET author=Amy Rouinfar
