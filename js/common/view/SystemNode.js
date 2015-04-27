@@ -14,10 +14,10 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var RoboticArm = require( 'HOOKES_LAW/common/view/RoboticArm' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var RoboticArm = require( 'HOOKES_LAW/common/view/RoboticArm' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringControlPanel = require( 'HOOKES_LAW/common/view/SpringControlPanel' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
