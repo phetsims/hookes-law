@@ -34,7 +34,7 @@ define( function( require ) {
     // System 1
     var system1 = new SystemNode( model.spring1, modelViewTransform, visibilityProperties, {
       number: 1,
-      left: this.layoutBounds.left + 20,
+      left: this.layoutBounds.left + 60,
       bottom: this.layoutBounds.centerY - 10
     } );
     this.addChild( system1 );
