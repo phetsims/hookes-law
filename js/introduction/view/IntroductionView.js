@@ -26,6 +26,7 @@ define( function( require ) {
    */
   function IntroductionView( model, modelViewTransform ) {
 
+    var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // Properties that are specific to the visibility of things in the view
@@ -35,25 +36,17 @@ define( function( require ) {
     var system1 = new SystemNode( model.spring1, modelViewTransform, visibilityProperties, {
       number: 1,
       left: this.layoutBounds.left + 20,
-      top: this.layoutBounds.top + 15
+      bottom: this.layoutBounds.centerY - 10
     } );
+    this.addChild( system1 );
 
     // System 2
     var system2 = new SystemNode( model.spring2, modelViewTransform, visibilityProperties, {
       number: 2,
       left: system1.left,
-      top: system1.bottom + 15
+      top: this.layoutBounds.centerY + 10
     } );
-
-    var systemsParent = new Node( {
-      left: 60,
-      centerY: this.layoutBounds.centerY,
-      children: [
-        system1,
-        system2
-      ]
-    } );
-    this.addChild( systemsParent );
+    this.addChild( system2 );
 
     // Visibility controls
     var visibilityPanel = new VisibilityPanel( visibilityProperties, {
@@ -84,10 +77,16 @@ define( function( require ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 
-      //TODO adjust titles for system 1
-
       // visibility of system 2
       system2.visible = ( numberOfSystems === 2 );
+
+      // vertically centers
+      if ( numberOfSystems === 1 ) {
+        system1.centerY = thisView.layoutBounds.centerY;
+      }
+      else {
+        system1.bottom = thisView.layoutBounds.centerY - 10;
+      }
     } );
   }
 
