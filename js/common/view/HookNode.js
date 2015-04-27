@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var Circle = require( 'SCENERY/nodes/Circle' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -69,7 +70,10 @@ define( function( require ) {
         drag: function( event ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
           var displacement = modelViewTransform.viewToModelX( parentX ) - spring.equilibriumX;
+          // constrain to range
           displacement = Math.max( Math.min( displacement, spring.getMaxDisplacement() ), spring.getMinDisplacement() );
+          // constrain to delta increment
+          displacement = Math.round( displacement / HookesLawConstants.DISPLACEMENT_DELTA ) * HookesLawConstants.DISPLACEMENT_DELTA
           spring.displacementProperty.set( displacement );
         },
 

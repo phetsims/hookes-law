@@ -6,8 +6,6 @@ Introduction screen
 
 Put a translucent white background behind values on vectors.
 Telescoping hook
-Prevent range exceptions due to rounding
-Constrain hook dragging to 0.001 m increments
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (discuss with MV)
 
