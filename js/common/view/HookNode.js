@@ -10,18 +10,15 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Circle = require( 'SCENERY/nodes/Circle' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
-  var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
 
-  // constants
-  var HOOK_RADIUS = 30;
-  var HANDLE_RADIUS = 15;
+  // images
+  var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
+  var hookImage = require( 'image!HOOKES_LAW/robotic-arm-hook.png' );
 
   /**
    * @param {Spring} spring
@@ -37,25 +34,24 @@ define( function( require ) {
 
     var thisNode = this;
 
-    var hook = new Path( new Shape().arc( HOOK_RADIUS, 0, HOOK_RADIUS, Math.PI / 2, 0 ).lineTo( 100, 0 ), {
-      stroke: PhetColorScheme.RED_COLORBLIND,
-      lineWidth: 6
+    var hookNode = new Image( hookImage, {
+      scale: 0.5
     } );
 
-    var handle = new Circle( HANDLE_RADIUS, {
-      fill: PhetColorScheme.RED_COLORBLIND,
-      centerX: hook.right,
-      centerY: 0
+    var hingeNode = new Image( hingeImage, {
+      scale: 0.5,
+      left: hookNode.right - 16,
+      bottom: hookNode.bottom
     } );
 
-    options.children = [ hook, handle ];
+    options.children = [ hookNode, hingeNode ];
     Node.call( this, options );
 
     spring.lengthProperty.link( function( length ) {
       thisNode.left = modelViewTransform.modelToViewX( length );
     } );
 
-    // Drag the hook to change displacement
+    // Drag the hook or hinge to change displacement
     this.addInputListener( new SimpleDragHandler( {
 
         allowTouchSnag: true,
@@ -73,7 +69,7 @@ define( function( require ) {
           // constrain to range
           displacement = Math.max( Math.min( displacement, spring.getMaxDisplacement() ), spring.getMinDisplacement() );
           // constrain to delta increment
-          displacement = Math.round( displacement / HookesLawConstants.DISPLACEMENT_DELTA ) * HookesLawConstants.DISPLACEMENT_DELTA
+          displacement = Math.round( displacement / HookesLawConstants.DISPLACEMENT_DELTA ) * HookesLawConstants.DISPLACEMENT_DELTA;
           spring.displacementProperty.set( displacement );
         },
 
