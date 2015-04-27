@@ -5,7 +5,7 @@ Introduction screen
 -----------------------------------------------------------------------------------
 
 Put a translucent white background behind values on vectors.
-Telescoping hook
+Add telescoping arm and base to RoboticArm
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (discuss with MV)
 
