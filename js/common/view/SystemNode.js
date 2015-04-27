@@ -14,7 +14,7 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookNode = require( 'HOOKES_LAW/common/view/HookNode' );
+  var RoboticArm = require( 'HOOKES_LAW/common/view/RoboticArm' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -47,7 +47,7 @@ define( function( require ) {
       centerY: 0
     } );
 
-    var hookNode = new HookNode( spring, modelViewTransform, {
+    var roboticArm = new RoboticArm( spring, modelViewTransform, {
       left: wallNode.right,
       centerY: wallNode.centerY
     } );
@@ -85,7 +85,7 @@ define( function( require ) {
     } );
 
     options.children = [
-      wallNode, equilibriumPositionNode, hookNode, springNode,
+      wallNode, equilibriumPositionNode, roboticArm, springNode,
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
       controlPanel
     ];

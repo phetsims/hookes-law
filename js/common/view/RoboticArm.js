@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * The hook used to pull the spring.
+ * The robotic arm used to pull the spring.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -25,7 +25,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function HookNode( spring, modelViewTransform, options ) {
+  function RoboticArm( spring, modelViewTransform, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
@@ -77,5 +77,5 @@ define( function( require ) {
     ) );
   }
 
-  return inherit( Node, HookNode );
+  return inherit( Node, RoboticArm );
 } );
