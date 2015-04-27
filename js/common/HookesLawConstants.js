@@ -15,9 +15,13 @@ define( function( require ) {
 
   return {
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
+
     APPLIED_FORCE_DECIMAL_PLACES: 0,
+    APPLIED_FORCE_DELTA: 1,
     SPRING_FORCE_DECIMAL_PLACES: 0,
+    SPRING_FORCE_DELTA: 10,
     DISPLACEMENT_DECIMAL_PLACES: 3,
+
     UNIT_FORCE_VECTOR_LENGTH: 1.75,  // view length of a force vector whose magnitude is 1 N
     UNIT_DISPLACEMENT_VECTOR_LENGTH: 200, // view length of a displacement vector whose magnitude is 1 m
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),

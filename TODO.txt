@@ -5,15 +5,15 @@ Introduction screen
 -----------------------------------------------------------------------------------
 
 Put a translucent white background behind values on vectors.
-Vertically center single system, make it animate into position when switching number of systems.
 Telescoping hook
 Prevent range exceptions due to rounding
-Change spring constant control to look like applied force control (values, units, tweaker=10 units)
 Constrain spring constant slider to 10 N/m increments
 Constrain applied force slider to 1 N increments
 Constrain hook dragging to 0.001 m increments
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (discuss with MV)
+
+Animate positioning of system 1 when switching number of systems.
 
 -----------------------------------------------------------------------------------
 Systems screen

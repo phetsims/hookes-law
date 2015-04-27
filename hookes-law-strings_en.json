@@ -32,23 +32,20 @@
   "values": {
     "value": "Values"
   },
-  "springConstant": {
-    "value": "Spring Constant"
+  "springConstantColon": {
+    "value": "Spring Constant:"
   },
   "springConstantNumber": {
     "value": "Spring Constant {0}"
-  },
-  "small": {
-    "value": "small"
-  },
-  "large": {
-    "value": "large"
   },
   "units.newtons": {
     "value": "N"
   },
   "units.meters": {
     "value": "m"
+  },
+  "units.newtonsPerMeter": {
+    "value": "N/m"
   },
   "pattern.0value.1units": {
     "value": "{0} {1}"

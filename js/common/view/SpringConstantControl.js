@@ -11,15 +11,14 @@ define( function( require ) {
   // modules
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var NumericValueControl = require( 'HOOKES_LAW/common/view/NumericValueControl' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  var Util = require( 'DOT/Util' );
 
   // strings
-  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
-  var smallString = require( 'string!HOOKES_LAW/small' );
-  var largeString = require( 'string!HOOKES_LAW/large' );
+  var springConstantColonString = require( 'string!HOOKES_LAW/springConstantColon' );
+  var unitsNewtonsPerMeter = require( 'string!HOOKES_LAW/units.newtonsPerMeter' );
 
   // constants
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
@@ -33,47 +32,38 @@ define( function( require ) {
    */
   function SpringConstantControl( springConstantProperty, springConstantRange, options ) {
 
+    var majorTicks = [
+      { value: springConstantRange.min, label: new Text( Util.toFixed( springConstantRange.min, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) },
+      { value: springConstantRange.max / 2, label: new Text( Util.toFixed( springConstantRange.max / 2, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) },
+      { value: springConstantRange.max, label: new Text( Util.toFixed( springConstantRange.max, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) }
+    ];
+
     options = _.extend( {
-      title: springConstantString,
-      align: 'center',
-      spacing: 10
+      titleOptions: {
+        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
+      },
+      valueOptions: {
+        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+        decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
+        units: unitsNewtonsPerMeter
+      },
+      arrowButtonOptions: {
+        delta: HookesLawConstants.SPRING_FORCE_DELTA
+      },
+      sliderOptions: {
+        majorTicks: majorTicks,
+        minorTickSpacing: MINOR_TICK_SPACING,
+        trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
+        thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
+        majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
+        minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
+        thumbFillEnabled: HookesLawColors.SPRING_FORCE_VECTOR,
+        thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor()
+      }
     }, options );
 
-    this.titleNode = new Text( options.title, { font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT } ); // @private
-
-    var slider = new HSlider( springConstantProperty, springConstantRange, {
-      trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
-      thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
-      majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
-      thumbFillEnabled: HookesLawColors.SPRING_FORCE_VECTOR,
-      thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor()
-    } );
-    slider.addMajorTick( springConstantRange.min, new Text( smallString, MAJOR_TICK_LABEL_OPTIONS ) );
-    slider.addMajorTick( springConstantRange.max, new Text( largeString, MAJOR_TICK_LABEL_OPTIONS ) );
-    for ( var i = springConstantRange.min + MINOR_TICK_SPACING; i < springConstantRange.max; ) {
-      slider.addMinorTick( i );
-      i += MINOR_TICK_SPACING;
-    }
-
-    options.resize = false; // workaround for slider
-    options.children = [
-      this.titleNode,
-      slider
-    ];
-    VBox.call( this, options );
+    NumericValueControl.call( this, springConstantColonString, springConstantProperty, springConstantRange, options );
   }
 
-  return inherit( VBox, SpringConstantControl, {
-
-    setTitle: function( title ) {
-      this.titleNode.text = title;
-    },
-    set title( value ) { this.setTitle( value ); },
-
-    getTitle: function() {
-      return this.titleNode.text;
-    },
-    get title() { return this.getTitle(); }
-
-  } );
+  return inherit( NumericValueControl, SpringConstantControl );
 } );
