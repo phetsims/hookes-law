@@ -28,7 +28,7 @@ define( function( require ) {
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
     SLIDER_TICK_LABEL_FONT: new HookesLawFont( 14 ),
     SLIDER_THUMB_SIZE: new Dimension2( 17, 34 ),
-    SLIDER_TRACK_SIZE: new Dimension2( 200, 3 ),
+    SLIDER_TRACK_SIZE: new Dimension2( 180, 3 ),
     SLIDER_MAJOR_TICK_LENGTH: 20
   };
 } );
