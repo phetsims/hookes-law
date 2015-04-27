@@ -22,8 +22,8 @@ define( function( require ) {
       numberOfSystems: 1  // {number} 1 or 2
     } );
 
-    this.spring1 = new Spring();
-    this.spring2 = new Spring();
+    this.spring1 = new Spring(); // spring for system 1
+    this.spring2 = new Spring(); // spring for system 2
   }
 
   return inherit( PropertySet, IntroductionModel, {
