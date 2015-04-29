@@ -8,8 +8,7 @@ Put a translucent white background behind values on vectors.
 Add telescoping arm and base to RoboticArm
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (discuss with MV)
-
-Animate positioning of system 1 when switching number of systems.
+Animatupdate positioning of system 1 when switching number of systems.
 
 -----------------------------------------------------------------------------------
 Systems screen
