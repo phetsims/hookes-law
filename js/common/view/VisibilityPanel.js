@@ -30,7 +30,7 @@ define( function( require ) {
 
   // constants
   var CHECK_BOX_OPTIONS = { spacing: 8 };
-  var TEXT_OPTIONS = { font: new HookesLawFont( 20 ) };
+  var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
 
   /**
    * @param {VisibilityProperties} visibilityProperties
