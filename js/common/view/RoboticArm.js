@@ -34,11 +34,11 @@ define( function( require ) {
     var thisNode = this;
 
     var hookNode = new Image( hookImage, {
-      scale: 0.5
+      scale: 0.4
     } );
 
     var hingeNode = new Image( hingeImage, {
-      scale: 0.5,
+      scale: 0.4,
       left: hookNode.right - 16,
       bottom: hookNode.bottom
     } );
