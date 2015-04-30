@@ -49,7 +49,7 @@ define( function( require ) {
     var valueNode = new Text( '', {
       fill: HookesLawColors.SPRING_FORCE_VECTOR,
       font: new HookesLawFont( 14 ),
-      bottom: arrowNode.top - 3 // above the arrow
+      bottom: arrowNode.top - 2 // above the arrow
     } );
 
     var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );

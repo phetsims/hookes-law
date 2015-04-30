@@ -47,7 +47,7 @@ define( function( require ) {
     var valueNode = new Text( '', {
       fill: HookesLawColors.DISPLACEMENT_VECTOR,
       font: new HookesLawFont( 14 ),
-      top: arrowNode.bottom + 3 // below the arrow
+      top: arrowNode.bottom + 2 // below the arrow
     } );
 
     var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );

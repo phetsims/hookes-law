@@ -66,16 +66,16 @@ define( function( require ) {
     } );
 
     var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
-      bottom: springNode.top - 5
+      bottom: springNode.top - 8
     } );
 
     var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
-      bottom: springNode.top - 5
+      bottom: springNode.top - 8
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
       x: viewEquilibriumX,
-      top: springNode.bottom + 5
+      top: springNode.bottom + 8
     } );
 
     var controlPanel = new SpringControlPanel( spring, {
