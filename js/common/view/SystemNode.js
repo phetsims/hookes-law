@@ -49,7 +49,7 @@ define( function( require ) {
 
     var roboticArm = new RoboticArm( spring, modelViewTransform, {
       left: wallNode.right,
-      centerY: wallNode.centerY
+      centerY: wallNode.centerY - 12
     } );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
