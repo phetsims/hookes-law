@@ -9,7 +9,7 @@ Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
 Animate positioning of system 1 when switching number of systems.
 Factor out duplication between *VectorNode types.
-               update
+
 -----------------------------------------------------------------------------------
 Systems screen
 -----------------------------------------------------------------------------------
