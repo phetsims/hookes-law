@@ -27,7 +27,7 @@ define( function( require ) {
   function Spring( options ) {
 
     options = _.extend( {
-      springConstant: 500,
+      springConstant: 200,
       springConstantRange: new Range( 100, 1000 ), // N/m
       appliedForceRange: new Range( -100, 100 ) // N
     }, options );
