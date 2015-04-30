@@ -19,6 +19,9 @@
     "sherpa",
     "sun"
   ],
+  "preload": [
+    "../sherpa/Tween-r12.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/phetsims/hookes-law.git"
