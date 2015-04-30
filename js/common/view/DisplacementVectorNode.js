@@ -16,6 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
@@ -49,13 +50,15 @@ define( function( require ) {
       top: arrowNode.bottom + 3 // below the arrow
     } );
 
+    var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );
+
     var verticalLine = new Line( 0, 0, 0, 20, {
       stroke: 'black',
       lineWidth: 2,
       centerY: arrowNode.centerY
     } );
 
-    options.children = [ verticalLine, arrowNode, valueNode ];
+    options.children = [ verticalLine, arrowNode, backgroundNode, valueNode ];
     Node.call( this, options );
 
     displacementProperty.link( function( value ) {
@@ -71,6 +74,10 @@ define( function( require ) {
 
       // center value on arrow
       valueNode.centerX = ( value === 0 ) ? 0 : arrowNode.centerX;
+
+      // resize the background behind the value
+      backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
+      backgroundNode.center = valueNode.center;
     } );
 
     valuesVisibleProperty.link( function( visible ) {

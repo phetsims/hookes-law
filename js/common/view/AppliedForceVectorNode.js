@@ -15,6 +15,7 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
@@ -51,7 +52,9 @@ define( function( require ) {
       bottom: arrowNode.top - 3 // above the arrow
     } );
 
-    options.children = [ arrowNode, valueNode ];
+    var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );
+
+    options.children = [ arrowNode, backgroundNode, valueNode ];
     Node.call( this, options );
 
     appliedForceProperty.link( function( value ) {
@@ -79,6 +82,10 @@ define( function( require ) {
       else {
         valueNode.right = -margin;
       }
+
+      // resize the background behind the value
+      backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
+      backgroundNode.center = valueNode.center;
     } );
 
     displacementProperty.link( function( displacement ) {
