@@ -25,6 +25,8 @@ define( function( require ) {
    */
   function IntroductionView( model, modelViewTransform ) {
 
+    assert && assert( model.numberOfSystemsProperty.get() === 1, 'initial layout assumes 1 system' );
+
     var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
@@ -35,7 +37,7 @@ define( function( require ) {
     var system1 = new SystemNode( model.spring1, modelViewTransform, visibilityProperties, {
       number: 1,
       left: this.layoutBounds.left + 60,
-      bottom: this.layoutBounds.centerY - 10
+      centerY: this.layoutBounds.centerY
     } );
     this.addChild( system1 );
 
@@ -43,7 +45,8 @@ define( function( require ) {
     var system2 = new SystemNode( model.spring2, modelViewTransform, visibilityProperties, {
       number: 2,
       left: system1.left,
-      top: this.layoutBounds.centerY + 10
+      top: this.layoutBounds.centerY + 10,
+      visible: false
     } );
     this.addChild( system2 );
 
@@ -72,29 +75,44 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    model.numberOfSystemsProperty.link( function( numberOfSystems ) {
+    model.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 
       // animate system 1 into position
-      var tween, position;
+      var tweenPosition, tweenOpacity, parameters;
       if ( numberOfSystems === 1 ) {
-        // vertically centered
-        system2.visible = false;
-        position = { y: system1.centerY };
-        tween = new TWEEN.Tween( position )
+        parameters = { y: system1.centerY, opacity: 1 };
+        // fade out system 2
+        tweenOpacity = new TWEEN.Tween( parameters )
+          .to( { opacity: 0 }, 100 )
+          .onUpdate( function() { system2.opacity = parameters.opacity } )
+          .onComplete( function() {
+            system2.visible = false;
+            system2.opacity = 1;
+            tweenPosition.start();
+          } );
+        // move system 1 to center of screen
+        tweenPosition = new TWEEN.Tween( parameters )
           .to( { y: thisView.layoutBounds.centerY }, 150 )
-          .onUpdate( function() { system1.centerY = position.y; } );
+          .onUpdate( function() { system1.centerY = parameters.y; } );
+        tweenOpacity.start();
       }
       else {
-        // above system 2
-        position = { y: system1.bottom };
-        tween = new TWEEN.Tween( position )
+        parameters = { y: system1.bottom, opacity: 0 };
+        // move system 1 to top of screen
+        tweenPosition = new TWEEN.Tween( parameters )
           .to( { y: thisView.layoutBounds.centerY - 10 }, 150 )
-          .onUpdate( function() { system1.bottom = position.y; } )
-          .onComplete( function() { system2.visible = true; } );
+          .onUpdate( function() { system1.bottom = parameters.y; } )
+          .onComplete( function() { tweenOpacity.start() } );
+        // fade in system 2
+        system2.opacity = 0;
+        system2.visible = true;
+        tweenOpacity = new TWEEN.Tween( parameters )
+          .to( { opacity: 1 }, 100 )
+          .onUpdate( function() { system2.opacity = parameters.opacity } );
+        tweenPosition.start();
       }
-      tween.start();
     } );
   }
 
