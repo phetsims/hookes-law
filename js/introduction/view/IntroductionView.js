@@ -76,16 +76,25 @@ define( function( require ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 
-      // visibility of system 2
-      system2.visible = ( numberOfSystems === 2 );
-
-      // vertical location of system 1
+      // animate system 1 into position
+      var tween, position;
       if ( numberOfSystems === 1 ) {
-        system1.centerY = thisView.layoutBounds.centerY;
+        // vertically centered
+        system2.visible = false;
+        position = { y: system1.centerY };
+        tween = new TWEEN.Tween( position )
+          .to( { y: thisView.layoutBounds.centerY }, 150 )
+          .onUpdate( function() { system1.centerY = position.y; } );
       }
       else {
-        system1.bottom = thisView.layoutBounds.centerY - 10;
+        // above system 2
+        position = { y: system1.bottom };
+        tween = new TWEEN.Tween( position )
+          .to( { y: thisView.layoutBounds.centerY - 10 }, 150 )
+          .onUpdate( function() { system1.bottom = position.y; } )
+          .onComplete( function() { system2.visible = true; } );
       }
+      tween.start();
     } );
   }
 
