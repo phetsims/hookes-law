@@ -80,37 +80,37 @@ define( function( require ) {
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 
       // animate system 1 into position
-      var tweenPosition, tweenOpacity, parameters;
+      var tweenPosition, tweenOpacity, tweenParameters;
       if ( numberOfSystems === 1 ) {
-        parameters = { y: system1.centerY, opacity: 1 };
+        tweenParameters = { y: system1.centerY, opacity: 1 };
         // fade out system 2
-        tweenOpacity = new TWEEN.Tween( parameters )
+        tweenOpacity = new TWEEN.Tween( tweenParameters )
           .to( { opacity: 0 }, 500 )
-          .onUpdate( function() { system2.opacity = parameters.opacity; } )
+          .onUpdate( function() { system2.opacity = tweenParameters.opacity; } )
           .onComplete( function() {
             system2.visible = false;
             system2.opacity = 1;
             tweenPosition.start();
           } );
         // move system 1 to center of screen
-        tweenPosition = new TWEEN.Tween( parameters )
+        tweenPosition = new TWEEN.Tween( tweenParameters )
           .to( { y: thisView.layoutBounds.centerY }, 500 )
-          .onUpdate( function() { system1.centerY = parameters.y; } );
+          .onUpdate( function() { system1.centerY = tweenParameters.y; } );
         tweenOpacity.start();
       }
       else {
-        parameters = { y: system1.bottom, opacity: 0 };
+        tweenParameters = { y: system1.bottom, opacity: 0 };
         // move system 1 to top of screen
-        tweenPosition = new TWEEN.Tween( parameters )
+        tweenPosition = new TWEEN.Tween( tweenParameters )
           .to( { y: thisView.layoutBounds.centerY - 10 }, 500 )
-          .onUpdate( function() { system1.bottom = parameters.y; } )
+          .onUpdate( function() { system1.bottom = tweenParameters.y; } )
           .onComplete( function() { tweenOpacity.start(); } );
         // fade in system 2
         system2.opacity = 0;
         system2.visible = true;
-        tweenOpacity = new TWEEN.Tween( parameters )
+        tweenOpacity = new TWEEN.Tween( tweenParameters )
           .to( { opacity: 1 }, 500 )
-          .onUpdate( function() { system2.opacity = parameters.opacity; } );
+          .onUpdate( function() { system2.opacity = tweenParameters.opacity; } );
         tweenPosition.start();
       }
     } );
