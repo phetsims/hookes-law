@@ -19,7 +19,7 @@ define( function( require ) {
   var RADIUS_Y = 35; // vertical radius of the spring
   var MIN_LINE_WIDTH = 1; // lineWidth for minimum spring constant
   var DELTA_LINE_WIDTH = 0.005; // increase in line width per 1 unit of spring constant increase
-  var NIB_LENGTH = 6; // length of the small pieces of wire (nib) at either end of the coil
+  var NIB_LENGTH = 10; // length of the small pieces of wire (nib) at either end of the coil
 
   /**
    * @param {Spring} spring

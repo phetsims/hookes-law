@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Circle = require( 'SCENERY/nodes/Circle' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -18,6 +19,9 @@ define( function( require ) {
   // images
   var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
   var hookImage = require( 'image!HOOKES_LAW/robotic-arm-hook.png' );
+
+  // constants
+  var SHOW_ORIGIN = true;
 
   /**
    * @param {Spring} spring
@@ -34,20 +38,27 @@ define( function( require ) {
     var thisNode = this;
 
     var hookNode = new Image( hookImage, {
-      scale: 0.4
+      scale: 0.4,
+      left: -8, // dependent on image file, so that origin is in center of hook tip
+      bottom: 16 // dependent on image file
     } );
 
     var hingeNode = new Image( hingeImage, {
       scale: 0.4,
-      left: hookNode.right - 16,
-      bottom: hookNode.bottom
+      left: hookNode.right - 14, // dependent on image file
+      centerY: 0 // dependent on image file
     } );
 
     options.children = [ hookNode, hingeNode ];
+
+    if ( SHOW_ORIGIN ) {
+      options.children.push( new Circle( 2, { fill: 'red' } ) );
+    }
+
     Node.call( this, options );
 
     spring.lengthProperty.link( function( length ) {
-      thisNode.left = modelViewTransform.modelToViewX( length );
+      thisNode.x = modelViewTransform.modelToViewX( length );
     } );
 
     // Drag the hook or hinge to change displacement
