@@ -17,7 +17,6 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // strings
-  var springConstantColonString = require( 'string!HOOKES_LAW/springConstantColon' );
   var unitsNewtonsPerMeter = require( 'string!HOOKES_LAW/units.newtonsPerMeter' );
 
   // constants
@@ -25,12 +24,13 @@ define( function( require ) {
   var MINOR_TICK_SPACING = 100;
 
   /**
+   * @param {string} title
    * @param {Property.<boolean>} springConstantProperty
    * @param {Range} springConstantRange
    * @param {Object} [options]
    * @constructor
    */
-  function SpringConstantControl( springConstantProperty, springConstantRange, options ) {
+  function SpringConstantControl( title, springConstantProperty, springConstantRange, options ) {
 
     var majorTicks = [
       { value: springConstantRange.min, label: new Text( Util.toFixed( springConstantRange.min, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) },
@@ -65,7 +65,7 @@ define( function( require ) {
       }
     }, options );
 
-    NumericValueControl.call( this, springConstantColonString, springConstantProperty, springConstantRange, options );
+    NumericValueControl.call( this, title, springConstantProperty, springConstantRange, options );
   }
 
   return inherit( NumericValueControl, SpringConstantControl );

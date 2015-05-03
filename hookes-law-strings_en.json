@@ -17,11 +17,11 @@
   "appliedForceNumber": {
     "value": "Applied Force {0}:"
   },
-  "appliedForceColon": {
-    "value": "Applied Force:"
-  },
   "springForce": {
     "value": "Spring Force"
+  },
+  "springConstantNumber": {
+    "value": "Spring Constant {0}:"
   },
   "displacement": {
     "value": "Displacement"
@@ -31,12 +31,6 @@
   },
   "values": {
     "value": "Values"
-  },
-  "springConstantColon": {
-    "value": "Spring Constant:"
-  },
-  "springConstantNumber": {
-    "value": "Spring Constant {0}"
   },
   "units.newtons": {
     "value": "N"

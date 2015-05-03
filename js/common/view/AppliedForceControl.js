@@ -17,7 +17,6 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // strings
-  var appliedForceColonString = require( 'string!HOOKES_LAW/appliedForceColon' );
   var unitsNewtons = require( 'string!HOOKES_LAW/units.newtons' );
 
   // constants
@@ -25,12 +24,13 @@ define( function( require ) {
   var MINOR_TICK_SPACING = 10;
 
   /**
+   * @param {string} title
    * @param {Property.<number>} appliedForceProperty units = N
    * @param {Range} appliedForceRange
    * @param {Object} [options]
    * @constructor
    */
-  function AppliedForceControl( appliedForceProperty, appliedForceRange, options ) {
+  function AppliedForceControl( title, appliedForceProperty, appliedForceRange, options ) {
 
     // major ticks
     assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
@@ -71,7 +71,7 @@ define( function( require ) {
       }
     }, options );
 
-    NumericValueControl.call( this, appliedForceColonString, appliedForceProperty, appliedForceRange, options );
+    NumericValueControl.call( this, title, appliedForceProperty, appliedForceRange, options );
   }
 
   return inherit( NumericValueControl, AppliedForceControl );

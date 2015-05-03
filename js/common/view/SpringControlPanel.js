@@ -31,13 +31,11 @@ define( function( require ) {
       fill: HookesLawColors.CONTROL_PANEL_FILL
     }, options );
 
-    var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
-      title: StringUtils.format( springConstantNumberString, options.number )
-    } );
+    var springConstantControl = new SpringConstantControl( StringUtils.format( springConstantNumberString, options.number ),
+      spring.springConstantProperty, spring.springConstantRange );
 
-    var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange, {
-      title: StringUtils.format( appliedForceNumberString, options.number )
-    } );
+    var appliedForceControl = new AppliedForceControl( StringUtils.format( appliedForceNumberString, options.number ),
+      spring.appliedForceProperty, spring.appliedForceRange );
 
     var verticalSeparator = new VSeparator( Math.max( springConstantControl.height, appliedForceControl.height ) );
 
