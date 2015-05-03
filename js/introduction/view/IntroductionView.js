@@ -85,7 +85,7 @@ define( function( require ) {
         parameters = { y: system1.centerY, opacity: 1 };
         // fade out system 2
         tweenOpacity = new TWEEN.Tween( parameters )
-          .to( { opacity: 0 }, 100 )
+          .to( { opacity: 0 }, 500 )
           .onUpdate( function() { system2.opacity = parameters.opacity } )
           .onComplete( function() {
             system2.visible = false;
@@ -94,7 +94,7 @@ define( function( require ) {
           } );
         // move system 1 to center of screen
         tweenPosition = new TWEEN.Tween( parameters )
-          .to( { y: thisView.layoutBounds.centerY }, 150 )
+          .to( { y: thisView.layoutBounds.centerY }, 500 )
           .onUpdate( function() { system1.centerY = parameters.y; } );
         tweenOpacity.start();
       }
@@ -102,14 +102,14 @@ define( function( require ) {
         parameters = { y: system1.bottom, opacity: 0 };
         // move system 1 to top of screen
         tweenPosition = new TWEEN.Tween( parameters )
-          .to( { y: thisView.layoutBounds.centerY - 10 }, 150 )
+          .to( { y: thisView.layoutBounds.centerY - 10 }, 500 )
           .onUpdate( function() { system1.bottom = parameters.y; } )
           .onComplete( function() { tweenOpacity.start() } );
         // fade in system 2
         system2.opacity = 0;
         system2.visible = true;
         tweenOpacity = new TWEEN.Tween( parameters )
-          .to( { opacity: 1 }, 100 )
+          .to( { opacity: 1 }, 500 )
           .onUpdate( function() { system2.opacity = parameters.opacity } );
         tweenPosition.start();
       }
