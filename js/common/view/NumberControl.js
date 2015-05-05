@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control for changing a numeric value.
+ * Control for changing a Property of type {number}.
  * Consists of a labeled value, slider and arrow buttons.
  *
  * @author Chris Malley (PixelZoom, Inc.)
@@ -24,12 +24,12 @@ define( function( require ) {
 
   /**
    * @param {string} title
-   * @param {Property.<number>} valueProperty
+   * @param {Property.<number>} numberProperty
    * @param {Range} valueRange
    * @param {Object} [options]
    * @constructor
    */
-  function NumericValueControl( title, valueProperty, valueRange, options ) {
+  function NumberControl( title, numberProperty, valueRange, options ) {
 
     options = _.extend( {
       titleOptions: { font: new PhetFont( 12 ) },
@@ -40,17 +40,17 @@ define( function( require ) {
 
     var titleNode = new Text( title, options.titleOptions );
 
-    var valueDisplay = new ValueDisplay( valueProperty, valueRange, options.valueOptions.units, pattern_0value_1units, options.valueOptions );
+    var valueDisplay = new ValueDisplay( numberProperty, valueRange, options.valueOptions.units, pattern_0value_1units, options.valueOptions );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
-      valueProperty.set( Math.max( valueProperty.get() - options.arrowButtonOptions.delta, valueRange.min ) );
+      numberProperty.set( Math.max( numberProperty.get() - options.arrowButtonOptions.delta, valueRange.min ) );
     }, options.arrowButtonOptions );
 
     var rightArrowButton = new ArrowButton( 'right', function() {
-      valueProperty.set( Math.min( valueProperty.get() + options.arrowButtonOptions.delta, valueRange.max ) );
+      numberProperty.set( Math.min( numberProperty.get() + options.arrowButtonOptions.delta, valueRange.max ) );
     }, options.arrowButtonOptions );
 
-    var slider = new HSlider( valueProperty, valueRange, options.sliderOptions );
+    var slider = new HSlider( numberProperty, valueRange, options.sliderOptions );
 
     // major ticks
     var majorTicks = options.sliderOptions.majorTicks;
@@ -81,11 +81,11 @@ define( function( require ) {
     ];
     VBox.call( this, options );
 
-    valueProperty.link( function( value ) {
+    numberProperty.link( function( value ) {
       leftArrowButton.enabled = ( value > valueRange.min );
       rightArrowButton.enabled = ( value < valueRange.max );
     } );
   }
 
-  return inherit( VBox, NumericValueControl );
+  return inherit( VBox, NumberControl );
 } );

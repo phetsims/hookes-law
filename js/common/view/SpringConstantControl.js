@@ -12,7 +12,7 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var NumericValueControl = require( 'HOOKES_LAW/common/view/NumericValueControl' );
+  var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
 
@@ -65,8 +65,8 @@ define( function( require ) {
       }
     }, options );
 
-    NumericValueControl.call( this, title, springConstantProperty, springConstantRange, options );
+    NumberControl.call( this, title, springConstantProperty, springConstantRange, options );
   }
 
-  return inherit( NumericValueControl, SpringConstantControl );
+  return inherit( NumberControl, SpringConstantControl );
 } );
