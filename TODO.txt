@@ -23,6 +23,7 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
+compensate for headLineWidth in LineArrowNode, so that tip is at (tipX,tipY)
 constraint text sizes for i18n
 
 
