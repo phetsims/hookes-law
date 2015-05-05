@@ -63,6 +63,8 @@ define( function( require ) {
     this.disposeNumberDisplay = function() {
       numberProperty.unlink( numberObserver );
     };
+
+    this.mutate( options );
   }
 
   return inherit( Node, NumberDisplay, {
