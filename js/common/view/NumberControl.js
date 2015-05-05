@@ -16,7 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var ValueDisplay = require( 'HOOKES_LAW/common/view/ValueDisplay' );
+  var NumberDisplay = require( 'HOOKES_LAW/common/view/NumberDisplay' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
@@ -25,11 +25,11 @@ define( function( require ) {
   /**
    * @param {string} title
    * @param {Property.<number>} numberProperty
-   * @param {Range} valueRange
+   * @param {Range} numberRange
    * @param {Object} [options]
    * @constructor
    */
-  function NumberControl( title, numberProperty, valueRange, options ) {
+  function NumberControl( title, numberProperty, numberRange, options ) {
 
     options = _.extend( {
       titleOptions: { font: new PhetFont( 12 ) },
@@ -40,17 +40,17 @@ define( function( require ) {
 
     var titleNode = new Text( title, options.titleOptions );
 
-    var valueDisplay = new ValueDisplay( numberProperty, valueRange, options.valueOptions.units, pattern_0value_1units, options.valueOptions );
+    var numberDisplay = new NumberDisplay( numberProperty, numberRange, options.valueOptions.units, pattern_0value_1units, options.valueOptions );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
-      numberProperty.set( Math.max( numberProperty.get() - options.arrowButtonOptions.delta, valueRange.min ) );
+      numberProperty.set( Math.max( numberProperty.get() - options.arrowButtonOptions.delta, numberRange.min ) );
     }, options.arrowButtonOptions );
 
     var rightArrowButton = new ArrowButton( 'right', function() {
-      numberProperty.set( Math.min( numberProperty.get() + options.arrowButtonOptions.delta, valueRange.max ) );
+      numberProperty.set( Math.min( numberProperty.get() + options.arrowButtonOptions.delta, numberRange.max ) );
     }, options.arrowButtonOptions );
 
-    var slider = new HSlider( numberProperty, valueRange, options.sliderOptions );
+    var slider = new HSlider( numberProperty, numberRange, options.sliderOptions );
 
     // major ticks
     var majorTicks = options.sliderOptions.majorTicks;
@@ -59,7 +59,7 @@ define( function( require ) {
     }
 
     // minor ticks, exclude values where we already have major ticks
-    for ( var minorTickValue = valueRange.min; minorTickValue <= valueRange.max; ) {
+    for ( var minorTickValue = numberRange.min; minorTickValue <= numberRange.max; ) {
       if ( ! _.find( majorTicks, function( majorTick) { return majorTick.value === minorTickValue; } ) ) {
         slider.addMinorTick( minorTickValue );
       }
@@ -71,7 +71,7 @@ define( function( require ) {
     options.children = [
       new HBox( {
         spacing: 5,
-        children: [ titleNode, valueDisplay ]
+        children: [ titleNode, numberDisplay ]
       } ),
       new HBox( {
         spacing: 15,
@@ -82,8 +82,8 @@ define( function( require ) {
     VBox.call( this, options );
 
     numberProperty.link( function( value ) {
-      leftArrowButton.enabled = ( value > valueRange.min );
-      rightArrowButton.enabled = ( value < valueRange.max );
+      leftArrowButton.enabled = ( value > numberRange.min );
+      rightArrowButton.enabled = ( value < numberRange.max );
     } );
   }
 

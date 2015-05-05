@@ -2,7 +2,7 @@
 
 //TODO migrate to scenery-phet
 /**
- * Displays a numeric value in a rectangle.
+ * Displays a Property of type {number} in a rectangle.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -19,14 +19,14 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   /**
-   * @param {Property.<number>} valueProperty
+   * @param {Property.<number>} numberProperty
    * @param {Range} valueRange
    * @param {string} units
    * @param {string} pattern
    * @param {Object} [options]
    * @constructor
    */
-  function ValueDisplay( valueProperty, valueRange, units, pattern, options ) {
+  function NumberDisplay( numberProperty, valueRange, units, pattern, options ) {
 
     options = _.extend( {
       font: new PhetFont( 20 ),
@@ -53,18 +53,18 @@ define( function( require ) {
     Node.call( this, { children: [ background, valueNode ] } );
 
     // display the value
-    this.valueObserver = function( value ) {
+    this.numberObserver = function( value ) {
       valueNode.text = StringUtils.format( pattern, Util.toFixed( value, options.decimalPlaces ), units );
       valueNode.right = background.right - xMargin;
     };
-    this.valueProperty = valueProperty;
-    this.valueProperty.link( this.valueObserver );
+    this.numberProperty = numberProperty;
+    this.numberProperty.link( this.numberObserver );
   }
 
-  return inherit( Node, ValueDisplay, {
+  return inherit( Node, NumberDisplay, {
 
     dispose: function() {
-      this.valueProperty.unlink( this.valueObserver );
+      this.numberProperty.unlink( this.numberObserver );
     }
   } );
 } );
