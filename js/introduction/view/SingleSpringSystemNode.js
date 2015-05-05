@@ -40,19 +40,20 @@ define( function( require ) {
       number: 1 // integer used to label the system
     }, options );
 
+    // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {
-      right: 0,
-      centerY: 0
+      right: modelViewTransform.modelToViewX( 0 ),
+      centerY: modelViewTransform.modelToViewY( 0 )
     } );
 
     var roboticArmNode = new RoboticArmNode( spring, modelViewTransform, {
-      left: wallNode.right,
-      y: wallNode.centerY
+      // x will be determined by spring displacement
+      y: modelViewTransform.modelToViewX( spring.location.y )
     } );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
-      left: wallNode.right,
-      centerY: wallNode.centerY
+      left: modelViewTransform.modelToViewX( spring.location.x ),
+      centerY: modelViewTransform.modelToViewX( spring.location.y )
     } );
 
     var viewEquilibriumX = modelViewTransform.modelToViewX( spring.equilibriumX );
@@ -64,10 +65,12 @@ define( function( require ) {
     } );
 
     var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
+      // x will be determined by displacement
       bottom: springNode.top - 14
     } );
 
     var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
+      // x will be determined by displacement
       bottom: springNode.top - 14
     } );
 

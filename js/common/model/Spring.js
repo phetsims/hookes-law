@@ -19,6 +19,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   /**
    * @param {Object} [options]
@@ -47,8 +48,11 @@ define( function( require ) {
       displacement: 0  // {number} x, horizontal displacement from equilibrium position, units = m
     } );
 
+    // location of the left end of the spring, units = m, read-only
+    this.location = new Vector2( 0, 0 );
+
     // {number} horizontal location of equilibrium, units = m, read-only
-    this.equilibriumX = 1.5 * ( this.appliedForceRange.max / this.springConstantRange.min ); // largest F/k
+    this.equilibriumX = this.location.x + 1.5;
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
