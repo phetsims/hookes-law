@@ -14,7 +14,7 @@ define( function( require ) {
   var NumberOfSystemsControl = require( 'HOOKES_LAW/common/view/NumberOfSystemsControl' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var SingleSpringSystemNode = require( 'HOOKES_LAW/common/view/SingleSpringSystemNode' );
+  var SingleSpringSystemNode = require( 'HOOKES_LAW/introduction/view/SingleSpringSystemNode' );
   var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
   var VisibilityProperties = require( 'HOOKES_LAW/common/view/VisibilityProperties' );
 
