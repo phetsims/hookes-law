@@ -30,7 +30,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArm( spring, modelViewTransform, options ) {
+  function RoboticArmNode( spring, modelViewTransform, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
@@ -89,5 +89,5 @@ define( function( require ) {
     ) );
   }
 
-  return inherit( Node, RoboticArm );
+  return inherit( Node, RoboticArmNode );
 } );

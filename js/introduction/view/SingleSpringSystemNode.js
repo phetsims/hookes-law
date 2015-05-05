@@ -17,7 +17,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var RoboticArm = require( 'HOOKES_LAW/common/view/RoboticArm' );
+  var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringControlPanel = require( 'HOOKES_LAW/common/view/SpringControlPanel' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
@@ -45,7 +45,7 @@ define( function( require ) {
       centerY: 0
     } );
 
-    var roboticArm = new RoboticArm( spring, modelViewTransform, {
+    var roboticArmNode = new RoboticArmNode( spring, modelViewTransform, {
       left: wallNode.right,
       y: wallNode.centerY
     } );
@@ -83,7 +83,7 @@ define( function( require ) {
     } );
 
     options.children = [
-      wallNode, equilibriumPositionNode, roboticArm, springNode,
+      wallNode, equilibriumPositionNode, roboticArmNode, springNode,
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
       controlPanel
     ];
