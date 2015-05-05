@@ -4,6 +4,7 @@
 /**
  * Demonstration of a spring described by a parametric equation.
  * Separated into a front and back part.
+ * Also includes slider controls for the parameters.
  *
  * @author Martin Veillette (Berea College)
  */
