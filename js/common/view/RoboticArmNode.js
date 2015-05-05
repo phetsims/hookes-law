@@ -58,12 +58,8 @@ define( function( require ) {
 
     Node.call( this, options );
 
-    spring.lengthProperty.link( function( length ) {
-      thisNode.x = modelViewTransform.modelToViewX( length );
-    } );
-
     // Drag the hook or hinge to change displacement
-    this.addInputListener( new SimpleDragHandler( {
+    var dragHandler = new SimpleDragHandler( {
 
         allowTouchSnag: true,
 
@@ -86,7 +82,12 @@ define( function( require ) {
 
         end: function( event ) {}
       }
-    ) );
+    );
+    this.addInputListener( dragHandler );
+
+    spring.lengthProperty.link( function( length ) {
+      thisNode.x = modelViewTransform.modelToViewX( length );
+    } );
   }
 
   return inherit( Node, RoboticArmNode );
