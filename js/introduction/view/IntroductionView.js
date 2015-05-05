@@ -25,8 +25,6 @@ define( function( require ) {
    */
   function IntroductionView( model, modelViewTransform ) {
 
-    assert && assert( model.numberOfSystemsProperty.get() === 1, 'initial layout assumes 1 system' );
-
     var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
@@ -37,18 +35,20 @@ define( function( require ) {
     var system1 = new SystemNode( model.spring1, modelViewTransform, visibilityProperties, {
       number: 1,
       left: this.layoutBounds.left + 60,
-      centerY: this.layoutBounds.centerY
+      centerY: ( model.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
     } );
     this.addChild( system1 );
+    assert && assert( system1.height <= this.layoutBounds.height / 2, 'system1 is taller than the space available for it' );
 
     // System 2
     var system2 = new SystemNode( model.spring2, modelViewTransform, visibilityProperties, {
       number: 2,
       left: system1.left,
       top: this.layoutBounds.centerY + 10,
-      visible: false
+      visible: ( model.numberOfSystemsProperty.get() === 2 )
     } );
     this.addChild( system2 );
+    assert && assert( system2.height <= this.layoutBounds.height / 2, 'system2 is taller than the space available for it' );
 
     // Visibility controls
     var visibilityPanel = new VisibilityPanel( visibilityProperties, {
@@ -99,11 +99,11 @@ define( function( require ) {
         tweenOpacity.start();
       }
       else {
-        tweenParameters = { y: system1.bottom, opacity: 0 };
-        // move system 1 to top of screen
+        tweenParameters = { y: system1.centerY, opacity: 0 };
+        // move system 1 to top half of screen
         tweenPosition = new TWEEN.Tween( tweenParameters )
-          .to( { y: thisView.layoutBounds.centerY - 10 }, 500 )
-          .onUpdate( function() { system1.bottom = tweenParameters.y; } )
+          .to( { y: 0.25 * thisView.layoutBounds.height }, 500 )
+          .onUpdate( function() { system1.centerY = tweenParameters.y; } )
           .onComplete( function() { tweenOpacity.start(); } );
         // fade in system 2
         system2.opacity = 0;
