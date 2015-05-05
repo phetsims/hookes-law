@@ -53,18 +53,22 @@ define( function( require ) {
     Node.call( this, { children: [ background, valueNode ] } );
 
     // display the value
-    this.numberObserver = function( value ) {
+    var numberObserver = function( value ) {
       valueNode.text = StringUtils.format( pattern, Util.toFixed( value, options.decimalPlaces ), units );
       valueNode.right = background.right - xMargin;
     };
-    this.numberProperty = numberProperty;
-    this.numberProperty.link( this.numberObserver );
+    numberProperty.link( numberObserver );
+
+    // @private called by dispose
+    this.disposeNumberDisplay = function() {
+      numberProperty.unlink( numberObserver );
+    };
   }
 
   return inherit( Node, NumberDisplay, {
 
     dispose: function() {
-      this.numberProperty.unlink( this.numberObserver );
+      this.disposeNumberDisplay();
     }
   } );
 } );
