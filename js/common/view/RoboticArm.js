@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var Circle = require( 'SCENERY/nodes/Circle' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -21,7 +22,7 @@ define( function( require ) {
   var hookImage = require( 'image!HOOKES_LAW/robotic-arm-hook.png' );
 
   // constants
-  var SHOW_ORIGIN = true;
+  var SHOW_ORIGIN = HookesLawQueryParameters.DEV;
 
   /**
    * @param {Spring} spring
@@ -39,7 +40,7 @@ define( function( require ) {
 
     var hookNode = new Image( hookImage, {
       scale: 0.4,
-      left: -8, // dependent on image file, so that origin is in center of hook tip
+      left: -7, // dependent on image file, so that origin is in center of hook tip
       bottom: 16 // dependent on image file
     } );
 
@@ -52,7 +53,7 @@ define( function( require ) {
     options.children = [ hookNode, hingeNode ];
 
     if ( SHOW_ORIGIN ) {
-      options.children.push( new Circle( 2, { fill: 'red' } ) );
+      options.children.push( new Circle( 3, { fill: 'red' } ) );
     }
 
     Node.call( this, options );
