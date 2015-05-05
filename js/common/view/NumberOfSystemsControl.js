@@ -26,11 +26,11 @@ define( function( require ) {
 
     options = _.extend( {
       scale: 0.75, //TODO scale image files
+      orientation: 'horizontal',
       deselectedButtonOpacity: 0.6,
       deselectedContentOpacity: 0.6
     }, options );
 
-    options.orientation = 'horizontal';
     RadioButtonGroup.call( this, numberOfSystemsProperty, [
       { value: 1, node: new Image( oneSystemIcon ) },
       { value: 2, node: new Image( twoSystemIcon ) }
