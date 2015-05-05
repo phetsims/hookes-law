@@ -16,6 +16,7 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HStrut = require( 'SUN/HStrut' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Panel = require( 'SUN/Panel' );
   var Property = require( 'AXON/Property' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -63,7 +64,7 @@ define( function( require ) {
       visibilityProperties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      createVectorCheckBoxContent( displacementTextNode, maxTextWidth, HookesLawColors.DISPLACEMENT_VECTOR ),
+      createVectorCheckBoxContent( displacementTextNode, maxTextWidth, HookesLawColors.DISPLACEMENT_VECTOR, { arrowType: 'line' } ),
       visibilityProperties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
 
@@ -110,31 +111,46 @@ define( function( require ) {
    *
    * @param {Node} textNode text, positioned to the left of the vector
    * @param {number} maxTextWidth width of the max text used to label a vector check box
-   * @param {string|Color} arrowFill
+   * @param {string|Color} arrowColor
    * @param {Object} [options]
    */
-  var createVectorCheckBoxContent = function( textNode, maxTextWidth, arrowFill, options ) {
+  var createVectorCheckBoxContent = function( textNode, maxTextWidth, arrowColor, options ) {
 
     options = _.extend( {
       minSpacing: 10, // {number} minimum space between text and vector
       arrowLength: 30, // {number}
-      arrowDirection: 'right' // {string} direction that the vector points, 'left' or 'right'
+      arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
+      arrowType: 'shape' // 'shape' (ArrowNode) or 'line' (LineArrowNode)
     }, options );
 
     // compute spacing so that arrows on all check boxes will ultimately be left aligned
     var spacing = maxTextWidth - textNode.width + options.minSpacing;
+
+    var arrowNode;
+    if ( options.arrowType === 'shape' ) {
+      arrowNode = new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
+        fill: arrowColor,
+        headWidth: 20,
+        headHeight: 10,
+        tailWidth: 10
+      } );
+    }
+    else {
+      arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
+        stroke: arrowColor,
+        headWidth: 20,
+        headHeight: 10,
+        headLineWidth: 5,
+        tailLineWidth: 5
+      } );
+    }
 
     // text and vector
     return new HBox( {
       children: [
         textNode,
         new HStrut( spacing ),
-        new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
-          fill: arrowFill,
-          headWidth: 20,
-          headHeight: 10,
-          tailWidth: 10
-        } )
+        arrowNode
       ],
       align: 'center'
     } );

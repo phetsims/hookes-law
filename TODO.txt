@@ -7,7 +7,6 @@ Introduction screen
 Add telescoping arm and base to RoboticArm
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
-Use a line arrow for displacement vector.
 
 -----------------------------------------------------------------------------------
 Systems screen

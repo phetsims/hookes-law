@@ -9,12 +9,12 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont= require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
+  var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
@@ -36,12 +36,12 @@ define( function( require ) {
 
     options = options || {};
 
-    var arrowNode = new ArrowNode( 0, 0, 50, 0, {
-      fill: HookesLawColors.DISPLACEMENT_VECTOR,
-      stroke: 'black',
-      tailWidth: 10,
+    var arrowNode = new LineArrowNode( 0, 0, 1, 0, {
+      stroke: HookesLawColors.DISPLACEMENT_VECTOR,
       headWidth: 20,
-      headHeight: 10
+      headHeight: 10,
+      headLineWidth: 5,
+      tailLineWidth: 5
     } );
 
     var valueNode = new Text( '', {
