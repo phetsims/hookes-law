@@ -1,6 +1,5 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
-//TODO migrate to scenery-phet
 /**
  * Displays a Property of type {number} in a rectangle.
  *
@@ -50,7 +49,8 @@ define( function( require ) {
     } );
     valueNode.center = background.center;
 
-    Node.call( this, { children: [ background, valueNode ] } );
+    options.children = [ background, valueNode ];
+    Node.call( this, options );
 
     // display the value
     var numberObserver = function( value ) {
@@ -63,8 +63,6 @@ define( function( require ) {
     this.disposeNumberDisplay = function() {
       numberProperty.unlink( numberObserver );
     };
-
-    this.mutate( options );
   }
 
   return inherit( Node, NumberDisplay, {
