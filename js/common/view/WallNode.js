@@ -1,8 +1,9 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
-//TODO this is a quick-&-dirty temporary implementation
 /**
  * The vertical wall that the left end of a spring is attached to.
+ *
+ * @author Chris Malley (PixelZoom, Inc.)
  */
 define( function( require ) {
   'use strict';
