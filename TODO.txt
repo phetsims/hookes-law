@@ -4,7 +4,8 @@ TODO list for hookes-law
 Introduction screen
 -----------------------------------------------------------------------------------
 
-Add telescoping arm and base to RoboticArm
+Add telescoping arm and base to RoboticArmNode
+Make hook rotate up when displacement is zero and not dragging
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
 
