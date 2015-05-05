@@ -34,7 +34,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function SystemNode( spring, modelViewTransform, visibilityProperties, options ) {
+  function SingleSpringSystemNode( spring, modelViewTransform, visibilityProperties, options ) {
 
     options = _.extend( {
       number: 1 // integer used to label the system
@@ -108,5 +108,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Node, SystemNode );
+  return inherit( Node, SingleSpringSystemNode );
 } );

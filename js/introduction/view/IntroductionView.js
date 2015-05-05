@@ -14,7 +14,7 @@ define( function( require ) {
   var NumberOfSystemsControl = require( 'HOOKES_LAW/common/view/NumberOfSystemsControl' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var SystemNode = require( 'HOOKES_LAW/common/view/SystemNode' );
+  var SingleSpringSystemNode = require( 'HOOKES_LAW/common/view/SingleSpringSystemNode' );
   var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
   var VisibilityProperties = require( 'HOOKES_LAW/common/view/VisibilityProperties' );
 
@@ -32,7 +32,7 @@ define( function( require ) {
     var visibilityProperties = new VisibilityProperties();
 
     // System 1
-    var system1 = new SystemNode( model.spring1, modelViewTransform, visibilityProperties, {
+    var system1 = new SingleSpringSystemNode( model.spring1, modelViewTransform, visibilityProperties, {
       number: 1,
       left: this.layoutBounds.left + 60,
       centerY: ( model.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
@@ -41,7 +41,7 @@ define( function( require ) {
     assert && assert( system1.height <= this.layoutBounds.height / 2, 'system1 is taller than the space available for it' );
 
     // System 2
-    var system2 = new SystemNode( model.spring2, modelViewTransform, visibilityProperties, {
+    var system2 = new SingleSpringSystemNode( model.spring2, modelViewTransform, visibilityProperties, {
       number: 2,
       left: system1.left,
       top: this.layoutBounds.centerY + 10,
