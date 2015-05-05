@@ -45,8 +45,8 @@ define( function( require ) {
       fill: options.fill,
       stroke: options.stroke,
       tailWidth: 10,
-      headWidth: 20,
-      headHeight: 10
+      headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
+      headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height
     } );
 
     var valueNode = new Text( '', {

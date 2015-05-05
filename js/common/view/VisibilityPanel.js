@@ -13,6 +13,7 @@ define( function( require ) {
   var CheckBox = require( 'SUN/CheckBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HStrut = require( 'SUN/HStrut' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -107,7 +108,7 @@ define( function( require ) {
   }
 
   /**
-   * Creates the content for a vector check box, consisting of a text and an arrow.
+   * Creates the content for a vector check box, consisting of text and an arrow.
    *
    * @param {Node} textNode text, positioned to the left of the vector
    * @param {number} maxTextWidth width of the max text used to label a vector check box
@@ -130,16 +131,16 @@ define( function( require ) {
     if ( options.arrowType === 'shape' ) {
       arrowNode = new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
         fill: arrowColor,
-        headWidth: 20,
-        headHeight: 10,
+        headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
+        headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
         tailWidth: 10
       } );
     }
     else {
       arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
         stroke: arrowColor,
-        headWidth: 20,
-        headHeight: 10,
+        headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
+        headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
         headLineWidth: 5,
         tailLineWidth: 5
       } );

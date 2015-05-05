@@ -25,6 +25,7 @@ define( function( require ) {
 
     UNIT_FORCE_VECTOR_LENGTH: 1.75,  // view length of a force vector whose magnitude is 1 N
     UNIT_DISPLACEMENT_VECTOR_LENGTH: 200, // view length of a displacement vector whose magnitude is 1 m
+    VECTOR_HEAD_SIZE: new Dimension2( 20, 10 ),
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
     SLIDER_TICK_LABEL_FONT: new HookesLawFont( 14 ),
     SLIDER_THUMB_SIZE: new Dimension2( 17, 34 ),

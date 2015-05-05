@@ -38,8 +38,8 @@ define( function( require ) {
 
     var arrowNode = new LineArrowNode( 0, 0, 1, 0, {
       stroke: HookesLawColors.DISPLACEMENT_VECTOR,
-      headWidth: 20,
-      headHeight: 10,
+      headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
+      headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
       headLineWidth: 5,
       tailLineWidth: 5
     } );
