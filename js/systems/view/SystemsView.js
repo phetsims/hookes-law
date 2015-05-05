@@ -40,10 +40,5 @@ define( function( require ) {
     this.addChild( resetAllButton );
   }
 
-  return inherit( ScreenView, SystemsView, {
-
-    step: function( dt ) {
-      //TODO
-    }
-  } );
+  return inherit( ScreenView, SystemsView );
 } );
