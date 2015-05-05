@@ -40,8 +40,6 @@ define( function( require ) {
       number: 1 // integer used to label the system
     }, options );
 
-    Node.call( this );
-
     var wallNode = new WallNode( WALL_SIZE, {
       right: 0,
       centerY: 0
@@ -89,7 +87,7 @@ define( function( require ) {
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
       controlPanel
     ];
-    this.mutate( options );
+    Node.call( this, options );
 
     visibilityProperties.appliedForceVectorVisibleProperty.link( function( visible ) {
       appliedForceVectorNode.visible = visible;
