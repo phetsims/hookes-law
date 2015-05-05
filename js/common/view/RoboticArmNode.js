@@ -73,10 +73,10 @@ define( function( require ) {
         drag: function( event ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
           var displacement = modelViewTransform.viewToModelX( parentX ) - spring.equilibriumX;
-          // constrain to range
-          displacement = Math.max( Math.min( displacement, spring.getMaxDisplacement() ), spring.getMinDisplacement() );
           // constrain to delta increment
           displacement = Math.round( displacement / HookesLawConstants.DISPLACEMENT_DELTA ) * HookesLawConstants.DISPLACEMENT_DELTA;
+          // constrain to range
+          displacement = Math.max( Math.min( displacement, spring.getMaxDisplacement() ), spring.getMinDisplacement() );
           spring.displacementProperty.set( displacement );
         },
 

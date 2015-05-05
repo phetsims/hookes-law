@@ -60,7 +60,10 @@ define( function( require ) {
         thumbFillEnabled: HookesLawColors.SPRING_FORCE_VECTOR,
         thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor(),
         constrainValue: function( value ) {
-          return Math.round( value / HookesLawConstants.SPRING_FORCE_DELTA ) * HookesLawConstants.SPRING_FORCE_DELTA;
+          // constrain to delta
+          value = Math.round( value / HookesLawConstants.SPRING_FORCE_DELTA ) * HookesLawConstants.SPRING_FORCE_DELTA;
+          // constrain to range
+          return springConstantRange.constrainValue( value );
         }
       }
     }, options );

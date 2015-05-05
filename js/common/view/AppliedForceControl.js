@@ -66,7 +66,10 @@ define( function( require ) {
         thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR,
         thumbFillHighlighted: HookesLawColors.APPLIED_FORCE_VECTOR.brighterColor(),
         constrainValue: function( value ) {
-          return Math.round( value / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+          // constrain to delta
+          value = Math.round( value / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+          // constrain to range
+          return appliedForceRange.constrainValue( value );
         }
       }
     }, options );
