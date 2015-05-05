@@ -82,12 +82,12 @@ define( function( require ) {
 
   return inherit( PropertySet, Spring, {
 
-    // Gets the current maximum displacement, x = F/k
+    // Gets the current maximum displacement, x = F/k. Used to constrain dragging.
     getMaxDisplacement: function() {
       return this.appliedForceRange.max / this.springConstantProperty.get();
     },
 
-    // Gets the current minimum displacement, x = F/k
+    // Gets the current minimum displacement, x = F/k. Used to constrain dragging.
     getMinDisplacement: function() {
       return this.appliedForceRange.min / this.springConstantProperty.get();
     }
