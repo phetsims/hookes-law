@@ -4,14 +4,13 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
-Icon next to check box for equilibrium position?
-Vertical line at tail end of displacement vector icon?
-What vectors are we showing in the "Systems" screen?
 
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------
 
+Ditch Spring model, implement SingleSpringSystem model.
+Add icon next to check box for equilibrium position.
 Add telescoping arm and base to RoboticArmNode
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
@@ -24,6 +23,8 @@ Systems screen
 -----------------------------------------------------------------------------------
 
 Keep spring constants and applied force synchronized between serial and parallel systems.
+Show total and component views of spring forces.
+Below "spring force" in control panel, add "total" and "component" radio buttons with icons.
 
 -----------------------------------------------------------------------------------
 Energy screen
