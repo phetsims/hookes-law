@@ -16,6 +16,7 @@ Make hook rotate up when displacement is zero and not dragging (and not using Ap
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
 Add model element for RoboticArm, remove dependency on Spring in RoboticArmNode
+Better implementation of check box icons, factory functions for each vector node type?
 
 -----------------------------------------------------------------------------------
 Systems screen
