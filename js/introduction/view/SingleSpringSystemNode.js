@@ -46,14 +46,11 @@ define( function( require ) {
       centerY: modelViewTransform.modelToViewY( 0 )
     } );
 
-    var roboticArmNode = new RoboticArmNode( spring, modelViewTransform, {
-      // x will be determined by spring displacement
-      y: modelViewTransform.modelToViewX( spring.location.y )
-    } );
+    var roboticArmNode = new RoboticArmNode( spring, modelViewTransform );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
-      left: modelViewTransform.modelToViewX( spring.location.x ),
-      centerY: modelViewTransform.modelToViewX( spring.location.y )
+      left: modelViewTransform.modelToViewX( spring.x ),
+      centerY: 0
     } );
 
     var viewEquilibriumX = modelViewTransform.modelToViewX( spring.equilibriumX );
