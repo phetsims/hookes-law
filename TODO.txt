@@ -14,6 +14,7 @@ Add telescoping arm and base to RoboticArmNode
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
+Add model element for RoboticArm, remove dependency on Spring in RoboticArmNode
 
 -----------------------------------------------------------------------------------
 Systems screen
