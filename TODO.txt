@@ -6,6 +6,7 @@ Design questions
 
 Icon next to check box for equilibrium position?
 Vertical line at tail end of displacement vector icon?
+What vectors are we showing in the "Systems" screen?
 
 -----------------------------------------------------------------------------------
 Introduction screen
