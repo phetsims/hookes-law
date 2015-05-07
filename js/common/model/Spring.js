@@ -28,17 +28,20 @@ define( function( require ) {
   function Spring( options ) {
 
     options = _.extend( {
-      location: Vector2.ZERO,
+      x: 0, // {number} x location of the left end of the spring, units = m, read-only
+      equilibriumX: 1.5, // {number} x location of equilibrium, units = m, read-only
       springConstant: 200,
       springConstantRange: new Range( 100, 1000 ), // N/m
       appliedForceRange: new Range( -100, 100 ) // N
     }, options );
     assert && assert( options.springConstantRange.contains( options.springConstant ), 'springConstant out of range: ' + options.springConstant );
 
-    var thisSpring = this;
-
+    this.x = options.x; // read-only
+    this.equilibriumX = options.equilibriumX; // read-only
     this.springConstantRange = options.springConstantRange; // read-only
     this.appliedForceRange = options.appliedForceRange; // read-only
+
+    var thisSpring = this;
 
     // For internal validation, x = F/k
     var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
@@ -48,12 +51,6 @@ define( function( require ) {
       appliedForce: 0, // {number} F, force applied to the spring, units = N
       displacement: 0  // {number} x, horizontal displacement from equilibrium position, units = m
     } );
-
-    // location of the left end of the spring, units = m, read-only
-    this.location = options.location;
-
-    // {number} horizontal location of equilibrium, units = m, read-only
-    this.equilibriumX = this.location.x + 1.5;
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
