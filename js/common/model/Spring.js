@@ -29,7 +29,7 @@ define( function( require ) {
 
     options = _.extend( {
       x: 0, // {number} x location of the left end of the spring, units = m, read-only
-      equilibriumX: 1.5, // {number} x location of equilibrium, units = m, read-only
+      equilibriumX: 1.5, // {number} x location of right end of the spring at equilibrium, units = m, read-only
       springConstant: 200,
       springConstantRange: new Range( 100, 1000 ), // N/m
       appliedForceRange: new Range( -100, 100 ) // N
