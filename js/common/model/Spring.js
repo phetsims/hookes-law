@@ -28,6 +28,7 @@ define( function( require ) {
   function Spring( options ) {
 
     options = _.extend( {
+      location: Vector2.ZERO,
       springConstant: 200,
       springConstantRange: new Range( 100, 1000 ), // N/m
       appliedForceRange: new Range( -100, 100 ) // N
@@ -49,7 +50,7 @@ define( function( require ) {
     } );
 
     // location of the left end of the spring, units = m, read-only
-    this.location = new Vector2( 0, 0 );
+    this.location = options.location;
 
     // {number} horizontal location of equilibrium, units = m, read-only
     this.equilibriumX = this.location.x + 1.5;
