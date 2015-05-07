@@ -70,7 +70,7 @@ define( function( require ) {
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( value, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), unitsMetersString );
+      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( Math.abs( value ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), unitsMetersString );
 
       // center value on arrow
       valueNode.centerX = ( value === 0 ) ? 0 : arrowNode.centerX;

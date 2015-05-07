@@ -69,7 +69,7 @@ define( function( require ) {
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( value, options.decimalPlaces ), unitsNewtonsString );
+      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( Math.abs( value ), options.decimalPlaces ), unitsNewtonsString );
 
       // value position
       var margin = 5;
