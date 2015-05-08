@@ -143,8 +143,8 @@ define( function( require ) {
         stroke: arrowColor,
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
         headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
-        headLineWidth: 5,
-        tailLineWidth: 5
+        headLineWidth: 3,
+        tailLineWidth: 3
       } );
     }
 

@@ -40,8 +40,8 @@ define( function( require ) {
       stroke: HookesLawColors.DISPLACEMENT_VECTOR,
       headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
       headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
-      headLineWidth: 5,
-      tailLineWidth: 5
+      headLineWidth: 3,
+      tailLineWidth: 3
     } );
 
     var valueNode = new Text( '', {
