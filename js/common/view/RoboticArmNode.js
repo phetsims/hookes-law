@@ -50,7 +50,9 @@ define( function( require ) {
       centerY: 0 // dependent on image file
     } );
 
-    options.children = [ hookNode, hingeNode ];
+    var draggableNode = new Node( { children: [ hookNode, hingeNode ] } );
+
+    options.children = [ draggableNode ];
 
     if ( SHOW_ORIGIN ) {
       options.children.push( new Circle( 3, { fill: 'red' } ) );
