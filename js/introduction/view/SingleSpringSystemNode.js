@@ -56,8 +56,8 @@ define( function( require ) {
     var viewEquilibriumX = modelViewTransform.modelToViewX( spring.equilibriumX );
     var equilibriumPositionNode = new Line( viewEquilibriumX, 0, viewEquilibriumX, EQUILIBRIUM_LINE_LENGTH, {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
-      lineWidth: 1,
-      lineDash: [ 5, 5 ],
+      lineWidth: 2,
+      lineDash: [ 3, 3 ],
       centerY: wallNode.centerY
     } );
 

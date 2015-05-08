@@ -10,7 +10,6 @@ Introduction screen
 -----------------------------------------------------------------------------------
 
 Replace Spring model with SingleSpringSystem model.
-Add icon next to check box for equilibrium position.
 Add telescoping arm and base to RoboticArmNode
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients

@@ -17,7 +17,9 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HStrut = require( 'SUN/HStrut' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
+  var Node = require( 'SCENERY/nodes/Node' );
   var Panel = require( 'SUN/Panel' );
   var Property = require( 'AXON/Property' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -158,7 +160,15 @@ define( function( require ) {
   };
 
   var createEquilibriumPositionCheckBoxContent = function() {
-     return new Text( equilibriumPositionString, TEXT_OPTIONS );
+    var textNode = new Text( equilibriumPositionString, TEXT_OPTIONS );
+    var lineNode = new Line( 0, 0, 0, textNode.height, {
+      stroke: HookesLawColors.EQUILIBRIUM_POSITION,
+      lineWidth: 2,
+      lineDash: [ 3, 3 ],
+      left: textNode.right + 8,
+      centerY: textNode.centerY
+    } );
+    return new Node( { children: [ textNode, lineNode ] } );
   };
 
   return inherit( Panel, VisibilityPanel );
