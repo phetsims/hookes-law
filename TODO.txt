@@ -9,6 +9,7 @@ Design questions
 Introduction screen
 -----------------------------------------------------------------------------------
 
+Bug: When applied force slider reads 0, there is a non-zero displacement.
 Replace Spring model with SingleSpringSystem model.
 Rewrite RoboticArmNode so that components move in local coordinate frame
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
