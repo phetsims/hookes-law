@@ -20,13 +20,13 @@ define( function( require ) {
 
     options = _.extend( {
       x: 0, // {number} initial x location of the fixed end of the arm, units = m
-      hookXOffset: 1  // {number} hookXOffset initial x-offset of the hook (movable end of the arm), units = m
+      length: 1  // {number} length distance from the fixed end of the arm to the tip of the hook, units = m
     }, options );
 
     this.x = options.x; // read-only
 
     PropertySet.call( this, {
-      hookXOffset: options.hookXOffset
+      length: options.length
     } );
   }
 
