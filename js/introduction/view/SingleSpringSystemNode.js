@@ -29,12 +29,13 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {RoboticArm} roboticArm
    * @param {ModelViewTransform2} modelViewTransform
    * @param {VisibilityProperties} visibilityProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SingleSpringSystemNode( spring, modelViewTransform, visibilityProperties, options ) {
+  function SingleSpringSystemNode( spring, roboticArm, modelViewTransform, visibilityProperties, options ) {
 
     options = _.extend( {
       number: 1 // integer used to label the system
@@ -46,7 +47,7 @@ define( function( require ) {
       centerY: modelViewTransform.modelToViewY( 0 )
     } );
 
-    var roboticArmNode = new RoboticArmNode( spring, modelViewTransform );
+    var roboticArmNode = new RoboticArmNode( roboticArm, modelViewTransform );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
       left: modelViewTransform.modelToViewX( spring.x ),

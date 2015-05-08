@@ -20,13 +20,13 @@ define( function( require ) {
 
     options = _.extend( {
       x: 0, // {number} initial x location of the fixed end of the arm, units = m
-      length: 1  // {number} distance from the fixed end of the arm to the tip of the hook, units = m
+      hookX: 1  // {number} initial x location of the hook, units = m
     }, options );
 
-    this.x = options.x; // read-only
+    this.x = options.x; // fixed end of the arm, read-only
 
     PropertySet.call( this, {
-      length: options.length
+      hookX: options.hookX
     } );
   }
 

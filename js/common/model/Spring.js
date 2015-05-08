@@ -61,6 +61,11 @@ define( function( require ) {
       return -appliedForce;
     } );
 
+    // displacement range varies with spring constant, units = m
+    this.displacementRangeProperty = new DerivedProperty( [ this.springConstantProperty ], function( springConstant ) {
+        return new Range( thisSpring.appliedForceRange.min / springConstant, thisSpring.appliedForceRange.max / springConstant )
+    } );
+
     this.springConstantProperty.link( function( springConstant ) {
       assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant out of range: ' + springConstant );
       thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
@@ -77,16 +82,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, Spring, {
-
-    // Gets the current maximum displacement, x = F/k. Used to constrain dragging.
-    getMaxDisplacement: function() {
-      return this.appliedForceRange.max / this.springConstantProperty.get();
-    },
-
-    // Gets the current minimum displacement, x = F/k. Used to constrain dragging.
-    getMinDisplacement: function() {
-      return this.appliedForceRange.min / this.springConstantProperty.get();
-    }
-  } );
+  return inherit( PropertySet, Spring );
 } );

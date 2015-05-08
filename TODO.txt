@@ -9,6 +9,7 @@ Design questions
 Introduction screen
 -----------------------------------------------------------------------------------
 
+Dynamically limit range of robotic arm, based on dynamic displacement range of spring.
 Bug: When applied force slider reads 0, there is a non-zero displacement (floating point error).
 Replace Spring model with SingleSpringSystem model.
 Rewrite RoboticArmNode so that components move in local coordinate frame

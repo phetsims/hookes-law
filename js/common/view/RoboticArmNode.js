@@ -26,12 +26,12 @@ define( function( require ) {
   var SHOW_ORIGIN = HookesLawQueryParameters.DEV;
 
   /**
-   * @param {Spring} spring
+   * @param {RoboticArm} roboticArm
    * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArmNode( spring, modelViewTransform, options ) {
+  function RoboticArmNode( roboticArm, modelViewTransform, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
@@ -84,18 +84,14 @@ define( function( require ) {
         startOffsetX: 0,  // where the drag started relative to locationProperty, in parent view coordinate
 
         start: function( event ) {
-          var locationX = modelViewTransform.modelToViewX( spring.lengthProperty.get() );
+          var locationX = modelViewTransform.modelToViewX( roboticArm.hookXProperty.get() );
           this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - locationX;
         },
 
         drag: function( event ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
-          var displacement = modelViewTransform.viewToModelX( parentX ) - spring.equilibriumX;
-          // constrain to delta increment
-          displacement = Math.round( displacement / HookesLawConstants.DISPLACEMENT_DELTA ) * HookesLawConstants.DISPLACEMENT_DELTA;
-          // constrain to range
-          displacement = Math.max( Math.min( displacement, spring.getMaxDisplacement() ), spring.getMinDisplacement() );
-          spring.displacementProperty.set( displacement );
+          var hookX = modelViewTransform.viewToModelX( parentX );
+          roboticArm.hookXProperty.set( hookX );
         },
 
         end: function( event ) {}
@@ -103,10 +99,10 @@ define( function( require ) {
     );
     draggableNode.addInputListener( dragHandler );
 
-    spring.lengthProperty.link( function( length ) {
+    roboticArm.hookXProperty.link( function( hookX ) {
 
       // move the hook and hinge
-      draggableNode.x = modelViewTransform.modelToViewX( length );
+      draggableNode.x = modelViewTransform.modelToViewX( hookX );
 
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box
