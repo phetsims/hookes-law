@@ -70,7 +70,7 @@ define( function( require ) {
       CHECK_BOX_OPTIONS );
 
     var equilibriumPositionCheckBox = new CheckBox(
-      new Text( equilibriumPositionString, TEXT_OPTIONS ),
+      createEquilibriumPositionCheckBoxContent(),
       visibilityProperties.equilibriumPositionVisibleProperty,
       CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(
@@ -155,6 +155,10 @@ define( function( require ) {
       ],
       align: 'center'
     } );
+  };
+
+  var createEquilibriumPositionCheckBoxContent = function() {
+     return new Text( equilibriumPositionString, TEXT_OPTIONS );
   };
 
   return inherit( Panel, VisibilityPanel );
