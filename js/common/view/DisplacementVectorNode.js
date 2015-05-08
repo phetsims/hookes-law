@@ -81,7 +81,7 @@ define( function( require ) {
     } );
 
     valuesVisibleProperty.link( function( visible ) {
-      valueNode.visible = visible;
+      valueNode.visible = backgroundNode.visible = visible;
     } );
   }
 
