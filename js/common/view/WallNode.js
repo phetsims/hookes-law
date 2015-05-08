@@ -20,8 +20,9 @@ define( function( require ) {
   function WallNode( size, options ) {
 
     options = _.extend( {
-      fill: 'rgb( 150, 150, 150 )',
-      stroke: 'black'
+      fill: 'rgb( 210, 210, 210 )',
+      stroke: 'black',
+      lineWidth: 0.5
     }, options );
 
     Rectangle.call( this, 0, 0, size.width, size.height, options );
