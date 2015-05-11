@@ -60,12 +60,11 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    //TODO this should move if equilibriumXProperty changes
-    var viewEquilibriumX = modelViewTransform.modelToViewX( spring.equilibriumXProperty.get() );
-    var equilibriumPositionNode = new Line( viewEquilibriumX, 0, viewEquilibriumX, EQUILIBRIUM_LINE_LENGTH, {
+    var equilibriumPositionNode = new Line( 0, 0, 0, EQUILIBRIUM_LINE_LENGTH, {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
+      centerX: modelViewTransform.modelToViewX( spring.equilibriumXProperty.get() ),
       centerY: yOrigin
     } );
 
@@ -80,7 +79,7 @@ define( function( require ) {
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
-      x: viewEquilibriumX,
+      x: equilibriumPositionNode.centerX,
       top: springNode.bottom + 8
     } );
 
@@ -111,6 +110,11 @@ define( function( require ) {
 
     visibilityProperties.equilibriumPositionVisibleProperty.link( function( visible ) {
       equilibriumPositionNode.visible = visible;
+    } );
+
+    // The model is more general than this view, so make sure we don't violate assumptions.
+    spring.leftProperty.lazyLink( function( left ) {
+       throw new Error( 'This view requires a spring whose left end remains at a fixed position.' );
     } );
   }
 
