@@ -34,7 +34,8 @@ define( function( require ) {
     options = _.extend( {
       fill: 'white',
       stroke: 'black',
-      decimalPlaces: 0
+      decimalPlaces: 0,
+      alignZero: 'left' // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
     }, options );
 
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {
@@ -70,7 +71,12 @@ define( function( require ) {
       // value position
       var margin = 5;
       if ( value === 0 ) {
-        valueNode.right = -margin; // toward the left, so it doesn't overlap with spring force
+        if ( options.alignZero === 'left' ) {
+          valueNode.left = margin;
+        }
+        else {
+          valueNode.right = -margin;
+        }
       }
       else if ( valueNode.width + ( 2 * margin ) < arrowNode.width ) {
         valueNode.centerX = arrowNode.centerX;
