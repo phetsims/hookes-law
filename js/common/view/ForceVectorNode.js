@@ -58,7 +58,7 @@ define( function( require ) {
 
     forceProperty.link( function( value ) {
 
-      // update the vector
+      // update the arrow
       arrowNode.visible = ( value !== 0 ); // since we can't draw a zero-length arrow
       if ( value !== 0 ) {
         arrowNode.setTailAndTip( 0, 0, value * HookesLawConstants.UNIT_FORCE_VECTOR_LENGTH, 0 );
