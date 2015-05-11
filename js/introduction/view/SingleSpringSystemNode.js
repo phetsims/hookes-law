@@ -68,13 +68,13 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
-      // x will be determined by displacement
+    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, visibilityProperties.valuesVisibleProperty, {
+      // x is determined by spring.rightProperty
       bottom: springNode.top - 14
     } );
 
-    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
-      // x will be determined by displacement
+    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, visibilityProperties.valuesVisibleProperty, {
+      // x is determined by spring.rightProperty
       bottom: springNode.top - 14
     } );
 
@@ -105,6 +105,11 @@ define( function( require ) {
     // The model is more general than this view, so make sure we don't violate assumptions.
     spring.leftProperty.lazyLink( function( left ) {
        throw new Error( 'This view requires a spring whose left end remains at a fixed position.' );
+    } );
+
+    // Locate the force vectors at the right end of the spring.
+    spring.rightProperty.link( function( right ) {
+      appliedForceVectorNode.x = springForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
   }
 

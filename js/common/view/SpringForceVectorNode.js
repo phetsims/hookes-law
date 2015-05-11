@@ -16,16 +16,14 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} springForceProperty
-   * @param {Property.<number>} displacementProperty
-   * @param {ModelViewTransform2} modelViewTransform
    * @param {Property.<boolean>} valuesVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function SpringForceVectorNode( springForceProperty, displacementProperty, modelViewTransform, valuesVisibleProperty, options ) {
+  function SpringForceVectorNode( springForceProperty, valuesVisibleProperty, options ) {
     options.fill = HookesLawColors.SPRING_FORCE_VECTOR;
     options.decimalPlaces = HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES;
-    ForceVectorNode.call( this, springForceProperty, displacementProperty, modelViewTransform, valuesVisibleProperty, options );
+    ForceVectorNode.call( this, springForceProperty, valuesVisibleProperty, options );
   }
 
   return inherit( ForceVectorNode, SpringForceVectorNode );

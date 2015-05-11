@@ -16,16 +16,14 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} appliedForceProperty
-   * @param {Property.<number>} displacementProperty
-   * @param {ModelViewTransform2} modelViewTransform
    * @param {Property.<boolean>} valuesVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function AppliedForceVectorNode( appliedForceProperty, displacementProperty, modelViewTransform, valuesVisibleProperty, options ) {
+  function AppliedForceVectorNode( appliedForceProperty, valuesVisibleProperty, options ) {
     options.fill = HookesLawColors.APPLIED_FORCE_VECTOR;
     options.decimalPlaces = HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES;
-    ForceVectorNode.call( this, appliedForceProperty, displacementProperty, modelViewTransform, valuesVisibleProperty, options );
+    ForceVectorNode.call( this, appliedForceProperty, valuesVisibleProperty, options );
   }
 
   return inherit( ForceVectorNode, AppliedForceVectorNode );

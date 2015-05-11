@@ -25,13 +25,11 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} forceProperty
-   * @param {Property.<number>} displacementProperty
-   * @param {ModelViewTransform2} modelViewTransform
    * @param {Property.<boolean>} valuesVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function SpringForceVectorNode( forceProperty, displacementProperty, modelViewTransform, valuesVisibleProperty, options ) {
+  function SpringForceVectorNode( forceProperty, valuesVisibleProperty, options ) {
 
     options = _.extend( {
       fill: 'white',
@@ -89,11 +87,6 @@ define( function( require ) {
       // resize the background behind the value
       backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
       backgroundNode.center = valueNode.center;
-    } );
-
-    // place the vector's tail at the end of the spring
-    displacementProperty.link( function( displacement ) {
-      thisNode.x = modelViewTransform.modelToViewX( displacement );
     } );
 
     valuesVisibleProperty.link( function( visible ) {
