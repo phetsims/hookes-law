@@ -55,7 +55,7 @@ define( function( require ) {
     var boxNode = new Rectangle( 0, 0, 40, 60, {
       fill: 'rgb( 210, 210, 210 )',
       stroke: 'black',
-      left: modelViewTransform.modelToViewX( 3 ), //TODO get this from RoboticArm model element
+      left: modelViewTransform.modelToViewX( roboticArm.right ),
       centerY: 0,
       lineWidth: 0.5
     } );
