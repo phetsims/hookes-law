@@ -31,15 +31,15 @@ define( function( require ) {
       equilibriumX: 1.5
     } );
     this.roboticArm1 = new RoboticArm( {
-      x: 3,
-      hookX: this.spring1.equilibriumX + this.spring1.displacementProperty.get()
+      left: this.spring1.equilibriumX + this.spring1.displacementProperty.get(),
+      right: 3
     } );
 
-    this.roboticArm1.hookXProperty.link( function( hookX ) {
-      thisModel.spring1.displacementProperty.set( hookX - thisModel.spring1.equilibriumX );
+    this.roboticArm1.leftProperty.link( function( left ) {
+      thisModel.spring1.displacementProperty.set( left - thisModel.spring1.equilibriumX );
     } );
     this.spring1.displacementProperty.link( function( displacement ) {
-      thisModel.roboticArm1.hookXProperty.set( thisModel.spring1.equilibriumX + displacement );
+      thisModel.roboticArm1.leftProperty.set( thisModel.spring1.equilibriumX + displacement );
     } );
 
     //TODO lots of duplication with system 1 above
@@ -49,15 +49,15 @@ define( function( require ) {
       equilibriumX: this.spring1.equilibriumX
     } );
     this.roboticArm2 = new RoboticArm( {
-      x: this.roboticArm1.x,
-      hookX: this.spring2.equilibriumX + this.spring2.displacementProperty.get()
+      left: this.spring2.equilibriumX + this.spring2.displacementProperty.get(),
+      right: this.roboticArm1.right
     } );
 
-    this.roboticArm2.hookXProperty.link( function( hookX ) {
-      thisModel.spring2.displacementProperty.set( hookX - thisModel.spring2.equilibriumX );
+    this.roboticArm2.leftProperty.link( function( left ) {
+      thisModel.spring2.displacementProperty.set( left - thisModel.spring2.equilibriumX );
     } );
     this.spring2.displacementProperty.link( function( displacement ) {
-      thisModel.roboticArm2.hookXProperty.set( thisModel.spring2.equilibriumX + displacement );
+      thisModel.roboticArm2.leftProperty.set( thisModel.spring2.equilibriumX + displacement );
     } );
   }
 

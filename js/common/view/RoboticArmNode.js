@@ -83,14 +83,14 @@ define( function( require ) {
         startOffsetX: 0,  // where the drag started relative to locationProperty, in parent view coordinate
 
         start: function( event ) {
-          var locationX = modelViewTransform.modelToViewX( roboticArm.hookXProperty.get() );
+          var locationX = modelViewTransform.modelToViewX( roboticArm.leftProperty.get() );
           this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - locationX;
         },
 
         drag: function( event ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
-          var hookX = modelViewTransform.viewToModelX( parentX );
-          roboticArm.hookXProperty.set( hookX );
+          var left = modelViewTransform.viewToModelX( parentX );
+          roboticArm.leftProperty.set( left );
         },
 
         end: function( event ) {}
@@ -98,10 +98,10 @@ define( function( require ) {
     );
     draggableNode.addInputListener( dragHandler );
 
-    roboticArm.hookXProperty.link( function( hookX ) {
+    roboticArm.leftProperty.link( function( left ) {
 
       // move the hook and hinge
-      draggableNode.x = modelViewTransform.modelToViewX( hookX );
+      draggableNode.x = modelViewTransform.modelToViewX( left );
 
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box
