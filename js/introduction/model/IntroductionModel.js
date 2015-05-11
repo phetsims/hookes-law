@@ -58,7 +58,7 @@ define( function( require ) {
     } );
     this.spring2.displacementProperty.link( function( displacement ) {
       thisModel.roboticArm2.hookXProperty.set( thisModel.spring2.equilibriumX + displacement );
-    } )
+    } );
   }
 
   return inherit( PropertySet, IntroductionModel, {

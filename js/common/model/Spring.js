@@ -63,7 +63,7 @@ define( function( require ) {
 
     // displacement range varies with spring constant, units = m
     this.displacementRangeProperty = new DerivedProperty( [ this.springConstantProperty ], function( springConstant ) {
-        return new Range( thisSpring.appliedForceRange.min / springConstant, thisSpring.appliedForceRange.max / springConstant )
+        return new Range( thisSpring.appliedForceRange.min / springConstant, thisSpring.appliedForceRange.max / springConstant );
     } );
 
     this.springConstantProperty.link( function( springConstant ) {
