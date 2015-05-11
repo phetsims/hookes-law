@@ -44,17 +44,20 @@ define( function( require ) {
     var spring = system.spring;
     var roboticArm = system.roboticArm;
 
+    // This sim operates in 1 dimension (x), so center everything on y = 0.
+    var yOrigin = modelViewTransform.modelToViewY( 0 );
+
     // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {
       right: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
-      centerY: modelViewTransform.modelToViewY( 0 )
+      centerY: yOrigin
     } );
 
     var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, modelViewTransform );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
       left: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
-      centerY: 0
+      centerY: yOrigin
     } );
 
     //TODO this should move if equilibriumXProperty changes
@@ -63,7 +66,7 @@ define( function( require ) {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
-      centerY: wallNode.centerY
+      centerY: yOrigin
     } );
 
     var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, spring.lengthProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
