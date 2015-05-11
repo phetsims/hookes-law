@@ -71,6 +71,7 @@ define( function( require ) {
       visibilityProperties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
 
+    // other check boxes
     var equilibriumPositionCheckBox = new CheckBox(
       createEquilibriumPositionCheckBoxContent(),
       visibilityProperties.equilibriumPositionVisibleProperty,
@@ -140,6 +141,7 @@ define( function( require ) {
       } );
     }
     else {
+      // options.arrowType === 'line'
       arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
         stroke: arrowColor,
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
@@ -148,16 +150,8 @@ define( function( require ) {
         tailLineWidth: 3
       } );
     }
-
-    // text and vector
-    return new HBox( {
-      children: [
-        textNode,
-        new HStrut( spacing ),
-        arrowNode
-      ],
-      align: 'center'
-    } );
+    // text - space - vector
+    return new HBox( { children: [ textNode, new HStrut( spacing ), arrowNode ] } );
   };
 
   /**
