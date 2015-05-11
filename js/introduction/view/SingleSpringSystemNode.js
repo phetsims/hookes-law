@@ -28,18 +28,21 @@ define( function( require ) {
   var EQUILIBRIUM_LINE_LENGTH = WALL_SIZE.height;
 
   /**
-   * @param {Spring} spring
-   * @param {RoboticArm} roboticArm
+   * @param {SingleSpringSystem} system
    * @param {ModelViewTransform2} modelViewTransform
    * @param {VisibilityProperties} visibilityProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SingleSpringSystemNode( spring, roboticArm, modelViewTransform, visibilityProperties, options ) {
+  function SingleSpringSystemNode( system, modelViewTransform, visibilityProperties, options ) {
 
     options = _.extend( {
       number: 1 // integer used to label the system
     }, options );
+
+    // to improve readability
+    var spring = system.spring;
+    var roboticArm = system.roboticArm;
 
     // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {

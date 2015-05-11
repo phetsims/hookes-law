@@ -32,7 +32,7 @@ define( function( require ) {
     var visibilityProperties = new VisibilityProperties();
 
     // System 1
-    var system1 = new SingleSpringSystemNode( model.spring1, model.roboticArm1, modelViewTransform, visibilityProperties, {
+    var system1 = new SingleSpringSystemNode( model.system1, modelViewTransform, visibilityProperties, {
       number: 1,
       left: this.layoutBounds.left + 60,
       centerY: ( model.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
@@ -41,7 +41,7 @@ define( function( require ) {
     assert && assert( system1.height <= this.layoutBounds.height / 2, 'system1 is taller than the space available for it' );
 
     // System 2
-    var system2 = new SingleSpringSystemNode( model.spring2, model.roboticArm2, modelViewTransform, visibilityProperties, {
+    var system2 = new SingleSpringSystemNode( model.system2, modelViewTransform, visibilityProperties, {
       number: 2,
       left: system1.left,
       top: this.layoutBounds.centerY + 10,
