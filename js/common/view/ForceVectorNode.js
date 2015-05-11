@@ -37,8 +37,6 @@ define( function( require ) {
       decimalPlaces: 0
     }, options );
 
-    var thisNode = this;
-
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {
       fill: options.fill,
       stroke: options.stroke,
