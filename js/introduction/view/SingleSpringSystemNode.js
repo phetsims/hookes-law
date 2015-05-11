@@ -43,18 +43,19 @@ define( function( require ) {
 
     // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {
-      right: modelViewTransform.modelToViewX( 0 ),
+      right: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
       centerY: modelViewTransform.modelToViewY( 0 )
     } );
 
     var roboticArmNode = new RoboticArmNode( roboticArm, modelViewTransform );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
-      left: modelViewTransform.modelToViewX( spring.x ),
+      left: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
       centerY: 0
     } );
 
-    var viewEquilibriumX = modelViewTransform.modelToViewX( spring.equilibriumX );
+    //TODO this should move if equilibriumXProperty changes
+    var viewEquilibriumX = modelViewTransform.modelToViewX( spring.equilibriumXProperty.get() );
     var equilibriumPositionNode = new Line( viewEquilibriumX, 0, viewEquilibriumX, EQUILIBRIUM_LINE_LENGTH, {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,

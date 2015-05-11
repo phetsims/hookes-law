@@ -27,37 +27,37 @@ define( function( require ) {
 
     // system 1
     this.spring1 = new Spring( {
-      x: 0,
-      equilibriumX: 1.5
+      left: 0,
+      equilibriumLength: 1.5
     } );
     this.roboticArm1 = new RoboticArm( {
-      left: this.spring1.equilibriumX + this.spring1.displacementProperty.get(),
+      left: this.spring1.equilibriumXProperty.get() + this.spring1.displacementProperty.get(),
       right: 3
     } );
 
     this.roboticArm1.leftProperty.link( function( left ) {
-      thisModel.spring1.displacementProperty.set( left - thisModel.spring1.equilibriumX );
+      thisModel.spring1.displacementProperty.set( left - thisModel.spring1.equilibriumXProperty.get() );
     } );
-    this.spring1.displacementProperty.link( function( displacement ) {
-      thisModel.roboticArm1.leftProperty.set( thisModel.spring1.equilibriumX + displacement );
+    this.spring1.rightProperty.link( function( right ) {
+      thisModel.roboticArm1.leftProperty.set( right );
     } );
 
     //TODO lots of duplication with system 1 above
     // system 2
     this.spring2 = new Spring( {
-      x: this.spring1.x,
-      equilibriumX: this.spring1.equilibriumX
+      left: this.spring1.left,
+      equilibriumLength: this.spring1.equilibriumLength
     } );
     this.roboticArm2 = new RoboticArm( {
-      left: this.spring2.equilibriumX + this.spring2.displacementProperty.get(),
+      left: this.spring2.equilibriumXProperty.get() + this.spring2.displacementProperty.get(),
       right: this.roboticArm1.right
     } );
 
     this.roboticArm2.leftProperty.link( function( left ) {
-      thisModel.spring2.displacementProperty.set( left - thisModel.spring2.equilibriumX );
+      thisModel.spring2.displacementProperty.set( left - thisModel.spring2.equilibriumXProperty.get() );
     } );
-    this.spring2.displacementProperty.link( function( displacement ) {
-      thisModel.roboticArm2.leftProperty.set( thisModel.spring2.equilibriumX + displacement );
+    this.spring2.rightProperty.link( function( right ) {
+      thisModel.roboticArm2.leftProperty.set( right );
     } );
   }
 
