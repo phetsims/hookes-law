@@ -116,6 +116,7 @@ define( function( require ) {
    * @param {number} maxTextWidth width of the max text used to label a vector check box
    * @param {string|Color} arrowColor
    * @param {Object} [options]
+   * @returns {Node}
    */
   var createVectorCheckBoxContent = function( textNode, maxTextWidth, arrowColor, options ) {
 
@@ -159,6 +160,11 @@ define( function( require ) {
     } );
   };
 
+  /**
+   * Creates the icon for the equilibrium position check box, consisting of text and a vertical dashed line.
+   *
+   * @returns {Node}
+   */
   var createEquilibriumPositionCheckBoxContent = function() {
     var textNode = new Text( equilibriumPositionString, TEXT_OPTIONS );
     var lineNode = new Line( 0, 0, 0, textNode.height, {
