@@ -96,21 +96,11 @@ define( function( require ) {
     ];
     Node.call( this, options );
 
-    visibilityProperties.appliedForceVectorVisibleProperty.link( function( visible ) {
-      appliedForceVectorNode.visible = visible;
-    } );
-
-    visibilityProperties.springForceVectorVisibleProperty.link( function( visible ) {
-      springForceVectorNode.visible = visible;
-    } );
-
-    visibilityProperties.displacementVectorVisibleProperty.link( function( visible ) {
-      displacementVectorNode.visible = visible;
-    } );
-
-    visibilityProperties.equilibriumPositionVisibleProperty.link( function( visible ) {
-      equilibriumPositionNode.visible = visible;
-    } );
+    // Attach visibility properties to their respective nodes.
+    visibilityProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
+    visibilityProperties.springForceVectorVisibleProperty.linkAttribute( springForceVectorNode, 'visible' );
+    visibilityProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
+    visibilityProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // The model is more general than this view, so make sure we don't violate assumptions.
     spring.leftProperty.lazyLink( function( left ) {
