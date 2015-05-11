@@ -92,13 +92,15 @@ define( function( require ) {
 
     this.displacementProperty.link( function( displacement ) {
       assert && assert( displacementRange.contains( displacement ), 'displacement out of range: ' + displacement );
-      thisSpring.appliedForce = thisSpring.springConstant * displacement; // F = kx
+      thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( thisSpring.springConstant * displacement ); // F = kx
     } );
 
-    // displacement range varies with spring constant, units = m
-    this.displacementRangeProperty = new DerivedProperty( [ this.springConstantProperty ], function( springConstant ) {
+    // range of the right end of the spring, units = m
+    this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, thisSpring.equilibriumXProperty ], function( springConstant, equilibriumX ) {
       assert && assert( springConstant > 0, 'springConstant must be > 0 : ' + springConstant );
-      return new Range( thisSpring.appliedForceRange.min / springConstant, thisSpring.appliedForceRange.max / springConstant );
+      var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
+      var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
+      return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
     } );
   }
 

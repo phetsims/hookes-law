@@ -26,11 +26,12 @@ define( function( require ) {
 
   /**
    * @param {RoboticArm} roboticArm
+   * @param {Property.<Range>} leftRangeProperty
    * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArmNode( roboticArm, modelViewTransform, options ) {
+  function RoboticArmNode( roboticArm, leftRangeProperty, modelViewTransform, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
@@ -89,7 +90,7 @@ define( function( require ) {
 
         drag: function( event ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
-          var left = modelViewTransform.viewToModelX( parentX );
+          var left = leftRangeProperty.get().constrainValue( modelViewTransform.viewToModelX( parentX ) );
           roboticArm.leftProperty.set( left );
         },
 
