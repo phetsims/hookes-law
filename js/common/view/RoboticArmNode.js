@@ -68,7 +68,7 @@ define( function( require ) {
 
     Node.call( this, options );
 
-    // Drag the hook or hinge to change displacement
+    // Drag the hook or hinge
     var dragHandler = new SimpleDragHandler( {
 
         allowTouchSnag: true,
