@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -22,11 +23,12 @@ define( function( require ) {
   /**
    * @param {RoboticArm} roboticArm
    * @param {Property.<Range>} leftRangeProperty
+   * @param {Property.<number>} equilibriumXProperty
    * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArmNode( roboticArm, leftRangeProperty, modelViewTransform, options ) {
+  function RoboticArmNode( roboticArm, leftRangeProperty, equilibriumXProperty, modelViewTransform, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
@@ -56,7 +58,7 @@ define( function( require ) {
 
     var hingeNode = new Image( hingeImage, {
       scale: 0.4,
-      left: hookNode.right - 14, // dependent on image file
+      x: hookNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
 
@@ -94,14 +96,25 @@ define( function( require ) {
 
     roboticArm.leftProperty.link( function( left ) {
 
+      // constrain number of decimal places
+      left = Math.round( left / HookesLawConstants.DISPLACEMENT_DELTA ) * HookesLawConstants.DISPLACEMENT_DELTA;
+
       // move the hook and hinge
       draggableNode.x = modelViewTransform.modelToViewX( left - roboticArm.right );
+
+      // rotate the hook when at equilibrium
+      if ( left === equilibriumXProperty.get() && !dragHandler.dragging ) {
+        //TODO
+      }
+      else {
+        hookNode.setRotation( 0 );
+      }
 
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box
       var armLength = ( boxNode.left - draggableNode.right ) + ( 2 * overlap );
       armNode.setRect( 0, 0, armLength, 16 );
-      armNode.left = draggableNode.right - overlap;
+      armNode.right = boxNode.left + overlap;
       armNode.centerY = 0;
     } );
   }
