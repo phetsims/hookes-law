@@ -4,6 +4,7 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
+4 decimal places are required for displacement
 
 -----------------------------------------------------------------------------------
 Introduction screen
