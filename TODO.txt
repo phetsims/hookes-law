@@ -4,13 +4,10 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
-4 decimal places are required for displacement
-
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------
 
-Bug: When applied force slider reads 0, there is a non-zero displacement (floating point error).
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
