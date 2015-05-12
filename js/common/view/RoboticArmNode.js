@@ -107,6 +107,7 @@ define( function( require ) {
       }
       else {
         hookNode.setRotation( 0 );
+        console.log( 'hook down' );//XXX
       }
 
       // resize the arm
