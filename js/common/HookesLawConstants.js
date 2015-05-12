@@ -25,7 +25,6 @@ define( function( require ) {
     // delta for controls
     SPRING_CONSTANT_DELTA: 10,
     APPLIED_FORCE_DELTA: 1,
-    DISPLACEMENT_DELTA: 0.001,
 
     // scale factors for vectors
     UNIT_FORCE_VECTOR_LENGTH: 1.75, // view length of a force vector whose magnitude is 1 N

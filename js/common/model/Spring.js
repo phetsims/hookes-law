@@ -18,6 +18,7 @@ define( function( require ) {
 
   // modules
   var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
@@ -95,7 +96,11 @@ define( function( require ) {
     // When changing displacement, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
       assert && assert( displacementRange.contains( displacement ), 'displacement out of range: ' + displacement );
-      thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( thisSpring.springConstant * displacement ); // F = kx
+      var appliedForce = thisSpring.springConstant * displacement; // F = kx
+      // constrain delta
+      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+      // constrain range
+      thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
     } );
 
     // range of the right end of the spring, units = m

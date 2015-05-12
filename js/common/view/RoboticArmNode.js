@@ -15,6 +15,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var Util = require( 'DOT/Util' );
 
   // images
   var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
@@ -96,14 +97,11 @@ define( function( require ) {
 
     roboticArm.leftProperty.link( function( left ) {
 
-      // constrain number of decimal places
-      left = Math.round( left / HookesLawConstants.DISPLACEMENT_DELTA ) * HookesLawConstants.DISPLACEMENT_DELTA;
-
       // move the hook and hinge
       draggableNode.x = modelViewTransform.modelToViewX( left - roboticArm.right );
 
       // rotate the hook when at equilibrium
-      if ( left === equilibriumXProperty.get() && !dragHandler.dragging ) {
+      if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumXProperty.get() ) {
         //TODO
       }
       else {
