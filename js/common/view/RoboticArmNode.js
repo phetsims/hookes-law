@@ -100,7 +100,7 @@ define( function( require ) {
       // move the hook and hinge
       draggableNode.x = modelViewTransform.modelToViewX( left - roboticArm.right );
 
-      // rotate the hook when at equilibrium
+      // rotate the hook when displacement is displayed as zero
       if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumXProperty.get() ) {
         //TODO
         console.log( 'hook up' );//XXX
