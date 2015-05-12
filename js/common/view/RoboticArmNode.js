@@ -37,6 +37,22 @@ define( function( require ) {
       cursor: 'pointer'
     }, options );
 
+    // origin is at left-center of box
+    var boxNode = new Rectangle( 0, 0, 40, 60, {
+      fill: 'rgb( 210, 210, 210 )',
+      stroke: 'black',
+      lineWidth: 0.5,
+      left: 0,
+      centerY: 0
+    } );
+
+    // arm will be sized and positioned by Property observer
+    var armNode = new Rectangle( 0, 0, 1, 0, {
+      fill: 'rgb( 210, 210, 210 )',
+      stroke: 'black',
+      lineWidth: 0.5
+    } );
+
     var hookNode = new Image( hookImage, {
       scale: 0.4,
       left: -7, // dependent on image file, so that origin is in center of hook tip
@@ -53,21 +69,6 @@ define( function( require ) {
     var draggableNode = new Node( { children: [ hookNode, hingeNode ] } );
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
-    var boxNode = new Rectangle( 0, 0, 40, 60, {
-      fill: 'rgb( 210, 210, 210 )',
-      stroke: 'black',
-      left: modelViewTransform.modelToViewX( roboticArm.right ),
-      centerY: 0,
-      lineWidth: 0.5
-    } );
-
-    // arm will be sized and positioned by Property observer
-    var armNode = new Rectangle( 0, 0, 1, 0, {
-      fill: 'rgb( 210, 210, 210 )',
-      stroke: 'black',
-      lineWidth: 0.5
-    } );
-
     options.children = [ armNode, boxNode, draggableNode ];
 
     if ( SHOW_ORIGIN ) {
@@ -81,16 +82,17 @@ define( function( require ) {
 
         allowTouchSnag: true,
 
-        startOffsetX: 0,  // where the drag started relative to locationProperty, in parent view coordinate
+        previousX: 0,
 
         start: function( event ) {
-          var locationX = modelViewTransform.modelToViewX( roboticArm.leftProperty.get() );
-          this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - locationX;
+          this.previousX = event.currentTarget.globalToParentPoint( event.pointer.point ).x;
         },
 
         drag: function( event ) {
-          var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
-          var left = leftRangeProperty.get().constrainValue( modelViewTransform.viewToModelX( parentX ) );
+          var x =  event.currentTarget.globalToParentPoint( event.pointer.point ).x;
+          var dx = x - this.previousX;
+          this.previousX = x;
+          var left = leftRangeProperty.get().constrainValue( roboticArm.leftProperty.get() + modelViewTransform.viewToModelX( dx ) );
           roboticArm.leftProperty.set( left );
         },
 
@@ -102,7 +104,7 @@ define( function( require ) {
     roboticArm.leftProperty.link( function( left ) {
 
       // move the hook and hinge
-      draggableNode.x = modelViewTransform.modelToViewX( left );
+      draggableNode.x = modelViewTransform.modelToViewX( left - roboticArm.right );
 
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box

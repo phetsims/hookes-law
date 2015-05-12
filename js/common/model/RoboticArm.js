@@ -18,6 +18,8 @@ define( function( require ) {
    */
   function RoboticArm( options ) {
 
+    var thisArm = this;
+
     options = _.extend( {
       left: 2,  // {number} initial x location of the left (movable) end of the arm, units = m
       right: 3 // {number} initial x location of the right (fixed) end of the arm, units = m
@@ -29,7 +31,6 @@ define( function( require ) {
       left: options.left
     } );
 
-    var thisArm = this;
     this.leftProperty.link( function( left ) {
       assert && assert( left < thisArm.right, 'robotic arm is constrained to extend from right to left' );
     } );

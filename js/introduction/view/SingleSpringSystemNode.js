@@ -53,7 +53,10 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, modelViewTransform );
+    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, modelViewTransform, {
+      x: modelViewTransform.modelToViewX( roboticArm.right ),
+      centerY: yOrigin
+    } );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
       left: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
