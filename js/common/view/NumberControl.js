@@ -38,16 +38,24 @@ define( function( require ) {
       sliderOptions: { majorTicks: [], minorTickSpacing: 1 }
     }, options );
 
+    var delta = options.arrowButtonOptions.delta;
+
     var titleNode = new Text( title, options.titleOptions );
 
     var numberDisplay = new NumberDisplay( numberProperty, numberRange, options.valueOptions.units, pattern_0value_1units, options.valueOptions );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
-      numberProperty.set( Math.max( numberProperty.get() - options.arrowButtonOptions.delta, numberRange.min ) );
+      var value = numberProperty.get() - delta;
+      value = Math.round( value / delta ) * delta; // constrain to delta
+      value = Math.max( value, numberRange.min ); // constrain to range
+      numberProperty.set( value );
     }, options.arrowButtonOptions );
 
     var rightArrowButton = new ArrowButton( 'right', function() {
-      numberProperty.set( Math.min( numberProperty.get() + options.arrowButtonOptions.delta, numberRange.max ) );
+      var value = numberProperty.get() + delta;
+      value = Math.round( value / delta ) * delta; // constrain to delta
+      value = Math.min( value, numberRange.max ); // constrain to range
+      numberProperty.set( value );
     }, options.arrowButtonOptions );
 
     var slider = new HSlider( numberProperty, numberRange, options.sliderOptions );
