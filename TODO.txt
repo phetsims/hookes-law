@@ -4,6 +4,9 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
+With the number of decimal places display, calculations don't work out.
+Eg: k = 940, x = 0.001 -> F = 0.94, but display shows F = 1
+
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------
