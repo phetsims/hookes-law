@@ -103,6 +103,7 @@ define( function( require ) {
       // rotate the hook when at equilibrium
       if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumXProperty.get() ) {
         //TODO
+        console.log( 'hook up' );//XXX
       }
       else {
         hookNode.setRotation( 0 );
