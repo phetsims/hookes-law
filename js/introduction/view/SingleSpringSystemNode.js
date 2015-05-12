@@ -55,7 +55,7 @@ define( function( require ) {
 
     var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, spring.equilibriumXProperty, modelViewTransform, {
       x: modelViewTransform.modelToViewX( roboticArm.right ),
-      centerY: yOrigin
+      y: yOrigin
     } );
 
     var springNode = new SpringNode( spring, modelViewTransform, {
