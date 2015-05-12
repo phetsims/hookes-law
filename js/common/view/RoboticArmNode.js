@@ -21,9 +21,6 @@ define( function( require ) {
   var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
   var hookImage = require( 'image!HOOKES_LAW/robotic-arm-hook.png' );
 
-  // constants
-  var SHOW_ORIGIN = HookesLawQueryParameters.DEV;
-
   /**
    * @param {RoboticArm} roboticArm
    * @param {Property.<Range>} leftRangeProperty
@@ -71,10 +68,6 @@ define( function( require ) {
 
     options.children = [ armNode, boxNode, draggableNode ];
 
-    if ( SHOW_ORIGIN ) {
-      options.children.push( new Circle( 3, { fill: 'red' } ) );
-    }
-
     Node.call( this, options );
 
     // Drag the hook or hinge to change displacement
@@ -82,17 +75,17 @@ define( function( require ) {
 
         allowTouchSnag: true,
 
-        previousX: 0,
+        startOffsetX: 0,
 
         start: function( event ) {
-          this.previousX = event.currentTarget.globalToParentPoint( event.pointer.point ).x;
+          var length = modelViewTransform.modelToViewX( roboticArm.leftProperty.get() - roboticArm.right );
+          this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
         },
 
         drag: function( event ) {
-          var x =  event.currentTarget.globalToParentPoint( event.pointer.point ).x;
-          var dx = x - this.previousX;
-          this.previousX = x;
-          var left = leftRangeProperty.get().constrainValue( roboticArm.leftProperty.get() + modelViewTransform.viewToModelX( dx ) );
+          var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
+          var length = modelViewTransform.viewToModelX( parentX );
+          var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
           roboticArm.leftProperty.set( left );
         },
 
