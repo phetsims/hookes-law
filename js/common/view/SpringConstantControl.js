@@ -32,11 +32,16 @@ define( function( require ) {
    */
   function SpringConstantControl( title, springConstantProperty, springConstantRange, options ) {
 
-    var majorTicks = [
-      { value: springConstantRange.min, label: new Text( Util.toFixed( springConstantRange.min, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) },
-      { value: springConstantRange.max / 2, label: new Text( Util.toFixed( springConstantRange.max / 2, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) },
-      { value: springConstantRange.max, label: new Text( Util.toFixed( springConstantRange.max, HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) }
-    ];
+    var majorTicks = [ {
+      value: springConstantRange.min,
+      label: new Text( Util.toFixed( springConstantRange.min, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+    }, {
+      value: springConstantRange.max / 2,
+      label: new Text( Util.toFixed( springConstantRange.max / 2, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+    }, {
+      value: springConstantRange.max,
+      label: new Text( Util.toFixed( springConstantRange.max, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+    } ];
 
     options = _.extend( {
       titleOptions: {
@@ -44,11 +49,11 @@ define( function( require ) {
       },
       valueOptions: {
         font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-        decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
+        decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
         units: unitsNewtonsPerMeter
       },
       arrowButtonOptions: {
-        delta: HookesLawConstants.SPRING_FORCE_DELTA
+        delta: HookesLawConstants.SPRING_CONSTANT_DELTA
       },
       sliderOptions: {
         majorTicks: majorTicks,
@@ -61,7 +66,7 @@ define( function( require ) {
         thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor(),
         constrainValue: function( value ) {
           // constrain to delta
-          value = Math.round( value / HookesLawConstants.SPRING_FORCE_DELTA ) * HookesLawConstants.SPRING_FORCE_DELTA;
+          value = Math.round( value / HookesLawConstants.SPRING_CONSTANT_DELTA ) * HookesLawConstants.SPRING_CONSTANT_DELTA;
           // constrain to range
           return springConstantRange.constrainValue( value );
         }
