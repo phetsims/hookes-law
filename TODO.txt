@@ -14,7 +14,6 @@ Will showing 4 decimal places make it more difficult for students to convert m t
 Introduction screen
 -----------------------------------------------------------------------------------
 
-Constrain applied force and spring constant in model instead of view? 1 variable must be unconstrained, probably displacement.
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
