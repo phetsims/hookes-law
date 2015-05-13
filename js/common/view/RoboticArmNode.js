@@ -102,12 +102,10 @@ define( function( require ) {
 
       // rotate the hook when displacement is displayed as zero
       if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumXProperty.get() ) {
-        //TODO
-        console.log( 'hook up' );//XXX
+        console.log( 'hook up' );//TODO
       }
       else {
-        hookNode.setRotation( 0 );
-        console.log( 'hook down' );//XXX
+        console.log( 'hook down' );//TODO
       }
 
       // resize the arm
