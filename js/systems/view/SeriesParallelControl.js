@@ -27,6 +27,7 @@ define( function( require ) {
     options = _.extend( {
       scale: 0.4, //TODO scale image files
       orientation: 'horizontal',
+      spacing: 20,
       buttonContentXMargin: 10,
       buttonContentYMargin: 10,
       deselectedButtonOpacity: 0.6,

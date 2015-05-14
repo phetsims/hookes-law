@@ -14,8 +14,8 @@ define( function( require ) {
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
   // images
-  var oneSystemIcon = require( 'image!HOOKES_LAW/one-system-icon.png' );
-  var twoSystemsIcon = require( 'image!HOOKES_LAW/two-systems-icon.png' );
+  var singleSpringIcon = require( 'image!HOOKES_LAW/single-spring-scene.png' );
+  var twoSpringIcon = require( 'image!HOOKES_LAW/two-spring-scene.png' );
 
   /**
    * @param {Property.<number>} numberOfSystemsProperty
@@ -25,15 +25,18 @@ define( function( require ) {
   function NumberOfSystemsControl( numberOfSystemsProperty, options ) {
 
     options = _.extend( {
-      scale: 0.75, //TODO scale image files
+      scale: 0.4, //TODO scale image files
       orientation: 'horizontal',
+      spacing: 20,
+      buttonContentXMargin: 10,
+      buttonContentYMargin: 10,
       deselectedButtonOpacity: 0.6,
       deselectedContentOpacity: 0.6
     }, options );
 
     RadioButtonGroup.call( this, numberOfSystemsProperty, [
-      { value: 1, node: new Image( oneSystemIcon ) },
-      { value: 2, node: new Image( twoSystemsIcon ) }
+      { value: 1, node: new Image( singleSpringIcon ) },
+      { value: 2, node: new Image( twoSpringIcon ) }
     ], options );
   }
 
