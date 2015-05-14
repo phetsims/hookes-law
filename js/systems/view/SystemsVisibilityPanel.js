@@ -12,6 +12,7 @@ define( function( require ) {
 
   // modules
   var AquaRadioButton = require( 'SUN/AquaRadioButton' );
+  var BracketNode = require( 'SCENERY_PHET/BracketNode' );
   var CheckBox = require( 'SUN/CheckBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -63,7 +64,7 @@ define( function( require ) {
       visibilityProperties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( springForceTextNode, maxTextWidth, HookesLawColors.SPRING_FORCE_VECTOR ),
+      springForceTextNode,
       visibilityProperties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
@@ -81,28 +82,51 @@ define( function( require ) {
       visibilityProperties.valuesVisibleProperty,
       CHECK_BOX_OPTIONS );
 
-    // radio buttons
+    // 'total' control
     var totalRadioButton = new AquaRadioButton(
       visibilityProperties.springForceRepresentationProperty,
       'total',
       new Text( totalString, TEXT_OPTIONS ),
       { radius: 12 } );
+    var totalIcon = IconFactory.createForceVectorIcon( HookesLawColors.SPRING_FORCE_VECTOR );
+    var totalControl = new HBox( {
+      children: [ totalRadioButton, totalIcon ],
+      spacing: 10
+    } );
+
+    // 'component' control
     var componentRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty,
       'component',
       new Text( componentString, TEXT_OPTIONS ),
       { radius: 12 } );
-    var radioButtonsSubPanel = new HBox( {
+    var componentVectorIcons = new VBox( {
       children: [
-        new HStrut( 25 ),
-        new VBox( {
-          children: [
-            totalRadioButton,
-            componentRadioButton
-          ],
-          align: 'left',
-          spacing: 10
-        } )
-      ]
+        IconFactory.createForceVectorIcon( HookesLawColors.TOP_SPRING_FORCE_VECTOR ),
+        IconFactory.createForceVectorIcon( HookesLawColors.BOTTOM_SPRING_FORCE_VECTOR )
+      ],
+      spacing: 10
+    } );
+    var componentBracket = new BracketNode( {
+      orientation: 'left',
+      bracketLength: componentVectorIcons.height
+    } );
+    var componentControl = new HBox( {
+      children: [ componentRadioButton, componentBracket, componentVectorIcons ],
+      spacing: 10
+    } );
+
+    var radioButtonsBox = new VBox( {
+      children: [
+        totalControl,
+        componentControl
+      ],
+      align: 'left',
+      spacing: 10
+    } );
+
+    var radioButtonsSubPanel = new HBox( {
+      children: [ new HStrut( 25 ), radioButtonsBox ],
+      spacing: 5
     } );
 
     // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
@@ -115,6 +139,7 @@ define( function( require ) {
     // Radio buttons should be enabled only if 'spring force' is checked
     visibilityProperties.springForceVectorVisibleProperty.link( function( springForceVectorVisible ) {
       totalRadioButton.enabled = componentRadioButton.enabled = springForceVectorVisible;
+      totalIcon.opacity = componentVectorIcons.opacity = componentBracket.opacity = ( springForceVectorVisible ? 1 : 0.3 );
     } );
 
     // Adjust touch areas
