@@ -17,7 +17,7 @@ define( function( require ) {
    */
   function SystemsModel() {
     PropertySet.call( this, {
-      //TODO
+      springConfiguration: 'series' // configuration of the springs, 'series' or 'parallel'
     } );
   }
 
