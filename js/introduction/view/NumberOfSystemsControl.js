@@ -15,7 +15,7 @@ define( function( require ) {
 
   // images
   var oneSystemIcon = require( 'image!HOOKES_LAW/one-system-icon.png' );
-  var twoSystemIcon = require( 'image!HOOKES_LAW/two-system-icon.png' );
+  var twoSystemsIcon = require( 'image!HOOKES_LAW/two-systems-icon.png' );
 
   /**
    * @param {Property.<number>} numberOfSystemsProperty
@@ -33,7 +33,7 @@ define( function( require ) {
 
     RadioButtonGroup.call( this, numberOfSystemsProperty, [
       { value: 1, node: new Image( oneSystemIcon ) },
-      { value: 2, node: new Image( twoSystemIcon ) }
+      { value: 2, node: new Image( twoSystemsIcon ) }
     ], options );
   }
 

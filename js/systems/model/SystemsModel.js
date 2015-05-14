@@ -17,14 +17,9 @@ define( function( require ) {
    */
   function SystemsModel() {
     PropertySet.call( this, {
-      springConfiguration: 'series' // configuration of the springs, 'series' or 'parallel'
+      springConfiguration: 'parallel' // configuration of the springs, 'parallel' or 'series'
     } );
   }
 
-  return inherit( PropertySet, SystemsModel, {
-
-    step: function( dt ) {
-      //TODO
-    }
-  } );
+  return inherit( PropertySet, SystemsModel );
 } );

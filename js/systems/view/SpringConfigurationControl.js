@@ -14,7 +14,7 @@ define( function( require ) {
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
   // images
-  var parallelIcon = require( 'image!HOOKES_LAW/two-system-icon.png' );
+  var parallelIcon = require( 'image!HOOKES_LAW/two-systems-icon.png' );
   var seriesIcon = require( 'image!HOOKES_LAW/one-system-icon.png' );
 
   /**
