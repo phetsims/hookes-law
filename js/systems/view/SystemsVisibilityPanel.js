@@ -11,9 +11,12 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AquaRadioButton = require( 'SUN/AquaRadioButton' );
   var CheckBox = require( 'SUN/CheckBox' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var HStrut = require( 'SUN/HStrut' );
   var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
@@ -78,6 +81,30 @@ define( function( require ) {
       visibilityProperties.valuesVisibleProperty,
       CHECK_BOX_OPTIONS );
 
+    // radio buttons
+    var totalRadioButton = new AquaRadioButton(
+      visibilityProperties.springForceRepresentationProperty,
+      'total',
+      new Text( totalString, TEXT_OPTIONS ),
+      { radius: 12 } );
+    var componentRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty,
+      'component',
+      new Text( componentString, TEXT_OPTIONS ),
+      { radius: 12 } );
+    var radioButtonsSubPanel = new HBox( {
+      children: [
+        new HStrut( 25 ),
+        new VBox( {
+          children: [
+            totalRadioButton,
+            componentRadioButton
+          ],
+          align: 'left',
+          spacing: 10
+        } )
+      ]
+    } );
+
     // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
     Property.multilink(
       [ visibilityProperties.appliedForceVectorVisibleProperty, visibilityProperties.springForceVectorVisibleProperty, visibilityProperties.displacementVectorVisibleProperty ],
@@ -85,21 +112,35 @@ define( function( require ) {
         valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
+    // Radio buttons should be enabled only if 'spring force' is checked
+    visibilityProperties.springForceVectorVisibleProperty.link( function( springForceVectorVisible ) {
+      totalRadioButton.enabled = componentRadioButton.enabled = springForceVectorVisible;
+    } );
+
     // Adjust touch areas
     var spacing = 20;
-    var checkBoxes = [
+    var controls = [
       appliedForceCheckBox,
       springForceCheckBox,
       displacementCheckBox,
       equilibriumPositionCheckBox,
-      valuesCheckBox
+      valuesCheckBox,
+      totalRadioButton,
+      componentRadioButton
     ];
-    for ( var i = 0; i < checkBoxes.length; i++ ) {
-      checkBoxes[ i ].touchArea = checkBoxes[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+    for ( var i = 0; i < controls.length; i++ ) {
+      controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
     var content = new VBox( {
-      children: checkBoxes,
+      children: [
+        appliedForceCheckBox,
+        springForceCheckBox,
+        radioButtonsSubPanel,
+        displacementCheckBox,
+        equilibriumPositionCheckBox,
+        valuesCheckBox
+      ],
       align: 'left',
       spacing: spacing
     } );
