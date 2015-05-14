@@ -7,12 +7,10 @@ Design questions
 With the number of decimal places displayed, calculations don't work out.
 Eg: k = 940, x = 0.001 -> F = 0.94, but display shows F = 1
 
-4 decimal places are required for x. Otherwise for F = 1, changing k shows no change in x.
-Will showing 4 decimal places make it more difficult for students to convert m to cm?
+3 decimal places are not sufficient for x. Eg, for F = 1, changing k shows no change in x.
 
-The design of the robotic arm graphic doesn't support rotation of the hook.
-When the hook is rotate up, it smacks up against the hinge, and sticks out of
-bottom of the hinge.
+MD isn't happy with the robotic arm design. Defer futher implementation of it until
+consensus is reached.
 
 -----------------------------------------------------------------------------------
 Introduction screen
