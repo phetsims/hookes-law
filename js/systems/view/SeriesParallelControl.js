@@ -18,11 +18,11 @@ define( function( require ) {
   var seriesIcon = require( 'image!HOOKES_LAW/series-spring-scene.png' );
 
   /**
-   * @param {Property.<string>} springConfigurationProperty 'parallel' or 'series'
+   * @param {Property.<string>} seriesParallelProperty 'series'|'parallel'
    * @param {Object} [options]
    * @constructor
    */
-  function SpringConfigurationControl( springConfigurationProperty, options ) {
+  function SeriesParallelControl( seriesParallelProperty, options ) {
 
     options = _.extend( {
       scale: 0.4, //TODO scale image files
@@ -33,11 +33,11 @@ define( function( require ) {
       deselectedContentOpacity: 0.6
     }, options );
 
-    RadioButtonGroup.call( this, springConfigurationProperty, [
+    RadioButtonGroup.call( this, seriesParallelProperty, [
       { value: 'parallel', node: new Image( parallelIcon ) },
       { value: 'series', node: new Image( seriesIcon ) },
     ], options );
   }
 
-  return inherit( RadioButtonGroup, SpringConfigurationControl );
+  return inherit( RadioButtonGroup, SeriesParallelControl );
 } );

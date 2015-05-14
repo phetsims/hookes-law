@@ -13,7 +13,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var SpringConfigurationControl = require( 'HOOKES_LAW/systems/view/SpringConfigurationControl' );
+  var SeriesParallelControl = require( 'HOOKES_LAW/systems/view/SeriesParallelControl' );
 
   /**
    * @param {SystemsModel} model
@@ -23,8 +23,8 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    // Control for configuration of the springs (parallel or series)
-    var seriesParallelControl = new SpringConfigurationControl( model.springConfigurationProperty, {
+    // Control for selecting between series or parallel springs
+    var seriesParallelControl = new SeriesParallelControl( model.seriesParallelProperty, {
       right: this.layoutBounds.right - 20,
       centerY: this.layoutBounds.centerY
     } );
