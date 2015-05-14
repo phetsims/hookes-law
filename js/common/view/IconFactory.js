@@ -29,14 +29,14 @@ define( function( require ) {
      * Creates the content for a vector check box, consisting of text and an arrow.
      *
      * @param {Node} textNode text, positioned to the left of the vector
-     * @param {number} maxTextWidth width of the max text used to label a vector check box
      * @param {string|Color} arrowColor
      * @param {Object} [options]
      * @returns {Node}
      */
-    createVectorCheckBoxContent: function( textNode, maxTextWidth, arrowColor, options ) {
+    createVectorCheckBoxContent: function( textNode, arrowColor, options ) {
 
       options = _.extend( {
+        maxTextWidth: textNode.width, // width of the max text used to label a vector check box
         minSpacing: 10, // {number} minimum space between text and vector
         arrowLength: 30, // {number}
         arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
@@ -44,7 +44,7 @@ define( function( require ) {
       }, options );
 
       // compute spacing so that arrows on all check boxes will ultimately be left aligned
-      var spacing = maxTextWidth - textNode.width + options.minSpacing;
+      var spacing = options.maxTextWidth - textNode.width + options.minSpacing;
 
       var arrowNode;
       if ( options.arrowType === 'shape' ) {

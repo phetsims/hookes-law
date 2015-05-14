@@ -51,25 +51,17 @@ define( function( require ) {
       yMargin: 15
     }, options );
 
-    // text labels on the vector check boxes
-    var appliedForceTextNode = new Text( appliedForceString, TEXT_OPTIONS );
-    var springForceTextNode = new Text( springForceString, TEXT_OPTIONS );
-    var displacementTextNode = new Text( displacementString, TEXT_OPTIONS );
-    var maxTextWidth = _.max( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], function( node ) {
-      return node.width;
-    } ).width;
-
     // vector check boxes, with left-aligned vector icons
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( appliedForceTextNode, maxTextWidth, HookesLawColors.APPLIED_FORCE_VECTOR ),
+      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), HookesLawColors.APPLIED_FORCE_VECTOR ),
       visibilityProperties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
-      springForceTextNode,
+      new Text( springForceString, TEXT_OPTIONS ),
       visibilityProperties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( displacementTextNode, maxTextWidth, HookesLawColors.DISPLACEMENT_VECTOR, { arrowType: 'line' } ),
+      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), HookesLawColors.DISPLACEMENT_VECTOR, { arrowType: 'line' } ),
       visibilityProperties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
 
