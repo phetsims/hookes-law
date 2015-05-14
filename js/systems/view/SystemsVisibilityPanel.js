@@ -77,12 +77,11 @@ define( function( require ) {
 
     // 'total' control
     var totalRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'total',
-      new Text( totalString, TEXT_OPTIONS ), RADIO_BUTTON_OPTIONS );
-    var totalIcon = IconFactory.createForceVectorIcon( HookesLawColors.SPRING_FORCE_VECTOR );
-    var totalControl = new HBox( {
-      children: [ totalRadioButton, totalIcon ],
-      spacing: 10
-    } );
+      new HBox( {
+        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createForceVectorIcon( HookesLawColors.SPRING_FORCE_VECTOR ) ],
+        spacing: 10
+      } ),
+      RADIO_BUTTON_OPTIONS );
 
     // 'components' control
     var componentsRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'component',
@@ -105,7 +104,7 @@ define( function( require ) {
 
     var radioButtonsBox = new VBox( {
       children: [
-        totalControl,
+        totalRadioButton,
         componentsControl
       ],
       align: 'left',
@@ -127,7 +126,7 @@ define( function( require ) {
     // Radio buttons should be enabled only if 'spring force' is checked
     visibilityProperties.springForceVectorVisibleProperty.link( function( springForceVectorVisible ) {
       totalRadioButton.enabled = componentsRadioButton.enabled = springForceVectorVisible;
-      totalIcon.opacity = componentsVectorIcons.opacity = componentsBracket.opacity = ( springForceVectorVisible ? 1 : 0.3 );
+      componentsVectorIcons.opacity = componentsBracket.opacity = ( springForceVectorVisible ? 1 : 0.3 );
     } );
 
     // Adjust touch areas
