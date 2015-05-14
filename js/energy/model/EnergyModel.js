@@ -21,10 +21,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, EnergyModel, {
-
-    step: function( dt ) {
-      //TODO
-    }
-  } );
+  return inherit( PropertySet, EnergyModel );
 } );
