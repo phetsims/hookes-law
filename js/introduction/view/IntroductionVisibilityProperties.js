@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Properties that are specific to visibility of things in the view.
+ * Properties that are specific to visibility of things in the "Introduction" view.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -16,7 +16,7 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function VisibilityProperties() {
+  function IntroductionVisibilityProperties() {
 
     // to make development easier
     var checked = HookesLawQueryParameters.DEV ? true : false;
@@ -30,5 +30,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, VisibilityProperties );
+  return inherit( PropertySet, IntroductionVisibilityProperties );
 } );

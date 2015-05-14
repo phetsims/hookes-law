@@ -15,8 +15,8 @@ define( function( require ) {
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var SingleSpringSystemNode = require( 'HOOKES_LAW/introduction/view/SingleSpringSystemNode' );
-  var VisibilityPanel = require( 'HOOKES_LAW/common/view/VisibilityPanel' );
-  var VisibilityProperties = require( 'HOOKES_LAW/common/view/VisibilityProperties' );
+  var IntroductionVisibilityPanel = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityPanel' );
+  var IntroductionVisibilityProperties = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityProperties' );
 
   /**
    * @param {IntroductionModel} model
@@ -29,7 +29,7 @@ define( function( require ) {
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // Properties that are specific to the visibility of things in the view
-    var visibilityProperties = new VisibilityProperties();
+    var visibilityProperties = new IntroductionVisibilityProperties();
 
     // System 1
     var system1 = new SingleSpringSystemNode( model.system1, modelViewTransform, visibilityProperties, {
@@ -51,7 +51,7 @@ define( function( require ) {
     assert && assert( system2.height <= this.layoutBounds.height / 2, 'system2 is taller than the space available for it' );
 
     // Visibility controls
-    var visibilityPanel = new VisibilityPanel( visibilityProperties, {
+    var visibilityPanel = new IntroductionVisibilityPanel( visibilityProperties, {
       top: this.layoutBounds.top + 10,
       right: this.layoutBounds.right - 10
     } );

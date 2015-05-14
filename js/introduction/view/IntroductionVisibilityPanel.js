@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control panel for visibility of various representations in the view.
+ * Control panel for visibility of various representations in the "Introductions" view.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -37,11 +37,11 @@ define( function( require ) {
   var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
 
   /**
-   * @param {VisibilityProperties} visibilityProperties
+   * @param {IntroductionVisibilityProperties} visibilityProperties
    * @param {Object} [options]
    * @constructor
    */
-  function VisibilityPanel( visibilityProperties, options ) {
+  function IntroductionVisibilityPanel( visibilityProperties, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -171,5 +171,5 @@ define( function( require ) {
     return new Node( { children: [ textNode, lineNode ] } );
   };
 
-  return inherit( Panel, VisibilityPanel );
+  return inherit( Panel, IntroductionVisibilityPanel );
 } );
