@@ -14,8 +14,8 @@ define( function( require ) {
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
   // images
-  var parallelIcon = require( 'image!HOOKES_LAW/two-systems-icon.png' );
-  var seriesIcon = require( 'image!HOOKES_LAW/one-system-icon.png' );
+  var parallelIcon = require( 'image!HOOKES_LAW/parallel-spring-scene.png' );
+  var seriesIcon = require( 'image!HOOKES_LAW/series-spring-scene.png' );
 
   /**
    * @param {Property.<string>} springConfigurationProperty 'parallel' or 'series'
@@ -25,8 +25,10 @@ define( function( require ) {
   function SpringConfigurationControl( springConfigurationProperty, options ) {
 
     options = _.extend( {
-      scale: 0.75, //TODO scale image files
+      scale: 0.4, //TODO scale image files
       orientation: 'horizontal',
+      buttonContentXMargin: 10,
+      buttonContentYMargin: 10,
       deselectedButtonOpacity: 0.6,
       deselectedContentOpacity: 0.6
     }, options );
