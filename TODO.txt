@@ -18,6 +18,7 @@ bottom of the hinge.
 Introduction screen
 -----------------------------------------------------------------------------------
 
+Integrate new robotic arm graphics
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
