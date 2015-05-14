@@ -75,7 +75,7 @@ define( function( require ) {
       visibilityProperties.valuesVisibleProperty,
       CHECK_BOX_OPTIONS );
 
-    // 'total' control
+    // 'total' button
     var totalRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'total',
       new HBox( {
         children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createForceVectorIcon( HookesLawColors.SPRING_FORCE_VECTOR ) ],
@@ -83,9 +83,7 @@ define( function( require ) {
       } ),
       RADIO_BUTTON_OPTIONS );
 
-    // 'components' control
-    var componentsRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'component',
-      new Text( componentsSpring, TEXT_OPTIONS ), RADIO_BUTTON_OPTIONS );
+    // 'components' button
     var componentsVectorIcons = new VBox( {
       children: [
         IconFactory.createForceVectorIcon( HookesLawColors.TOP_SPRING_FORCE_VECTOR ),
@@ -93,19 +91,24 @@ define( function( require ) {
       ],
       spacing: 10
     } );
-    var componentsBracket = new BracketNode( {
-      orientation: 'left',
-      bracketLength: componentsVectorIcons.height
-    } );
-    var componentsControl = new HBox( {
-      children: [ componentsRadioButton, componentsBracket, componentsVectorIcons ],
-      spacing: 10
-    } );
+    var componentsRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'component',
+      new HBox( {
+        children: [
+          new Text( componentsSpring, TEXT_OPTIONS ),
+          new BracketNode( {
+            orientation: 'left',
+            bracketLength: componentsVectorIcons.height
+          } ),
+          componentsVectorIcons
+        ],
+        spacing: 10
+      } ),
+      RADIO_BUTTON_OPTIONS );
 
     var radioButtonsBox = new VBox( {
       children: [
         totalRadioButton,
-        componentsControl
+        componentsRadioButton
       ],
       align: 'left',
       spacing: 10
@@ -126,7 +129,6 @@ define( function( require ) {
     // Radio buttons should be enabled only if 'spring force' is checked
     visibilityProperties.springForceVectorVisibleProperty.link( function( springForceVectorVisible ) {
       totalRadioButton.enabled = componentsRadioButton.enabled = springForceVectorVisible;
-      componentsVectorIcons.opacity = componentsBracket.opacity = ( springForceVectorVisible ? 1 : 0.3 );
     } );
 
     // Adjust touch areas
