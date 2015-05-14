@@ -9,7 +9,7 @@ Eg: k = 940, x = 0.001 -> F = 0.94, but display shows F = 1
 
 3 decimal places are not sufficient for x. Eg, for F = 1, changing k shows no change in x.
 
-MD isn't happy with the robotic arm design. Defer futher implementation of it until
+MD isn't happy with the robotic arm design. Defer further implementation of it until
 consensus is reached.
 
 -----------------------------------------------------------------------------------
