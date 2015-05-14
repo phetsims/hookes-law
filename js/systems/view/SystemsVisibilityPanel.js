@@ -3,7 +3,7 @@
 /**
  * Control panel for visibility of various representations in the "Systems" view.
  * This control panel is a bit similar to IntroductionVisibilityPanel, but it
- * provides 2 choices ('total' and 'component') for how the spring force is represented.
+ * provides 2 choices ('total' and 'components') for how the spring force is represented.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
