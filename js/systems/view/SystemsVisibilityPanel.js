@@ -31,10 +31,11 @@ define( function( require ) {
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
   var totalString = require( 'string!HOOKES_LAW/total' );
-  var componentString = require( 'string!HOOKES_LAW/component' );
+  var componentsSpring = require( 'string!HOOKES_LAW/components' );
 
   // constants
   var CHECK_BOX_OPTIONS = { spacing: 8 };
+  var RADIO_BUTTON_OPTIONS = { radius: 12 };
   var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
 
   /**
@@ -83,42 +84,37 @@ define( function( require ) {
       CHECK_BOX_OPTIONS );
 
     // 'total' control
-    var totalRadioButton = new AquaRadioButton(
-      visibilityProperties.springForceRepresentationProperty,
-      'total',
-      new Text( totalString, TEXT_OPTIONS ),
-      { radius: 12 } );
+    var totalRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'total',
+      new Text( totalString, TEXT_OPTIONS ), RADIO_BUTTON_OPTIONS );
     var totalIcon = IconFactory.createForceVectorIcon( HookesLawColors.SPRING_FORCE_VECTOR );
     var totalControl = new HBox( {
       children: [ totalRadioButton, totalIcon ],
       spacing: 10
     } );
 
-    // 'component' control
-    var componentRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty,
-      'component',
-      new Text( componentString, TEXT_OPTIONS ),
-      { radius: 12 } );
-    var componentVectorIcons = new VBox( {
+    // 'components' control
+    var componentsRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'component',
+      new Text( componentsSpring, TEXT_OPTIONS ), RADIO_BUTTON_OPTIONS );
+    var componentsVectorIcons = new VBox( {
       children: [
         IconFactory.createForceVectorIcon( HookesLawColors.TOP_SPRING_FORCE_VECTOR ),
         IconFactory.createForceVectorIcon( HookesLawColors.BOTTOM_SPRING_FORCE_VECTOR )
       ],
       spacing: 10
     } );
-    var componentBracket = new BracketNode( {
+    var componentsBracket = new BracketNode( {
       orientation: 'left',
-      bracketLength: componentVectorIcons.height
+      bracketLength: componentsVectorIcons.height
     } );
-    var componentControl = new HBox( {
-      children: [ componentRadioButton, componentBracket, componentVectorIcons ],
+    var componentsControl = new HBox( {
+      children: [ componentsRadioButton, componentsBracket, componentsVectorIcons ],
       spacing: 10
     } );
 
     var radioButtonsBox = new VBox( {
       children: [
         totalControl,
-        componentControl
+        componentsControl
       ],
       align: 'left',
       spacing: 10
@@ -138,8 +134,8 @@ define( function( require ) {
 
     // Radio buttons should be enabled only if 'spring force' is checked
     visibilityProperties.springForceVectorVisibleProperty.link( function( springForceVectorVisible ) {
-      totalRadioButton.enabled = componentRadioButton.enabled = springForceVectorVisible;
-      totalIcon.opacity = componentVectorIcons.opacity = componentBracket.opacity = ( springForceVectorVisible ? 1 : 0.3 );
+      totalRadioButton.enabled = componentsRadioButton.enabled = springForceVectorVisible;
+      totalIcon.opacity = componentsVectorIcons.opacity = componentsBracket.opacity = ( springForceVectorVisible ? 1 : 0.3 );
     } );
 
     // Adjust touch areas
@@ -151,7 +147,7 @@ define( function( require ) {
       equilibriumPositionCheckBox,
       valuesCheckBox,
       totalRadioButton,
-      componentRadioButton
+      componentsRadioButton
     ];
     for ( var i = 0; i < controls.length; i++ ) {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );

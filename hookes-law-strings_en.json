@@ -45,9 +45,9 @@
     "value": "{0} {1}"
   },
   "total": {
-    "value": "total"
+    "value": "Total"
   },
-  "component": {
-    "value": "component"
+  "components": {
+    "value": "Components"
   }
 }
