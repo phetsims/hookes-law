@@ -26,6 +26,8 @@ define( function( require ) {
   var springForceString = require( 'string!HOOKES_LAW/springForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
+  var totalString = require( 'string!HOOKES_LAW/total' );
+  var componentString = require( 'string!HOOKES_LAW/component' );
 
   // constants
   var CHECK_BOX_OPTIONS = { spacing: 8 };
