@@ -3,6 +3,12 @@
 /**
  * Model of 2 springs in parallel.
  *
+ * Feq = F1 + F2
+ * keq = k1 + k2
+ * xeq = x1 = x2
+ *
+ * where "eq" is equivalent value for the system, "1" is the left spring, "2" is the right spring.
+ *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define( function( require ) {
