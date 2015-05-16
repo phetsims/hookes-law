@@ -32,9 +32,8 @@ define( function( require ) {
     options = _.extend( {
       left: 0, // {number} x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
-      springConstant: 200, // {number} initial spring constant, units = N/m
-      springConstantRange: new Range( 100, 1000 ), // units = N/m
-      appliedForceRange: new Range( -100, 100 ) // units = N
+      springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
+      appliedForceRange: new Range( -100, 100, 0 ) // {Range} applied force range and initial value, units = N
     }, options );
 
     // validate options
@@ -54,8 +53,8 @@ define( function( require ) {
     PropertySet.call( this, {
       left: options.left, // {number} x location of the left end of the spring, units = m
       displacement: 0,  // {number} x, horizontal displacement from equilibrium position, units = m
-      springConstant: options.springConstant,  // {number} k, spring constant, units = N/m
-      appliedForce: 0 // {number} F, force applied to the spring, units = N
+      springConstant: options.springConstantRange.defaultValue,  // {number} k, spring constant, units = N/m
+      appliedForce: options.appliedForceRange.defaultValue // {number} F, force applied to the spring, units = N
     } );
 
     // equilibrium x location, units = m
