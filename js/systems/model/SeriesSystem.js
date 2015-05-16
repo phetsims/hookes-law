@@ -40,7 +40,8 @@ define( function( require ) {
     this.appliedForceRange = new Range( -100, 100, 0 );
 
     PropertySet.call( this, {
-      appliedForce: this.appliedForceRange.defaultValue
+      appliedForce: this.appliedForceRange.defaultValue // Feq
+      //TODO add xeq, keq, Eeq
     } );
 
     this.leftSpring = new Spring( {

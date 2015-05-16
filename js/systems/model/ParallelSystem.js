@@ -34,6 +34,8 @@ define( function( require ) {
    */
   function ParallelSystem() {
 
+    //TODO add Feq, xeq, keq, Eeq properties
+
     this.topSpring = new Spring( {
       left: 0,
       equilibriumLength: 1,
@@ -51,7 +53,7 @@ define( function( require ) {
       right: 3
     } );
 
-    //TODO wire up ends
+    //TODO wire up ends, complete the model, etc.
   }
 
   return inherit( Object, ParallelSystem, {
