@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Range = require( 'DOT/Range' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
@@ -22,7 +23,8 @@ define( function( require ) {
 
     this.spring = new Spring( {
       left: 0,
-      equilibriumLength: 1.5
+      equilibriumLength: 1.5,
+      springConstantRange: new Range( 100, 1000, 200 ) // units = N/m
     } );
 
     this.roboticArm = new RoboticArm( {
