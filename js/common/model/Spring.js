@@ -38,7 +38,6 @@ define( function( require ) {
 
     // validate options
     assert && assert( options.equilibriumLength > 0, 'equilibriumLength must be > 0 : ' + options.equilibriumLength );
-    assert && assert( options.springConstantRange.contains( options.springConstant ), 'springConstant out of range: ' + options.springConstant );
 
     // save some options
     this.equilibriumLength = options.equilibriumLength; // read-only
