@@ -23,7 +23,6 @@ define( function( require ) {
 
   return inherit( Object, SystemsModel, {
 
-    // @override
     reset: function() {
       this.seriesSystem.reset();
       this.parallelSystem.reset();

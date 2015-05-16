@@ -22,7 +22,6 @@ define( function( require ) {
 
   return inherit( Object, IntroductionModel, {
 
-    // @override
     reset: function() {
       this.system1.reset();
       this.system2.reset();
