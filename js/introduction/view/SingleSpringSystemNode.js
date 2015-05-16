@@ -30,11 +30,11 @@ define( function( require ) {
   /**
    * @param {SingleSpringSystem} system
    * @param {ModelViewTransform2} modelViewTransform
-   * @param {VisibilityProperties} visibilityProperties
+   * @param {IntroductionViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SingleSpringSystemNode( system, modelViewTransform, visibilityProperties, options ) {
+  function SingleSpringSystemNode( system, modelViewTransform, viewProperties, options ) {
 
     options = _.extend( {
       number: 1 // integer used to label the system
@@ -71,17 +71,17 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, visibilityProperties.valuesVisibleProperty, {
+    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by spring.rightProperty
       bottom: springNode.top - 14
     } );
 
-    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, visibilityProperties.valuesVisibleProperty, {
+    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by spring.rightProperty
       bottom: springNode.top - 14
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, visibilityProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
       x: equilibriumPositionNode.centerX,
       top: springNode.bottom + 8
     } );
@@ -100,10 +100,10 @@ define( function( require ) {
     Node.call( this, options );
 
     // Attach visibility properties to their respective nodes.
-    visibilityProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
-    visibilityProperties.springForceVectorVisibleProperty.linkAttribute( springForceVectorNode, 'visible' );
-    visibilityProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
-    visibilityProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
+    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
+    viewProperties.springForceVectorVisibleProperty.linkAttribute( springForceVectorNode, 'visible' );
+    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
+    viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // The model is more general than this view, so make sure we don't violate assumptions.
     spring.leftProperty.lazyLink( function( left ) {
