@@ -25,6 +25,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
@@ -34,7 +35,9 @@ define( function( require ) {
    */
   function ParallelSystem() {
 
-    //TODO add Feq, xeq, keq, Eeq properties
+    PropertySet.call( this, {
+      //TODO add Feq, xeq, keq, Eeq
+    } );
 
     this.topSpring = new Spring( {
       left: 0,
@@ -56,9 +59,11 @@ define( function( require ) {
     //TODO wire up ends, complete the model, etc.
   }
 
-  return inherit( Object, ParallelSystem, {
+  return inherit( PropertySet, ParallelSystem, {
 
+    // @override
     reset: function() {
+      PropertySet.prototype.reset.call( this );
       this.topSpring.reset();
       this.bottomSpring.reset();
       this.roboticArm.reset();
