@@ -35,7 +35,7 @@ define( function( require ) {
     var system1 = new SingleSpringSystemNode( model.system1, modelViewTransform, visibilityProperties, {
       number: 1,
       left: this.layoutBounds.left + 60,
-      centerY: ( model.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
+      centerY: ( visibilityProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
     } );
     this.addChild( system1 );
     assert && assert( system1.height <= this.layoutBounds.height / 2, 'system1 is taller than the space available for it' );
@@ -45,7 +45,7 @@ define( function( require ) {
       number: 2,
       left: system1.left,
       top: this.layoutBounds.centerY + 10,
-      visible: ( model.numberOfSystemsProperty.get() === 2 )
+      visible: ( visibilityProperties.numberOfSystemsProperty.get() === 2 )
     } );
     this.addChild( system2 );
     assert && assert( system2.height <= this.layoutBounds.height / 2, 'system2 is taller than the space available for it' );
@@ -58,7 +58,7 @@ define( function( require ) {
     this.addChild( visibilityPanel );
 
     // Control for number of systems
-    var numberOfSystemsControl = new NumberOfSystemsControl( model.numberOfSystemsProperty, {
+    var numberOfSystemsControl = new NumberOfSystemsControl( visibilityProperties.numberOfSystemsProperty, {
       centerX: visibilityPanel.centerX,
       top: visibilityPanel.bottom + 10
     } );
@@ -75,7 +75,7 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    model.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
+    visibilityProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 

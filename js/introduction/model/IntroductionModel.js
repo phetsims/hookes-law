@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
   var SingleSpringSystem = require( 'HOOKES_LAW/introduction/model/SingleSpringSystem' );
 
   /**
@@ -18,19 +17,14 @@ define( function( require ) {
    */
   function IntroductionModel() {
 
-    PropertySet.call( this, {
-      numberOfSystems: 1  // {number} 1 or 2
-    } );
-
     this.system1 = new SingleSpringSystem();
     this.system2 = new SingleSpringSystem();
   }
 
-  return inherit( PropertySet, IntroductionModel, {
+  return inherit( Object, IntroductionModel, {
 
     // @override
     reset: function() {
-      PropertySet.prototype.reset.call( this );
       this.system1.reset();
       this.system2.reset();
     }
