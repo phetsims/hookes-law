@@ -18,8 +18,8 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
+  var SingleSpringControls = require( 'HOOKES_LAW/introduction/view/SingleSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
-  var SpringControlPanel = require( 'HOOKES_LAW/common/view/SpringControlPanel' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -86,7 +86,7 @@ define( function( require ) {
       top: springNode.bottom + 8
     } );
 
-    var controlPanel = new SpringControlPanel( spring, {
+    var springControls = new SingleSpringControls( spring, {
       number: options.number,
       left: wallNode.left,
       top: wallNode.bottom + 10
@@ -95,7 +95,7 @@ define( function( require ) {
     options.children = [
       wallNode, equilibriumPositionNode, roboticArmNode, springNode,
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
-      controlPanel
+      springControls
     ];
     Node.call( this, options );
 

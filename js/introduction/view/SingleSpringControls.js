@@ -1,5 +1,10 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
+/**
+ * Spring controls for a single-spring system.
+ *
+ * @author Chris Malley (PixelZoom, Inc.)
+ */
 define( function( require ) {
   'use strict';
 
@@ -22,7 +27,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function SpringControlPanel( spring, options ) {
+  function SingleSpringControls( spring, options ) {
 
     options = _.extend( {
       number: 1,
@@ -48,5 +53,5 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  return inherit( Panel, SpringControlPanel );
+  return inherit( Panel, SingleSpringControls );
 } );
