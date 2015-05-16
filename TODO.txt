@@ -26,11 +26,8 @@ Compute spring shape as a function of displacement (MV's algorithm?)
 Systems screen
 -----------------------------------------------------------------------------------
 
-SeriesSpringsModel
-ParallelSpringsModel
 Keep spring constants and applied force synchronized between serial and parallel systems.
 Show total and component views of spring forces.
-Below "spring force" in control panel, add "total" and "component" radio buttons with icons.
 
 -----------------------------------------------------------------------------------
 Energy screen
