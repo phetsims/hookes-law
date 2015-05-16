@@ -12,10 +12,14 @@ Eg: k = 940, x = 0.001 -> F = 0.94, but display shows F = 1
 MD isn't happy with the robotic arm design. Defer further implementation of it until
 consensus is reached.
 
+Do we want to show the 300 tick label for spring constant range (200,600)?
+
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------
 
+Make it possible to change nested options in SpringConstantControl and AppliedForceControl
+Use a smaller track width for slider in SeriesSpringControl
 Move some of Spring model into SingleSpringSystem, so that Spring can be used in all screens
 Integrate new robotic arm graphics
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
