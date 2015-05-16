@@ -38,6 +38,7 @@ define( function( require ) {
 
     // validate options
     assert && assert( options.equilibriumLength > 0, 'equilibriumLength must be > 0 : ' + options.equilibriumLength );
+    assert && assert( options.springConstantRange.min > 0, 'spring constant must be positive' );
 
     // save some options
     this.equilibriumLength = options.equilibriumLength; // read-only
