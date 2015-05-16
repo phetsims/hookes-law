@@ -55,8 +55,18 @@ define( function( require ) {
       thisSystem.leftSpring.right = left;
     } );
 
+    this.rightSpring.rightProperty.link( function( right ) {
+      thisSystem.roboticArm.leftProperty.set( right );
+    } );
+
     this.roboticArm.leftProperty.link( function( left ) {
       thisSystem.rightSpring.right = left;
+    } );
+
+    // Feq = F1 = F2
+    this.appliedForceProperty.link( function( appliedForce ) {
+      thisSystem.leftSpring.appliedForceProperty.set( appliedForce );
+      thisSystem.rightSpring.appliedForceProperty.set( appliedForce );
     } );
   }
 

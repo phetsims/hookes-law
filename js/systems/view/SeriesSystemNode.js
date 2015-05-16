@@ -53,7 +53,7 @@ define( function( require ) {
     } );
 
     var rightSpringNode = new SpringNode( rightSpring, modelViewTransform, {
-      left: modelViewTransform.modelToViewX( rightSpring.leftProperty.get() ),
+      // left is based on rightSpring.leftProperty
       centerY: yOrigin
     } );
 
@@ -87,6 +87,10 @@ define( function( require ) {
     leftSpring.leftProperty.lazyLink( function( left ) {
       throw new Error( 'The left end of the left spring must remain at a fixed position.' );
     } );
+
+    rightSpring.leftProperty.link( function( left ) {
+       rightSpringNode.left = modelViewTransform.modelToViewX( left );
+    });
 
     // Position the vectors
     leftSpring.rightProperty.link( function( right ) {
