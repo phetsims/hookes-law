@@ -14,6 +14,9 @@
   "appliedForce": {
     "value": "Applied Force"
   },
+  "appliedForceColon": {
+    "value": "Applied Force:"
+  },
   "appliedForceNumber": {
     "value": "Applied Force {0}:"
   },
@@ -51,15 +54,15 @@
     "value": "Components"
   },
   "topSpring": {
-    "value": "Top Spring"
+    "value": "Top Spring:"
   },
   "bottomSpring": {
-    "value": "Bottom Spring"
+    "value": "Bottom Spring:"
   },
   "leftSpring": {
-    "value": "Left Spring"
+    "value": "Left Spring:"
   },
   "rightSpring": {
-    "value": "rightSpring"
+    "value": "Right Spring:"
   }
 }

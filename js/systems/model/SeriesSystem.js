@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
@@ -21,16 +22,24 @@ define( function( require ) {
 
     var thisSystem = this;
 
+    this.appliedForceRange = new Range( -100, 100, 0 );
+
+    PropertySet.call( this, {
+      appliedForce: this.appliedForceRange.defaultValue
+    } );
+
     this.leftSpring = new Spring( {
       left: 0,
       equilibriumLength: 1,
-      springConstantRange: new Range( 200, 600, 200 )
+      springConstantRange: new Range( 200, 600, 200 ),
+      appliedForceRange: this.appliedForceRange
     } );
 
     this.rightSpring = new Spring( {
       left: this.leftSpring.right,
       equilibriumLength: this.leftSpring.equilibriumLength,
-      springConstantRange: this.leftSpring.springConstantRange
+      springConstantRange: this.leftSpring.springConstantRange,
+      appliedForceRange: this.appliedForceRange
     } );
 
     this.roboticArm = new RoboticArm( {
@@ -51,9 +60,11 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Object, SeriesSystem, {
+  return inherit( PropertySet, SeriesSystem, {
 
+    // @override
     reset: function() {
+      PropertySet.prototype.reset.call( this );
       this.leftSpring.reset();
       this.rightSpring.reset();
       this.roboticArm.reset();

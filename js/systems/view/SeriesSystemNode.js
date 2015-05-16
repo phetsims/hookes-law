@@ -16,12 +16,9 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
+  var SeriesSpringControls = require( 'HOOKES_LAW/systems/view/SeriesSpringControls' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
-
-  // strings
-  var leftSpringString = require( 'string!HOOKES_LAW/leftSpring' );
-  var rightSpringString = require( 'string!HOOKES_LAW/rightSpring' );
 
   // constants
   var WALL_SIZE = new Dimension2( 25, 170 );
@@ -73,9 +70,16 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
+    var springControls = new SeriesSpringControls( system, {
+      scale: 0.65,
+      left: wallNode.left,
+      top: wallNode.bottom + 10
+    } );
+
     options.children = [
-      wallNode, equilibriumPositionNode, roboticArmNode, leftSpringNode, rightSpringNode
-      //TODO add vectors and control panel
+      wallNode, equilibriumPositionNode, roboticArmNode, leftSpringNode, rightSpringNode,
+      //TODO add vector nodes
+      springControls
     ];
     Node.call( this, options );
 
