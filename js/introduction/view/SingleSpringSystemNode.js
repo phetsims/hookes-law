@@ -53,14 +53,14 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, spring.equilibriumXProperty, modelViewTransform, {
-      x: modelViewTransform.modelToViewX( roboticArm.right ),
-      y: yOrigin
-    } );
-
     var springNode = new SpringNode( spring, modelViewTransform, {
       left: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
       centerY: yOrigin
+    } );
+
+    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, spring.equilibriumXProperty, modelViewTransform, {
+      x: modelViewTransform.modelToViewX( roboticArm.right ),
+      y: yOrigin
     } );
 
     var equilibriumPositionNode = new Line( 0, 0, 0, EQUILIBRIUM_LINE_LENGTH, {
