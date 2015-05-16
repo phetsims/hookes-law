@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Controls the configuration of the springs, selects between parallel and series.
+ * Controls of selecting between series and parallel systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

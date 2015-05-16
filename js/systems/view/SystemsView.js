@@ -35,7 +35,7 @@ define( function( require ) {
     } );
     this.addChild( visibilityPanel );
 
-    // Control for selecting between series or parallel springs
+    // Control for selecting between series and parallel systems
     var seriesParallelControl = new SeriesParallelControl( viewProperties.seriesParallelProperty, {
       centerX: visibilityPanel.centerX,
       top: visibilityPanel.bottom + 10
