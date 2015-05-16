@@ -16,7 +16,7 @@ define( function( require ) {
   var ScreenView = require( 'JOIST/ScreenView' );
   var SingleSpringSystemNode = require( 'HOOKES_LAW/introduction/view/SingleSpringSystemNode' );
   var IntroductionVisibilityPanel = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityPanel' );
-  var IntroductionVisibilityProperties = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityProperties' );
+  var IntroductionViewProperties = require( 'HOOKES_LAW/introduction/view/IntroductionViewProperties' );
 
   /**
    * @param {IntroductionModel} model
@@ -28,37 +28,37 @@ define( function( require ) {
     var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    // Properties that are specific to the visibility of things in the view
-    var visibilityProperties = new IntroductionVisibilityProperties();
+    // Properties that are specific to the view
+    var viewProperties = new IntroductionViewProperties();
 
     // System 1
-    var system1 = new SingleSpringSystemNode( model.system1, modelViewTransform, visibilityProperties, {
+    var system1 = new SingleSpringSystemNode( model.system1, modelViewTransform, viewProperties, {
       number: 1,
       left: this.layoutBounds.left + 60,
-      centerY: ( visibilityProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
+      centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
     } );
     this.addChild( system1 );
     assert && assert( system1.height <= this.layoutBounds.height / 2, 'system1 is taller than the space available for it' );
 
     // System 2
-    var system2 = new SingleSpringSystemNode( model.system2, modelViewTransform, visibilityProperties, {
+    var system2 = new SingleSpringSystemNode( model.system2, modelViewTransform, viewProperties, {
       number: 2,
       left: system1.left,
       top: this.layoutBounds.centerY + 10,
-      visible: ( visibilityProperties.numberOfSystemsProperty.get() === 2 )
+      visible: ( viewProperties.numberOfSystemsProperty.get() === 2 )
     } );
     this.addChild( system2 );
     assert && assert( system2.height <= this.layoutBounds.height / 2, 'system2 is taller than the space available for it' );
 
     // Visibility controls
-    var visibilityPanel = new IntroductionVisibilityPanel( visibilityProperties, {
+    var visibilityPanel = new IntroductionVisibilityPanel( viewProperties, {
       top: this.layoutBounds.top + 10,
       right: this.layoutBounds.right - 10
     } );
     this.addChild( visibilityPanel );
 
     // Control for number of systems
-    var numberOfSystemsControl = new NumberOfSystemsControl( visibilityProperties.numberOfSystemsProperty, {
+    var numberOfSystemsControl = new NumberOfSystemsControl( viewProperties.numberOfSystemsProperty, {
       centerX: visibilityPanel.centerX,
       top: visibilityPanel.bottom + 10
     } );
@@ -68,14 +68,14 @@ define( function( require ) {
     var resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
-        visibilityProperties.reset();
+        viewProperties.reset();
       },
       right: this.layoutBounds.maxX - 15,
       bottom: this.layoutBounds.maxY - 15
     } );
     this.addChild( resetAllButton );
 
-    visibilityProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
+    viewProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 

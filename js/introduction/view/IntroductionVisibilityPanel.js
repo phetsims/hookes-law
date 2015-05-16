@@ -30,7 +30,7 @@ define( function( require ) {
   var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
 
   /**
-   * @param {IntroductionVisibilityProperties} visibilityProperties
+   * @param {IntroductionViewProperties} visibilityProperties
    * @param {Object} [options]
    * @constructor
    */

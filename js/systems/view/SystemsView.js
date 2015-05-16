@@ -15,7 +15,7 @@ define( function( require ) {
   var ScreenView = require( 'JOIST/ScreenView' );
   var SeriesParallelControl = require( 'HOOKES_LAW/systems/view/SeriesParallelControl' );
   var SystemsVisibilityPanel = require( 'HOOKES_LAW/systems/view/SystemsVisibilityPanel' );
-  var SystemsVisibilityProperties = require( 'HOOKES_LAW/systems/view/SystemsVisibilityProperties' );
+  var SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
 
   /**
    * @param {SystemsModel} model
@@ -25,18 +25,18 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    // Properties that are specific to the visibility of things in the view
-    var visibilityProperties = new SystemsVisibilityProperties();
+    // Properties that are specific to the view
+    var viewProperties = new SystemsViewProperties();
 
     // Visibility controls
-    var visibilityPanel = new SystemsVisibilityPanel( visibilityProperties, {
+    var visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
       top: this.layoutBounds.top + 10,
       right: this.layoutBounds.right - 10
     } );
     this.addChild( visibilityPanel );
 
     // Control for selecting between series or parallel springs
-    var seriesParallelControl = new SeriesParallelControl( model.seriesParallelProperty, {
+    var seriesParallelControl = new SeriesParallelControl( viewProperties.seriesParallelProperty, {
       centerX: visibilityPanel.centerX,
       top: visibilityPanel.bottom + 10
     } );
@@ -46,7 +46,7 @@ define( function( require ) {
     var resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
-        visibilityProperties.reset();
+        viewProperties.reset();
       },
       right: this.layoutBounds.maxX - 10,
       bottom: this.layoutBounds.maxY - 10

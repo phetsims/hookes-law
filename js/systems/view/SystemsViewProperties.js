@@ -16,7 +16,7 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function SystemsVisibilityProperties() {
+  function SystemsViewProperties() {
 
     // to make development easier
     var checked = HookesLawQueryParameters.DEV ? true : false;
@@ -32,5 +32,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, SystemsVisibilityProperties );
+  return inherit( PropertySet, SystemsViewProperties );
 } );

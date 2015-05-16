@@ -39,11 +39,11 @@ define( function( require ) {
   var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
 
   /**
-   * @param {SystemsVisibilityProperties} visibilityProperties
+   * @param {SystemsViewProperties} properties
    * @param {Object} [options]
    * @constructor
    */
-  function SystemsVisibilityPanel( visibilityProperties, options ) {
+  function SystemsVisibilityPanel( properties, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -54,29 +54,29 @@ define( function( require ) {
     // vector check boxes, with left-aligned vector icons
     var appliedForceCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), HookesLawColors.APPLIED_FORCE_VECTOR ),
-      visibilityProperties.appliedForceVectorVisibleProperty,
+      properties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
       new Text( springForceString, TEXT_OPTIONS ),
-      visibilityProperties.springForceVectorVisibleProperty,
+      properties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), HookesLawColors.DISPLACEMENT_VECTOR, { arrowType: 'line' } ),
-      visibilityProperties.displacementVectorVisibleProperty,
+      properties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
 
     // other check boxes
     var equilibriumPositionCheckBox = new CheckBox(
       IconFactory.createEquilibriumPositionCheckBoxContent(),
-      visibilityProperties.equilibriumPositionVisibleProperty,
+      properties.equilibriumPositionVisibleProperty,
       CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(
       new Text( valuesString, TEXT_OPTIONS ),
-      visibilityProperties.valuesVisibleProperty,
+      properties.valuesVisibleProperty,
       CHECK_BOX_OPTIONS );
 
     // 'total' button
-    var totalRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'total',
+    var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
       new HBox( {
         children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createForceVectorIcon( HookesLawColors.SPRING_FORCE_VECTOR ) ],
         spacing: 10
@@ -91,7 +91,7 @@ define( function( require ) {
       ],
       spacing: 10
     } );
-    var componentsRadioButton = new AquaRadioButton( visibilityProperties.springForceRepresentationProperty, 'component',
+    var componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'component',
       new HBox( {
         children: [
           new Text( componentsSpring, TEXT_OPTIONS ),
@@ -121,13 +121,13 @@ define( function( require ) {
 
     // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
     Property.multilink(
-      [ visibilityProperties.appliedForceVectorVisibleProperty, visibilityProperties.springForceVectorVisibleProperty, visibilityProperties.displacementVectorVisibleProperty ],
+      [ properties.appliedForceVectorVisibleProperty, properties.springForceVectorVisibleProperty, properties.displacementVectorVisibleProperty ],
       function( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) {
         valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
     // Radio buttons should be enabled only if 'spring force' is checked
-    visibilityProperties.springForceVectorVisibleProperty.link( function( springForceVectorVisible ) {
+    properties.springForceVectorVisibleProperty.link( function( springForceVectorVisible ) {
       totalRadioButton.enabled = componentsRadioButton.enabled = springForceVectorVisible;
     } );
 
