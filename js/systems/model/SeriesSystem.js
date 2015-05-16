@@ -46,7 +46,7 @@ define( function( require ) {
 
     this.leftSpring = new Spring( {
       left: 0,
-      equilibriumLength: 1,
+      equilibriumLength: 0.75,
       springConstantRange: new Range( 200, 600, 200 ),
       appliedForceRange: this.appliedForceRange
     } );
