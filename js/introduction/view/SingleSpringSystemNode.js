@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * One spring and all of the visual representations that go with it.
+ * One spring, a robotic arm, and all of the visual representations that go with them.
  * Origin is at the point where the spring attaches to the wall.
  *
  * @author Chris Malley (PixelZoom, Inc.)
