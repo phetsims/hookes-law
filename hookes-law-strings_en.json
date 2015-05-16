@@ -49,5 +49,17 @@
   },
   "components": {
     "value": "Components"
+  },
+  "topSpring": {
+    "value": "Top Spring"
+  },
+  "bottomSpring": {
+    "value": "Bottom Spring"
+  },
+  "leftSpring": {
+    "value": "Left Spring"
+  },
+  "rightSpring": {
+    "value": "rightSpring"
   }
 }
