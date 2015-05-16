@@ -11,7 +11,6 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var ParallelSystem = require( 'HOOKES_LAW/systems/model/ParallelSystem' );
-  var PropertySet = require( 'AXON/PropertySet' );
   var SeriesSystem = require( 'HOOKES_LAW/systems/model/SeriesSystem' );
 
   /**
@@ -19,19 +18,14 @@ define( function( require ) {
    */
   function SystemsModel() {
 
-    PropertySet.call( this, {
-      seriesParallel: 'parallel' // configuration of the springs, 'series'|'parallel'
-    } );
-
     this.seriesSystem = new SeriesSystem();
     this.parallelSystem = new ParallelSystem();
   }
 
-  return inherit( PropertySet, SystemsModel, {
+  return inherit( Object, SystemsModel, {
 
     // @override
     reset: function() {
-      PropertySet.prototype.reset.call( this );
       this.seriesSystem.reset();
       this.parallelSystem.reset();
     }
