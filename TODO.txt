@@ -16,6 +16,7 @@ consensus is reached.
 Introduction screen
 -----------------------------------------------------------------------------------
 
+Move some of Spring model into SingleSpringSystem, so that Spring can be used in all screens
 Integrate new robotic arm graphics
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
