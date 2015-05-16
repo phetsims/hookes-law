@@ -37,10 +37,10 @@ define( function( require ) {
 
     var thisSystem = this;
 
-    this.appliedForceRange = new Range( -100, 100, 0 );
+    this.appliedForceRange = new Range( -100, 100, 0 ); // range of Feq, units = N
 
     PropertySet.call( this, {
-      appliedForce: this.appliedForceRange.defaultValue // Feq
+      appliedForce: this.appliedForceRange.defaultValue // Feq, units = N
       //TODO add xeq, keq, Eeq
     } );
 
