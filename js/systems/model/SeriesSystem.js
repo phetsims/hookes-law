@@ -24,13 +24,13 @@ define( function( require ) {
     this.spring1 = new Spring( {
       left: 0,
       equilibriumLength: 1,
-      springConstantRange: new Range( 200, 600, 200 ) // units = N/m
+      springConstantRange: new Range( 200, 600, 200 )
     } );
 
     this.spring2 = new Spring( {
       left: this.spring1.right,
       equilibriumLength: this.spring1.equilibriumLength,
-      springConstantRange: this.spring1.springConstantRange // units = N/m
+      springConstantRange: this.spring1.springConstantRange
     } );
 
     this.roboticArm = new RoboticArm( {

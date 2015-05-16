@@ -24,7 +24,7 @@ define( function( require ) {
     this.spring = new Spring( {
       left: 0,
       equilibriumLength: 1.5,
-      springConstantRange: new Range( 100, 1000, 200 ) // units = N/m
+      springConstantRange: new Range( 100, 1000, 200 )
     } );
 
     this.roboticArm = new RoboticArm( {
