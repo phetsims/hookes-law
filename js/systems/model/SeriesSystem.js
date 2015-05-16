@@ -13,7 +13,10 @@
  * F = applied force, N/m
  * k = spring constant, N/m
  * x = displacement from equilibrium position, m
- * "eq" is equivalent value for the system, "1" is the left spring, "2" is the right spring.
+ * E = stored energy, J
+ * subscript "eq" is an equivalent value for the system
+ * subscript "1" is for the left spring
+ * subscript "2" is for the right spring
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
