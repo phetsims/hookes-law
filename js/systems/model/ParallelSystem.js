@@ -6,7 +6,7 @@
  * Feq = F1 + F2
  * keq = k1 + k2
  * xeq = x1 = x2
- * Eeq = E1 + E2 = (1/2)( k1 * x1 * x1 ) + (1/2)( k2 * x2 * x2 )
+ * Eeq = E1 + E2 = ( ( k1 * x1 * x1 ) / 2 ) + ( ( k2 * x2 * x2 ) / 2 )
  *
  * where:
  *
