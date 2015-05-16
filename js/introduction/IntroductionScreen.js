@@ -9,10 +9,10 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var IntroductionModel = require( 'HOOKES_LAW/introduction/model/IntroductionModel' );
   var IntroductionView = require( 'HOOKES_LAW/introduction/view/IntroductionView' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );

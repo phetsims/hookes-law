@@ -19,20 +19,20 @@ define( function( require ) {
    */
   function ParallelSystem() {
 
-    this.spring1 = new Spring( {
+    this.topSpring = new Spring( {
       left: 0,
       equilibriumLength: 1,
       springConstantRange: new Range( 200, 600, 200 )
     } );
 
-    this.spring2 = new Spring( {
-      left: this.spring1.right,
-      equilibriumLength: this.spring1.equilibriumLength,
-      springConstantRange: this.spring1.springConstantRange
+    this.bottomSpring = new Spring( {
+      left: this.topSpring.right,
+      equilibriumLength: this.topSpring.equilibriumLength,
+      springConstantRange: this.topSpring.springConstantRange
     } );
 
     this.roboticArm = new RoboticArm( {
-      left: this.spring2.right,
+      left: this.bottomSpring.right,
       right: 3
     } );
 
@@ -42,8 +42,8 @@ define( function( require ) {
   return inherit( Object, ParallelSystem, {
 
     reset: function() {
-      this.spring1.reset();
-      this.spring2.reset();
+      this.topSpring.reset();
+      this.bottomSpring.reset();
       this.roboticArm.reset();
     }
   } );

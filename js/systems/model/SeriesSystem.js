@@ -21,41 +21,41 @@ define( function( require ) {
 
     var thisSystem = this;
 
-    this.spring1 = new Spring( {
+    this.leftSpring = new Spring( {
       left: 0,
       equilibriumLength: 1,
       springConstantRange: new Range( 200, 600, 200 )
     } );
 
-    this.spring2 = new Spring( {
-      left: this.spring1.right,
-      equilibriumLength: this.spring1.equilibriumLength,
-      springConstantRange: this.spring1.springConstantRange
+    this.rightSpring = new Spring( {
+      left: this.leftSpring.right,
+      equilibriumLength: this.leftSpring.equilibriumLength,
+      springConstantRange: this.leftSpring.springConstantRange
     } );
 
     this.roboticArm = new RoboticArm( {
-      left: this.spring2.right,
+      left: this.rightSpring.right,
       right: 3
     } );
 
-    this.spring1.rightProperty.link( function( right ) {
-      thisSystem.spring2.leftProperty.set( right );
+    this.leftSpring.rightProperty.link( function( right ) {
+      thisSystem.rightSpring.leftProperty.set( right );
     } );
 
-    this.spring2.leftProperty.link( function( left ) {
-      thisSystem.spring1.right = left;
+    this.rightSpring.leftProperty.link( function( left ) {
+      thisSystem.leftSpring.right = left;
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.spring2.right = left;
+      thisSystem.rightSpring.right = left;
     } );
   }
 
   return inherit( Object, SeriesSystem, {
 
     reset: function() {
-      this.spring1.reset();
-      this.spring2.reset();
+      this.leftSpring.reset();
+      this.rightSpring.reset();
       this.roboticArm.reset();
     }
   } );

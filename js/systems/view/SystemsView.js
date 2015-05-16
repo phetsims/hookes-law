@@ -14,19 +14,28 @@ define( function( require ) {
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var SeriesParallelControl = require( 'HOOKES_LAW/systems/view/SeriesParallelControl' );
+  var SeriesSystemNode = require( 'HOOKES_LAW/systems/view/SeriesSystemNode' );
   var SystemsVisibilityPanel = require( 'HOOKES_LAW/systems/view/SystemsVisibilityPanel' );
   var SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
 
   /**
    * @param {SystemsModel} model
+   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function SystemsView( model ) {
+  function SystemsView( model, modelViewTransform ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // Properties that are specific to the view
     var viewProperties = new SystemsViewProperties();
+
+    // Series system
+    var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, modelViewTransform, viewProperties, {
+      left: this.layoutBounds.left + 60,
+      centerY: this.layoutBounds.centerY
+    } );
+    this.addChild( seriesSystemNode );
 
     // Visibility controls
     var visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
@@ -52,6 +61,11 @@ define( function( require ) {
       bottom: this.layoutBounds.maxY - 10
     } );
     this.addChild( resetAllButton );
+
+    // Make one of the 2 systems visible
+    viewProperties.seriesParallelProperty.link( function( seriesParallel ) {
+      seriesSystemNode.visible = ( seriesParallel === 'series' );
+    } );
   }
 
   return inherit( ScreenView, SystemsView );
