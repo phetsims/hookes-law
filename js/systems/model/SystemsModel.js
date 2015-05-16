@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Model for the "Systems" screen.
+ * Model for the "Systems" screen, unrelated series and parallel systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -17,7 +17,6 @@ define( function( require ) {
    * @constructor
    */
   function SystemsModel() {
-
     this.seriesSystem = new SeriesSystem();
     this.parallelSystem = new ParallelSystem();
   }

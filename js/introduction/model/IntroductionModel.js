@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Model for the "Introduction" screen.
+ * Model for the "Introduction" screen, two unrelated single-spring systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -16,7 +16,6 @@ define( function( require ) {
    * @constructor
    */
   function IntroductionModel() {
-
     this.system1 = new SingleSpringSystem();
     this.system2 = new SingleSpringSystem();
   }
