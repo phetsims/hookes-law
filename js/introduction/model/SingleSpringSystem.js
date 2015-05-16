@@ -28,16 +28,16 @@ define( function( require ) {
     } );
 
     this.roboticArm = new RoboticArm( {
-      left: this.spring.equilibriumXProperty.get() + this.spring.displacementProperty.get(),
+      left: this.spring.right,
       right: 3
     } );
 
     this.spring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.leftProperty.set( right );
+      thisSystem.roboticArm.left = right;
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.spring.displacementProperty.set( left - thisSystem.spring.equilibriumXProperty.get() );
+      thisSystem.spring.right = left;
     } );
   }
 

@@ -111,5 +111,13 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, Spring );
+  return inherit( PropertySet, Spring, {
+
+    // rightProperty is derived, so must be set indirectly via displacementProperty
+    set right( value ) {
+      this.displacementProperty.set( value - this.equilibriumXProperty.get() );
+    },
+
+    get right() { return this.rightProperty.get(); }
+  } );
 } );
