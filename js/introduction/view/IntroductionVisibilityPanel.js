@@ -56,7 +56,7 @@ define( function( require ) {
       properties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( springForceTextNode, HookesLawColors.SPRING_FORCE_VECTOR, { maxTextWidth: maxTextWidth } ),
+      IconFactory.createVectorCheckBoxContent( springForceTextNode, HookesLawColors.TOTAL_SPRING_FORCE_VECTOR, { maxTextWidth: maxTextWidth } ),
       properties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(

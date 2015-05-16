@@ -15,7 +15,9 @@ define( function( require ) {
   return {
     CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),
     APPLIED_FORCE_VECTOR: PhetColorScheme.RED_COLORBLIND,
-    SPRING_FORCE_VECTOR: new Color( 11, 37, 251 ),  //TODO rename TOTAL_SPRING_FORCE_VECTOR
+    TOTAL_SPRING_FORCE_VECTOR: new Color( 11, 37, 251 ),
+    LEFT_SPRING_FORCE_VECTOR: new Color( 253, 184, 47 ),
+    RIGHT_SPRING_FORCE_VECTOR: new Color( 110, 110, 110 ),
     TOP_SPRING_FORCE_VECTOR: new Color( 253, 184, 47 ),
     BOTTOM_SPRING_FORCE_VECTOR: new Color( 110, 110, 110 ),
     DISPLACEMENT_VECTOR: new Color( 0, 180, 0 ),

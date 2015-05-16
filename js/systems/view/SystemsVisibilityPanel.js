@@ -78,7 +78,7 @@ define( function( require ) {
     // 'total' button
     var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
       new HBox( {
-        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createForceVectorIcon( HookesLawColors.SPRING_FORCE_VECTOR ) ],
+        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createForceVectorIcon( HookesLawColors.TOTAL_SPRING_FORCE_VECTOR ) ],
         spacing: 10
       } ),
       RADIO_BUTTON_OPTIONS );

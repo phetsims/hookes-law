@@ -62,8 +62,8 @@ define( function( require ) {
         thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
         majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
         minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
-        thumbFillEnabled: HookesLawColors.SPRING_FORCE_VECTOR,
-        thumbFillHighlighted: HookesLawColors.SPRING_FORCE_VECTOR.brighterColor(),
+        thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE_VECTOR,
+        thumbFillHighlighted: HookesLawColors.TOTAL_SPRING_FORCE_VECTOR.brighterColor(),
         constrainValue: function( value ) {
           // constrain to delta
           value = Math.round( value / HookesLawConstants.SPRING_CONSTANT_DELTA ) * HookesLawConstants.SPRING_CONSTANT_DELTA;
