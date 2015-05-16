@@ -110,7 +110,7 @@ define( function( require ) {
        throw new Error( 'This view requires a spring whose left end remains at a fixed position.' );
     } );
 
-    // Locate the force vectors at the right end of the spring.
+    // Position the force vectors at the right end of the spring.
     spring.rightProperty.link( function( right ) {
       appliedForceVectorNode.x = springForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
