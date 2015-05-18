@@ -23,6 +23,7 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
+Performance problem in model (thrashing?)
 Set spring and control colors
 ParallelSystem model
 ParallelSystemNode view
