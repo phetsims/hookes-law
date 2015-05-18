@@ -30,6 +30,7 @@ define( function( require ) {
   function Spring( options ) {
 
     options = _.extend( {
+      debugName: null, // {string} used for debugging, to know which spring we're inspecting
       left: 0, // {number} x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
       springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
@@ -41,6 +42,7 @@ define( function( require ) {
     assert && assert( options.springConstantRange.min > 0, 'spring constant must be positive' );
 
     // save some options
+    this.debugName = options.debugName; // read-only
     this.equilibriumLength = options.equilibriumLength; // read-only
     this.springConstantRange = options.springConstantRange; // read-only
     this.appliedForceRange = options.appliedForceRange; // read-only

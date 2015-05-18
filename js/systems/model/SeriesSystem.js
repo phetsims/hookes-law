@@ -42,6 +42,7 @@ define( function( require ) {
     this.appliedForceRange = new Range( -100, 100, 0 ); // range of Feq, units = N
 
     this.leftSpring = new Spring( {
+      debugName: 'left',
       left: 0,
       equilibriumLength: 0.75,
       springConstantRange: new Range( 200, 600, 200 ),
@@ -49,11 +50,14 @@ define( function( require ) {
     } );
 
     this.rightSpring = new Spring( {
+      debugName: 'right',
       left: this.leftSpring.rightProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength,
       springConstantRange: this.leftSpring.springConstantRange,
       appliedForceRange: this.appliedForceRange
     } );
+
+    debugger;//XXX
 
     this.roboticArm = new RoboticArm( {
       left: this.rightSpring.rightProperty.get(),

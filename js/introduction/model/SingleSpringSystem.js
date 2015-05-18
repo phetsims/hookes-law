@@ -28,6 +28,7 @@ define( function( require ) {
     var thisSystem = this;
 
     this.spring = new Spring( {
+      debugName: 'single',
       left: 0,
       equilibriumLength: 1.5,
       springConstantRange: new Range( 100, 1000, 200 )
