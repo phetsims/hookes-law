@@ -63,8 +63,7 @@ define( function( require ) {
     } );
 
     PropertySet.call( this, {
-      appliedForce: this.appliedForceRange.defaultValue, // Feq
-      displacement: this.leftSpring.displacementProperty.get() + this.rightSpring.displacementProperty.get() // xeq = x1 + x2
+      appliedForce: this.appliedForceRange.defaultValue // Feq
     } );
 
     // equivalent spring force opposes the equivalent applied force, units = N
@@ -73,15 +72,13 @@ define( function( require ) {
         return -appliedForce;
       } );
 
-    // equilibrium position for the system, read-only
+    // equivalent equilibrium position for the system, read-only
     this.equilibriumX = this.leftSpring.leftProperty.get() + this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength;
 
-    // range of keq
+    // keq = 1 / ( 1/k1 + 1/k2 )
     var springConstantRange = new Range(
       1 / ( ( 1 / this.leftSpring.springConstantRange.min ) + ( 1 / this.rightSpring.springConstantRange.min ) ),
       1 / ( ( 1 / this.leftSpring.springConstantRange.max ) + ( 1 / this.rightSpring.springConstantRange.max ) ) );
-
-    // keq = 1 / ( 1/k1 + 1/k2 )
     var springConstantProperty = new DerivedProperty(
       [ this.leftSpring.springConstantProperty, this.rightSpring.springConstantProperty ],
       function( leftSpringConstant, rightSpringConstant ) {
@@ -90,25 +87,19 @@ define( function( require ) {
         return springConstant;
       } );
 
-    springConstantProperty.link( function( springConstant ) {
-      thisSystem.displacement = thisSystem.appliedForce / springConstant; // x = F/k
-    } );
-
-    // range of xeq
+    // xeq = x1 + x2
     var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
-
-    this.displacementProperty.link( function( displacement ) {
-      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement out of range: ' + displacement );
-      var appliedForce = springConstantProperty.get() * displacement; // F = kx
-      //   constrain delta
-      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
-      // constrain range
-      thisSystem.appliedForce = thisSystem.appliedForceRange.constrainValue( appliedForce );
-    } );
+    this.displacementProperty = new DerivedProperty( [ this.leftSpring.displacementProperty, this.rightSpring.displacementProperty ],
+      function ( leftDisplacement, rightDisplacement ) {
+        var displacement = leftDisplacement + rightDisplacement;
+        assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
+        return displacement;
+      }
+    );
 
     // Feq = F1 = F2
     this.appliedForceProperty.link( function( appliedForce ) {
-      assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce out of range: ' + appliedForce );
+      assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce is out of range: ' + appliedForce );
       thisSystem.leftSpring.appliedForceProperty.set( appliedForce );
       thisSystem.rightSpring.appliedForceProperty.set( appliedForce );
     } );
@@ -126,7 +117,13 @@ define( function( require ) {
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.displacement = left - thisSystem.equilibriumX;
+      var displacement = left - thisSystem.equilibriumX;
+      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
+      var appliedForce = springConstantProperty.get() * displacement; // F = kx
+      // constrain to delta
+      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+      // constrain to range
+      thisSystem.appliedForce = thisSystem.appliedForceRange.constrainValue( appliedForce );
     } );
   }
 
