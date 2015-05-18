@@ -34,7 +34,7 @@ define( function( require ) {
     } );
 
     this.roboticArm = new RoboticArm( {
-      left: this.spring.right,
+      left: this.spring.rightProperty.get(),
       right: 3
     } );
 

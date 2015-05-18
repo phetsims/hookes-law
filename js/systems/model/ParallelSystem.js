@@ -46,13 +46,13 @@ define( function( require ) {
     } );
 
     this.bottomSpring = new Spring( {
-      left: this.topSpring.right,
+      left: this.topSpring.rightProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange
     } );
 
     this.roboticArm = new RoboticArm( {
-      left: this.bottomSpring.right,
+      left: this.bottomSpring.rightProperty.get(),
       right: 3
     } );
 
