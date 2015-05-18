@@ -62,7 +62,6 @@ define( function( require ) {
       right: 3
     } );
 
-    // equivalent (eq) values for the system
     PropertySet.call( this, {
       appliedForce: this.appliedForceRange.defaultValue, // Feq
       displacement: this.leftSpring.displacementProperty.get() + this.rightSpring.displacementProperty.get() // xeq = x1 + x2
