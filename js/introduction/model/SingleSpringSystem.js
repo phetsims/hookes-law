@@ -39,7 +39,7 @@ define( function( require ) {
     } );
 
     this.spring.leftProperty.lazyLink( function( left ) {
-      throw new Error( 'Left end of spring should remain fixed for a single-spring system.' );
+      throw new Error( 'Left end of spring should remain fixed for a single-spring system: ' + left );
     } );
 
     this.spring.rightProperty.link( function( right ) {
