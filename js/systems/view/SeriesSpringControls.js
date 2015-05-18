@@ -10,13 +10,11 @@ define( function( require ) {
 
   // modules
   var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
-  var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
