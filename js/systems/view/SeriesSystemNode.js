@@ -89,11 +89,6 @@ define( function( require ) {
     //viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
-    // The model is more general than this view, so make sure we don't violate assumptions.
-    leftSpring.leftProperty.lazyLink( function( left ) {
-      throw new Error( 'The left end of the left spring must remain at a fixed position.' );
-    } );
-
     rightSpring.leftProperty.link( function( left ) {
        rightSpringNode.left = modelViewTransform.modelToViewX( left );
     });
