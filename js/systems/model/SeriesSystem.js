@@ -92,7 +92,7 @@ define( function( require ) {
 
     this.displacementProperty.link( function( displacement ) {
       assert && assert( displacementRange.contains( displacement ), 'equivalent displacement out of range: ' + displacement );
-      var appliedForce = displacement * springConstantProperty.get(); // F = kx
+      var appliedForce = springConstantProperty.get() * displacement; // F = kx
       //   constrain delta
       appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
       // constrain range
