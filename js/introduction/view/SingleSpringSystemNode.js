@@ -78,7 +78,7 @@ define( function( require ) {
 
     var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by spring.rightProperty
-      bottom: springNode.top - 14
+      centerY: appliedForceVectorNode.centerY
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
