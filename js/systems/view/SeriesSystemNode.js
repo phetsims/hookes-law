@@ -66,7 +66,7 @@ define( function( require ) {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
-      centerX: modelViewTransform.modelToViewX( rightSpring.equilibriumXProperty.get() ),
+      centerX: modelViewTransform.modelToViewX( system.equilibriumX ),
       centerY: yOrigin
     } );
 
