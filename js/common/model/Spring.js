@@ -51,10 +51,10 @@ define( function( require ) {
     var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
 
     PropertySet.call( this, {
-      left: options.left, // {number} x location of the left end of the spring, units = m
-      displacement: 0,  // {number} x, horizontal displacement from equilibrium position, units = m
-      springConstant: options.springConstantRange.defaultValue,  // {number} k, spring constant, units = N/m
-      appliedForce: options.appliedForceRange.defaultValue // {number} F, force applied to the spring, units = N
+      appliedForce: options.appliedForceRange.defaultValue, // {number} F
+      springConstant: options.springConstantRange.defaultValue,  // {number} k
+      displacement: 0,  // {number} x
+      left: options.left // {number} location of the left end of the spring, units = m
     } );
 
     // equilibrium x location, units = m
