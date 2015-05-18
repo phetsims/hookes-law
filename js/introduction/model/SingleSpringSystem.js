@@ -47,7 +47,7 @@ define( function( require ) {
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.spring.right = left;
+      thisSystem.spring.displacement = left - thisSystem.spring.equilibriumXProperty.get();
     } );
   }
 

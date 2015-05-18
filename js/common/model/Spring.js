@@ -96,9 +96,9 @@ define( function( require ) {
     this.displacementProperty.link( function( displacement ) {
       assert && assert( displacementRange.contains( displacement ), 'displacement out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
-      // constrain delta
+      // constrain to delta
       appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
-      // constrain range
+      // constrain to range
       thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
     } );
 
@@ -111,13 +111,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, Spring, {
-
-    // rightProperty is derived, so must be set indirectly via displacementProperty
-    set right( value ) {
-      this.displacementProperty.set( value - this.equilibriumXProperty.get() );
-    },
-
-    get right() { return this.rightProperty.get(); }
-  } );
+  return inherit( PropertySet, Spring );
 } );
