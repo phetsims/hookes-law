@@ -23,13 +23,11 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
-Finish SeriesSystem and ParallelSystem models
-Add vectors to SeriesSystemNode
-Implement ParallelSystemNode
 Set spring and control colors
+ParallelSystem model
+ParallelSystemNode view
 Use a smaller track width for slider in SeriesSpringControl
 Keep spring constants and applied force synchronized between serial and parallel systems.
-Show total and component views of spring forces.
 
 -----------------------------------------------------------------------------------
 Energy screen
@@ -40,7 +38,6 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
-Move some of Spring model into SingleSpringSystem, so that Spring can be used in all screens
 Make it possible to change nested options in SpringConstantControl and AppliedForceControl
 Integrate new robotic arm graphics
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
