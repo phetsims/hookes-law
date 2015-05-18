@@ -66,6 +66,12 @@ define( function( require ) {
       displacement: this.leftSpring.displacementProperty.get() + this.rightSpring.displacementProperty.get() // xeq = x1 + x2
     } );
 
+    // equivalent spring force opposes the equivalent applied force, units = N
+    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
+      function( appliedForce ) {
+        return -appliedForce;
+      } );
+
     // equilibrium position for the system, read-only
     this.equilibriumX = this.leftSpring.leftProperty.get() + this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength;
 
