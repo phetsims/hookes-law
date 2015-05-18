@@ -90,8 +90,8 @@ define( function( require ) {
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     rightSpring.leftProperty.link( function( left ) {
-       rightSpringNode.left = modelViewTransform.modelToViewX( left );
-    });
+      rightSpringNode.left = modelViewTransform.modelToViewX( left );
+    } );
 
     // Position the vectors
     leftSpring.rightProperty.link( function( right ) {
