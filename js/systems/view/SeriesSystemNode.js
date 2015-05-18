@@ -10,13 +10,16 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
   var Dimension2 = require( 'DOT/Dimension2' );
+  var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SeriesSpringControls = require( 'HOOKES_LAW/systems/view/SeriesSpringControls' );
+  var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -70,6 +73,36 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
+    var leftSpringForceVectorNode = new SpringForceVectorNode( system.leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+      // x is determined by leftSpring.rightProperty
+      bottom: leftSpringNode.top - 14
+    } );
+
+    var leftAppliedForceVectorNode = new AppliedForceVectorNode( system.leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+      // x is determined by leftSpring.rightProperty
+      y: leftSpringForceVectorNode.y
+    } );
+
+    var rightSpringForceVectorNode = new SpringForceVectorNode( system.rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+      // x is determined by rightSpring.rightProperty
+      bottom: leftSpringForceVectorNode.top - 14
+    } );
+
+    var appliedForceVectorNode = new AppliedForceVectorNode( system.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+      // x is determined by rightSpring.rightProperty
+      y: rightSpringForceVectorNode.y
+    } );
+
+    var totalSpringForceVectorNode = new SpringForceVectorNode( system.springForceProperty, viewProperties.valuesVisibleProperty, {
+      // x is determined by rightSpring.rightProperty
+      y: appliedForceVectorNode.y
+    } );
+
+    var displacementVectorNode = new DisplacementVectorNode( system.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+      x: equilibriumPositionNode.centerX,
+      top: leftSpringNode.bottom + 8
+    } );
+
     var springControls = new SeriesSpringControls( system, {
       scale: 0.65,
       left: wallNode.left,
@@ -78,17 +111,27 @@ define( function( require ) {
 
     options.children = [
       wallNode, equilibriumPositionNode, roboticArmNode, leftSpringNode, rightSpringNode,
-      //TODO add vector nodes
+      leftSpringForceVectorNode, leftAppliedForceVectorNode, rightSpringForceVectorNode,
+      appliedForceVectorNode, totalSpringForceVectorNode, displacementVectorNode,
       springControls
     ];
     Node.call( this, options );
 
-    //TODO
     // Attach visibility properties to their respective nodes.
-    //viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
-    //viewProperties.springForceVectorVisibleProperty.linkAttribute( springForceVectorNode, 'visible' );
-    //viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
+    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
+    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
+
+    // switch between different force representations
+    var springForceVisibilityObserver = function() {
+      // total
+      totalSpringForceVectorNode.visible = viewProperties.springForceVectorVisible && viewProperties.springForceRepresentation === 'total';
+      // components
+      var componentsVisible = viewProperties.springForceVectorVisible && viewProperties.springForceRepresentation === 'components';
+      rightSpringForceVectorNode.visible = leftSpringForceVectorNode.visible = leftAppliedForceVectorNode.visible = componentsVisible;
+    };
+    viewProperties.springForceVectorVisibleProperty.link( springForceVisibilityObserver );
+    viewProperties.springForceRepresentationProperty.link( springForceVisibilityObserver );
 
     rightSpring.leftProperty.link( function( left ) {
       rightSpringNode.left = modelViewTransform.modelToViewX( left );
@@ -96,10 +139,10 @@ define( function( require ) {
 
     // Position the vectors
     leftSpring.rightProperty.link( function( right ) {
-      //TODO
+      leftSpringForceVectorNode.x = leftAppliedForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
     rightSpring.rightProperty.link( function( right ) {
-      //TODO
+      appliedForceVectorNode.x = totalSpringForceVectorNode.x = rightSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
   }
 
