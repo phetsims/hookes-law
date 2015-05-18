@@ -63,7 +63,7 @@ define( function( require ) {
     // equivalent (eq) values for the system
     PropertySet.call( this, {
       appliedForce: this.appliedForceRange.defaultValue, // Feq
-      displacement: this.leftSpring.displacement + this.rightSpring.displacement // xeq = x1 + x2
+      displacement: this.leftSpring.displacementProperty.get() + this.rightSpring.displacementProperty.get() // xeq = x1 + x2
     } );
 
     // equilibrium position for the system, read-only
@@ -102,20 +102,20 @@ define( function( require ) {
     // Feq = F1 = F2
     this.appliedForceProperty.link( function( appliedForce ) {
       assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce out of range: ' + appliedForce );
-      thisSystem.leftSpring.appliedForce = appliedForce;
-      thisSystem.rightSpring.appliedForce = appliedForce;
+      thisSystem.leftSpring.appliedForceProperty.set( appliedForce );
+      thisSystem.rightSpring.appliedForceProperty.set( appliedForce );
     } );
 
     this.leftSpring.leftProperty.lazyLink( function( left ) {
-      throw new Error( 'Left end of left spring should remain fixed for a series system: ' + left );
+      throw new Error( 'Left end of left spring must remain fixed for a series system, left=' + left );
     } );
 
     this.leftSpring.rightProperty.link( function( right ) {
-      thisSystem.rightSpring.left = right;
+      thisSystem.rightSpring.leftProperty.set( right );
     } );
 
     this.rightSpring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.left = right;
+      thisSystem.roboticArm.leftProperty.set( right );
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
