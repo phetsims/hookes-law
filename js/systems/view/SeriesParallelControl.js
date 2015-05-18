@@ -18,7 +18,7 @@ define( function( require ) {
   var seriesIcon = require( 'image!HOOKES_LAW/series-spring-scene.png' );
 
   /**
-   * @param {Property.<string>} seriesParallelProperty 'series'|'parallel'
+   * @param {Property.<string>} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
    * @param {Object} [options]
    * @constructor
    */

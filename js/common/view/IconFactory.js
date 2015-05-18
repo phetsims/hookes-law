@@ -28,7 +28,7 @@ define( function( require ) {
     /**
      * Creates the content for a vector check box, consisting of text and an arrow.
      *
-     * @param {Node} textNode text, positioned to the left of the vector
+     * @param {Node} textNode - text, positioned to the left of the vector
      * @param {string|Color} arrowColor
      * @param {Object} [options]
      * @returns {Node}

@@ -14,7 +14,7 @@ define( function( require ) {
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   /**
-   * @param {Object|number} options {Object} font options or {number} font size
+   * @param {Object|number} options - {Object} font options or {number} font size
    * @constructor
    */
   function HookesLawFont( options ) {

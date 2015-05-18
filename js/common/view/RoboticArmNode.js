@@ -23,8 +23,8 @@ define( function( require ) {
 
   /**
    * @param {RoboticArm} roboticArm
-   * @param {Property.<Range>} leftRangeProperty dynamic range of the left (movable) end of the arm
-   * @param {number} equilibriumX equilibrium position of the system being manipulated
+   * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm
+   * @param {number} equilibriumX - equilibrium position of the system being manipulated
    * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
