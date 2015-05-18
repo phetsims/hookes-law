@@ -43,11 +43,11 @@ define( function( require ) {
     } );
 
     this.spring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.left = right;
+      thisSystem.roboticArm.leftProperty.set( right );
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.spring.displacement = left - thisSystem.spring.equilibriumXProperty.get();
+      thisSystem.spring.displacementProperty.set( left - thisSystem.spring.equilibriumXProperty.get() );
     } );
   }
 
