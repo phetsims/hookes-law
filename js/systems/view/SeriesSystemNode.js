@@ -83,6 +83,7 @@ define( function( require ) {
     ];
     Node.call( this, options );
 
+    //TODO
     // Attach visibility properties to their respective nodes.
     //viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
     //viewProperties.springForceVectorVisibleProperty.linkAttribute( springForceVectorNode, 'visible' );
