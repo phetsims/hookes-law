@@ -57,8 +57,6 @@ define( function( require ) {
       appliedForceRange: this.appliedForceRange
     } );
 
-    debugger;//XXX
-
     this.roboticArm = new RoboticArm( {
       left: this.rightSpring.rightProperty.get(),
       right: 3
