@@ -105,11 +105,6 @@ define( function( require ) {
     viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
-    // The model is more general than this view, so make sure we don't violate assumptions.
-    spring.leftProperty.lazyLink( function( left ) {
-       throw new Error( 'This view requires a spring whose left end remains at a fixed position.' );
-    } );
-
     // Position the force vectors at the right end of the spring.
     spring.rightProperty.link( function( right ) {
       appliedForceVectorNode.x = springForceVectorNode.x = modelViewTransform.modelToViewX( right );
