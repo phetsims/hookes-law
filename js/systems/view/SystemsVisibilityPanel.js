@@ -91,7 +91,7 @@ define( function( require ) {
       ],
       spacing: 10
     } );
-    var componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'component',
+    var componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'components',
       new HBox( {
         children: [
           new Text( componentsSpring, TEXT_OPTIONS ),
