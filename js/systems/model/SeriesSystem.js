@@ -4,7 +4,7 @@
  * Model of 2 springs in series.
  *
  * Feq = F1 = F2
- * 1/keq = 1/k1 + 1/k2
+ * keq = 1 / ( 1/k1 + 1/k2 )
  * xeq = x1 + x2
  * Eeq = E1 + E2 = ( ( k1 * x1 * x1 ) / 2 ) + ( ( k2 * x2 * x2 ) / 2 )
  *
@@ -24,6 +24,8 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
@@ -38,11 +40,6 @@ define( function( require ) {
     var thisSystem = this;
 
     this.appliedForceRange = new Range( -100, 100, 0 ); // range of Feq, units = N
-
-    PropertySet.call( this, {
-      appliedForce: this.appliedForceRange.defaultValue // Feq, units = N
-      //TODO add xeq, keq, Eeq
-    } );
 
     this.leftSpring = new Spring( {
       left: 0,
@@ -63,26 +60,66 @@ define( function( require ) {
       right: 3
     } );
 
-    this.leftSpring.rightProperty.link( function( right ) {
-      thisSystem.rightSpring.leftProperty.set( right );
+    // equivalent (eq) values for the system
+    PropertySet.call( this, {
+      appliedForce: this.appliedForceRange.defaultValue, // Feq
+      displacement: this.leftSpring.displacement + this.rightSpring.displacement // xeq = x1 + x2
     } );
 
-    this.rightSpring.leftProperty.link( function( left ) {
-      thisSystem.leftSpring.right = left;
+    // equilibrium position for the system, read-only
+    this.equilibriumX = this.leftSpring.leftProperty.get() + this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength;
+
+    // range of keq
+    var springConstantRange = new Range(
+      1 / ( ( 1 / this.leftSpring.springConstantRange.min ) + ( 1 / this.rightSpring.springConstantRange.min ) ),
+      1 / ( ( 1 / this.leftSpring.springConstantRange.max ) + ( 1 / this.rightSpring.springConstantRange.max ) ) );
+
+    // keq = 1 / ( 1/k1 + 1/k2 )
+    var springConstantProperty = new DerivedProperty(
+      [ this.leftSpring.springConstantProperty, this.rightSpring.springConstantProperty ],
+      function( leftSpringConstant, rightSpringConstant ) {
+        var springConstant = 1 / ( ( 1 / leftSpringConstant ) + ( 1 / rightSpringConstant ) );
+        assert && assert( springConstantRange.contains( springConstant ), 'equivalent spring constant out of range: ' + springConstant );
+        return springConstant;
+      } );
+
+    springConstantProperty.link( function( springConstant ) {
+      thisSystem.displacement = thisSystem.appliedForce / springConstant; // x = F/k
     } );
 
-    this.rightSpring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.leftProperty.set( right );
-    } );
+    // range of xeq
+    var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
 
-    this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.rightSpring.right = left;
+    this.displacementProperty.link( function( displacement ) {
+      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement out of range: ' + displacement );
+      var appliedForce = displacement * springConstantProperty.get(); // F = kx
+      //   constrain delta
+      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+      // constrain range
+      thisSystem.appliedForce = thisSystem.appliedForceRange.constrainValue( appliedForce );
     } );
 
     // Feq = F1 = F2
     this.appliedForceProperty.link( function( appliedForce ) {
-      thisSystem.leftSpring.appliedForceProperty.set( appliedForce );
-      thisSystem.rightSpring.appliedForceProperty.set( appliedForce );
+      assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce out of range: ' + appliedForce );
+      thisSystem.leftSpring.appliedForce = appliedForce;
+      thisSystem.rightSpring.appliedForce = appliedForce;
+    } );
+
+    this.leftSpring.leftProperty.lazyLink( function( left ) {
+      throw new Error( 'Left end of left spring should remain fixed for a series system: ' + left );
+    } );
+
+    this.leftSpring.rightProperty.link( function( right ) {
+      thisSystem.rightSpring.left = right;
+    } );
+
+    this.rightSpring.rightProperty.link( function( right ) {
+      thisSystem.roboticArm.left = right;
+    } );
+
+    this.roboticArm.leftProperty.link( function( left ) {
+      thisSystem.displacement = left - thisSystem.equilibriumX;
     } );
   }
 
