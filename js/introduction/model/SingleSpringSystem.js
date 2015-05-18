@@ -43,6 +43,10 @@ define( function( require ) {
       throw new Error( 'Left end of spring must remain fixed for a single-spring system, left=' + left );
     } );
 
+    this.spring.equilibriumXProperty.lazyLink( function( equilibriumX ) {
+      throw new Error( 'Equilibrium position must remain fixed for a single-spring system, equilibriumX=' + equilibriumX );
+    } );
+
     this.spring.rightProperty.link( function( right ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
