@@ -84,19 +84,19 @@ define( function( require ) {
 
     // When changing the spring constant, maintain the applied force, change displacement.
     this.springConstantProperty.link( function( springConstant ) {
-      assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant out of range: ' + springConstant );
+      assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
       thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
     } );
 
     // When changing the applied force, maintain the spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {
-      assert && assert( thisSpring.appliedForceRange.contains( appliedForce ), 'appliedForce out of range: ' + appliedForce );
+      assert && assert( thisSpring.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
       thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
     } );
 
     // When changing displacement, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
-      assert && assert( displacementRange.contains( displacement ), 'displacement out of range: ' + displacement );
+      assert && assert( displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
       // constrain to delta
       appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
