@@ -36,13 +36,22 @@ define( function( require ) {
     assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
     assert && assert( Util.isInteger( appliedForceRange.max ) && Util.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
     assert && assert( Util.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
-    var majorTicks = [
-      { value: appliedForceRange.min, label: new Text( Util.toFixed( appliedForceRange.min, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) },
-      { value: appliedForceRange.min / 2, label: null },
-      { value: 0, label: new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS ) },
-      { value: appliedForceRange.max / 2, label: null },
-      { value:  appliedForceRange.max, label: new Text( Util.toFixed( appliedForceRange.max, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS ) }
-    ];
+    var majorTicks = [ {
+      value: appliedForceRange.min,
+      label: new Text( Util.toFixed( appliedForceRange.min, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+    }, {
+      value: appliedForceRange.min / 2,
+      label: null
+    }, {
+      value: 0,
+      label: new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS )
+    }, {
+      value: appliedForceRange.max / 2,
+      label: null
+    }, {
+      value: appliedForceRange.max,
+      label: new Text( Util.toFixed( appliedForceRange.max, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+    } ];
 
     options = _.extend( {
       titleOptions: {

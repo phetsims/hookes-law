@@ -68,7 +68,7 @@ define( function( require ) {
 
     // minor ticks, exclude values where we already have major ticks
     for ( var minorTickValue = numberRange.min; minorTickValue <= numberRange.max; ) {
-      if ( ! _.find( majorTicks, function( majorTick) { return majorTick.value === minorTickValue; } ) ) {
+      if ( !_.find( majorTicks, function( majorTick ) { return majorTick.value === minorTickValue; } ) ) {
         slider.addMinorTick( minorTickValue );
       }
       minorTickValue += options.sliderOptions.minorTickSpacing;

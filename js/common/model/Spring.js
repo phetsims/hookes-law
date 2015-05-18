@@ -59,11 +59,11 @@ define( function( require ) {
 
     // equilibrium x location, units = m
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ], function( left ) {
-       return left + thisSpring.equilibriumLength;
+      return left + thisSpring.equilibriumLength;
     } );
 
     // x location of the right end of the spring
-    this.rightProperty = new DerivedProperty( [this.equilibriumXProperty, this.displacementProperty ], function( equilibriumX, displacement ) {
+    this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ], function( equilibriumX, displacement ) {
       var left = thisSpring.leftProperty.get();
       var right = equilibriumX + displacement;
       assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );

@@ -60,7 +60,10 @@ define( function( require ) {
       properties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( displacementTextNode, HookesLawColors.DISPLACEMENT_VECTOR, { maxTextWidth: maxTextWidth, arrowType: 'line' } ),
+      IconFactory.createVectorCheckBoxContent( displacementTextNode, HookesLawColors.DISPLACEMENT_VECTOR, {
+        maxTextWidth: maxTextWidth,
+        arrowType: 'line'
+      } ),
       properties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
 
