@@ -23,13 +23,13 @@ define( function( require ) {
 
   /**
    * @param {RoboticArm} roboticArm
-   * @param {Property.<Range>} leftRangeProperty
-   * @param {Property.<number>} equilibriumXProperty
+   * @param {Property.<Range>} leftRangeProperty dynamic range of the left (movable) end of the arm
+   * @param {number} equilibriumX equilibrium position of the system being manipulated
    * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArmNode( roboticArm, leftRangeProperty, equilibriumXProperty, modelViewTransform, options ) {
+  function RoboticArmNode( roboticArm, leftRangeProperty, equilibriumX, modelViewTransform, options ) {
 
     options = _.extend( {
       cursor: 'pointer'
@@ -101,7 +101,7 @@ define( function( require ) {
       draggableNode.x = modelViewTransform.modelToViewX( left - roboticArm.right );
 
       // rotate the hook when displacement is displayed as zero
-      if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumXProperty.get() ) {
+      if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumX ) {
         //console.log( 'hook up' );//TODO
       }
       else {

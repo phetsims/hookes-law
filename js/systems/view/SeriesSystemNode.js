@@ -60,7 +60,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, rightSpring.equilibriumXProperty, modelViewTransform, {
+    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, system.equilibriumX, modelViewTransform, {
       x: modelViewTransform.modelToViewX( roboticArm.right ),
       y: yOrigin
     } );
