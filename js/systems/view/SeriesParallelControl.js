@@ -36,7 +36,7 @@ define( function( require ) {
 
     RadioButtonGroup.call( this, seriesParallelProperty, [
       { value: 'parallel', node: new Image( parallelIcon ) },
-      { value: 'series', node: new Image( seriesIcon ) },
+      { value: 'series', node: new Image( seriesIcon ) }
     ], options );
   }
 
