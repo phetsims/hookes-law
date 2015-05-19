@@ -14,6 +14,8 @@ consensus is reached.
 
 Do we want to show the 300 tick label (1/2 max) for spring constant range (200,600)?
 
+Do we really need left alignment of icons in the "Systems" control panel?
+
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------
