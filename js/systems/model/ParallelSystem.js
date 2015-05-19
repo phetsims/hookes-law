@@ -90,6 +90,13 @@ define( function( require ) {
         return springConstant;
       } );
 
+    this.rightRangeProperty = new DerivedProperty( [ springConstantProperty ],
+      function( springConstant ) {
+        var minDisplacement = thisSystem.appliedForceRange.min / springConstant; // x = F/k
+        var maxDisplacement = thisSystem.appliedForceRange.max / springConstant;
+        return new Range( thisSystem.equilibriumX + minDisplacement, thisSystem.equilibriumX + maxDisplacement );
+      } );
+
     // Property observers -----------------------------------------------------------
 
     this.appliedForceProperty.link( function( appliedForce ) {

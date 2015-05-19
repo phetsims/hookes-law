@@ -62,7 +62,7 @@ define( function( require ) {
       centerY: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, bottomSpring.rightRangeProperty, system.equilibriumX, modelViewTransform, {
+    var roboticArmNode = new RoboticArmNode( roboticArm, system.rightRangeProperty, system.equilibriumX, modelViewTransform, {
       x: modelViewTransform.modelToViewX( roboticArm.right ),
       y: yOrigin
     } );
