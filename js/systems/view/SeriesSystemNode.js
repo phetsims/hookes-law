@@ -111,8 +111,8 @@ define( function( require ) {
 
     var springControls = new SeriesSpringControls( system, {
       scale: 0.75,
-      left: wallNode.left,
-      top: wallNode.bottom + 10
+      centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
+      top: wallNode.bottom + 25
     } );
 
     options.children = [

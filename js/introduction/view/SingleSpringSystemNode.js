@@ -88,7 +88,7 @@ define( function( require ) {
 
     var springControls = new SingleSpringControls( spring, {
       number: options.number,
-      left: wallNode.left,
+      centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10
     } );
 
