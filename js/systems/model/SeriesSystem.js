@@ -105,8 +105,8 @@ define( function( require ) {
       if ( !modifyingAppliedForce ) {
         assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce is out of range: ' + appliedForce );
         modifyingAppliedForce = true;
-        thisSystem.leftSpring.appliedForceProperty.set( appliedForce );
-        thisSystem.rightSpring.appliedForceProperty.set( appliedForce );
+        thisSystem.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
+        thisSystem.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq
         modifyingAppliedForce = false;
       }
     } );
