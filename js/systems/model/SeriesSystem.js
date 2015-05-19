@@ -49,7 +49,7 @@ define( function( require ) {
 
     var thisSystem = this;
 
-    this.appliedForceRange = new Range( -100, 100, 0 ); // range and default value of Feq, units = N
+    this.appliedForceRange = new Range( -100, 100, 0 ); // range and initial value of Feq, units = N
 
     this.leftSpring = new Spring( {
       debugName: options.debugName + '.left',
