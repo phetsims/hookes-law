@@ -23,7 +23,7 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
-SeriesSystem is trashing and looping
+SeriesSystem is thrashing and looping
 ParallelSystem model
 ParallelSystemNode view
 Keep spring constants and applied force synchronized between serial and parallel systems.
