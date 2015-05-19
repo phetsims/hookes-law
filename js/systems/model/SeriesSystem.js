@@ -76,17 +76,17 @@ define( function( require ) {
       appliedForce: this.appliedForceRange.defaultValue // Feq
     } );
 
+    // equivalent equilibrium position for the system, read-only
+    this.equilibriumX = this.leftSpring.leftProperty.get() + this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength;
+
     // Derived properties -----------------------------------------------------------
 
     // equivalent spring force opposes the equivalent applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
       function( appliedForce ) {
-        debug( 'series: derive springForceProperty, appliedForce=' + appliedForce );//XXX
+        debug( options.debugName + ': derive springForceProperty, appliedForce=' + appliedForce );//XXX
         return -appliedForce;
       } );
-
-    // equivalent equilibrium position for the system, read-only
-    this.equilibriumX = this.leftSpring.leftProperty.get() + this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength;
 
     // keq = 1 / ( 1/k1 + 1/k2 )
     var springConstantRange = new Range(
@@ -95,7 +95,7 @@ define( function( require ) {
     var springConstantProperty = new DerivedProperty(
       [ this.leftSpring.springConstantProperty, this.rightSpring.springConstantProperty ],
       function( leftSpringConstant, rightSpringConstant ) {
-        debug( 'series: derive springConstantProperty, leftSpringConstant=' + leftSpringConstant + ', rightSpringConstant=' + rightSpringConstant );//XXX
+        debug( options.debugName + ': derive springConstantProperty, leftSpringConstant=' + leftSpringConstant + ', rightSpringConstant=' + rightSpringConstant );//XXX
         var springConstant = 1 / ( ( 1 / leftSpringConstant ) + ( 1 / rightSpringConstant ) );
         assert && assert( springConstantRange.contains( springConstant ), options.debugName + ': equivalent spring constant out of range: ' + springConstant );
         return springConstant;
@@ -105,7 +105,7 @@ define( function( require ) {
     var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
     this.displacementProperty = new DerivedProperty( [ this.leftSpring.displacementProperty, this.rightSpring.displacementProperty ],
       function( leftDisplacement, rightDisplacement ) {
-        debug( 'series: derive displacementProperty, leftDisplacement=' + leftDisplacement + ', rightDisplacement=' + rightDisplacement );//XXX
+        debug( options.debugName + ': derive displacementProperty, leftDisplacement=' + leftDisplacement + ', rightDisplacement=' + rightDisplacement );//XXX
         var displacement = leftDisplacement + rightDisplacement;
         assert && assert( displacementRange.contains( displacement ), options.debugName + ': equivalent displacement is out of range: ' + displacement );
         return displacement;
@@ -115,11 +115,16 @@ define( function( require ) {
     // Property observers -----------------------------------------------------------
 
     // Feq = F1 = F2
+    var modifyingAppliedForce = false; // to prevent looping and thrashing
     this.appliedForceProperty.link( function( appliedForce ) {
-      debug( 'series: appliedForce observer: ' + appliedForce );//XXX
-      assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), options.debugName + ': equivalent appliedForce is out of range: ' + appliedForce );
-      thisSystem.leftSpring.appliedForceProperty.set( appliedForce );
-      thisSystem.rightSpring.appliedForceProperty.set( appliedForce );
+      debug( options.debugName + ': observer, appliedForce=' + appliedForce );//XXX
+      if ( !modifyingAppliedForce ) {
+        assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), options.debugName + ': equivalent appliedForce is out of range: ' + appliedForce );
+        modifyingAppliedForce = true;
+        thisSystem.leftSpring.appliedForceProperty.set( appliedForce );
+        thisSystem.rightSpring.appliedForceProperty.set( appliedForce );
+        modifyingAppliedForce = false;
+      }
     } );
 
     this.leftSpring.leftProperty.lazyLink( function( left ) {
@@ -127,17 +132,17 @@ define( function( require ) {
     } );
 
     this.leftSpring.rightProperty.link( function( right ) {
-      debug( 'series: observer, leftSpring.right=' + right );//XXX
+      debug( options.debugName + ': observer, leftSpring.right=' + right );//XXX
       thisSystem.rightSpring.leftProperty.set( right );
     } );
 
     this.rightSpring.rightProperty.link( function( right ) {
-      debug( 'series: observer, rightSpring.right=' + right );//XXX
+      debug( options.debugName + ': observer, rightSpring.right=' + right );//XXX
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      debug( 'series: observer, roboticArm.left=' + left );//XXX
+      debug( options.debugName + ': observer, roboticArm.left=' + left );//XXX
       var displacement = left - thisSystem.equilibriumX;
       assert && assert( displacementRange.contains( displacement ), options.debugName + ': equivalent displacement is out of range: ' + displacement );
       var appliedForce = springConstantProperty.get() * displacement; // F = kx
