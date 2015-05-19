@@ -31,23 +31,28 @@ define( function( require ) {
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
+   * @param {Object} [options]
    * @constructor
    */
-  function ParallelSystem() {
+  function ParallelSystem( options ) {
+
+    options = _.extend( {
+      debugName: 'parallel'
+    }, options );
 
     PropertySet.call( this, {
       //TODO add Feq, xeq, keq, Eeq
     } );
 
     this.topSpring = new Spring( {
-      debugName: 'top',
+      debugName: options.debugName + '.top',
       left: 0,
       equilibriumLength: 1,
       springConstantRange: new Range( 200, 600, 200 )
     } );
 
     this.bottomSpring = new Spring( {
-      debugName: 'bottom',
+      debugName: options.debugName + '.bottom',
       left: this.topSpring.rightProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange

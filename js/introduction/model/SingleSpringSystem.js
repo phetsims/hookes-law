@@ -21,14 +21,19 @@ define( function( require ) {
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
+   * @param {Object} [options]
    * @constructor
    */
-  function SingleSpringSystem() {
+  function SingleSpringSystem( options ) {
+
+    options = _.extend( {
+      debugName: 'system' // {string} used for debugging, to know which spring we're inspecting
+    }, options );
 
     var thisSystem = this;
 
     this.spring = new Spring( {
-      debugName: 'single',
+      debugName: options.debugName + '.spring',
       left: 0,
       equilibriumLength: 1.5,
       springConstantRange: new Range( 100, 1000, 200 )
@@ -40,11 +45,11 @@ define( function( require ) {
     } );
 
     this.spring.leftProperty.lazyLink( function( left ) {
-      throw new Error( 'Left end of spring must remain fixed for a single-spring system, left=' + left );
+      throw new Error( options.debugName + ': left end of spring must remain fixed for a single-spring system, left=' + left );
     } );
 
     this.spring.equilibriumXProperty.lazyLink( function( equilibriumX ) {
-      throw new Error( 'Equilibrium position must remain fixed for a single-spring system, equilibriumX=' + equilibriumX );
+      throw new Error( options.debugName + ': equilibrium position must remain fixed for a single-spring system, equilibriumX=' + equilibriumX );
     } );
 
     this.spring.rightProperty.link( function( right ) {
