@@ -24,7 +24,7 @@ Systems screen
 -----------------------------------------------------------------------------------
 
 SeriesSystem is trashing and looping
-Set spring and control colors
+Color code series slider knobs to match springs
 ParallelSystem model
 ParallelSystemNode view
 Use a smaller track width for slider in SeriesSpringControl
