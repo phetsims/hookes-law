@@ -21,7 +21,11 @@ define( function( require ) {
    * @constructor
    */
   function SpringForceVectorNode( springForceProperty, valuesVisibleProperty, options ) {
-    options.fill = HookesLawColors.TOTAL_SPRING_FORCE_VECTOR;
+
+    options = _.extend( {
+      fill: HookesLawColors.TOTAL_SPRING_FORCE_VECTOR
+    }, options );
+
     options.decimalPlaces = HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES;
     options.alignZero = 'right';
     ForceVectorNode.call( this, springForceProperty, valuesVisibleProperty, options );

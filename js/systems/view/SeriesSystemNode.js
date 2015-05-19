@@ -51,11 +51,13 @@ define( function( require ) {
     } );
 
     var leftSpringNode = new SpringNode( leftSpring, modelViewTransform, {
+      stroke: HookesLawColors.LEFT_SPRING_FORCE_VECTOR,
       left: modelViewTransform.modelToViewX( leftSpring.leftProperty.get() ),
       centerY: yOrigin
     } );
 
     var rightSpringNode = new SpringNode( rightSpring, modelViewTransform, {
+      stroke: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR,
       // left is based on rightSpring.leftProperty
       centerY: yOrigin
     } );
@@ -74,16 +76,20 @@ define( function( require ) {
     } );
 
     var leftSpringForceVectorNode = new SpringForceVectorNode( system.leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+      fill: HookesLawColors.LEFT_SPRING_FORCE_VECTOR,
       // x is determined by leftSpring.rightProperty
       bottom: leftSpringNode.top - 14
     } );
 
+    //TODO is it correct to treat this like an applied force vector, and color-code it with right spring force?
     var leftAppliedForceVectorNode = new AppliedForceVectorNode( system.leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+      fill: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR,
       // x is determined by leftSpring.rightProperty
       y: leftSpringForceVectorNode.y
     } );
 
     var rightSpringForceVectorNode = new SpringForceVectorNode( system.rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+      fill: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR,
       // x is determined by rightSpring.rightProperty
       bottom: leftSpringForceVectorNode.top - 14
     } );

@@ -21,7 +21,11 @@ define( function( require ) {
    * @constructor
    */
   function AppliedForceVectorNode( appliedForceProperty, valuesVisibleProperty, options ) {
-    options.fill = HookesLawColors.APPLIED_FORCE_VECTOR;
+
+    options = _.extend( {
+      fill: HookesLawColors.APPLIED_FORCE_VECTOR
+    }, options );
+
     options.decimalPlaces = HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES;
     ForceVectorNode.call( this, appliedForceProperty, valuesVisibleProperty, options );
   }
