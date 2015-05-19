@@ -25,7 +25,7 @@ define( function( require ) {
 
   //TODO delete this
   var debug = function( message ) {
-    console.log( message );
+    if ( false ) { console.log( message ); }
   };
 
   /**

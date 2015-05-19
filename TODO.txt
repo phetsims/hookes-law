@@ -25,7 +25,7 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
-SeriesSystem is thrashing and looping
+SeriesSystem: when changing spring constants, sometimes total spring force != total applied force
 ParallelSystem model
 ParallelSystemNode view
 Keep spring constants and applied force synchronized between serial and parallel systems.
