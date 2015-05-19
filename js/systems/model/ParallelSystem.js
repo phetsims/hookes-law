@@ -31,27 +31,16 @@ define( function( require ) {
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
-  //TODO delete this
-  var debug = function( message ) {
-    console.log( message );
-  };
-
   /**
-   * @param {Object} [options]
    * @constructor
    */
-  function ParallelSystem( options ) {
-
-    options = _.extend( {
-      debugName: 'parallel'
-    }, options );
+  function ParallelSystem() {
 
     var thisSystem = this;
 
     this.appliedForceRange = new Range( -100, 100, 0 ); // range and initial value of Feq, units = N
 
     this.topSpring = new Spring( {
-      debugName: options.debugName + '.top',
       left: 0,
       equilibriumLength: 1.5,
       springConstantRange: new Range( 200, 600, 200 ),
@@ -59,7 +48,6 @@ define( function( require ) {
     } );
 
     this.bottomSpring = new Spring( {
-      debugName: options.debugName + '.bottom',
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange,
@@ -86,11 +74,9 @@ define( function( require ) {
     // Derived properties -----------------------------------------------------------
 
     // equivalent spring force opposes the equivalent applied force, units = N
-    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
-      function( appliedForce ) {
-        debug( options.debugName + ': derive springForceProperty, appliedForce=' + appliedForce );//XXX
-        return -appliedForce;
-      } );
+    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
+      return -appliedForce;
+    } );
 
     // keq = k1 + k2
     var springConstantRange = new Range(
@@ -99,28 +85,23 @@ define( function( require ) {
     var springConstantProperty = new DerivedProperty(
       [ this.topSpring.springConstantProperty, this.bottomSpring.springConstantProperty ],
       function( topSpringConstant, bottomSpringConstant ) {
-        debug( options.debugName + ': derive springConstantProperty, topSpringConstant=' + topSpringConstant + ', bottomSpringConstant=' + bottomSpringConstant );//XXX
         var springConstant = topSpringConstant + bottomSpringConstant;
-        assert && assert( springConstantRange.contains( springConstant ), options.debugName + ': equivalent spring constant out of range: ' + springConstant );
+        assert && assert( springConstantRange.contains( springConstant ), 'equivalent spring constant out of range: ' + springConstant );
         return springConstant;
       } );
 
     // Property observers -----------------------------------------------------------
 
-    // Feq = F1 + F2
     this.appliedForceProperty.link( function( appliedForce ) {
-      debug( options.debugName + ': observer, appliedForce=' + appliedForce );//XXX
-      var displacement = appliedForce / springConstantProperty.get(); // xeq = Feq / keq
-      thisSystem.displacement = displacement;
+      thisSystem.displacement = appliedForce / springConstantProperty.get(); // xeq = Feq / keq;
     } );
 
     // xeq = x1 = x2
     var modifyingDisplacement = false; // to prevent looping and thrashing
     var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
     this.displacementProperty.link( function( displacement ) {
-      debug( options.debugName + ': observer, displacement=' + displacement );//XXX
       if ( !modifyingDisplacement ) {
-        assert && assert( displacementRange.contains( displacement ), options.debugName + ': equivalent displacement is out of range: ' + displacement );
+        assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
         modifyingDisplacement = true;
         thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
         thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
@@ -137,10 +118,7 @@ define( function( require ) {
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      debug( options.debugName + ': observer, roboticArm.left=' + left );//XXX
-      var displacement = left - thisSystem.equilibriumX;
-      assert && assert( displacementRange.contains( displacement ), options.debugName + ': equivalent displacement is out of range: ' + displacement );
-      thisSystem.displacementProperty.set( displacement );
+      thisSystem.displacement = left - thisSystem.equilibriumX;
     } );
   }
 
