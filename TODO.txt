@@ -42,7 +42,7 @@ Make hook rotate up when displacement is zero and not dragging (and not using Ap
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
 compensate for headLineWidth in LineArrowNode, so that tip is at (tipX,tipY)
-constraint text sizes for i18n
+constrain text size for i18n
 
 -----------------------------------------------------------------------------------
 Common
