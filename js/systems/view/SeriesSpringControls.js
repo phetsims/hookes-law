@@ -37,10 +37,14 @@ define( function( require ) {
     }, options );
 
     var leftSpringConstantControl = new SpringConstantControl( leftSpringString,
-      system.leftSpring.springConstantProperty, system.leftSpring.springConstantRange );
+      system.leftSpring.springConstantProperty, system.leftSpring.springConstantRange, {
+        thumbFillEnabled: HookesLawColors.LEFT_SPRING_FORCE_VECTOR
+      } );
 
     var rightSpringConstantControl = new SpringConstantControl( rightSpringString,
-      system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange );
+      system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
+        thumbFillEnabled: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR
+      } );
 
     var appliedForceControl = new AppliedForceControl( appliedForceColonString,
       system.appliedForceProperty, system.appliedForceRange );

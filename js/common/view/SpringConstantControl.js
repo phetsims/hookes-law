@@ -44,33 +44,14 @@ define( function( require ) {
     } ];
 
     options = _.extend( {
-      titleOptions: {
-        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
-      },
-      valueOptions: {
-        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-        decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
-        units: unitsNewtonsPerMeter
-      },
-      arrowButtonOptions: {
-        delta: HookesLawConstants.SPRING_CONSTANT_DELTA
-      },
-      sliderOptions: {
-        majorTicks: majorTicks,
-        minorTickSpacing: MINOR_TICK_SPACING,
-        trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
-        thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
-        majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
-        minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
-        thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE_VECTOR,
-        thumbFillHighlighted: HookesLawColors.TOTAL_SPRING_FORCE_VECTOR.brighterColor(),
-        constrainValue: function( value ) {
-          // constrain to delta
-          value = Math.round( value / HookesLawConstants.SPRING_CONSTANT_DELTA ) * HookesLawConstants.SPRING_CONSTANT_DELTA;
-          // constrain to range
-          return springConstantRange.constrainValue( value );
-        }
-      }
+      titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
+      units: unitsNewtonsPerMeter,
+      delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
+      majorTicks: majorTicks,
+      minorTickSpacing: MINOR_TICK_SPACING,
+      thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE_VECTOR
     }, options );
 
     NumberControl.call( this, title, springConstantProperty, springConstantRange, options );

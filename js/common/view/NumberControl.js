@@ -11,6 +11,8 @@ define( function( require ) {
 
   // modules
   var ArrowButton = require( 'SCENERY_PHET/buttons/ArrowButton' );
+  var Color = require( 'SCENERY/util/Color' );
+  var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -32,36 +34,71 @@ define( function( require ) {
   function NumberControl( title, numberProperty, numberRange, options ) {
 
     options = _.extend( {
-      titleOptions: { font: new PhetFont( 12 ) },
-      valueOptions: { font: new PhetFont( 12 ), decimalPlaces: 0, units: '' },
-      arrowButtonOptions: { delta: 1 },
-      sliderOptions: { majorTicks: [], minorTickSpacing: 1 }
+      // title
+      titleFont: new PhetFont( 12 ),
+      // value
+      valueFont: new PhetFont( 12 ),
+      decimalPlaces: 0,
+      units: '',
+      // arrow buttons
+      delta: 1,
+      // slider
+      majorTicks: [],
+      minorTickSpacing: 1,
+      trackSize: new Dimension2( 180, 3 ),
+      thumbSize: new Dimension2( 17, 34 ),
+      majorTickLength: 20,
+      minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
+      thumbFillEnabled: 'green'
     }, options );
 
-    var delta = options.arrowButtonOptions.delta;
+    var delta = options.delta; // to improve readability
 
-    var titleNode = new Text( title, options.titleOptions );
+    var titleNode = new Text( title, { font: options.titleFont } );
 
-    var numberDisplay = new NumberDisplay( numberProperty, numberRange, options.valueOptions.units, pattern_0value_1units, options.valueOptions );
+    var numberDisplay = new NumberDisplay( numberProperty, numberRange, options.units, pattern_0value_1units, {
+      valueFont: options.valueFont,
+      decimalPlaces: options.decimalPlaces
+    } );
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       var value = numberProperty.get() - delta;
       value = Math.round( value / delta ) * delta; // constrain to delta
       value = Math.max( value, numberRange.min ); // constrain to range
       numberProperty.set( value );
-    }, options.arrowButtonOptions );
+    }, {
+      delta: options.delta
+    } );
 
     var rightArrowButton = new ArrowButton( 'right', function() {
       var value = numberProperty.get() + delta;
       value = Math.round( value / delta ) * delta; // constrain to delta
       value = Math.min( value, numberRange.max ); // constrain to range
       numberProperty.set( value );
-    }, options.arrowButtonOptions );
+    }, {
+      delta: options.delta
+    } );
 
-    var slider = new HSlider( numberProperty, numberRange, options.sliderOptions );
+    //TODO use a better method of propagating slider options
+    var slider = new HSlider( numberProperty, numberRange, {
+      majorTicks: options.majorTicks,
+      minorTickSpacing: options.minorTickSpacing,
+      trackSize: options.trackSize,
+      thumbSize: options.thumbSize,
+      majorTickLength: options.majorTickLength,
+      minorTickStroke: options.minorTickStroke,
+      thumbFillEnabled: options.thumbFillEnabled,
+      thumbFillHighlighted: Color.toColor( options.thumbFillEnabled ).brighterColor(),
+      constrainValue: function( value ) {
+        // constrain to delta
+        value = Math.round( value / options.delta ) * options.delta;
+        // constrain to range
+        return numberRange.constrainValue( value );
+      }
+    } );
 
     // major ticks
-    var majorTicks = options.sliderOptions.majorTicks;
+    var majorTicks = options.majorTicks;
     for ( var i = 0; i < majorTicks.length; i++ ) {
       slider.addMajorTick( majorTicks[ i ].value, majorTicks[ i ].label );
     }
@@ -71,7 +108,7 @@ define( function( require ) {
       if ( !_.find( majorTicks, function( majorTick ) { return majorTick.value === minorTickValue; } ) ) {
         slider.addMinorTick( minorTickValue );
       }
-      minorTickValue += options.sliderOptions.minorTickSpacing;
+      minorTickValue += options.minorTickSpacing;
     }
 
     options.spacing = 5;

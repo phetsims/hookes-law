@@ -54,33 +54,14 @@ define( function( require ) {
     } ];
 
     options = _.extend( {
-      titleOptions: {
-        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
-      },
-      valueOptions: {
-        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-        decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-        units: unitsNewtons
-      },
-      arrowButtonOptions: {
-        delta: HookesLawConstants.APPLIED_FORCE_DELTA
-      },
-      sliderOptions: {
-        majorTicks: majorTicks,
-        minorTickSpacing: MINOR_TICK_SPACING,
-        trackSize: HookesLawConstants.SLIDER_TRACK_SIZE,
-        thumbSize: HookesLawConstants.SLIDER_THUMB_SIZE,
-        majorTickLength: HookesLawConstants.SLIDER_MAJOR_TICK_LENGTH,
-        minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
-        thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR,
-        thumbFillHighlighted: HookesLawColors.APPLIED_FORCE_VECTOR.brighterColor(),
-        constrainValue: function( value ) {
-          // constrain to delta
-          value = Math.round( value / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
-          // constrain to range
-          return appliedForceRange.constrainValue( value );
-        }
-      }
+      titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
+      units: unitsNewtons,
+      delta: HookesLawConstants.APPLIED_FORCE_DELTA,
+      majorTicks: majorTicks,
+      minorTickSpacing: MINOR_TICK_SPACING,
+      thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR
     }, options );
 
     NumberControl.call( this, title, appliedForceProperty, appliedForceRange, options );

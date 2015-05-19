@@ -24,7 +24,6 @@ Systems screen
 -----------------------------------------------------------------------------------
 
 SeriesSystem is trashing and looping
-Color code series slider knobs to match springs
 ParallelSystem model
 ParallelSystemNode view
 Use a smaller track width for slider in SeriesSpringControl
@@ -39,7 +38,6 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
-Make it possible to change nested options in SpringConstantControl and AppliedForceControl
 Integrate new robotic arm graphics
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
