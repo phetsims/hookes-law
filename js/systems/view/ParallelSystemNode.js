@@ -28,13 +28,13 @@ define( function( require ) {
   var EQUILIBRIUM_LINE_LENGTH = WALL_SIZE.height;
 
   /**
-   * @param {SeriesSystem} system
+   * @param {ParallelSystem} system
    * @param {ModelViewTransform2} modelViewTransform
    * @param {SystemViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SeriesSystemNode( system, modelViewTransform, viewProperties, options ) {
+  function ParallelSystemNode( system, modelViewTransform, viewProperties, options ) {
 
     // to improve readability
     var topSpring = system.topSpring;
@@ -75,37 +75,37 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
+    var appliedForceVectorNode = new AppliedForceVectorNode( system.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+      // x is determined by bottomSpring.rightProperty
+      bottom: topSpringNode.top - 40
+    } );
+
+    var totalSpringForceVectorNode = new SpringForceVectorNode( system.springForceProperty, viewProperties.valuesVisibleProperty, {
+      // x is determined by bottomSpring.rightProperty
+      centerY: appliedForceVectorNode.centerY
+    } );
+
     var topSpringForceVectorNode = new SpringForceVectorNode( system.topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.TOP_SPRING_FORCE_VECTOR,
       // x is determined by topSpring.rightProperty
-      bottom: topSpringNode.top - 14
+      centerY: totalSpringForceVectorNode.top
     } );
 
     var bottomSpringForceVectorNode = new SpringForceVectorNode( system.bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.BOTTOM_SPRING_FORCE_VECTOR,
       // x is determined by bottomSpring.rightProperty
-      bottom: topSpringForceVectorNode.top - 14
-    } );
-
-    var appliedForceVectorNode = new AppliedForceVectorNode( system.appliedForceProperty, viewProperties.valuesVisibleProperty, {
-      // x is determined by bottomSpring.rightProperty
-      y: bottomSpringForceVectorNode.y
-    } );
-
-    var totalSpringForceVectorNode = new SpringForceVectorNode( system.springForceProperty, viewProperties.valuesVisibleProperty, {
-      // x is determined by bottomSpring.rightProperty
-      y: appliedForceVectorNode.y
+      centerY: totalSpringForceVectorNode.bottom
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( system.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
       x: equilibriumPositionNode.centerX,
-      top: topSpringNode.bottom + 8
+      top: bottomSpringNode.bottom + 8
     } );
 
     var springControls = new ParallelSpringControls( system, {
       scale: 0.75,
-      left: wallNode.left,
-      top: wallNode.bottom + 10
+      centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
+      top: wallNode.bottom + 25
     } );
 
     options.children = [
@@ -139,5 +139,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Node, SeriesSystemNode );
+  return inherit( Node, ParallelSystemNode );
 } );
