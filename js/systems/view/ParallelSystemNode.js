@@ -133,7 +133,7 @@ define( function( require ) {
     viewProperties.springForceRepresentationProperty.link( springForceVisibilityObserver );
 
     // Position the vectors
-    topSpring.rightProperty.link( function( right ) {
+    system.rightProperty.link( function( right ) {
       var x = modelViewTransform.modelToViewX( right );
       appliedForceVectorNode.x = totalSpringForceVectorNode.x = topSpringForceVectorNode.x = bottomSpringForceVectorNode.x = x;
     } );

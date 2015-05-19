@@ -90,6 +90,11 @@ define( function( require ) {
         return springConstant;
       } );
 
+    // x location of the right end of the system, units = m
+    this.rightProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
+      return thisSystem.equilibriumX + displacement;
+    } );
+
     this.rightRangeProperty = new DerivedProperty( [ springConstantProperty ],
       function( springConstant ) {
         var minDisplacement = thisSystem.appliedForceRange.min / springConstant; // x = F/k
@@ -112,9 +117,12 @@ define( function( require ) {
         modifyingDisplacement = true;
         thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
         thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
-        thisSystem.roboticArm.leftProperty.set( thisSystem.equilibriumX + displacement );
         modifyingDisplacement = false;
       }
+    } );
+
+    this.rightProperty.link( function( right ) {
+      thisSystem.roboticArm.leftProperty.set( right );
     } );
 
     this.topSpring.leftProperty.lazyLink( function( left ) {
