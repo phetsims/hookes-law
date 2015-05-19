@@ -35,7 +35,7 @@ define( function( require ) {
   function Spring( options ) {
 
     options = _.extend( {
-      debugName: null, // {string} used for debugging, to know which spring we're inspecting
+      debugName: 'spring', // {string} used for debugging, to know which spring we're inspecting
       left: 0, // {number} x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
       springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
@@ -43,6 +43,7 @@ define( function( require ) {
     }, options );
 
     // validate options
+    assert && assert( options.debugName, 'debugName is required for debugging' );
     assert && assert( options.equilibriumLength > 0, options.debugName + ': equilibriumLength must be > 0 : ' + options.equilibriumLength );
     assert && assert( options.springConstantRange.min > 0, options.debugName + ': spring constant must be positive' );
 
@@ -54,8 +55,7 @@ define( function( require ) {
 
     var thisSpring = this;
 
-    // For internal validation, x = F/k
-    var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
+    // Properties -----------------------------------------------------------
 
     PropertySet.call( this, {
       appliedForce: options.appliedForceRange.defaultValue, // {number} F
@@ -64,31 +64,7 @@ define( function( require ) {
       left: options.left // {number} location of the left end of the spring, units = m
     } );
 
-    // equilibrium x location, units = m
-    this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ], function( left ) {
-      return left + thisSpring.equilibriumLength;
-    } );
-
-    // x location of the right end of the spring
-    this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ], function( equilibriumX, displacement ) {
-      debug( thisSpring.debugName + ': derive rightProperty, equilibriumX=' + equilibriumX + ', displacement=' + displacement );//XXX
-      var left = thisSpring.leftProperty.get();
-      var right = equilibriumX + displacement;
-      assert && assert( right - left > 0, options.debugName + ': right must be > left, right=' + right + ', left=' + left );
-      return right;
-    } );
-
-    // length of the spring, units = m
-    this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ], function( left, right ) {
-      debug( thisSpring.debugName + ': derive lengthProperty, left=' + left + ', right=' + right );//XXX
-      return Math.abs( right - left );
-    } );
-
-    // spring force opposes the applied force, units = N
-    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
-      debug( thisSpring.debugName + ': derive springForceProperty, appliedForce=' + appliedForce );//XXX
-      return -appliedForce;
-    } );
+    // Property observers -----------------------------------------------------------
 
     // When changing the spring constant, maintain the applied force, change displacement.
     this.springConstantProperty.link( function( springConstant ) {
@@ -105,6 +81,7 @@ define( function( require ) {
     } );
 
     // When changing displacement, maintain the spring constant, change applied force.
+    var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
     this.displacementProperty.link( function( displacement ) {
       debug( thisSpring.debugName + ': observer, displacement=' + displacement );//XXX
       assert && assert( displacementRange.contains( displacement ), options.debugName + ': displacement is out of range: ' + displacement );
@@ -115,13 +92,40 @@ define( function( require ) {
       thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
     } );
 
+    // Derived properties -----------------------------------------------------------
+
+    // spring force opposes the applied force, units = N
+    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
+      debug( thisSpring.debugName + ': derive springForceProperty, appliedForce=' + appliedForce );//XXX
+      return -appliedForce;
+    } );
+
+    // equilibrium x location, units = m
+    this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ], function( left ) {
+      return left + thisSpring.equilibriumLength;
+    } );
+
+    // x location of the right end of the spring, units = m
+    this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ], function( equilibriumX, displacement ) {
+      debug( thisSpring.debugName + ': derive rightProperty, equilibriumX=' + equilibriumX + ', displacement=' + displacement );//XXX
+      var left = thisSpring.leftProperty.get();
+      var right = equilibriumX + displacement;
+      assert && assert( right - left > 0, options.debugName + ': right must be > left, right=' + right + ', left=' + left );
+      return right;
+    } );
+
     // range of the right end of the spring, units = m
     this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, thisSpring.equilibriumXProperty ], function( springConstant, equilibriumX ) {
       debug( thisSpring.debugName + ': derive rightRangeProperty, springConstant=' + springConstant + ', equilibriumX=' + equilibriumX );//XXX
-      assert && assert( springConstant > 0, options.debugName + ': springConstant must be > 0 : ' + springConstant );
       var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
       var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
       return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
+    } );
+
+    // length of the spring, units = m
+    this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ], function( left, right ) {
+      debug( thisSpring.debugName + ': derive lengthProperty, left=' + left + ', right=' + right );//XXX
+      return Math.abs( right - left );
     } );
   }
 
