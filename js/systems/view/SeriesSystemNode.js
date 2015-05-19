@@ -110,7 +110,7 @@ define( function( require ) {
     } );
 
     var springControls = new SeriesSpringControls( system, {
-      scale: 0.65,
+      scale: 0.75,
       left: wallNode.left,
       top: wallNode.bottom + 10
     } );

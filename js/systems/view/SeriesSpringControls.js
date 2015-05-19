@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
+  var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -38,12 +39,14 @@ define( function( require ) {
 
     var leftSpringConstantControl = new SpringConstantControl( leftSpringString,
       system.leftSpring.springConstantProperty, system.leftSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.LEFT_SPRING_FORCE_VECTOR
+        thumbFillEnabled: HookesLawColors.LEFT_SPRING_FORCE_VECTOR,
+        trackSize: new Dimension2( 120, 3 )
       } );
 
     var rightSpringConstantControl = new SpringConstantControl( rightSpringString,
       system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR
+        thumbFillEnabled: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR,
+        trackSize: new Dimension2( 120, 3 )
       } );
 
     var appliedForceControl = new AppliedForceControl( appliedForceColonString,
