@@ -12,6 +12,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  var ParallelSystemNode = require( 'HOOKES_LAW/systems/view/ParallelSystemNode' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var SeriesParallelControl = require( 'HOOKES_LAW/systems/view/SeriesParallelControl' );
   var SeriesSystemNode = require( 'HOOKES_LAW/systems/view/SeriesSystemNode' );
@@ -36,6 +37,13 @@ define( function( require ) {
       centerY: this.layoutBounds.centerY
     } );
     this.addChild( seriesSystemNode );
+
+    // Parallel system
+    var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, modelViewTransform, viewProperties, {
+      left: this.layoutBounds.left + 60,
+      centerY: this.layoutBounds.centerY
+    } );
+    this.addChild( parallelSystemNode );
 
     // Visibility controls
     var visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
@@ -65,6 +73,7 @@ define( function( require ) {
     // Make one of the 2 systems visible
     viewProperties.seriesParallelProperty.link( function( seriesParallel ) {
       seriesSystemNode.visible = ( seriesParallel === 'series' );
+      parallelSystemNode.visible = ( seriesParallel === 'parallel' );
     } );
   }
 
