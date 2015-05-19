@@ -56,7 +56,7 @@ define( function( require ) {
       left: 0,
       equilibriumLength: 0.75,
       springConstantRange: new Range( 200, 600, 200 ),
-      appliedForceRange: this.appliedForceRange
+      appliedForceRange: this.appliedForceRange // Feq = F1 = F2
     } );
 
     this.rightSpring = new Spring( {
@@ -64,7 +64,7 @@ define( function( require ) {
       left: this.leftSpring.rightProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength,
       springConstantRange: this.leftSpring.springConstantRange,
-      appliedForceRange: this.appliedForceRange
+      appliedForceRange: this.appliedForceRange // Feq = F1 = F2
     } );
 
     this.roboticArm = new RoboticArm( {
