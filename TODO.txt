@@ -16,6 +16,8 @@ Do we want to show the 300 tick label (1/2 max) for spring constant range (200,6
 
 Do we really need left alignment of icons in the "Systems" control panel?
 
+In parallel system, should changing spring constant change applied force instead of displacement?
+
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------

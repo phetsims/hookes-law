@@ -112,6 +112,7 @@ define( function( require ) {
         modifyingDisplacement = true;
         thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
         thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
+        thisSystem.roboticArm.leftProperty.set( thisSystem.equilibriumX + displacement );
         modifyingDisplacement = false;
       }
     } );
