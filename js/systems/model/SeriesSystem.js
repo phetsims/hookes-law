@@ -102,8 +102,8 @@ define( function( require ) {
     // Feq = F1 = F2
     var modifyingAppliedForce = false; // to prevent looping and thrashing
     this.appliedForceProperty.link( function( appliedForce ) {
+      assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce is out of range: ' + appliedForce );
       if ( !modifyingAppliedForce ) {
-        assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce is out of range: ' + appliedForce );
         modifyingAppliedForce = true;
         thisSystem.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
         thisSystem.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq

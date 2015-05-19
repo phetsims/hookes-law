@@ -100,8 +100,8 @@ define( function( require ) {
     var modifyingDisplacement = false; // to prevent looping and thrashing
     var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
     this.displacementProperty.link( function( displacement ) {
+      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
       if ( !modifyingDisplacement ) {
-        assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
         modifyingDisplacement = true;
         thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
         thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
