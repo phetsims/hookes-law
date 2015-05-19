@@ -23,7 +23,7 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
-Performance problem in model (thrashing?)
+SeriesSystem is trashing and looping
 Set spring and control colors
 ParallelSystem model
 ParallelSystemNode view
