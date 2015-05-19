@@ -76,6 +76,8 @@ define( function( require ) {
       appliedForce: this.appliedForceRange.defaultValue // Feq
     } );
 
+    // Derived properties -----------------------------------------------------------
+
     // equivalent spring force opposes the equivalent applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
       function( appliedForce ) {
@@ -102,13 +104,15 @@ define( function( require ) {
     // xeq = x1 + x2
     var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
     this.displacementProperty = new DerivedProperty( [ this.leftSpring.displacementProperty, this.rightSpring.displacementProperty ],
-      function ( leftDisplacement, rightDisplacement ) {
+      function( leftDisplacement, rightDisplacement ) {
         debug( 'series: derive displacementProperty, leftDisplacement=' + leftDisplacement + ', rightDisplacement=' + rightDisplacement );//XXX
         var displacement = leftDisplacement + rightDisplacement;
         assert && assert( displacementRange.contains( displacement ), options.debugName + ': equivalent displacement is out of range: ' + displacement );
         return displacement;
       }
     );
+
+    // Property observers -----------------------------------------------------------
 
     // Feq = F1 = F2
     this.appliedForceProperty.link( function( appliedForce ) {
