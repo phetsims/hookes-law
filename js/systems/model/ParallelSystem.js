@@ -71,11 +71,14 @@ define( function( require ) {
       'top and bottom springs must have same equilibrium position' );
     this.equilibriumX = this.topSpring.equilibriumXProperty.get();
 
+    // Used to prevent property updates until both springs have been modified. This prevents wrong intermediate states, looping, thrashing.
+    var ignoreUpdates = false;
+
     // Derived properties -----------------------------------------------------------
 
     // equivalent spring force opposes the equivalent applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
-      return -appliedForce;
+      return ignoreUpdates ? thisSystem.springForceProperty.get() : -appliedForce;;
     } );
 
     // keq = k1 + k2
@@ -105,19 +108,20 @@ define( function( require ) {
     // Property observers -----------------------------------------------------------
 
     this.appliedForceProperty.link( function( appliedForce ) {
-      thisSystem.displacement = appliedForce / springConstantProperty.get(); // xeq = Feq / keq;
+      if ( !ignoreUpdates ) {
+        thisSystem.displacement = appliedForce / springConstantProperty.get(); // xeq = Feq / keq;
+      }
     } );
 
     // xeq = x1 = x2
-    var modifyingDisplacement = false; // to prevent looping and thrashing
     var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
     this.displacementProperty.link( function( displacement ) {
       assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
-      if ( !modifyingDisplacement ) {
-        modifyingDisplacement = true;
+      if ( !ignoreUpdates ) {
+        ignoreUpdates = true;
         thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
         thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
-        modifyingDisplacement = false;
+        ignoreUpdates = false;
       }
     } );
 

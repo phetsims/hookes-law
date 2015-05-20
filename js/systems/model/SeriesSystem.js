@@ -67,12 +67,15 @@ define( function( require ) {
     // equivalent equilibrium position for the system, read-only
     this.equilibriumX = this.leftSpring.leftProperty.get() + this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength;
 
+    // Used to prevent property updates until both springs have been modified. This prevents wrong intermediate states, looping, thrashing.
+    var ignoreUpdates = false;
+
     // Derived properties -----------------------------------------------------------
 
     // equivalent spring force opposes the equivalent applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
       function( appliedForce ) {
-        return -appliedForce;
+        return ignoreUpdates ? thisSystem.springForceProperty.get() : -appliedForce;
       } );
 
     // keq = 1 / ( 1/k1 + 1/k2 )
@@ -100,14 +103,13 @@ define( function( require ) {
     // Property observers -----------------------------------------------------------
 
     // Feq = F1 = F2
-    var modifyingAppliedForce = false; // to prevent looping and thrashing
     this.appliedForceProperty.link( function( appliedForce ) {
       assert && assert( thisSystem.appliedForceRange.contains( appliedForce ), 'equivalent appliedForce is out of range: ' + appliedForce );
-      if ( !modifyingAppliedForce ) {
-        modifyingAppliedForce = true;
+      if ( !ignoreUpdates ) {
+        ignoreUpdates = true;
         thisSystem.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
         thisSystem.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq
-        modifyingAppliedForce = false;
+        ignoreUpdates = false;
       }
     } );
 
