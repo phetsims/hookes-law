@@ -75,7 +75,7 @@ define( function( require ) {
     // equivalent spring force opposes the equivalent applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
       function( appliedForce ) {
-        return ignoreUpdates ? thisSystem.springForceProperty.get() : -appliedForce;
+        return -appliedForce;
       } );
 
     // keq = 1 / ( 1/k1 + 1/k2 )
@@ -126,13 +126,15 @@ define( function( require ) {
     } );
 
     this.roboticArm.leftProperty.link( function( left ) {
-      var displacement = left - thisSystem.equilibriumX;
-      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
-      var appliedForce = springConstantProperty.get() * displacement; // F = kx
-      // constrain to delta
-      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
-      // constrain to range
-      thisSystem.appliedForce = thisSystem.appliedForceRange.constrainValue( appliedForce );
+      if ( !ignoreUpdates ) {
+        var displacement = left - thisSystem.equilibriumX;
+        assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
+        var appliedForce = springConstantProperty.get() * displacement; // F = kx
+        // constrain to delta
+        appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+        // constrain to range
+        thisSystem.appliedForce = thisSystem.appliedForceRange.constrainValue( appliedForce );
+      }
     } );
   }
 
