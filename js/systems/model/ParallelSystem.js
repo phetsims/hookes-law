@@ -78,7 +78,7 @@ define( function( require ) {
 
     // equivalent spring force opposes the equivalent applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
-      return ignoreUpdates ? thisSystem.springForceProperty.get() : -appliedForce;;
+      return ignoreUpdates ? thisSystem.springForceProperty.get() : -appliedForce;
     } );
 
     // keq = k1 + k2
