@@ -14,7 +14,7 @@
  * k = spring constant, N/m
  * x = displacement from equilibrium position, m
  * E = stored energy, J
- * subscript "eq" is an equivalent value for the system
+ * subscript "eq" is a spring that is equivalent to the 2 springs in series
  * subscript "1" is for the left spring
  * subscript "2" is for the right spring
  *
