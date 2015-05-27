@@ -95,6 +95,12 @@ define( function( require ) {
       return Math.abs( right - left );
     } );
 
+    // E = ( k1 * x1 * x1 ) / 2
+    this.storedEnergyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
+      function( springConstant, displacement ) {
+        return ( springConstant * displacement * displacement ) / 2;
+      } );
+
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
     // F: When changing the applied force, maintain the spring constant, change displacement.
