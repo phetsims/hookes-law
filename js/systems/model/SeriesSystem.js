@@ -70,19 +70,12 @@ define( function( require ) {
       appliedForceRange: this.leftSpring.appliedForceRange // Feq = F1 = F2
     } );
 
-    // Used to prevent property updates until both springs have been modified. This prevents wrong intermediate states, looping, thrashing.
-    var ignoreUpdates = false;
-
     // Property observers -----------------------------------------------------------
 
     // Feq = F1 = F2
     this.equivalentSpring.appliedForceProperty.link( function( appliedForce ) {
-      if ( !ignoreUpdates ) {
-        ignoreUpdates = true;
-        thisSystem.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
-        thisSystem.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq
-        ignoreUpdates = false;
-      }
+      thisSystem.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
+      thisSystem.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq
     } );
 
     // keq = 1 / ( 1/k1 + 1/k2 )
@@ -106,14 +99,15 @@ define( function( require ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
+    // Used to prevent updates until both springs have been modified. This prevents wrong intermediate states, looping, thrashing.
+    var ignoreUpdates = false;
     this.roboticArm.leftProperty.link( function( left ) {
-      var displacement = left - thisSystem.equivalentSpring.equilibriumXProperty.get();
-      assert && assert( thisSystem.equivalentSpring.displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
-      var appliedForce = thisSystem.equivalentSpring.springConstantProperty.get() * displacement; // F = kx
-      // constrain to delta
-      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
-      // constrain to range
-      thisSystem.equivalentSpring.appliedForceProperty.set( thisSystem.equivalentSpring.appliedForceRange.constrainValue( appliedForce ) );
+      if ( !ignoreUpdates ) {
+        // this will affect the displacement of both springs
+        ignoreUpdates = true;
+        thisSystem.equivalentSpring.displacementProperty.set( left - thisSystem.equivalentSpring.equilibriumXProperty.get() );
+        ignoreUpdates = false;
+      }
     } );
   }
 
