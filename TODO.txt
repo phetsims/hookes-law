@@ -16,8 +16,6 @@ Do we want to show the 300 tick label (1/2 max) for spring constant range (200,6
 
 Do we really need left alignment of icons in the "Systems" control panel?
 
-In parallel system, should changing spring constant change applied force instead of displacement?
-
 Do we really want to synchronize applied force and spring constants between the series and parallel systems?
 It feels weird, and it's a performance drain to update both systems simultaneously. (Performance could be addressed.)
 
