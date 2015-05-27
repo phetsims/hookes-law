@@ -23,10 +23,10 @@ define( function( require ) {
   function AppliedForceVectorNode( appliedForceProperty, valuesVisibleProperty, options ) {
 
     options = _.extend( {
-      fill: HookesLawColors.APPLIED_FORCE_VECTOR
+      fill: HookesLawColors.APPLIED_FORCE_VECTOR,
+      decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES
     }, options );
 
-    options.decimalPlaces = HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES;
     ForceVectorNode.call( this, appliedForceProperty, valuesVisibleProperty, options );
   }
 
