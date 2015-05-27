@@ -114,6 +114,16 @@ define( function( require ) {
       }
     } );
 
+    var updateEquivalentDisplacement = function( displacement ) {
+      if ( !ignoreUpdates ) {
+        ignoreUpdates = true;
+        thisSystem.equivalentSpring.displacementProperty.set( displacement );
+        ignoreUpdates = false;
+      }
+    };
+    this.topSpring.displacementProperty.link( updateEquivalentDisplacement );
+    this.bottomSpring.displacementProperty.link( updateEquivalentDisplacement );
+
     // Connect arm to equivalent spring.
     this.equivalentSpring.rightProperty.link( function( right ) {
       thisSystem.roboticArm.leftProperty.set( right );
