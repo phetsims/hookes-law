@@ -44,6 +44,7 @@ define( function( require ) {
     var leftSpring = system.leftSpring;
     var rightSpring = system.rightSpring;
     var roboticArm = system.roboticArm;
+    var equivalentSpring = system.equivalentSpring;
 
     // This sim operates in 1 dimension (x), so center everything on y = 0.
     var yOrigin = modelViewTransform.modelToViewY( 0 );
@@ -68,7 +69,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, system.equivalentSpring.equilibriumXProperty.get(), modelViewTransform, {
+    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, equivalentSpring.equilibriumXProperty.get(), modelViewTransform, {
       x: modelViewTransform.modelToViewX( roboticArm.right ),
       y: yOrigin
     } );
@@ -77,40 +78,40 @@ define( function( require ) {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
-      centerX: modelViewTransform.modelToViewX( system.equivalentSpring.equilibriumXProperty.get() ),
+      centerX: modelViewTransform.modelToViewX( equivalentSpring.equilibriumXProperty.get() ),
       centerY: yOrigin
     } );
 
-    var leftSpringForceVectorNode = new SpringForceVectorNode( system.leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var leftSpringForceVectorNode = new SpringForceVectorNode( leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.LEFT_SPRING_FORCE_VECTOR,
       // x is determined by leftSpring.rightProperty
       bottom: leftSpringNode.top - 25
     } );
 
     //TODO is it correct to treat this like an applied force vector, and color-code it with right spring force?
-    var leftAppliedForceVectorNode = new AppliedForceVectorNode( system.leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var leftAppliedForceVectorNode = new AppliedForceVectorNode( leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR,
       // x is determined by leftSpring.rightProperty
       y: leftSpringForceVectorNode.y
     } );
 
-    var rightSpringForceVectorNode = new SpringForceVectorNode( system.rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var rightSpringForceVectorNode = new SpringForceVectorNode( rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.RIGHT_SPRING_FORCE_VECTOR,
       // x is determined by rightSpring.rightProperty
       bottom: leftSpringForceVectorNode.top - 10
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( system.equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by rightSpring.rightProperty
       y: rightSpringForceVectorNode.y
     } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode( system.equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by rightSpring.rightProperty
       y: appliedForceVectorNode.y
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( system.equivalentSpring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
       x: equilibriumPositionNode.centerX,
       top: leftSpringNode.bottom + 8
     } );
@@ -135,7 +136,7 @@ define( function( require ) {
     viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
-    // switch between different force representations
+    // switch between different spring force representations
     var springForceVisibilityObserver = function() {
       // total
       totalSpringForceVectorNode.visible = viewProperties.springForceVectorVisible && viewProperties.springForceRepresentation === 'total';
@@ -151,11 +152,14 @@ define( function( require ) {
     } );
 
     // Position the vectors
+    equivalentSpring.rightProperty.link( function( right ) {
+      appliedForceVectorNode.x = totalSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
+    } );
     leftSpring.rightProperty.link( function( right ) {
       leftSpringForceVectorNode.x = leftAppliedForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
     rightSpring.rightProperty.link( function( right ) {
-      appliedForceVectorNode.x = totalSpringForceVectorNode.x = rightSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
+      rightSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
 
     this.mutate( options );
