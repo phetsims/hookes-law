@@ -59,7 +59,7 @@ define( function( require ) {
     assert && assert( this.topSpring.leftProperty.get() === this.bottomSpring.leftProperty.get(), 'top and bottom springs must have same left' );
     assert && assert( this.topSpring.rightProperty.get() === this.bottomSpring.rightProperty.get(), 'top and bottom springs must have same right' );
     assert && assert( this.topSpring.equilibriumXProperty.get() === this.bottomSpring.equilibriumXProperty.get(),
-      'top and bottom springs must have same equilibrium position' )
+      'top and bottom springs must have same equilibrium position' );
 
     // the single spring that is equivalent to the 2 springs in series
     this.equivalentSpring = new Spring( {
