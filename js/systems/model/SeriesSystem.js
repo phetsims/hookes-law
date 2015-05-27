@@ -87,6 +87,10 @@ define( function( require ) {
     this.leftSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.rightSpring.springConstantProperty.link( updateEquivalentSpringConstant );
 
+    this.equivalentSpring.equilibriumXProperty.lazyLink( function( equilibriumX ) {
+      throw new Error( 'Equilibrium position must remain fixed for a series system, equilibriumX=' + equilibriumX );
+    } );
+
     this.leftSpring.leftProperty.lazyLink( function( left ) {
       throw new Error( 'Left end of left spring must remain fixed for a series system, left=' + left );
     } );
