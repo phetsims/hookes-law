@@ -1,0 +1,7 @@
+TODO
+
+things to discuss:
+
+Model uses scalars instead of vectors since everything is in 1 dimension
+
+Concept of "equivalent spring" for a system
