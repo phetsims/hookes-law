@@ -27,6 +27,7 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
+ParallelSystem: applied force and spring force need more decimal places, since Feq = F1 + F2
 ParallelSystem: changing spring constants doesn't behave correctly, because changing spring constant adjusts displacement
 Keep spring constants and applied force synchronized between serial and parallel systems.
 
