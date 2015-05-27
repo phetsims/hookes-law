@@ -36,6 +36,7 @@ Systems screen
 -----------------------------------------------------------------------------------
 
 Series: max applied force vector overlaps control panel
+Parallel: truss should be a triangle, will need to compensate for width when positioning arm
 
 -----------------------------------------------------------------------------------
 Energy screen
