@@ -96,7 +96,9 @@ define( function( require ) {
 
     // keq = k1 + k2
     var updateEquivalentSpringConstant = function() {
-      return thisSystem.topSpring.springConstantProperty.get() + thisSystem.bottomSpring.springConstantProperty.get();
+      var topSpringConstant = thisSystem.topSpring.springConstantProperty.get();
+      var bottomSpringConstant = thisSystem.bottomSpring.springConstantProperty.get();
+      thisSystem.equivalentSpring.springConstantProperty.set( topSpringConstant + bottomSpringConstant );
     };
     this.topSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.bottomSpring.springConstantProperty.link( updateEquivalentSpringConstant );
