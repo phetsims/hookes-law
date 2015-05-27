@@ -5,11 +5,15 @@
  * The left end is attached to something like a wall or another spring.
  * A force is applied to the right end, by something like a robotic arm or another spring.
  *
- * F = kx, where:
+ * F = k * x
+ * E = ( k1 * x1 * x1 ) / 2
+ *
+ * where:
  *
  * F = applied force, N/m
  * k = spring constant, N/m
  * x = displacement from equilibrium position, m
+ * E = stored energy, J
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
