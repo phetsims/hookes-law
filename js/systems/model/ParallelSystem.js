@@ -85,15 +85,10 @@ define( function( require ) {
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
-    // xeq = Feq / keq
-    this.equivalentSpring.appliedForceProperty.link( function( appliedForce ) {
-      thisSystem.equivalentSpring.displacementProperty.set( appliedForce / thisSystem.equivalentSpring.springConstantProperty.get() );
-    } );
-
     // xeq = x1 = x2
     this.equivalentSpring.displacementProperty.link( function( displacement ) {
-      thisSystem.topSpring.displacementProperty.set( displacement );
-      thisSystem.bottomSpring.displacementProperty.set( displacement );
+      thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
+      thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
     } );
 
     // keq = k1 + k2
