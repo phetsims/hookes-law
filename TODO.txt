@@ -33,7 +33,6 @@ Systems screen
 -----------------------------------------------------------------------------------
 
 Series: max applied force vector overlaps control panel
-Parallel: behaves badly when changing spring constants, component vectors don't add up, etc.
 
 -----------------------------------------------------------------------------------
 Energy screen
