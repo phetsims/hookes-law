@@ -14,9 +14,9 @@
  * k = spring constant, N/m
  * x = displacement from equilibrium position, m
  * E = stored energy, J
+ * subscript "1" is for the top spring
+ * subscript "2" is for the bottom spring
  * subscript "eq" is a spring that is equivalent to the 2 springs in parallel
- * subscript "1" is for the left spring
- * subscript "2" is for the right spring
  *
  * In the equations above, subscript "1" applies to the top spring, "2" applied to the bottom spring.
  *
