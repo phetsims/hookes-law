@@ -28,7 +28,6 @@ Systems screen
 -----------------------------------------------------------------------------------
 
 When changing spring constants, series springs become detached from each other and from arm.
-ParallelSystem: add equivalent spring
 ParallelSystem: force vector values are wrong
 ParallelSystem: changing spring constants doesn't behave correctly, because changing spring constant adjusts displacement
 Keep spring constants and applied force synchronized between serial and parallel systems.

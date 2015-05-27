@@ -44,9 +44,11 @@ define( function( require ) {
     // This sim operates in 1 dimension (x), so center everything on y = 0.
     var yOrigin = modelViewTransform.modelToViewY( 0 );
 
+    // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
+
     // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {
-      right: modelViewTransform.modelToViewX( topSpring.leftProperty.get() ),
+      right: modelViewTransform.modelToViewX( system.equivalentSpring.leftProperty.get() ),
       centerY: yOrigin
     } );
 
@@ -62,7 +64,7 @@ define( function( require ) {
       centerY: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, system.rightRangeProperty, system.equilibriumX, modelViewTransform, {
+    var roboticArmNode = new RoboticArmNode( roboticArm, system.equivalentSpring.rightRangeProperty, system.equivalentSpring.equilibriumXProperty.get(), modelViewTransform, {
       x: modelViewTransform.modelToViewX( roboticArm.right ),
       y: yOrigin
     } );
@@ -71,16 +73,16 @@ define( function( require ) {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
-      centerX: modelViewTransform.modelToViewX( system.equilibriumX ),
+      centerX: modelViewTransform.modelToViewX( system.equivalentSpring.equilibriumXProperty.get() ),
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( system.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var appliedForceVectorNode = new AppliedForceVectorNode( system.equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by bottomSpring.rightProperty
       bottom: topSpringNode.top - 40
     } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode( system.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var totalSpringForceVectorNode = new SpringForceVectorNode( system.equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by bottomSpring.rightProperty
       centerY: appliedForceVectorNode.centerY
     } );
@@ -97,7 +99,7 @@ define( function( require ) {
       centerY: totalSpringForceVectorNode.bottom
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( system.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( system.equivalentSpring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
       x: equilibriumPositionNode.centerX,
       top: bottomSpringNode.bottom + 8
     } );
@@ -116,6 +118,8 @@ define( function( require ) {
     ];
     Node.call( this, options );
 
+    // Property observers ----------------------------------------------------------------------------------------------------------------------------
+
     // Attach visibility properties to their respective nodes.
     viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
     viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
@@ -133,7 +137,7 @@ define( function( require ) {
     viewProperties.springForceRepresentationProperty.link( springForceVisibilityObserver );
 
     // Position the vectors
-    system.rightProperty.link( function( right ) {
+    system.equivalentSpring.rightProperty.link( function( right ) {
       var x = modelViewTransform.modelToViewX( right );
       appliedForceVectorNode.x = totalSpringForceVectorNode.x = topSpringForceVectorNode.x = bottomSpringForceVectorNode.x = x;
     } );

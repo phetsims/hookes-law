@@ -26,9 +26,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
@@ -40,15 +38,13 @@ define( function( require ) {
 
     var thisSystem = this;
 
-    this.appliedForceRange = new Range( -100, 100, 0 ); // range and initial value of Feq, units = N
-
     // Components of the system ----------------------------------------------------------------------------------------------------------------------
 
     this.topSpring = new Spring( {
       left: 0,
       equilibriumLength: 1.5,
       springConstantRange: new Range( 200, 600, 200 ),
-      appliedForceRange: this.appliedForceRange
+      appliedForceRange: new Range( -50, 50, 0 ) // range and initial value of F1, units = N
     } );
 
     this.bottomSpring = new Spring( {
@@ -58,85 +54,66 @@ define( function( require ) {
       appliedForceRange: this.topSpring.appliedForceRange
     } );
 
-    assert && assert( this.topSpring.displacementProperty.get() === this.bottomSpring.displacementProperty.get() );
+    // verify that springs are indeed parallel
+    assert && assert( this.topSpring.leftProperty.get() === this.bottomSpring.leftProperty.get(), 'top and bottom springs must have same left' );
+    assert && assert( this.topSpring.rightProperty.get() === this.bottomSpring.rightProperty.get(), 'top and bottom springs must have same right' );
+    assert && assert( this.topSpring.equilibriumXProperty.get() === this.bottomSpring.equilibriumXProperty.get(),
+      'top and bottom springs must have same equilibrium position' )
 
+    // the single spring that this system is equivalent to
+    this.equivalentSpring = new Spring( {
+      left: this.topSpring.leftProperty.get(),
+      equilibriumLength: this.topSpring.equilibriumLength,
+      // keq = k1 + k2
+      springConstantRange: new Range(
+        this.topSpring.springConstantRange.min + this.bottomSpring.springConstantRange.min,
+        this.topSpring.springConstantRange.max + this.bottomSpring.springConstantRange.max ),
+      // Feq = F1 + F2
+      appliedForceRange: new Range(
+        this.topSpring.appliedForceRange.min + this.topSpring.appliedForceRange.min,
+        this.topSpring.appliedForceRange.max + this.topSpring.appliedForceRange.max )
+    } );
+
+    // arm, connected to the right end of the equivalent spring
     this.roboticArm = new RoboticArm( {
-      left: this.topSpring.rightProperty.get(),
+      left: this.equivalentSpring.rightProperty.get(),
       right: 3
     } );
 
-    // Properties ------------------------------------------------------------------------------------------------------------------------------------
-
-    PropertySet.call( this, {
-      appliedForce: this.topSpring.appliedForceProperty.get() + this.bottomSpring.appliedForceProperty.get(), // Feq = F1 + F2
-      displacement: this.topSpring.displacementProperty.get() // xeq = x1 = x2
-    } );
-
-    // equivalent equilibrium position for the system, read-only
-    assert && assert( this.topSpring.equilibriumXProperty.get() === this.bottomSpring.equilibriumXProperty.get(),
-      'top and bottom springs must have same equilibrium position' );
-    this.equilibriumX = this.topSpring.equilibriumXProperty.get();
-
-    // Used to prevent property updates until both springs have been modified. This prevents wrong intermediate states, looping, thrashing.
-    var ignoreUpdates = false;
-
-    // Derived properties ----------------------------------------------------------------------------------------------------------------------------
-
-    // equivalent spring force opposes the equivalent applied force, units = N
-    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
-      return ignoreUpdates ? thisSystem.springForceProperty.get() : -appliedForce;
-    } );
-
-    // keq = k1 + k2
-    var springConstantRange = new Range(
-      this.topSpring.springConstantRange.min + this.bottomSpring.springConstantRange.min,
-      this.topSpring.springConstantRange.max + this.bottomSpring.springConstantRange.max );
-    var springConstantProperty = new DerivedProperty(
-      [ this.topSpring.springConstantProperty, this.bottomSpring.springConstantProperty ],
-      function( topSpringConstant, bottomSpringConstant ) {
-        var springConstant = topSpringConstant + bottomSpringConstant;
-        assert && assert( springConstantRange.contains( springConstant ), 'equivalent spring constant out of range: ' + springConstant );
-        return springConstant;
-      } );
-
-    // x location of the right end of the system, units = m
-    this.rightProperty = new DerivedProperty( [ this.displacementProperty ], function( displacement ) {
-      return thisSystem.equilibriumX + displacement;
-    } );
-
-    this.rightRangeProperty = new DerivedProperty( [ springConstantProperty ],
-      function( springConstant ) {
-        var minDisplacement = thisSystem.appliedForceRange.min / springConstant; // x = F/k
-        var maxDisplacement = thisSystem.appliedForceRange.max / springConstant;
-        return new Range( thisSystem.equilibriumX + minDisplacement, thisSystem.equilibriumX + maxDisplacement );
-      } );
-
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
-    this.appliedForceProperty.link( function( appliedForce ) {
-      if ( !ignoreUpdates ) {
-        thisSystem.displacement = appliedForce / springConstantProperty.get(); // xeq = Feq / keq;
-      }
+    // xeq = Feq / keq
+    this.equivalentSpring.appliedForceProperty.link( function( appliedForce ) {
+      thisSystem.equivalentSpring.displacementProperty.set( appliedForce / thisSystem.equivalentSpring.springConstantProperty.get() );
     } );
 
     // xeq = x1 = x2
-    var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
-    this.displacementProperty.link( function( displacement ) {
-      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range, displacement=: ' + displacement );
+    this.equivalentSpring.displacementProperty.link( function( displacement ) {
+      thisSystem.topSpring.displacementProperty.set( displacement );
+      thisSystem.bottomSpring.displacementProperty.set( displacement );
+    } );
+
+    // keq = k1 + k2
+    var updateEquivalentSpringConstant = function() {
+      return thisSystem.topSpring.springConstantProperty.get() + thisSystem.bottomSpring.springConstantProperty.get();
+    };
+    this.topSpring.springConstantProperty.link( updateEquivalentSpringConstant );
+    this.bottomSpring.springConstantProperty.link( updateEquivalentSpringConstant );
+
+    // Robotic arm sets displacement of equivalent spring.
+    var ignoreUpdates = false; // Used to prevent updates until both springs have been modified.
+    this.roboticArm.leftProperty.link( function( left ) {
       if ( !ignoreUpdates ) {
+        // this will affect the displacement of both springs
         ignoreUpdates = true;
-        thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
-        thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
+        thisSystem.equivalentSpring.displacementProperty.set( left - thisSystem.equivalentSpring.equilibriumXProperty.get() );
         ignoreUpdates = false;
       }
     } );
 
-    this.rightProperty.link( function( right ) {
+    // Connect arm to equivalent spring.
+    this.equivalentSpring.rightProperty.link( function( right ) {
       thisSystem.roboticArm.leftProperty.set( right );
-    } );
-
-    this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.displacement = left - thisSystem.equilibriumX;
     } );
 
     // Check for violations of the general Spring model ----------------------------------------------------------------------------------------------
@@ -148,16 +125,23 @@ define( function( require ) {
     this.bottomSpring.leftProperty.lazyLink( function( left ) {
       throw new Error( 'Left end of bottom spring must remain fixed, left=' + left );
     } );
+
+    this.equivalentSpring.leftProperty.lazyLink( function( left ) {
+      throw new Error( 'Left end of equivalent spring must remain fixed, left=' + left );
+    } );
+
+    this.equivalentSpring.equilibriumXProperty.lazyLink( function( equilibriumX ) {
+      throw new Error( 'Equilibrium position of equivalent spring must remain fixed, equilibriumX=' + equilibriumX );
+    } );
   }
 
-  return inherit( PropertySet, ParallelSystem, {
+  return inherit( Object, ParallelSystem, {
 
-    // @override
     reset: function() {
-      PropertySet.prototype.reset.call( this );
       this.topSpring.reset();
       this.bottomSpring.reset();
       this.roboticArm.reset();
+      this.equivalentSpring.reset();
     }
   } );
 } );

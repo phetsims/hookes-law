@@ -62,7 +62,7 @@ define( function( require ) {
     } );
 
     var appliedForceControl = new AppliedForceControl( appliedForceColonString,
-      system.appliedForceProperty, system.appliedForceRange );
+      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
 
     var content = new HBox( {
       spacing: 20,
