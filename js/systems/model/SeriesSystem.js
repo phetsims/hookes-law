@@ -48,21 +48,15 @@ define( function( require ) {
       appliedForceRange: new Range( -100, 100, 0 ) // range and initial value of Feq, units = N
     } );
 
-    // right spring, in series with the left spring
+    // right spring, in series with the left spring, with identical configuration
     this.rightSpring = new Spring( {
       left: this.leftSpring.rightProperty.get(), // attached to the right end of the left spring
-      equilibriumLength: this.leftSpring.equilibriumLength, // both springs have the same equilibrium length
-      springConstantRange: this.leftSpring.springConstantRange, // spring constants have the same range
-      appliedForceRange: this.leftSpring.appliedForceRange // Feq = F1 = F2
+      equilibriumLength: this.leftSpring.equilibriumLength,
+      springConstantRange: this.leftSpring.springConstantRange,
+      appliedForceRange: this.leftSpring.appliedForceRange
     } );
 
-    // arm, attached to right spring
-    this.roboticArm = new RoboticArm( {
-      left: this.rightSpring.rightProperty.get(), // left end attached to the right end of the right spring
-      right: 3
-    } );
-
-    // the single spring that this system is equivalent to
+    // the single spring that is equivalent to the 2 springs in parallel
     this.equivalentSpring = new Spring( {
       left: this.leftSpring.leftProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,
@@ -71,6 +65,12 @@ define( function( require ) {
         1 / ( ( 1 / this.leftSpring.springConstantRange.min ) + ( 1 / this.rightSpring.springConstantRange.min ) ),
         1 / ( ( 1 / this.leftSpring.springConstantRange.max ) + ( 1 / this.rightSpring.springConstantRange.max ) ) ),
       appliedForceRange: this.leftSpring.appliedForceRange // Feq = F1 = F2
+    } );
+
+    // arm, attached to right end of equivalent spring
+    this.roboticArm = new RoboticArm( {
+      left: this.equivalentSpring.rightProperty.get(),
+      right: 3
     } );
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
@@ -106,8 +106,8 @@ define( function( require ) {
       thisSystem.rightSpring.leftProperty.set( right );
     } );
 
-    // Connect arm to right spring.
-    this.rightSpring.rightProperty.link( function( right ) {
+    // Connect arm to equivalent spring.
+    this.equivalentSpring.rightProperty.link( function( right ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
