@@ -72,9 +72,9 @@ define( function( require ) {
         this.topSpring.springConstantRange.defaultValue + this.bottomSpring.springConstantRange.defaultValue ),
       // Feq = F1 + F2
       appliedForceRange: new Range(
-        this.topSpring.appliedForceRange.min + this.topSpring.appliedForceRange.min,
-        this.topSpring.appliedForceRange.max + this.topSpring.appliedForceRange.max,
-        this.topSpring.appliedForceRange.defaultValue + this.topSpring.appliedForceRange.defaultValue )
+        this.topSpring.appliedForceRange.min + this.bottomSpring.appliedForceRange.min,
+        this.topSpring.appliedForceRange.max + this.bottomSpring.appliedForceRange.max,
+        this.topSpring.appliedForceRange.defaultValue + this.bottomSpring.appliedForceRange.defaultValue )
     } );
 
     // arm, connected to the right end of the equivalent spring
