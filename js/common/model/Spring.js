@@ -104,7 +104,7 @@ define( function( require ) {
     } );
 
     // range of the right end of the spring, units = m
-    this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, thisSpring.equilibriumXProperty ], function( springConstant, equilibriumX ) {
+    this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ], function( springConstant, equilibriumX ) {
       var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
       var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
       return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
