@@ -41,12 +41,13 @@ define( function( require ) {
     // Components of the system ----------------------------------------------------------------------------------------------------------------------
 
     this.topSpring = new Spring( {
-      left: 0,
-      equilibriumLength: 1.5,
-      springConstantRange: new Range( 200, 600, 200 ),
+      left: 0, // x location of the left end of the spring, units = m
+      equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
+      springConstantRange: new Range( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new Range( -50, 50, 0 ) // range and initial value of F1, units = N
     } );
 
+    // bottom spring, in parallel with top spring, with identical configuration
     this.bottomSpring = new Spring( {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
@@ -60,7 +61,7 @@ define( function( require ) {
     assert && assert( this.topSpring.equilibriumXProperty.get() === this.bottomSpring.equilibriumXProperty.get(),
       'top and bottom springs must have same equilibrium position' )
 
-    // the single spring that this system is equivalent to
+    // the single spring that is equivalent to the 2 springs in series
     this.equivalentSpring = new Spring( {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
