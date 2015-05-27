@@ -86,7 +86,7 @@ define( function( require ) {
       else {
         model.parallelSystem.equivalentSpring.appliedForceProperty.set( model.seriesSystem.equivalentSpring.appliedForceProperty.get() );
         model.parallelSystem.topSpring.springConstantProperty.set( model.seriesSystem.leftSpring.springConstantProperty.get() );
-        model.parallelSystem.bottomSpring.springConstantProperty.set( model.seriesSystem.rightSpring.springConstantProperty.get() )
+        model.parallelSystem.bottomSpring.springConstantProperty.set( model.seriesSystem.rightSpring.springConstantProperty.get() );
       }
 
       // make one of the 2 systems visible
