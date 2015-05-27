@@ -23,8 +23,8 @@ And it feels weird, perhaps because the 2 systems and their control panels are v
 Parallel: component spring forces need more decimal places, since Feq = F1 + F2 (eg, 41 = 20.5 + 20.5)
 
 Having spring constant controls side-by-side for parallel system doesn't match the
-visual layout (or names) of the springs, so I put them I used a vertical layout
-to match the top/bottom layout of the springs.  Is this OK?
+visual layout (or names) of the springs, so I used a vertical layout to match layout
+of the springs.  Is this OK?
 
 -----------------------------------------------------------------------------------
 Introduction screen
