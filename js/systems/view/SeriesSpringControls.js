@@ -23,6 +23,9 @@ define( function( require ) {
   var leftSpringString = require( 'string!HOOKES_LAW/leftSpring' );
   var rightSpringString = require( 'string!HOOKES_LAW/rightSpring' );
 
+  // constants
+  var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
+
   /**
    * @param {SeriesSystem} system
    * @param {Object} [options]
@@ -40,13 +43,13 @@ define( function( require ) {
     var leftSpringConstantControl = new SpringConstantControl( leftSpringString,
       system.leftSpring.springConstantProperty, system.leftSpring.springConstantRange, {
         thumbFillEnabled: HookesLawColors.LEFT_SPRING_FORCE,
-        trackSize: new Dimension2( 120, 3 )
+        trackSize: SPRING_CONSTANT_TRACK_SIZE
       } );
 
     var rightSpringConstantControl = new SpringConstantControl( rightSpringString,
       system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
         thumbFillEnabled: HookesLawColors.RIGHT_SPRING_FORCE,
-        trackSize: new Dimension2( 120, 3 )
+        trackSize: SPRING_CONSTANT_TRACK_SIZE
       } );
 
     var appliedForceControl = new AppliedForceControl( appliedForceColonString,

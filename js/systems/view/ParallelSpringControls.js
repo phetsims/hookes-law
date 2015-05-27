@@ -25,6 +25,9 @@ define( function( require ) {
   var topSpringString = require( 'string!HOOKES_LAW/topSpring' );
   var bottomSpringString = require( 'string!HOOKES_LAW/bottomSpring' );
 
+  // constants
+  var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
+
   /**
    * @param {ParallelSystem} system
    * @param {Object} [options]
@@ -42,13 +45,13 @@ define( function( require ) {
     var topSpringConstantControl = new SpringConstantControl( topSpringString,
       system.topSpring.springConstantProperty, system.topSpring.springConstantRange, {
         thumbFillEnabled: HookesLawColors.TOP_SPRING_FORCE,
-        trackSize: new Dimension2( 120, 3 )
+        trackSize: SPRING_CONSTANT_TRACK_SIZE
       } );
 
     var bottomSpringConstantControl = new SpringConstantControl( bottomSpringString,
       system.bottomSpring.springConstantProperty, system.bottomSpring.springConstantRange, {
         thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
-        trackSize: new Dimension2( 120, 3 )
+        trackSize: SPRING_CONSTANT_TRACK_SIZE
       } );
 
     var springControls = new VBox( {
