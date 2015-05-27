@@ -22,8 +22,7 @@ define( function( require ) {
     var checked = HookesLawQueryParameters.DEV ? true : false;
 
     PropertySet.call( this, {
-      //TODO should default to 'parallel'
-      seriesParallel: 'series', // {string} which system is visible, 'series'|'parallel'
+      seriesParallel: 'parallel', // {string} which system is visible, 'series'|'parallel'
       appliedForceVectorVisible: checked, // {boolean} is the applied force vector visible?
       springForceVectorVisible: checked, // {boolean} is the spring force vector visible?
       springForceRepresentation: 'total', // {string} 'total'|'components'
