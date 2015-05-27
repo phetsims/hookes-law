@@ -45,6 +45,9 @@ define( function( require ) {
     this.springConstantRange = options.springConstantRange; // read-only
     this.appliedForceRange = options.appliedForceRange; // read-only
 
+    // x = F/k
+    this.displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
+
     var thisSpring = this;
 
     // Properties -----------------------------------------------------------
@@ -71,9 +74,8 @@ define( function( require ) {
     } );
 
     // When changing displacement, maintain the spring constant, change applied force.
-    var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
     this.displacementProperty.link( function( displacement ) {
-      assert && assert( displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
+      assert && assert( thisSpring.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
       // constrain to delta
       appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
