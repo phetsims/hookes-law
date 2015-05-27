@@ -2,6 +2,8 @@ TODO
 
 things to discuss:
 
+1 dimensional (x axis), +x to the right
+
 Instead of "1" and "2" subscripts to refer to springs, the code uses "left" and "right" (for series springs),
 "top" and "bottom" (for parallel springs).
 
