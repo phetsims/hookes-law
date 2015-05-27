@@ -48,8 +48,6 @@ define( function( require ) {
     // x = F/k
     this.displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
 
-    var thisSpring = this;
-
     // Properties -----------------------------------------------------------
 
     PropertySet.call( this, {
@@ -60,6 +58,8 @@ define( function( require ) {
     } );
 
     // Property observers -----------------------------------------------------------
+
+    var thisSpring = this;
 
     // When changing the spring constant, maintain the applied force, change displacement.
     this.springConstantProperty.link( function( springConstant ) {
