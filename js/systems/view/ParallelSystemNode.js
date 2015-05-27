@@ -74,6 +74,13 @@ define( function( require ) {
       y: yOrigin
     } );
 
+    // right ends of both springs are connected to this
+    var trussNode = new Line( 0, 0, 0, bottomSpringNode.centerY - topSpringNode.centerY, {
+      lineWidth: 2,
+      stroke: 'black',
+      centerY: yOrigin
+    } );
+
     var equilibriumPositionNode = new Line( 0, 0, 0, EQUILIBRIUM_LINE_LENGTH, {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
@@ -116,7 +123,7 @@ define( function( require ) {
     } );
 
     options.children = [
-      wallNode, equilibriumPositionNode, roboticArmNode, topSpringNode, bottomSpringNode,
+      wallNode, equilibriumPositionNode, trussNode, roboticArmNode, topSpringNode, bottomSpringNode,
       topSpringForceVectorNode, bottomSpringForceVectorNode,
       appliedForceVectorNode, totalSpringForceVectorNode, displacementVectorNode,
       springControls
@@ -140,9 +147,9 @@ define( function( require ) {
     viewProperties.springForceVectorVisibleProperty.link( springForceVisibilityObserver );
     viewProperties.springForceRepresentationProperty.link( springForceVisibilityObserver );
 
-    // Position the vectors
+    // Position the vectors and truss
     equivalentSpring.rightProperty.link( function( right ) {
-      appliedForceVectorNode.x = totalSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
+      trussNode.centerX = appliedForceVectorNode.x = totalSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
     topSpring.rightProperty.link( function( right ) {
       topSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
