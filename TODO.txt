@@ -21,6 +21,8 @@ In parallel system, should changing spring constant change applied force instead
 Do we really want to synchronize applied force and spring constants between the series and parallel systems?
 It feels weird, and it's a performance drain to update both systems simultaneously. (Performance could be addressed.)
 
+Parallel: component spring forces need more decimal places, since Feq = F1 + F2 (eg, 41 = 20.5 + 20.5)
+
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------
@@ -31,7 +33,6 @@ Systems screen
 -----------------------------------------------------------------------------------
 
 Series: max applied force vector overlaps control panel
-Parallel: applied force and spring force need more decimal places, since Feq = F1 + F2
 Parallel: behaves badly when changing spring constants, component vectors don't add up, etc.
 
 -----------------------------------------------------------------------------------
