@@ -51,7 +51,7 @@ define( function( require ) {
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
       majorTicks: majorTicks,
       minorTickSpacing: MINOR_TICK_SPACING,
-      thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE_VECTOR
+      thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE
     }, options );
 
     NumberControl.call( this, title, springConstantProperty, springConstantRange, options );

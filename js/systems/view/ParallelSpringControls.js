@@ -41,13 +41,13 @@ define( function( require ) {
 
     var topSpringConstantControl = new SpringConstantControl( topSpringString,
       system.topSpring.springConstantProperty, system.topSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.TOP_SPRING_FORCE_VECTOR,
+        thumbFillEnabled: HookesLawColors.TOP_SPRING_FORCE,
         trackSize: new Dimension2( 120, 3 )
       } );
 
     var bottomSpringConstantControl = new SpringConstantControl( bottomSpringString,
       system.bottomSpring.springConstantProperty, system.bottomSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE_VECTOR,
+        thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
         trackSize: new Dimension2( 120, 3 )
       } );
 

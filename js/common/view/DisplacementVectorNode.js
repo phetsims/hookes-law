@@ -37,7 +37,7 @@ define( function( require ) {
     options = options || {};
 
     var arrowNode = new LineArrowNode( 0, 0, 1, 0, {
-      stroke: HookesLawColors.DISPLACEMENT_VECTOR,
+      stroke: HookesLawColors.DISPLACEMENT,
       headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
       headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
       headLineWidth: 3,
@@ -45,7 +45,7 @@ define( function( require ) {
     } );
 
     var valueNode = new Text( '', {
-      fill: HookesLawColors.DISPLACEMENT_VECTOR,
+      fill: HookesLawColors.DISPLACEMENT,
       font: new HookesLawFont( 14 ),
       top: arrowNode.bottom + 2 // below the arrow
     } );

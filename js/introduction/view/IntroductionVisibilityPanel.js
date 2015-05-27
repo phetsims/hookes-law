@@ -52,15 +52,15 @@ define( function( require ) {
 
     // vector check boxes, with left-aligned vector icons
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( appliedForceTextNode, HookesLawColors.APPLIED_FORCE_VECTOR, { maxTextWidth: maxTextWidth } ),
+      IconFactory.createVectorCheckBoxContent( appliedForceTextNode, HookesLawColors.APPLIED_FORCE, { maxTextWidth: maxTextWidth } ),
       properties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( springForceTextNode, HookesLawColors.TOTAL_SPRING_FORCE_VECTOR, { maxTextWidth: maxTextWidth } ),
+      IconFactory.createVectorCheckBoxContent( springForceTextNode, HookesLawColors.TOTAL_SPRING_FORCE, { maxTextWidth: maxTextWidth } ),
       properties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( displacementTextNode, HookesLawColors.DISPLACEMENT_VECTOR, {
+      IconFactory.createVectorCheckBoxContent( displacementTextNode, HookesLawColors.DISPLACEMENT, {
         maxTextWidth: maxTextWidth,
         arrowType: 'line'
       } ),

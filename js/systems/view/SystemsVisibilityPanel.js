@@ -53,7 +53,7 @@ define( function( require ) {
 
     // vector check boxes, with left-aligned vector icons
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), HookesLawColors.APPLIED_FORCE_VECTOR ),
+      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), HookesLawColors.APPLIED_FORCE ),
       properties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
@@ -61,7 +61,7 @@ define( function( require ) {
       properties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), HookesLawColors.DISPLACEMENT_VECTOR, { arrowType: 'line' } ),
+      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), HookesLawColors.DISPLACEMENT, { arrowType: 'line' } ),
       properties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
 
@@ -78,7 +78,7 @@ define( function( require ) {
     // 'total' button
     var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
       new HBox( {
-        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createForceVectorIcon( HookesLawColors.TOTAL_SPRING_FORCE_VECTOR ) ],
+        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createForceVectorIcon( HookesLawColors.TOTAL_SPRING_FORCE ) ],
         spacing: 10
       } ),
       RADIO_BUTTON_OPTIONS );
@@ -86,8 +86,8 @@ define( function( require ) {
     // 'components' button
     var componentsVectorIcons = new VBox( {
       children: [
-        IconFactory.createForceVectorIcon( HookesLawColors.TOP_SPRING_FORCE_VECTOR ),
-        IconFactory.createForceVectorIcon( HookesLawColors.BOTTOM_SPRING_FORCE_VECTOR )
+        IconFactory.createForceVectorIcon( HookesLawColors.TOP_SPRING_FORCE ),
+        IconFactory.createForceVectorIcon( HookesLawColors.BOTTOM_SPRING_FORCE )
       ],
       spacing: 10
     } );

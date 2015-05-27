@@ -58,13 +58,13 @@ define( function( require ) {
     } );
 
     var topSpringNode = new SpringNode( topSpring, modelViewTransform, {
-      stroke: HookesLawColors.TOP_SPRING_FORCE_VECTOR,
+      stroke: HookesLawColors.TOP_SPRING_FORCE,
       left: modelViewTransform.modelToViewX( topSpring.leftProperty.get() ),
       centerY: wallNode.top + ( 0.25 * wallNode.height )
     } );
 
     var bottomSpringNode = new SpringNode( bottomSpring, modelViewTransform, {
-      stroke: HookesLawColors.BOTTOM_SPRING_FORCE_VECTOR,
+      stroke: HookesLawColors.BOTTOM_SPRING_FORCE,
       left: modelViewTransform.modelToViewX( bottomSpring.leftProperty.get() ),
       centerY: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
@@ -100,13 +100,13 @@ define( function( require ) {
     } );
 
     var topSpringForceVectorNode = new SpringForceVectorNode( topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-      fill: HookesLawColors.TOP_SPRING_FORCE_VECTOR,
+      fill: HookesLawColors.TOP_SPRING_FORCE,
       // x is determined by topSpring.rightProperty
       centerY: totalSpringForceVectorNode.top
     } );
 
     var bottomSpringForceVectorNode = new SpringForceVectorNode( bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-      fill: HookesLawColors.BOTTOM_SPRING_FORCE_VECTOR,
+      fill: HookesLawColors.BOTTOM_SPRING_FORCE,
       // x is determined by bottomSpring.rightProperty
       centerY: totalSpringForceVectorNode.bottom
     } );

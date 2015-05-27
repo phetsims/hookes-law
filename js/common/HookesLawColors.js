@@ -14,13 +14,13 @@ define( function( require ) {
 
   return {
     CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),
-    APPLIED_FORCE_VECTOR: PhetColorScheme.RED_COLORBLIND,
-    TOTAL_SPRING_FORCE_VECTOR: new Color( 11, 37, 251 ),
-    LEFT_SPRING_FORCE_VECTOR: new Color( 110, 110, 110 ),
-    RIGHT_SPRING_FORCE_VECTOR: new Color( 253, 184, 47 ),
-    TOP_SPRING_FORCE_VECTOR: new Color( 110, 110, 110 ),
-    BOTTOM_SPRING_FORCE_VECTOR: new Color( 253, 184, 47 ),
-    DISPLACEMENT_VECTOR: new Color( 0, 180, 0 ),
+    APPLIED_FORCE: PhetColorScheme.RED_COLORBLIND,
+    TOTAL_SPRING_FORCE: new Color( 11, 37, 251 ),
+    LEFT_SPRING_FORCE: new Color( 110, 110, 110 ),
+    RIGHT_SPRING_FORCE: new Color( 253, 184, 47 ),
+    TOP_SPRING_FORCE: new Color( 110, 110, 110 ),
+    BOTTOM_SPRING_FORCE: new Color( 253, 184, 47 ),
+    DISPLACEMENT: new Color( 0, 180, 0 ),
     EQUILIBRIUM_POSITION: new Color( 0, 180, 0 )
   };
 } );

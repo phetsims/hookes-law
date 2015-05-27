@@ -61,7 +61,7 @@ define( function( require ) {
       delta: HookesLawConstants.APPLIED_FORCE_DELTA,
       majorTicks: majorTicks,
       minorTickSpacing: MINOR_TICK_SPACING,
-      thumbFillEnabled: HookesLawColors.APPLIED_FORCE_VECTOR
+      thumbFillEnabled: HookesLawColors.APPLIED_FORCE
     }, options );
 
     NumberControl.call( this, title, appliedForceProperty, appliedForceRange, options );
