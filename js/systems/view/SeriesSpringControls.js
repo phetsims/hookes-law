@@ -50,7 +50,7 @@ define( function( require ) {
       } );
 
     var appliedForceControl = new AppliedForceControl( appliedForceColonString,
-      system.appliedForceProperty, system.appliedForceRange );
+      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
 
     var separatorHeight = Math.max( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ), appliedForceControl.height );
 

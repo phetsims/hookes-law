@@ -62,7 +62,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, system.equilibriumX, modelViewTransform, {
+    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, system.equivalentSpring.equilibriumXProperty.get(), modelViewTransform, {
       x: modelViewTransform.modelToViewX( roboticArm.right ),
       y: yOrigin
     } );
@@ -71,7 +71,7 @@ define( function( require ) {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
-      centerX: modelViewTransform.modelToViewX( system.equilibriumX ),
+      centerX: modelViewTransform.modelToViewX( system.equivalentSpring.equilibriumXProperty.get() ),
       centerY: yOrigin
     } );
 
@@ -94,17 +94,17 @@ define( function( require ) {
       bottom: leftSpringForceVectorNode.top - 10
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( system.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var appliedForceVectorNode = new AppliedForceVectorNode( system.equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by rightSpring.rightProperty
       y: rightSpringForceVectorNode.y
     } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode( system.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var totalSpringForceVectorNode = new SpringForceVectorNode( system.equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       // x is determined by rightSpring.rightProperty
       y: appliedForceVectorNode.y
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( system.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( system.equivalentSpring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
       x: equilibriumPositionNode.centerX,
       top: leftSpringNode.bottom + 8
     } );
