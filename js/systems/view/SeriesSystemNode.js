@@ -44,6 +44,8 @@ define( function( require ) {
     // This sim operates in 1 dimension (x), so center everything on y = 0.
     var yOrigin = modelViewTransform.modelToViewY( 0 );
 
+    // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
+
     // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {
       right: modelViewTransform.modelToViewX( leftSpring.leftProperty.get() ),
@@ -122,6 +124,8 @@ define( function( require ) {
       springControls
     ];
     Node.call( this, options );
+
+    // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
     // Attach visibility properties to their respective nodes.
     viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );

@@ -48,7 +48,9 @@ define( function( require ) {
     // x = F/k
     var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
 
-    // Properties -----------------------------------------------------------
+    var thisSpring = this;
+
+    // Properties ------------------------------------------------------------------------------------------------------------------------------------
 
     PropertySet.call( this, {
       appliedForce: options.appliedForceRange.defaultValue, // {number} F
@@ -57,33 +59,7 @@ define( function( require ) {
       left: options.left // {number} location of the left end of the spring, units = m
     } );
 
-    // Property observers -----------------------------------------------------------
-
-    var thisSpring = this;
-
-    // F: When changing the applied force, maintain the spring constant, change displacement.
-    this.appliedForceProperty.link( function( appliedForce ) {
-      assert && assert( thisSpring.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
-      thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
-    } );
-
-    // k: When changing the spring constant, maintain the applied force, change displacement.
-    this.springConstantProperty.link( function( springConstant ) {
-      assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
-      thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
-    } );
-
-    // x: When changing displacement, maintain the spring constant, change applied force.
-    this.displacementProperty.link( function( displacement ) {
-      assert && assert( displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
-      var appliedForce = thisSpring.springConstant * displacement; // F = kx
-      // constrain to delta
-      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
-      // constrain to range
-      thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
-    } );
-
-    // Derived properties -----------------------------------------------------------
+    // Derived properties ----------------------------------------------------------------------------------------------------------------------------
 
     // spring force opposes the applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
@@ -113,6 +89,30 @@ define( function( require ) {
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ], function( left, right ) {
       return Math.abs( right - left );
+    } );
+
+    // Property observers ----------------------------------------------------------------------------------------------------------------------------
+
+    // F: When changing the applied force, maintain the spring constant, change displacement.
+    this.appliedForceProperty.link( function( appliedForce ) {
+      assert && assert( thisSpring.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
+      thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
+    } );
+
+    // k: When changing the spring constant, maintain the applied force, change displacement.
+    this.springConstantProperty.link( function( springConstant ) {
+      assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
+      thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
+    } );
+
+    // x: When changing displacement, maintain the spring constant, change applied force.
+    this.displacementProperty.link( function( displacement ) {
+      assert && assert( displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
+      var appliedForce = thisSpring.springConstant * displacement; // F = kx
+      // constrain to delta
+      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+      // constrain to range
+      thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
     } );
   }
 

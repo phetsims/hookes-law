@@ -36,7 +36,9 @@ define( function( require ) {
    */
   function SeriesSystem() {
 
-    // Components of the system -----------------------------------------------------
+    var thisSystem = this;
+
+    // Components of the system ----------------------------------------------------------------------------------------------------------------------
 
     // left spring
     this.leftSpring = new Spring( {
@@ -71,9 +73,7 @@ define( function( require ) {
       appliedForceRange: this.leftSpring.appliedForceRange // Feq = F1 = F2
     } );
 
-    // Property observers -----------------------------------------------------------
-
-    var thisSystem = this;
+    // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
     // Feq = F1 = F2
     this.equivalentSpring.appliedForceProperty.link( function( appliedForce ) {
@@ -111,7 +111,7 @@ define( function( require ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
-    // Check for violations of the general Spring model -----------------------------------------------------------
+    // Check for violations of the general Spring model ----------------------------------------------------------------------------------------------
 
     this.leftSpring.leftProperty.lazyLink( function( left ) {
       throw new Error( 'Left end of left spring must remain fixed, left=' + left );
