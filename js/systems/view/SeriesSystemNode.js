@@ -36,6 +36,10 @@ define( function( require ) {
    */
   function SeriesSystemNode( system, modelViewTransform, viewProperties, options ) {
 
+    options = options || {};
+
+    Node.call( this );
+
     // to improve readability
     var leftSpring = system.leftSpring;
     var rightSpring = system.rightSpring;
@@ -123,7 +127,6 @@ define( function( require ) {
       appliedForceVectorNode, totalSpringForceVectorNode, displacementVectorNode,
       springControls
     ];
-    Node.call( this, options );
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
@@ -154,6 +157,8 @@ define( function( require ) {
     rightSpring.rightProperty.link( function( right ) {
       appliedForceVectorNode.x = totalSpringForceVectorNode.x = rightSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
+
+    this.mutate( options );
   }
 
   return inherit( Node, SeriesSystemNode );

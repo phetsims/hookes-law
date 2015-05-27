@@ -36,6 +36,10 @@ define( function( require ) {
    */
   function ParallelSystemNode( system, modelViewTransform, viewProperties, options ) {
 
+    options = options || {};
+
+    Node.call( this );
+
     // to improve readability
     var topSpring = system.topSpring;
     var bottomSpring = system.bottomSpring;
@@ -116,7 +120,6 @@ define( function( require ) {
       appliedForceVectorNode, totalSpringForceVectorNode, displacementVectorNode,
       springControls
     ];
-    Node.call( this, options );
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
@@ -141,6 +144,8 @@ define( function( require ) {
       var x = modelViewTransform.modelToViewX( right );
       appliedForceVectorNode.x = totalSpringForceVectorNode.x = topSpringForceVectorNode.x = bottomSpringForceVectorNode.x = x;
     } );
+
+    this.mutate( options );
   }
 
   return inherit( Node, ParallelSystemNode );
