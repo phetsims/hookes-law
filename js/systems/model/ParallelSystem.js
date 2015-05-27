@@ -18,6 +18,8 @@
  * subscript "1" is for the left spring
  * subscript "2" is for the right spring
  *
+ * In the equations above, subscript "1" applies to the top spring, "2" applied to the bottom spring.
+ *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define( function( require ) {

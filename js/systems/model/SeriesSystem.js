@@ -18,6 +18,8 @@
  * subscript "1" is for the left spring
  * subscript "2" is for the right spring
  *
+ * In the equations above, subscript "1" applies to the left spring, "2" applied to the right spring.
+ *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define( function( require ) {
@@ -38,23 +40,23 @@ define( function( require ) {
 
     // left spring, attached to wall
     this.leftSpring = new Spring( {
-      left: 0,
-      equilibriumLength: 0.75,
-      springConstantRange: new Range( 200, 600, 200 ),
+      left: 0, // x location of the left end of the spring, units = m
+      equilibriumLength: 0.75, // length of the spring at equilibrium, units = m
+      springConstantRange: new Range( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new Range( -100, 100, 0 ) // range and initial value of Feq, units = N
     } );
 
     // right spring, in series with the left spring
     this.rightSpring = new Spring( {
-      left: this.leftSpring.rightProperty.get(),
-      equilibriumLength: this.leftSpring.equilibriumLength,
-      springConstantRange: this.leftSpring.springConstantRange,
+      left: this.leftSpring.rightProperty.get(), // attached to the right end of the left spring
+      equilibriumLength: this.leftSpring.equilibriumLength, // both springs have the same equilibrium length
+      springConstantRange: this.leftSpring.springConstantRange, // spring constants have the same range
       appliedForceRange: this.leftSpring.appliedForceRange // Feq = F1 = F2
     } );
 
-    // arm is attached to right spring
+    // arm, attached to right spring
     this.roboticArm = new RoboticArm( {
-      left: this.rightSpring.rightProperty.get(),
+      left: this.rightSpring.rightProperty.get(), // left end attached to the right end of the right spring
       right: 3
     } );
 

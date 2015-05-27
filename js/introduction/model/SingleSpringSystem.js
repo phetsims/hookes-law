@@ -21,12 +21,14 @@ define( function( require ) {
 
     // Components of the system -----------------------------------------------------
 
+    // spring, left end attached to wall
     this.spring = new Spring( {
       left: 0,
       equilibriumLength: 1.5,
       springConstantRange: new Range( 100, 1000, 200 )
     } );
 
+    // arm, left end attached to spring
     this.roboticArm = new RoboticArm( {
       left: this.spring.rightProperty.get(),
       right: 3
