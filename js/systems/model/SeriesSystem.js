@@ -124,7 +124,6 @@ define( function( require ) {
 
   return inherit( Object, SeriesSystem, {
 
-    // @override
     reset: function() {
       this.leftSpring.reset();
       this.rightSpring.reset();
