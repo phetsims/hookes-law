@@ -27,6 +27,7 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
+When changing spring constants, series springs become detached from each other and from arm.
 Fix use of ignoreUpdates in SeriesSystem and ParallelSystem, need to add code to do the update after setting ignoreUpdate=false
 ParallelSystem: force vector values are wrong
 ParallelSystem: changing spring constants doesn't behave correctly, because changing spring constant adjusts displacement
