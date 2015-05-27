@@ -38,7 +38,7 @@ define( function( require ) {
 
     // Components of the system -----------------------------------------------------
 
-    // left spring, attached to wall
+    // left spring
     this.leftSpring = new Spring( {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 0.75, // length of the spring at equilibrium, units = m

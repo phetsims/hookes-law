@@ -21,7 +21,7 @@ define( function( require ) {
 
     // Components of the system -----------------------------------------------------
 
-    // spring, left end attached to wall
+    // spring
     this.spring = new Spring( {
       left: 0,
       equilibriumLength: 1.5,
