@@ -64,7 +64,7 @@ define( function( require ) {
 
     // the single spring that this system is equivalent to
     this.equivalentSpring = new Spring( {
-      left: this.leftSpring.left,
+      left: this.leftSpring.leftProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,
       // keq = 1 / ( 1/k1 + 1/k2 )
       springConstantRange: new Range(
