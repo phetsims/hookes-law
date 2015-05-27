@@ -48,14 +48,16 @@ define( function( require ) {
     // Series system
     var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, modelViewTransform, viewProperties, {
       left: this.layoutBounds.left + 60,
-      centerY: this.layoutBounds.centerY
+      centerY: this.layoutBounds.centerY,
+      visible: viewProperties.seriesParallelProperty.get() === 'series'
     } );
     this.addChild( seriesSystemNode );
 
     // Parallel system
     var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, modelViewTransform, viewProperties, {
       left: this.layoutBounds.left + 60,
-      centerY: this.layoutBounds.centerY
+      centerY: this.layoutBounds.centerY,
+      visible: viewProperties.seriesParallelProperty.get() === 'parallel'
     } );
     this.addChild( parallelSystemNode );
 
@@ -70,8 +72,24 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    // Make one of the 2 systems visible
-    viewProperties.seriesParallelProperty.link( function( seriesParallel ) {
+    viewProperties.seriesParallelProperty.lazyLink( function( seriesParallel ) {
+
+      // Synchronize the invisible system with the visible system. Do this here instead of in the model to improve performance.
+      assert && assert( model.seriesSystem.equivalentSpring.appliedForceRange.equals( model.parallelSystem.equivalentSpring.appliedForceRange ) );
+      assert && assert( model.seriesSystem.leftSpring.springConstantRange.equals( model.parallelSystem.topSpring.springConstantRange ) );
+      assert && assert( model.seriesSystem.rightSpring.springConstantRange.equals( model.parallelSystem.bottomSpring.springConstantRange ) );
+      if ( seriesParallel === 'series' ) {
+        model.seriesSystem.equivalentSpring.appliedForceProperty.set( model.parallelSystem.equivalentSpring.appliedForceProperty.get() );
+        model.seriesSystem.leftSpring.springConstantProperty.set( model.parallelSystem.topSpring.springConstantProperty.get() );
+        model.seriesSystem.rightSpring.springConstantProperty.set( model.parallelSystem.bottomSpring.springConstantProperty.get() );
+      }
+      else {
+        model.parallelSystem.equivalentSpring.appliedForceProperty.set( model.seriesSystem.equivalentSpring.appliedForceProperty.get() );
+        model.parallelSystem.topSpring.springConstantProperty.set( model.seriesSystem.leftSpring.springConstantProperty.get() );
+        model.parallelSystem.bottomSpring.springConstantProperty.set( model.seriesSystem.rightSpring.springConstantProperty.get() )
+      }
+
+      // make one of the 2 systems visible
       seriesSystemNode.visible = ( seriesParallel === 'series' );
       parallelSystemNode.visible = ( seriesParallel === 'parallel' );
     } );
