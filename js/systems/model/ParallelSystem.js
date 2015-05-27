@@ -44,7 +44,7 @@ define( function( require ) {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
       springConstantRange: new Range( 200, 600, 200 ), // range and initial value of k1, units = N/m
-      appliedForceRange: new Range( -50, 50, 0 ) // range and initial value of F1, units = N
+      appliedForceRange: new Range( -100, 100, 0 ) // range and initial value of F1, units = N
     } );
 
     // bottom spring, in parallel with top spring, with identical configuration
@@ -71,10 +71,7 @@ define( function( require ) {
         this.topSpring.springConstantRange.max + this.bottomSpring.springConstantRange.max,
         this.topSpring.springConstantRange.defaultValue + this.bottomSpring.springConstantRange.defaultValue ),
       // Feq = F1 + F2
-      appliedForceRange: new Range(
-        this.topSpring.appliedForceRange.min + this.bottomSpring.appliedForceRange.min,
-        this.topSpring.appliedForceRange.max + this.bottomSpring.appliedForceRange.max,
-        this.topSpring.appliedForceRange.defaultValue + this.bottomSpring.appliedForceRange.defaultValue )
+      appliedForceRange: this.topSpring.appliedForceRange
     } );
 
     // arm, connected to the right end of the equivalent spring
