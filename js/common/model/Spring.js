@@ -66,34 +66,39 @@ define( function( require ) {
     // Derived properties ----------------------------------------------------------------------------------------------------------------------------
 
     // spring force opposes the applied force, units = N
-    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
-      return -appliedForce;
-    } );
+    this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
+      function( appliedForce ) {
+        return -appliedForce;
+      } );
 
     // equilibrium x location, units = m
-    this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ], function( left ) {
-      return left + thisSpring.equilibriumLength;
-    } );
+    this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
+      function( left ) {
+        return left + thisSpring.equilibriumLength;
+      } );
 
     // x location of the right end of the spring, units = m
-    this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ], function( equilibriumX, displacement ) {
-      var left = thisSpring.leftProperty.get();
-      var right = equilibriumX + displacement;
-      assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
-      return right;
-    } );
+    this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
+      function( equilibriumX, displacement ) {
+        var left = thisSpring.leftProperty.get();
+        var right = equilibriumX + displacement;
+        assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
+        return right;
+      } );
 
     // range of the right end of the spring, units = m
-    this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ], function( springConstant, equilibriumX ) {
-      var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
-      var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
-      return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
-    } );
+    this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
+      function( springConstant, equilibriumX ) {
+        var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
+        var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
+        return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
+      } );
 
     // length of the spring, units = m
-    this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ], function( left, right ) {
-      return Math.abs( right - left );
-    } );
+    this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
+      function( left, right ) {
+        return Math.abs( right - left );
+      } );
 
     // E = ( k1 * x1 * x1 ) / 2
     this.storedEnergyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
