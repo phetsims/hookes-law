@@ -34,7 +34,7 @@ define( function( require ) {
    */
   function SeriesSystem() {
 
-    var thisSystem = this;
+    // Components of the system -----------------------------------------------------
 
     // left spring, attached to wall
     this.leftSpring = new Spring( {
@@ -70,6 +70,8 @@ define( function( require ) {
     } );
 
     // Property observers -----------------------------------------------------------
+
+    var thisSystem = this;
 
     // Feq = F1 = F2
     this.equivalentSpring.appliedForceProperty.link( function( appliedForce ) {

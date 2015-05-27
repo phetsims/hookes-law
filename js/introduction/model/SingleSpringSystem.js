@@ -24,7 +24,7 @@ define( function( require ) {
       debugName: 'system' // {string} used for debugging, to know which spring we're inspecting
     }, options );
 
-    var thisSystem = this;
+    // Components of the system -----------------------------------------------------
 
     this.spring = new Spring( {
       debugName: options.debugName + '.spring',
@@ -38,20 +38,28 @@ define( function( require ) {
       right: 3
     } );
 
+    // Property observers -----------------------------------------------------------
+
+    var thisSystem = this;
+
+    // Connect arm to spring.
+    this.spring.rightProperty.link( function( right ) {
+      thisSystem.roboticArm.leftProperty.set( right );
+    } );
+
+    // Robotic arm sets displacement of spring.
+    this.roboticArm.leftProperty.link( function( left ) {
+      thisSystem.spring.displacementProperty.set( left - thisSystem.spring.equilibriumXProperty.get() );
+    } );
+
+    // Check for violations of the general Spring model ------------------------------
+
     this.spring.leftProperty.lazyLink( function( left ) {
       throw new Error( options.debugName + ': left end of spring must remain fixed for a single-spring system, left=' + left );
     } );
 
     this.spring.equilibriumXProperty.lazyLink( function( equilibriumX ) {
       throw new Error( options.debugName + ': equilibrium position must remain fixed for a single-spring system, equilibriumX=' + equilibriumX );
-    } );
-
-    this.spring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.leftProperty.set( right );
-    } );
-
-    this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.spring.displacementProperty.set( left - thisSystem.spring.equilibriumXProperty.get() );
     } );
   }
 
