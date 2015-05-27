@@ -61,19 +61,19 @@ define( function( require ) {
 
     var thisSpring = this;
 
-    // When changing the spring constant, maintain the applied force, change displacement.
-    this.springConstantProperty.link( function( springConstant ) {
-      assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
-      thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
-    } );
-
-    // When changing the applied force, maintain the spring constant, change displacement.
+    // F: When changing the applied force, maintain the spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {
       assert && assert( thisSpring.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
       thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
     } );
 
-    // When changing displacement, maintain the spring constant, change applied force.
+    // k: When changing the spring constant, maintain the applied force, change displacement.
+    this.springConstantProperty.link( function( springConstant ) {
+      assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
+      thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
+    } );
+
+    // x: When changing displacement, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
       assert && assert( thisSpring.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
