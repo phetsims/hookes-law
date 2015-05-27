@@ -99,7 +99,7 @@ define( function( require ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
-    // Used to prevent updates until both springs have been modified. This prevents wrong intermediate states, looping, thrashing.
+    // Used to prevent updates until both springs have been modified. This prevents incorrect intermediate states, looping, thrashing.
     var ignoreUpdates = false;
     this.roboticArm.leftProperty.link( function( left ) {
       if ( !ignoreUpdates ) {
