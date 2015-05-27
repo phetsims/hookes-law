@@ -87,24 +87,8 @@ define( function( require ) {
     this.leftSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.rightSpring.springConstantProperty.link( updateEquivalentSpringConstant );
 
-    this.equivalentSpring.equilibriumXProperty.lazyLink( function( equilibriumX ) {
-      throw new Error( 'Equilibrium position must remain fixed for a series system, equilibriumX=' + equilibriumX );
-    } );
-
-    this.leftSpring.leftProperty.lazyLink( function( left ) {
-      throw new Error( 'Left end of left spring must remain fixed for a series system, left=' + left );
-    } );
-
-    this.leftSpring.rightProperty.link( function( right ) {
-      thisSystem.rightSpring.leftProperty.set( right );
-    } );
-
-    this.rightSpring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.leftProperty.set( right );
-    } );
-
-    // Used to prevent updates until both springs have been modified. This prevents incorrect intermediate states, looping, thrashing.
-    var ignoreUpdates = false;
+    // Robotic arm sets displacement of equivalent spring.
+    var ignoreUpdates = false; // Used to prevent updates until both springs have been modified.
     this.roboticArm.leftProperty.link( function( left ) {
       if ( !ignoreUpdates ) {
         // this will affect the displacement of both springs
@@ -112,6 +96,30 @@ define( function( require ) {
         thisSystem.equivalentSpring.displacementProperty.set( left - thisSystem.equivalentSpring.equilibriumXProperty.get() );
         ignoreUpdates = false;
       }
+    } );
+
+    // Connect right spring to left spring.
+    this.leftSpring.rightProperty.link( function( right ) {
+      thisSystem.rightSpring.leftProperty.set( right );
+    } );
+
+    // Connect arm to right spring.
+    this.rightSpring.rightProperty.link( function( right ) {
+      thisSystem.roboticArm.leftProperty.set( right );
+    } );
+
+    // Check for violations of the general Spring model -----------------------------------------------------------
+
+    this.leftSpring.leftProperty.lazyLink( function( left ) {
+      throw new Error( 'Left end of left spring must remain fixed, left=' + left );
+    } );
+
+    this.equivalentSpring.leftProperty.lazyLink( function( left ) {
+      throw new Error( 'Left end of equivalent spring must remain fixed, left=' + left );
+    } );
+
+    this.equivalentSpring.equilibriumXProperty.lazyLink( function( equilibriumX ) {
+      throw new Error( 'Equilibrium position of equivalent spring must remain fixed, equilibriumX=' + equilibriumX );
     } );
   }
 
