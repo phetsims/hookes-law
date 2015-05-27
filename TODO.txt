@@ -27,8 +27,9 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
-ParallelSystem: applied force and spring force need more decimal places, since Feq = F1 + F2
-ParallelSystem: behaves badly when changing spring constants, component vectors don't add up, etc.
+Series: max applied force vector overlaps control panel
+Parallel: applied force and spring force need more decimal places, since Feq = F1 + F2
+Parallel: behaves badly when changing spring constants, component vectors don't add up, etc.
 Keep spring constants and applied force synchronized between serial and parallel systems.
 
 -----------------------------------------------------------------------------------

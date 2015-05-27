@@ -31,20 +31,6 @@ define( function( require ) {
     // Properties that are specific to the view
     var viewProperties = new SystemsViewProperties();
 
-    // Series system
-    var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, modelViewTransform, viewProperties, {
-      left: this.layoutBounds.left + 60,
-      centerY: this.layoutBounds.centerY
-    } );
-    this.addChild( seriesSystemNode );
-
-    // Parallel system
-    var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, modelViewTransform, viewProperties, {
-      left: this.layoutBounds.left + 60,
-      centerY: this.layoutBounds.centerY
-    } );
-    this.addChild( parallelSystemNode );
-
     // Visibility controls
     var visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
       top: this.layoutBounds.top + 10,
@@ -58,6 +44,20 @@ define( function( require ) {
       top: visibilityPanel.bottom + 10
     } );
     this.addChild( seriesParallelControl );
+
+    // Series system
+    var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, modelViewTransform, viewProperties, {
+      left: this.layoutBounds.left + 60,
+      centerY: this.layoutBounds.centerY
+    } );
+    this.addChild( seriesSystemNode );
+
+    // Parallel system
+    var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, modelViewTransform, viewProperties, {
+      left: this.layoutBounds.left + 60,
+      centerY: this.layoutBounds.centerY
+    } );
+    this.addChild( parallelSystemNode );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {
