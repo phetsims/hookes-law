@@ -42,6 +42,8 @@ define( function( require ) {
 
     this.appliedForceRange = new Range( -100, 100, 0 ); // range and initial value of Feq, units = N
 
+    // Components of the system ----------------------------------------------------------------------------------------------------------------------
+
     this.topSpring = new Spring( {
       left: 0,
       equilibriumLength: 1.5,
@@ -63,6 +65,8 @@ define( function( require ) {
       right: 3
     } );
 
+    // Properties ------------------------------------------------------------------------------------------------------------------------------------
+
     PropertySet.call( this, {
       appliedForce: this.topSpring.appliedForceProperty.get() + this.bottomSpring.appliedForceProperty.get(), // Feq = F1 + F2
       displacement: this.topSpring.displacementProperty.get() // xeq = x1 = x2
@@ -76,7 +80,7 @@ define( function( require ) {
     // Used to prevent property updates until both springs have been modified. This prevents wrong intermediate states, looping, thrashing.
     var ignoreUpdates = false;
 
-    // Derived properties -----------------------------------------------------------
+    // Derived properties ----------------------------------------------------------------------------------------------------------------------------
 
     // equivalent spring force opposes the equivalent applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ], function( appliedForce ) {
@@ -107,7 +111,7 @@ define( function( require ) {
         return new Range( thisSystem.equilibriumX + minDisplacement, thisSystem.equilibriumX + maxDisplacement );
       } );
 
-    // Property observers -----------------------------------------------------------
+    // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
     this.appliedForceProperty.link( function( appliedForce ) {
       if ( !ignoreUpdates ) {
@@ -118,7 +122,7 @@ define( function( require ) {
     // xeq = x1 = x2
     var displacementRange = new Range( this.appliedForceRange.min / springConstantRange.min, this.appliedForceRange.max / springConstantRange.min );
     this.displacementProperty.link( function( displacement ) {
-      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range: ' + displacement );
+      assert && assert( displacementRange.contains( displacement ), 'equivalent displacement is out of range, displacement=: ' + displacement );
       if ( !ignoreUpdates ) {
         ignoreUpdates = true;
         thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
@@ -131,16 +135,18 @@ define( function( require ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
+    this.roboticArm.leftProperty.link( function( left ) {
+      thisSystem.displacement = left - thisSystem.equilibriumX;
+    } );
+
+    // Check for violations of the general Spring model ----------------------------------------------------------------------------------------------
+
     this.topSpring.leftProperty.lazyLink( function( left ) {
-      throw new Error( 'Left end of top spring must remain fixed for a parallel system, left=' + left );
+      throw new Error( 'Left end of top spring must remain fixed, left=' + left );
     } );
 
     this.bottomSpring.leftProperty.lazyLink( function( left ) {
-      throw new Error( 'Left end of bottom spring must remain fixed for a parallel system, left=' + left );
-    } );
-
-    this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.displacement = left - thisSystem.equilibriumX;
+      throw new Error( 'Left end of bottom spring must remain fixed, left=' + left );
     } );
   }
 
