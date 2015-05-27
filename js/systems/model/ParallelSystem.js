@@ -68,11 +68,13 @@ define( function( require ) {
       // keq = k1 + k2
       springConstantRange: new Range(
         this.topSpring.springConstantRange.min + this.bottomSpring.springConstantRange.min,
-        this.topSpring.springConstantRange.max + this.bottomSpring.springConstantRange.max ),
+        this.topSpring.springConstantRange.max + this.bottomSpring.springConstantRange.max,
+        this.topSpring.springConstantRange.defaultValue + this.bottomSpring.springConstantRange.defaultValue ),
       // Feq = F1 + F2
       appliedForceRange: new Range(
         this.topSpring.appliedForceRange.min + this.topSpring.appliedForceRange.min,
-        this.topSpring.appliedForceRange.max + this.topSpring.appliedForceRange.max )
+        this.topSpring.appliedForceRange.max + this.topSpring.appliedForceRange.max,
+        this.topSpring.appliedForceRange.defaultValue + this.topSpring.appliedForceRange.defaultValue )
     } );
 
     // arm, connected to the right end of the equivalent spring
@@ -113,16 +115,6 @@ define( function( require ) {
         ignoreUpdates = false;
       }
     } );
-
-    var updateEquivalentDisplacement = function( displacement ) {
-      if ( !ignoreUpdates ) {
-        ignoreUpdates = true;
-        thisSystem.equivalentSpring.displacementProperty.set( displacement );
-        ignoreUpdates = false;
-      }
-    };
-    this.topSpring.displacementProperty.link( updateEquivalentDisplacement );
-    this.bottomSpring.displacementProperty.link( updateEquivalentDisplacement );
 
     // Connect arm to equivalent spring.
     this.equivalentSpring.rightProperty.link( function( right ) {
