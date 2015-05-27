@@ -12,7 +12,9 @@ Eg: k = 940, x = 0.001 -> F = 0.94, but display shows F = 1
 MD isn't happy with the robotic arm design. Defer further implementation of it until
 consensus is reached.
 
-Do we want to show the 300 tick label (1/2 max) for spring constant range (200,600)?
+In the Systems screen, do we want to show the 300 tick label (1/2 max) for spring constant range (200,600)?
+We went to great pains to do this in the Introduction screen, because some felt that
+it was pedagogically important.
 
 Do we really need left alignment of icons in the "Systems" control panel?
 
