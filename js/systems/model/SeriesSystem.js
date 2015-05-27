@@ -24,7 +24,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
