@@ -3,12 +3,6 @@
 /**
  * Model of a system with 1 spring.
  *
- * F = kx, where:
- *
- * F = applied force, N/m
- * k = spring constant, N/m
- * x = displacement from equilibrium position, m
- *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define( function( require ) {
