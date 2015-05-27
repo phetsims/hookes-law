@@ -63,7 +63,8 @@ define( function( require ) {
       // keq = 1 / ( 1/k1 + 1/k2 )
       springConstantRange: new Range(
         1 / ( ( 1 / this.leftSpring.springConstantRange.min ) + ( 1 / this.rightSpring.springConstantRange.min ) ),
-        1 / ( ( 1 / this.leftSpring.springConstantRange.max ) + ( 1 / this.rightSpring.springConstantRange.max ) ) ),
+        1 / ( ( 1 / this.leftSpring.springConstantRange.max ) + ( 1 / this.rightSpring.springConstantRange.max ) ),
+        1 / ( ( 1 / this.leftSpring.springConstantRange.defaultValue ) + ( 1 / this.rightSpring.springConstantRange.defaultValue ) ) ),
       appliedForceRange: this.leftSpring.appliedForceRange // Feq = F1 = F2
     } );
 
