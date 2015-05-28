@@ -12,15 +12,21 @@ define( function( require ) {
   var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var Util = require( 'DOT/Util' );
   var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
   var appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
   var springConstantNumberString = require( 'string!HOOKES_LAW/springConstantNumber' );
+
+  // constants
+  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
 
   /**
    * @param {Spring} spring
@@ -37,7 +43,21 @@ define( function( require ) {
     }, options );
 
     var springConstantControl = new SpringConstantControl( StringUtils.format( springConstantNumberString, options.number ),
-      spring.springConstantProperty, spring.springConstantRange );
+      spring.springConstantProperty, spring.springConstantRange, {
+        majorTicks: [ {
+          // min
+          value: spring.springConstantRange.min,
+          label: new Text( Util.toFixed( spring.springConstantRange.min, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+        }, {
+          // half of max
+          value: spring.springConstantRange.max / 2,
+          label: new Text( Util.toFixed( spring.springConstantRange.max / 2, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+        }, {
+          // max
+          value: spring.springConstantRange.max,
+          label: new Text( Util.toFixed( spring.springConstantRange.max, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+        } ]
+      } );
 
     var appliedForceControl = new AppliedForceControl( StringUtils.format( appliedForceNumberString, options.number ),
       spring.appliedForceProperty, spring.appliedForceRange );

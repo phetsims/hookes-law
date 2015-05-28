@@ -13,15 +13,9 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var Util = require( 'DOT/Util' );
 
   // strings
   var unitsNewtonsPerMeter = require( 'string!HOOKES_LAW/units.newtonsPerMeter' );
-
-  // constants
-  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
-  var MINOR_TICK_SPACING = 100;
 
   /**
    * @param {string} title
@@ -32,25 +26,14 @@ define( function( require ) {
    */
   function SpringConstantControl( title, springConstantProperty, springConstantRange, options ) {
 
-    var majorTicks = [ {
-      value: springConstantRange.min,
-      label: new Text( Util.toFixed( springConstantRange.min, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-    }, {
-      value: springConstantRange.max / 2,
-      label: new Text( Util.toFixed( springConstantRange.max / 2, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-    }, {
-      value: springConstantRange.max,
-      label: new Text( Util.toFixed( springConstantRange.max, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-    } ];
-
     options = _.extend( {
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
       units: unitsNewtonsPerMeter,
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
-      majorTicks: majorTicks,
-      minorTickSpacing: MINOR_TICK_SPACING,
+      majorTicks: [],
+      minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE
     }, options );
 
