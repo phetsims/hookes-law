@@ -4,29 +4,8 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
-With the number of decimal places displayed, calculations don't work out.
-Eg: k = 940, x = 0.001 -> F = 0.94, but display shows F = 1
-
-3 decimal places are not sufficient for x. Eg, for F = 1, changing k shows no change in x.
-
 MD isn't happy with the robotic arm design. Defer further implementation of it until
 consensus is reached.
-
-In the Systems screen, do we want to show the 300 tick label (1/2 max) for spring constant range (200,600)?
-We went to great pains to do this in the Introduction screen, because some felt that
-it was pedagogically important.
-
-Do we really need left alignment of icons in the "Systems" control panel?
-
-Do we really want to synchronize applied force and spring constants between the series and parallel systems?
-It causes a slight pause when switching between series and parallel systems.
-And it feels weird, perhaps because the 2 systems and their control panels are visually distinct.
-
-Parallel: component spring forces need more decimal places, since Feq = F1 + F2 (eg, 41 = 20.5 + 20.5)
-
-Having spring constant controls side-by-side for parallel system doesn't match the
-visual layout (or names) of the springs, so I used a vertical layout to match layout
-of the springs.  Is this OK?
 
 -----------------------------------------------------------------------------------
 Introduction screen
@@ -37,6 +16,11 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
+Different colors for left/right vs top/bottom springs
+Make control panel spring component icons change color when switching systems
+Remove series and parallel system synchronization
+Label 400 instead of 200 major tick for spring constant slider
+Parallel: so add 1 decimal place to spring force components
 Series: max applied force vector overlaps control panel
 Parallel: truss should be a triangle, will need to compensate for width when positioning arm
 
@@ -49,7 +33,7 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
-Integrate new robotic arm graphics
+Temp art for "pincher" look at end of robotic arm
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
