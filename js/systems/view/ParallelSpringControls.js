@@ -13,13 +13,10 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HSeparator = require( 'SUN/HSeparator' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var Util = require( 'DOT/Util' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var VSeparator = require( 'SUN/VSeparator' );
 
@@ -30,7 +27,6 @@ define( function( require ) {
 
   // constants
   var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
-  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
 
   /**
    * @param {ParallelSystem} system
@@ -48,43 +44,26 @@ define( function( require ) {
 
     var topSpring = system.topSpring;
     var topSpringConstantControl = new SpringConstantControl( topSpringString,
-      system.topSpring.springConstantProperty, system.topSpring.springConstantRange, {
+      topSpring.springConstantProperty, topSpring.springConstantRange, {
         thumbFillEnabled: HookesLawColors.TOP_SPRING_FORCE,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTicks: [ {
-          // min
-          value: topSpring.springConstantRange.min,
-          label: new Text( Util.toFixed( topSpring.springConstantRange.min, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-        }, {
-          // halfway between min and max
-          value: topSpring.springConstantRange.min + ( topSpring.springConstantRange.max - topSpring.springConstantRange.min ) / 2,
-          label: new Text( Util.toFixed( topSpring.springConstantRange.min + ( topSpring.springConstantRange.max - topSpring.springConstantRange.min ) / 2, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-        }, {
-          // max
-          value: topSpring.springConstantRange.max,
-          label: new Text( Util.toFixed( topSpring.springConstantRange.max, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-        } ]
+        majorTickValues: [
+          topSpring.springConstantRange.min,
+          topSpring.springConstantRange.getCenter(),
+          topSpring.springConstantRange.max
+        ]
       } );
 
     var bottomSpring = system.bottomSpring;
     var bottomSpringConstantControl = new SpringConstantControl( bottomSpringString,
-      system.bottomSpring.springConstantProperty, system.bottomSpring.springConstantRange, {
+      bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
         thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTicks: [ {
-          // min
-          value: bottomSpring.springConstantRange.min,
-          label: new Text( Util.toFixed( bottomSpring.springConstantRange.min, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-        }, {
-          // halfway between min and max
-          value: bottomSpring.springConstantRange.min + ( bottomSpring.springConstantRange.max - bottomSpring.springConstantRange.min ) / 2,
-          label: new Text( Util.toFixed( bottomSpring.springConstantRange.min + ( bottomSpring.springConstantRange.max - bottomSpring.springConstantRange.min ) / 2, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-        }, {
-          // max
-          value: bottomSpring.springConstantRange.max,
-          label: new Text( Util.toFixed( bottomSpring.springConstantRange.max, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
-        } ]
-        
+        majorTickValues: [
+          bottomSpring.springConstantRange.min,
+          bottomSpring.springConstantRange.getCenter(),
+          bottomSpring.springConstantRange.max
+        ]
       } );
 
     var springControls = new VBox( {

@@ -13,9 +13,14 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var Util = require( 'DOT/Util' );
 
   // strings
   var unitsNewtonsPerMeter = require( 'string!HOOKES_LAW/units.newtonsPerMeter' );
+
+  // constants
+  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
 
   /**
    * @param {string} title
@@ -32,10 +37,21 @@ define( function( require ) {
       decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
       units: unitsNewtonsPerMeter,
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
-      majorTicks: [],
+      majorTicksValues: null,
       minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE
     }, options );
+
+    // major ticks
+    if ( options.majorTickValues ) {
+      options.majorTicks = [];
+      for ( var i = 0; i < options.majorTickValues.length; i++ ) {
+        options.majorTicks.push( {
+          value: options.majorTickValues[ i ],
+          label: new Text( Util.toFixed( options.majorTickValues[ i ], HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+        } );
+      }
+    }
 
     NumberControl.call( this, title, springConstantProperty, springConstantRange, options );
   }
