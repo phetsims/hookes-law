@@ -20,7 +20,6 @@ Different colors for left/right vs top/bottom springs
 Make control panel spring component icons change color when switching systems
 Label 400 instead of 200 major tick for spring constant slider
 Parallel: so add 1 decimal place to spring force components
-Series: max applied force vector overlaps control panel
 Parallel: truss should be a triangle, will need to compensate for width when positioning arm
 
 -----------------------------------------------------------------------------------
