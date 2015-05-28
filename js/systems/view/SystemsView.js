@@ -73,22 +73,6 @@ define( function( require ) {
     this.addChild( resetAllButton );
 
     viewProperties.seriesParallelProperty.lazyLink( function( seriesParallel ) {
-
-      // Synchronize the invisible system with the visible system. Do this here instead of in the model to improve performance.
-      assert && assert( model.seriesSystem.equivalentSpring.appliedForceRange.equals( model.parallelSystem.equivalentSpring.appliedForceRange ) );
-      assert && assert( model.seriesSystem.leftSpring.springConstantRange.equals( model.parallelSystem.topSpring.springConstantRange ) );
-      assert && assert( model.seriesSystem.rightSpring.springConstantRange.equals( model.parallelSystem.bottomSpring.springConstantRange ) );
-      if ( seriesParallel === 'series' ) {
-        model.seriesSystem.equivalentSpring.appliedForceProperty.set( model.parallelSystem.equivalentSpring.appliedForceProperty.get() );
-        model.seriesSystem.leftSpring.springConstantProperty.set( model.parallelSystem.topSpring.springConstantProperty.get() );
-        model.seriesSystem.rightSpring.springConstantProperty.set( model.parallelSystem.bottomSpring.springConstantProperty.get() );
-      }
-      else {
-        model.parallelSystem.equivalentSpring.appliedForceProperty.set( model.seriesSystem.equivalentSpring.appliedForceProperty.get() );
-        model.parallelSystem.topSpring.springConstantProperty.set( model.seriesSystem.leftSpring.springConstantProperty.get() );
-        model.parallelSystem.bottomSpring.springConstantProperty.set( model.seriesSystem.rightSpring.springConstantProperty.get() );
-      }
-
       // make one of the 2 systems visible
       seriesSystemNode.visible = ( seriesParallel === 'series' );
       parallelSystemNode.visible = ( seriesParallel === 'parallel' );
