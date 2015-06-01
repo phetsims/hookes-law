@@ -7,6 +7,8 @@ Design questions
 MD isn't happy with the robotic arm design. Defer further implementation of it until
 consensus is reached.
 
+Colors for top and bottom springs.
+
 -----------------------------------------------------------------------------------
 Introduction screen
 -----------------------------------------------------------------------------------
@@ -16,8 +18,6 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
-Different colors for left/right vs top/bottom springs
-Make control panel spring component icons change color when switching systems
 Parallel: so add 1 decimal place to spring force components
 Parallel: truss should be a triangle, will need to compensate for width when positioning arm
 

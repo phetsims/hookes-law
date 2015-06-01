@@ -51,7 +51,7 @@ define( function( require ) {
       yMargin: 15
     }, options );
 
-    // vector check boxes, with left-aligned vector icons
+    // vector check boxes
     var appliedForceCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), HookesLawColors.APPLIED_FORCE ),
       properties.appliedForceVectorVisibleProperty,
@@ -84,10 +84,12 @@ define( function( require ) {
       RADIO_BUTTON_OPTIONS );
 
     // 'components' button
+    var component1Node = IconFactory.createForceVectorIcon( HookesLawColors.TOP_SPRING_FORCE );
+    var component2Node = IconFactory.createForceVectorIcon( HookesLawColors.BOTTOM_SPRING_FORCE );
     var componentsVectorIcons = new VBox( {
       children: [
-        IconFactory.createForceVectorIcon( HookesLawColors.TOP_SPRING_FORCE ),
-        IconFactory.createForceVectorIcon( HookesLawColors.BOTTOM_SPRING_FORCE )
+        component1Node,
+        component2Node
       ],
       spacing: 10
     } );
@@ -104,6 +106,12 @@ define( function( require ) {
         spacing: 10
       } ),
       RADIO_BUTTON_OPTIONS );
+
+    // Change the component vector colors to match the system
+    properties.seriesParallelProperty.link( function( seriesParallel ) {
+      component1Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.LEFT_SPRING_FORCE : HookesLawColors.TOP_SPRING_FORCE;
+      component2Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING_FORCE : HookesLawColors.BOTTOM_SPRING_FORCE;
+    } );
 
     var radioButtonsBox = new VBox( {
       children: [
