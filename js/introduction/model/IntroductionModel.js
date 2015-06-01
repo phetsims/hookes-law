@@ -17,7 +17,7 @@ define( function( require ) {
    */
   function IntroductionModel() {
     this.system1 = new SingleSpringSystem();
-    this.system2 = new SingleSpringSystem(remove );
+    this.system2 = new SingleSpringSystem();
   }
 
   return inherit( Object, IntroductionModel, {
