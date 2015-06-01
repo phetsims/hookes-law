@@ -26,6 +26,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
@@ -45,7 +46,7 @@ define( function( require ) {
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
       springConstantRange: new Range( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new Range( -100, 100, 0 ), // range and initial value of F1, units = N
-      appliedForceDelta: 0.1
+      appliedForceDelta: HookesLawConstants.PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA
     } );
 
     // bottom spring, in parallel with top spring, with identical configuration

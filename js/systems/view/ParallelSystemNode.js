@@ -102,14 +102,14 @@ define( function( require ) {
 
     var topSpringForceVectorNode = new SpringForceVectorNode( topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.TOP_SPRING_FORCE,
-      decimalPlaces: HookesLawConstants.SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
+      decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
       // x is determined by topSpring.rightProperty
       centerY: totalSpringForceVectorNode.top
     } );
 
     var bottomSpringForceVectorNode = new SpringForceVectorNode( bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.BOTTOM_SPRING_FORCE,
-      decimalPlaces: HookesLawConstants.SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
+      decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
       // x is determined by bottomSpring.rightProperty
       centerY: totalSpringForceVectorNode.bottom
     } );
