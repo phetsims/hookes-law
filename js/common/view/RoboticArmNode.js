@@ -36,7 +36,7 @@ define( function( require ) {
     }, options );
 
     // origin is at left-center of box
-    var boxNode = new Rectangle( 0, 0, 40, 60, {
+    var boxNode = new Rectangle( 0, 0, 25, 60, {
       fill: 'rgb( 210, 210, 210 )',
       stroke: 'black',
       lineWidth: 0.5,
