@@ -34,7 +34,7 @@ define( function( require ) {
     // System 1
     var system1Node = new SingleSpringSystemNode( model.system1, modelViewTransform, viewProperties, {
       number: 1,
-      left: this.layoutBounds.left + 60,
+      left: this.layoutBounds.left + 49, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
     } );
     this.addChild( system1Node );
