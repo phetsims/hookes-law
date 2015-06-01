@@ -31,6 +31,7 @@ General
 
 Temp art for "pincher" look at end of robotic arm
 Make hook rotate up when displacement is zero and not dragging (and not using Applied Force control?)
+Single, Series: piece at end of spring that is grabbed
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
 compensate for headLineWidth in LineArrowNode, so that tip is at (tipX,tipY)
