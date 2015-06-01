@@ -1,5 +1,6 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
+//TODO tip of arrow is precisely at (tipX,tipY) because we're not taking the line width into account
 /**
  * An arrow that is composed of 3 line segments: one for the tail, and 2 for a V-shaped head
  *
