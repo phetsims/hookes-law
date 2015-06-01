@@ -58,12 +58,14 @@ define( function( require ) {
     } );
 
     var leftSpringNode = new SpringNode( leftSpring, modelViewTransform, {
+      numberOfCoils: 6,
       stroke: HookesLawColors.LEFT_SPRING_FORCE,
       left: modelViewTransform.modelToViewX( leftSpring.leftProperty.get() ),
       centerY: yOrigin
     } );
 
     var rightSpringNode = new SpringNode( rightSpring, modelViewTransform, {
+      numberOfCoils: 6,
       stroke: HookesLawColors.RIGHT_SPRING_FORCE,
       // left is based on rightSpring.leftProperty
       centerY: yOrigin

@@ -59,12 +59,14 @@ define( function( require ) {
     } );
 
     var topSpringNode = new SpringNode( topSpring, modelViewTransform, {
+      numberOfCoils: 6,
       stroke: HookesLawColors.TOP_SPRING_FORCE,
       left: modelViewTransform.modelToViewX( topSpring.leftProperty.get() ),
       centerY: wallNode.top + ( 0.25 * wallNode.height )
     } );
 
     var bottomSpringNode = new SpringNode( bottomSpring, modelViewTransform, {
+      numberOfCoils: 6,
       stroke: HookesLawColors.BOTTOM_SPRING_FORCE,
       left: modelViewTransform.modelToViewX( bottomSpring.leftProperty.get() ),
       centerY: wallNode.bottom - ( 0.25 * wallNode.height )
