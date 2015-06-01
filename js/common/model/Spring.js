@@ -37,7 +37,8 @@ define( function( require ) {
       left: 0, // {number} x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
       springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
-      appliedForceRange: new Range( -100, 100, 0 ) // {Range} applied force range and initial value, units = N
+      appliedForceRange: new Range( -100, 100, 0 ), // {Range} applied force range and initial value, units = N
+      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA // {number} applied force (and thus spring force) are constrained to this delta
     }, options );
 
     // validate options
@@ -48,6 +49,7 @@ define( function( require ) {
     this.equilibriumLength = options.equilibriumLength; // read-only
     this.springConstantRange = options.springConstantRange; // read-only
     this.appliedForceRange = options.appliedForceRange; // read-only
+    this.appliedForceDelta = options.appliedForceDelta; // read-only
 
     // x = F/k
     var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
@@ -125,7 +127,7 @@ define( function( require ) {
       assert && assert( displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
       // constrain to delta
-      appliedForce = Math.round( appliedForce / HookesLawConstants.APPLIED_FORCE_DELTA ) * HookesLawConstants.APPLIED_FORCE_DELTA;
+      appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
       // constrain to range
       thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
     } );

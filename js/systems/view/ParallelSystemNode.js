@@ -14,6 +14,7 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -101,12 +102,14 @@ define( function( require ) {
 
     var topSpringForceVectorNode = new SpringForceVectorNode( topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.TOP_SPRING_FORCE,
+      decimalPlaces: HookesLawConstants.SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
       // x is determined by topSpring.rightProperty
       centerY: totalSpringForceVectorNode.top
     } );
 
     var bottomSpringForceVectorNode = new SpringForceVectorNode( bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.BOTTOM_SPRING_FORCE,
+      decimalPlaces: HookesLawConstants.SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
       // x is determined by bottomSpring.rightProperty
       centerY: totalSpringForceVectorNode.bottom
     } );

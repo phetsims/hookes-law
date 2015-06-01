@@ -44,7 +44,8 @@ define( function( require ) {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
       springConstantRange: new Range( 200, 600, 200 ), // range and initial value of k1, units = N/m
-      appliedForceRange: new Range( -100, 100, 0 ) // range and initial value of F1, units = N
+      appliedForceRange: new Range( -100, 100, 0 ), // range and initial value of F1, units = N
+      appliedForceDelta: 0.1
     } );
 
     // bottom spring, in parallel with top spring, with identical configuration
@@ -52,7 +53,8 @@ define( function( require ) {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange,
-      appliedForceRange: this.topSpring.appliedForceRange
+      appliedForceRange: this.topSpring.appliedForceRange,
+      appliedForceDelta: this.topSpring.appliedForceDelta
     } );
 
     // verify that springs are indeed parallel
