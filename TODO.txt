@@ -18,7 +18,7 @@ Introduction screen
 Systems screen
 -----------------------------------------------------------------------------------
 
-Parallel: so add 1 decimal place to spring force components
+Parallel: add 1 decimal place to spring force components
 Parallel: truss should be a triangle, will need to compensate for width when positioning arm
 
 -----------------------------------------------------------------------------------
