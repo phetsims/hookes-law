@@ -16,8 +16,8 @@ define( function( require ) {
    * @constructor
    */
   function IntroductionModel() {
-    this.system1 = new SingleSpringSystem( { debugName: 'system1' } );
-    this.system2 = new SingleSpringSystem( { debugName: 'system2' } );
+    this.system1 = new SingleSpringSystem();
+    this.system2 = new SingleSpringSystem(remove );
   }
 
   return inherit( Object, IntroductionModel, {
