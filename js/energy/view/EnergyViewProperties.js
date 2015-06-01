@@ -16,7 +16,7 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function IntroductionViewProperties() {
+  function EnergyViewProperties() {
 
     // to make development easier
     var checked = HookesLawQueryParameters.DEV ? true : false;
@@ -29,5 +29,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, IntroductionViewProperties );
+  return inherit( PropertySet, EnergyViewProperties );
 } );
