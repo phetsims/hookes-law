@@ -2,7 +2,7 @@
 
 //TODO this is a quick-&-dirty temporary implementation
 /**
- * A coiled spring.  Assumes that the left end attaches to the wall, right end attaches to the hook.
+ * A coiled spring. The left end attaches to something, the right end is pulled.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
