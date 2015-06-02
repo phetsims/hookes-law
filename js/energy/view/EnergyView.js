@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var EnergyBarGraph = require( 'HOOKES_LAW/energy/view/EnergyBarGraph' );
   var EnergyXYPlot = require( 'HOOKES_LAW/energy/view/EnergyXYPlot' );
   var EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
@@ -46,18 +47,25 @@ define( function( require ) {
     } );
     this.addChild( systemNode );
 
-    // Force XY plot
-    var forceXYPlot = new ForceXYPlot( model.system, {
-      centerX: visibilityPanel.left / 2,
+    // Energy bar graph
+    var energyBarGraph = new EnergyBarGraph( model.system, {
+      left: 20,
       bottom: systemNode.top - 20
     } );
-    this.addChild( forceXYPlot );
+    this.addChild( energyBarGraph );
 
     // Energy XY plot
     var energyXYPlot = new EnergyXYPlot( model.system, {
-      translation: forceXYPlot.translation
+      left: energyBarGraph.right + 2,
+      bottom: energyBarGraph.bottom
     } );
     this.addChild( energyXYPlot );
+
+    // Force XY plot
+    var forceXYPlot = new ForceXYPlot( model.system, {
+      translation: energyXYPlot.translation
+    } );
+    this.addChild( forceXYPlot );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
