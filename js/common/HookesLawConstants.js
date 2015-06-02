@@ -40,6 +40,7 @@ define( function( require ) {
     SLIDER_TICK_LABEL_FONT: new HookesLawFont( 14 ),
 
     // sizes and lengths for UI components
+    WALL_SIZE: new Dimension2( 25, 170 ),
     VECTOR_HEAD_SIZE: new Dimension2( 20, 10 ),
     SLIDER_THUMB_SIZE: new Dimension2( 17, 34 ),
     SLIDER_TRACK_SIZE: new Dimension2( 180, 3 ),

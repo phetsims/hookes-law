@@ -26,7 +26,7 @@ define( function( require ) {
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   // constants
-  var WALL_SIZE = new Dimension2( 25, 300 );
+  var WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
 
   /**
    * @param {ParallelSystem} system

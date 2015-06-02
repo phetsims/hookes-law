@@ -15,6 +15,7 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
@@ -22,9 +23,6 @@ define( function( require ) {
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
-
-  // constants
-  var WALL_SIZE = new Dimension2( 25, 170 );
 
   /**
    * @param {SingleSpringSystem} system
@@ -49,7 +47,7 @@ define( function( require ) {
     // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
 
     // origin is at right-center of wall
-    var wallNode = new WallNode( WALL_SIZE, {
+    var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
       right: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
       centerY: yOrigin
     } );
