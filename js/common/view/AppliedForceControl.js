@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control for applied force.
+ * Control for applied force (F).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

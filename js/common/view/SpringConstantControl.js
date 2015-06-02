@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control for spring constant.
+ * Control for spring constant (k).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
