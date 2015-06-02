@@ -24,7 +24,6 @@ Energy screen
 
 Force XY plot
 Energy XY plot
-Energy bar graph
 
 -----------------------------------------------------------------------------------
 General
