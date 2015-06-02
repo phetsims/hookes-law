@@ -5,8 +5,8 @@ Design questions
 -----------------------------------------------------------------------------------
 
 Robotic arm re-design
-
 Colors for top and bottom springs
+Vector values are tiny compared to slider values
 
 -----------------------------------------------------------------------------------
 Introduction screen
