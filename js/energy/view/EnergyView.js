@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var EnergyBarGraph = require( 'HOOKES_LAW/energy/view/EnergyBarGraph' );
+  var EnergyGraphControls = require( 'HOOKES_LAW/energy/view/EnergyGraphControls' );
   var EnergyXYPlot = require( 'HOOKES_LAW/energy/view/EnergyXYPlot' );
   var EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
@@ -32,13 +33,6 @@ define( function( require ) {
     // Properties that are specific to the view
     var viewProperties = new EnergyViewProperties();
 
-    // Visibility controls
-    var visibilityPanel = new EnergyVisibilityPanel( viewProperties, {
-      top: this.layoutBounds.top + 10,
-      right: this.layoutBounds.right - 10
-    } );
-    this.addChild( visibilityPanel );
-
     // System
     var systemNode = new EnergySystemNode( model.system, modelViewTransform, viewProperties, {
       number: 1,
@@ -46,6 +40,13 @@ define( function( require ) {
       bottom: this.layoutBounds.bottom - 10
     } );
     this.addChild( systemNode );
+
+    // Visibility controls
+    var visibilityPanel = new EnergyVisibilityPanel( viewProperties, {
+      right: this.layoutBounds.right - 10,
+      top: systemNode.top
+    } );
+    this.addChild( visibilityPanel );
 
     // Energy bar graph
     var energyBarGraph = new EnergyBarGraph( model.system.spring, {
@@ -66,6 +67,13 @@ define( function( require ) {
       translation: energyXYPlot.translation
     } );
     this.addChild( forceXYPlot );
+
+    // Graph controls
+    var graphControls = new EnergyGraphControls( viewProperties, {
+      left: energyXYPlot.right + 20,
+      top: this.layoutBounds.top + 20
+    } );
+    this.addChild( graphControls );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
