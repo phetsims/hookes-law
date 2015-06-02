@@ -22,6 +22,7 @@ Parallel: truss should be a triangle, will need to compensate for width when pos
 Energy screen
 -----------------------------------------------------------------------------------
 
+When moving robot arm, displacement range violation can occur
 Force XY plot
 Energy XY plot
 
