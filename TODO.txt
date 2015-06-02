@@ -22,6 +22,7 @@ Parallel: truss should be a triangle, will need to compensate for width when pos
 Energy screen
 -----------------------------------------------------------------------------------
 
+Don't use DisplacementVectorNode in XY plots, it's different and value needs to move around
 Force XY plot
 Energy XY plot
 Horizontally align y-axis of XY plots with equilibrium position
