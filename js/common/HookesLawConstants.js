@@ -22,6 +22,7 @@ define( function( require ) {
     APPLIED_FORCE_DECIMAL_PLACES: 0,
     SPRING_FORCE_DECIMAL_PLACES: 0,
     DISPLACEMENT_DECIMAL_PLACES: 3,
+    ENERGY_DECIMAL_PLACES: 0,
 
     // delta for controls
     SPRING_CONSTANT_DELTA: 10,
