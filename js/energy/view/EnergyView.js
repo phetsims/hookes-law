@@ -15,12 +15,14 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
+  var SingleSpringSystemNode = require( 'HOOKES_LAW/introduction/view/SingleSpringSystemNode' );
 
   /**
    * @param {EnergyModel} model
+   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function EnergyView( model ) {
+  function EnergyView( model, modelViewTransform ) {
 
     var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
@@ -34,6 +36,14 @@ define( function( require ) {
       right: this.layoutBounds.right - 10
     } );
     this.addChild( visibilityPanel );
+
+    // System 1
+    var systemNode = new SingleSpringSystemNode( model.system, modelViewTransform, viewProperties, {
+      number: 1,
+      left: this.layoutBounds.left + 49, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
+      top: this.layoutBounds.centerY + 10
+    } );
+    this.addChild( systemNode );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {

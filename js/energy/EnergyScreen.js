@@ -11,9 +11,12 @@ define( function( require ) {
   // modules
   var EnergyModel = require( 'HOOKES_LAW/energy/model/EnergyModel' );
   var EnergyView = require( 'HOOKES_LAW/energy/view/EnergyView' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   // strings
   var energyString = require( 'string!HOOKES_LAW/energy' );
@@ -27,11 +30,15 @@ define( function( require ) {
    * @constructor
    */
   function IntroductionScreen() {
+
+     // Scale up for the view
+    var modelViewTransform = ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, HookesLawConstants.UNIT_DISPLACEMENT_VECTOR_LENGTH );
+
     Screen.call( this,
       energyString,
       createIcon(),
       function() { return new EnergyModel(); },
-      function( model ) { return new EnergyView( model ); },
+      function( model ) { return new EnergyView( model, modelViewTransform ); },
       { backgroundColor: 'white' }
     );
   }

@@ -23,6 +23,8 @@ define( function( require ) {
 
     PropertySet.call( this, {
       graph: 'force', // {string} which graph is visible, 'force'|'energy'
+      appliedForceVectorVisible: false,
+      springForceVectorVisible: false,
       displacementVectorVisible: checked, // {boolean} is the displacement vector visible?
       equilibriumPositionVisible: checked, // {boolean} is the equilibrium position visible?
       valuesVisible: checked  // {boolean} are numeric values visible?

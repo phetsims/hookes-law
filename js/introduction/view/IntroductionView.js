@@ -31,6 +31,20 @@ define( function( require ) {
     // Properties that are specific to the view
     var viewProperties = new IntroductionViewProperties();
 
+    // Visibility controls
+    var visibilityPanel = new IntroductionVisibilityPanel( viewProperties, {
+      top: this.layoutBounds.top + 10,
+      right: this.layoutBounds.right - 10
+    } );
+    this.addChild( visibilityPanel );
+
+    // Control for number of systems
+    var numberOfSystemsControl = new NumberOfSystemsControl( viewProperties.numberOfSystemsProperty, {
+      centerX: visibilityPanel.centerX,
+      top: visibilityPanel.bottom + 10
+    } );
+    this.addChild( numberOfSystemsControl );
+
     // System 1
     var system1Node = new SingleSpringSystemNode( model.system1, modelViewTransform, viewProperties, {
       number: 1,
@@ -49,20 +63,6 @@ define( function( require ) {
     } );
     this.addChild( system2Node );
     assert && assert( system2Node.height <= this.layoutBounds.height / 2, 'system2Node is taller than the space available for it' );
-
-    // Visibility controls
-    var visibilityPanel = new IntroductionVisibilityPanel( viewProperties, {
-      top: this.layoutBounds.top + 10,
-      right: this.layoutBounds.right - 10
-    } );
-    this.addChild( visibilityPanel );
-
-    // Control for number of systems
-    var numberOfSystemsControl = new NumberOfSystemsControl( viewProperties.numberOfSystemsProperty, {
-      centerX: visibilityPanel.centerX,
-      top: visibilityPanel.bottom + 10
-    } );
-    this.addChild( numberOfSystemsControl );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {

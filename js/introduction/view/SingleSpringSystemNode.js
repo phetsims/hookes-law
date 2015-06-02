@@ -30,7 +30,7 @@ define( function( require ) {
   /**
    * @param {SingleSpringSystem} system
    * @param {ModelViewTransform2} modelViewTransform
-   * @param {IntroductionViewProperties} viewProperties
+   * @param {IntroductionViewProperties|EnergyViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
