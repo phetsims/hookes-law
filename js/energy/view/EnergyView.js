@@ -48,6 +48,7 @@ define( function( require ) {
     var resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
+        viewProperties.reset();
       },
       right: this.layoutBounds.maxX - 15,
       bottom: this.layoutBounds.maxY - 15
