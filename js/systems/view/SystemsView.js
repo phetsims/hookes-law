@@ -47,7 +47,7 @@ define( function( require ) {
 
     // Series system
     var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, modelViewTransform, viewProperties, {
-      left: this.layoutBounds.left + 49, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
+      left: this.layoutBounds.left + 42, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
       visible: viewProperties.seriesParallelProperty.get() === 'series'
     } );
