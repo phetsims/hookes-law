@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
+  var EnergyVisibilityPanel = require( 'HOOKES_LAW/energy/view/EnergyVisibilityPanel' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
@@ -26,6 +27,13 @@ define( function( require ) {
 
     // Properties that are specific to the view
     var viewProperties = new EnergyViewProperties();
+
+    // Visibility controls
+    var visibilityPanel = new EnergyVisibilityPanel( viewProperties, {
+      top: this.layoutBounds.top + 10,
+      right: this.layoutBounds.right - 10
+    } );
+    this.addChild( visibilityPanel );
 
     // Create and add the Reset All Button in the bottom right, which resets the model
     var resetAllButton = new ResetAllButton( {

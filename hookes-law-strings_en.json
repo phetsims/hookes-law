@@ -64,5 +64,11 @@
   },
   "rightSpring": {
     "value": "Right Spring:"
-  }
+  },
+  "forceGraph": {
+     "value": "Force Graph"
+   },
+  "energyGraph": {
+     "value": "Energy Graph"
+   }
 }
