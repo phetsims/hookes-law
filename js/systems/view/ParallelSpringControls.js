@@ -21,7 +21,6 @@ define( function( require ) {
   var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
-  var appliedForceColonString = require( 'string!HOOKES_LAW/appliedForceColon' );
   var topSpringString = require( 'string!HOOKES_LAW/topSpring' );
   var bottomSpringString = require( 'string!HOOKES_LAW/bottomSpring' );
 
@@ -76,8 +75,7 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( appliedForceColonString,
-      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
+    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
 
     var content = new HBox( {
       spacing: 20,

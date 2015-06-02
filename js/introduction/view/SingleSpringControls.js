@@ -45,8 +45,9 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( StringUtils.format( appliedForceNumberString, options.number ),
-      spring.appliedForceProperty, spring.appliedForceRange );
+    var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange, {
+      title: StringUtils.format( appliedForceNumberString, options.number )
+    } );
 
     var verticalSeparator = new VSeparator( Math.max( springConstantControl.height, appliedForceControl.height ) );
 

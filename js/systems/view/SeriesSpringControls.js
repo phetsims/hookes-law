@@ -19,7 +19,6 @@ define( function( require ) {
   var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
-  var appliedForceColonString = require( 'string!HOOKES_LAW/appliedForceColon' );
   var leftSpringString = require( 'string!HOOKES_LAW/leftSpring' );
   var rightSpringString = require( 'string!HOOKES_LAW/rightSpring' );
 
@@ -64,8 +63,7 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( appliedForceColonString,
-      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
+    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
 
     var separatorHeight = Math.max( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ), appliedForceControl.height );
 
