@@ -62,7 +62,8 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: springNode.bottom + 8
     } );

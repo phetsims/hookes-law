@@ -89,31 +89,36 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by bottomSpring.rightProperty
       bottom: topSpringNode.top - 40
     } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by bottomSpring.rightProperty
       centerY: appliedForceVectorNode.centerY
     } );
 
-    var topSpringForceVectorNode = new SpringForceVectorNode( topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var topSpringForceVectorNode = new SpringForceVectorNode( topSpring.springForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       fill: HookesLawColors.TOP_SPRING_FORCE,
       decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
       // x is determined by topSpring.rightProperty
       centerY: totalSpringForceVectorNode.top
     } );
 
-    var bottomSpringForceVectorNode = new SpringForceVectorNode( bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var bottomSpringForceVectorNode = new SpringForceVectorNode( bottomSpring.springForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       fill: HookesLawColors.BOTTOM_SPRING_FORCE,
       decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
       // x is determined by bottomSpring.rightProperty
       centerY: totalSpringForceVectorNode.bottom
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, modelViewTransform, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: bottomSpringNode.bottom + 8
     } );

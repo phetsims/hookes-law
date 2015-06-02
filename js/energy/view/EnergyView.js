@@ -56,15 +56,16 @@ define( function( require ) {
     this.addChild( energyBarGraph );
 
     // Energy XY plot
-    var energyXYPlot = new EnergyXYPlot( model.system.spring, {
+    var energyXYPlot = new EnergyXYPlot( model.system.spring, modelViewTransform, {
       left: energyBarGraph.right + 25,
       bottom: energyBarGraph.bottom
     } );
     this.addChild( energyXYPlot );
 
     // Force XY plot
-    var forceXYPlot = new ForceXYPlot( model.system.spring, {
-      translation: energyXYPlot.translation
+    var forceXYPlot = new ForceXYPlot( model.system.spring, modelViewTransform, {
+      left: energyBarGraph.right + 25,
+      centerY: 0.25 * this.layoutBounds.height
     } );
     this.addChild( forceXYPlot );
 

@@ -15,6 +15,7 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -27,13 +28,15 @@ define( function( require ) {
   /**
    * @param {Property.<number>} displacementProperty
    * @param {ModelViewTransform2} modelViewTransform
-   * @param {Property.<boolean>} valuesVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function DisplacementVectorNode( displacementProperty, modelViewTransform, valuesVisibleProperty, options ) {
+  function DisplacementVectorNode( displacementProperty, modelViewTransform, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      verticalLineVisible: true,
+      valueVisibleProperty: new Property( true ) // {Property.<boolean>} determines whether the value is visible
+    }, options );
 
     var arrowNode = new LineArrowNode( 0, 0, 1, 0, {
       stroke: HookesLawColors.DISPLACEMENT,
@@ -54,7 +57,8 @@ define( function( require ) {
     var verticalLine = new Line( 0, 0, 0, 20, {
       stroke: 'black',
       lineWidth: 2,
-      centerY: arrowNode.centerY
+      centerY: arrowNode.centerY,
+      visible: options.verticalLineVisible
     } );
 
     options.children = [ verticalLine, arrowNode, backgroundNode, valueNode ];
@@ -79,7 +83,7 @@ define( function( require ) {
       backgroundNode.center = valueNode.center;
     } );
 
-    valuesVisibleProperty.link( function( visible ) {
+    options.valueVisibleProperty.link( function( visible ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
   }

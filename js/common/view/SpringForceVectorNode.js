@@ -16,11 +16,10 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} springForceProperty
-   * @param {Property.<boolean>} valuesVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function SpringForceVectorNode( springForceProperty, valuesVisibleProperty, options ) {
+  function SpringForceVectorNode( springForceProperty, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.TOTAL_SPRING_FORCE,
@@ -28,7 +27,7 @@ define( function( require ) {
       alignZero: 'right'
     }, options );
 
-    ForceVectorNode.call( this, springForceProperty, valuesVisibleProperty, options );
+    ForceVectorNode.call( this, springForceProperty, options );
   }
 
   return inherit( ForceVectorNode, SpringForceVectorNode );

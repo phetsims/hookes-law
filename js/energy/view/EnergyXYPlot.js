@@ -15,10 +15,11 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function EnergyXYPlot( spring, options ) {
+  function EnergyXYPlot( spring, modelViewTransform, options ) {
 
     options = options || {};
 

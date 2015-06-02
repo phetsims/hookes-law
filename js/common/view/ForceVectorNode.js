@@ -13,6 +13,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -24,17 +25,17 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} forceProperty
-   * @param {Property.<boolean>} valuesVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function ForceVectorNode( forceProperty, valuesVisibleProperty, options ) {
+  function ForceVectorNode( forceProperty, options ) {
 
     options = _.extend( {
       fill: 'white',
       stroke: 'black',
       decimalPlaces: 0,
-      alignZero: 'left' // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
+      alignZero: 'left', // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
+      valueVisibleProperty: new Property( true ) // {Property.<boolean>} determines whether the value is visible
     }, options );
 
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {
@@ -92,7 +93,7 @@ define( function( require ) {
       backgroundNode.center = valueNode.center;
     } );
 
-    valuesVisibleProperty.link( function( visible ) {
+    options.valueVisibleProperty.link( function( visible ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
   }

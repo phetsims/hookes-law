@@ -90,23 +90,27 @@ define( function( require ) {
       y: leftSpringForceVectorNode.y
     } );
 
-    var rightSpringForceVectorNode = new SpringForceVectorNode( rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var rightSpringForceVectorNode = new SpringForceVectorNode( rightSpring.springForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       fill: HookesLawColors.RIGHT_SPRING_FORCE,
       // x is determined by rightSpring.rightProperty
       bottom: leftSpringForceVectorNode.top - 10
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by rightSpring.rightProperty
       y: rightSpringForceVectorNode.y
     } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by rightSpring.rightProperty
       y: appliedForceVectorNode.y
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, modelViewTransform, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: leftSpringNode.bottom + 8
     } );

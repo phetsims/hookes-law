@@ -16,18 +16,17 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} appliedForceProperty
-   * @param {Property.<boolean>} valuesVisibleProperty
    * @param {Object} [options]
    * @constructor
    */
-  function AppliedForceVectorNode( appliedForceProperty, valuesVisibleProperty, options ) {
+  function AppliedForceVectorNode( appliedForceProperty, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.APPLIED_FORCE,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES
     }, options );
 
-    ForceVectorNode.call( this, appliedForceProperty, valuesVisibleProperty, options );
+    ForceVectorNode.call( this, appliedForceProperty, options );
   }
 
   return inherit( ForceVectorNode, AppliedForceVectorNode );

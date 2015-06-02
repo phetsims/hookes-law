@@ -66,17 +66,20 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by spring.rightProperty
       bottom: springNode.top - 14
     } );
 
-    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by spring.rightProperty
       y: appliedForceVectorNode.y
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
+    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: springNode.bottom + 8
     } );
