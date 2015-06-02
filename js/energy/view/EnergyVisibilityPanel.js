@@ -55,7 +55,8 @@ define( function( require ) {
 
     // check boxes
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), HookesLawColors.DISPLACEMENT, {
+      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), {
+        arrowFill: HookesLawColors.DISPLACEMENT,
         arrowType: 'line'
       } ),
       properties.displacementVectorVisibleProperty,

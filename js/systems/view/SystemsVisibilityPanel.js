@@ -53,7 +53,7 @@ define( function( require ) {
 
     // vector check boxes
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), HookesLawColors.APPLIED_FORCE ),
+      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
@@ -61,7 +61,10 @@ define( function( require ) {
       properties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), HookesLawColors.DISPLACEMENT, { arrowType: 'line' } ),
+      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), {
+        arrowFill: HookesLawColors.DISPLACEMENT,
+        arrowType: 'line'
+      } ),
       properties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
 

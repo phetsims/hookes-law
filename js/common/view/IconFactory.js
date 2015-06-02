@@ -28,18 +28,18 @@ define( function( require ) {
      * Creates the content for a vector check box, consisting of text and an arrow.
      *
      * @param {Node} textNode - text, positioned to the left of the vector
-     * @param {string|Color} arrowColor
      * @param {Object} [options]
      * @returns {Node}
      */
-    createVectorCheckBoxContent: function( textNode, arrowColor, options ) {
+    createVectorCheckBoxContent: function( textNode, options ) {
 
       options = _.extend( {
         maxTextWidth: textNode.width, // width of the max text used to label a vector check box
         minSpacing: 10, // {number} minimum space between text and vector
         arrowLength: 30, // {number}
         arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
-        arrowType: 'shape' // 'shape' (ArrowNode) or 'line' (LineArrowNode)
+        arrowType: 'shape', // 'shape' (ArrowNode) or 'line' (LineArrowNode)
+        arrowFill: 'white' // {string|Color}
       }, options );
 
       // compute spacing so that arrows on all check boxes will ultimately be left aligned
@@ -48,7 +48,7 @@ define( function( require ) {
       var arrowNode;
       if ( options.arrowType === 'shape' ) {
         arrowNode = new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
-          fill: arrowColor,
+          fill: options.arrowFill,
           headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
           headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
           tailWidth: 10
@@ -57,7 +57,7 @@ define( function( require ) {
       else {
         // options.arrowType === 'line'
         arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
-          stroke: arrowColor,
+          stroke: options.arrowFill,
           headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
           headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
           headLineWidth: 3,
@@ -69,7 +69,7 @@ define( function( require ) {
     },
 
     /**
-     * Creates the icon for the equilibrium position check box, consisting of text and a vertical dashed line.
+     * Creates the icon for the equilibrium position check box, consisting of text and a vertical line.
      *
      * @returns {Node}
      */
