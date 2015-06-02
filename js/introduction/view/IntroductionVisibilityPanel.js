@@ -12,7 +12,6 @@ define( function( require ) {
   var CheckBox = require( 'SUN/CheckBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
