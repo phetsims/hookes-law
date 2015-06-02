@@ -23,7 +23,7 @@ define( function( require ) {
       appliedForceRange: new Range( -100, 100, 0 )
     } );
 
-    // F = kx, set ranges above such that displacement range is (-1,1)
+    // set ranges above such that displacement range is (-1,1), F = kx
     assert( this.system.spring.displacementRange.min === -1 && this.system.spring.displacementRange.max === 1 );
   }
 
