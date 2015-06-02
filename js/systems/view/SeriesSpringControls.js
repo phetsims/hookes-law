@@ -33,7 +33,7 @@ define( function( require ) {
    */
   function SeriesSpringControls( system, options ) {
 
-    options = _.extend( HookesLawConstants.SPRING_PANEL_OPTIONS, options );
+    options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
 
     var leftSpring = system.leftSpring;
     var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {

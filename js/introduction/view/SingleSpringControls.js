@@ -32,7 +32,7 @@ define( function( require ) {
 
     options = _.extend( {
       number: 1
-    }, _.extend( HookesLawConstants.SPRING_PANEL_OPTIONS, options ) );
+    }, _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options ) );
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       title: StringUtils.format( springConstantNumberString, options.number ),

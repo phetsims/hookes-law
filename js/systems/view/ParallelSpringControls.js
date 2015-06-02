@@ -35,7 +35,7 @@ define( function( require ) {
    */
   function ParallelSpringControls( system, options ) {
 
-    options = _.extend( HookesLawConstants.SPRING_PANEL_OPTIONS, options );
+    options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
 
     var topSpring = system.topSpring;
     var topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {

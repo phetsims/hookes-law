@@ -40,7 +40,7 @@ define( function( require ) {
    */
   function EnergyVisibilityPanel( properties, options ) {
 
-    options = _.extend( HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
+    options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
     // radio buttons
     var forceGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'force',

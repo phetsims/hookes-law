@@ -37,7 +37,7 @@ define( function( require ) {
    */
   function IntroductionVisibilityPanel( properties, options ) {
 
-    options = _.extend( HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
+    options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
     // text labels on the vector check boxes
     var appliedForceTextNode = new Text( appliedForceString, TEXT_OPTIONS );
