@@ -90,7 +90,7 @@ define( function( require ) {
      * @param {Object} [options]
      * @returns {*}
      */
-    createForceVectorIcon: function( options ) {
+    createVectorIcon: function( options ) {
 
       options = _.extend( {
         arrowFill: 'white', // {Color|string}
