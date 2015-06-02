@@ -48,7 +48,9 @@ define( function( require ) {
     SLIDER_MAJOR_TICK_LENGTH: 20,
 
     // options
-    MAJOR_TICK_LABEL_OPTIONS: { font: new HookesLawFont( 14 ) },
+    MAJOR_TICK_LABEL_OPTIONS: {
+      font: new HookesLawFont( 14 )
+    },
     SPRING_PANEL_OPTIONS: {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
       xMargin: 20,
