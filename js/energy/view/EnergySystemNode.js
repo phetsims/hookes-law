@@ -1,7 +1,8 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * One spring, a robotic arm, and all of the visual representations that go with them.
+ * Single-spring system for the "Energy" screen.
+ * One spring, a robotic arm, and all of the visual representations & controls that go with them.
  * Origin is at the point where the spring attaches to the wall.
  *
  * @author Chris Malley (PixelZoom, Inc.)
@@ -10,7 +11,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -18,8 +18,6 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var SingleSpringControls = require( 'HOOKES_LAW/introduction/view/SingleSpringControls' );
-  var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -30,15 +28,13 @@ define( function( require ) {
   /**
    * @param {SingleSpringSystem} system
    * @param {ModelViewTransform2} modelViewTransform
-   * @param {IntroductionViewProperties|EnergyViewProperties} viewProperties
+   * @param {EnergyViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SingleSpringSystemNode( system, modelViewTransform, viewProperties, options ) {
+  function EnergySystemNode( system, modelViewTransform, viewProperties, options ) {
 
-    options = _.extend( {
-      number: 1 // integer used to label the system
-    }, options );
+    options = options || {};
 
     // to improve readability
     var spring = system.spring;
@@ -73,47 +69,17 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
-      // x is determined by spring.rightProperty
-      bottom: springNode.top - 14
-    } );
-
-    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, viewProperties.valuesVisibleProperty, {
-      // x is determined by spring.rightProperty
-      y: appliedForceVectorNode.y
-    } );
-
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, viewProperties.valuesVisibleProperty, {
       x: equilibriumPositionNode.centerX,
       top: springNode.bottom + 8
     } );
 
-    var springControls = new SingleSpringControls( spring, {
-      number: options.number,
-      centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
-      top: wallNode.bottom + 10
-    } );
-
     options.children = [
       wallNode, equilibriumPositionNode, roboticArmNode, springNode,
-      appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
-      springControls
+      displacementVectorNode
     ];
     Node.call( this, options );
-
-    // Property observers ----------------------------------------------------------------------------------------------------------------------------
-
-    // Attach visibility properties to their respective nodes.
-    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
-    viewProperties.springForceVectorVisibleProperty.linkAttribute( springForceVectorNode, 'visible' );
-    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
-    viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
-
-    // Position the force vectors at the right end of the spring.
-    spring.rightProperty.link( function( right ) {
-      appliedForceVectorNode.x = springForceVectorNode.x = modelViewTransform.modelToViewX( right );
-    } );
   }
 
-  return inherit( Node, SingleSpringSystemNode );
+  return inherit( Node, EnergySystemNode );
 } );

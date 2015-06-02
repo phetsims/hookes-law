@@ -11,12 +11,12 @@ define( function( require ) {
   // modules
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var IntroductionSystemNode = require( 'HOOKES_LAW/introduction/view/IntroductionSystemNode' );
   var IntroductionVisibilityPanel = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityPanel' );
   var IntroductionViewProperties = require( 'HOOKES_LAW/introduction/view/IntroductionViewProperties' );
   var NumberOfSystemsControl = require( 'HOOKES_LAW/introduction/view/NumberOfSystemsControl' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var SingleSpringSystemNode = require( 'HOOKES_LAW/introduction/view/SingleSpringSystemNode' );
 
   /**
    * @param {IntroductionModel} model
@@ -46,7 +46,7 @@ define( function( require ) {
     this.addChild( numberOfSystemsControl );
 
     // System 1
-    var system1Node = new SingleSpringSystemNode( model.system1, modelViewTransform, viewProperties, {
+    var system1Node = new IntroductionSystemNode( model.system1, modelViewTransform, viewProperties, {
       number: 1,
       left: this.layoutBounds.left + 49, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
@@ -55,7 +55,7 @@ define( function( require ) {
     assert && assert( system1Node.height <= this.layoutBounds.height / 2, 'system1Node is taller than the space available for it' );
 
     // System 2
-    var system2Node = new SingleSpringSystemNode( model.system2, modelViewTransform, viewProperties, {
+    var system2Node = new IntroductionSystemNode( model.system2, modelViewTransform, viewProperties, {
       number: 2,
       left: system1Node.left,
       top: this.layoutBounds.centerY + 10,
