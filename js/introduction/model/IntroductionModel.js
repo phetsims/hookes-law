@@ -10,14 +10,19 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Range = require( 'DOT/Range' );
   var SingleSpringSystem = require( 'HOOKES_LAW/introduction/model/SingleSpringSystem' );
 
   /**
    * @constructor
    */
   function IntroductionModel() {
-    this.system1 = new SingleSpringSystem();
-    this.system2 = new SingleSpringSystem();
+    var springOptions = {
+      springConstantRange: new Range( 100, 1000, 200 ),
+      appliedForceRange: new Range( -100, 100, 0 )
+    };
+    this.system1 = new SingleSpringSystem( springOptions );
+    this.system2 = new SingleSpringSystem( springOptions );
   }
 
   return inherit( Object, IntroductionModel, {

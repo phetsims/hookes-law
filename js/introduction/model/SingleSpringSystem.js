@@ -15,24 +15,15 @@ define( function( require ) {
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
+   * @param {Object} [springOptions] - options that are passed to Spring
    * @constructor
    */
-  function SingleSpringSystem( options ) {
-
-    options = _.extend( {
-      springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
-      appliedForceRange: new Range( -100, 100, 0 ) // {Range} applied force range and initial value, units = N
-    }, options );
+  function SingleSpringSystem( springOptions ) {
 
     // Components of the system -----------------------------------------------------
 
     // spring
-    this.spring = new Spring( {
-      left: 0,
-      equilibriumLength: 1.5,
-      springConstantRange: options.springConstantRange,
-      appliedForceRange: options.appliedForceRange
-    } );
+    this.spring = new Spring( springOptions );
 
     // arm, left end attached to spring
     this.roboticArm = new RoboticArm( {

@@ -5,6 +5,13 @@
  * The left end is attached to something like a wall or another spring.
  * A force is applied to the right end, by something like a robotic arm or another spring.
  *
+ * Either displacement range or applied force range can be specified, but not both.
+ * The unspecified range is computed, and whichever range is not specified is the
+ * quantity that changes when spring constant is modified. For example, if applied force
+ * range is specified, then changing spring constant will modify displacement.
+ *
+ * Model equations:
+ *
  * F = k * x
  * E = ( k1 * x1 * x1 ) / 2
  *
@@ -37,33 +44,47 @@ define( function( require ) {
       left: 0, // {number} x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
       springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
-      appliedForceRange: new Range( -100, 100, 0 ), // {Range} applied force range and initial value, units = N
+      displacementRange: null, // {Range} displacement range and initial value, units = m
+      appliedForceRange: null, // {Range} applied force range and initial value, units = N
       appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA // {number} applied force (and thus spring force) are constrained to this delta
     }, options );
 
-    // validate options
+    // validate and save options
     assert && assert( options.equilibriumLength > 0, 'equilibriumLength must be > 0 : ' + options.equilibriumLength );
-    assert && assert( options.springConstantRange.min > 0, 'minimum spring constant must be positive : ' + options.springConstantRange.min );
-
-    // save some options
     this.equilibriumLength = options.equilibriumLength; // read-only
+
+    assert && assert( options.springConstantRange.min > 0, 'minimum spring constant must be positive : ' + options.springConstantRange.min );
     this.springConstantRange = options.springConstantRange; // read-only
-    this.appliedForceRange = options.appliedForceRange; // read-only
+
+    assert && assert( options.appliedForceDelta > 0, 'appliedForceDelta must be > 0 : ' + options.appliedForceDelta );
     this.appliedForceDelta = options.appliedForceDelta; // read-only
 
-    // x = F/k, read-only
-    this.displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min,
-      this.appliedForceRange.max / this.springConstantRange.min,
-      this.appliedForceRange.defaultValue / this.springConstantRange.defaultValue );
+    // Either applied force range or displacement range can be specified, the other is computed.
+    assert && assert( options.displacementRange && !options.appliedForceRange || !options.displacementRange && options.appliedForceRange,
+      'specify either displacementRange or appliedForceRange, but not both' );
+    if ( options.appliedForceRange ) {
+      this.appliedForceRange = options.appliedForceRange; // read-only
+      // x = F/k, read-only
+      this.displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min,
+        this.appliedForceRange.max / this.springConstantRange.min,
+        this.appliedForceRange.defaultValue / this.springConstantRange.defaultValue );
+    }
+    else {
+      this.displacementRange = options.displacementRange; // read-only
+      // F = kx, read-only
+      this.appliedForceRange = new Range( this.springConstantRange.max * this.displacementRange.min,
+        this.springConstantRange.max * this.displacementRange.max,
+        this.springConstantRange.defaultValue * this.displacementRange.defaultValue );
+    }
 
     var thisSpring = this;
 
     // Properties ------------------------------------------------------------------------------------------------------------------------------------
 
     PropertySet.call( this, {
-      appliedForce: options.appliedForceRange.defaultValue, // {number} F
-      springConstant: options.springConstantRange.defaultValue,  // {number} k
-      displacement: 0,  // {number} x
+      appliedForce: this.appliedForceRange.defaultValue, // {number} F
+      springConstant: this.springConstantRange.defaultValue,  // {number} k
+      displacement: this.displacementRange.defaultValue,  // {number} x
       left: options.left // {number} location of the left end of the spring, units = m
     } );
 
@@ -118,10 +139,17 @@ define( function( require ) {
       thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
     } );
 
-    // k: When changing the spring constant, maintain the applied force, change displacement.
+    // k
     this.springConstantProperty.link( function( springConstant ) {
       assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
-      thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
+      if ( options.appliedForceRange ) {
+        // if we specified the applied force range, then maintain the applied force, change displacement
+        thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
+      }
+      else {
+        // if we specified the displacement range, maintain the displacement, change applied force
+        thisSpring.appliedForce = springConstant * thisSpring.displacement; // F = kx
+      }
     } );
 
     // x: When changing displacement, maintain the spring constant, change applied force.
