@@ -21,6 +21,7 @@ define( function( require ) {
     TOP_SPRING_FORCE: 'magenta', //TODO get color from designer
     BOTTOM_SPRING_FORCE: 'aqua', //TODO get color from designer
     DISPLACEMENT: new Color( 0, 180, 0 ),
-    EQUILIBRIUM_POSITION: new Color( 0, 180, 0 )
+    EQUILIBRIUM_POSITION: new Color( 0, 180, 0 ),
+    ENERGY: new Color( 3, 205, 255 )
   };
 } );

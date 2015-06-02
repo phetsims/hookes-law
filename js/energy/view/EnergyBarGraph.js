@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -59,7 +60,7 @@ define( function( require ) {
     } );
 
     var barNode = new Rectangle( 0, 0, 1, 1, {
-      fill: 'rgb( 3, 205, 255 )'
+      fill: HookesLawColors.ENERGY
     } );
 
     var valueNode = new Text( '', {
