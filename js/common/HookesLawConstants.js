@@ -40,6 +40,7 @@ define( function( require ) {
     // fonts
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
     CONTROL_PANEL_VALUE_FONT: new HookesLawFont( 18 ),
+    VECTOR_VALUE_FONT: new HookesLawFont( 18 ),
 
     // sizes and lengths for UI components
     WALL_SIZE: new Dimension2( 25, 170 ),

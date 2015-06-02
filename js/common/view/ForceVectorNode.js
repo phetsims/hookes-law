@@ -48,7 +48,7 @@ define( function( require ) {
 
     var valueNode = new Text( '', {
       fill: options.fill,
-      font: new HookesLawFont( 18 ),
+      font: HookesLawConstants.VECTOR_VALUE_FONT,
       bottom: arrowNode.top - 2 // above the arrow
     } );
 
