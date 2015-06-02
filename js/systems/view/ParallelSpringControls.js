@@ -43,28 +43,28 @@ define( function( require ) {
     }, options );
 
     var topSpring = system.topSpring;
-    var topSpringConstantControl = new SpringConstantControl( topSpringString,
-      topSpring.springConstantProperty, topSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.TOP_SPRING_FORCE,
-        trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTickValues: [
-          topSpring.springConstantRange.min,
-          topSpring.springConstantRange.getCenter(),
-          topSpring.springConstantRange.max
-        ]
-      } );
+    var topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
+      title: topSpringString,
+      thumbFillEnabled: HookesLawColors.TOP_SPRING_FORCE,
+      trackSize: SPRING_CONSTANT_TRACK_SIZE,
+      majorTickValues: [
+        topSpring.springConstantRange.min,
+        topSpring.springConstantRange.getCenter(),
+        topSpring.springConstantRange.max
+      ]
+    } );
 
     var bottomSpring = system.bottomSpring;
-    var bottomSpringConstantControl = new SpringConstantControl( bottomSpringString,
-      bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
-        trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTickValues: [
-          bottomSpring.springConstantRange.min,
-          bottomSpring.springConstantRange.getCenter(),
-          bottomSpring.springConstantRange.max
-        ]
-      } );
+    var bottomSpringConstantControl = new SpringConstantControl( bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
+      title: bottomSpringString,
+      thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
+      trackSize: SPRING_CONSTANT_TRACK_SIZE,
+      majorTickValues: [
+        bottomSpring.springConstantRange.min,
+        bottomSpring.springConstantRange.getCenter(),
+        bottomSpring.springConstantRange.max
+      ]
+    } );
 
     var springControls = new VBox( {
       spacing: 20,

@@ -17,25 +17,26 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // strings
-  var unitsNewtonsPerMeter = require( 'string!HOOKES_LAW/units.newtonsPerMeter' );
+  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
+  var newtonsPerMeterString = require( 'string!HOOKES_LAW/newtonsPerMeter' );
 
   // constants
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
 
   /**
-   * @param {string} title
    * @param {Property.<boolean>} springConstantProperty
    * @param {Range} springConstantRange
    * @param {Object} [options]
    * @constructor
    */
-  function SpringConstantControl( title, springConstantProperty, springConstantRange, options ) {
+  function SpringConstantControl( springConstantProperty, springConstantRange, options ) {
 
     options = _.extend( {
+      title: springConstantString,
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
-      units: unitsNewtonsPerMeter,
+      units: newtonsPerMeterString,
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
       majorTicksValues: null,
       minorTickSpacing: 100,
@@ -53,7 +54,7 @@ define( function( require ) {
       }
     }
 
-    NumberControl.call( this, title, springConstantProperty, springConstantRange, options );
+    NumberControl.call( this, options.title, springConstantProperty, springConstantRange, options );
   }
 
   return inherit( NumberControl, SpringConstantControl );

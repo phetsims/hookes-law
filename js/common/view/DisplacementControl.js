@@ -18,7 +18,7 @@ define( function( require ) {
 
   // strings
   var displacementColonString = require( 'string!HOOKES_LAW/displacementColon' );
-  var metersString = require( 'string!HOOKES_LAW/units.meters' );
+  var metersString = require( 'string!HOOKES_LAW/meters' );
 
   // constants
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };

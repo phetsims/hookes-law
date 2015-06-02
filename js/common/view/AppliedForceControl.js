@@ -17,7 +17,7 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // strings
-  var unitsNewtons = require( 'string!HOOKES_LAW/units.newtons' );
+  var newtonsString = require( 'string!HOOKES_LAW/newtons' );
 
   // constants
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
@@ -57,7 +57,7 @@ define( function( require ) {
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-      units: unitsNewtons,
+      units: newtonsString,
       delta: HookesLawConstants.APPLIED_FORCE_DELTA,
       majorTicks: majorTicks,
       minorTickSpacing: MINOR_TICK_SPACING,

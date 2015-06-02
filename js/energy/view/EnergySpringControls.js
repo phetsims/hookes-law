@@ -16,9 +16,6 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
 
-  // strings
-  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
-
   // constants
   var PANEL_OPTIONS = {
     xMargin: 20,
@@ -40,7 +37,7 @@ define( function( require ) {
       majorTickValues.push( value );
     }
     var springConstantControlPanel = new Panel(
-      new SpringConstantControl( springConstantString, spring.springConstantProperty, spring.springConstantRange, {
+      new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
         minorTickSpacing: 50,
         majorTickValues: majorTickValues
       } ), PANEL_OPTIONS );

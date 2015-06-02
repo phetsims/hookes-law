@@ -41,28 +41,28 @@ define( function( require ) {
     }, options );
 
     var leftSpring = system.leftSpring;
-    var leftSpringConstantControl = new SpringConstantControl( leftSpringString,
-      leftSpring.springConstantProperty, leftSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.LEFT_SPRING_FORCE,
-        trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTickValues: [
-          leftSpring.springConstantRange.min,
-          leftSpring.springConstantRange.getCenter(),
-          leftSpring.springConstantRange.max
-        ]
-      } );
+    var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
+      title: leftSpringString,
+      thumbFillEnabled: HookesLawColors.LEFT_SPRING_FORCE,
+      trackSize: SPRING_CONSTANT_TRACK_SIZE,
+      majorTickValues: [
+        leftSpring.springConstantRange.min,
+        leftSpring.springConstantRange.getCenter(),
+        leftSpring.springConstantRange.max
+      ]
+    } );
 
     var rightSpring = system.rightSpring;
-    var rightSpringConstantControl = new SpringConstantControl( rightSpringString,
-      system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
-        thumbFillEnabled: HookesLawColors.RIGHT_SPRING_FORCE,
-        trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTickValues: [
-          rightSpring.springConstantRange.min,
-          rightSpring.springConstantRange.getCenter(),
-          rightSpring.springConstantRange.max
-        ]
-      } );
+    var rightSpringConstantControl = new SpringConstantControl( system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
+      title: rightSpringString,
+      thumbFillEnabled: HookesLawColors.RIGHT_SPRING_FORCE,
+      trackSize: SPRING_CONSTANT_TRACK_SIZE,
+      majorTickValues: [
+        rightSpring.springConstantRange.min,
+        rightSpring.springConstantRange.getCenter(),
+        rightSpring.springConstantRange.max
+      ]
+    } );
 
     var appliedForceControl = new AppliedForceControl( appliedForceColonString,
       system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );

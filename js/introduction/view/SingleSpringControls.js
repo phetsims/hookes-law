@@ -36,14 +36,14 @@ define( function( require ) {
       fill: HookesLawColors.CONTROL_PANEL_FILL
     }, options );
 
-    var springConstantControl = new SpringConstantControl( StringUtils.format( springConstantNumberString, options.number ),
-      spring.springConstantProperty, spring.springConstantRange, {
-        majorTickValues: [
-          spring.springConstantRange.min,
-          spring.springConstantRange.max / 2,
-          spring.springConstantRange.max
-        ]
-      } );
+    var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
+      title: StringUtils.format( springConstantNumberString, options.number ),
+      majorTickValues: [
+        spring.springConstantRange.min,
+        spring.springConstantRange.max / 2,
+        spring.springConstantRange.max
+      ]
+    } );
 
     var appliedForceControl = new AppliedForceControl( StringUtils.format( appliedForceNumberString, options.number ),
       spring.appliedForceProperty, spring.appliedForceRange );

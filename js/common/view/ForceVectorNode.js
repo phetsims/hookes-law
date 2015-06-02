@@ -21,7 +21,7 @@ define( function( require ) {
 
   // strings
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
-  var unitsNewtonsString = require( 'string!HOOKES_LAW/units.newtons' );
+  var newtonsString = require( 'string!HOOKES_LAW/newtons' );
 
   /**
    * @param {Property.<number>} forceProperty
@@ -66,7 +66,7 @@ define( function( require ) {
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( Math.abs( value ), options.decimalPlaces ), unitsNewtonsString );
+      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( Math.abs( value ), options.decimalPlaces ), newtonsString );
 
       // value position
       var margin = 5;

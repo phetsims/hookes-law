@@ -41,13 +41,13 @@
   "values": {
     "value": "Values"
   },
-  "units.newtons": {
+  "newtons": {
     "value": "N"
   },
-  "units.meters": {
+  "meters": {
     "value": "m"
   },
-  "units.newtonsPerMeter": {
+  "newtonsPerMeter": {
     "value": "N/m"
   },
   "pattern.0value.1units": {
