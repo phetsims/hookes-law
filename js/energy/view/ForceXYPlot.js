@@ -14,11 +14,11 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
   /**
-   * @param {SingleSpringSystem} system
+   * @param {Spring} spring
    * @param {Object} [options]
    * @constructor
    */
-  function ForceXYPlot( system, options ) {
+  function ForceXYPlot( spring, options ) {
 
     options = options || {};
 

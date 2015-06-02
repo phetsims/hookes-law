@@ -55,14 +55,14 @@ define( function( require ) {
     this.addChild( energyBarGraph );
 
     // Energy XY plot
-    var energyXYPlot = new EnergyXYPlot( model.system, {
+    var energyXYPlot = new EnergyXYPlot( model.system.spring, {
       left: energyBarGraph.right + 20,
       bottom: energyBarGraph.bottom
     } );
     this.addChild( energyXYPlot );
 
     // Force XY plot
-    var forceXYPlot = new ForceXYPlot( model.system, {
+    var forceXYPlot = new ForceXYPlot( model.system.spring, {
       translation: energyXYPlot.translation
     } );
     this.addChild( forceXYPlot );
