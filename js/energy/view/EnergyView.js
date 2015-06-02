@@ -40,7 +40,7 @@ define( function( require ) {
     var systemNode = new EnergySystemNode( model.system, modelViewTransform, viewProperties, {
       number: 1,
       left: this.layoutBounds.left + 49, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
-      top: this.layoutBounds.centerY + 10
+      bottom: this.layoutBounds.bottom - 10
     } );
     this.addChild( systemNode );
 
