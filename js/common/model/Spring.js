@@ -112,13 +112,26 @@ define( function( require ) {
         return right;
       } );
 
-    // range of the right end of the spring, units = m
-    this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
-      function( springConstant, equilibriumX ) {
-        var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
-        var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
-        return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
-      } );
+    /**
+     * Range of the right end of the spring, units = m
+     * Derivation differs depending on whether changing spring constant modifies applied force or displacement.
+     */
+    this.rightRangeProperty = null;
+    if ( options.appliedForceRange ) {
+      this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
+        function( springConstant, equilibriumX ) {
+          var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
+          var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
+          return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
+        } );
+    }
+    else {
+      this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
+        function( equilibriumX ) {
+          return new Range( equilibriumX + thisSpring.displacementRange.min, equilibriumX + thisSpring.displacementRange.max
+          )
+        } );
+    }
 
     // length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
