@@ -81,14 +81,14 @@ define( function( require ) {
     // 'total' button
     var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
       new HBox( {
-        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createVectorIcon( { arrowFill: HookesLawColors.TOTAL_SPRING_FORCE } ) ],
+        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createVectorIcon( { fill: HookesLawColors.TOTAL_SPRING_FORCE } ) ],
         spacing: 10
       } ),
       RADIO_BUTTON_OPTIONS );
 
     // 'components' button
-    var component1Node = IconFactory.createVectorIcon( { arrowFill: HookesLawColors.TOP_SPRING_FORCE } );
-    var component2Node = IconFactory.createVectorIcon( { arrowFill: HookesLawColors.BOTTOM_SPRING_FORCE } );
+    var component1Node = IconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING_FORCE } );
+    var component2Node = IconFactory.createVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING_FORCE } );
     var componentsVectorIcons = new VBox( {
       children: [
         component1Node,

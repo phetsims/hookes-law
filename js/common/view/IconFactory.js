@@ -50,12 +50,7 @@ define( function( require ) {
 
       var arrowNode;
       if ( options.arrowType === 'shape' ) {
-        arrowNode = new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
-          fill: options.arrowFill,
-          headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
-          headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
-          tailWidth: 10
-        } );
+        arrowNode = this.createVectorIcon( _.extend( { fill: options.arrowFill }, options ) );
       }
       else {
         // options.arrowType === 'line'
@@ -85,7 +80,6 @@ define( function( require ) {
       return new Node( { children: [ textNode, lineNode ] } );
     },
 
-    //TODO use this in createVectorCheckBoxContent
     /**
      * @param {Object} [options]
      * @returns {*}
@@ -93,17 +87,19 @@ define( function( require ) {
     createVectorIcon: function( options ) {
 
       options = _.extend( {
-        arrowFill: 'white', // {Color|string}
-        arrowLength: 30, // {number}
-        arrowDirection: 'right' // {string} direction that the vector points, 'left' or 'right',
-      }, options );
-
-      return new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
-        fill: options.arrowFill,
+        length: 30, // {number}
+        //TODO delete this feature if it goes unused
+        direction: 'right', // {string} direction that the vector points, 'left' or 'right',
+        fill: 'white', // {Color|string}
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
         headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
         tailWidth: 10
-      } );
+      }, options );
+
+      assert && assert( options.direction === 'left' || options.direction === 'right' );
+
+      var length = ( options.direction === 'left' ? -options.length : options.length );
+      return new ArrowNode( 0, 0, length, 0, options );
     }
   };
 } );
