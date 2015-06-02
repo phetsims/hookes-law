@@ -25,6 +25,7 @@ define( function( require ) {
     // delta for controls
     SPRING_CONSTANT_DELTA: 10,
     APPLIED_FORCE_DELTA: 1,
+    DISPLACEMENT_DELTA: 0.001,
 
     // specific to parallel system, where components require a decimal place
     PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES: 1,

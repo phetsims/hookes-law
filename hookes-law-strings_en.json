@@ -26,8 +26,14 @@
   "springConstantNumber": {
     "value": "Spring Constant {0}:"
   },
+  "springConstant": {
+   "value": "Spring Constant:"
+  },
   "displacement": {
     "value": "Displacement"
+  },
+  "displacementColon": {
+    "value": "Displacement:"
   },
   "equilibriumPosition": {
     "value": "Equilibrium Position"

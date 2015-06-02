@@ -13,6 +13,7 @@ define( function( require ) {
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
+  var EnergySpringControls = require( 'HOOKES_LAW/energy/view/EnergySpringControls' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
@@ -74,9 +75,15 @@ define( function( require ) {
       top: springNode.bottom + 8
     } );
 
+    var springControls = new EnergySpringControls( spring, {
+      centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
+      top: wallNode.bottom + 25
+    } );
+
     options.children = [
       wallNode, equilibriumPositionNode, roboticArmNode, springNode,
-      displacementVectorNode
+      displacementVectorNode,
+      springControls
     ];
     Node.call( this, options );
   }
