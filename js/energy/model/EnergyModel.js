@@ -19,8 +19,8 @@ define( function( require ) {
   function EnergyModel() {
 
     this.system = new SingleSpringSystem( {
-      springConstantRange: new Range( 100, 400, 100 ),
-      appliedForceRange: new Range( -100, 100, 0 )
+      springConstantRange: new Range( 100, 400, 100 ), // F
+      appliedForceRange: new Range( -100, 100, 0 ) // k
     } );
 
     // set ranges above such that displacement range is (-1,1), F = kx
