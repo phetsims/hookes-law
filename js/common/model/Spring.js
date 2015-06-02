@@ -129,7 +129,7 @@ define( function( require ) {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
           return new Range( equilibriumX + thisSpring.displacementRange.min, equilibriumX + thisSpring.displacementRange.max
-          )
+          );
         } );
     }
 
