@@ -8,7 +8,7 @@
  * Either displacement range or applied force range can be specified, but not both.
  * The unspecified range is computed, and whichever range is not specified is the
  * quantity that changes when spring constant is modified. For example, if applied force
- * range is specified, then displacement is computed, and changing spring constant
+ * range is specified, then displacement range is computed, and changing spring constant
  * will modify displacement.
  *
  * Model equations:
