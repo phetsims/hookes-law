@@ -12,6 +12,7 @@ define( function( require ) {
   var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
@@ -30,11 +31,8 @@ define( function( require ) {
   function SingleSpringControls( spring, options ) {
 
     options = _.extend( {
-      number: 1,
-      xMargin: 20,
-      yMargin: 5,
-      fill: HookesLawColors.CONTROL_PANEL_FILL
-    }, options );
+      number: 1
+    }, _.extend( HookesLawConstants.SPRING_PANEL_OPTIONS, options ) );
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       title: StringUtils.format( springConstantNumberString, options.number ),

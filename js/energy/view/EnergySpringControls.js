@@ -12,16 +12,10 @@ define( function( require ) {
   var DisplacementControl = require( 'HOOKES_LAW/common/view/DisplacementControl' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-
-  // constants
-  var PANEL_OPTIONS = {
-    xMargin: 20,
-    yMargin: 5,
-    fill: HookesLawColors.CONTROL_PANEL_FILL
-  };
 
   /**
    * @param {Spring} spring
@@ -40,7 +34,7 @@ define( function( require ) {
       new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
         minorTickSpacing: 50,
         majorTickValues: majorTickValues
-      } ), PANEL_OPTIONS );
+      } ), HookesLawConstants.SPRING_PANEL_OPTIONS );
 
     var displacementControlPanel = new Panel(
       new DisplacementControl( spring.displacementProperty, spring.displacementRange, {
@@ -50,7 +44,7 @@ define( function( require ) {
           spring.displacementRange.getCenter(),
           spring.displacementRange.max
         ]
-      } ), PANEL_OPTIONS );
+      } ), HookesLawConstants.SPRING_PANEL_OPTIONS );
 
     options.spacing = 10;
     options.children = [ springConstantControlPanel, displacementControlPanel ];

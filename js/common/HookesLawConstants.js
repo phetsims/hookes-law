@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var Bounds2 = require( 'DOT/Bounds2' );
   var Dimension2 = require( 'DOT/Dimension2' );
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
 
   return {
@@ -46,6 +47,11 @@ define( function( require ) {
     SLIDER_MAJOR_TICK_LENGTH: 20,
 
     // options
-    MAJOR_TICK_LABEL_OPTIONS: { font: new HookesLawFont( 14 ) }
+    MAJOR_TICK_LABEL_OPTIONS: { font: new HookesLawFont( 14 ) },
+    SPRING_PANEL_OPTIONS: {
+      xMargin: 20,
+      yMargin: 5,
+      fill: HookesLawColors.CONTROL_PANEL_FILL
+    }
   };
 } );

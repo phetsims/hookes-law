@@ -31,8 +31,7 @@ Energy graph
 General
 -----------------------------------------------------------------------------------
 
-move PANEL_OPTIONS to HookesLawConstants
-move CHECK_BOX_OPTIONS, RADIO_BUTTON_OPTIONS, TEXT_OPTIONS (rename) to HookesLawConstants (visibility panels)
+move PANEL_OPTIONS to HookesLawConstantsmove CHECK_BOX_OPTIONS, RADIO_BUTTON_OPTIONS, TEXT_OPTIONS (rename) to HookesLawConstants (visibility panels)
 AP's robotic arm design (2 arcs)
 Single, Series: piece at end of spring that is grabbed
 Split spring into foreground and background, use vertical gradients

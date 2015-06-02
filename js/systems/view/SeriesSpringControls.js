@@ -13,6 +13,7 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
@@ -32,12 +33,7 @@ define( function( require ) {
    */
   function SeriesSpringControls( system, options ) {
 
-    options = _.extend( {
-      number: 1,
-      xMargin: 20,
-      yMargin: 5,
-      fill: HookesLawColors.CONTROL_PANEL_FILL
-    }, options );
+    options = _.extend( HookesLawConstants.SPRING_PANEL_OPTIONS, options );
 
     var leftSpring = system.leftSpring;
     var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
