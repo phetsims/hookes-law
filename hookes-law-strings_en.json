@@ -1,16 +1,4 @@
 {
-  "hookes-law.name": {
-    "value": "Hooke's Law"
-  },
-  "introduction": {
-    "value": "Introduction"
-  },
-  "systems": {
-    "value": "Systems"
-  },
-  "energy": {
-    "value": "Energy"
-  },
   "appliedForce": {
     "value": "Applied Force"
   },
@@ -20,14 +8,11 @@
   "appliedForceNumber": {
     "value": "Applied Force {0}:"
   },
-  "springForce": {
-    "value": "Spring Force"
+  "bottomSpring": {
+    "value": "Bottom Spring:"
   },
-  "springConstantNumber": {
-    "value": "Spring Constant {0}:"
-  },
-  "springConstant": {
-   "value": "Spring Constant:"
+  "components": {
+    "value": "Components"
   },
   "displacement": {
     "value": "Displacement"
@@ -35,17 +20,32 @@
   "displacementColon": {
     "value": "Displacement:"
   },
+  "energy": {
+    "value": "Energy"
+  },
+  "energyGraph": {
+    "value": "Energy Graph"
+  },
   "equilibriumPosition": {
     "value": "Equilibrium Position"
   },
-  "values": {
-    "value": "Values"
+  "forceGraph": {
+    "value": "Force Graph"
   },
-  "newtons": {
-    "value": "N"
+  "hookes-law.name": {
+    "value": "Hooke's Law"
+  },
+  "introduction": {
+    "value": "Introduction"
+  },
+  "leftSpring": {
+    "value": "Left Spring:"
   },
   "meters": {
     "value": "m"
+  },
+  "newtons": {
+    "value": "N"
   },
   "newtonsPerMeter": {
     "value": "N/m"
@@ -53,28 +53,28 @@
   "pattern.0value.1units": {
     "value": "{0} {1}"
   },
-  "total": {
-    "value": "Total"
+  "rightSpring": {
+    "value": "Right Spring:"
   },
-  "components": {
-    "value": "Components"
+  "springConstant": {
+    "value": "Spring Constant:"
+  },
+  "springConstantNumber": {
+    "value": "Spring Constant {0}:"
+  },
+  "springForce": {
+    "value": "Spring Force"
+  },
+  "systems": {
+    "value": "Systems"
   },
   "topSpring": {
     "value": "Top Spring:"
   },
-  "bottomSpring": {
-    "value": "Bottom Spring:"
+  "total": {
+    "value": "Total"
   },
-  "leftSpring": {
-    "value": "Left Spring:"
-  },
-  "rightSpring": {
-    "value": "Right Spring:"
-  },
-  "forceGraph": {
-     "value": "Force Graph"
-   },
-  "energyGraph": {
-     "value": "Energy Graph"
-   }
+  "values": {
+    "value": "Values"
+  }
 }
