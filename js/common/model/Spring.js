@@ -140,7 +140,7 @@ define( function( require ) {
       } );
 
     // E = ( k1 * x1 * x1 ) / 2
-    this.storedEnergyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
+    this.energyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
       } );

@@ -70,7 +70,7 @@ define( function( require ) {
     options.children = [ barNode, valueNode, xAxisNode, yAxisNode, yAxisLabel ];
     Node.call( this, options );
 
-    spring.storedEnergyProperty.link( function( energy ) {
+    spring.energyProperty.link( function( energy ) {
 
       // resize the bar
       barNode.visible = ( energy > 0 );
