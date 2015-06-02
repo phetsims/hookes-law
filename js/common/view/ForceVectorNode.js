@@ -29,7 +29,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function SpringForceVectorNode( forceProperty, valuesVisibleProperty, options ) {
+  function ForceVectorNode( forceProperty, valuesVisibleProperty, options ) {
 
     options = _.extend( {
       fill: 'white',
@@ -98,5 +98,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( Node, SpringForceVectorNode );
+  return inherit( Node, ForceVectorNode );
 } );
