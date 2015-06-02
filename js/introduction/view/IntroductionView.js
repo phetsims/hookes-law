@@ -58,7 +58,7 @@ define( function( require ) {
     var system2Node = new IntroductionSystemNode( model.system2, modelViewTransform, viewProperties, {
       number: 2,
       left: system1Node.left,
-      top: this.layoutBounds.centerY + 10,
+      centerY: 0.75 * this.layoutBounds.height,
       visible: ( viewProperties.numberOfSystemsProperty.get() === 2 )
     } );
     this.addChild( system2Node );
