@@ -56,7 +56,7 @@ define( function( require ) {
 
     // Energy XY plot
     var energyXYPlot = new EnergyXYPlot( model.system.spring, {
-      left: energyBarGraph.right + 20,
+      left: energyBarGraph.right + 25,
       bottom: energyBarGraph.bottom
     } );
     this.addChild( energyXYPlot );
