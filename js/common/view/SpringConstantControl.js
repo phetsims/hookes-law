@@ -20,9 +20,6 @@ define( function( require ) {
   var newtonsPerMeterString = require( 'string!HOOKES_LAW/newtonsPerMeter' );
   var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
 
-  // constants
-  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
-
   /**
    * @param {Property.<boolean>} springConstantProperty
    * @param {Range} springConstantRange
@@ -49,7 +46,7 @@ define( function( require ) {
       for ( var i = 0; i < options.majorTickValues.length; i++ ) {
         options.majorTicks.push( {
           value: options.majorTickValues[ i ],
-          label: new Text( Util.toFixed( options.majorTickValues[ i ], HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+          label: new Text( Util.toFixed( options.majorTickValues[ i ], HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
         } );
       }
     }

@@ -21,7 +21,6 @@ define( function( require ) {
   var newtonsString = require( 'string!HOOKES_LAW/newtons' );
 
   // constants
-  var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };
   var MINOR_TICK_SPACING = 10;
 
   /**
@@ -38,19 +37,19 @@ define( function( require ) {
     assert && assert( Util.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
     var majorTicks = [ {
       value: appliedForceRange.min,
-      label: new Text( Util.toFixed( appliedForceRange.min, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+      label: new Text( Util.toFixed( appliedForceRange.min, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
     }, {
       value: appliedForceRange.min / 2,
       label: null
     }, {
       value: appliedForceRange.getCenter(),
-      label: new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS )
+      label: new Text( Util.toFixed( 0, 0 ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
     }, {
       value: appliedForceRange.max / 2,
       label: null
     }, {
       value: appliedForceRange.max,
-      label: new Text( Util.toFixed( appliedForceRange.max, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), MAJOR_TICK_LABEL_OPTIONS )
+      label: new Text( Util.toFixed( appliedForceRange.max, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
     } ];
 
     options = _.extend( {

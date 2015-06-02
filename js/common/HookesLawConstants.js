@@ -37,13 +37,15 @@ define( function( require ) {
 
     // fonts
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
-    SLIDER_TICK_LABEL_FONT: new HookesLawFont( 14 ),
 
     // sizes and lengths for UI components
     WALL_SIZE: new Dimension2( 25, 170 ),
     VECTOR_HEAD_SIZE: new Dimension2( 20, 10 ),
     SLIDER_THUMB_SIZE: new Dimension2( 17, 34 ),
     SLIDER_TRACK_SIZE: new Dimension2( 180, 3 ),
-    SLIDER_MAJOR_TICK_LENGTH: 20
+    SLIDER_MAJOR_TICK_LENGTH: 20,
+
+    // options
+    MAJOR_TICK_LABEL_OPTIONS: { font: new HookesLawFont( 14 ) }
   };
 } );
