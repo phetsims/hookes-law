@@ -34,11 +34,6 @@ define( function( require ) {
   var totalString = require( 'string!HOOKES_LAW/total' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
-  // constants
-  var CHECK_BOX_OPTIONS = { spacing: 8 };
-  var RADIO_BUTTON_OPTIONS = { radius: 12 };
-  var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
-
   /**
    * @param {SystemsViewProperties} properties
    * @param {Object} [options]
@@ -50,38 +45,42 @@ define( function( require ) {
 
     // vector check boxes
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, TEXT_OPTIONS ), { arrowFill: HookesLawColors.APPLIED_FORCE } ),
+      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
-      new Text( springForceString, TEXT_OPTIONS ),
+      new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), {
+      IconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         arrowType: 'line'
       } ),
       properties.displacementVectorVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
 
     // other check boxes
     var equilibriumPositionCheckBox = new CheckBox(
       IconFactory.createEquilibriumPositionCheckBoxContent(),
       properties.equilibriumPositionVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(
-      new Text( valuesString, TEXT_OPTIONS ),
+      new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
 
     // 'total' button
     var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
       new HBox( {
-        children: [ new Text( totalString, TEXT_OPTIONS ), IconFactory.createVectorIcon( { fill: HookesLawColors.TOTAL_SPRING_FORCE } ) ],
+        children: [
+          new Text( totalString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+          IconFactory.createVectorIcon( { fill: HookesLawColors.TOTAL_SPRING_FORCE } )
+        ],
         spacing: 10
       } ),
-      RADIO_BUTTON_OPTIONS );
+      HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // 'components' button
     var component1Node = IconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING_FORCE } );
@@ -96,7 +95,7 @@ define( function( require ) {
     var componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'components',
       new HBox( {
         children: [
-          new Text( componentsSpring, TEXT_OPTIONS ),
+          new Text( componentsSpring, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
           new BracketNode( {
             orientation: 'left',
             bracketLength: componentsVectorIcons.height
@@ -105,7 +104,7 @@ define( function( require ) {
         ],
         spacing: 10
       } ),
-      RADIO_BUTTON_OPTIONS );
+      HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // Change the component vector colors to match the system
     properties.seriesParallelProperty.link( function( seriesParallel ) {

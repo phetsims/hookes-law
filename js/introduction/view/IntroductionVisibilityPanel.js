@@ -26,10 +26,6 @@ define( function( require ) {
   var springForceString = require( 'string!HOOKES_LAW/springForce' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
-  // constants
-  var CHECK_BOX_OPTIONS = { spacing: 8 };
-  var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
-
   /**
    * @param {IntroductionViewProperties} properties
    * @param {Object} [options]
@@ -40,9 +36,9 @@ define( function( require ) {
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
     // text labels on the vector check boxes
-    var appliedForceTextNode = new Text( appliedForceString, TEXT_OPTIONS );
-    var springForceTextNode = new Text( springForceString, TEXT_OPTIONS );
-    var displacementTextNode = new Text( displacementString, TEXT_OPTIONS );
+    var appliedForceTextNode = new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    var springForceTextNode = new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    var displacementTextNode = new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     var maxTextWidth = _.max( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], function( node ) {
       return node.width;
     } ).width;
@@ -55,14 +51,14 @@ define( function( require ) {
         spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
       } ),
       properties.appliedForceVectorVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( springForceTextNode, {
         arrowFill: HookesLawColors.TOTAL_SPRING_FORCE,
         spacing: maxTextWidth - springForceTextNode.width + minSpacing
       } ),
       properties.springForceVectorVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( displacementTextNode, {
         arrowType: 'line',
@@ -70,17 +66,17 @@ define( function( require ) {
         spacing: maxTextWidth - displacementTextNode.width + minSpacing
       } ),
       properties.displacementVectorVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
 
     // other check boxes
     var equilibriumPositionCheckBox = new CheckBox(
       IconFactory.createEquilibriumPositionCheckBoxContent(),
       properties.equilibriumPositionVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(
-      new Text( valuesString, TEXT_OPTIONS ),
+      new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
 
     // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
     Property.multilink(

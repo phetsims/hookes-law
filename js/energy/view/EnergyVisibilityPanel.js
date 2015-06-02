@@ -28,11 +28,6 @@ define( function( require ) {
   var forceGraphString = require( 'string!HOOKES_LAW/forceGraph' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
-  // constants
-  var CHECK_BOX_OPTIONS = { spacing: 8 };
-  var RADIO_BUTTON_OPTIONS = { radius: 12 };
-  var TEXT_OPTIONS = { font: new HookesLawFont( 18 ) };
-
   /**
    * @param {EnergyViewProperties} properties
    * @param {Object} [options]
@@ -44,28 +39,28 @@ define( function( require ) {
 
     // radio buttons
     var forceGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'force',
-      new Text( forceGraphString, TEXT_OPTIONS ),
-      RADIO_BUTTON_OPTIONS );
+      new Text( forceGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      HookesLawConstants.RADIO_BUTTON_OPTIONS );
     var energyGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'energy',
-      new Text( energyGraphString, TEXT_OPTIONS ),
-      RADIO_BUTTON_OPTIONS );
+      new Text( energyGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // check boxes
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( displacementString, TEXT_OPTIONS ), {
+      IconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         arrowType: 'line'
       } ),
       properties.displacementVectorVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var equilibriumPositionCheckBox = new CheckBox(
       IconFactory.createEquilibriumPositionCheckBoxContent(),
       properties.equilibriumPositionVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(
-      new Text( valuesString, TEXT_OPTIONS ),
+      new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      CHECK_BOX_OPTIONS );
+      HookesLawConstants.CHECK_BOX_OPTIONS );
 
     // 'Values' check box pertains to vectors, so enable that check box only if 'Displacement' is selected.
     Property.multilink(

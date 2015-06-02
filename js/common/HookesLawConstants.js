@@ -48,8 +48,18 @@ define( function( require ) {
     SLIDER_MAJOR_TICK_LENGTH: 20,
 
     // options
+    CHECK_BOX_OPTIONS: {
+      spacing: 8
+    },
+    // text on UI controls
+    CONTROL_TEXT_OPTIONS: {
+      font: new HookesLawFont( 18 )
+    },
     MAJOR_TICK_LABEL_OPTIONS: {
       font: new HookesLawFont( 14 )
+    },
+    RADIO_BUTTON_OPTIONS: {
+      radius: 12
     },
     SPRING_PANEL_OPTIONS: {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
