@@ -55,7 +55,7 @@ define( function( require ) {
 
     // Parallel system
     var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, modelViewTransform, viewProperties, {
-      left: this.layoutBounds.left + 60,
+      left: this.layoutBounds.left + 60, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
       visible: viewProperties.seriesParallelProperty.get() === 'parallel'
     } );
