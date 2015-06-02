@@ -86,6 +86,12 @@ define( function( require ) {
       springControls
     ];
     Node.call( this, options );
+
+    // Property observers ----------------------------------------------------------------------------------------------------------------------------
+
+    // Attach visibility properties to their respective nodes.
+    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
+    viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
   }
 
   return inherit( Node, EnergySystemNode );
