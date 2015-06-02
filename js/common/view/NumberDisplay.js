@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Displays a Property of type {number} in a rectangle.
+ * Displays a Property of type {number} in a background rectangle.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
