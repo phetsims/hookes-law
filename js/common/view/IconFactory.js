@@ -10,12 +10,11 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HBox = require( 'SCENERY/nodes/HBox' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HStrut = require( 'SUN/HStrut' );
-  var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -76,10 +75,7 @@ define( function( require ) {
      */
     createEquilibriumPositionCheckBoxContent: function() {
       var textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
-      var lineNode = new Line( 0, 0, 0, textNode.height, {
-        stroke: HookesLawColors.EQUILIBRIUM_POSITION,
-        lineWidth: 2,
-        lineDash: [ 3, 3 ],
+      var lineNode = new EquilibriumPositionNode( textNode.height, {
         left: textNode.right + 8,
         centerY: textNode.centerY
       } );
