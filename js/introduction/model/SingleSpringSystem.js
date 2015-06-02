@@ -17,7 +17,12 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function SingleSpringSystem() {
+  function SingleSpringSystem( options ) {
+
+    options = _.extend( {
+      springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
+      appliedForceRange: new Range( -100, 100, 0 ) // {Range} applied force range and initial value, units = N
+    }, options );
 
     // Components of the system -----------------------------------------------------
 
@@ -25,7 +30,8 @@ define( function( require ) {
     this.spring = new Spring( {
       left: 0,
       equilibriumLength: 1.5,
-      springConstantRange: new Range( 100, 1000, 200 )
+      springConstantRange: options.springConstantRange,
+      appliedForceRange: options.appliedForceRange
     } );
 
     // arm, left end attached to spring

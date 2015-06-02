@@ -51,8 +51,10 @@ define( function( require ) {
     this.appliedForceRange = options.appliedForceRange; // read-only
     this.appliedForceDelta = options.appliedForceDelta; // read-only
 
-    // x = F/k
-    var displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min, this.appliedForceRange.max / this.springConstantRange.min );
+    // x = F/k, read-only
+    this.displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min,
+      this.appliedForceRange.max / this.springConstantRange.min,
+      this.appliedForceRange.defaultValue / this.springConstantRange.defaultValue );
 
     var thisSpring = this;
 
@@ -124,7 +126,7 @@ define( function( require ) {
 
     // x: When changing displacement, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
-      assert && assert( displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
+      assert && assert( thisSpring.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
       // constrain to delta
       appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
