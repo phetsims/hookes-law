@@ -56,7 +56,7 @@ define( function( require ) {
 
     // Energy XY plot
     var energyXYPlot = new EnergyXYPlot( model.system, {
-      left: energyBarGraph.right + 2,
+      left: energyBarGraph.right + 20,
       bottom: energyBarGraph.bottom
     } );
     this.addChild( energyXYPlot );
