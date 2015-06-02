@@ -43,7 +43,7 @@ define( function( require ) {
       value: appliedForceRange.min / 2,
       label: null
     }, {
-      value: 0,
+      value: appliedForceRange.getCenter(),
       label: new Text( Util.toFixed( 0, 0 ), MAJOR_TICK_LABEL_OPTIONS )
     }, {
       value: appliedForceRange.max / 2,
