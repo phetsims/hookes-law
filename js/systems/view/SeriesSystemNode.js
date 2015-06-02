@@ -13,9 +13,9 @@ define( function( require ) {
   var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
+  var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SeriesSpringControls = require( 'HOOKES_LAW/systems/view/SeriesSpringControls' );
@@ -25,7 +25,6 @@ define( function( require ) {
 
   // constants
   var WALL_SIZE = new Dimension2( 25, 170 );
-  var EQUILIBRIUM_LINE_LENGTH = WALL_SIZE.height;
 
   /**
    * @param {SeriesSystem} system
@@ -76,10 +75,7 @@ define( function( require ) {
       y: yOrigin
     } );
 
-    var equilibriumPositionNode = new Line( 0, 0, 0, EQUILIBRIUM_LINE_LENGTH, {
-      stroke: HookesLawColors.EQUILIBRIUM_POSITION,
-      lineWidth: 2,
-      lineDash: [ 3, 3 ],
+    var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: modelViewTransform.modelToViewX( equivalentSpring.equilibriumXProperty.get() ),
       centerY: yOrigin
     } );

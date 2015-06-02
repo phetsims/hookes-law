@@ -13,6 +13,7 @@ define( function( require ) {
   var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
+  var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -26,7 +27,6 @@ define( function( require ) {
 
   // constants
   var WALL_SIZE = new Dimension2( 25, 300 );
-  var EQUILIBRIUM_LINE_LENGTH = WALL_SIZE.height;
 
   /**
    * @param {ParallelSystem} system
@@ -84,10 +84,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var equilibriumPositionNode = new Line( 0, 0, 0, EQUILIBRIUM_LINE_LENGTH, {
-      stroke: HookesLawColors.EQUILIBRIUM_POSITION,
-      lineWidth: 2,
-      lineDash: [ 3, 3 ],
+    var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: modelViewTransform.modelToViewX( equivalentSpring.equilibriumXProperty.get() ),
       centerY: yOrigin
     } );
