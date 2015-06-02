@@ -21,8 +21,8 @@ define( function( require ) {
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
-  var springForceString = require( 'string!HOOKES_LAW/springForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
+  var springForceString = require( 'string!HOOKES_LAW/springForce' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
   // constants

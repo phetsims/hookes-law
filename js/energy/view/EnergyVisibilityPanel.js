@@ -22,9 +22,9 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  var forceGraphString = require( 'string!HOOKES_LAW/forceGraph' );
-  var energyGraphString = require( 'string!HOOKES_LAW/energyGraph' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
+  var energyGraphString = require( 'string!HOOKES_LAW/energyGraph' );
+  var forceGraphString = require( 'string!HOOKES_LAW/forceGraph' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
   // constants

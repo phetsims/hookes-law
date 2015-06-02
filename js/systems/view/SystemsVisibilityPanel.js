@@ -27,11 +27,11 @@ define( function( require ) {
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
-  var springForceString = require( 'string!HOOKES_LAW/springForce' );
-  var displacementString = require( 'string!HOOKES_LAW/displacement' );
-  var valuesString = require( 'string!HOOKES_LAW/values' );
-  var totalString = require( 'string!HOOKES_LAW/total' );
   var componentsSpring = require( 'string!HOOKES_LAW/components' );
+  var displacementString = require( 'string!HOOKES_LAW/displacement' );
+  var springForceString = require( 'string!HOOKES_LAW/springForce' );
+  var totalString = require( 'string!HOOKES_LAW/total' );
+  var valuesString = require( 'string!HOOKES_LAW/values' );
 
   // constants
   var CHECK_BOX_OPTIONS = { spacing: 8 };

@@ -21,8 +21,8 @@ define( function( require ) {
   var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
-  var topSpringString = require( 'string!HOOKES_LAW/topSpring' );
   var bottomSpringString = require( 'string!HOOKES_LAW/bottomSpring' );
+  var topSpringString = require( 'string!HOOKES_LAW/topSpring' );
 
   // constants
   var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );

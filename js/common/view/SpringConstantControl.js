@@ -17,8 +17,8 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // strings
-  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
   var newtonsPerMeterString = require( 'string!HOOKES_LAW/newtonsPerMeter' );
+  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
 
   // constants
   var MAJOR_TICK_LABEL_OPTIONS = { font: HookesLawConstants.SLIDER_TICK_LABEL_FONT };

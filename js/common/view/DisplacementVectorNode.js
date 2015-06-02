@@ -22,8 +22,8 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // strings
-  var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
   var metersString = require( 'string!HOOKES_LAW/meters' );
+  var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   /**
    * @param {Property.<number>} displacementProperty
