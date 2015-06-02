@@ -78,7 +78,8 @@ define( function( require ) {
       y: appliedForceVectorNode.y
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, {
+    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
+      modelViewTransform: modelViewTransform,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: springNode.bottom + 8

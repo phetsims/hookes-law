@@ -109,7 +109,8 @@ define( function( require ) {
       y: appliedForceVectorNode.y
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, modelViewTransform, {
+    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, {
+      modelViewTransform: modelViewTransform,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: leftSpringNode.bottom + 8

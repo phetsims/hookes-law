@@ -67,7 +67,8 @@ define( function( require ) {
       bottom: yAxisNode.top - 2
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, modelViewTransform, {
+    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
+      modelViewTransform: modelViewTransform,
       verticalLineVisible: false
     } ); //TODO make Property optional
 
