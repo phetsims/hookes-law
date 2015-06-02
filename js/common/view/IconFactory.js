@@ -42,6 +42,9 @@ define( function( require ) {
         arrowFill: 'white' // {string|Color}
       }, options );
 
+      // validate options
+      assert && assert( options.arrowType === 'shape' || options.arrowType === 'line' );
+
       // compute spacing so that arrows on all check boxes will ultimately be left aligned
       var spacing = options.maxTextWidth - textNode.width + options.minSpacing;
 
