@@ -69,7 +69,7 @@ define( function( require ) {
 
     var springControls = new EnergySpringControls( spring, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
-      top: wallNode.bottom + 25
+      top: wallNode.bottom + 10
     } );
 
     options.children = [
