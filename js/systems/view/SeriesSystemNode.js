@@ -11,7 +11,6 @@ define( function( require ) {
 
   // modules
   var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
-  var Dimension2 = require( 'DOT/Dimension2' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
