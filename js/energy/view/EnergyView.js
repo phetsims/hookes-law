@@ -32,8 +32,8 @@ define( function( require ) {
       listener: function() {
         model.reset();
       },
-      right: this.layoutBounds.maxX - 10,
-      bottom: this.layoutBounds.maxY - 10
+      right: this.layoutBounds.maxX - 15,
+      bottom: this.layoutBounds.maxY - 15
     } );
     this.addChild( resetAllButton );
   }
