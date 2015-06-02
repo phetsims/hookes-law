@@ -31,7 +31,7 @@ define( function( require ) {
     options = _.extend( {
       title: springConstantString,
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-      valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
       units: newtonsPerMeterString,
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,

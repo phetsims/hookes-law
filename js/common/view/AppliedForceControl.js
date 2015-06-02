@@ -55,7 +55,7 @@ define( function( require ) {
     options = _.extend( {
       title: appliedForceColonString,
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-      valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       units: newtonsString,
       delta: HookesLawConstants.APPLIED_FORCE_DELTA,

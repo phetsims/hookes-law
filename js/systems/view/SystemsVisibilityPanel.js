@@ -16,6 +16,7 @@ define( function( require ) {
   var CheckBox = require( 'SUN/CheckBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HStrut = require( 'SUN/HStrut' );
   var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
@@ -45,11 +46,7 @@ define( function( require ) {
    */
   function SystemsVisibilityPanel( properties, options ) {
 
-    options = _.extend( {
-      fill: HookesLawColors.CONTROL_PANEL_FILL,
-      xMargin: 15,
-      yMargin: 15
-    }, options );
+    options = _.extend( HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // vector check boxes
     var appliedForceCheckBox = new CheckBox(

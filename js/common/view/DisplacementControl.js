@@ -30,7 +30,7 @@ define( function( require ) {
 
     options = _.extend( {
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-      valueFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       units: metersString,
       delta: HookesLawConstants.DISPLACEMENT_DELTA,

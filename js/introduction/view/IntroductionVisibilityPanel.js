@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var CheckBox = require( 'SUN/CheckBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -36,11 +37,7 @@ define( function( require ) {
    */
   function IntroductionVisibilityPanel( properties, options ) {
 
-    options = _.extend( {
-      fill: HookesLawColors.CONTROL_PANEL_FILL,
-      xMargin: 15,
-      yMargin: 15
-    }, options );
+    options = _.extend( HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // text labels on the vector check boxes
     var appliedForceTextNode = new Text( appliedForceString, TEXT_OPTIONS );

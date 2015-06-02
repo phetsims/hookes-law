@@ -38,6 +38,7 @@ define( function( require ) {
 
     // fonts
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
+    CONTROL_PANEL_VALUE_FONT: new HookesLawFont( 18 ),
 
     // sizes and lengths for UI components
     WALL_SIZE: new Dimension2( 25, 170 ),
@@ -49,9 +50,14 @@ define( function( require ) {
     // options
     MAJOR_TICK_LABEL_OPTIONS: { font: new HookesLawFont( 14 ) },
     SPRING_PANEL_OPTIONS: {
+      fill: HookesLawColors.CONTROL_PANEL_FILL,
       xMargin: 20,
-      yMargin: 5,
-      fill: HookesLawColors.CONTROL_PANEL_FILL
+      yMargin: 5
+    },
+    VISIBILITY_PANEL_OPTIONS: {
+      fill: HookesLawColors.CONTROL_PANEL_FILL,
+      xMargin: 15,
+      yMargin: 15
     }
   };
 } );

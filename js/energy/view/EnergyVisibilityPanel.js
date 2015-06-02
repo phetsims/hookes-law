@@ -12,6 +12,7 @@ define( function( require ) {
   var AquaRadioButton = require( 'SUN/AquaRadioButton' );
   var CheckBox = require( 'SUN/CheckBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HSeparator = require( 'SUN/HSeparator' );
   var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
@@ -39,11 +40,7 @@ define( function( require ) {
    */
   function EnergyVisibilityPanel( properties, options ) {
 
-    options = _.extend( {
-      fill: HookesLawColors.CONTROL_PANEL_FILL,
-      xMargin: 15,
-      yMargin: 15
-    }, options );
+    options = _.extend( HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
     var forceGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'force',
