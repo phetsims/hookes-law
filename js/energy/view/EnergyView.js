@@ -48,7 +48,7 @@ define( function( require ) {
     this.addChild( systemNode );
 
     // Energy bar graph
-    var energyBarGraph = new EnergyBarGraph( model.spring, {
+    var energyBarGraph = new EnergyBarGraph( model.system.spring, {
       left: 20,
       bottom: systemNode.top - 20
     } );
