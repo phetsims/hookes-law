@@ -24,7 +24,7 @@ define( function( require ) {
     } );
 
     // set ranges above such that displacement range is (-1,1), F = kx
-    assert( this.system.spring.displacementRange.min === -1 && this.system.spring.displacementRange.max === 1 );
+    assert && assert( this.system.spring.displacementRange.min === -1 && this.system.spring.displacementRange.max === 1 );
   }
 
   return inherit( Object, EnergyModel, {
