@@ -12,7 +12,6 @@ Colors for top and bottom springs
 Introduction screen
 -----------------------------------------------------------------------------------
 
-
 -----------------------------------------------------------------------------------
 Systems screen
 -----------------------------------------------------------------------------------
@@ -23,11 +22,16 @@ Parallel: truss should be a triangle, will need to compensate for width when pos
 Energy screen
 -----------------------------------------------------------------------------------
 
+Spring constant control panel
+Displacement control panel
+Force graph
+Energy graph
 
 -----------------------------------------------------------------------------------
 General
 -----------------------------------------------------------------------------------
 
+AP's robotic arm design (2 arcs)
 Single, Series: piece at end of spring that is grabbed
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
