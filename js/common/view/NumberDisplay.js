@@ -9,9 +9,9 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -28,7 +28,7 @@ define( function( require ) {
   function NumberDisplay( numberProperty, valueRange, units, pattern, options ) {
 
     options = _.extend( {
-      font: new PhetFont( 20 ),
+      font: new HookesLawFont( 20 ),
       decimalPlaces: 0
     }, options );
 

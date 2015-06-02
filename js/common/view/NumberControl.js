@@ -14,9 +14,9 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Text = require( 'SCENERY/nodes/Text' );
   var NumberDisplay = require( 'HOOKES_LAW/common/view/NumberDisplay' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -35,9 +35,9 @@ define( function( require ) {
 
     options = _.extend( {
       // title
-      titleFont: new PhetFont( 12 ),
+      titleFont: new HookesLawFont( 12 ),
       // value
-      valueFont: new PhetFont( 12 ),
+      valueFont: new HookesLawFont( 12 ),
       decimalPlaces: 0,
       units: '',
       // arrow buttons
