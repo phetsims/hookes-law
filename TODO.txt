@@ -22,7 +22,7 @@ Parallel: truss should be a triangle, will need to compensate for width when pos
 Energy screen
 -----------------------------------------------------------------------------------
 
-Force XY ploy
+Force XY plot
 Energy XY plot
 Energy bar graph
 
