@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Displays the applied force.
+ * Vector representation of applied force (F).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

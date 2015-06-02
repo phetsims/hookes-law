@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Displays the spring displacement.
+ * Vector representation of displacement (x).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

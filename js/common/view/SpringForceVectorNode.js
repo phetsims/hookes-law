@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Displays the spring force.
+ * Vector representation of spring force (-F).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
