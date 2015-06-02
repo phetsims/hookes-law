@@ -24,7 +24,6 @@ define( function( require ) {
    */
   function EnergyView( model, modelViewTransform ) {
 
-    var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // Properties that are specific to the view
