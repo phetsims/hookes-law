@@ -38,6 +38,9 @@
   "introduction": {
     "value": "Introduction"
   },
+  "joules": {
+    "value": "J"
+  },
   "leftSpring": {
     "value": "Left Spring:"
   },
