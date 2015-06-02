@@ -14,7 +14,6 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
-  var HStrut = require( 'SUN/HStrut' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -35,7 +34,7 @@ define( function( require ) {
 
       options = _.extend( {
         maxTextWidth: textNode.width, // width of the max text used to label a vector check box
-        minSpacing: 10, // {number} minimum space between text and vector
+        spacing: 10, // {number} space between text and vector
         arrowLength: 30, // {number}
         arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
         arrowType: 'shape', // 'shape' (ArrowNode) or 'line' (LineArrowNode)
@@ -44,9 +43,6 @@ define( function( require ) {
 
       // validate options
       assert && assert( options.arrowType === 'shape' || options.arrowType === 'line' );
-
-      // compute spacing so that arrows on all check boxes will ultimately be left aligned
-      var spacing = options.maxTextWidth - textNode.width + options.minSpacing;
 
       var arrowNode;
       if ( options.arrowType === 'shape' ) {
@@ -63,7 +59,10 @@ define( function( require ) {
         } );
       }
       // text - space - vector
-      return new HBox( { children: [ textNode, new HStrut( spacing ), arrowNode ] } );
+      return new HBox( {
+        children: [ textNode, arrowNode ],
+        spacing: options.spacing
+      } );
     },
 
     /**

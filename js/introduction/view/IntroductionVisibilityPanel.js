@@ -51,25 +51,26 @@ define( function( require ) {
     } ).width;
 
     // vector check boxes, with left-aligned vector icons
+    var minSpacing = 10;
     var appliedForceCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( appliedForceTextNode, {
         arrowFill: HookesLawColors.APPLIED_FORCE,
-        maxTextWidth: maxTextWidth
+        spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
       } ),
       properties.appliedForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( springForceTextNode, {
         arrowFill: HookesLawColors.TOTAL_SPRING_FORCE,
-        maxTextWidth: maxTextWidth
+        spacing: maxTextWidth - springForceTextNode.width + minSpacing
       } ),
       properties.springForceVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( displacementTextNode, {
+        arrowType: 'line',
         arrowFill: HookesLawColors.DISPLACEMENT,
-        maxTextWidth: maxTextWidth,
-        arrowType: 'line'
+        spacing: maxTextWidth - displacementTextNode.width + minSpacing
       } ),
       properties.displacementVectorVisibleProperty,
       CHECK_BOX_OPTIONS );
