@@ -9,9 +9,11 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var EnergyGraph = require( 'HOOKES_LAW/energy/view/EnergyGraph' );
   var EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
   var EnergyVisibilityPanel = require( 'HOOKES_LAW/energy/view/EnergyVisibilityPanel' );
+  var ForceGraph = require( 'HOOKES_LAW/energy/view/ForceGraph' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
@@ -44,6 +46,19 @@ define( function( require ) {
     } );
     this.addChild( systemNode );
 
+    // Force graph
+    var forceGraph = new ForceGraph( model.system, {
+      centerX: visibilityPanel.left / 2,
+      bottom: systemNode.top - 20
+    } );
+    this.addChild( forceGraph );
+
+    // Energy graph
+    var energyGraph = new EnergyGraph( model.system, {
+      translation: forceGraph.translation
+    } );
+    this.addChild( energyGraph );
+
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
       listener: function() {
@@ -54,6 +69,11 @@ define( function( require ) {
       bottom: this.layoutBounds.maxY - 15
     } );
     this.addChild( resetAllButton );
+
+    viewProperties.graphProperty.link( function( graph ) {
+      forceGraph.visible = ( graph === 'force' );
+      energyGraph.visible = ( graph === 'energy' );
+    } );
   }
 
   return inherit( ScreenView, EnergyView );
