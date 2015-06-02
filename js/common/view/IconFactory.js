@@ -87,19 +87,19 @@ define( function( require ) {
 
     //TODO use this in createVectorCheckBoxContent
     /**
-     * @param {Color|string} arrowColor
      * @param {Object} [options]
      * @returns {*}
      */
-    createForceVectorIcon: function( arrowColor, options ) {
+    createForceVectorIcon: function( options ) {
 
       options = _.extend( {
+        arrowFill: 'white', // {Color|string}
         arrowLength: 30, // {number}
         arrowDirection: 'right' // {string} direction that the vector points, 'left' or 'right',
       }, options );
 
       return new ArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
-        fill: arrowColor,
+        fill: options.arrowFill,
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
         headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
         tailWidth: 10
