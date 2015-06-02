@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Energy graph in the "Energy" screen.
+ * XY plot of displacement (x axis) vs energy (y axis).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -18,7 +18,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function EnergyGraph( system, options ) {
+  function EnergyXYPlot( system, options ) {
 
     options = options || {};
 
@@ -31,5 +31,5 @@ define( function( require ) {
     Node.call( this, options );
   }
 
-  return inherit( Node, EnergyGraph );
+  return inherit( Node, EnergyXYPlot );
 } );

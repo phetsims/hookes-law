@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Force graph in the "Energy" screen.
+ *  XY plot of displacement (x axis) vs force (y axis).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -18,7 +18,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function ForceGraph( system, options ) {
+  function ForceXYPlot( system, options ) {
 
     options = options || {};
 
@@ -31,5 +31,5 @@ define( function( require ) {
     Node.call( this, options );
   }
 
-  return inherit( Node, ForceGraph );
+  return inherit( Node, ForceXYPlot );
 } );
