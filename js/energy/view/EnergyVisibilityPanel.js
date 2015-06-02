@@ -9,9 +9,11 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AquaRadioButton = require( 'SUN/AquaRadioButton' );
   var CheckBox = require( 'SUN/CheckBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HSeparator = require( 'SUN/HSeparator' );
   var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
@@ -21,6 +23,8 @@ define( function( require ) {
 
   // strings
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
+  var energyGraphString = require( 'string!HOOKES_LAW/energyGraph' );
+  var forceGraphString = require( 'string!HOOKES_LAW/forceGraph' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
   /**
@@ -31,6 +35,14 @@ define( function( require ) {
   function EnergyVisibilityPanel( properties, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
+
+    // radio buttons
+    var forceGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'force',
+      new Text( forceGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      HookesLawConstants.RADIO_BUTTON_OPTIONS );
+    var energyGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'energy',
+      new Text( energyGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // check boxes
     var displacementCheckBox = new CheckBox(
@@ -59,6 +71,8 @@ define( function( require ) {
     // Adjust touch areas
     var spacing = 20;
     var controls = [
+      forceGraphRadioButton,
+      energyGraphRadioButton,
       displacementCheckBox,
       equilibriumPositionCheckBox,
       valuesCheckBox
@@ -67,8 +81,13 @@ define( function( require ) {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
+    var maxControlWidth = _.max( controls, function( node ) { return node.width; } ).width;
+
     var content = new VBox( {
       children: [
+        forceGraphRadioButton,
+        energyGraphRadioButton,
+        new HSeparator( maxControlWidth ),
         displacementCheckBox,
         equilibriumPositionCheckBox,
         valuesCheckBox
