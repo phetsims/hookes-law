@@ -43,7 +43,7 @@ define( function( require ) {
       valueVisibleProperty: new Property( true )
     }, options );
 
-    var xAxisNode = new Line( 0, 0, 50, 0, {
+    var xAxisNode = new Line( 0, 0, 40, 0, {
       stroke: AXIS_COLOR,
       lineWidth: AXIS_LINE_WIDTH
     } );
