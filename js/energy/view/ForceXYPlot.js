@@ -14,14 +14,12 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Vector2 = require( 'DOT/Vector2' );
 
