@@ -42,7 +42,7 @@ define( function( require ) {
     // System
     var systemNode = new EnergySystemNode( model.system, modelViewTransform, viewProperties, {
       number: 1,
-      left: this.layoutBounds.left + 100,
+      left: this.layoutBounds.left + 50,
       bottom: this.layoutBounds.bottom - 10
     } );
     this.addChild( systemNode );
