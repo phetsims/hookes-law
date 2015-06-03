@@ -17,7 +17,6 @@ define( function( require ) {
   var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
-  var Property = require( 'AXON/Property' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -60,13 +59,6 @@ define( function( require ) {
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-
-    // 'Values' check box pertains to vectors, so enable that check box only if 'Displacement' is selected.
-    Property.multilink(
-      [ properties.displacementVectorVisibleProperty ],
-      function( displacementVectorVisible ) {
-        valuesCheckBox.enabled = displacementVectorVisible;
-      } );
 
     // Adjust touch areas
     var spacing = 20;

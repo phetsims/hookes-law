@@ -16,6 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -38,7 +39,9 @@ define( function( require ) {
    */
   function EnergyBarGraph( spring, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      valueVisibleProperty: new Property( true )
+    }, options );
 
     var xAxisNode = new Line( 0, 0, 50, 0, {
       stroke: AXIS_COLOR,
@@ -90,6 +93,8 @@ define( function( require ) {
         valueNode.centerY = barNode.top;
       }
     } );
+
+    options.valueVisibleProperty.linkAttribute( valueNode, 'visible' );
   }
 
   return inherit( Node, EnergyBarGraph );

@@ -49,6 +49,7 @@ define( function( require ) {
 
     // Energy bar graph
     var energyBarGraph = new EnergyBarGraph( model.system.spring, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       left: 20,
       bottom: systemNode.top - 20
     } );
@@ -56,6 +57,8 @@ define( function( require ) {
 
     // Energy XY plot
     var energyXYPlot = new EnergyXYPlot( model.system.spring, modelViewTransform, {
+      displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
+      valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       left: energyBarGraph.right + 25,
       bottom: energyBarGraph.bottom
     } );
@@ -63,6 +66,8 @@ define( function( require ) {
 
     // Force XY plot
     var forceXYPlot = new ForceXYPlot( model.system.spring, modelViewTransform, {
+      displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
+      valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       left: energyBarGraph.right + 25,
       centerY: 0.25 * this.layoutBounds.height
     } );

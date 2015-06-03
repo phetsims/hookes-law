@@ -35,7 +35,10 @@ define( function( require ) {
    */
   function ForceXYPlot( spring, modelViewTransform, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      valuesVisibleProperty: new Property( true ),
+      displacementVectorVisibleProperty: new Property( true )
+    }, options );
 
     var minX = modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min );
     var maxX = modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max );
@@ -68,12 +71,15 @@ define( function( require ) {
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
+      valueVisibleProperty: options.valuesVisibleProperty,
       modelViewTransform: modelViewTransform,
       verticalLineVisible: false
     } ); //TODO make Property optional
 
     options.children = [ xAxisNode, xAxisLabel, yAxisNode, yAxisLabel, displacementVectorNode ];
     Node.call( this, options );
+
+    options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
   }
 
   return inherit( Node, ForceXYPlot );
