@@ -56,7 +56,8 @@ define( function( require ) {
     this.addChild( energyBarGraph );
 
     // Energy XY plot
-    var energyXYPlot = new EnergyXYPlot( model.system.spring, modelViewTransform, {
+    var energyXYPlot = new EnergyXYPlot( model.system.spring, {
+      modelViewTransform: modelViewTransform,
       displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       left: energyBarGraph.right + 25,
@@ -65,7 +66,8 @@ define( function( require ) {
     this.addChild( energyXYPlot );
 
     // Force XY plot
-    var forceXYPlot = new ForceXYPlot( model.system.spring, modelViewTransform, {
+    var forceXYPlot = new ForceXYPlot( model.system.spring, {
+      modelViewTransform: modelViewTransform,
       displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       left: energyBarGraph.right + 25,
