@@ -37,7 +37,8 @@ define( function( require ) {
     lineWidth: 1,
     lineDash: [ 3, 3 ]
   };
-  var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.25; // length of a 1N applied force vector
+  var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.3; // length of a 1N applied force vector
+  var Y_AXIS_HEIGHT = 270;
 
   /**
    * @param {Spring} spring
@@ -68,7 +69,7 @@ define( function( require ) {
       centerY: xAxisNode.centerY
     } );
 
-    var yAxisNode = new ArrowNode( 0, 120, 0, -120, {
+    var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT/2, 0, -Y_AXIS_HEIGHT/2, {
       headHeight: 10,
       headWidth: 10,
       tailWidth: AXIS_LINE_WIDTH,

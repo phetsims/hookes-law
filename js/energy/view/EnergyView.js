@@ -62,7 +62,7 @@ define( function( require ) {
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       // origin aligned with equilibrium position
       x: systemNode.x + modelViewTransform.modelToViewX( model.system.spring.equilibriumXProperty.get() ),
-      y: 0.25 * this.layoutBounds.height
+      bottom: energyBarGraph.bottom
     } );
     this.addChild( forceXYPlot );
 
@@ -72,7 +72,7 @@ define( function( require ) {
       displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       x: forceXYPlot.x,
-      y: forceXYPlot.y
+      y: energyBarGraph.bottom
     } );
     this.addChild( energyXYPlot );
 
