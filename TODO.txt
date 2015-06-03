@@ -25,7 +25,7 @@ Energy screen
 
 
 Don't use DisplacementVectorNode in XY plots, it's different and value needs to move around
-Force XY plot: area under curve, energy value in area, red diagonal line
+Force XY plot: force value, area under curve, energy value, red diagonal line
 Energy XY plot
 Horizontally align y-axis of XY plots with equilibrium position
 
