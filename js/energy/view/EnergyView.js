@@ -55,25 +55,26 @@ define( function( require ) {
     } );
     this.addChild( energyBarGraph );
 
-    // Energy XY plot
-    var energyXYPlot = new EnergyXYPlot( model.system.spring, {
-      modelViewTransform: modelViewTransform,
-      displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
-      valuesVisibleProperty: viewProperties.valuesVisibleProperty,
-      left: energyBarGraph.right + 25,
-      bottom: energyBarGraph.bottom
-    } );
-    this.addChild( energyXYPlot );
-
     // Force XY plot
     var forceXYPlot = new ForceXYPlot( model.system.spring, {
       modelViewTransform: modelViewTransform,
       displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
-      left: energyBarGraph.right + 25,
-      centerY: 0.25 * this.layoutBounds.height
+      // origin aligned with equilibrium position
+      x: systemNode.x + modelViewTransform.modelToViewX( model.system.spring.equilibriumXProperty.get() ),
+      y: 0.25 * this.layoutBounds.height
     } );
     this.addChild( forceXYPlot );
+
+    // Energy XY plot
+    var energyXYPlot = new EnergyXYPlot( model.system.spring, {
+      modelViewTransform: modelViewTransform,
+      displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
+      valuesVisibleProperty: viewProperties.valuesVisibleProperty,
+      x: forceXYPlot.x,
+      y: forceXYPlot.y
+    } );
+    this.addChild( energyXYPlot );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {

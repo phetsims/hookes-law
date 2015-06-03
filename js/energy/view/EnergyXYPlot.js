@@ -24,7 +24,7 @@ define( function( require ) {
     options = options || {};
 
     //TODO this is temporary
-    var boundsNode = new Rectangle( 0, 0, 600, 275, {
+    var boundsNode = new Rectangle( 0, 0, 600, 250, {
       stroke: 'rgb( 255, 220, 220 )'
     } );
 
