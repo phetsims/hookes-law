@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Circle = require( 'SCENERY/nodes/Circle' );
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -22,6 +23,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
@@ -102,20 +104,18 @@ define( function( require ) {
 
     options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
 
-    //TODO derive point from appliedForceProperty and displacementProperty
-    spring.appliedForceProperty.link( function( appliedForce ) {
-      var x = options.modelViewTransform.modelToViewX( spring.displacementProperty.get() );
-      var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
-      pointNode.y = y;
-      horizontalLine.setLine( 0, y, x, y );
-      verticalLine.setLine( x, 0, x, y );
-    } );
-    spring.displacementProperty.link( function( displacement ) {
-      var x = options.modelViewTransform.modelToViewX( displacement );
-      var y = -spring.appliedForceProperty.get() * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
-      pointNode.x = x;
-      horizontalLine.setLine( 0, y, x, y );
-      verticalLine.setLine( x, 0, x, y );
+    var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
+      function( appliedForce, displacement ) {
+        var x = options.modelViewTransform.modelToViewX( displacement );
+        var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
+        return new Vector2( x, y );
+      } );
+
+    pointProperty.link( function( point ) {
+      pointNode.x = point.x;
+      pointNode.y = point.y;
+      horizontalLine.setLine( 0, point.y, point.x, point.y );
+      verticalLine.setLine( point.x, 0, point.x, point.y );
     } );
   }
 
