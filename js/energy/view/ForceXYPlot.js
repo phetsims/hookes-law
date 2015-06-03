@@ -17,6 +17,7 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -29,6 +30,11 @@ define( function( require ) {
   // constants
   var AXIS_LINE_WIDTH = 1;
   var AXIS_COLOR = 'black';
+  var LINE_OPTIONS = {
+    stroke: 'black',
+    lineWidth: 1,
+    lineDash: [ 3, 3 ]
+  };
   var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.25; // length of a 1N applied force vector
 
   /**
@@ -81,19 +87,35 @@ define( function( require ) {
     } );
 
     var pointNode = new Circle( 5, {
-     fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
+      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
     } );
 
-    options.children = [ xAxisNode, xAxisLabel, yAxisNode, yAxisLabel, displacementVectorNode, pointNode ];
+    var verticalLine = new Line( 0, 0, 0, 1, LINE_OPTIONS );
+
+    var horizontalLine = new Line( 0, 0, 1, 0, LINE_OPTIONS );
+
+    options.children = [
+      xAxisNode, xAxisLabel, yAxisNode, yAxisLabel, displacementVectorNode,
+      verticalLine, horizontalLine, pointNode
+    ];
     Node.call( this, options );
 
     options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
 
+    //TODO derive point from appliedForceProperty and displacementProperty
     spring.appliedForceProperty.link( function( appliedForce ) {
-      pointNode.y = appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
+      var x = options.modelViewTransform.modelToViewX( spring.displacementProperty.get() );
+      var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
+      pointNode.y = y;
+      horizontalLine.setLine( 0, y, x, y );
+      verticalLine.setLine( x, 0, x, y );
     } );
     spring.displacementProperty.link( function( displacement ) {
-      pointNode.x = options.modelViewTransform.modelToViewX( displacement );
+      var x = options.modelViewTransform.modelToViewX( displacement );
+      var y = -spring.appliedForceProperty.get() * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
+      pointNode.x = x;
+      horizontalLine.setLine( 0, y, x, y );
+      verticalLine.setLine( x, 0, x, y );
     } );
   }
 
