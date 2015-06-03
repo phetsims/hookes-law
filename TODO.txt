@@ -7,6 +7,7 @@ Design questions
 Robotic arm re-design
 Colors for top and bottom springs
 Vector values are tiny compared to slider values
+What to show on energy bar graph when value is non-zero but displays as zero? "> 0 J"?
 
 -----------------------------------------------------------------------------------
 Introduction screen
