@@ -168,13 +168,13 @@ define( function( require ) {
       var viewDisplacement = options.modelViewTransform.modelToViewX( fixedDisplacement );
 
       // vector
-      displacementVectorNode.visible = ( fixedDisplacement !== 0 ); // since we can't draw a zero-length arrow
+      displacementVectorNode.visible = ( fixedDisplacement !== 0 && options.displacementVectorVisibleProperty.get() ); // can't draw a zero-length arrow
       if ( fixedDisplacement !== 0 ) {
         displacementVectorNode.setTailAndTip( 0, 0, viewDisplacement, 0 );
       }
 
       // tick mark
-      displacementTickNode.visible = ( fixedDisplacement !== 0 );
+      displacementTickNode.visible = ( fixedDisplacement !== 0 && options.valuesVisibleProperty.get() );
       displacementTickNode.centerX = viewDisplacement;
 
       // value
@@ -214,7 +214,7 @@ define( function( require ) {
       var viewForce = fixedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
 
       // tick mark
-      forceTickNode.visible = ( fixedForce !== 0 );
+      forceTickNode.visible = ( fixedForce !== 0 && options.valuesVisibleProperty.get() );
       forceTickNode.centerY = -viewForce;
 
       // value
@@ -276,7 +276,10 @@ define( function( require ) {
       displacementLine.setLine( point.x, 0, point.x, point.y );
 
       // energy area (triangle)
-      energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( point.x, 0 ).lineTo( point.x, point.y ).close();
+      energyPath.visible = ( !point.equals( Vector2.ZERO ) );
+      if ( !point.equals( Vector2.ZERO ) ) {
+        energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( point.x, 0 ).lineTo( point.x, point.y ).close();
+      }
     } );
   }
 
