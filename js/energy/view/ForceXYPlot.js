@@ -92,7 +92,6 @@ define( function( require ) {
     } );
 
     var verticalLine = new Line( 0, 0, 0, 1, LINE_OPTIONS );
-
     var horizontalLine = new Line( 0, 0, 1, 0, LINE_OPTIONS );
 
     options.children = [
@@ -102,6 +101,8 @@ define( function( require ) {
     Node.call( this, options );
 
     options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( verticalLine, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( horizontalLine, 'visible' );
 
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
       function( appliedForce, displacement ) {
