@@ -85,7 +85,7 @@ define( function( require ) {
 
       // change the value
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
-      valueNode.left = xAxisNode.right - 10;
+      valueNode.left = barNode.right + 3;
       if ( !barNode.visible || barNode.height < valueNode.height / 2 ) {
         valueNode.bottom = xAxisNode.bottom;
       }
