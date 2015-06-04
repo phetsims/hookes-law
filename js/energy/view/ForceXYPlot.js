@@ -127,7 +127,7 @@ define( function( require ) {
     var energyValueNode = new Text( '', {
       fill: 'black', // value is not color coded because it appear on top of color-coded shape
       font: HookesLawConstants.XY_PLOT_VALUE_FONT,
-      left: 50, //TODO remove this when we work how where to place energyValueNode
+      left: 100, //TODO remove this when we work how where to place energyValueNode
       top: 50 //TODO remove this when we work how where to place energyValueNode
     } );
 
