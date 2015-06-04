@@ -121,10 +121,27 @@ define( function( require ) {
         displacementVectorNode.setTailAndTip( 0, 0, options.modelViewTransform.modelToViewX( displacement ), 0 );
       }
 
+      //TODO simplify this
       // value
       var displacementText = Util.toFixed( fixedDisplacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       displacementValueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
-      displacementValueNode.centerX = options.modelViewTransform.modelToViewX( displacement );
+      var xSpacing = 3;
+      if ( fixedDisplacement !== 0 && displacementVectorNode.width > displacementValueNode.width / 2 ) {
+        if ( fixedDisplacement >= 0 ) {
+          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( displacement ) + xSpacing;
+        }
+        else {
+          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( displacement ) - xSpacing
+        }
+      }
+      else {
+        if ( fixedDisplacement >= 0 ) {
+          displacementValueNode.left = xSpacing;
+        }
+        else {
+          displacementValueNode.right = -xSpacing;
+        }
+      }
     } );
 
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
@@ -146,12 +163,12 @@ define( function( require ) {
       verticalLine.setLine( point.x, 0, point.x, point.y );
 
       // displacement value
-      var displacementValueSpacing = 6;
+      var ySpacing = 6;
       if ( point.y < 0 ) {
-        displacementValueNode.bottom = horizontalLine.top - displacementValueSpacing;
+        displacementValueNode.bottom = horizontalLine.top - ySpacing;
       }
       else {
-        displacementValueNode.top = horizontalLine.bottom + displacementValueSpacing;
+        displacementValueNode.top = horizontalLine.bottom + ySpacing;
       }
     } );
   }
