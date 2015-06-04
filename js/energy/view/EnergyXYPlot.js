@@ -87,7 +87,7 @@ define( function( require ) {
     } );
 
     // point and the dashed lines that connect to it
-    var pointNode = new Circle( 5, {
+    var pointNode = new Circle( 6, {
       fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
     } );
 
