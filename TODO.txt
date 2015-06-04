@@ -28,7 +28,6 @@ Energy screen
 Press and hold '<' button for displacement, model starts fighting itself
 Press '>' button for displacement, doesn't always increment by 0.001
 Energy XY plot
-Horizontally align y-axis of XY plots with equilibrium position
 
 -----------------------------------------------------------------------------------
 General
