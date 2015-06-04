@@ -28,7 +28,7 @@ Energy screen
 
 Press and hold '<' button for displacement, model starts fighting itself
 Press '>' button for displacement, doesn't always increment by 0.001
-Energy XY plot
+curve on Energy XY plot
 
 -----------------------------------------------------------------------------------
 General

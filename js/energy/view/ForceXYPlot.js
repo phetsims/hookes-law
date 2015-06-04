@@ -14,7 +14,6 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
@@ -135,9 +134,9 @@ define( function( require ) {
       energyPath,
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
       slopeLineNode,
-      displacementLeaderLine, forceLeaderLine, pointNode,
-      displacementTickNode, displacementVectorNode, displacementValueNode,
-      forceTickNode, forceValueNode,
+      displacementLeaderLine, displacementTickNode, displacementValueNode, displacementVectorNode,
+      forceLeaderLine, forceTickNode, forceValueNode,
+      pointNode,
       energyValueNode
     ];
     Node.call( this, options );
@@ -258,8 +257,8 @@ define( function( require ) {
       //TODO where to locate value? It often doesn't fit in energyPath.
     } );
 
-    var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
-      function( appliedForce, displacement ) {
+    var pointProperty = new DerivedProperty( [ spring.displacementProperty, spring.appliedForceProperty,  ],
+      function( displacement, appliedForce ) {
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         var x = options.modelViewTransform.modelToViewX( fixedDisplacement );
         var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
@@ -273,8 +272,8 @@ define( function( require ) {
       pointNode.y = point.y;
 
       // leader lines
-      forceLeaderLine.setLine( 0, point.y, point.x, point.y );
       displacementLeaderLine.setLine( point.x, 0, point.x, point.y );
+      forceLeaderLine.setLine( 0, point.y, point.x, point.y );
 
       // energy area (triangle)
       energyPath.visible = ( !point.equals( Vector2.ZERO ) );
