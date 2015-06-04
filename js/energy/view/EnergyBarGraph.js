@@ -49,7 +49,7 @@ define( function( require ) {
       lineWidth: AXIS_LINE_WIDTH
     } );
 
-    var yAxisNode = new ArrowNode( 0, 0, 0, -250, {
+    var yAxisNode = new ArrowNode( 0, 0, 0, -Y_AXIS_LENGTH, {
       headHeight: 10,
       headWidth: 10,
       tailWidth: AXIS_LINE_WIDTH,
