@@ -281,7 +281,7 @@ define( function( require ) {
       horizontalLine.setLine( 0, point.y, point.x, point.y );
       verticalLine.setLine( point.x, 0, point.x, point.y );
 
-      // energy area
+      // energy area (triangle)
       energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( point.x, 0 ).lineTo( point.x, point.y ).close();
     } );
   }
