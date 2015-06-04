@@ -30,7 +30,7 @@ define( function( require ) {
   // constants
   var AXIS_LINE_WIDTH = 1;
   var AXIS_COLOR = 'black';
-  var UNIT_ENERGY_VECTOR_LENGTH = 1.1; //TODO this needs to be the same as EnergyXYPlot.Y_AXIS_LENGTH
+  var UNIT_ENERGY_VECTOR_LENGTH = 1.1; //TODO this needs to be the same as EnergyXYPlot.UNIT_ENERGY_VECTOR_LENGTH
   var Y_AXIS_LENGTH = 250; //TODO this needs to be the same as EnergyXYPlot.Y_AXIS_LENGTH
 
   /**
