@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- *  XY plot of displacement (x axis) vs force (y axis).
+ *  The "Force Graph" is an XY plot of displacement (x axis) vs force (y axis), with energy (E) being the area under the curve.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
