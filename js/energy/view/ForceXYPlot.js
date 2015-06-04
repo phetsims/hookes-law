@@ -151,7 +151,7 @@ define( function( require ) {
       var displacementText = Util.toFixed( fixedDisplacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       displacementValueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
       //TODO simplify placement
-      var xSpacing = 3;
+      var xSpacing = 4;
       if ( Math.abs( viewDisplacement ) > ( xSpacing + displacementValueNode.width / 2 ) ) {
         if ( fixedDisplacement >= 0 ) {
           displacementValueNode.centerX = viewDisplacement;
@@ -169,12 +169,12 @@ define( function( require ) {
         }
       }
       //TODO y position should be based on sign of applied force
-      var ySpacing = 6;
+      var ySpacing = 12;
       if ( fixedDisplacement >= 0 ) {
-        displacementValueNode.top = xAxisNode.bottom + ySpacing;
+        displacementValueNode.top = ySpacing;
       }
       else {
-        displacementValueNode.bottom = xAxisNode.top - ySpacing;
+        displacementValueNode.bottom = -ySpacing;
       }
     } );
 
@@ -192,14 +192,14 @@ define( function( require ) {
       forceValueNode.text = StringUtils.format( pattern_0value_1units, forceText, newtonsString );
       //TODO simplify placement
       //TODO x position should be based on sign of displacement
-      var xSpacing = 3;
+      var xSpacing = 4;
       if ( fixedForce >= 0 ) {
         forceValueNode.right = yAxisNode.left - xSpacing;
       }
       else {
         forceValueNode.left = yAxisNode.right + xSpacing;
       }
-      var ySpacing = 6;
+      var ySpacing = 4;
       if ( Math.abs( viewForce ) > ySpacing + forceValueNode.height / 2 ) {
         if ( fixedForce >= 0 ) {
           forceValueNode.centerY = -viewForce;
@@ -209,11 +209,11 @@ define( function( require ) {
         }
       }
       else {
-        if ( fixedForce > 0 ) {
-          forceValueNode.top = xAxisNode.bottom + ySpacing;
+        if ( fixedForce >= 0 ) {
+          forceValueNode.bottom = -ySpacing;
         }
         else {
-          forceValueNode.bottom = xAxisNode.top - ySpacing;
+          forceValueNode.top = +ySpacing;
         }
       }
     } );
