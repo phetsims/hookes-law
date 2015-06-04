@@ -31,6 +31,7 @@ define( function( require ) {
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
+  var joulesString = require( 'string!HOOKES_LAW/joules' );
   var metersString = require( 'string!HOOKES_LAW/meters' );
   var newtonsString = require( 'string!HOOKES_LAW/newtons' );
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
@@ -126,8 +127,13 @@ define( function( require ) {
       lineWidth: 1
     } );
 
+    // energy
     var energyPath = new Path( null, {
       fill: HookesLawColors.ENERGY
+    } );
+    var energyValueNode = new Text( '', {
+      fill: 'black', // value is not color coded because it appear on top of color-coded shape
+      font: HookesLawConstants.XY_PLOT_VALUE_FONT
     } );
 
     options.children = [
@@ -136,7 +142,8 @@ define( function( require ) {
       slopeLineNode,
       verticalLine, horizontalLine, pointNode,
       displacementTickNode, displacementVectorNode, displacementValueNode,
-      forceTickNode, forceValueNode
+      forceTickNode, forceValueNode,
+      energyValueNode
     ];
     Node.call( this, options );
 
@@ -236,8 +243,24 @@ define( function( require ) {
           forceValueNode.bottom = -ySpacing;
         }
         else {
-          forceValueNode.top = +ySpacing;
+          forceValueNode.top = ySpacing;
         }
+      }
+    } );
+
+    spring.energyProperty.link( function( energy ) {
+
+      var fixedEnergy = Util.toFixedNumber( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES );
+      var energyText = Util.toFixed( fixedEnergy, HookesLawConstants.ENERGY_DECIMAL_PLACES );
+
+      energyValueNode.text = StringUtils.format( pattern_0value_1units, energyText, joulesString );
+
+      if ( fixedEnergy === 0 ) {
+        energyValueNode.left = 4;
+        energyValueNode.bottom = -6;
+      }
+      else {
+
       }
     } );
 
