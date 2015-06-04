@@ -94,6 +94,7 @@ define( function( require ) {
     // displacement nodes
     var displacementVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
     var displacementValueNode = new Text( '', {
+      top: 12,
       fill: HookesLawColors.DISPLACEMENT,
       font: HookesLawConstants.XY_PLOT_VALUE_FONT
     } );
@@ -148,32 +149,7 @@ define( function( require ) {
       // value
       var displacementText = Util.toFixed( fixedDisplacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       displacementValueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
-      //TODO simplify placement
-      var xSpacing = 4;
-      if ( Math.abs( viewDisplacement ) > ( xSpacing + displacementValueNode.width / 2 ) ) {
-        if ( fixedDisplacement >= 0 ) {
-          displacementValueNode.centerX = viewDisplacement;
-        }
-        else {
-          displacementValueNode.centerX = viewDisplacement;
-        }
-      }
-      else {
-        if ( fixedDisplacement >= 0 ) {
-          displacementValueNode.left = xSpacing;
-        }
-        else {
-          displacementValueNode.right = -xSpacing;
-        }
-      }
-      //TODO y position should be based on sign of applied force
-      var ySpacing = 12;
-      if ( fixedDisplacement >= 0 ) {
-        displacementValueNode.top = ySpacing;
-      }
-      else {
-        displacementValueNode.bottom = -ySpacing;
-      }
+      displacementValueNode.centerX = viewDisplacement;
     } );
 
     spring.energyProperty.link( function( energy ) {
