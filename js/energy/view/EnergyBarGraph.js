@@ -77,11 +77,10 @@ define( function( require ) {
 
       // resize the bar
       barNode.visible = ( energy > 0 );
-      if ( energy > 0 ) {
-        var height = energy * UNIT_BAR_HEIGHT;
-        barNode.setRect( 0, -height, 0.4 * xAxisNode.width, height ); // bar grows up
-        barNode.centerX = xAxisNode.centerX;
-      }
+      var width = 0.4 * xAxisNode.width;
+      var height = Math.max( 1, energy * UNIT_BAR_HEIGHT ); // bar must have non-zero size
+      barNode.setRect( 0, -height, width, height ); // bar grows up
+      barNode.centerX = xAxisNode.centerX;
 
       // change the value
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
