@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * XY plot of displacement (x axis) vs energy (y axis).
+ * The "Energy Graph" is an XY plot of displacement (x axis) vs energy (y axis).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -40,6 +40,7 @@ define( function( require ) {
       displacementVectorVisibleProperty: new Property( true )
     }, options );
 
+    // x axis
     var minX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min );
     var maxX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max );
     var xAxisNode = new ArrowNode( minX, 0, maxX, 0, {
@@ -49,13 +50,13 @@ define( function( require ) {
       fill: AXIS_COLOR,
       stroke: null
     } );
-
     var xAxisLabel = new Text( displacementString, {
       font: new HookesLawFont( 16 ),
       left: xAxisNode.right + 4,
       centerY: xAxisNode.centerY
     } );
 
+    // y axis
     var yAxisNode = new ArrowNode( 0, 0, 0, -Y_AXIS_HEIGHT, {
       headHeight: 10,
       headWidth: 10,
@@ -63,7 +64,6 @@ define( function( require ) {
       fill: AXIS_COLOR,
       stroke: null
     } );
-
     var yAxisLabel = new Text( energyString, {
       font: new HookesLawFont( 16 ),
       centerX: yAxisNode.centerX,
