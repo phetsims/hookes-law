@@ -152,12 +152,12 @@ define( function( require ) {
       displacementValueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
       //TODO simplify placement
       var xSpacing = 3;
-      if ( Math.abs( viewDisplacement ) + xSpacing > displacementValueNode.width / 2 ) {
+      if ( Math.abs( viewDisplacement ) > ( xSpacing + displacementValueNode.width / 2 ) ) {
         if ( fixedDisplacement >= 0 ) {
-          displacementValueNode.centerX = viewDisplacement + xSpacing;
+          displacementValueNode.centerX = viewDisplacement;
         }
         else {
-          displacementValueNode.centerX = viewDisplacement - xSpacing
+          displacementValueNode.centerX = viewDisplacement;
         }
       }
       else {
@@ -198,7 +198,7 @@ define( function( require ) {
         forceValueNode.left = yAxisNode.right + xSpacing;
       }
       var ySpacing = 6;
-      if ( Math.abs( viewForce ) + ySpacing > forceValueNode.height / 2 ) {
+      if ( Math.abs( viewForce ) > ySpacing + forceValueNode.height / 2 ) {
         if ( fixedForce >= 0 ) {
           forceValueNode.centerY = -viewForce;
         }
