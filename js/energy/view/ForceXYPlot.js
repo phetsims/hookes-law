@@ -44,13 +44,13 @@ define( function( require ) {
     lineWidth: 1,
     lineDash: [ 3, 3 ]
   };
-  var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.3; // length of a 1N applied force vector
-  var Y_AXIS_HEIGHT = 270;
   var TICK_LENGTH = 10;
   var TICK_OPTIONS = {
     stroke: 'black',
     lineWidth: 1
   };
+  var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.3; // length of a 1N applied force vector
+  var Y_AXIS_HEIGHT = 270;
 
   /**
    * @param {Spring} spring
