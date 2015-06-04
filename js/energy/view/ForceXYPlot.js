@@ -42,6 +42,11 @@ define( function( require ) {
   };
   var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.3; // length of a 1N applied force vector
   var Y_AXIS_HEIGHT = 270;
+  var TICK_LENGTH = 10;
+  var TICK_OPTIONS = {
+    stroke: 'black',
+    lineWidth: 1
+  };
 
   /**
    * @param {Spring} spring
@@ -56,6 +61,7 @@ define( function( require ) {
       displacementVectorVisibleProperty: new Property( true )
     }, options );
 
+    // x axis
     var minX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min );
     var maxX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max );
     var xAxisNode = new ArrowNode( minX, 0, maxX, 0, {
@@ -65,13 +71,13 @@ define( function( require ) {
       fill: AXIS_COLOR,
       stroke: null
     } );
-
     var xAxisLabel = new Text( displacementString, {
       font: new HookesLawFont( 16 ),
       left: xAxisNode.right + 4,
       centerY: xAxisNode.centerY
     } );
 
+    // y axis
     var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT / 2, 0, -Y_AXIS_HEIGHT / 2, {
       headHeight: 10,
       headWidth: 10,
@@ -79,49 +85,55 @@ define( function( require ) {
       fill: AXIS_COLOR,
       stroke: null
     } );
-
     var yAxisLabel = new Text( appliedForceString, {
       font: new HookesLawFont( 16 ),
       centerX: yAxisNode.centerX,
       bottom: yAxisNode.top - 2
     } );
 
-    var displacementVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
+    // point and the dashed lines that connect to it
+    var pointNode = new Circle( 5, {
+      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
+    } );
+    var verticalLine = new Line( 0, 0, 0, 1, LINE_OPTIONS );
+    var horizontalLine = new Line( 0, 0, 1, 0, LINE_OPTIONS );
 
+    // displacement nodes
+    var displacementVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
     var displacementValueNode = new Text( '', {
       fill: HookesLawColors.DISPLACEMENT,
       font: HookesLawConstants.XY_PLOT_VALUE_FONT
     } );
-
-    var pointNode = new Circle( 5, {
-      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
-    } );
-
-    var verticalLine = new Line( 0, 0, 0, 1, LINE_OPTIONS );
-    var horizontalLine = new Line( 0, 0, 1, 0, LINE_OPTIONS );
+    var displacementTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, {
+      centerY: xAxisNode.centerY
+    } ) );
 
     options.children = [
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
-      displacementVectorNode, displacementValueNode,
-      verticalLine, horizontalLine, pointNode
+      verticalLine, horizontalLine, pointNode,
+      displacementTickNode, displacementVectorNode, displacementValueNode
     ];
     Node.call( this, options );
 
+    // visibility
     options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( verticalLine, 'visible' );
     options.valuesVisibleProperty.linkAttribute( horizontalLine, 'visible' );
 
-
     spring.displacementProperty.link( function( displacement ) {
 
       var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      var viewDisplacement = options.modelViewTransform.modelToViewX( displacement );
 
       // vector
       displacementVectorNode.visible = ( fixedDisplacement !== 0 ); // since we can't draw a zero-length arrow
       if ( displacement !== 0 ) {
-        displacementVectorNode.setTailAndTip( 0, 0, options.modelViewTransform.modelToViewX( displacement ), 0 );
+        displacementVectorNode.setTailAndTip( 0, 0, viewDisplacement, 0 );
       }
+
+      // tick mark
+      displacementTickNode.centerX = viewDisplacement;
 
       //TODO simplify this
       // value
