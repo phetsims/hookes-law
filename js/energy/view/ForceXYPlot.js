@@ -118,6 +118,7 @@ define( function( require ) {
       centerX: yAxisNode.centerX
     } ) );
 
+    //TODO better name for this var?
     var slopeLineNode = new Line( 0, 0, 1, 1, {
       stroke: HookesLawColors.APPLIED_FORCE, //TODO why is this force color? It's slope due to spring constant
       lineWidth: 1
