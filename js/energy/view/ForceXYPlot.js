@@ -44,7 +44,7 @@ define( function( require ) {
     fill: 'black',
     stroke: null
   };
-  var LINE_OPTIONS = {
+  var DASHED_LINE_OPTIONS = {
     stroke: 'black',
     lineWidth: 1,
     lineDash: [ 3, 3 ]
@@ -92,8 +92,6 @@ define( function( require ) {
     var pointNode = new Circle( 5, {
       fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
     } );
-    var verticalLine = new Line( 0, 0, 0, 1, LINE_OPTIONS );
-    var horizontalLine = new Line( 0, 0, 1, 0, LINE_OPTIONS );
 
     // displacement nodes
     var displacementVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
@@ -104,6 +102,7 @@ define( function( require ) {
     var displacementTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, {
       centerY: xAxisNode.centerY
     } ) );
+    var displacementLine = new Line( 0, 0, 0, 1, DASHED_LINE_OPTIONS );
 
     // force nodes
     var forceValueNode = new Text( '', {
@@ -113,6 +112,7 @@ define( function( require ) {
     var forceTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, {
       centerX: yAxisNode.centerX
     } ) );
+    var forceLine = new Line( 0, 0, 1, 0, DASHED_LINE_OPTIONS );
 
     //TODO better name for this var?
     var slopeLineNode = new Line( 0, 0, 1, 1, {
@@ -120,7 +120,7 @@ define( function( require ) {
       lineWidth: 1
     } );
 
-    // energy
+    // energy nodes
     var energyPath = new Path( null, {
       fill: HookesLawColors.ENERGY
     } );
@@ -135,7 +135,7 @@ define( function( require ) {
       energyPath,
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
       slopeLineNode,
-      verticalLine, horizontalLine, pointNode,
+      displacementLine, forceLine, pointNode,
       displacementTickNode, displacementVectorNode, displacementValueNode,
       forceTickNode, forceValueNode,
       energyValueNode
@@ -147,12 +147,13 @@ define( function( require ) {
     options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( forceValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( energyValueNode, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( verticalLine, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( horizontalLine, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( displacementLine, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( forceLine, 'visible' );
     options.valuesVisibleProperty.linkAttribute( displacementTickNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( forceTickNode, 'visible' );
 
     spring.springConstantProperty.link( function( springConstant ) {
+      // x
       var minDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
       var maxDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.max );
       // F = kx
@@ -271,8 +272,8 @@ define( function( require ) {
       pointNode.y = point.y;
 
       // dashed lines
-      horizontalLine.setLine( 0, point.y, point.x, point.y );
-      verticalLine.setLine( point.x, 0, point.x, point.y );
+      forceLine.setLine( 0, point.y, point.x, point.y );
+      displacementLine.setLine( point.x, 0, point.x, point.y );
 
       // energy area (triangle)
       energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( point.x, 0 ).lineTo( point.x, point.y ).close();
