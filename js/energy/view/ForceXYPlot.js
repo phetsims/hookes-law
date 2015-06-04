@@ -20,7 +20,9 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
+  var Shape = require( 'KITE/Shape' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
@@ -124,7 +126,12 @@ define( function( require ) {
       lineWidth: 1
     } );
 
+    var energyPath = new Path( null, {
+      fill: HookesLawColors.ENERGY
+    } );
+
     options.children = [
+      energyPath,
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
       slopeLineNode,
       verticalLine, horizontalLine, pointNode,
@@ -251,6 +258,9 @@ define( function( require ) {
       // dashed lines
       horizontalLine.setLine( 0, point.y, point.x, point.y );
       verticalLine.setLine( point.x, 0, point.x, point.y );
+
+      // force area
+      energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( point.x, 0 ).lineTo( point.x, point.y ).close();
     } );
   }
 
