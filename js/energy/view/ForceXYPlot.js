@@ -108,8 +108,10 @@ define( function( require ) {
     Node.call( this, options );
 
     options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( verticalLine, 'visible' );
     options.valuesVisibleProperty.linkAttribute( horizontalLine, 'visible' );
+
 
     spring.displacementProperty.link( function( displacement ) {
 
@@ -146,6 +148,7 @@ define( function( require ) {
 
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
       function( appliedForce, displacement ) {
+        console.log( 'appliedForce=' + appliedForce + ', displacement=' + displacement );//XXX
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         var x = options.modelViewTransform.modelToViewX( fixedDisplacement );
         var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
@@ -164,7 +167,7 @@ define( function( require ) {
 
       // displacement value
       var ySpacing = 6;
-      if ( point.y < 0 ) {
+      if ( point.y <= 0 ) {
         displacementValueNode.bottom = horizontalLine.top - ySpacing;
       }
       else {
