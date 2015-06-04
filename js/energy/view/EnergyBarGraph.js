@@ -30,7 +30,8 @@ define( function( require ) {
   // constants
   var AXIS_LINE_WIDTH = 1;
   var AXIS_COLOR = 'black';
-  var UNIT_BAR_HEIGHT = 1.2; // height of the bar for 1J of energy
+  var UNIT_ENERGY_VECTOR_LENGTH = 1.1; //TODO this needs to be the same as EnergyXYPlot.Y_AXIS_LENGTH
+  var Y_AXIS_LENGTH = 250; //TODO this needs to be the same as EnergyXYPlot.Y_AXIS_LENGTH
 
   /**
    * @param {Spring} spring
@@ -78,7 +79,7 @@ define( function( require ) {
       // resize the bar
       barNode.visible = ( energy > 0 );
       var width = 0.4 * xAxisNode.width;
-      var height = Math.max( 1, energy * UNIT_BAR_HEIGHT ); // bar must have non-zero size
+      var height = Math.max( 1, energy * UNIT_ENERGY_VECTOR_LENGTH ); // bar must have non-zero size
       barNode.setRect( 0, -height, width, height ); // bar grows up
       barNode.centerX = xAxisNode.centerX;
 

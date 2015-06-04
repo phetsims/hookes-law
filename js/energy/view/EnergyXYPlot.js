@@ -51,8 +51,8 @@ define( function( require ) {
     stroke: 'black',
     lineWidth: 1
   };
-  var UNIT_ENERGY_VECTOR_LENGTH = 1;
-  var Y_AXIS_HEIGHT = 270;
+  var UNIT_ENERGY_VECTOR_LENGTH = 1.1;
+  var Y_AXIS_HEIGHT = 250;
 
   /**
    * @param {Spring} spring

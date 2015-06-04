@@ -53,8 +53,8 @@ define( function( require ) {
     stroke: 'black',
     lineWidth: 1
   };
-  var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.3; // length of a 1N applied force vector
-  var Y_AXIS_HEIGHT = 270;
+  var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.25; // length of a 1N applied force vector
+  var Y_AXIS_HEIGHT = 250;
 
   /**
    * @param {Spring} spring

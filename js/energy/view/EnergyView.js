@@ -51,7 +51,7 @@ define( function( require ) {
     var energyBarGraph = new EnergyBarGraph( model.system.spring, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       left: 20,
-      bottom: systemNode.top - 20
+      bottom: systemNode.top - 40
     } );
     this.addChild( energyBarGraph );
 
