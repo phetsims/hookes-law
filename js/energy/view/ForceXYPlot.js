@@ -75,7 +75,7 @@ define( function( require ) {
     var maxX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max );
     var xAxisNode = new ArrowNode( minX, 0, maxX, 0, AXIS_OPTIONS );
     var xAxisLabel = new Text( displacementString, {
-      font: new HookesLawFont( 16 ),
+      font: HookesLawConstants.XY_PLOT_AXIS_FONT,
       left: xAxisNode.right + 4,
       centerY: xAxisNode.centerY
     } );
@@ -83,7 +83,7 @@ define( function( require ) {
     // y axis
     var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT / 2, 0, -Y_AXIS_HEIGHT / 2, AXIS_OPTIONS );
     var yAxisLabel = new Text( appliedForceString, {
-      font: new HookesLawFont( 16 ),
+      font: HookesLawConstants.XY_PLOT_AXIS_FONT,
       centerX: yAxisNode.centerX,
       bottom: yAxisNode.top - 2
     } );
