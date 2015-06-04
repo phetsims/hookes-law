@@ -37,8 +37,13 @@ define( function( require ) {
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
-  var AXIS_LINE_WIDTH = 1;
-  var AXIS_COLOR = 'black';
+  var AXIS_OPTIONS = {
+    headHeight: 10,
+    headWidth: 10,
+    tailWidth: 1,
+    fill: 'black',
+    stroke: null
+  };
   var LINE_OPTIONS = {
     stroke: 'black',
     lineWidth: 1,
@@ -68,13 +73,7 @@ define( function( require ) {
     // x axis
     var minX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min );
     var maxX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max );
-    var xAxisNode = new ArrowNode( minX, 0, maxX, 0, {
-      headHeight: 10,
-      headWidth: 10,
-      tailWidth: AXIS_LINE_WIDTH,
-      fill: AXIS_COLOR,
-      stroke: null
-    } );
+    var xAxisNode = new ArrowNode( minX, 0, maxX, 0, AXIS_OPTIONS );
     var xAxisLabel = new Text( displacementString, {
       font: new HookesLawFont( 16 ),
       left: xAxisNode.right + 4,
@@ -82,13 +81,7 @@ define( function( require ) {
     } );
 
     // y axis
-    var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT / 2, 0, -Y_AXIS_HEIGHT / 2, {
-      headHeight: 10,
-      headWidth: 10,
-      tailWidth: AXIS_LINE_WIDTH,
-      fill: AXIS_COLOR,
-      stroke: null
-    } );
+    var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT / 2, 0, -Y_AXIS_HEIGHT / 2, AXIS_OPTIONS );
     var yAxisLabel = new Text( appliedForceString, {
       font: new HookesLawFont( 16 ),
       centerX: yAxisNode.centerX,
