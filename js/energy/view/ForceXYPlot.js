@@ -108,10 +108,16 @@ define( function( require ) {
       centerY: xAxisNode.centerY
     } ) );
 
+    // force nodes
+    var forceTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, {
+      centerX: yAxisNode.centerX
+    } ) );
+
     options.children = [
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
       verticalLine, horizontalLine, pointNode,
-      displacementTickNode, displacementVectorNode, displacementValueNode
+      displacementTickNode, displacementVectorNode, displacementValueNode,
+      forceTickNode
     ];
     Node.call( this, options );
 
@@ -124,15 +130,16 @@ define( function( require ) {
     spring.displacementProperty.link( function( displacement ) {
 
       var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      var viewDisplacement = options.modelViewTransform.modelToViewX( displacement );
+      var viewDisplacement = options.modelViewTransform.modelToViewX( fixedDisplacement );
 
       // vector
       displacementVectorNode.visible = ( fixedDisplacement !== 0 ); // since we can't draw a zero-length arrow
-      if ( displacement !== 0 ) {
+      if ( fixedDisplacement !== 0 ) {
         displacementVectorNode.setTailAndTip( 0, 0, viewDisplacement, 0 );
       }
 
       // tick mark
+      displacementTickNode.visible = ( fixedDisplacement !== 0 );
       displacementTickNode.centerX = viewDisplacement;
 
       //TODO simplify this
@@ -142,10 +149,10 @@ define( function( require ) {
       var xSpacing = 3;
       if ( fixedDisplacement !== 0 && displacementVectorNode.width > displacementValueNode.width / 2 ) {
         if ( fixedDisplacement >= 0 ) {
-          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( displacement ) + xSpacing;
+          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( fixedDisplacement ) + xSpacing;
         }
         else {
-          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( displacement ) - xSpacing
+          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( fixedDisplacement ) - xSpacing
         }
       }
       else {
@@ -163,6 +170,16 @@ define( function( require ) {
       else {
         displacementValueNode.top = xAxisNode.bottom + ySpacing;
       }
+    } );
+
+    spring.appliedForceProperty.link( function( appliedForce ) {
+
+      var fixedForce = Util.toFixedNumber( appliedForce, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES );
+      var viewForce = fixedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
+
+      // tick mark
+      forceTickNode.visible = ( fixedForce !== 0 );
+      forceTickNode.centerY = -viewForce;
     } );
 
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
