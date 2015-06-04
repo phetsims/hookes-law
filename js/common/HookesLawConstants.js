@@ -41,6 +41,7 @@ define( function( require ) {
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
     CONTROL_PANEL_VALUE_FONT: new HookesLawFont( 18 ),
     VECTOR_VALUE_FONT: new HookesLawFont( 18 ),
+    XY_PLOT_VALUE_FONT: new HookesLawFont( 18 ),
 
     // sizes and lengths for UI components
     WALL_SIZE: new Dimension2( 25, 170 ),
@@ -56,6 +57,13 @@ define( function( require ) {
     // text on UI controls
     CONTROL_TEXT_OPTIONS: {
       font: new HookesLawFont( 18 )
+    },
+    DISPLACEMENT_VECTOR_OPTIONS: {
+      stroke: HookesLawColors.DISPLACEMENT,
+      headWidth: 20,
+      headHeight: 10,
+      headLineWidth: 3,
+      tailLineWidth: 3
     },
     MAJOR_TICK_LABEL_OPTIONS: {
       font: new HookesLawFont( 14 )

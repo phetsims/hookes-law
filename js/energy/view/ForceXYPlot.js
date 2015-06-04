@@ -12,20 +12,25 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
+  var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
+  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var Util = require( 'DOT/Util' );
   var Vector2 = require( 'DOT/Vector2' );
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
+  var metersString = require( 'string!HOOKES_LAW/meters' );
+  var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
   var AXIS_LINE_WIDTH = 1;
@@ -67,7 +72,7 @@ define( function( require ) {
       centerY: xAxisNode.centerY
     } );
 
-    var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT/2, 0, -Y_AXIS_HEIGHT/2, {
+    var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT / 2, 0, -Y_AXIS_HEIGHT / 2, {
       headHeight: 10,
       headWidth: 10,
       tailWidth: AXIS_LINE_WIDTH,
@@ -81,10 +86,11 @@ define( function( require ) {
       bottom: yAxisNode.top - 2
     } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
-      valueVisibleProperty: options.valuesVisibleProperty,
-      modelViewTransform: options.modelViewTransform,
-      verticalLineVisible: false
+    var displacementVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
+
+    var displacementValueNode = new Text( '', {
+      fill: HookesLawColors.DISPLACEMENT,
+      font: HookesLawConstants.XY_PLOT_VALUE_FONT
     } );
 
     var pointNode = new Circle( 5, {
@@ -95,7 +101,8 @@ define( function( require ) {
     var horizontalLine = new Line( 0, 0, 1, 0, LINE_OPTIONS );
 
     options.children = [
-      xAxisNode, xAxisLabel, yAxisNode, yAxisLabel, displacementVectorNode,
+      xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
+      displacementVectorNode, displacementValueNode,
       verticalLine, horizontalLine, pointNode
     ];
     Node.call( this, options );
@@ -104,18 +111,48 @@ define( function( require ) {
     options.valuesVisibleProperty.linkAttribute( verticalLine, 'visible' );
     options.valuesVisibleProperty.linkAttribute( horizontalLine, 'visible' );
 
+    spring.displacementProperty.link( function( displacement ) {
+
+      var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+
+      // vector
+      displacementVectorNode.visible = ( fixedDisplacement !== 0 ); // since we can't draw a zero-length arrow
+      if ( displacement !== 0 ) {
+        displacementVectorNode.setTailAndTip( 0, 0, options.modelViewTransform.modelToViewX( displacement ), 0 );
+      }
+
+      // value
+      var displacementText = Util.toFixed( fixedDisplacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      displacementValueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
+      displacementValueNode.centerX = options.modelViewTransform.modelToViewX( displacement );
+    } );
+
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
       function( appliedForce, displacement ) {
-        var x = options.modelViewTransform.modelToViewX( displacement );
+        var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        var x = options.modelViewTransform.modelToViewX( fixedDisplacement );
         var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
         return new Vector2( x, y );
       } );
 
     pointProperty.link( function( point ) {
+
+      // point
       pointNode.x = point.x;
       pointNode.y = point.y;
+
+      // dashed lines
       horizontalLine.setLine( 0, point.y, point.x, point.y );
       verticalLine.setLine( point.x, 0, point.x, point.y );
+
+      // displacement value
+      var displacementValueSpacing = 6;
+      if ( point.y < 0 ) {
+        displacementValueNode.bottom = horizontalLine.top - displacementValueSpacing;
+      }
+      else {
+        displacementValueNode.top = horizontalLine.bottom + displacementValueSpacing;
+      }
     } );
   }
 

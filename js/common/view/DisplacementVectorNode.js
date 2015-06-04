@@ -39,13 +39,7 @@ define( function( require ) {
       modelViewTransform: ModelViewTransform2.createIdentity()
     }, options );
 
-    var arrowNode = new LineArrowNode( 0, 0, 1, 0, {
-      stroke: HookesLawColors.DISPLACEMENT,
-      headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
-      headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
-      headLineWidth: 3,
-      tailLineWidth: 3
-    } );
+    var arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
 
     var valueNode = new Text( '', {
       fill: HookesLawColors.DISPLACEMENT,
@@ -65,19 +59,20 @@ define( function( require ) {
     options.children = [ verticalLine, arrowNode, backgroundNode, valueNode ];
     Node.call( this, options );
 
-    displacementProperty.link( function( value ) {
+    displacementProperty.link( function( displacement ) {
 
       // update the vector
-      arrowNode.visible = ( value !== 0 ); // since we can't draw a zero-length arrow
-      if ( value !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, options.modelViewTransform.modelToViewX( value ), 0 );
+      arrowNode.visible = ( displacement !== 0 ); // since we can't draw a zero-length arrow
+      if ( displacement !== 0 ) {
+        arrowNode.setTailAndTip( 0, 0, options.modelViewTransform.modelToViewX( displacement ), 0 );
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( Math.abs( value ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), metersString );
+      var displacementText = Util.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      valueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
 
       // center value on arrow
-      valueNode.centerX = ( value === 0 ) ? 0 : arrowNode.centerX;
+      valueNode.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
 
       // resize the background behind the value
       backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
