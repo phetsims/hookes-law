@@ -144,6 +144,13 @@ define( function( require ) {
           displacementValueNode.right = -xSpacing;
         }
       }
+      var ySpacing = 6;
+      if ( fixedDisplacement < 0 ) {
+        displacementValueNode.bottom = xAxisNode.top - ySpacing;
+      }
+      else {
+        displacementValueNode.top = xAxisNode.bottom + ySpacing;
+      }
     } );
 
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
@@ -163,15 +170,6 @@ define( function( require ) {
       // dashed lines
       horizontalLine.setLine( 0, point.y, point.x, point.y );
       verticalLine.setLine( point.x, 0, point.x, point.y );
-
-      // displacement value
-      var ySpacing = 6;
-      if ( point.y <= 0 ) {
-        displacementValueNode.bottom = horizontalLine.top - ySpacing;
-      }
-      else {
-        displacementValueNode.top = horizontalLine.bottom + ySpacing;
-      }
     } );
   }
 
