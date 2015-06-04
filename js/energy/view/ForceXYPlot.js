@@ -152,8 +152,12 @@ define( function( require ) {
     // visibility
     options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( forceValueNode, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( energyValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( verticalLine, 'visible' );
     options.valuesVisibleProperty.linkAttribute( horizontalLine, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( displacementTickNode, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( forceTickNode, 'visible' );
 
     spring.springConstantProperty.link( function( springConstant ) {
       var minDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
