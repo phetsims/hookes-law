@@ -100,6 +100,7 @@ define( function( require ) {
     ];
     Node.call( this, options );
 
+    //TODO more efficient to have 1 observer?
     // visibility
     options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
