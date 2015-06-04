@@ -44,7 +44,7 @@ define( function( require ) {
     fill: 'black',
     stroke: null
   };
-  var DASHED_LINE_OPTIONS = {
+  var LEADER_LINE_OPTIONS = {
     stroke: 'black',
     lineWidth: 1,
     lineDash: [ 3, 3 ]
@@ -102,7 +102,7 @@ define( function( require ) {
     var displacementTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, {
       centerY: xAxisNode.centerY
     } ) );
-    var displacementLine = new Line( 0, 0, 0, 1, DASHED_LINE_OPTIONS );
+    var displacementLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
 
     // force nodes
     var forceValueNode = new Text( '', {
@@ -112,7 +112,7 @@ define( function( require ) {
     var forceTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, {
       centerX: yAxisNode.centerX
     } ) );
-    var forceLine = new Line( 0, 0, 1, 0, DASHED_LINE_OPTIONS );
+    var forceLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
 
     //TODO better name for this var?
     var slopeLineNode = new Line( 0, 0, 1, 1, {
@@ -135,7 +135,7 @@ define( function( require ) {
       energyPath,
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
       slopeLineNode,
-      displacementLine, forceLine, pointNode,
+      displacementLeaderLine, forceLeaderLine, pointNode,
       displacementTickNode, displacementVectorNode, displacementValueNode,
       forceTickNode, forceValueNode,
       energyValueNode
@@ -147,8 +147,8 @@ define( function( require ) {
     options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( forceValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( energyValueNode, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( displacementLine, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( forceLine, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( displacementLeaderLine, 'visible' );
+    options.valuesVisibleProperty.linkAttribute( forceLeaderLine, 'visible' );
     options.valuesVisibleProperty.linkAttribute( displacementTickNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( forceTickNode, 'visible' );
 
@@ -271,9 +271,9 @@ define( function( require ) {
       pointNode.x = point.x;
       pointNode.y = point.y;
 
-      // dashed lines
-      forceLine.setLine( 0, point.y, point.x, point.y );
-      displacementLine.setLine( point.x, 0, point.x, point.y );
+      // leader lines
+      forceLeaderLine.setLine( 0, point.y, point.x, point.y );
+      displacementLeaderLine.setLine( point.x, 0, point.x, point.y );
 
       // energy area (triangle)
       energyPath.visible = ( !point.equals( Vector2.ZERO ) );
