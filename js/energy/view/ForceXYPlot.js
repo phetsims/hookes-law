@@ -168,6 +168,7 @@ define( function( require ) {
           displacementValueNode.right = -xSpacing;
         }
       }
+      //TODO y position should be based on sign of applied force
       var ySpacing = 6;
       if ( fixedDisplacement >= 0 ) {
         displacementValueNode.top = xAxisNode.bottom + ySpacing;
@@ -190,6 +191,7 @@ define( function( require ) {
       var forceText = Util.toFixed( fixedForce, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES );
       forceValueNode.text = StringUtils.format( pattern_0value_1units, forceText, newtonsString );
       //TODO simplify placement
+      //TODO x position should be based on sign of displacement
       var xSpacing = 3;
       if ( fixedForce >= 0 ) {
         forceValueNode.right = yAxisNode.left - xSpacing;

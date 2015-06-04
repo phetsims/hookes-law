@@ -24,6 +24,7 @@ Parallel: truss should be a triangle, will need to compensate for width when pos
 Energy screen
 -----------------------------------------------------------------------------------
 
+Fix positioning of force value on ForceXYPlot
 Press and hold '<' button for displacement, model starts fighting itself
 Press '>' button for displacement, doesn't always increment by 0.001
 Force XY plot: force value, area under curve, energy value, red diagonal line
