@@ -25,6 +25,7 @@ Energy screen
 -----------------------------------------------------------------------------------
 
 Press and hold '<' button for displacement, model starts fighting itself
+Press '>' button for displacement, doesn't always increment by 0.001
 Force XY plot: force value, area under curve, energy value, red diagonal line
 Energy XY plot
 Horizontally align y-axis of XY plots with equilibrium position
