@@ -24,6 +24,7 @@ Parallel: truss should be a triangle, will need to compensate for width when pos
 Energy screen
 -----------------------------------------------------------------------------------
 
+Press and hold '<' button for displacement, model starts fighting itself
 Force XY plot: force value, area under curve, energy value, red diagonal line
 Energy XY plot
 Horizontally align y-axis of XY plots with equilibrium position
