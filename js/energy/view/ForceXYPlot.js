@@ -30,6 +30,7 @@ define( function( require ) {
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
   var metersString = require( 'string!HOOKES_LAW/meters' );
+  var newtonsString = require( 'string!HOOKES_LAW/newtons' );
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
@@ -109,6 +110,10 @@ define( function( require ) {
     } ) );
 
     // force nodes
+    var forceValueNode = new Text( '', {
+      fill: HookesLawColors.APPLIED_FORCE,
+      font: HookesLawConstants.XY_PLOT_VALUE_FONT
+    } );
     var forceTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, {
       centerX: yAxisNode.centerX
     } ) );
@@ -117,7 +122,7 @@ define( function( require ) {
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
       verticalLine, horizontalLine, pointNode,
       displacementTickNode, displacementVectorNode, displacementValueNode,
-      forceTickNode
+      forceTickNode, forceValueNode
     ];
     Node.call( this, options );
 
@@ -142,17 +147,17 @@ define( function( require ) {
       displacementTickNode.visible = ( fixedDisplacement !== 0 );
       displacementTickNode.centerX = viewDisplacement;
 
-      //TODO simplify this
       // value
       var displacementText = Util.toFixed( fixedDisplacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       displacementValueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
+      //TODO simplify placement
       var xSpacing = 3;
-      if ( fixedDisplacement !== 0 && displacementVectorNode.width > displacementValueNode.width / 2 ) {
+      if ( Math.abs( viewDisplacement ) + xSpacing > displacementValueNode.width / 2 ) {
         if ( fixedDisplacement >= 0 ) {
-          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( fixedDisplacement ) + xSpacing;
+          displacementValueNode.centerX = viewDisplacement + xSpacing;
         }
         else {
-          displacementValueNode.centerX = options.modelViewTransform.modelToViewX( fixedDisplacement ) - xSpacing
+          displacementValueNode.centerX = viewDisplacement - xSpacing
         }
       }
       else {
@@ -164,11 +169,11 @@ define( function( require ) {
         }
       }
       var ySpacing = 6;
-      if ( fixedDisplacement < 0 ) {
-        displacementValueNode.bottom = xAxisNode.top - ySpacing;
+      if ( fixedDisplacement >= 0 ) {
+        displacementValueNode.top = xAxisNode.bottom + ySpacing;
       }
       else {
-        displacementValueNode.top = xAxisNode.bottom + ySpacing;
+        displacementValueNode.bottom = xAxisNode.top - ySpacing;
       }
     } );
 
@@ -180,6 +185,35 @@ define( function( require ) {
       // tick mark
       forceTickNode.visible = ( fixedForce !== 0 );
       forceTickNode.centerY = -viewForce;
+
+      // value
+      var forceText = Util.toFixed( fixedForce, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES );
+      forceValueNode.text = StringUtils.format( pattern_0value_1units, forceText, newtonsString );
+      //TODO simplify placement
+      var xSpacing = 3;
+      if ( fixedForce >= 0 ) {
+        forceValueNode.right = yAxisNode.left - xSpacing;
+      }
+      else {
+        forceValueNode.left = yAxisNode.right + xSpacing;
+      }
+      var ySpacing = 6;
+      if ( Math.abs( viewForce ) + ySpacing > forceValueNode.height / 2 ) {
+        if ( fixedForce >= 0 ) {
+          forceValueNode.centerY = -viewForce;
+        }
+        else {
+          forceValueNode.centerY = -viewForce;
+        }
+      }
+      else {
+        if ( fixedForce > 0 ) {
+          forceValueNode.top = xAxisNode.bottom + ySpacing;
+        }
+        else {
+          forceValueNode.bottom = xAxisNode.top - ySpacing;
+        }
+      }
     } );
 
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
