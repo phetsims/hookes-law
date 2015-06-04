@@ -148,7 +148,6 @@ define( function( require ) {
 
     var pointProperty = new DerivedProperty( [ spring.appliedForceProperty, spring.displacementProperty ],
       function( appliedForce, displacement ) {
-        console.log( 'appliedForce=' + appliedForce + ', displacement=' + displacement );//XXX
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         var x = options.modelViewTransform.modelToViewX( fixedDisplacement );
         var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
