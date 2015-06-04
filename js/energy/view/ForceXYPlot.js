@@ -118,8 +118,14 @@ define( function( require ) {
       centerX: yAxisNode.centerX
     } ) );
 
+    var slopeLineNode = new Line( 0, 0, 1, 1, {
+      stroke: HookesLawColors.APPLIED_FORCE, //TODO why is this force color? It's slope due to spring constant
+      lineWidth: 1
+    } );
+
     options.children = [
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
+      slopeLineNode,
       verticalLine, horizontalLine, pointNode,
       displacementTickNode, displacementVectorNode, displacementValueNode,
       forceTickNode, forceValueNode
@@ -131,6 +137,15 @@ define( function( require ) {
     options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( verticalLine, 'visible' );
     options.valuesVisibleProperty.linkAttribute( horizontalLine, 'visible' );
+
+    spring.springConstantProperty.link( function( springConstant ) {
+      var minDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
+      var maxDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.max );
+      // F = kx
+      var minForce = -UNIT_APPLIED_FORCE_VECTOR_LENGTH * springConstant * spring.displacementRange.min;
+      var maxForce = -UNIT_APPLIED_FORCE_VECTOR_LENGTH * springConstant * spring.displacementRange.max;
+      slopeLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
+    } );
 
     spring.displacementProperty.link( function( displacement ) {
 
