@@ -13,6 +13,8 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
+  var Vector2 = require( 'DOT/Vector2' );
 
   return {
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
@@ -33,10 +35,12 @@ define( function( require ) {
     PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES: 1,
     PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA: 0.1,
 
+    // model-view transform for x dimension (locations, displacement)
+    MODEL_VIEW_TRANSFORM: ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, 200 /* view length of a 1m displacement vector */ ),
+
     // scale factors for vectors
     UNIT_FORCE_VECTOR_X: 1.75, // view length of a 1N force vector, which drawn in the x dimension
     UNIT_FORCE_VECTOR_Y: 0.25, // view length of a 1N force vector, which drawn in the y dimension
-    UNIT_DISPLACEMENT_VECTOR_LENGTH: 200, // view length of a 1m displacement vector
     UNIT_ENERGY_VECTOR_LENGTH: 1.1, // view length of a 1J energy vector
 
     // fonts
