@@ -1,6 +1,5 @@
 parallel-spring-scene.png source=PhET author=Amy Rouinfar
 robotic-arm-hinge.png source=PhET author=Mariah Hermsmeyer
-robotic-arm-hook.png source=PhET author=Mariah Hermsmeyer
 series-spring-scene.png source=PhET author=Amy Rouinfar
 single-spring-scene.png source=PhET author=Amy Rouinfar
 two-spring-scene.png source=PhET author=Amy Rouinfar

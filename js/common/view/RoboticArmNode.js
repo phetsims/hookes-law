@@ -13,13 +13,14 @@ define( function( require ) {
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Path = require( 'SCENERY/nodes/Path' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var Util = require( 'DOT/Util' );
 
   // images
   var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
-  var hookImage = require( 'image!HOOKES_LAW/robotic-arm-hook.png' );
 
   /**
    * @param {RoboticArm} roboticArm
@@ -51,20 +52,27 @@ define( function( require ) {
       lineWidth: 0.5
     } );
 
-    var hookNode = new Image( hookImage, {
-      scale: 0.4,
-      left: -7, // dependent on image file, so that origin is in center of hook tip
-      bottom: 16 // dependent on image file
+    var topPincerNode = new Path( new Shape().arc( 0, 0, 35, -0.9 * Math.PI, -0.1 * Math.PI ), {
+      stroke: 'black',
+      lineWidth: 6,
+      left: 0,
+      bottom: 0
+    } );
+    var bottomPincerNode = new Path( new Shape().arc( 0, 0, 35, 0.9 * Math.PI, 0.1 * Math.PI, true ), {
+      stroke: 'black',
+      lineWidth: 6,
+      left: 0,
+      top: 0
     } );
 
     var hingeNode = new Image( hingeImage, {
       scale: 0.4,
-      x: hookNode.right - 12, // dependent on image file
+      x: topPincerNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
 
-    // hooke and hinge are draggable, other parts are not
-    var draggableNode = new Node( { children: [ hookNode, hingeNode ] } );
+    // pincers and hinge are draggable, other parts are not
+    var draggableNode = new Node( { children: [ topPincerNode, bottomPincerNode, hingeNode ] } );
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
     options.children = [ armNode, boxNode, draggableNode ];
