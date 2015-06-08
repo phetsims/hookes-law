@@ -36,13 +36,6 @@ define( function( require ) {
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
-  var AXIS_OPTIONS = {
-    headHeight: 10,
-    headWidth: 10,
-    tailWidth: 1,
-    fill: 'black',
-    stroke: null
-  };
   var LEADER_LINE_OPTIONS = {
     stroke: 'black',
     lineWidth: 1,
