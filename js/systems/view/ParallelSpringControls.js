@@ -61,6 +61,7 @@ define( function( require ) {
       ]
     } );
 
+    // "top" control above "bottom" control
     var springControls = new VBox( {
       spacing: 20,
       resize: false,
