@@ -31,7 +31,6 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
-MVT for y dimension (force, energy)
 AP's robotic arm design (2 arcs)
 Single, Series: piece at end of spring that is grabbed
 Split spring into foreground and background, use vertical gradients
