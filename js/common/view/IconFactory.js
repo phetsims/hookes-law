@@ -87,18 +87,13 @@ define( function( require ) {
 
       options = _.extend( {
         length: 30, // {number}
-        //TODO delete this feature if it goes unused
-        direction: 'right', // {string} direction that the vector points, 'left' or 'right',
         fill: 'white', // {Color|string}
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
         headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
         tailWidth: 10
       }, options );
 
-      assert && assert( options.direction === 'left' || options.direction === 'right' );
-
-      var length = ( options.direction === 'left' ? -options.length : options.length );
-      return new ArrowNode( 0, 0, length, 0, options );
+      return new ArrowNode( 0, 0, options.length, 0, options );
     }
   };
 } );
