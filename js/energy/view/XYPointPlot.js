@@ -32,7 +32,7 @@ define( function( require ) {
     lineWidth: 1,
     lineDash: [ 3, 3 ]
   };
-  var TICK_LENGTH = 10;
+  var TICK_LENGTH = 12;
   var TICK_OPTIONS = {
     stroke: 'black',
     lineWidth: 1
@@ -147,13 +147,13 @@ define( function( require ) {
       var xText = Util.toFixed( fixedX, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       xValueNode.text = StringUtils.format( pattern_0value_1units, xText, options.xUnits );
 
-      //TODO simplify placement
       // placement of x value
       if ( options.minY === 0 ) {
         xValueNode.centerX = viewX;
+        xValueNode.top = 12;
       }
       else {
-        // horizontal placement of x value
+        //TODO simplify placement
         var xSpacing = 6;
         if ( Math.abs( viewX ) > ( xSpacing + xValueNode.width / 2 ) ) {
             xValueNode.centerX = viewX;
@@ -166,11 +166,8 @@ define( function( require ) {
             xValueNode.right = -xSpacing;
           }
         }
-
-        //TODO y position should be based on sign of applied force
-        // vertical placement of x value
         var ySpacing = 12;
-        if ( fixedX >= 0 ) {
+        if ( yProperty.get() >= 0 ) {
           xValueNode.top = ySpacing;
         }
         else {
@@ -193,16 +190,14 @@ define( function( require ) {
       yValueNode.text = StringUtils.format( pattern_0value_1units, yText, options.yUnits );
 
       //TODO simplify placement
-      //TODO horizontal position should be based on sign of xProperty.get
       // placement of y value
       var xSpacing = 10;
-      if ( fixedY >= 0 ) {
+      if ( xProperty.get() >= 0 ) {
         yValueNode.right = -xSpacing;
       }
       else {
         yValueNode.left = xSpacing;
       }
-
       var ySpacing = 4;
       if ( Math.abs( viewY ) > ySpacing + yValueNode.height / 2 ) {
           yValueNode.centerY = -viewY;

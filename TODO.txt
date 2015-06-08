@@ -27,8 +27,6 @@ Parallel: truss should be a triangle, will need to compensate for width when pos
 Energy screen
 -----------------------------------------------------------------------------------
 
-factor out duplication in ForceXYPlot and EnergyXYPlot
-
 -----------------------------------------------------------------------------------
 General
 -----------------------------------------------------------------------------------
