@@ -119,7 +119,7 @@ define( function( require ) {
     // Parabola that corresponds to E = ( k * x * x ) / 2
     var parabolaNode = new Path( null, {
       stroke: HookesLawColors.ENERGY,
-      lineWidth: 1
+      lineWidth: 2
     } );
 
     options.children = [
