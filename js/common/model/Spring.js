@@ -171,7 +171,9 @@ define( function( require ) {
       assert && assert( thisSpring.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
       // constrain to delta
-      appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
+      if ( options.appliedForceRange ) {
+        appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
+      }
       // constrain to range
       thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
     } );
