@@ -24,7 +24,7 @@ define( function( require ) {
     options = _.extend( {
       fill: HookesLawColors.TOTAL_SPRING_FORCE,
       decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
-      alignZero: 'right'
+      alignZero: 'right' // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
     }, options );
 
     ForceVectorNode.call( this, springForceProperty, options );
