@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
-  var SingleSpringSystem = require( 'HOOKES_LAW/introduction/model/SingleSpringSystem' );
+  var SingleSpringSystem = require( 'HOOKES_LAW/common/model/SingleSpringSystem' );
 
   /**
    * @constructor
