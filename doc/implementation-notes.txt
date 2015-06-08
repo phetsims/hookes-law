@@ -13,3 +13,6 @@ Model is general and allows for some things that springs shouldn't do when in a 
 the general model supports moving the left end of a spring. But in a series system, the left end of
 the left spring should remain connected to the wall at all times.  Assertions are used to guard
 against these types of violations.
+
+Model-view transform is used for x dimension locations. Unit vectors lengths are used for other dimensions (force, energy),
+see HookesLawConstants.UNIT_*.
