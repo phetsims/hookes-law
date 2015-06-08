@@ -2,6 +2,7 @@
 
 /**
  * Axes for XY plots.
+ * Draws x and y axes with arrows pointing in the positive directions, and labels at the positive ends.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
