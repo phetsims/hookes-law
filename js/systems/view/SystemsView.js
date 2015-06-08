@@ -64,7 +64,7 @@ define( function( require ) {
     } );
     this.addChild( parallelSystemNode );
 
-    // Create and add the Reset All Button in the bottom right, which resets the model
+    // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
