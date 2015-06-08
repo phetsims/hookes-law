@@ -22,7 +22,7 @@ define( function( require ) {
     var checked = HookesLawQueryParameters.DEV ? true : false;
 
     PropertySet.call( this, {
-      graph: 'energy', // {string} which graph is visible, 'force'|'energy' //TODO this should default to 'force'
+      graph: 'force', // {string} which graph is visible, 'force'|'energy'
       appliedForceVectorVisible: false,
       springForceVectorVisible: false,
       displacementVectorVisible: checked, // {boolean} is the displacement vector visible?
