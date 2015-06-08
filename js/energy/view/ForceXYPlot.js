@@ -142,16 +142,21 @@ define( function( require ) {
     ];
     Node.call( this, options );
 
-    //TODO more efficient to have 1 observer?
     // visibility
-    options.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( displacementValueNode, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( displacementTickNode, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( displacementLeaderLine, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( forceValueNode, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( forceTickNode, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( forceLeaderLine, 'visible' );
-    options.valuesVisibleProperty.linkAttribute( energyValueNode, 'visible' );
+    options.displacementVectorVisibleProperty.link( function( visible ) {
+      var fixedDisplacement = Util.toFixedNumber( spring.displacementProperty.get(), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      displacementVectorNode.visible = ( visible && fixedDisplacement !== 0 );
+    } );
+    options.valuesVisibleProperty.link( function( visible ) {
+      // this is more efficient than linkAttribute for each node
+      displacementValueNode.visible = visible;
+      displacementTickNode.visible = visible;
+      displacementLeaderLine.visible = visible;
+      forceValueNode.visible = visible;
+      forceTickNode.visible = visible;
+      forceLeaderLine.visible = visible;
+      energyValueNode.visible = visible;
+    } );
 
     spring.springConstantProperty.link( function( springConstant ) {
       // x
