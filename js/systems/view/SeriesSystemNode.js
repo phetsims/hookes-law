@@ -77,13 +77,15 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var leftSpringForceVectorNode = new SpringForceVectorNode( leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+    var leftSpringForceVectorNode = new SpringForceVectorNode( leftSpring.springForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       fill: HookesLawColors.LEFT_SPRING_FORCE,
       // x is determined by leftSpring.rightProperty
       bottom: leftSpringNode.top - 25
     } );
 
-    var leftAppliedForceVectorNode = new AppliedForceVectorNode( leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+    var leftAppliedForceVectorNode = new AppliedForceVectorNode( leftSpring.appliedForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
       fill: HookesLawColors.RIGHT_SPRING_FORCE,
       // x is determined by leftSpring.rightProperty
       y: leftSpringForceVectorNode.y
