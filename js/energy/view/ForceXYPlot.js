@@ -115,7 +115,7 @@ define( function( require ) {
 
     //TODO better name for this var?
     // The line that corresponds to F = kx
-    var slopeLineNode = new Line( 0, 0, 1, 1, {
+    var forceLineNode = new Line( 0, 0, 1, 1, {
       stroke: HookesLawColors.APPLIED_FORCE, //TODO why is this force color? It's slope due to spring constant
       lineWidth: 2
     } );
@@ -134,7 +134,7 @@ define( function( require ) {
     options.children = [
       energyPath,
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
-      slopeLineNode,
+      forceLineNode,
       displacementLeaderLine, displacementTickNode, displacementValueNode, displacementVectorNode,
       forceLeaderLine, forceTickNode, forceValueNode,
       pointNode,
@@ -160,7 +160,7 @@ define( function( require ) {
       // F = kx
       var minForce = -UNIT_APPLIED_FORCE_VECTOR_LENGTH * springConstant * spring.displacementRange.min;
       var maxForce = -UNIT_APPLIED_FORCE_VECTOR_LENGTH * springConstant * spring.displacementRange.max;
-      slopeLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
+      forceLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
     } );
 
     spring.displacementProperty.link( function( displacement ) {

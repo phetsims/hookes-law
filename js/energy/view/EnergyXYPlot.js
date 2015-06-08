@@ -117,14 +117,14 @@ define( function( require ) {
 
     //TODO better name for this var?
     // Parabola that corresponds to E = ( k * x * x ) / 2
-    var parabolaNode = new Path( null, {
+    var energyParabolaNode = new Path( null, {
       stroke: HookesLawColors.ENERGY,
       lineWidth: 2
     } );
 
     options.children = [
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
-      parabolaNode,
+      energyParabolaNode,
       displacementLeaderLine, displacementTickNode, displacementValueNode, displacementVectorNode,
       energyLeaderLine, energyTickNode, energyValueNode,
       pointNode
@@ -174,7 +174,7 @@ define( function( require ) {
       var cpy = ( 2 * y2 ) - ( y1 / 2 ) - ( y3 / 2 );
 
       // parabola
-      parabolaNode.shape = new Shape()
+      energyParabolaNode.shape = new Shape()
         .moveTo( -x1, y1 )
         .quadraticCurveTo( -cpx, cpy, x3, y3 )
         .quadraticCurveTo( cpx, cpy, x1, y1 );
