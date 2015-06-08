@@ -3,6 +3,16 @@
 /**
  * Base type for the Force and Energy XY plots.
  *
+ * Responsibilities:
+ * - draws the axes
+ * - draws a point at (x,y)
+ * - draws leader lines from axes to point
+ * - draws tick marks for (x,y) on the axes
+ * - draws values, and keeps them from colliding with each other or with the axes
+ * - draws a 1-dimensional vector for the x value
+ * - handles visibility of the 1D vector and values
+ * - keeps all of the above synchronized with x and y Properties
+ *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 define( function( require ) {
