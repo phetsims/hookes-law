@@ -33,11 +33,11 @@ define( function( require ) {
     PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES: 1,
     PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA: 0.1,
 
-    // scale factors for model-view transforms
-    UNIT_DISPLACEMENT_VECTOR: 200, // view length of a 1m displacement vector
-    UNIT_FORCE_VECTOR_X: 1.75, // view length of a 1N force vector, which drawn in the x dimension
-    UNIT_FORCE_VECTOR_Y: 0.25, // view length of a 1N force vector, which drawn in the y dimension
-    UNIT_ENERGY_VECTOR_LENGTH: 1.1, // view length of a 1J energy vector
+    // unit vectors, for 1-dimensional model-view transforms
+    UNIT_DISPLACEMENT_X: 200, // view length of a 1m displacement vector, when drawn in the x dimension
+    UNIT_FORCE_X: 1.75, // view length of a 1N force vector, when drawn in the x dimension
+    UNIT_FORCE_Y: 0.25, // view length of a 1N force vector, when drawn in the y dimension
+    UNIT_ENERGY_Y: 1.1, // view length of a 1J energy vector, when drawn in the y dimension
 
     // fonts
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),

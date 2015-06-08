@@ -64,7 +64,7 @@ define( function( require ) {
       yUnits: newtonsString,
       yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       yValueFill: HookesLawColors.APPLIED_FORCE,
-      yUnitLength: HookesLawConstants.UNIT_FORCE_VECTOR_Y
+      yUnitLength: HookesLawConstants.UNIT_FORCE_Y
 
     }, options );
 

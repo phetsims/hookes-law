@@ -27,7 +27,7 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_VECTOR;
+    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view
     var viewProperties = new SystemsViewProperties();

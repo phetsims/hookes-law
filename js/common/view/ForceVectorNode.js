@@ -62,7 +62,7 @@ define( function( require ) {
       // update the arrow
       arrowNode.visible = ( value !== 0 ); // since we can't draw a zero-length arrow
       if ( value !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, value * HookesLawConstants.UNIT_FORCE_VECTOR_X, 0 );
+        arrowNode.setTailAndTip( 0, 0, value * HookesLawConstants.UNIT_FORCE_X, 0 );
       }
 
       // update the value

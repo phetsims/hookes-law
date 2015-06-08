@@ -77,7 +77,7 @@ define( function( require ) {
       // resize the bar
       barNode.visible = ( energy > 0 );
       var width = 0.4 * xAxisNode.width;
-      var height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_VECTOR_LENGTH ); // bar must have non-zero size
+      var height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_Y ); // bar must have non-zero size
       barNode.setRect( 0, -height, width, height ); // bar grows up
       barNode.centerX = xAxisNode.centerX;
 

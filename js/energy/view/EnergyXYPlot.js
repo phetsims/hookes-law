@@ -59,7 +59,7 @@ define( function( require ) {
       yUnits: joulesString,
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
       yValueFill: HookesLawColors.ENERGY,
-      yUnitLength: HookesLawConstants.UNIT_ENERGY_VECTOR_LENGTH // length of a 1J energy vector
+      yUnitLength: HookesLawConstants.UNIT_ENERGY_Y // length of a 1J energy vector
 
     }, options );
 
