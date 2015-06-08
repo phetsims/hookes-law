@@ -141,28 +141,43 @@ define( function( require ) {
     options.valuesVisibleProperty.linkAttribute( energyTickNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( energyLeaderLine, 'visible' );
 
+    // Redraws the parabola when the spring constant changes.
     spring.springConstantProperty.link( function( springConstant ) {
-      assert && assert( spring.displacementRange.min < 0 && spring.displacementRange.max > 0 );
-      // x
-      var x1 = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
-      var x2 = options.modelViewTransform.modelToViewX( spring.displacementRange.min / 2 );
-      var x3 = options.modelViewTransform.modelToViewX( spring.displacementRange.max / 2 );
-      var x4 = options.modelViewTransform.modelToViewX( spring.displacementRange.max );
-      // E = ( k * x * x ) / 2
-      var y1 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.min * spring.displacementRange.min ) / 2;
-      var y2 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.min / 2 * spring.displacementRange.min / 2 ) / 2;
-      var y3 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.max / 2 * spring.displacementRange.max / 2 ) / 2;
-      var y4 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.max * spring.displacementRange.max ) / 2;
-      // control points - close approximation, quick to calculate
-      var cpx1 = 2 * x2 - x1 / 2;
-      var cpy1 = 2 * y2 - y1 / 2;
-      var cpx4 = 2 * x3 - x4 / 2;
-      var cpy4 = 2 * y3 - y4 / 2;
+
+      var displacementRange = spring.displacementRange; // to improve readability
+
+      // verify that range is symmetric around zero, so we can compute point for half of the parabola
+      assert && assert( Math.abs( displacementRange.min ) === displacementRange.max );
+
+      // displacement values
+      var d1 = displacementRange.max;
+      var d2 = displacementRange.max / 2;
+      var d3 = 0;
+
+      // corresponding energy values, E = ( k * x * x ) / 2
+      var e1 = ( springConstant * d1 * d1 ) / 2;
+      var e2 = ( springConstant * d2 * d2 ) / 2;
+      var e3 = ( springConstant * d3 * d3 ) / 2;
+
+      // convert to view coordinates
+      var x1 = options.modelViewTransform.modelToViewX( d1 );
+      var x2 = options.modelViewTransform.modelToViewX( d2 );
+      var x3 = options.modelViewTransform.modelToViewX( d3 );
+      var y1 = -UNIT_ENERGY_VECTOR_LENGTH * e1;
+      var y2 = -UNIT_ENERGY_VECTOR_LENGTH * e2;
+      var y3 = -UNIT_ENERGY_VECTOR_LENGTH * e3;
+
+      // control points - close approximation, quick to calculate, general formula:
+      // cpx = 2 * anywhereOnCurveX - startX/2 - endX/2
+      // cpy = 2 * anywhereOnCurveY - startY/2 - endY/2
+      var cpx = ( 2 * x2 ) - ( x1 / 2 ) - ( x3 / 2 );
+      var cpy = ( 2 * y2 ) - ( y1 / 2 ) - ( y3 / 2 );
+
       // parabola
       parabolaNode.shape = new Shape()
-        .moveTo( x1, y1 )
-        .quadraticCurveTo( cpx1, cpy1, 0, 0 )
-        .quadraticCurveTo( cpx4, cpy4, x4, y4 );
+        .moveTo( -x1, y1 )
+        .quadraticCurveTo( -cpx, cpy, x3, y3 )
+        .quadraticCurveTo( cpx, cpy, x1, y1 );
     } );
 
     spring.displacementProperty.link( function( displacement ) {
