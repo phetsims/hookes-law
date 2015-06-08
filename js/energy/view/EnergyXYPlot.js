@@ -65,7 +65,7 @@ define( function( require ) {
 
     XYPointPlot.call( this, spring.displacementProperty, spring.energyProperty, options );
 
-    //TODO better name for this var?
+    //TODO better name for this energyParabolaNode?
     // Parabola that corresponds to E = ( k * x * x ) / 2
     var energyParabolaNode = new Path( null, {
       stroke: HookesLawColors.ENERGY,
