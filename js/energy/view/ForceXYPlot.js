@@ -9,7 +9,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -26,6 +25,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
   var Vector2 = require( 'DOT/Vector2' );
+  var XYAxes = require( 'HOOKES_LAW/energy/view/XYAxes' );
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
@@ -36,13 +36,6 @@ define( function( require ) {
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
-  var AXIS_OPTIONS = {
-    headHeight: 10,
-    headWidth: 10,
-    tailWidth: 1,
-    fill: 'black',
-    stroke: null
-  };
   var LEADER_LINE_OPTIONS = {
     stroke: 'black',
     lineWidth: 1,
@@ -69,22 +62,14 @@ define( function( require ) {
       displacementVectorVisibleProperty: new Property( true )
     }, options );
 
-    // x axis
-    var minX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min );
-    var maxX = options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max );
-    var xAxisNode = new ArrowNode( minX, 0, maxX, 0, AXIS_OPTIONS );
-    var xAxisLabel = new Text( displacementString, {
-      font: HookesLawConstants.XY_PLOT_AXIS_FONT,
-      left: xAxisNode.right + 4,
-      centerY: xAxisNode.centerY
-    } );
-
-    // y axis
-    var yAxisNode = new ArrowNode( 0, Y_AXIS_HEIGHT / 2, 0, -Y_AXIS_HEIGHT / 2, AXIS_OPTIONS );
-    var yAxisLabel = new Text( appliedForceString, {
-      font: HookesLawConstants.XY_PLOT_AXIS_FONT,
-      centerX: yAxisNode.centerX,
-      bottom: yAxisNode.top - 2
+    var axesNode = new XYAxes( {
+      minX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min ),
+      maxX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max ),
+      minY: -Y_AXIS_HEIGHT / 2,
+      maxY: Y_AXIS_HEIGHT / 2,
+      xString: displacementString,
+      yString: appliedForceString,
+      font: HookesLawConstants.XY_PLOT_AXIS_FONT
     } );
 
     // point and the dashed lines that connect to it
@@ -99,7 +84,7 @@ define( function( require ) {
       font: HookesLawConstants.XY_PLOT_VALUE_FONT
     } );
     var displacementTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, {
-      centerY: xAxisNode.centerY
+      centerY: 0
     } ) );
     var displacementLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
 
@@ -109,7 +94,7 @@ define( function( require ) {
       font: HookesLawConstants.XY_PLOT_VALUE_FONT
     } );
     var forceTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, {
-      centerX: yAxisNode.centerX
+      centerX: 0
     } ) );
     var forceLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
 
@@ -133,7 +118,7 @@ define( function( require ) {
 
     options.children = [
       energyPath,
-      xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
+      axesNode,
       forceLineNode,
       displacementLeaderLine, displacementTickNode, displacementValueNode, displacementVectorNode,
       forceLeaderLine, forceTickNode, forceValueNode,
@@ -230,10 +215,10 @@ define( function( require ) {
       //TODO x position should be based on sign of displacement
       var xSpacing = 4;
       if ( fixedForce >= 0 ) {
-        forceValueNode.right = yAxisNode.left - xSpacing;
+        forceValueNode.right = -xSpacing;
       }
       else {
-        forceValueNode.left = yAxisNode.right + xSpacing;
+        forceValueNode.left = xSpacing;
       }
       var ySpacing = 4;
       if ( Math.abs( viewForce ) > ySpacing + forceValueNode.height / 2 ) {
