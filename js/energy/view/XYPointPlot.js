@@ -55,27 +55,36 @@ define( function( require ) {
    */
   function XYPointPlot( xProperty, yProperty, options ) {
 
-    //TODO group/organize options
     options = _.extend( {
-      minX: -1,
-      maxX: 1,
-      minY: -1,
-      maxY: 1,
-      xString: 'x',
-      yString: 'y',
-      xDecimalPlaces: 0,
-      yDecimalPlaces: 0,
-      xUnits: '',
-      yUnits: '',
+
+      // both axes
       axisFont: new PhetFont( 12 ),
       valueFont: new PhetFont( 12 ),
-      xValueFill: 'black',
-      yValueFill: 'black',
-      xUnitLength: 1,
       valuesVisibleProperty: new Property( true ),
-      xVectorVisibleProperty: new Property( true ),
+
+      // point
       pointFill: 'black',
+      pointRadius: 6,
+
+      // x axis
+      minX: -1,
+      maxX: 1,
+      xString: 'x',
+      xDecimalPlaces: 0,
+      xUnits: '',
+      xValueFill: 'black',
+      xUnitLength: 1,
+      xVectorVisibleProperty: new Property( true ),
+
+      // y axis
+      minY: -1,
+      maxY: 1,
+      yString: 'y',
+      yDecimalPlaces: 0,
+      yUnits: '',
+      yValueFill: 'black',
       yUnitLength: 1
+
     }, options );
 
     // XY axes
@@ -90,18 +99,18 @@ define( function( require ) {
     } );
 
     // point
-    var pointNode = new Circle( 6, {
+    var pointNode = new Circle( options.pointRadius, {
       fill: options.pointFill
     } );
 
     // x nodes
-    var xVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
     var xValueNode = new Text( '', {
       fill: options.xValueFill,
       font: options.valueFont
     } );
     var xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, { centerY: 0 } ) );
     var xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
+    var xVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
 
     // y nodes
     var yValueNode = new Text( '', {
@@ -214,6 +223,7 @@ define( function( require ) {
       }
     } );
 
+    // Move point and leader lines
     Property.multilink( [ xProperty, yProperty ],
       function( x, y ) {
 
