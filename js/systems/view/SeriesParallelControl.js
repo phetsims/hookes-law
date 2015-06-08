@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Controls of selecting between series and parallel systems.
+ * Control for selecting between series and parallel systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
