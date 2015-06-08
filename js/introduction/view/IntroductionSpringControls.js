@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Spring controls for a single-spring system.
+ * Spring controls for the "Introduction" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -27,7 +27,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function SingleSpringControls( spring, options ) {
+  function IntroductionSpringControls( spring, options ) {
 
     options = _.extend( {
       number: 1
@@ -57,5 +57,5 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  return inherit( Panel, SingleSpringControls );
+  return inherit( Panel, IntroductionSpringControls );
 } );

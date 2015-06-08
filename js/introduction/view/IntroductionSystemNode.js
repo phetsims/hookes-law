@@ -18,7 +18,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var SingleSpringControls = require( 'HOOKES_LAW/introduction/view/SingleSpringControls' );
+  var IntroductionSpringControls = require( 'HOOKES_LAW/introduction/view/IntroductionSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
@@ -87,7 +87,7 @@ define( function( require ) {
       top: springNode.bottom + 8
     } );
 
-    var springControls = new SingleSpringControls( spring, {
+    var springControls = new IntroductionSpringControls( spring, {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10
