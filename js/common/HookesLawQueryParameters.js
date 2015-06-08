@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Query parameters used by this simulation.
+ * Query parameters used in sim-specific code.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
