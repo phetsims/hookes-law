@@ -43,6 +43,8 @@ define( function( require ) {
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
     CONTROL_PANEL_VALUE_FONT: new HookesLawFont( 18 ),
     VECTOR_VALUE_FONT: new HookesLawFont( 18 ),
+    BAR_GRAPH_VALUE_FONT: new HookesLawFont( 18 ),
+    BAR_GRAPH_AXIS_FONT: new HookesLawFont( 16 ),
     XY_PLOT_VALUE_FONT: new HookesLawFont( 18 ),
     XY_PLOT_AXIS_FONT: new HookesLawFont( 16 ),
 

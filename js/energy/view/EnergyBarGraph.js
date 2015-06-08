@@ -12,7 +12,6 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -56,7 +55,7 @@ define( function( require ) {
     } );
 
     var yAxisLabel = new Text( energyString, {
-      font: new HookesLawFont( 16 ),
+      font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
       centerX: yAxisNode.centerX,
       bottom: yAxisNode.top - 2
     } );
@@ -66,7 +65,8 @@ define( function( require ) {
     } );
 
     var valueNode = new Text( '', {
-      font: new HookesLawFont( 16 )
+      fill: HookesLawColors.ENERGY,
+      font: HookesLawConstants.BAR_GRAPH_VALUE_FONT
     } );
 
     options.children = [ barNode, valueNode, xAxisNode, yAxisNode, yAxisLabel ];
