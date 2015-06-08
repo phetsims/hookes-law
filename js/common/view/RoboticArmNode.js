@@ -34,7 +34,6 @@ define( function( require ) {
       cursor: 'pointer',
       unitDisplacementLength: 1
     }, options );
-    console.log( 'RoboticArmNode unitDisplacementLength=' + options.unitDisplacementLength ); //XXXX
 
     // origin is at left-center of box
     var boxNode = new Rectangle( 0, 0, 25, 60, {
