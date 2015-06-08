@@ -21,12 +21,13 @@ define( function( require ) {
 
   /**
    * @param {SystemsModel} model
-   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function SystemsView( model, modelViewTransform ) {
+  function SystemsView( model ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
+
+    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_VECTOR;
 
     // Properties that are specific to the view
     var viewProperties = new SystemsViewProperties();
@@ -46,7 +47,8 @@ define( function( require ) {
     this.addChild( seriesParallelControl );
 
     // Series system
-    var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, modelViewTransform, viewProperties, {
+    var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {
+      unitDisplacementLength: unitDisplacementLength,
       left: this.layoutBounds.left + 42, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
       visible: viewProperties.seriesParallelProperty.get() === 'series'
@@ -54,7 +56,8 @@ define( function( require ) {
     this.addChild( seriesSystemNode );
 
     // Parallel system
-    var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, modelViewTransform, viewProperties, {
+    var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, viewProperties, {
+      unitDisplacementLength: unitDisplacementLength,
       left: this.layoutBounds.left + 60, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
       visible: viewProperties.seriesParallelProperty.get() === 'parallel'

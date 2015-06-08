@@ -16,13 +16,13 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
-   * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function SpringNode( spring, modelViewTransform, options ) {
+  function SpringNode( spring, options ) {
 
     options = _.extend( {
+      unitDisplacementLength: 1,
       stroke: 'blue',
       numberOfCoils: 10, // number of coils in the spring
       radiusY: 35, // vertical radius of the spring
@@ -37,7 +37,7 @@ define( function( require ) {
 
     spring.lengthProperty.link( function( length ) {
 
-      var viewLength = modelViewTransform.modelToViewX( length );
+      var viewLength = options.unitDisplacementLength * length;
       var radiusX = ( viewLength - 2 * options.nibLength ) / ( options.numberOfCoils + 1 );
       var shape = new Shape();
 

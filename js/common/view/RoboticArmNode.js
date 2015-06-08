@@ -25,15 +25,16 @@ define( function( require ) {
    * @param {RoboticArm} roboticArm
    * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm
    * @param {number} equilibriumX - equilibrium position of the system being manipulated
-   * @param {ModelViewTransform2} modelViewTransform
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArmNode( roboticArm, leftRangeProperty, equilibriumX, modelViewTransform, options ) {
+  function RoboticArmNode( roboticArm, leftRangeProperty, equilibriumX, options ) {
 
     options = _.extend( {
-      cursor: 'pointer'
+      cursor: 'pointer',
+      unitDisplacementLength: 1
     }, options );
+    console.log( 'RoboticArmNode unitDisplacementLength=' + options.unitDisplacementLength ); //XXXX
 
     // origin is at left-center of box
     var boxNode = new Rectangle( 0, 0, 25, 60, {
@@ -79,13 +80,13 @@ define( function( require ) {
         startOffsetX: 0,
 
         start: function( event ) {
-          var length = modelViewTransform.modelToViewX( roboticArm.leftProperty.get() - roboticArm.right );
+          var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
           this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
         },
 
         drag: function( event ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
-          var length = modelViewTransform.viewToModelX( parentX );
+          var length = parentX / options.unitDisplacementLength;
           var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
           roboticArm.leftProperty.set( left );
         },
@@ -98,7 +99,7 @@ define( function( require ) {
     roboticArm.leftProperty.link( function( left ) {
 
       // move the hook and hinge
-      draggableNode.x = modelViewTransform.modelToViewX( left - roboticArm.right );
+      draggableNode.x = options.unitDisplacementLength * ( left - roboticArm.right );
 
       // rotate the hook when displacement is displayed as zero
       if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumX ) {

@@ -12,7 +12,6 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
@@ -27,10 +26,11 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {number} unitDisplacementLength - view length of a 1m displacement vector
    * @param {Object} [options]
    * @constructor
    */
-  function EnergyXYPlot( spring, options ) {
+  function EnergyXYPlot( spring, unitDisplacementLength, options ) {
 
     options = _.extend( {
 
@@ -43,13 +43,13 @@ define( function( require ) {
       pointFill: HookesLawColors.TOTAL_SPRING_FORCE, //TODO why this color?
 
       // x axis
-      minX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min ),
-      maxX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max ),
+      minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
+      maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
       xString: displacementString,
       xUnits: metersString,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
-      modelViewTransform: ModelViewTransform2.createIdentity(),
+      xUnitLength: unitDisplacementLength,
       xVectorVisibleProperty: new Property( true ),
 
       // y axis
@@ -93,9 +93,9 @@ define( function( require ) {
       var e3 = ( springConstant * d3 * d3 ) / 2;
 
       // convert to view coordinates
-      var x1 = options.modelViewTransform.modelToViewX( d1 );
-      var x2 = options.modelViewTransform.modelToViewX( d2 );
-      var x3 = options.modelViewTransform.modelToViewX( d3 );
+      var x1 = unitDisplacementLength * d1;
+      var x2 = unitDisplacementLength * d2;
+      var x3 = unitDisplacementLength * d3;
       var y1 = -options.yUnitLength * e1;
       var y2 = -options.yUnitLength * e2;
       var y3 = -options.yUnitLength * e3;

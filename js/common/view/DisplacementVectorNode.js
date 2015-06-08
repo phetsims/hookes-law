@@ -14,7 +14,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -36,7 +35,7 @@ define( function( require ) {
     options = _.extend( {
       verticalLineVisible: true,
       valueVisibleProperty: new Property( true ), // {Property.<boolean>} determines whether the value is visible
-      modelViewTransform: ModelViewTransform2.createIdentity()
+      unitDisplacementLength: 1
     }, options );
 
     var arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
@@ -64,7 +63,7 @@ define( function( require ) {
       // update the vector
       arrowNode.visible = ( displacement !== 0 ); // since we can't draw a zero-length arrow
       if ( displacement !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, options.modelViewTransform.modelToViewX( displacement ), 0 );
+        arrowNode.setTailAndTip( 0, 0, options.unitDisplacementLength * displacement, 0 );
       }
 
       // update the value

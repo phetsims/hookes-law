@@ -23,47 +23,50 @@ define( function( require ) {
 
   /**
    * @param {SingleSpringSystem} system
-   * @param {ModelViewTransform2} modelViewTransform
    * @param {EnergyViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
-  function EnergySystemNode( system, modelViewTransform, viewProperties, options ) {
+  function EnergySystemNode( system, viewProperties, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      unitDisplacementLength: 1
+    }, options );
 
     // to improve readability
     var spring = system.spring;
     var roboticArm = system.roboticArm;
 
     // This sim operates in 1 dimension (x), so center everything on y = 0.
-    var yOrigin = modelViewTransform.modelToViewY( 0 );
+    var yOrigin = 0;
 
     // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
 
     // origin is at right-center of wall
     var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
-      right: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
+      right: options.unitDisplacementLength * spring.leftProperty.get(),
       centerY: yOrigin
     } );
 
-    var springNode = new SpringNode( spring, modelViewTransform, {
-      left: modelViewTransform.modelToViewX( spring.leftProperty.get() ),
+    var springNode = new SpringNode( spring, {
+      unitDisplacementLength: options.unitDisplacementLength,
+      left: options.unitDisplacementLength * spring.leftProperty.get(),
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, spring.equilibriumXProperty.get(), modelViewTransform, {
-      x: modelViewTransform.modelToViewX( roboticArm.right ),
+    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, spring.equilibriumXProperty.get(), {
+      unitDisplacementLength: options.unitDisplacementLength,
+      x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin
     } );
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
-      centerX: modelViewTransform.modelToViewX( spring.equilibriumXProperty.get() ),
+      centerX: options.unitDisplacementLength * spring.equilibriumXProperty.get(),
       centerY: yOrigin
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
-      modelViewTransform: modelViewTransform,
+      unitDisplacementLength: options.unitDisplacementLength,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: springNode.bottom + 8

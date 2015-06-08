@@ -22,12 +22,13 @@ define( function( require ) {
 
   /**
    * @param {EnergyModel} model
-   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function EnergyView( model, modelViewTransform ) {
+  function EnergyView( model ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
+
+    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_VECTOR;
 
     // Properties that are specific to the view
     var viewProperties = new EnergyViewProperties();
@@ -40,7 +41,8 @@ define( function( require ) {
     this.addChild( visibilityPanel );
 
     // System
-    var systemNode = new EnergySystemNode( model.system, modelViewTransform, viewProperties, {
+    var systemNode = new EnergySystemNode( model.system, viewProperties, {
+      unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 50,
       bottom: this.layoutBounds.bottom - 10
@@ -56,19 +58,17 @@ define( function( require ) {
     this.addChild( energyBarGraph );
 
     // Force XY plot
-    var forceXYPlot = new ForceXYPlot( model.system.spring, {
-      modelViewTransform: modelViewTransform,
+    var forceXYPlot = new ForceXYPlot( model.system.spring, unitDisplacementLength, {
       xVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       // origin aligned with equilibrium position
-      x: systemNode.x + modelViewTransform.modelToViewX( model.system.spring.equilibriumXProperty.get() ),
+      x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
       bottom: energyBarGraph.bottom
     } );
     this.addChild( forceXYPlot );
 
     // Energy XY plot
-    var energyXYPlot = new EnergyXYPlot( model.system.spring, {
-      modelViewTransform: modelViewTransform,
+    var energyXYPlot = new EnergyXYPlot( model.system.spring, unitDisplacementLength, {
       xVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       x: forceXYPlot.x,

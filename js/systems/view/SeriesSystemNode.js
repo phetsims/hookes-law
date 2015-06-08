@@ -26,14 +26,15 @@ define( function( require ) {
 
   /**
    * @param {SeriesSystem} system
-   * @param {ModelViewTransform2} modelViewTransform
    * @param {SystemViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
-  function SeriesSystemNode( system, modelViewTransform, viewProperties, options ) {
+  function SeriesSystemNode( system, viewProperties, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      unitDisplacementLength: 1
+    }, options );
 
     Node.call( this );
 
@@ -44,37 +45,40 @@ define( function( require ) {
     var equivalentSpring = system.equivalentSpring;
 
     // This sim operates in 1 dimension (x), so center everything on y = 0.
-    var yOrigin = modelViewTransform.modelToViewY( 0 );
+    var yOrigin = 0;
 
     // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
 
     // origin is at right-center of wall
     var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
-      right: modelViewTransform.modelToViewX( leftSpring.leftProperty.get() ),
+      right: options.unitDisplacementLength * leftSpring.leftProperty.get(),
       centerY: yOrigin
     } );
 
-    var leftSpringNode = new SpringNode( leftSpring, modelViewTransform, {
+    var leftSpringNode = new SpringNode( leftSpring, {
+      unitDisplacementLength: options.unitDisplacementLength,
       numberOfCoils: 6,
       stroke: HookesLawColors.LEFT_SPRING_FORCE,
-      left: modelViewTransform.modelToViewX( leftSpring.leftProperty.get() ),
+      left: options.unitDisplacementLength * leftSpring.leftProperty.get(),
       centerY: yOrigin
     } );
 
-    var rightSpringNode = new SpringNode( rightSpring, modelViewTransform, {
+    var rightSpringNode = new SpringNode( rightSpring, {
+      unitDisplacementLength: options.unitDisplacementLength,
       numberOfCoils: 6,
       stroke: HookesLawColors.RIGHT_SPRING_FORCE,
       // left is based on rightSpring.leftProperty
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, equivalentSpring.equilibriumXProperty.get(), modelViewTransform, {
-      x: modelViewTransform.modelToViewX( roboticArm.right ),
+    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, equivalentSpring.equilibriumXProperty.get(), {
+      unitDisplacementLength: options.unitDisplacementLength,
+      x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin
     } );
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
-      centerX: modelViewTransform.modelToViewX( equivalentSpring.equilibriumXProperty.get() ),
+      centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.get(),
       centerY: yOrigin
     } );
 
@@ -112,7 +116,7 @@ define( function( require ) {
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, {
-      modelViewTransform: modelViewTransform,
+      unitDisplacementLength: options.unitDisplacementLength,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
       top: leftSpringNode.bottom + 8
@@ -140,7 +144,7 @@ define( function( require ) {
 
     // move the right spring
     rightSpring.leftProperty.link( function( left ) {
-      rightSpringNode.left = modelViewTransform.modelToViewX( left );
+      rightSpringNode.left = options.unitDisplacementLength * left;
     } );
 
     // switch between different spring force representations
@@ -155,13 +159,13 @@ define( function( require ) {
 
     // position the vectors
     equivalentSpring.rightProperty.link( function( right ) {
-      appliedForceVectorNode.x = totalSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
+      appliedForceVectorNode.x = totalSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
     leftSpring.rightProperty.link( function( right ) {
-      leftSpringForceVectorNode.x = leftAppliedForceVectorNode.x = modelViewTransform.modelToViewX( right );
+      leftSpringForceVectorNode.x = leftAppliedForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
     rightSpring.rightProperty.link( function( right ) {
-      rightSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
+      rightSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
 
     this.mutate( options );

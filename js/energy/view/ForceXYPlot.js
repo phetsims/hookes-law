@@ -11,7 +11,6 @@ define( function( require ) {
   // modules
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -32,10 +31,11 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {number} unitDisplacementLength - view length of a 1m displacement vector
    * @param {Object} [options]
    * @constructor
    */
-  function ForceXYPlot( spring, options ) {
+  function ForceXYPlot( spring, unitDisplacementLength, options ) {
 
     options = _.extend( {
 
@@ -48,14 +48,14 @@ define( function( require ) {
       pointFill: HookesLawColors.TOTAL_SPRING_FORCE, //TODO why this color?
 
       // x axis
-      minX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min ),
-      maxX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max ),
+      minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
+      maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
       xString: displacementString,
       xUnits: metersString,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
-      modelViewTransform: ModelViewTransform2.createIdentity(),
       xVectorVisibleProperty: new Property( true ),
+      xUnitLength: unitDisplacementLength,
 
       // y axis
       minY: -HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
@@ -100,8 +100,8 @@ define( function( require ) {
     // update force line
     spring.springConstantProperty.link( function( springConstant ) {
       // x
-      var minDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
-      var maxDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.max );
+      var minDisplacement = options.xUnitLength * spring.displacementRange.min;
+      var maxDisplacement = options.xUnitLength * spring.displacementRange.max;
       // F = kx
       var minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
       var maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;
@@ -122,7 +122,7 @@ define( function( require ) {
     Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty ],
       function( displacement, appliedForce ) {
         var fixedDisplacement = Util.toFixedNumber( displacement, options.xDecimalPlaces );
-        var x = options.modelViewTransform.modelToViewX( fixedDisplacement );
+        var x = options.xUnitLength * fixedDisplacement;
         var y = -appliedForce * options.yUnitLength;
         energyPath.visible = ( fixedDisplacement !== 0 );
         if ( energyPath.visible ) {

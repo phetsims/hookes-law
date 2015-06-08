@@ -21,7 +21,6 @@ define( function( require ) {
   // modules
   var Circle = require( 'SCENERY/nodes/Circle' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
@@ -56,6 +55,7 @@ define( function( require ) {
    */
   function XYPointPlot( xProperty, yProperty, options ) {
 
+    //TODO group/organize options
     options = _.extend( {
       minX: -1,
       maxX: 1,
@@ -71,7 +71,7 @@ define( function( require ) {
       valueFont: new PhetFont( 12 ),
       xValueFill: 'black',
       yValueFill: 'black',
-      modelViewTransform: ModelViewTransform2.createIdentity(),
+      xUnitLength: 1,
       valuesVisibleProperty: new Property( true ),
       xVectorVisibleProperty: new Property( true ),
       pointFill: 'black',
@@ -137,7 +137,7 @@ define( function( require ) {
     xProperty.link( function( x ) {
 
       var xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
-      var xView = options.modelViewTransform.modelToViewX( xFixed );
+      var xView = options.xUnitLength * xFixed;
 
       // x vector
       xVectorNode.visible = ( xFixed !== 0 && options.xVectorVisibleProperty.get() ); // can't draw a zero-length arrow
@@ -218,7 +218,7 @@ define( function( require ) {
       function( x, y ) {
 
         var xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
-        var xView = options.modelViewTransform.modelToViewX( xFixed );
+        var xView = options.xUnitLength * xFixed;
         var yView = -y * options.yUnitLength;
 
         // point

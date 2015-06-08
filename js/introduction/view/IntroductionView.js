@@ -20,13 +20,14 @@ define( function( require ) {
 
   /**
    * @param {IntroductionModel} model
-   * @param {ModelViewTransform2} modelViewTransform
    * @constructor
    */
-  function IntroductionView( model, modelViewTransform ) {
+  function IntroductionView( model ) {
 
     var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
+
+    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_VECTOR;
 
     // Properties that are specific to the view
     var viewProperties = new IntroductionViewProperties();
@@ -46,7 +47,8 @@ define( function( require ) {
     this.addChild( numberOfSystemsControl );
 
     // System 1
-    var system1Node = new IntroductionSystemNode( model.system1, modelViewTransform, viewProperties, {
+    var system1Node = new IntroductionSystemNode( model.system1, viewProperties, {
+      unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 49, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
@@ -55,7 +57,8 @@ define( function( require ) {
     assert && assert( system1Node.height <= this.layoutBounds.height / 2, 'system1Node is taller than the space available for it' );
 
     // System 2
-    var system2Node = new IntroductionSystemNode( model.system2, modelViewTransform, viewProperties, {
+    var system2Node = new IntroductionSystemNode( model.system2, viewProperties, {
+      unitDisplacementLength: unitDisplacementLength,
       number: 2,
       left: system1Node.left,
       centerY: 0.75 * this.layoutBounds.height,
