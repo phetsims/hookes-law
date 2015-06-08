@@ -51,6 +51,7 @@ define( function( require ) {
       minorTickStroke: 'rgba( 0, 0, 0, 0.3 )',
       thumbFillEnabled: 'green'
     }, options );
+    options.thumbFillHighlighted = options.thumbFillHighlighted || Color.toColor( options.thumbFillEnabled ).brighterColor();
 
     var delta = options.delta; // to improve readability
 
@@ -79,23 +80,14 @@ define( function( require ) {
       delta: options.delta
     } );
 
-    //TODO use a better method of propagating slider options
-    var slider = new HSlider( numberProperty, numberRange, {
-      majorTicks: options.majorTicks,
-      minorTickSpacing: options.minorTickSpacing,
-      trackSize: options.trackSize,
-      thumbSize: options.thumbSize,
-      majorTickLength: options.majorTickLength,
-      minorTickStroke: options.minorTickStroke,
-      thumbFillEnabled: options.thumbFillEnabled,
-      thumbFillHighlighted: Color.toColor( options.thumbFillEnabled ).brighterColor(),
+    var slider = new HSlider( numberProperty, numberRange, _.extend( {
       constrainValue: function( value ) {
         // constrain to delta
         value = Math.round( value / options.delta ) * options.delta;
         // constrain to range
         return numberRange.constrainValue( value );
       }
-    } );
+    }, options ) );
 
     // major ticks
     var majorTicks = options.majorTicks;
