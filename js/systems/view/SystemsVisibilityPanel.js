@@ -70,7 +70,7 @@ define( function( require ) {
       properties.valuesVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
 
-    // 'total' button
+    // 'total' radio button
     var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
       new HBox( {
         children: [
@@ -81,7 +81,7 @@ define( function( require ) {
       } ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
-    // 'components' button
+    // 'components' radio button
     var component1Node = IconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING_FORCE } );
     var component2Node = IconFactory.createVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING_FORCE } );
     var componentsVectorIcons = new VBox( {
