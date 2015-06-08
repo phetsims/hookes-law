@@ -114,6 +114,7 @@ define( function( require ) {
     var forceLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
 
     //TODO better name for this var?
+    // The line that corresponds to F = kx
     var slopeLineNode = new Line( 0, 0, 1, 1, {
       stroke: HookesLawColors.APPLIED_FORCE, //TODO why is this force color? It's slope due to spring constant
       lineWidth: 1
