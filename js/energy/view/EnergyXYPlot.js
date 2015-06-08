@@ -142,6 +142,7 @@ define( function( require ) {
     options.valuesVisibleProperty.linkAttribute( energyLeaderLine, 'visible' );
 
     spring.springConstantProperty.link( function( springConstant ) {
+      assert && assert( spring.displacementRange.min < 0 && spring.displacementRange.max > 0 );
       // x
       var x1 = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
       var x2 = options.modelViewTransform.modelToViewX( spring.displacementRange.min / 2 );
@@ -160,10 +161,8 @@ define( function( require ) {
       // parabola
       parabolaNode.shape = new Shape()
         .moveTo( x1, y1 )
-        .lineTo( 0, 0 )
-        .lineTo( x4, y4 );
-        //.quadraticCurveTo( cpx1, cpy1, 0, 0 )
-        //.quadraticCurveTo( cpx4, cpy4, x4, y4 );
+        .quadraticCurveTo( cpx1, cpy1, 0, 0 )
+        .quadraticCurveTo( cpx4, cpy4, x4, y4 );
     } );
 
     spring.displacementProperty.link( function( displacement ) {
