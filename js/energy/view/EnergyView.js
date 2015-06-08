@@ -58,7 +58,7 @@ define( function( require ) {
     // Force XY plot
     var forceXYPlot = new ForceXYPlot( model.system.spring, {
       modelViewTransform: modelViewTransform,
-      displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
+      xVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       // origin aligned with equilibrium position
       x: systemNode.x + modelViewTransform.modelToViewX( model.system.spring.equilibriumXProperty.get() ),
@@ -69,7 +69,7 @@ define( function( require ) {
     // Energy XY plot
     var energyXYPlot = new EnergyXYPlot( model.system.spring, {
       modelViewTransform: modelViewTransform,
-      displacementVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
+      xVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
       valuesVisibleProperty: viewProperties.valuesVisibleProperty,
       x: forceXYPlot.x,
       y: energyBarGraph.bottom

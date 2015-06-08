@@ -9,23 +9,18 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Circle = require( 'SCENERY/nodes/Circle' );
-  var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
-  var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
-  var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
   var Shape = require( 'KITE/Shape' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
-  var Vector2 = require( 'DOT/Vector2' );
-  var XYAxes = require( 'HOOKES_LAW/energy/view/XYAxes' );
+  var XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
@@ -36,17 +31,6 @@ define( function( require ) {
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
-  var LEADER_LINE_OPTIONS = {
-    stroke: 'black',
-    lineWidth: 1,
-    lineDash: [ 3, 3 ]
-  };
-  var TICK_LENGTH = 10;
-  var TICK_OPTIONS = {
-    stroke: 'black',
-    lineWidth: 1
-  };
-  var UNIT_APPLIED_FORCE_VECTOR_LENGTH = 0.25; // length of a 1N applied force vector
   var Y_AXIS_HEIGHT = 250;
 
   /**
@@ -57,46 +41,37 @@ define( function( require ) {
   function ForceXYPlot( spring, options ) {
 
     options = _.extend( {
-      modelViewTransform: ModelViewTransform2.createIdentity(),
-      valuesVisibleProperty: new Property( true ),
-      displacementVectorVisibleProperty: new Property( true )
-    }, options );
 
-    var axesNode = new XYAxes( {
+      // both axes
+      axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
+      valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
+      valuesVisibleProperty: new Property( true ),
+
+      // point
+      pointFill: HookesLawColors.TOTAL_SPRING_FORCE, //TODO why this color?
+
+      // x axis
       minX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.min ),
       maxX: options.modelViewTransform.modelToViewX( 1.1 * spring.displacementRange.max ),
+      xString: displacementString,
+      xUnits: metersString,
+      xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
+      xValueFill: HookesLawColors.DISPLACEMENT,
+      modelViewTransform: ModelViewTransform2.createIdentity(),
+      xVectorVisibleProperty: new Property( true ),
+
+      // y axis
       minY: -Y_AXIS_HEIGHT / 2,
       maxY: Y_AXIS_HEIGHT / 2,
-      xString: displacementString,
       yString: appliedForceString,
-      font: HookesLawConstants.XY_PLOT_AXIS_FONT
-    } );
+      yUnits: newtonsString,
+      yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
+      yValueFill: HookesLawColors.APPLIED_FORCE,
+      yUnitLength: 0.25 // length of a 1N applied force vector
 
-    // point and the dashed lines that connect to it
-    var pointNode = new Circle( 6, {
-      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO design: why is this using this color in mockups?
-    } );
+    }, options );
 
-    // displacement nodes
-    var displacementVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
-    var displacementValueNode = new Text( '', {
-      fill: HookesLawColors.DISPLACEMENT,
-      font: HookesLawConstants.XY_PLOT_VALUE_FONT
-    } );
-    var displacementTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, {
-      centerY: 0
-    } ) );
-    var displacementLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
-
-    // force nodes
-    var forceValueNode = new Text( '', {
-      fill: HookesLawColors.APPLIED_FORCE,
-      font: HookesLawConstants.XY_PLOT_VALUE_FONT
-    } );
-    var forceTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, {
-      centerX: 0
-    } ) );
-    var forceLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
+    XYPointPlot.call( this, spring.displacementProperty, spring.appliedForceProperty, options );
 
     //TODO better name for this var?
     // The line that corresponds to F = kx
@@ -104,175 +79,60 @@ define( function( require ) {
       stroke: HookesLawColors.APPLIED_FORCE, //TODO design: why is this force color? It's slope due to spring constant
       lineWidth: 2
     } );
+    this.addChild( forceLineNode );
+    forceLineNode.moveToBack();
 
-    // energy nodes
+    // energy area
     var energyPath = new Path( null, {
       fill: HookesLawColors.ENERGY
     } );
+    this.addChild( energyPath );
+    energyPath.moveToBack();
+
+    // energy value
     var energyValueNode = new Text( '', {
       fill: 'black', // value is not color coded because it appear on top of color-coded shape
       font: HookesLawConstants.XY_PLOT_VALUE_FONT,
-      left: 100, //TODO remove this when we work how where to place energyValueNode
-      top: 50 //TODO remove this when we work how where to place energyValueNode
     } );
+    this.addChild( energyValueNode );
 
-    options.children = [
-      energyPath,
-      axesNode,
-      forceLineNode,
-      displacementLeaderLine, displacementTickNode, displacementValueNode, displacementVectorNode,
-      forceLeaderLine, forceTickNode, forceValueNode,
-      pointNode,
-      energyValueNode
-    ];
-    Node.call( this, options );
-
-    // visibility
-    options.displacementVectorVisibleProperty.link( function( visible ) {
-      var fixedDisplacement = Util.toFixedNumber( spring.displacementProperty.get(), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      displacementVectorNode.visible = ( visible && fixedDisplacement !== 0 );
-    } );
     options.valuesVisibleProperty.link( function( visible ) {
-      // this is more efficient than linkAttribute for each node
-      displacementValueNode.visible = visible;
-      displacementTickNode.visible = visible;
-      displacementLeaderLine.visible = visible;
-      forceValueNode.visible = visible;
-      forceTickNode.visible = visible;
-      forceLeaderLine.visible = visible;
       energyValueNode.visible = visible;
     } );
 
+    // update force line
     spring.springConstantProperty.link( function( springConstant ) {
       // x
       var minDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
       var maxDisplacement = options.modelViewTransform.modelToViewX( spring.displacementRange.max );
       // F = kx
-      var minForce = -UNIT_APPLIED_FORCE_VECTOR_LENGTH * springConstant * spring.displacementRange.min;
-      var maxForce = -UNIT_APPLIED_FORCE_VECTOR_LENGTH * springConstant * spring.displacementRange.max;
+      var minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
+      var maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;
       forceLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
     } );
 
-    spring.displacementProperty.link( function( displacement ) {
-
-      var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      var viewDisplacement = options.modelViewTransform.modelToViewX( fixedDisplacement );
-
-      // vector
-      displacementVectorNode.visible = ( fixedDisplacement !== 0 && options.displacementVectorVisibleProperty.get() ); // can't draw a zero-length arrow
-      if ( fixedDisplacement !== 0 ) {
-        displacementVectorNode.setTailAndTip( 0, 0, viewDisplacement, 0 );
-      }
-
-      // tick mark
-      displacementTickNode.visible = ( fixedDisplacement !== 0 && options.valuesVisibleProperty.get() );
-      displacementTickNode.centerX = viewDisplacement;
-
-      // value
-      var displacementText = Util.toFixed( fixedDisplacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      displacementValueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
-      //TODO simplify placement
-      var xSpacing = 4;
-      if ( Math.abs( viewDisplacement ) > ( xSpacing + displacementValueNode.width / 2 ) ) {
-        if ( fixedDisplacement >= 0 ) {
-          displacementValueNode.centerX = viewDisplacement;
-        }
-        else {
-          displacementValueNode.centerX = viewDisplacement;
-        }
-      }
-      else {
-        if ( fixedDisplacement >= 0 ) {
-          displacementValueNode.left = xSpacing;
-        }
-        else {
-          displacementValueNode.right = -xSpacing;
-        }
-      }
-      //TODO y position should be based on sign of applied force
-      var ySpacing = 12;
-      if ( fixedDisplacement >= 0 ) {
-        displacementValueNode.top = ySpacing;
-      }
-      else {
-        displacementValueNode.bottom = -ySpacing;
-      }
-    } );
-
-    spring.appliedForceProperty.link( function( appliedForce ) {
-
-      var fixedForce = Util.toFixedNumber( appliedForce, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES );
-      var viewForce = fixedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
-
-      // tick mark
-      forceTickNode.visible = ( fixedForce !== 0 && options.valuesVisibleProperty.get() );
-      forceTickNode.centerY = -viewForce;
-
-      // value
-      var forceText = Util.toFixed( fixedForce, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES );
-      forceValueNode.text = StringUtils.format( pattern_0value_1units, forceText, newtonsString );
-      //TODO simplify placement
-      //TODO x position should be based on sign of displacement
-      var xSpacing = 4;
-      if ( fixedForce >= 0 ) {
-        forceValueNode.right = -xSpacing;
-      }
-      else {
-        forceValueNode.left = xSpacing;
-      }
-      var ySpacing = 4;
-      if ( Math.abs( viewForce ) > ySpacing + forceValueNode.height / 2 ) {
-        if ( fixedForce >= 0 ) {
-          forceValueNode.centerY = -viewForce;
-        }
-        else {
-          forceValueNode.centerY = -viewForce;
-        }
-      }
-      else {
-        if ( fixedForce >= 0 ) {
-          forceValueNode.bottom = -ySpacing;
-        }
-        else {
-          forceValueNode.top = ySpacing;
-        }
-      }
-    } );
-
+    // update energy value
     spring.energyProperty.link( function( energy ) {
-
       var fixedEnergy = Util.toFixedNumber( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES );
       var energyText = Util.toFixed( fixedEnergy, HookesLawConstants.ENERGY_DECIMAL_PLACES );
-
       energyValueNode.text = StringUtils.format( pattern_0value_1units, energyText, joulesString );
       //TODO where to locate value? It often doesn't fit in energyPath.
+      energyValueNode.left = 100;
+      energyValueNode.top = 50;
     } );
 
-    var pointProperty = new DerivedProperty( [ spring.displacementProperty, spring.appliedForceProperty,  ],
+    // update energy area (triangle)
+    Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty ],
       function( displacement, appliedForce ) {
-        var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        var fixedDisplacement = Util.toFixedNumber( displacement, options.xDecimalPlaces );
         var x = options.modelViewTransform.modelToViewX( fixedDisplacement );
-        var y = -appliedForce * UNIT_APPLIED_FORCE_VECTOR_LENGTH;
-        return new Vector2( x, y );
+        var y = -appliedForce * options.yUnitLength;
+        energyPath.visible = ( fixedDisplacement !== 0 );
+        if ( energyPath.visible ) {
+          energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( x, 0 ).lineTo( x, y ).close();
+        }
       } );
-
-    pointProperty.link( function( point ) {
-
-      // point
-      pointNode.x = point.x;
-      pointNode.y = point.y;
-
-      // leader lines
-      displacementLeaderLine.setLine( point.x, 0, point.x, point.y );
-      forceLeaderLine.setLine( 0, point.y, point.x, point.y );
-
-      // energy area (triangle)
-      energyPath.visible = ( !point.equals( Vector2.ZERO ) );
-      if ( !point.equals( Vector2.ZERO ) ) {
-        energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( point.x, 0 ).lineTo( point.x, point.y ).close();
-      }
-    } );
   }
 
-  return inherit( Node, ForceXYPlot );
+  return inherit( XYPointPlot, ForceXYPlot );
 } );
