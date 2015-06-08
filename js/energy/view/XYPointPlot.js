@@ -7,10 +7,10 @@
  * - draws the axes
  * - draws a point at (x,y)
  * - draws leader lines from axes to point
- * - draws tick marks for (x,y) on the axes
  * - draws values, and keeps them from colliding with each other or with the axes
+ * - draws tick marks for (x,y) values
  * - draws a 1-dimensional vector for the x value
- * - handles visibility of the 1D vector and values
+ * - handles visibility of values and the 1-dimensional vector
  * - keeps all of the above synchronized with x and y Properties
  *
  * @author Chris Malley (PixelZoom, Inc.)
@@ -100,9 +100,7 @@ define( function( require ) {
       fill: options.xValueFill,
       font: options.valueFont
     } );
-    var xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, {
-      centerY: 0
-    } ) );
+    var xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, { centerY: 0 } ) );
     var xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
 
     // y nodes
@@ -110,9 +108,7 @@ define( function( require ) {
       fill: options.yValueFill,
       font: options.valueFont
     } );
-    var yTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, {
-      centerX: 0
-    } ) );
+    var yTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, { centerX: 0 } ) );
     var yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
 
     options.children = [
@@ -125,8 +121,8 @@ define( function( require ) {
 
     // visibility
     options.xVectorVisibleProperty.link( function( visible ) {
-      var fixedX = Util.toFixedNumber( xProperty.get(), options.xDecimalPlaces );
-      xVectorNode.visible = ( visible && fixedX !== 0 );
+      var xFixed = Util.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
+      xVectorNode.visible = ( visible && xFixed !== 0 );
     } );
     options.valuesVisibleProperty.link( function( visible ) {
       // this is more efficient than linkAttribute for each node
@@ -140,102 +136,98 @@ define( function( require ) {
 
     xProperty.link( function( x ) {
 
-      var fixedX = Util.toFixedNumber( x, options.xDecimalPlaces );
-      var viewX = options.modelViewTransform.modelToViewX( fixedX );
+      var xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
+      var xView = options.modelViewTransform.modelToViewX( xFixed );
 
       // x vector
-      xVectorNode.visible = ( fixedX !== 0 && options.xVectorVisibleProperty.get() ); // can't draw a zero-length arrow
-      if ( fixedX !== 0 ) {
-        xVectorNode.setTailAndTip( 0, 0, viewX, 0 );
+      xVectorNode.visible = ( xFixed !== 0 && options.xVectorVisibleProperty.get() ); // can't draw a zero-length arrow
+      if ( xFixed !== 0 ) {
+        xVectorNode.setTailAndTip( 0, 0, xView, 0 );
       }
 
       // x tick mark
-      xTickNode.visible = ( fixedX !== 0 && options.valuesVisibleProperty.get() );
-      xTickNode.centerX = viewX;
+      xTickNode.visible = ( xFixed !== 0 && options.valuesVisibleProperty.get() );
+      xTickNode.centerX = xView;
 
       // x value
-      var xText = Util.toFixed( fixedX, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      var xText = Util.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       xValueNode.text = StringUtils.format( pattern_0value_1units, xText, options.xUnits );
 
-      // placement of x value
+      // placement of x value, so that it doesn't collide with y value or axes
       if ( options.minY === 0 ) {
-        xValueNode.centerX = viewX;
-        xValueNode.top = 12;
+        xValueNode.centerX = xView; // centered on the tick
+        xValueNode.top = 12; // below the x axis
       }
       else {
-        //TODO simplify placement
-        var xSpacing = 6;
-        if ( Math.abs( viewX ) > ( xSpacing + xValueNode.width / 2 ) ) {
-            xValueNode.centerX = viewX;
+        var X_SPACING = 6;
+        if ( Math.abs( xView ) > ( X_SPACING + xValueNode.width / 2 ) ) {
+          xValueNode.centerX = xView; // centered on the tick
+        }
+        else if ( xFixed >= 0 ) {
+          xValueNode.left = X_SPACING; // to the right of the y axis
         }
         else {
-          if ( fixedX >= 0 ) {
-            xValueNode.left = xSpacing;
-          }
-          else {
-            xValueNode.right = -xSpacing;
-          }
+          xValueNode.right = -X_SPACING; // to the left of the y axis
         }
-        var ySpacing = 12;
+
+        var Y_SPACING = 12;
         if ( yProperty.get() >= 0 ) {
-          xValueNode.top = ySpacing;
+          xValueNode.top = Y_SPACING; // below the x axis
         }
         else {
-          xValueNode.bottom = -ySpacing;
+          xValueNode.bottom = -Y_SPACING; // above the x axis
         }
       }
     } );
 
     yProperty.link( function( y ) {
 
-      var fixedY = Util.toFixedNumber( y, options.yDecimalPlaces );
-      var viewY = fixedY * options.yUnitLength;
+      var yFixed = Util.toFixedNumber( y, options.yDecimalPlaces );
+      var yView = yFixed * options.yUnitLength;
 
       // y tick mark
-      yTickNode.visible = ( fixedY !== 0 && options.valuesVisibleProperty.get() );
-      yTickNode.centerY = -viewY;
+      yTickNode.visible = ( yFixed !== 0 && options.valuesVisibleProperty.get() );
+      yTickNode.centerY = -yView;
 
       // y value
-      var yText = Util.toFixed( fixedY, options.yDecimalPlaces );
+      var yText = Util.toFixed( yFixed, options.yDecimalPlaces );
       yValueNode.text = StringUtils.format( pattern_0value_1units, yText, options.yUnits );
 
-      //TODO simplify placement
-      // placement of y value
-      var xSpacing = 10;
+      // placement of y value, so that it doesn't collide with x value or axes
+      var X_SPACING = 10;
       if ( xProperty.get() >= 0 ) {
-        yValueNode.right = -xSpacing;
+        yValueNode.right = -X_SPACING; // to the left of the y axis
       }
       else {
-        yValueNode.left = xSpacing;
+        yValueNode.left = X_SPACING; // to the right of the y axis
       }
-      var ySpacing = 4;
-      if ( Math.abs( viewY ) > ySpacing + yValueNode.height / 2 ) {
-          yValueNode.centerY = -viewY;
+
+      var Y_SPACING = 4;
+      if ( Math.abs( yView ) > Y_SPACING + yValueNode.height / 2 ) {
+        yValueNode.centerY = -yView; // centered on the tick
+      }
+      else if ( yFixed >= 0 ) {
+        yValueNode.bottom = -Y_SPACING; // above the x axis
       }
       else {
-        if ( fixedY >= 0 ) {
-          yValueNode.bottom = -ySpacing;
-        }
-        else {
-          yValueNode.top = ySpacing;
-        }
+        yValueNode.top = Y_SPACING; // below the x axis
       }
     } );
 
     Property.multilink( [ xProperty, yProperty ],
       function( x, y ) {
 
-        var fixedX = Util.toFixedNumber( x, options.xDecimalPlaces );
-        var viewX = options.modelViewTransform.modelToViewX( fixedX );
-        var viewY = -y * options.yUnitLength;
+        var xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
+        var xView = options.modelViewTransform.modelToViewX( xFixed );
+        var yView = -y * options.yUnitLength;
 
         // point
-        pointNode.x = viewX;
-        pointNode.y = viewY;
+        pointNode.x = xView;
+        pointNode.y = yView;
 
         // leader lines
-        xLeaderLine.setLine( viewX, 0, viewX, viewY );
-        yLeaderLine.setLine( 0, viewY, viewX, viewY );
+        xLeaderLine.setLine( xView, 0, xView, yView );
+        yLeaderLine.setLine( 0, yView, xView, yView );
       } );
   }
 
