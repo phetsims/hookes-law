@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Model of 2 springs in parallel.
+ * Model of 2 springs in parallel, pulled by a robotic arm.
  *
  * Feq = F1 + F2
  * keq = k1 + k2

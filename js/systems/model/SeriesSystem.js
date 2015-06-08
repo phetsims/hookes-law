@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Model of 2 springs in series.
+ * Model of 2 springs in series, pulled by a robotic arm.
  *
  * Feq = F1 = F2
  * keq = 1 / ( 1/k1 + 1/k2 )
