@@ -21,7 +21,7 @@
  * F = applied force, N/m
  * k = spring constant, N/m
  * x = displacement from equilibrium position, m
- * E = stored energy, J
+ * E = potential energy, J
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -91,7 +91,7 @@ define( function( require ) {
 
     // Derived properties ----------------------------------------------------------------------------------------------------------------------------
 
-    // spring force opposes the applied force, units = N
+    // -F, spring force opposes the applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
       function( appliedForce ) {
         return -appliedForce;
@@ -139,7 +139,7 @@ define( function( require ) {
         return Math.abs( right - left );
       } );
 
-    // E = ( k1 * x1 * x1 ) / 2
+    // potential energy, E = ( k1 * x1 * x1 ) / 2
     this.energyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
@@ -147,13 +147,13 @@ define( function( require ) {
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
-    // F: When changing the applied force, maintain the spring constant, change displacement.
+    // F: When applied force changes, maintain the spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {
       assert && assert( thisSpring.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
       thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
     } );
 
-    // k
+    // k: When spring constant changes, adjust either displacement or applied force
     this.springConstantProperty.link( function( springConstant ) {
       assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
       if ( options.appliedForceRange ) {
@@ -166,7 +166,7 @@ define( function( require ) {
       }
     } );
 
-    // x: When changing displacement, maintain the spring constant, change applied force.
+    // x: When displacement changes, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
       assert && assert( thisSpring.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
       var appliedForce = thisSpring.springConstant * displacement; // F = kx
