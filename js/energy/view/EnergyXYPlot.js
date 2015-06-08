@@ -25,9 +25,6 @@ define( function( require ) {
   var joulesString = require( 'string!HOOKES_LAW/joules' );
   var metersString = require( 'string!HOOKES_LAW/meters' );
 
-  // constants
-  var Y_AXIS_HEIGHT = 250;
-
   /**
    * @param {Spring} spring
    * @param {Object} [options]
@@ -57,12 +54,12 @@ define( function( require ) {
 
       // y axis
       minY: 0,
-      maxY: Y_AXIS_HEIGHT,
+      maxY: HookesLawConstants.ENERGY_Y_AXIS_LENGTH,
       yString: energyString,
       yUnits: joulesString,
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
       yValueFill: HookesLawColors.ENERGY,
-      yUnitLength: 1.1 // length of a 1J energy vector
+      yUnitLength: HookesLawConstants.UNIT_ENERGY_VECTOR_LENGTH // length of a 1J energy vector
 
     }, options );
 

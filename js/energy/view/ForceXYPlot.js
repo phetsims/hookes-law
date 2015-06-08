@@ -30,9 +30,6 @@ define( function( require ) {
   var newtonsString = require( 'string!HOOKES_LAW/newtons' );
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
-  // constants
-  var Y_AXIS_HEIGHT = 250;
-
   /**
    * @param {Spring} spring
    * @param {Object} [options]
@@ -61,13 +58,13 @@ define( function( require ) {
       xVectorVisibleProperty: new Property( true ),
 
       // y axis
-      minY: -Y_AXIS_HEIGHT / 2,
-      maxY: Y_AXIS_HEIGHT / 2,
+      minY: -HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
+      maxY: HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
       yString: appliedForceString,
       yUnits: newtonsString,
       yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       yValueFill: HookesLawColors.APPLIED_FORCE,
-      yUnitLength: 0.25 // length of a 1N applied force vector
+      yUnitLength: HookesLawConstants.UNIT_FORCE_VECTOR_Y
 
     }, options );
 

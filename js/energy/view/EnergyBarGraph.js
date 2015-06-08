@@ -30,8 +30,6 @@ define( function( require ) {
   // constants
   var AXIS_LINE_WIDTH = 1;
   var AXIS_COLOR = 'black';
-  var UNIT_ENERGY_VECTOR_LENGTH = 1.1; //TODO this needs to be the same as EnergyXYPlot.UNIT_ENERGY_VECTOR_LENGTH
-  var Y_AXIS_LENGTH = 250; //TODO this needs to be the same as EnergyXYPlot.Y_AXIS_LENGTH
 
   /**
    * @param {Spring} spring
@@ -49,7 +47,7 @@ define( function( require ) {
       lineWidth: AXIS_LINE_WIDTH
     } );
 
-    var yAxisNode = new ArrowNode( 0, 0, 0, -Y_AXIS_LENGTH, {
+    var yAxisNode = new ArrowNode( 0, 0, 0, -HookesLawConstants.ENERGY_Y_AXIS_LENGTH, {
       headHeight: 10,
       headWidth: 10,
       tailWidth: AXIS_LINE_WIDTH,
@@ -79,13 +77,13 @@ define( function( require ) {
       // resize the bar
       barNode.visible = ( energy > 0 );
       var width = 0.4 * xAxisNode.width;
-      var height = Math.max( 1, energy * UNIT_ENERGY_VECTOR_LENGTH ); // bar must have non-zero size
+      var height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_VECTOR_LENGTH ); // bar must have non-zero size
       barNode.setRect( 0, -height, width, height ); // bar grows up
       barNode.centerX = xAxisNode.centerX;
 
       // change the value
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
-      valueNode.left = barNode.right + 3;
+      valueNode.left = barNode.right + 5;
       if ( !barNode.visible || barNode.height < valueNode.height / 2 ) {
         valueNode.bottom = xAxisNode.bottom;
       }
