@@ -155,7 +155,7 @@ define( function( require ) {
         bottomSpringForceVectorNode.visible = topSpringForceVectorNode.visible = componentsVisible;
       } );
 
-    // Position the vectors and truss
+    // position the vectors and truss
     equivalentSpring.rightProperty.link( function( right ) {
       trussNode.centerX = appliedForceVectorNode.x = totalSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );

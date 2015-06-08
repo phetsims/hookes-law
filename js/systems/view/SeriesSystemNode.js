@@ -138,6 +138,11 @@ define( function( require ) {
     viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
+    // move the right spring
+    rightSpring.leftProperty.link( function( left ) {
+      rightSpringNode.left = modelViewTransform.modelToViewX( left );
+    } );
+
     // switch between different spring force representations
     Property.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
       function( springForceVectorVisible, springForceRepresentation ) {
@@ -148,11 +153,7 @@ define( function( require ) {
         rightSpringForceVectorNode.visible = leftSpringForceVectorNode.visible = leftAppliedForceVectorNode.visible = componentsVisible;
       } );
 
-    rightSpring.leftProperty.link( function( left ) {
-      rightSpringNode.left = modelViewTransform.modelToViewX( left );
-    } );
-
-    // Position the vectors
+    // position the vectors
     equivalentSpring.rightProperty.link( function( right ) {
       appliedForceVectorNode.x = totalSpringForceVectorNode.x = modelViewTransform.modelToViewX( right );
     } );
