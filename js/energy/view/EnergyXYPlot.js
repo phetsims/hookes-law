@@ -20,7 +20,9 @@ define( function( require ) {
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var ModelViewTransform2 = require( 'PHETCOMMON/view/ModelViewTransform2' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
+  var Shape = require( 'KITE/Shape' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
@@ -113,8 +115,16 @@ define( function( require ) {
     } ) );
     var energyLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
 
+    //TODO better name for this var?
+    // Parabola that corresponds to E = ( k * x * x ) / 2
+    var parabolaNode = new Path( null, {
+      stroke: HookesLawColors.ENERGY,
+      lineWidth: 1
+    } );
+
     options.children = [
       xAxisNode, xAxisLabel, yAxisNode, yAxisLabel,
+      parabolaNode,
       displacementLeaderLine, displacementTickNode, displacementValueNode, displacementVectorNode,
       energyLeaderLine, energyTickNode, energyValueNode,
       pointNode
@@ -130,6 +140,31 @@ define( function( require ) {
     options.valuesVisibleProperty.linkAttribute( energyValueNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( energyTickNode, 'visible' );
     options.valuesVisibleProperty.linkAttribute( energyLeaderLine, 'visible' );
+
+    spring.springConstantProperty.link( function( springConstant ) {
+      // x
+      var x1 = options.modelViewTransform.modelToViewX( spring.displacementRange.min );
+      var x2 = options.modelViewTransform.modelToViewX( spring.displacementRange.min / 2 );
+      var x3 = options.modelViewTransform.modelToViewX( spring.displacementRange.max / 2 );
+      var x4 = options.modelViewTransform.modelToViewX( spring.displacementRange.max );
+      // E = ( k * x * x ) / 2
+      var y1 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.min * spring.displacementRange.min ) / 2;
+      var y2 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.min / 2 * spring.displacementRange.min / 2 ) / 2;
+      var y3 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.max / 2 * spring.displacementRange.max / 2 ) / 2;
+      var y4 = -UNIT_ENERGY_VECTOR_LENGTH * ( springConstant * spring.displacementRange.max * spring.displacementRange.max ) / 2;
+      // control points - close approximation, quick to calculate
+      var cpx1 = 2 * x2 - x1 / 2;
+      var cpy1 = 2 * y2 - y1 / 2;
+      var cpx4 = 2 * x3 - x4 / 2;
+      var cpy4 = 2 * y3 - y4 / 2;
+      // parabola
+      parabolaNode.shape = new Shape()
+        .moveTo( x1, y1 )
+        .lineTo( 0, 0 )
+        .lineTo( x4, y4 );
+        //.quadraticCurveTo( cpx1, cpy1, 0, 0 )
+        //.quadraticCurveTo( cpx4, cpy4, x4, y4 );
+    } );
 
     spring.displacementProperty.link( function( displacement ) {
 
