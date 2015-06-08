@@ -25,7 +25,7 @@ define( function( require ) {
       seriesParallel: 'parallel', // {string} which system is visible, 'series'|'parallel'
       appliedForceVectorVisible: checked, // {boolean} is the applied force vector visible?
       springForceVectorVisible: checked, // {boolean} is the spring force vector visible?
-      springForceRepresentation: 'total', // {string} 'total'|'components'
+      springForceRepresentation: 'total', // {string} how spring force is represented, 'total'|'components'
       displacementVectorVisible: checked, // {boolean} is the displacement vector visible?
       equilibriumPositionVisible: checked, // {boolean} is the equilibrium position visible?
       valuesVisible: checked  // {boolean} are numeric values visible?
