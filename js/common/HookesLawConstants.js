@@ -26,9 +26,9 @@ define( function( require ) {
     ENERGY_DECIMAL_PLACES: 1,
 
     // delta for controls
-    SPRING_CONSTANT_DELTA: 10,
-    APPLIED_FORCE_DELTA: 1,
-    DISPLACEMENT_DELTA: 0.001,
+    SPRING_CONSTANT_DELTA: 10, // units = N/m
+    APPLIED_FORCE_DELTA: 1, // units = N
+    DISPLACEMENT_DELTA: 0.001, // units = m
 
     // specific to parallel system, where spring-force components require a decimal place
     PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES: 1,
@@ -62,7 +62,6 @@ define( function( require ) {
     CHECK_BOX_OPTIONS: {
       spacing: 8
     },
-    // text on UI controls
     CONTROL_TEXT_OPTIONS: {
       font: new HookesLawFont( 18 )
     },
