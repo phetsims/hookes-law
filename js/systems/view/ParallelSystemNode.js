@@ -20,6 +20,7 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParallelSpringControls = require( 'HOOKES_LAW/systems/view/ParallelSpringControls' );
+  var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
@@ -145,15 +146,14 @@ define( function( require ) {
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // switch between different spring force representations
-    var springForceVisibilityObserver = function() {
-      // total
-      totalSpringForceVectorNode.visible = viewProperties.springForceVectorVisible && viewProperties.springForceRepresentation === 'total';
-      // components
-      var componentsVisible = viewProperties.springForceVectorVisible && viewProperties.springForceRepresentation === 'components';
-      bottomSpringForceVectorNode.visible = topSpringForceVectorNode.visible = componentsVisible;
-    };
-    viewProperties.springForceVectorVisibleProperty.link( springForceVisibilityObserver );
-    viewProperties.springForceRepresentationProperty.link( springForceVisibilityObserver );
+    Property.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
+      function( springForceVectorVisible, springForceRepresentation ) {
+        // total
+        totalSpringForceVectorNode.visible = springForceVectorVisible && springForceRepresentation === 'total';
+        // components
+        var componentsVisible = springForceVectorVisible && springForceRepresentation === 'components';
+        bottomSpringForceVectorNode.visible = topSpringForceVectorNode.visible = componentsVisible;
+      } );
 
     // Position the vectors and truss
     equivalentSpring.rightProperty.link( function( right ) {

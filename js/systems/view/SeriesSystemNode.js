@@ -17,6 +17,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SeriesSpringControls = require( 'HOOKES_LAW/systems/view/SeriesSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
@@ -138,15 +139,14 @@ define( function( require ) {
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // switch between different spring force representations
-    var springForceVisibilityObserver = function() {
-      // total
-      totalSpringForceVectorNode.visible = viewProperties.springForceVectorVisible && viewProperties.springForceRepresentation === 'total';
-      // components
-      var componentsVisible = viewProperties.springForceVectorVisible && viewProperties.springForceRepresentation === 'components';
-      rightSpringForceVectorNode.visible = leftSpringForceVectorNode.visible = leftAppliedForceVectorNode.visible = componentsVisible;
-    };
-    viewProperties.springForceVectorVisibleProperty.link( springForceVisibilityObserver );
-    viewProperties.springForceRepresentationProperty.link( springForceVisibilityObserver );
+    Property.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
+      function( springForceVectorVisible, springForceRepresentation ) {
+        // total
+        totalSpringForceVectorNode.visible = springForceVectorVisible && springForceRepresentation === 'total';
+        // components
+        var componentsVisible = springForceVectorVisible && springForceRepresentation === 'components';
+        rightSpringForceVectorNode.visible = leftSpringForceVectorNode.visible = leftAppliedForceVectorNode.visible = componentsVisible;
+      } );
 
     rightSpring.leftProperty.link( function( left ) {
       rightSpringNode.left = modelViewTransform.modelToViewX( left );
