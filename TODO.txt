@@ -42,4 +42,7 @@ constrain text size for i18n
 Common
 -----------------------------------------------------------------------------------
 
-migrate LineArrowNode to scenery-phet
+LineArrowNode -> scenery-phet
+NumberControl -> scenery-phet
+NumberDisplay -> scenery-phet
+
