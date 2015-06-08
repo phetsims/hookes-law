@@ -31,11 +31,11 @@ define( function( require ) {
     APPLIED_FORCE_DELTA: 1,
     DISPLACEMENT_DELTA: 0.001,
 
-    // specific to parallel system, where components require a decimal place
+    // specific to parallel system, where spring-force components require a decimal place
     PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES: 1,
     PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA: 0.1,
 
-    // model-view transform for x dimension (locations, displacement)
+    // model-view transform for x dimension (locations, displacement), y dimension should be ignored
     MODEL_VIEW_TRANSFORM: ModelViewTransform2.createOffsetScaleMapping( Vector2.ZERO, 200 /* view length of a 1m displacement vector */ ),
 
     // scale factors for vectors
