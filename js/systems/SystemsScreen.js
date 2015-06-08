@@ -21,7 +21,7 @@ define( function( require ) {
   // strings
   var systemsString = require( 'string!HOOKES_LAW/systems' );
 
-  //TODO
+  //TODO design: what does the screen icon look like?
   var createIcon = function() {
     return new Rectangle( 0, 0, 100, 100, { fill: 'green' } );
   };

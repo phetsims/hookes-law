@@ -89,7 +89,7 @@ define( function( require ) {
 
     // point and the dashed lines that connect to it
     var pointNode = new Circle( 6, {
-      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
+      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO design: why is this using this color in mockups?
     } );
 
     // displacement nodes
@@ -116,7 +116,7 @@ define( function( require ) {
     //TODO better name for this var?
     // The line that corresponds to F = kx
     var forceLineNode = new Line( 0, 0, 1, 1, {
-      stroke: HookesLawColors.APPLIED_FORCE, //TODO why is this force color? It's slope due to spring constant
+      stroke: HookesLawColors.APPLIED_FORCE, //TODO design: why is this force color? It's slope due to spring constant
       lineWidth: 2
     } );
 

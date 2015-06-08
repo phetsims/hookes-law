@@ -21,7 +21,7 @@ define( function( require ) {
   // strings
   var introductionString = require( 'string!HOOKES_LAW/introduction' );
 
-  //TODO
+  //TODO design: what does the screen icon look like?
   var createIcon = function() {
     return new Rectangle( 0, 0, 100, 100, { fill: 'red' } );
   };

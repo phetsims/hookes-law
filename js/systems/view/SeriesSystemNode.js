@@ -83,7 +83,6 @@ define( function( require ) {
       bottom: leftSpringNode.top - 25
     } );
 
-    //TODO is it correct to treat this like an applied force vector, and color-code it with right spring force?
     var leftAppliedForceVectorNode = new AppliedForceVectorNode( leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
       fill: HookesLawColors.RIGHT_SPRING_FORCE,
       // x is determined by leftSpring.rightProperty

@@ -25,7 +25,7 @@ define( function( require ) {
   function NumberOfSystemsControl( numberOfSystemsProperty, options ) {
 
     options = _.extend( {
-      scale: 0.4, //TODO scale image files
+      scale: 0.4, //TODO scale image files?
       orientation: 'horizontal',
       spacing: 20,
       buttonContentXMargin: 10,

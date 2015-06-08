@@ -89,7 +89,7 @@ define( function( require ) {
 
     // point and the dashed lines that connect to it
     var pointNode = new Circle( 6, {
-      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO why is this using this color in mockups?
+      fill: HookesLawColors.TOTAL_SPRING_FORCE //TODO design: why is this using this color in mockups?
     } );
 
     // displacement nodes

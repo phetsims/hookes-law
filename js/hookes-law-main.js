@@ -29,7 +29,7 @@ define( function( require ) {
       leadDesign: 'Amy Rouinfar',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
       team: 'Mike Dubson, Ariel Paul, Kathy Perkins, Martin Veillette',
-      qualityAssurance: '', //TODO
+      qualityAssurance: '', //TODO get names from AP
       graphicArts: 'Mariah Hermsmeyer'
     }
   };

@@ -21,7 +21,7 @@ define( function( require ) {
   // strings
   var energyString = require( 'string!HOOKES_LAW/energy' );
 
-  //TODO
+  //TODO design: what does the screen icon look like?
   var createIcon = function() {
     return new Rectangle( 0, 0, 100, 100, { fill: 'yellow' } );
   };
