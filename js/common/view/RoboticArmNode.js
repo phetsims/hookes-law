@@ -30,11 +30,11 @@ define( function( require ) {
   /**
    * @param {RoboticArm} roboticArm
    * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm
-   * @param {number} numberOfPointersDown
+   * @param {number} numberOfInteractionsInProgress - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArmNode( roboticArm, leftRangeProperty, numberOfPointersDown, options ) {
+  function RoboticArmNode( roboticArm, leftRangeProperty, numberOfInteractionsInProgress, options ) {
 
     options = _.extend( {
       cursor: 'pointer',
@@ -107,7 +107,7 @@ define( function( require ) {
         startOffsetX: 0,
 
         start: function( event ) {
-          numberOfPointersDown.set( numberOfPointersDown.get() + 1 );
+          numberOfInteractionsInProgress.set( numberOfInteractionsInProgress.get() + 1 );
           var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
           this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
         },
@@ -120,7 +120,7 @@ define( function( require ) {
         },
 
         end: function( event ) {
-          numberOfPointersDown.set( numberOfPointersDown.get() - 1 );
+          numberOfInteractionsInProgress.set( numberOfInteractionsInProgress.get() - 1 );
         }
       }
     );

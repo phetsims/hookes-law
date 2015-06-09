@@ -30,11 +30,11 @@ define( function( require ) {
 
   /**
    * @param {ParallelSystem} system
-   * @param {number} numberOfPointersDown
+   * @param {number} numberOfInteractionsInProgress - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
-  function ParallelSpringControls( system, numberOfPointersDown, options ) {
+  function ParallelSpringControls( system, numberOfInteractionsInProgress, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
 
@@ -75,7 +75,7 @@ define( function( require ) {
     } );
 
     var appliedForceControl = new AppliedForceControl(
-      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfPointersDown );
+      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgress );
 
     var content = new HBox( {
       spacing: 20,

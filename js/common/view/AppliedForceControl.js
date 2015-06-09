@@ -26,11 +26,11 @@ define( function( require ) {
   /**
    * @param {Property.<number>} appliedForceProperty units = N
    * @param {Range} appliedForceRange
-   * @param {number} numberOfPointersDown
+   * @param {number} numberOfInteractionsInProgress number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
-  function AppliedForceControl( appliedForceProperty, appliedForceRange, numberOfPointersDown, options ) {
+  function AppliedForceControl( appliedForceProperty, appliedForceRange, numberOfInteractionsInProgress, options ) {
 
     // major ticks
     assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
@@ -63,8 +63,8 @@ define( function( require ) {
       majorTicks: majorTicks,
       minorTickSpacing: MINOR_TICK_SPACING,
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
-      startCallback: function() { numberOfPointersDown.set( numberOfPointersDown.get() + 1 ); },
-      endCallback: function() { numberOfPointersDown.set( numberOfPointersDown.get() - 1 ); }
+      startCallback: function() { numberOfInteractionsInProgress.set( numberOfInteractionsInProgress.get() + 1 ); },
+      endCallback: function() { numberOfInteractionsInProgress.set( numberOfInteractionsInProgress.get() - 1 ); }
     }, options );
 
     NumberControl.call( this, options.title, appliedForceProperty, appliedForceRange, options );

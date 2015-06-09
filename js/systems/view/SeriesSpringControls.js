@@ -28,11 +28,11 @@ define( function( require ) {
 
   /**
    * @param {SeriesSystem} system
-   * @param {number} numberOfPointersDown
+   * @param {number} numberOfInteractionsInProgress - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
-  function SeriesSpringControls( system, numberOfPointersDown, options ) {
+  function SeriesSpringControls( system, numberOfInteractionsInProgress, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
 
@@ -61,7 +61,7 @@ define( function( require ) {
     } );
 
     var appliedForceControl = new AppliedForceControl(
-      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfPointersDown );
+      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgress );
 
     var separatorHeight = Math.max( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ), appliedForceControl.height );
 

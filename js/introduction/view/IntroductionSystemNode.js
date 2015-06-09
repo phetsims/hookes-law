@@ -45,8 +45,8 @@ define( function( require ) {
     // This sim operates in 1 dimension (x), so center everything on y = 0.
     var yOrigin = 0;
 
-    // Added to all UI elements that affect displacement
-    var numberOfPointersDown = new Property( 0 );
+    // number of interactions in progress that affect displacement
+    var numberOfInteractionsInProgress = new Property( 0 );
 
     // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -62,7 +62,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfPointersDown, {
+    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgress, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin
@@ -92,7 +92,7 @@ define( function( require ) {
       top: springNode.bottom + 8
     } );
 
-    var springControls = new IntroductionSpringControls( spring, numberOfPointersDown, {
+    var springControls = new IntroductionSpringControls( spring, numberOfInteractionsInProgress, {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10
@@ -119,7 +119,7 @@ define( function( require ) {
     } );
 
     // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.
-    Property.multilink( [ numberOfPointersDown, spring.displacementProperty ],
+    Property.multilink( [ numberOfInteractionsInProgress, spring.displacementProperty ],
       function( numberOfInteractions, displacement ) {
         assert && assert( numberOfInteractions >= 0 );
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
