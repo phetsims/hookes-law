@@ -38,7 +38,7 @@ define( function( require ) {
 
     options = _.extend( {
       cursor: 'pointer',
-      unitDisplacementLength: 1
+      unitDisplacementLength: 1  // view length of a 1m displacement
     }, options );
 
     // origin is at left-center of box
