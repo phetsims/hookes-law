@@ -116,6 +116,7 @@ define( function( require ) {
           var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
           var length = parentX / options.unitDisplacementLength;
           var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
+          left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
           roboticArm.leftProperty.set( left );
         },
 
