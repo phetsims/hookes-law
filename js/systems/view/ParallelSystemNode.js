@@ -174,17 +174,12 @@ define( function( require ) {
       bottomSpringForceVectorNode.x = options.unitDisplacementLength * right;
     } );
 
-    // open & close the pincers of the robotic arm
+    // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.
     Property.multilink( [ numberOfPointersDown, equivalentSpring.displacementProperty ],
       function( numberOfInteractions, displacement ) {
         assert && assert( numberOfInteractions >= 0 );
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-        if ( numberOfInteractions === 0 && fixedDisplacement === 0 ) {
-          roboticArmNode.openPincers();
-        }
-        else {
-          roboticArmNode.closePincers();
-        }
+        roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 
     this.mutate( options );

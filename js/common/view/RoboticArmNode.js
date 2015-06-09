@@ -139,14 +139,13 @@ define( function( require ) {
       armNode.centerY = 0;
     } );
 
-    this.openPincers = function() {
-      topPincerOpenNode.visible = bottomPincerOpenNode.visible = true;
-      topPincerClosedNode.visible = bottomPincerClosedNode.visible = false;
-    };
-
-    this.closePincers = function() {
-      topPincerOpenNode.visible = bottomPincerOpenNode.visible = false;
-      topPincerClosedNode.visible = bottomPincerClosedNode.visible = true;
+    /**
+     * Open and close the pincers
+     * @param {boolean} pincersOpen
+     */
+    this.setPincersOpen = function( pincersOpen ) {
+      topPincerOpenNode.visible = bottomPincerOpenNode.visible = pincersOpen;
+      topPincerClosedNode.visible = bottomPincerClosedNode.visible = !pincersOpen;
     };
   }
 
