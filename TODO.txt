@@ -4,7 +4,7 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
-Robotic arm re-design
+Robotic arm re-design (recommended to make the red hinge 25% larger)
 Colors for top and bottom springs (I think it would be better to use same colors as series springs)
 Controls are significantly smaller (too small?) in Systems screen
 Number of decimal places for energy?
