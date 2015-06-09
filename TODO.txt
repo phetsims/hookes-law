@@ -4,15 +4,20 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
+Screen icons
 Robotic arm re-design (recommended to make the red hinge 25% larger)
+
+Systems screen:
 Colors for top and bottom springs (I think it would be better to use same colors as series springs)
-Controls are significantly smaller (too small?) in Systems screen
+Controls are significantly smaller (too small?) than in other screens
+
+Energy screen:
 Number of decimal places for energy?
-What to show on energy bar graph when value is non-zero but displays as zero? "> 0 J"?
 Color coding of the Force and Energy XY plots (why is slope line red? why is point blue like spring constant? should values be color-coded like spring? ...)
 Should bar graph be labeled "Potential Energy", vertically along axis?
-Screen icons?
 Any need to be able to hide the Energy bar graph?
+With k=100, x=0.001, you'll see F=0. Should it be displayed as "> 0 N"?
+With k=100, x=0.001, you'll see E=0. Should it be displayed as "> 0 J"?
 
 -----------------------------------------------------------------------------------
 Implementation
