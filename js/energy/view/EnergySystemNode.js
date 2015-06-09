@@ -17,8 +17,10 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
+  var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   /**
@@ -40,6 +42,9 @@ define( function( require ) {
     // This sim operates in 1 dimension (x), so center everything on y = 0.
     var yOrigin = 0;
 
+    // Added to all UI elements that affect displacement
+    var numberOfPointersDown = new Property( 0 );
+
     // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
 
     // origin is at right-center of wall
@@ -54,7 +59,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, spring.equilibriumXProperty.get(), {
+    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfPointersDown, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin
@@ -72,7 +77,7 @@ define( function( require ) {
       top: springNode.bottom + 8
     } );
 
-    var springControls = new EnergySpringControls( spring, {
+    var springControls = new EnergySpringControls( spring, numberOfPointersDown, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10
     } );
@@ -89,6 +94,19 @@ define( function( require ) {
     // Attach visibility properties to their respective nodes.
     viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
+
+    // open & close the pincers of the robotic arm
+    Property.multilink( [ numberOfPointersDown, spring.displacementProperty ],
+      function( numberOfInteractions, displacement ) {
+        assert && assert( numberOfInteractions >= 0 );
+        var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        if ( numberOfInteractions === 0 && fixedDisplacement === 0 ) {
+          roboticArmNode.openPincers();
+        }
+        else {
+          roboticArmNode.closePincers();
+        }
+      } );
   }
 
   return inherit( Node, EnergySystemNode );

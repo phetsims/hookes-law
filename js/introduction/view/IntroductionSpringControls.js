@@ -24,10 +24,11 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {number} numberOfPointersDown
    * @param {Object} [options]
    * @constructor
    */
-  function IntroductionSpringControls( spring, options ) {
+  function IntroductionSpringControls( spring, numberOfPointersDown, options ) {
 
     options = _.extend( {
       number: 1
@@ -42,7 +43,7 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange, {
+    var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange, numberOfPointersDown, {
       title: StringUtils.format( appliedForceNumberString, options.number )
     } );
 

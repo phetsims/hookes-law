@@ -22,6 +22,7 @@ define( function( require ) {
   var SeriesSpringControls = require( 'HOOKES_LAW/systems/view/SeriesSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
+  var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   /**
@@ -47,6 +48,9 @@ define( function( require ) {
     // This sim operates in 1 dimension (x), so center everything on y = 0.
     var yOrigin = 0;
 
+    // Added to all UI elements that affect displacement
+    var numberOfPointersDown = new Property( 0 );
+
     // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
 
     // origin is at right-center of wall
@@ -71,7 +75,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, equivalentSpring.equilibriumXProperty.get(), {
+    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, numberOfPointersDown, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin
@@ -122,7 +126,7 @@ define( function( require ) {
       top: leftSpringNode.bottom + 8
     } );
 
-    var springControls = new SeriesSpringControls( system, {
+    var springControls = new SeriesSpringControls( system, numberOfPointersDown, {
       scale: 0.75,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 25
@@ -167,6 +171,19 @@ define( function( require ) {
     rightSpring.rightProperty.link( function( right ) {
       rightSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
+
+    // open & close the pincers of the robotic arm
+    Property.multilink( [ numberOfPointersDown, equivalentSpring.displacementProperty ],
+      function( numberOfInteractions, displacement ) {
+        assert && assert( numberOfInteractions >= 0 );
+        var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        if ( numberOfInteractions === 0 && fixedDisplacement === 0 ) {
+          roboticArmNode.openPincers();
+        }
+        else {
+          roboticArmNode.closePincers();
+        }
+      } );
 
     this.mutate( options );
   }

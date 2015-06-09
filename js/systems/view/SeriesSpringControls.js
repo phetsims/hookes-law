@@ -28,10 +28,11 @@ define( function( require ) {
 
   /**
    * @param {SeriesSystem} system
+   * @param {number} numberOfPointersDown
    * @param {Object} [options]
    * @constructor
    */
-  function SeriesSpringControls( system, options ) {
+  function SeriesSpringControls( system, numberOfPointersDown, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
 
@@ -59,7 +60,8 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
+    var appliedForceControl = new AppliedForceControl(
+      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfPointersDown );
 
     var separatorHeight = Math.max( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ), appliedForceControl.height );
 

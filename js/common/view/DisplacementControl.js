@@ -23,10 +23,11 @@ define( function( require ) {
   /**
    * @param {Property.<boolean>} displacementProperty
    * @param {Range} displacementRange
+   * @param {number} numberOfPointersDown
    * @param {Object} [options]
    * @constructor
    */
-  function DisplacementControl( displacementProperty, displacementRange, options ) {
+  function DisplacementControl( displacementProperty, displacementRange, numberOfPointersDown, options ) {
 
     options = _.extend( {
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
@@ -36,7 +37,9 @@ define( function( require ) {
       delta: HookesLawConstants.DISPLACEMENT_DELTA,
       majorTicksValues: null,
       minorTickSpacing: 1,
-      thumbFillEnabled: HookesLawColors.DISPLACEMENT
+      thumbFillEnabled: HookesLawColors.DISPLACEMENT,
+      startCallback: function() { numberOfPointersDown.set( numberOfPointersDown.get() + 1 ); },
+      endCallback: function() { numberOfPointersDown.set( numberOfPointersDown.get() - 1 ); }
     }, options );
 
     // major ticks

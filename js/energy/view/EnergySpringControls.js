@@ -18,10 +18,11 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {number} numberOfPointersDown
    * @param {Object} [options]
    * @constructor
    */
-  function EnergySpringControls( spring, options ) {
+  function EnergySpringControls( spring, numberOfPointersDown, options ) {
 
     options = options || {};
 
@@ -36,7 +37,7 @@ define( function( require ) {
       } ), HookesLawConstants.SPRING_PANEL_OPTIONS );
 
     var displacementControlPanel = new Panel(
-      new DisplacementControl( spring.displacementProperty, spring.displacementRange, {
+      new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfPointersDown, {
         minorTickSpacing: spring.displacementRange.getLength() / 10,
         majorTickValues: [
           spring.displacementRange.min,

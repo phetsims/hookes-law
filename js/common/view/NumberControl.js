@@ -34,6 +34,8 @@ define( function( require ) {
   function NumberControl( title, numberProperty, numberRange, options ) {
 
     options = _.extend( {
+      startCallback: function() {}, // called when interaction begins
+      endCallback: function() {}, // called when interaction ends
       // title
       titleFont: new HookesLawFont( 12 ),
       // value
@@ -62,25 +64,29 @@ define( function( require ) {
       decimalPlaces: options.decimalPlaces
     } );
 
+    var arrowButtonOptions = {
+      delta: options.delta,
+      startCallback: options.startCallback,
+      endCallback: options.endCallback
+    };
+
     var leftArrowButton = new ArrowButton( 'left', function() {
       var value = numberProperty.get() - delta;
       value = Math.round( value / delta ) * delta; // constrain to delta
       value = Math.max( value, numberRange.min ); // constrain to range
       numberProperty.set( value );
-    }, {
-      delta: options.delta
-    } );
+    }, arrowButtonOptions );
 
     var rightArrowButton = new ArrowButton( 'right', function() {
       var value = numberProperty.get() + delta;
       value = Math.round( value / delta ) * delta; // constrain to delta
       value = Math.min( value, numberRange.max ); // constrain to range
       numberProperty.set( value );
-    }, {
-      delta: options.delta
-    } );
+    }, arrowButtonOptions );
 
     var slider = new HSlider( numberProperty, numberRange, _.extend( {
+      startDrag: options.startCallback,
+      endDrag: options.endCallback,
       constrainValue: function( value ) {
         // constrain to delta
         value = Math.round( value / options.delta ) * options.delta;

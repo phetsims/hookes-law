@@ -30,10 +30,11 @@ define( function( require ) {
 
   /**
    * @param {ParallelSystem} system
+   * @param {number} numberOfPointersDown
    * @param {Object} [options]
    * @constructor
    */
-  function ParallelSpringControls( system, options ) {
+  function ParallelSpringControls( system, numberOfPointersDown, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
 
@@ -50,16 +51,17 @@ define( function( require ) {
     } );
 
     var bottomSpring = system.bottomSpring;
-    var bottomSpringConstantControl = new SpringConstantControl( bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
-      title: bottomSpringString,
-      thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
-      trackSize: SPRING_CONSTANT_TRACK_SIZE,
-      majorTickValues: [
-        bottomSpring.springConstantRange.min,
-        bottomSpring.springConstantRange.getCenter(),
-        bottomSpring.springConstantRange.max
-      ]
-    } );
+    var bottomSpringConstantControl = new SpringConstantControl(
+      bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
+        title: bottomSpringString,
+        thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
+        trackSize: SPRING_CONSTANT_TRACK_SIZE,
+        majorTickValues: [
+          bottomSpring.springConstantRange.min,
+          bottomSpring.springConstantRange.getCenter(),
+          bottomSpring.springConstantRange.max
+        ]
+      } );
 
     // "top" control above "bottom" control
     var springControls = new VBox( {
@@ -72,7 +74,8 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange );
+    var appliedForceControl = new AppliedForceControl(
+      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfPointersDown );
 
     var content = new HBox( {
       spacing: 20,

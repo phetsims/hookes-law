@@ -30,11 +30,11 @@ define( function( require ) {
   /**
    * @param {RoboticArm} roboticArm
    * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm
-   * @param {number} equilibriumX - equilibrium position of the system being manipulated
+   * @param {number} numberOfPointersDown
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArmNode( roboticArm, leftRangeProperty, equilibriumX, options ) {
+  function RoboticArmNode( roboticArm, leftRangeProperty, numberOfPointersDown, options ) {
 
     options = _.extend( {
       cursor: 'pointer',
@@ -99,19 +99,6 @@ define( function( require ) {
     options.children = [ armNode, boxNode, draggableNode ];
     Node.call( this, options );
 
-    // open the pincers when displacement is displayed as zero
-    var updatePincers = function() {
-      var leftFixed = Util.toFixedNumber( roboticArm.leftProperty.get(), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      if ( !dragHandler.dragging && leftFixed === equilibriumX ) {
-        topPincerOpenNode.visible = bottomPincerOpenNode.visible = true;
-        topPincerClosedNode.visible = bottomPincerClosedNode.visible = false;
-      }
-      else {
-        topPincerOpenNode.visible = bottomPincerOpenNode.visible = false;
-        topPincerClosedNode.visible = bottomPincerClosedNode.visible = true;
-      }
-    };
-
     // Drag the pincers or hinge
     var dragHandler = new SimpleDragHandler( {
 
@@ -120,6 +107,7 @@ define( function( require ) {
         startOffsetX: 0,
 
         start: function( event ) {
+          numberOfPointersDown.set( numberOfPointersDown.get() + 1 );
           var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
           this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
         },
@@ -132,7 +120,7 @@ define( function( require ) {
         },
 
         end: function( event ) {
-          updatePincers();
+          numberOfPointersDown.set( numberOfPointersDown.get() - 1 );
         }
       }
     );
@@ -149,10 +137,17 @@ define( function( require ) {
       armNode.setRect( 0, 0, armLength, 16 );
       armNode.right = boxNode.left + overlap;
       armNode.centerY = 0;
-
-      // pincers, closed or open
-      updatePincers();
     } );
+
+    this.openPincers = function() {
+      topPincerOpenNode.visible = bottomPincerOpenNode.visible = true;
+      topPincerClosedNode.visible = bottomPincerClosedNode.visible = false;
+    };
+
+    this.closePincers = function() {
+      topPincerOpenNode.visible = bottomPincerOpenNode.visible = false;
+      topPincerClosedNode.visible = bottomPincerClosedNode.visible = true;
+    };
   }
 
   return inherit( Node, RoboticArmNode );
