@@ -15,32 +15,19 @@ Screen icons?
 Any need to be able to hide the Energy bar graph?
 
 -----------------------------------------------------------------------------------
-Introduction screen
+Implementation
 -----------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------
-Systems screen
------------------------------------------------------------------------------------
-
-Parallel: truss should be a triangle, will need to compensate for width when positioning arm
-
------------------------------------------------------------------------------------
-Energy screen
------------------------------------------------------------------------------------
-
------------------------------------------------------------------------------------
-General
------------------------------------------------------------------------------------
-
-Non-zero displacement is sometimes shown when force is shown as zero.
-Work on the look of the piece at end of spring(s) that the pincers grab
-Split spring into foreground and background, use vertical gradients
+Non-zero displacement is sometimes shown when force is shown as zero (model bug).
+Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
 Compute spring shape as a function of displacement (MV's algorithm?)
-compensate for headLineWidth in LineArrowNode, so that tip is at (tipX,tipY)
-constrain text size for i18n
+Split spring into foreground and background, use vertical gradients
+Work on the look of the piece at end of spring(s) that the pincers grab
+Parallel system: truss should be a triangle, will need to compensate for width when positioning arm
+Constrain text size for i18n
 
 -----------------------------------------------------------------------------------
-Common
+Common Code
 -----------------------------------------------------------------------------------
 
 LineArrowNode -> scenery-phet
