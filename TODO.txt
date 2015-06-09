@@ -12,6 +12,7 @@ What to show on energy bar graph when value is non-zero but displays as zero? ">
 Color coding of the Force and Energy XY plots (why is slope line red? why is point blue like spring constant? should values be color-coded like spring? ...)
 Should bar graph be labeled "Potential Energy", vertically along axis?
 Screen icons?
+Any need to be able to hide the Energy bar graph?
 
 -----------------------------------------------------------------------------------
 Introduction screen
