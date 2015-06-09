@@ -23,7 +23,7 @@ define( function( require ) {
   /**
    * @param {Property.<boolean>} displacementProperty
    * @param {Range} displacementRange
-   * @param {number} numberOfInteractionsInProgress number of interactions in progress that affect displacement
+   * @param {number} numberOfInteractionsInProgress - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */

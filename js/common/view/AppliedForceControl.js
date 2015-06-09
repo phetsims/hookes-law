@@ -26,7 +26,7 @@ define( function( require ) {
   /**
    * @param {Property.<number>} appliedForceProperty units = N
    * @param {Range} appliedForceRange
-   * @param {number} numberOfInteractionsInProgress number of interactions in progress that affect displacement
+   * @param {number} numberOfInteractionsInProgress - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
