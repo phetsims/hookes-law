@@ -31,7 +31,6 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
-Don't open pincers at zero displacement when using applied-force control or displacement control.
 Single, Series: piece at end of spring that is grabbed
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
