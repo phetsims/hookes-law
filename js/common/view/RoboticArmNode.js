@@ -57,6 +57,7 @@ define( function( require ) {
       lineWidth: 0.5
     } );
 
+    // top pincer, closed and open configurations
     var topPincerClosedNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), {
       stroke: PINCER_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
@@ -69,6 +70,8 @@ define( function( require ) {
       right: topPincerClosedNode.right,
       bottom: 0
     } );
+
+    // bottom pincer, closed and open configurations
     var bottomPincerClosedNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), {
       stroke: PINCER_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
@@ -82,6 +85,7 @@ define( function( require ) {
       top: 0
     } );
 
+    // hinge, where the pincers are attached
     var hingeNode = new Image( hingeImage, {
       scale: 0.4,
       x: topPincerClosedNode.right - 12, // dependent on image file
@@ -93,7 +97,6 @@ define( function( require ) {
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
     options.children = [ armNode, boxNode, draggableNode ];
-
     Node.call( this, options );
 
     // open the pincers when displacement is displayed as zero
@@ -147,7 +150,7 @@ define( function( require ) {
       armNode.right = boxNode.left + overlap;
       armNode.centerY = 0;
 
-      // open the pincers when displacement is displayed as zero
+      // pincers, closed or open
       updatePincers();
     } );
   }
