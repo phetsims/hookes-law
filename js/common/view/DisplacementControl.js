@@ -23,11 +23,11 @@ define( function( require ) {
   /**
    * @param {Property.<boolean>} displacementProperty
    * @param {Range} displacementRange
-   * @param {number} numberOfInteractionsInProgress - number of interactions in progress that affect displacement
+   * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
-  function DisplacementControl( displacementProperty, displacementRange, numberOfInteractionsInProgress, options ) {
+  function DisplacementControl( displacementProperty, displacementRange, numberOfInteractionsInProgressProperty, options ) {
 
     options = _.extend( {
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
@@ -38,8 +38,8 @@ define( function( require ) {
       majorTicksValues: null,
       minorTickSpacing: 1,
       thumbFillEnabled: HookesLawColors.DISPLACEMENT,
-      startCallback: function() { numberOfInteractionsInProgress.set( numberOfInteractionsInProgress.get() + 1 ); },
-      endCallback: function() { numberOfInteractionsInProgress.set( numberOfInteractionsInProgress.get() - 1 ); }
+      startCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 ); },
+      endCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 ); }
     }, options );
 
     // major ticks

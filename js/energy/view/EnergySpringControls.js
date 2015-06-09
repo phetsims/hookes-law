@@ -18,11 +18,11 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
-   * @param {number} numberOfInteractionsInProgress
+   * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
-  function EnergySpringControls( spring, numberOfInteractionsInProgress, options ) {
+  function EnergySpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
     options = options || {};
 
@@ -37,7 +37,7 @@ define( function( require ) {
       } ), HookesLawConstants.SPRING_PANEL_OPTIONS );
 
     var displacementControlPanel = new Panel(
-      new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgress, {
+      new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
         minorTickSpacing: spring.displacementRange.getLength() / 10,
         majorTickValues: [
           spring.displacementRange.min,

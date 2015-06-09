@@ -49,7 +49,7 @@ define( function( require ) {
     var yOrigin = 0;
 
     // number of interactions in progress that affect displacement
-    var numberOfInteractionsInProgress = new Property( 0 );
+    var numberOfInteractionsInProgressProperty = new Property( 0 );
 
     // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -75,7 +75,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, numberOfInteractionsInProgress, {
+    var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin
@@ -126,7 +126,7 @@ define( function( require ) {
       top: leftSpringNode.bottom + 8
     } );
 
-    var springControls = new SeriesSpringControls( system, numberOfInteractionsInProgress, {
+    var springControls = new SeriesSpringControls( system, numberOfInteractionsInProgressProperty, {
       scale: 0.75,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 25
@@ -173,7 +173,7 @@ define( function( require ) {
     } );
 
     // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.
-    Property.multilink( [ numberOfInteractionsInProgress, equivalentSpring.displacementProperty ],
+    Property.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
       function( numberOfInteractions, displacement ) {
         assert && assert( numberOfInteractions >= 0 );
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
