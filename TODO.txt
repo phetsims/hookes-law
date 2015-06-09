@@ -31,7 +31,7 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
-Single, Series: piece at end of spring that is grabbed
+Work on the look of the piece at end of spring(s) that the pincers grab
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)
 compensate for headLineWidth in LineArrowNode, so that tip is at (tipX,tipY)
