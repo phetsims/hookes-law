@@ -16,3 +16,5 @@ against these types of violations.
 
 No model-view transforms. All conversions are done using unit vectors lengths for the various
 1-dimensional quantities (displacement, force, energy). See HookesLawConstants.UNIT_*.
+
+Describe how numberOfInteractionsInProgressProperty is used to decide when to open robotic pincers.
