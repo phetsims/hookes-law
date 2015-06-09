@@ -48,7 +48,7 @@ define( function( require ) {
       for ( var i = 0; i < options.majorTickValues.length; i++ ) {
         options.majorTicks.push( {
           value: options.majorTickValues[ i ],
-          label: new Text( Util.toFixed( options.majorTickValues[ i ], HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+          label: new Text( Util.toFixed( options.majorTickValues[ i ], 0 ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
         } );
       }
     }
