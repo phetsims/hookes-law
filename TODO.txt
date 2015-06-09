@@ -31,7 +31,6 @@ Energy screen
 General
 -----------------------------------------------------------------------------------
 
-Open pincers when displacement is 0 and user is not interacting with the sim
 Single, Series: piece at end of spring that is grabbed
 Split spring into foreground and background, use vertical gradients
 Compute spring shape as a function of displacement (MV's algorithm?)

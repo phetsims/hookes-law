@@ -22,6 +22,11 @@ define( function( require ) {
   // images
   var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
 
+  // constants
+  var PINCER_RADIUS = 35;
+  var PINCER_STROKE = 'black';
+  var PINCER_LINE_WIDTH = 6;
+
   /**
    * @param {RoboticArm} roboticArm
    * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm
@@ -52,34 +57,59 @@ define( function( require ) {
       lineWidth: 0.5
     } );
 
-    var topPincerNode = new Path( new Shape().arc( 0, 0, 35, -0.9 * Math.PI, -0.1 * Math.PI ), {
-      stroke: 'black',
-      lineWidth: 6,
+    var topPincerClosedNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), {
+      stroke: PINCER_STROKE,
+      lineWidth: PINCER_LINE_WIDTH,
       left: 0,
       bottom: 0
     } );
-    var bottomPincerNode = new Path( new Shape().arc( 0, 0, 35, 0.9 * Math.PI, 0.1 * Math.PI, true ), {
-      stroke: 'black',
-      lineWidth: 6,
+    var topPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 ), {
+      stroke: PINCER_STROKE,
+      lineWidth: PINCER_LINE_WIDTH,
+      right: topPincerClosedNode.right,
+      bottom: 0
+    } );
+    var bottomPincerClosedNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), {
+      stroke: PINCER_STROKE,
+      lineWidth: PINCER_LINE_WIDTH,
       left: 0,
+      top: 0
+    } );
+    var bottomPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true ), {
+      stroke: PINCER_STROKE,
+      lineWidth: PINCER_LINE_WIDTH,
+      right: bottomPincerClosedNode.right,
       top: 0
     } );
 
     var hingeNode = new Image( hingeImage, {
       scale: 0.4,
-      x: topPincerNode.right - 12, // dependent on image file
+      x: topPincerClosedNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
 
     // pincers and hinge are draggable, other parts are not
-    var draggableNode = new Node( { children: [ topPincerNode, bottomPincerNode, hingeNode ] } );
+    var draggableNode = new Node( { children: [ topPincerClosedNode, topPincerOpenNode, bottomPincerClosedNode, bottomPincerOpenNode, hingeNode ] } );
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
     options.children = [ armNode, boxNode, draggableNode ];
 
     Node.call( this, options );
 
-    // Drag the hook or hinge
+    // open the pincers when displacement is displayed as zero
+    var updatePincers = function() {
+      var leftFixed = Util.toFixedNumber( roboticArm.leftProperty.get(), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      if ( !dragHandler.dragging && leftFixed === equilibriumX ) {
+        topPincerOpenNode.visible = bottomPincerOpenNode.visible = true;
+        topPincerClosedNode.visible = bottomPincerClosedNode.visible = false;
+      }
+      else {
+        topPincerOpenNode.visible = bottomPincerOpenNode.visible = false;
+        topPincerClosedNode.visible = bottomPincerClosedNode.visible = true;
+      }
+    };
+
+    // Drag the pincers or hinge
     var dragHandler = new SimpleDragHandler( {
 
         allowTouchSnag: true,
@@ -98,23 +128,17 @@ define( function( require ) {
           roboticArm.leftProperty.set( left );
         },
 
-        end: function( event ) {}
+        end: function( event ) {
+          updatePincers();
+        }
       }
     );
     draggableNode.addInputListener( dragHandler );
 
     roboticArm.leftProperty.link( function( left ) {
 
-      // move the hook and hinge
+      // move the pincers and hinge
       draggableNode.x = options.unitDisplacementLength * ( left - roboticArm.right );
-
-      // rotate the hook when displacement is displayed as zero
-      if ( !dragHandler.dragging && Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ) === equilibriumX ) {
-        //console.log( 'hook up' );//TODO
-      }
-      else {
-        //console.log( 'hook down' );//TODO
-      }
 
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box
@@ -122,6 +146,9 @@ define( function( require ) {
       armNode.setRect( 0, 0, armLength, 16 );
       armNode.right = boxNode.left + overlap;
       armNode.centerY = 0;
+
+      // open the pincers when displacement is displayed as zero
+      updatePincers();
     } );
   }
 
