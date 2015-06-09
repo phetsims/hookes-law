@@ -5,7 +5,7 @@ Design questions
 -----------------------------------------------------------------------------------
 
 Robotic arm re-design
-Colors for top and bottom springs
+Colors for top and bottom springs (I think it would be better to use same colors as series springs)
 Controls are significantly smaller (too small?) in Systems screen
 Number of decimal places for energy?
 What to show on energy bar graph when value is non-zero but displays as zero? "> 0 J"?
