@@ -5,7 +5,7 @@ Design questions
 -----------------------------------------------------------------------------------
 
 Screen icons
-Robotic arm re-design (recommended to make the red hinge 25% larger)
+Robotic arm re-design
 
 Systems screen:
 Colors for top and bottom springs (I think it would be better to use same colors as series springs)
