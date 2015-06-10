@@ -18,9 +18,9 @@ Check box to show/hide the Energy bar graph? If so, specify label and location i
 Check box to show/hide Energy area (triangle) on Force plot? If so, specify label and location in control panel.
 With k=100, x=0.001, you'll see F=0. Should it be displayed as "> 0 N"?
 With k=100, x=0.001, you'll see E=0. Should it be displayed as "> 0 J"?
-Force plot: where to put energy value, it won't fit in triangle consistently
-Force plot: red color-coding to applied force is weak, refers back to the previous 2 screens
+Force plot: where to put energy value, it won't fit in triangle as shown in mockups, it's currently placed near point
 Force plot: Energy value can't be color-coded if it sits inside triangle that represents energy area. Do we need value, since it's on bar graph?
+Force plot: red color-coding to applied force is weak, refers back to the previous 2 screens
 Both plots: blue point is color-coded to spring constant slider, association is weak, maybe confusing?
 
 -----------------------------------------------------------------------------------
