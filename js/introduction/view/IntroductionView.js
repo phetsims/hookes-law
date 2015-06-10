@@ -50,7 +50,7 @@ define( function( require ) {
     var system1Node = new IntroductionSystemNode( model.system1, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
-      left: this.layoutBounds.left + 49, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
+      left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
     } );
     this.addChild( system1Node );

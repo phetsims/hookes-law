@@ -35,8 +35,8 @@ define( function( require ) {
     PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA: 0.1,
 
     // unit vectors, for 1-dimensional model-view transforms
-    UNIT_DISPLACEMENT_X: 200, // view length of a 1m displacement vector, when drawn in the x dimension
-    UNIT_FORCE_X: 1.75, // view length of a 1N force vector, when drawn in the x dimension
+    UNIT_DISPLACEMENT_X: 225, // view length of a 1m displacement vector, when drawn in the x dimension
+    UNIT_FORCE_X: 1.45, // view length of a 1N force vector, when drawn in the x dimension
     UNIT_FORCE_Y: 0.25, // view length of a 1N force vector, when drawn in the y dimension
     UNIT_ENERGY_Y: 1.1, // view length of a 1J energy vector, when drawn in the y dimension
 

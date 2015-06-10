@@ -44,7 +44,7 @@ define( function( require ) {
     var systemNode = new EnergySystemNode( model.system, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
-      left: this.layoutBounds.left + 50,
+      left: this.layoutBounds.left + 35,
       bottom: this.layoutBounds.bottom - 10
     } );
     this.addChild( systemNode );
@@ -52,7 +52,7 @@ define( function( require ) {
     // Energy bar graph
     var energyBarGraph = new EnergyBarGraph( model.system.spring, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      left: 20,
+      left: 15,
       bottom: systemNode.top - 40
     } );
     this.addChild( energyBarGraph );

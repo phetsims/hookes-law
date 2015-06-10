@@ -49,7 +49,7 @@ define( function( require ) {
     // Series system
     var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
-      left: this.layoutBounds.left + 42, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
+      left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
       visible: viewProperties.seriesParallelProperty.get() === 'series'
     } );
@@ -58,7 +58,7 @@ define( function( require ) {
     // Parallel system
     var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
-      left: this.layoutBounds.left + 60, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
+      left: seriesSystemNode.left,
       centerY: this.layoutBounds.centerY,
       visible: viewProperties.seriesParallelProperty.get() === 'parallel'
     } );
