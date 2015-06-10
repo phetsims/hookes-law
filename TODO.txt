@@ -7,6 +7,7 @@ Design questions
 Screen icons
 Robotic arm re-design
 Controls are currently at upper-right. Would they look better vertically centered?
+Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior? This is in common code.
 
 Systems screen:
 Colors for top and bottom springs (I think it would be better to use same colors as series springs)
@@ -21,7 +22,6 @@ Force plot: where to put energy value, it won't fit in triangle consistently
 Force plot: red color-coding to applied force is weak, refers back to the previous 2 screens
 Force plot: Energy value can't be color-coded if it sits inside triangle that represents energy area. Do we need value, since it's on bar graph?
 Both plots: blue point is color-coded to spring constant slider, association is weak, maybe confusing?
-Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior?
 
 -----------------------------------------------------------------------------------
 Implementation
