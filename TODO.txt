@@ -7,7 +7,7 @@ Design questions
 Screen icons
 Robotic arm re-design
 Controls are currently at upper-right. Would they look better vertically centered?
-Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior? This is in common code.
+Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior? This is in JavaScript and common code.
 
 Systems screen:
 Colors for top and bottom springs (I think it would be better to use same colors as series springs)
