@@ -87,7 +87,7 @@ define( function( require ) {
 
     // hinge, where the pincers are attached
     var hingeNode = new Image( hingeImage, {
-      scale: 0.4,
+      scale: 0.4, //TODO scale image file?
       x: topPincerClosedNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
