@@ -6,6 +6,7 @@ Design questions
 
 Screen icons
 Robotic arm re-design
+Controls are currently at upper-right. Would they look better vertically centered?
 
 Systems screen:
 Colors for top and bottom springs (I think it would be better to use same colors as series springs)
