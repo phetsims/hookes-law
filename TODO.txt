@@ -21,7 +21,6 @@ Force plot: Red line and force value are color-coded to applied force, but the a
 Both plots: Blue point is color-coded to spring constant slider, association is weak, maybe confusing?
 Force plot: Energy value can't be color-coded if it sits inside triangle that represents energy area
 
-
 -----------------------------------------------------------------------------------
 Implementation
 -----------------------------------------------------------------------------------
