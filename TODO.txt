@@ -17,8 +17,8 @@ Check box to show/hide Energy area (triangle) on Force plot? If so, specify labe
 With k=100, x=0.001, you'll see F=0. Should it be displayed as "> 0 N"?
 With k=100, x=0.001, you'll see E=0. Should it be displayed as "> 0 J"?
 Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior?
-Force plot: Red line and force value are color-coded to applied force, but the association is weak, back to the previous 2 screens
-Both plots: Blue point is color-coded to spring constant slider, association is weak, maybe confusing?
+Force plot: red color-coding to applied force is weak, refers back to the previous 2 screens
+Both plots: blue point is color-coded to spring constant slider, association is weak, maybe confusing?
 Force plot: Energy value can't be color-coded if it sits inside triangle that represents energy area
 
 -----------------------------------------------------------------------------------
