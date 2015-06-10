@@ -28,7 +28,7 @@ define( function( require ) {
     credits: {
       leadDesign: 'Amy Rouinfar',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-      team: 'Mike Dubson, Ariel Paul, Kathy Perkins, Martin Veillette',
+      team: 'Mike Dubson, Bruna Shinohara de Mendonça, Ariel Paul, Kathy Perkins, Martin Veillette',
       qualityAssurance: '', //TODO get names from AP
       graphicArts: 'Mariah Hermsmeyer'
     }
