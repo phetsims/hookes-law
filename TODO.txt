@@ -12,18 +12,16 @@ Colors for top and bottom springs (I think it would be better to use same colors
 Controls are significantly smaller (too small?) than in other screens
 
 Energy screen:
-Number of decimal places for energy?
 Color coding of the Force and Energy XY plots (why is slope line red? why is point blue like spring constant? should values be color-coded like spring? ...)
-Should bar graph be labeled "Potential Energy", vertically along axis?
 Any need to be able to hide the Energy bar graph?
 With k=100, x=0.001, you'll see F=0. Should it be displayed as "> 0 N"?
 With k=100, x=0.001, you'll see E=0. Should it be displayed as "> 0 J"?
+Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior?
 
 -----------------------------------------------------------------------------------
 Implementation
 -----------------------------------------------------------------------------------
 
-Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior?
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
 Compute spring shape as a function of displacement (MV's algorithm?)
 Split spring into foreground and background, use vertical gradients

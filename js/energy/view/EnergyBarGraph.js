@@ -22,9 +22,9 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
 
   // strings
-  var energyString = require( 'string!HOOKES_LAW/energy' );
   var joulesString = require( 'string!HOOKES_LAW/joules' );
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+  var potentialEnergyString = require( 'string!HOOKES_LAW/potentialEnergy' );
 
   // constants
   var AXIS_LINE_WIDTH = 1;
@@ -54,10 +54,11 @@ define( function( require ) {
       stroke: null
     } );
 
-    var yAxisLabel = new Text( energyString, {
+    var yAxisLabel = new Text( potentialEnergyString, {
+      rotation: -Math.PI / 2,
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
-      centerX: yAxisNode.centerX,
-      bottom: yAxisNode.top - 2
+      right: yAxisNode.left - 1,
+      centerY: yAxisNode.centerY
     } );
 
     var barNode = new Rectangle( 0, 0, 1, 1, {

@@ -20,9 +20,9 @@ define( function( require ) {
 
   // strings
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
-  var energyString = require( 'string!HOOKES_LAW/energy' );
   var joulesString = require( 'string!HOOKES_LAW/joules' );
   var metersString = require( 'string!HOOKES_LAW/meters' );
+  var potentialEnergyString = require( 'string!HOOKES_LAW/potentialEnergy' );
 
   /**
    * @param {Spring} spring
@@ -55,7 +55,7 @@ define( function( require ) {
       // y axis
       minY: 0,
       maxY: HookesLawConstants.ENERGY_Y_AXIS_LENGTH,
-      yString: energyString,
+      yString: potentialEnergyString,
       yUnits: joulesString,
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
       yValueFill: HookesLawColors.ENERGY,
