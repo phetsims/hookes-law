@@ -18,8 +18,8 @@ define( function( require ) {
     TOTAL_SPRING_FORCE: new Color( 11, 37, 251 ),
     LEFT_SPRING_FORCE: new Color( 110, 110, 110 ),
     RIGHT_SPRING_FORCE: new Color( 253, 184, 47 ),
-    TOP_SPRING_FORCE: 'magenta', //TODO design: get color from AR
-    BOTTOM_SPRING_FORCE: 'aqua', //TODO design: get color from AR
+    TOP_SPRING_FORCE: new Color( 110, 110, 110 ),
+    BOTTOM_SPRING_FORCE: new Color( 253, 184, 47 ),
     DISPLACEMENT: new Color( 0, 180, 0 ),
     EQUILIBRIUM_POSITION: new Color( 0, 180, 0 ),
     ENERGY: new Color( 3, 205, 255 )
