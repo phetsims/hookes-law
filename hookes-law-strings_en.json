@@ -23,14 +23,8 @@
   "energy": {
     "value": "Energy"
   },
-  "energyGraph": {
-    "value": "Energy Graph"
-  },
   "equilibriumPosition": {
     "value": "Equilibrium Position"
-  },
-  "forceGraph": {
-    "value": "Force Graph"
   },
   "hookes-law.name": {
     "value": "Hooke's Law"
