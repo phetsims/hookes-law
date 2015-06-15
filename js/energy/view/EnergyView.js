@@ -61,7 +61,7 @@ define( function( require ) {
     // Energy bar graph
     var energyBarGraph = new EnergyBarGraph( model.system.spring, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      left: 15,
+      // x position depends on whether XY plots are visible
       bottom: systemNode.top - 35
     } );
     this.addChild( energyBarGraph );
@@ -115,8 +115,17 @@ define( function( require ) {
 
     // Observe view properties
     viewProperties.graphProperty.link( function( graph ) {
+
       forceXYPlot.visible = energyCheckBox.visible = ( graph === 'force' );
       energyXYPlot.visible = ( graph === 'energy' );
+
+      if ( graph === 'none' ) {
+        // aligned with equilibrium position
+        energyBarGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
+      }
+      else {
+        energyBarGraph.left = 15;
+      }
     } );
   }
 
