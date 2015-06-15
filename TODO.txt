@@ -4,6 +4,7 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
+General:
 Screen icons
 Robotic arm re-design
 Controls are currently at upper-right. Would they look better vertically centered?
