@@ -88,8 +88,8 @@ define( function( require ) {
     var energyCheckBox = new CheckBox( energyIcon,
       viewProperties.energyOnForcePlotVisibleProperty,
       _.extend( {
-        left: forceXYPlot.centerX + 50,
-        bottom: forceXYPlot.bottom - 50
+        left: forceXYPlot.left + 10,
+        top: forceXYPlot.top + 20
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
     this.addChild( energyCheckBox );
 
