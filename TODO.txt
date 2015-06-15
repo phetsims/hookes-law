@@ -26,6 +26,7 @@ Split spring into foreground and background, use vertical gradients
 Work on the look of the piece at end of spring(s) that the pincers grab
 Parallel system: truss should be a triangle, will need to compensate for width when positioning arm
 Constrain text size for i18n
+Delete experimental/ subdirectory when done with it.
 
 -----------------------------------------------------------------------------------
 Common Code
