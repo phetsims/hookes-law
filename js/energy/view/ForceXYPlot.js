@@ -16,8 +16,6 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
   var Shape = require( 'KITE/Shape' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
   var XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
 
