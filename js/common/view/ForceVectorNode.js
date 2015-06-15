@@ -34,6 +34,7 @@ define( function( require ) {
       fill: 'white',
       stroke: 'black',
       decimalPlaces: 0,
+      unitLength: HookesLawConstants.UNIT_FORCE_X, // view length of a 1N vector
       alignZero: 'left', // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
       valueVisibleProperty: new Property( true ) // {Property.<boolean>} determines whether the value is visible
     }, options );
@@ -62,7 +63,7 @@ define( function( require ) {
       // update the arrow
       arrowNode.visible = ( value !== 0 ); // since we can't draw a zero-length arrow
       if ( value !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, value * HookesLawConstants.UNIT_FORCE_X, 0 );
+        arrowNode.setTailAndTip( 0, 0, value * options.unitLength, 0 );
       }
 
       // update the value

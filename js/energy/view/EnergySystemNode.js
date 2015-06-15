@@ -72,6 +72,7 @@ define( function( require ) {
     } );
 
     var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, {
+      unitLength: HookesLawConstants.ENERGY_UNIT_FORCE_X, // view length of a 1N force vector
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by spring.rightProperty
       bottom: springNode.top - 14
