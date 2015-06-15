@@ -15,9 +15,6 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
 
-  // strings
-  var introductionString = require( 'string!HOOKES_LAW/introduction' );
-
   var createIcon = function() {
     return new Rectangle( 0, 0, 100, 100, { fill: 'orange' } );
   };
