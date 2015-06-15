@@ -43,6 +43,9 @@ define( function( require ) {
     var energyGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'energy',
       new Text( energyGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
+    var noneRadioButton = new AquaRadioButton( properties.graphProperty, 'none',
+      new Text( 'none', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
+      HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // check boxes
     var appliedForceCheckBox = new CheckBox(
@@ -72,6 +75,7 @@ define( function( require ) {
     var controls = [
       forceGraphRadioButton,
       energyGraphRadioButton,
+      noneRadioButton,
       appliedForceCheckBox,
       displacementCheckBox,
       equilibriumPositionCheckBox,
@@ -87,6 +91,7 @@ define( function( require ) {
       children: [
         forceGraphRadioButton,
         energyGraphRadioButton,
+        noneRadioButton,
         new HSeparator( maxControlWidth ),
         appliedForceCheckBox,
         displacementCheckBox,
