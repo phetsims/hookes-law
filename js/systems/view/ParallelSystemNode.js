@@ -134,7 +134,7 @@ define( function( require ) {
     } );
 
     var springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {
-      scale: 0.75,
+      scale: 0.82,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 25
     } );
