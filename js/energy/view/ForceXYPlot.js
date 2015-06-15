@@ -24,10 +24,8 @@ define( function( require ) {
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
-  var joulesString = require( 'string!HOOKES_LAW/joules' );
   var metersString = require( 'string!HOOKES_LAW/meters' );
   var newtonsString = require( 'string!HOOKES_LAW/newtons' );
-  var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   /**
    * @param {Spring} spring
@@ -42,10 +40,11 @@ define( function( require ) {
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
       valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
-      valuesVisibleProperty: new Property( true ),
+      valuesVisibleProperty: new Property( true ), // {boolean} are numeric values visible?
+      energyVisibleProperty: new Property( true ), // {boolean} is the energy area (triangle) visible?
 
       // point
-      pointFill: HookesLawColors.TOTAL_SPRING_FORCE, //TODO why this color?
+      pointFill: HookesLawColors.TOTAL_SPRING_FORCE,
 
       // x axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
@@ -84,6 +83,8 @@ define( function( require ) {
     } );
     this.addChild( energyPath );
     energyPath.moveToBack();
+
+    options.energyVisibleProperty.linkAttribute( energyPath, 'visible' );
 
     // update force line
     spring.springConstantProperty.link( function( springConstant ) {

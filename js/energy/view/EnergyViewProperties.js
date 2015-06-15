@@ -26,7 +26,8 @@ define( function( require ) {
       appliedForceVectorVisible: checked, // {boolean} is the applied force vector visible?
       displacementVectorVisible: checked, // {boolean} is the displacement vector visible?
       equilibriumPositionVisible: checked, // {boolean} is the equilibrium position visible?
-      valuesVisible: checked  // {boolean} are numeric values visible?
+      valuesVisible: checked,  // {boolean} are numeric values visible?
+      energyOnForcePlotVisible: checked // {boolean} is energy depicted on the Force plot?
     } );
   }
 
