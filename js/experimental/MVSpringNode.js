@@ -16,9 +16,12 @@ define( function( require ) {
   var HSlider = require( 'SUN/HSlider' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Property = require( 'AXON/Property' );
   var Range = require( 'DOT/Range' );
   var Shape = require( 'KITE/Shape' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
@@ -53,9 +56,25 @@ define( function( require ) {
       centerX: deltaPhaseSlider.centerX,
       centerY: deltaPhaseSlider.centerY + 100
     } );
-    this.addChild( pitchSizeSlider );
-    this.addChild( deltaPhaseSlider );
-    this.addChild( aspectRatioSlider );
+
+    // slider labels
+    var textOptions = { font: new PhetFont( 20 ) };
+    var pitchSizeText = new Text( 'pitch size:', textOptions );
+    var deltaPhaseText = new Text( 'delta phase:', textOptions );
+    var aspectRatioText = new Text( 'aspect ratio:', textOptions );
+
+    this.addChild( new VBox( {
+      align: 'left',
+      spacing: 15,
+      children: [
+        pitchSizeText,
+        pitchSizeSlider,
+        deltaPhaseText,
+        deltaPhaseSlider,
+        aspectRatioText,
+        aspectRatioSlider
+      ]
+    } ) );
 
     var index; // reused herein
     var xOffset = 150;
@@ -68,19 +87,22 @@ define( function( require ) {
 
     // Spring drawn using a single path
     var springPath = new Path( null, {
-      stroke: options.stroke, lineWidth: options.lineWidth
+      stroke: options.stroke,
+      lineWidth: options.lineWidth
     } );
     this.addChild( springPath );
 
     // Update the spring path
     Property.multilink( [ pitchSizeProperty, deltaPhaseProperty, aspectRatioProperty ],
       function( pitchSize, deltaPhase, aspectRatio ) {
+
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
           var xCoordinate = xOffset + amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
           var yCoordinate = yOffset + aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
           arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
         }
+
         springPath.shape = new Shape();
         springPath.shape.moveToPoint( arrayPosition[ 0 ] );
         for ( index = 1; index < arrayLength; index++ ) {
@@ -103,6 +125,7 @@ define( function( require ) {
     // Update the front and back paths
     Property.multilink( [ pitchSizeProperty, deltaPhaseProperty, aspectRatioProperty ],
       function( pitchSize, deltaPhase, aspectRatio ) {
+
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
           var xCoordinate = xOffset + amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
