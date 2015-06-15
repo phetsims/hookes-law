@@ -20,7 +20,6 @@ Shouldn't "Energy" check box be labeled "Potential Energy"?
 Implementation
 -----------------------------------------------------------------------------------
 
-Revisit how precision of values is handled? Should this be done in the view only?
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
 Compute spring shape as a function of displacement (MV's algorithm)
 Split spring into foreground and background, use vertical gradients
