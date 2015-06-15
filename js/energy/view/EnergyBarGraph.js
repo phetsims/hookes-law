@@ -27,8 +27,7 @@ define( function( require ) {
   var potentialEnergyString = require( 'string!HOOKES_LAW/potentialEnergy' );
 
   // constants
-  var AXIS_LINE_WIDTH = 1;
-  var AXIS_COLOR = 'black';
+  var BAR_WIDTH = 20;
 
   /**
    * @param {Spring} spring
@@ -41,16 +40,16 @@ define( function( require ) {
       valueVisibleProperty: new Property( true )
     }, options );
 
-    var xAxisNode = new Line( 0, 0, 40, 0, {
-      stroke: AXIS_COLOR,
-      lineWidth: AXIS_LINE_WIDTH
+    var xAxisNode = new Line( 0, 0, 1.65 * BAR_WIDTH, 0, {
+      stroke: 'black',
+      lineWidth: 0.25
     } );
 
     var yAxisNode = new ArrowNode( 0, 0, 0, -HookesLawConstants.ENERGY_Y_AXIS_LENGTH, {
       headHeight: 10,
       headWidth: 10,
-      tailWidth: AXIS_LINE_WIDTH,
-      fill: AXIS_COLOR,
+      tailWidth: 1,
+      fill: 'black',
       stroke: null
     } );
 
@@ -61,8 +60,9 @@ define( function( require ) {
       centerY: yAxisNode.centerY
     } );
 
-    var barNode = new Rectangle( 0, 0, 1, 1, {
-      fill: HookesLawColors.ENERGY
+    var barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
+      fill: HookesLawColors.ENERGY,
+      centerX: xAxisNode.centerX
     } );
 
     var valueNode = new Text( '', {
@@ -77,10 +77,8 @@ define( function( require ) {
 
       // resize the bar
       barNode.visible = ( energy > 0 );
-      var width = 0.4 * xAxisNode.width;
       var height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_Y ); // bar must have non-zero size
-      barNode.setRect( 0, -height, width, height ); // bar grows up
-      barNode.centerX = xAxisNode.centerX;
+      barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
       valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
