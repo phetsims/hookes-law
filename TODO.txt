@@ -20,7 +20,7 @@ Implementation
 -----------------------------------------------------------------------------------
 
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
-Compute spring shape as a function of displacement (MV's algorithm?)
+Compute spring shape as a function of displacement (MV's algorithm)
 Split spring into foreground and background, use vertical gradients
 Work on the look of the piece at end of spring(s) that the pincers grab
 Parallel system: truss should be a triangle, will need to compensate for width when positioning arm
