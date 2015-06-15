@@ -116,10 +116,10 @@ define( function( require ) {
     // Observe view properties
     viewProperties.graphProperty.link( function( graph ) {
 
-      forceXYPlot.visible = energyCheckBox.visible = ( graph === 'force' );
-      energyXYPlot.visible = ( graph === 'energy' );
+      forceXYPlot.visible = energyCheckBox.visible = ( graph === 'forceXY' );
+      energyXYPlot.visible = ( graph === 'energyXY' );
 
-      if ( graph === 'none' ) {
+      if ( graph === 'energyBar' ) {
         // aligned with equilibrium position
         energyBarGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
       }

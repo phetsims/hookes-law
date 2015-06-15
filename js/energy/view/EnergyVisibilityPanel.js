@@ -23,8 +23,6 @@ define( function( require ) {
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
-  var energyGraphString = require( 'string!HOOKES_LAW/energyGraph' );
-  var forceGraphString = require( 'string!HOOKES_LAW/forceGraph' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
   /**
@@ -37,14 +35,14 @@ define( function( require ) {
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
     // radio buttons
-    var forceGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'force',
-      new Text( forceGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+    var energyBarRadioButton = new AquaRadioButton( properties.graphProperty, 'energyBar',
+      new Text( 'PE bar', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
-    var energyGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'energy',
-      new Text( energyGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+    var energyXYRadioButton = new AquaRadioButton( properties.graphProperty, 'energyXY',
+      new Text( 'PE bar + PE XY', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
-    var noneRadioButton = new AquaRadioButton( properties.graphProperty, 'none',
-      new Text( 'none', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
+    var forceXYRadioButton = new AquaRadioButton( properties.graphProperty, 'forceXY',
+      new Text( 'PE bar + Force XY', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // check boxes
@@ -73,9 +71,9 @@ define( function( require ) {
     // Adjust touch areas
     var spacing = 20;
     var controls = [
-      forceGraphRadioButton,
-      energyGraphRadioButton,
-      noneRadioButton,
+      energyBarRadioButton,
+      energyXYRadioButton,
+      forceXYRadioButton,
       appliedForceCheckBox,
       displacementCheckBox,
       equilibriumPositionCheckBox,
@@ -89,9 +87,9 @@ define( function( require ) {
 
     var content = new VBox( {
       children: [
-        forceGraphRadioButton,
-        energyGraphRadioButton,
-        noneRadioButton,
+        energyBarRadioButton,
+        energyXYRadioButton,
+        forceXYRadioButton,
         new HSeparator( maxControlWidth ),
         appliedForceCheckBox,
         displacementCheckBox,
