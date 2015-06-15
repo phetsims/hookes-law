@@ -35,18 +35,27 @@ define( function( require ) {
 
     Node.call( this );
 
+    // properties
     var pitchSizeProperty = new Property( 2 );
     var deltaPhaseProperty = new Property( 1 );
     var aspectRatioProperty = new Property( 1 );
-    var hSliderOne = new HSlider( pitchSizeProperty, new Range( 0.1, 2 ) );
-    var hSliderTwo = new HSlider( deltaPhaseProperty, new Range( 0, 7 ) );
-    var hSliderThree = new HSlider( aspectRatioProperty, new Range( 0.3, 3 ) );
-    hSliderOne.centerX = 50;
-    hSliderTwo.centerX = hSliderOne.centerX;
-    hSliderThree.centerX = hSliderOne.centerX;
-    hSliderOne.centerY = 200;
-    hSliderTwo.centerY = hSliderOne.centerY + 100;
-    hSliderThree.centerY = hSliderTwo.centerY + 100;
+
+    // sliders
+    var pitchSizeSlider = new HSlider( pitchSizeProperty, new Range( 0.1, 2 ), {
+      centerX: 50,
+      centerY: 200
+    } );
+    var deltaPhaseSlider = new HSlider( deltaPhaseProperty, new Range( 0, 7 ), {
+      centerX: pitchSizeSlider.centerX,
+      centerY: pitchSizeSlider.centerY + 100
+    } );
+    var aspectRatioSlider = new HSlider( aspectRatioProperty, new Range( 0.3, 3 ), {
+      centerX: deltaPhaseSlider.centerX,
+      centerY: deltaPhaseSlider.centerY + 100
+    } );
+    this.addChild( pitchSizeSlider );
+    this.addChild( deltaPhaseSlider );
+    this.addChild( aspectRatioSlider );
 
     var index; // reused herein
     var xOffset = 150;
@@ -57,84 +66,78 @@ define( function( require ) {
     var loops = 10;
     var arrayLength = pointsPerLoop * loops;
 
-    var shape = new Shape();
-    var path = new Path( shape, {
+    // Spring drawn using a single path
+    var springPath = new Path( null, {
       stroke: options.stroke, lineWidth: options.lineWidth
     } );
+    this.addChild( springPath );
 
-    this.addChild( path );
+    // Update the spring path
+    Property.multilink( [ pitchSizeProperty, deltaPhaseProperty, aspectRatioProperty ],
+      function( pitchSize, deltaPhase, aspectRatio ) {
+        var arrayPosition = [];
+        for ( index = 0; index < arrayLength; index++ ) {
+          var xCoordinate = xOffset + amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
+          var yCoordinate = yOffset + aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
+          arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
+        }
+        springPath.shape = new Shape();
+        springPath.shape.moveToPoint( arrayPosition[ 0 ] );
+        for ( index = 1; index < arrayLength; index++ ) {
+          springPath.shape.lineToPoint( arrayPosition[ index ] );
+        }
+      } );
 
-    Property.multilink( [ pitchSizeProperty, deltaPhaseProperty,
-      aspectRatioProperty ], function( pitchSize, deltaPhase, aspectRatio ) {
-      var arrayPosition = [];
-      for ( index = 0; index < arrayLength; index++ ) {
-        var xCoordinate = xOffset + amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
-        var yCoordinate = yOffset + aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
-        arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
-      }
-      path.shape = new Shape();
-      path.shape.moveToPoint( arrayPosition[ 0 ] );
-      for ( index = 1; index < arrayLength; index++ ) {
-        path.shape.lineToPoint( arrayPosition[ index ] );
-      }
-    } );
-
-    this.addChild( hSliderOne );
-    this.addChild( hSliderTwo );
-    this.addChild( hSliderThree );
-    this.mutate( options );
-
-    var frontShape = new Shape();
-    var frontPath = new Path( frontShape, {
+    // Spring drawn using 2 paths, split into front and back pieces to add depth
+    var frontPath = new Path( null, {
       stroke: options.stroke,
       lineWidth: options.lineWidth
     } );
-
-    var backShape = new Shape();
-    var backPath = new Path( backShape, {
-      stroke: 'pink', lineWidth: options.lineWidth
+    var backPath = new Path( null, {
+      stroke: 'pink',
+      lineWidth: options.lineWidth
     } );
-
     this.addChild( backPath );
     this.addChild( frontPath );
 
-    Property.multilink( [ pitchSizeProperty, deltaPhaseProperty,
-      aspectRatioProperty ], function( pitchSize, deltaPhase, aspectRatio ) {
-      var arrayPosition = [];
-      for ( index = 0; index < arrayLength; index++ ) {
-        var xCoordinate = xOffset + amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
-        var yCoordinate = yOffset + 150 + aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
-        arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
-      }
-      frontPath.shape = new Shape();
-      backPath.shape = new Shape();
-
-      frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
-      backPath.shape.moveToPoint( arrayPosition[ 0 ] );
-      var wasFront = true;
-      for ( index = 1; index < arrayLength; index++ ) {
-
-        var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
-
-        if ( !wasFront && isFront ) {
-          wasFront = true;
-          frontPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+    // Update the front and back paths
+    Property.multilink( [ pitchSizeProperty, deltaPhaseProperty, aspectRatioProperty ],
+      function( pitchSize, deltaPhase, aspectRatio ) {
+        var arrayPosition = [];
+        for ( index = 0; index < arrayLength; index++ ) {
+          var xCoordinate = xOffset + amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
+          var yCoordinate = yOffset + 150 + aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
+          arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
         }
+        frontPath.shape = new Shape();
+        backPath.shape = new Shape();
 
-        if ( wasFront && !isFront ) {
-          wasFront = false;
-          backPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
-        }
+        frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
+        backPath.shape.moveToPoint( arrayPosition[ 0 ] );
+        var wasFront = true;
+        for ( index = 1; index < arrayLength; index++ ) {
 
-        if ( !wasFront && !isFront ) {
-          backPath.shape.lineToPoint( arrayPosition[ index ] );
-        }
+          var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
 
-        if ( wasFront && isFront ) {
-          frontPath.shape.lineToPoint( arrayPosition[ index ] );
+          if ( !wasFront && isFront ) {
+            wasFront = true;
+            frontPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+          }
+
+          if ( wasFront && !isFront ) {
+            wasFront = false;
+            backPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+          }
+
+          if ( !wasFront && !isFront ) {
+            backPath.shape.lineToPoint( arrayPosition[ index ] );
+          }
+
+          if ( wasFront && isFront ) {
+            frontPath.shape.lineToPoint( arrayPosition[ index ] );
+          }
         }
-      }
-    } );
+      } );
 
     this.mutate( options );
   }
