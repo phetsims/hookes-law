@@ -10,6 +10,8 @@ define( function( require ) {
 
   // modules
   var EnergyScreen = require( 'HOOKES_LAW/energy/EnergyScreen' );
+  var ExperimentalScreen = require( 'HOOKES_LAW/experimental/ExperimentalScreen' );
+  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var IntroductionScreen = require( 'HOOKES_LAW/introduction/IntroductionScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
@@ -23,6 +25,10 @@ define( function( require ) {
     new SystemsScreen(),
     new EnergyScreen()
   ];
+
+  if ( HookesLawQueryParameters.DEV ) {
+    screens.push( new ExperimentalScreen() );
+  }
 
   var options = {
     credits: {
