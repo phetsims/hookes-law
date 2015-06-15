@@ -40,7 +40,7 @@ define( function( require ) {
       valuesVisibleProperty: new Property( true ),
 
       // point
-      pointFill: HookesLawColors.TOTAL_SPRING_FORCE, //TODO why this color?
+      pointFill: HookesLawColors.TOTAL_SPRING_FORCE,
 
       // x axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
@@ -65,7 +65,6 @@ define( function( require ) {
 
     XYPointPlot.call( this, spring.displacementProperty, spring.energyProperty, options );
 
-    //TODO better name for this energyParabolaNode?
     // Parabola that corresponds to E = ( k * x * x ) / 2
     var energyParabolaNode = new Path( null, {
       stroke: HookesLawColors.ENERGY,

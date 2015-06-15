@@ -70,10 +70,9 @@ define( function( require ) {
 
     XYPointPlot.call( this, spring.displacementProperty, spring.appliedForceProperty, options );
 
-    //TODO better name for forceLineNode?
     // The line that corresponds to F = kx
     var forceLineNode = new Line( 0, 0, 1, 1, {
-      stroke: HookesLawColors.APPLIED_FORCE, //TODO design: why is this force color? It's slope due to spring constant
+      stroke: HookesLawColors.APPLIED_FORCE,
       lineWidth: 2
     } );
     this.addChild( forceLineNode );
