@@ -85,17 +85,6 @@ define( function( require ) {
     this.addChild( energyPath );
     energyPath.moveToBack();
 
-    // energy value
-    var energyValueNode = new Text( '', {
-      fill: HookesLawColors.ENERGY,
-      font: HookesLawConstants.XY_PLOT_VALUE_FONT,
-    } );
-    this.addChild( energyValueNode );
-
-    options.valuesVisibleProperty.link( function( visible ) {
-      energyValueNode.visible = visible;
-    } );
-
     // update force line
     spring.springConstantProperty.link( function( springConstant ) {
       // x
@@ -105,37 +94,6 @@ define( function( require ) {
       var minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
       var maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;
       forceLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
-    } );
-
-    // update energy value
-    spring.energyProperty.link( function( energy ) {
-
-      // value
-      var fixedEnergy = Util.toFixedNumber( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES );
-      var energyText = Util.toFixed( fixedEnergy, HookesLawConstants.ENERGY_DECIMAL_PLACES );
-      energyValueNode.text = StringUtils.format( pattern_0value_1units, energyText, joulesString );
-
-      // x location, centered on point, or as close to y axis as possible without overlapping
-      var viewX = spring.displacementProperty.get() * HookesLawConstants.UNIT_DISPLACEMENT_X;
-      var X_SPACING = 6;
-      if ( Math.abs( viewX ) > energyValueNode.width / 2 + X_SPACING ) {
-        energyValueNode.centerX = viewX;
-      }
-      else if ( viewX >= 0 ) {
-        energyValueNode.left = X_SPACING;
-      }
-      else {
-        energyValueNode.right = -X_SPACING;
-      }
-
-      // y location, centered above or below point
-      var viewY = spring.appliedForceProperty.get() * HookesLawConstants.UNIT_FORCE_Y;
-      if ( viewX >= 0 ) {
-        energyValueNode.bottom = -viewY - 10;
-      }
-      else {
-        energyValueNode.top = -viewY + 10;
-      }
     } );
 
     // update energy area (triangle)
