@@ -19,7 +19,7 @@ define( function( require ) {
 
     this.addChild( new MVSpringNode( {
       left: 20,
-      centerY: this.layoutBounds.centerY
+      top: 50
     }) );
   }
 

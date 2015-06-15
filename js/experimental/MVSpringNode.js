@@ -15,14 +15,19 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var HSlider = require( 'SUN/HSlider' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
   var Path = require( 'SCENERY/nodes/Path' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Property = require( 'AXON/Property' );
   var Range = require( 'DOT/Range' );
   var Shape = require( 'KITE/Shape' );
   var Text = require( 'SCENERY/nodes/Text' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  var HBox = require( 'SCENERY/nodes/HBox' );
   var Vector2 = require( 'DOT/Vector2' );
+
+  // constants
+  var CONTROL_FONT = new PhetFont( 16 );
+  var TICK_LABEL_FONT = new PhetFont( 14 );
 
   /**
    * @param {Object} [options]
@@ -43,41 +48,57 @@ define( function( require ) {
     var deltaPhaseProperty = new Property( 1 );
     var aspectRatioProperty = new Property( 1 );
 
-    // sliders
-    var pitchSizeSlider = new HSlider( pitchSizeProperty, new Range( 0.1, 2 ), {
-      centerX: 50,
-      centerY: 200
-    } );
-    var deltaPhaseSlider = new HSlider( deltaPhaseProperty, new Range( 0, 7 ), {
-      centerX: pitchSizeSlider.centerX,
-      centerY: pitchSizeSlider.centerY + 100
-    } );
-    var aspectRatioSlider = new HSlider( aspectRatioProperty, new Range( 0.3, 3 ), {
-      centerX: deltaPhaseSlider.centerX,
-      centerY: deltaPhaseSlider.centerY + 100
+    // ranges
+    var pitchSizeRange = new Range( 0.1, 2 );
+    var deltaPhaseRange = new Range( 0, 7 );
+    var aspectRatioRange = new Range( 0.3, 3 );
+
+    // controls
+    var pitchSizeControl = new NumberControl( 'pitch size:', pitchSizeProperty, pitchSizeRange, {
+      titleFont: CONTROL_FONT,
+      valueFont: CONTROL_FONT,
+      majorTicks: [
+        { value: pitchSizeRange.min, label: new Text( pitchSizeRange.min, { font: TICK_LABEL_FONT } ) },
+        { value: pitchSizeRange.max, label: new Text( pitchSizeRange.max, { font: TICK_LABEL_FONT } ) }
+      ],
+      decimalPlaces: 2,
+      delta: 0.01
     } );
 
-    // slider labels
-    var textOptions = { font: new PhetFont( 20 ) };
-    var pitchSizeText = new Text( 'pitch size:', textOptions );
-    var deltaPhaseText = new Text( 'delta phase:', textOptions );
-    var aspectRatioText = new Text( 'aspect ratio:', textOptions );
+    var deltaPhaseControl = new NumberControl( 'delta phase:', deltaPhaseProperty, deltaPhaseRange, {
+      titleFont: CONTROL_FONT,
+      valueFont: CONTROL_FONT,
+      majorTicks: [
+        { value: deltaPhaseRange.min, label: new Text( deltaPhaseRange.min, { font: TICK_LABEL_FONT } ) },
+        { value: deltaPhaseRange.max, label: new Text( deltaPhaseRange.max, { font: TICK_LABEL_FONT } ) }
+      ],
+      decimalPlaces: 2,
+      delta: 0.01
+    } );
 
-    this.addChild( new VBox( {
+    var aspectRatioControl = new NumberControl( 'aspect ratio:', aspectRatioProperty, aspectRatioRange, {
+      titleFont: CONTROL_FONT,
+      valueFont: CONTROL_FONT,
+      majorTicks: [
+        { value: aspectRatioRange.min, label: new Text( aspectRatioRange.min, { font: TICK_LABEL_FONT } ) },
+        { value: aspectRatioRange.max, label: new Text( aspectRatioRange.max, { font: TICK_LABEL_FONT } ) }
+      ],
+      decimalPlaces: 2,
+      delta: 0.01
+    } );
+
+    this.addChild( new HBox( {
       align: 'left',
-      spacing: 15,
+      spacing: 30,
       children: [
-        pitchSizeText,
-        pitchSizeSlider,
-        deltaPhaseText,
-        deltaPhaseSlider,
-        aspectRatioText,
-        aspectRatioSlider
+        pitchSizeControl,
+        deltaPhaseControl,
+        aspectRatioControl
       ]
     } ) );
 
     var index; // reused herein
-    var xOffset = 150;
+    var xOffset = 50;
     var yOffset = 300;
     var amplitude = 50;
     var phase = 0;
@@ -166,5 +187,6 @@ define( function( require ) {
   }
 
   return inherit( Node, MVSpringNode );
-} );
+} )
+;
 
