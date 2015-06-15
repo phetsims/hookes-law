@@ -82,8 +82,6 @@ define( function( require ) {
     this.addChild( energyPath );
     energyPath.moveToBack();
 
-    options.energyVisibleProperty.linkAttribute( energyPath, 'visible' );
-
     // update force line
     spring.springConstantProperty.link( function( springConstant ) {
       // x
@@ -96,12 +94,12 @@ define( function( require ) {
     } );
 
     // update energy area (triangle)
-    Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty ],
-      function( displacement, appliedForce ) {
+    Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, options.energyVisibleProperty ],
+      function( displacement, appliedForce, visible ) {
         var fixedDisplacement = Util.toFixedNumber( displacement, options.xDecimalPlaces );
         var x = options.xUnitLength * fixedDisplacement;
         var y = -appliedForce * options.yUnitLength;
-        energyPath.visible = ( fixedDisplacement !== 0 );
+        energyPath.visible = ( fixedDisplacement !== 0 && visible );
         if ( energyPath.visible ) {
           energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( x, 0 ).lineTo( x, y ).close();
         }
