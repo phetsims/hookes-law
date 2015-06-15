@@ -17,11 +17,12 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParallelSpringControls = require( 'HOOKES_LAW/systems/view/ParallelSpringControls' );
+  var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
+  var Shape = require( 'KITE/Shape' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var Util = require( 'DOT/Util' );
@@ -87,10 +88,9 @@ define( function( require ) {
     } );
 
     // right ends of both springs are connected to this
-    var trussNode = new Line( 0, 0, 0, bottomSpringNode.centerY - topSpringNode.centerY, {
+    var trussNode = new Path( new Shape().moveTo( 0, topSpringNode.centerY ).lineTo( 0, bottomSpringNode.centerY ).moveTo( 0, 0 ).lineTo( 6, 0 ), {
       lineWidth: 2,
-      stroke: 'black',
-      centerY: yOrigin
+      stroke: 'black'
     } );
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
@@ -165,7 +165,7 @@ define( function( require ) {
 
     // position the vectors and truss
     equivalentSpring.rightProperty.link( function( right ) {
-      trussNode.centerX = appliedForceVectorNode.x = totalSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
+      trussNode.left = appliedForceVectorNode.x = totalSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
     topSpring.rightProperty.link( function( right ) {
       topSpringForceVectorNode.x = options.unitDisplacementLength * right;
