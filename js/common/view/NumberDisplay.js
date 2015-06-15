@@ -19,33 +19,40 @@ define( function( require ) {
 
   /**
    * @param {Property.<number>} numberProperty
-   * @param {Range} valueRange
+   * @param {Range} numberRange
    * @param {string} units
    * @param {string} pattern
    * @param {Object} [options]
    * @constructor
    */
-  function NumberDisplay( numberProperty, valueRange, units, pattern, options ) {
+  function NumberDisplay( numberProperty, numberRange, units, pattern, options ) {
 
     options = _.extend( {
       font: new HookesLawFont( 20 ),
-      decimalPlaces: 0
+      decimalPlaces: 0,
+      xMargin: 8,
+      yMargin: 2,
+      cornerRadius: 0,
+      numberFill: 'black',
+      backgroundFill: 'white',
+      backgroundStroke: 'lightGray'
     }, options );
 
     // determine the widest value
-    var minString = Util.toFixed( valueRange.min, options.decimalPlaces );
-    var maxString = Util.toFixed( valueRange.max, options.decimalPlaces );
+    var minString = Util.toFixed( numberRange.min, options.decimalPlaces );
+    var maxString = Util.toFixed( numberRange.max, options.decimalPlaces );
     var widestString = StringUtils.format( pattern, ( ( minString.length > maxString.length ) ? minString : maxString ), units );
 
     // value
-    var valueNode = new Text( widestString, { font: options.font } );
+    var valueNode = new Text( widestString, {
+      font: options.font,
+      fill: options.numberFill
+    } );
 
     // background
-    var xMargin = 0.1 * valueNode.width;
-    var yMargin = 0.1 * valueNode.height;
-    var background = new Rectangle( 0, 0, valueNode.width + xMargin + xMargin, valueNode.height + yMargin + yMargin, {
-      fill: 'white',
-      stroke: 'lightGray'
+    var background = new Rectangle( 0, 0, valueNode.width + 2 * options.xMargin, valueNode.height + 2 * options.yMargin, options.cornerRadius, options.cornerRadius, {
+      fill: options.backgroundFill,
+      stroke: options.backgroundStroke
     } );
     valueNode.center = background.center;
 
@@ -55,7 +62,7 @@ define( function( require ) {
     // display the value
     var numberObserver = function( value ) {
       valueNode.text = StringUtils.format( pattern, Util.toFixed( value, options.decimalPlaces ), units );
-      valueNode.right = background.right - xMargin;
+      valueNode.right = background.right - options.xMargin; // right justified
     };
     numberProperty.link( numberObserver );
 
