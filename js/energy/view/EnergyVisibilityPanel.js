@@ -21,6 +21,7 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
+  var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
   var energyGraphString = require( 'string!HOOKES_LAW/energyGraph' );
   var forceGraphString = require( 'string!HOOKES_LAW/forceGraph' );
@@ -44,6 +45,12 @@ define( function( require ) {
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // check boxes
+    var appliedForceCheckBox = new CheckBox(
+      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+        arrowFill: HookesLawColors.APPLIED_FORCE
+      } ),
+      properties.appliedForceVectorVisibleProperty,
+      HookesLawConstants.CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
@@ -65,6 +72,7 @@ define( function( require ) {
     var controls = [
       forceGraphRadioButton,
       energyGraphRadioButton,
+      appliedForceCheckBox,
       displacementCheckBox,
       equilibriumPositionCheckBox,
       valuesCheckBox
@@ -80,6 +88,7 @@ define( function( require ) {
         forceGraphRadioButton,
         energyGraphRadioButton,
         new HSeparator( maxControlWidth ),
+        appliedForceCheckBox,
         displacementCheckBox,
         equilibriumPositionCheckBox,
         valuesCheckBox

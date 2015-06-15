@@ -11,6 +11,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var EnergySpringControls = require( 'HOOKES_LAW/energy/view/EnergySpringControls' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
@@ -70,6 +71,12 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
+    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, {
+      valueVisibleProperty: viewProperties.valuesVisibleProperty,
+      // x is determined by spring.rightProperty
+      bottom: springNode.top - 14
+    } );
+
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
@@ -84,7 +91,7 @@ define( function( require ) {
 
     options.children = [
       wallNode, equilibriumPositionNode, roboticArmNode, springNode,
-      displacementVectorNode,
+      appliedForceVectorNode, displacementVectorNode,
       springControls
     ];
     Node.call( this, options );
@@ -92,8 +99,14 @@ define( function( require ) {
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
     // Attach visibility properties to their respective nodes.
+    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
     viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
+
+    // Position the force vectors at the right end of the spring.
+    spring.rightProperty.link( function( right ) {
+      appliedForceVectorNode.x = ( options.unitDisplacementLength * right );
+    } );
 
     // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.
     Property.multilink( [ numberOfInteractionsInProgressProperty, spring.displacementProperty ],
