@@ -34,7 +34,6 @@ define( function( require ) {
 
     Node.call( this );
 
-
     var backPath = new Path( null, {
       stroke: options.backStroke
     } );
