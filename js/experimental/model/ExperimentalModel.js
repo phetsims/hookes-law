@@ -34,7 +34,8 @@ define( function( require ) {
       lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
       phase: this.phaseRange.defaultValue, // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
       deltaPhase: this.deltaPhaseRange.defaultValue, // {number} TODO what is this? units?
-      pitchSize: this.pitchSizeRange.defaultValue, // {number} TODO what is this? units?
+      //TODO better name for this?
+      pitchSize: this.pitchSizeRange.defaultValue, // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
       frontAndBack: false // {boolean} false: render spring as one path, true: render front and back as separate paths
     } );
   }
