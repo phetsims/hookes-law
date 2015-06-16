@@ -12,6 +12,7 @@ define( function( require ) {
   var ExperimentalControls = require( 'HOOKES_LAW/experimental/view/ExperimentalControls' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var ParametricSpringNode = require( 'HOOKES_LAW/experimental/view/ParametricSpringNode' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
@@ -34,7 +35,7 @@ define( function( require ) {
     // spring with 1 path
     this.addChild( new ParametricSpringNode( model, {
       left: 50,
-      top: 300
+      centerY: 350
     } ) );
 
     // spring with separate paths for front and back
@@ -43,7 +44,15 @@ define( function( require ) {
       frontStroke: 'lightBlue',
       backStroke: 'blue',
       left: 50,
-      top: 450
+      centerY: 500
+    } ) );
+
+    // A 100-unit vertical line, for comparison
+    this.addChild( new Line( 0, 0, 0, 100, {
+      stroke: 'red',
+      lineWidth: 10,
+      left: 10,
+      centerY: 350
     } ) );
 
     // Reset All button, bottom right
