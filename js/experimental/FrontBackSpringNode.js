@@ -24,19 +24,25 @@ define( function( require ) {
    */
   function FrontBackSpringNode( model, options ) {
 
+    options = _.extend( {
+      frontStroke: 'lightBlue',
+      backStroke: 'blue',
+      stroke: 'black',
+      loops: 10, // {number} number of loops in the coil
+      pointsPerLoop: 50, // {number} number of points used to approximate each loop
+      phase: 0,
+      amplitude: 50
+    }, options );
+
     var frontPath = new Path( null, {
-      stroke: 'lightBlue'
+      stroke: options.frontStroke
     } );
 
     var backPath = new Path( null, {
-      stroke: 'blue'
+      stroke: options.backStroke
     } );
 
-    var loops = 10;
-    var pointsPerLoop = 50;
-    var arrayLength = loops * pointsPerLoop;
-    var phase = 0;
-    var amplitude = 50;
+    var arrayLength = options.loops * options.pointsPerLoop;
     var index;
 
     // Update the front and back paths
@@ -45,8 +51,8 @@ define( function( require ) {
 
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
-          var xCoordinate = amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
-          var yCoordinate = aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
+          var xCoordinate = options.amplitude * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + options.phase ) + pitchSize * (index / options.pointsPerLoop) * options.amplitude;
+          var yCoordinate = aspectRatio * options.amplitude * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + deltaPhase + options.phase );
           arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
         }
         frontPath.shape = new Shape();
@@ -57,7 +63,7 @@ define( function( require ) {
         var wasFront = true;
         for ( index = 1; index < arrayLength; index++ ) {
 
-          var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
+          var isFront = ( ( 2 * Math.PI * index / options.pointsPerLoop + options.phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
 
           if ( !wasFront && isFront ) {
             wasFront = true;

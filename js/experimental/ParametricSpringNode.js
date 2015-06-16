@@ -24,17 +24,17 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
-      stroke: 'black'
+      stroke: 'black',
+      loops: 10, // {number} number of loops in the coil
+      pointsPerLoop: 50, // {number} number of points used to approximate each loop
+      phase: 0,
+      amplitude: 50
     }, options );
 
     var thisNode = this;
     Path.call( this, null );
 
-    var loops = 10;
-    var pointsPerLoop = 50;
-    var arrayLength = loops * pointsPerLoop;
-    var phase = 0;
-    var amplitude = 50;
+    var arrayLength = options.loops * options.pointsPerLoop;
     var index;
 
     // Update the spring path
@@ -43,8 +43,8 @@ define( function( require ) {
 
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
-          var xCoordinate = amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * amplitude;
-          var yCoordinate = aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
+          var xCoordinate = options.amplitude * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + options.phase ) + pitchSize * (index / options.pointsPerLoop) * options.amplitude;
+          var yCoordinate = aspectRatio * options.amplitude * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + deltaPhase + options.phase );
           arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
         }
 
