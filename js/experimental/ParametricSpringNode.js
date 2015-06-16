@@ -57,6 +57,7 @@ define( function( require ) {
     Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty ],
       function( pitchSize, deltaPhase, aspectRatio ) {
 
+        // compute the points
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
           var xCoordinate = options.amplitude * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + options.phase ) + pitchSize * (index / options.pointsPerLoop) * options.amplitude;
