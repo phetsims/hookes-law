@@ -32,7 +32,7 @@ define( function( require ) {
       phase: this.phaseRange.defaultValue, // {number} TODO what is this? units?
       deltaPhase: this.deltaPhaseRange.defaultValue, // {number} TODO what is this? units?
       pitchSize: this.pitchSizeRange.defaultValue, // {number} TODO what is this? units?
-      frontAndBack: false // {boolean} whether to render front and back for spring as separate paths
+      frontAndBack: false // {boolean} false: render spring as one path, true: render front and back as separate paths
     } );
   }
 
