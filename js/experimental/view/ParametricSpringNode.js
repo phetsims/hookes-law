@@ -54,15 +54,15 @@ define( function( require ) {
     var index;
 
     // Update the spring geometry
-    Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty, model.amplitudeProperty ],
-      function( pitchSize, deltaPhase, aspectRatio, amplitude ) {
+    Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty, model.radiusProperty ],
+      function( pitchSize, deltaPhase, aspectRatio, radius ) {
 
         //TODO expand doc for the parametric equation, add a reference
         // compute the points
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
-          var xCoordinate = amplitude * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + options.phase ) + pitchSize * (index / options.pointsPerLoop) * amplitude;
-          var yCoordinate = aspectRatio * amplitude * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + deltaPhase + options.phase );
+          var xCoordinate = radius * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + options.phase ) + pitchSize * (index / options.pointsPerLoop) * radius;
+          var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + deltaPhase + options.phase );
           arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
         }
 

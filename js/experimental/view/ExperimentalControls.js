@@ -69,7 +69,7 @@ define( function( require ) {
       delta: 0.01,
       minorTickSpacing: 1
     } );
-    var amplitudeControl = createNumberControl( 'amplitude:', model.amplitudeProperty, model.amplitudeRange, {
+    var radiusControl = createNumberControl( 'radius:', model.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 5
@@ -91,7 +91,7 @@ define( function( require ) {
     var content = new HBox( {
       children: [
         new VBox( { children: [ pitchSizeControl, deltaPhaseControl ], spacing: ySpacing } ),
-        new VBox( { children: [ amplitudeControl, aspectRatioControl ], spacing: ySpacing } ),
+        new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
         new VBox( { children: [ lineWidthControl ], spacing: ySpacing } )
       ],
       spacing: xSpacing
