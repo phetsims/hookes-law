@@ -13,7 +13,6 @@ define( function( require ) {
   var ExperimentalControls = require( 'HOOKES_LAW/experimental/ExperimentalControls' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MVSpringNode = require( 'HOOKES_LAW/experimental/MVSpringNode' );
   var ParametricSpringNode = require( 'HOOKES_LAW/experimental/ParametricSpringNode' );
   var ScreenView = require( 'JOIST/ScreenView' );
 
