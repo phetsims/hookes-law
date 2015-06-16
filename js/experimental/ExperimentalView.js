@@ -9,10 +9,12 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var FrontBackSpringNode = require( 'HOOKES_LAW/experimental/FrontBackSpringNode' );
   var ExperimentalControls = require( 'HOOKES_LAW/experimental/ExperimentalControls' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var MVSpringNode = require( 'HOOKES_LAW/experimental/MVSpringNode' );
+  var ParametricSpringNode = require( 'HOOKES_LAW/experimental/ParametricSpringNode' );
   var ScreenView = require( 'JOIST/ScreenView' );
 
   /**
@@ -28,9 +30,14 @@ define( function( require ) {
       top: 20
     } ) );
 
-    this.addChild( new MVSpringNode( model, {
-      left: 20,
-      top: 50
+    this.addChild( new ParametricSpringNode( model, {
+      left: 50,
+      top: 300
+    } ) );
+
+    this.addChild( new FrontBackSpringNode( model, {
+      left: 50,
+      top: 450
     } ) );
   }
 
