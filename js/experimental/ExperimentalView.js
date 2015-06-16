@@ -9,7 +9,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var FrontBackSpringNode = require( 'HOOKES_LAW/experimental/FrontBackSpringNode' );
   var ExperimentalControls = require( 'HOOKES_LAW/experimental/ExperimentalControls' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -34,7 +33,10 @@ define( function( require ) {
       top: 300
     } ) );
 
-    this.addChild( new FrontBackSpringNode( model, {
+    this.addChild( new ParametricSpringNode( model, {
+      paths: 2, // use separate paths for front and back
+      frontStroke: 'lightBlue',
+      backStroke: 'blue',
       left: 50,
       top: 450
     } ) );
