@@ -13,6 +13,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParametricSpringNode = require( 'HOOKES_LAW/experimental/view/ParametricSpringNode' );
+  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
 
   /**
@@ -43,6 +44,15 @@ define( function( require ) {
       backStroke: 'blue',
       left: 50,
       top: 450
+    } ) );
+
+    // Reset All button, bottom right
+    this.addChild( new ResetAllButton( {
+      listener: function() {
+        model.reset();
+      },
+      right: this.layoutBounds.maxX - 15,
+      bottom: this.layoutBounds.maxY - 15
     } ) );
   }
 
