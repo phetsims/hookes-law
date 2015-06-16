@@ -25,7 +25,8 @@ define( function( require ) {
 
     this.addChild( new ExperimentalControls( model, {
       left: 20,
-      top: 20
+      top: 20,
+      scale: 0.75
     } ) );
 
     this.addChild( new ParametricSpringNode( model, {

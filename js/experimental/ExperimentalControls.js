@@ -54,7 +54,6 @@ define( function( require ) {
 
     options = _.extend( {
       fill: 'rgb(240,240,240)',
-      scale: 0.75,
       xMargin: 35,
       yMargin: 10
     }, options );
@@ -82,12 +81,14 @@ define( function( require ) {
     } );
 
     // layout
+    var xSpacing = 40;
+    var ySpacing = 30;
     var content = new HBox( {
       children: [
-        new VBox( { children: [ pitchSizeControl, deltaPhaseControl ], spacing: 30 } ),
-        new VBox( { children: [ aspectRatioControl, lineWidthControl ], spacing: 30 } )
+        new VBox( { children: [ pitchSizeControl, deltaPhaseControl ], spacing: ySpacing } ),
+        new VBox( { children: [ aspectRatioControl, lineWidthControl ], spacing: ySpacing } )
       ],
-      spacing: 40
+      spacing: xSpacing
     } );
 
     Panel.call( this, content, options );
