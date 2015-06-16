@@ -47,11 +47,6 @@ define( function( require ) {
     } );
     this.addChild( frontPath );
 
-    // Update the line width
-    model.lineWidthProperty.link( function( lineWidth ) {
-      frontPath.lineWidth = backPath.lineWidth = lineWidth;
-    } );
-
     // Update the spring geometry
     Property.multilink( [ model.radiusProperty, model.aspectRatioProperty, model.pointsPerLoopProperty, model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty ],
       function( radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize ) {
@@ -109,6 +104,11 @@ define( function( require ) {
           }
         }
       } );
+
+    // Update the line width
+    model.lineWidthProperty.link( function( lineWidth ) {
+      frontPath.lineWidth = backPath.lineWidth = lineWidth;
+    } );
 
     this.mutate( options );
   }
