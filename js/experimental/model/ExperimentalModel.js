@@ -23,7 +23,7 @@ define( function( require ) {
     this.aspectRatioRange = new Range( 0.5, 3, 1.5 );
     this.pointsPerLoopRange = new Range( 10, 100, 30 );
     this.lineWidthRange = new Range( 1, 10, 3 );
-    this.phaseRange = new Range( 0, 10, 0 );
+    this.phaseRange = new Range( 0, 2 * Math.PI, 0 );
     this.deltaPhaseRange = new Range( 0, 7, 1.5 );
     this.pitchSizeRange = new Range( 0.1, 2, 1.5 );
 
@@ -32,7 +32,7 @@ define( function( require ) {
       aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
       pointsPerLoop: this.pointsPerLoopRange.defaultValue, // {number} number of points used to approximate 1 loop
       lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
-      phase: this.phaseRange.defaultValue, // {number} TODO what is this? units?
+      phase: this.phaseRange.defaultValue, // {number} phase angle of where the loop starts, period is (0,2*PI) radians
       deltaPhase: this.deltaPhaseRange.defaultValue, // {number} TODO what is this? units?
       pitchSize: this.pitchSizeRange.defaultValue, // {number} TODO what is this? units?
       frontAndBack: false // {boolean} false: render spring as one path, true: render front and back as separate paths
