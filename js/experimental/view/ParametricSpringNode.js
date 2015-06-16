@@ -37,11 +37,6 @@ define( function( require ) {
 
     Node.call( this );
 
-    // frontPath is also the sole path when options.paths === 1
-    var frontPath = new Path( null, {
-      stroke: options.frontStroke
-    } );
-    this.addChild( frontPath );
 
     var backPath = new Path( null, {
       stroke: options.backStroke
@@ -49,6 +44,12 @@ define( function( require ) {
     if ( options.paths === 2 ) {
       this.addChild( backPath );
     }
+
+    // frontPath is also the sole path when options.paths === 1
+    var frontPath = new Path( null, {
+      stroke: options.frontStroke
+    } );
+    this.addChild( frontPath );
 
     var arrayLength = options.loops * options.pointsPerLoop;
     var index;
