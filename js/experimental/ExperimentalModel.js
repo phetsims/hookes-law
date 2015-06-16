@@ -15,7 +15,7 @@ define( function( require ) {
 
   function ExperimentalModel() {
 
-    this.pitchSizeRange = new Range( 0.1, 2, 2 );
+    this.pitchSizeRange = new Range( 0.1, 2, 1 );
     this.deltaPhaseRange = new Range( 0, 7, 1 );
     this.aspectRatioRange = new Range( 0.3, 3, 1 );
     this.lineWidthRange = new Range( 1, 10, 3 );
