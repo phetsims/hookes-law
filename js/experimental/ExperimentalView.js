@@ -23,19 +23,22 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
+    // control panel
     this.addChild( new ExperimentalControls( model, {
       left: 20,
       top: 20,
       scale: 0.75
     } ) );
 
+    // spring with 1 path
     this.addChild( new ParametricSpringNode( model, {
       left: 50,
       top: 300
     } ) );
 
+    // spring with separate paths for front and back
     this.addChild( new ParametricSpringNode( model, {
-      paths: 2, // use separate paths for front and back
+      paths: 2,
       frontStroke: 'lightBlue',
       backStroke: 'blue',
       left: 50,
