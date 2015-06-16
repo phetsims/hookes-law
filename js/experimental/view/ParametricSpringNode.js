@@ -25,31 +25,26 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
-      paths: 1, // {number} 1 = single path, 2 = separate front and back paths
       loops: 10, // {number} number of loops in the coil
-      frontStroke: 'black', // {string|Color} stroke for the front path (or only path for 1-path spring)
-      backStroke: 'black' // {string|Color} stroke for the back path, ignored for 1-path spring
+      stroke: 'black', // {string|Color} stroke single-path spring
+      frontStroke: 'lightBlue', // {string|Color} stroke for the front path when using 2 paths
+      backStroke: 'blue' // {string|Color} stroke for the back path when using 2 paths
     }, options );
     assert && assert( options.paths === 1 || options.paths === 2 );
 
     Node.call( this );
 
-    var backPath = new Path( null, {
-      stroke: options.backStroke
-    } );
-    if ( options.paths === 2 ) {
-      this.addChild( backPath );
-    }
+    var backPath = new Path( null, { stroke: options.backStroke } );
+    this.addChild( backPath );
 
-    // frontPath is also the sole path when options.paths === 1
-    var frontPath = new Path( null, {
-      stroke: options.frontStroke
-    } );
+    // frontPath is also the sole path when !model.frontAndBackProperty.get()
+    var frontPath = new Path( null );
     this.addChild( frontPath );
 
     // Update the spring geometry
-    Property.multilink( [ model.radiusProperty, model.aspectRatioProperty, model.pointsPerLoopProperty, model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty ],
-      function( radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize ) {
+    Property.multilink( [ model.radiusProperty, model.aspectRatioProperty, model.pointsPerLoopProperty,
+        model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty, model.frontAndBackProperty ],
+      function( radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize, frontAndBack ) {
 
         var arrayLength = options.loops * pointsPerLoop;
         var index;
@@ -63,7 +58,7 @@ define( function( require ) {
           arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
         }
 
-        if ( options.paths === 1 ) {
+        if ( !frontAndBack ) {
           // one path
           frontPath.shape = new Shape();
           frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
@@ -104,6 +99,11 @@ define( function( require ) {
           }
         }
       } );
+
+    model.frontAndBackProperty.link( function( frontAndBack ) {
+      frontPath.stroke = frontAndBack ? options.frontStroke : options.stroke;
+      backPath.visible = frontAndBack;
+    } );
 
     //TODO Why does SVGGroup.js fail at line 189 when this is moved before Property.multilink above?
     //TODO Error: Invalid value for <g> attribute transform="translate(-Infinity,0.00000000000000000000)"

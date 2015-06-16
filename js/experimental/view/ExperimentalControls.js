@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var CheckBox = require( 'SUN/CheckBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
@@ -103,6 +104,7 @@ define( function( require ) {
       delta: 0.01,
       minorTickSpacing: 0.1
     } );
+    var frontAndBackCheckBox = new CheckBox( new Text( 'front & back', { font: CONTROL_FONT } ), model.frontAndBackProperty );
 
     // layout
     var xSpacing = 40;
@@ -112,7 +114,7 @@ define( function( require ) {
         new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
         new VBox( { children: [ pointsPerLoopControl, lineWidthControl ], spacing: ySpacing } ),
         new VBox( { children: [ phaseControl, deltaPhaseControl ], spacing: ySpacing } ),
-        new VBox( { children: [ pitchSizeControl ], spacing: ySpacing } )
+        new VBox( { children: [ pitchSizeControl, frontAndBackCheckBox ], spacing: ySpacing } )
       ],
       spacing: xSpacing,
       align: 'top'
