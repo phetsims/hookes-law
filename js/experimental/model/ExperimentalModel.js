@@ -20,8 +20,8 @@ define( function( require ) {
 
     // ranges and default values for properties
     this.loopsRange = new Range( 4, 15, 10 );
-    this.radiusRange = new Range( 20, 70, 30 );
-    this.aspectRatioRange = new Range( 0.5, 3, 1.5 );
+    this.radiusRange = new Range( 5, 70, 30 );
+    this.aspectRatioRange = new Range( 0.5, 4, 1.5 );
     this.pointsPerLoopRange = new Range( 10, 100, 30 );
     this.lineWidthRange = new Range( 1, 10, 3 );
     this.phaseRange = new Range( 0, 2 * Math.PI, 0 ); // radians

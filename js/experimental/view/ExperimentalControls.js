@@ -84,7 +84,7 @@ define( function( require ) {
     var radiusControl = createNumberControl( radiusString, model.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
-      minorTickSpacing: 10
+      minorTickSpacing: 5
     } );
     var aspectRatioControl = createNumberControl( aspectRatioString, model.aspectRatioProperty, model.aspectRatioRange, {
       decimalPlaces: 1,
