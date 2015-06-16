@@ -27,8 +27,8 @@ define( function( require ) {
     options = _.extend( {
       paths: 1, // {number} 1 = single path, 2 = separate front and back paths
       loops: 10, // {number} number of loops in the coil
-      frontStroke: 'black',
-      backStroke: 'black'
+      frontStroke: 'black', // {string|Color} stroke for the front path (or only path for 1-path spring)
+      backStroke: 'black' // {string|Color} stroke for the back path, ignored for 1-path spring
     }, options );
     assert && assert( options.paths === 1 || options.paths === 2 );
 
