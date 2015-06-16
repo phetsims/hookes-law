@@ -25,12 +25,12 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    // control panel
-    this.addChild( new ExperimentalControls( model, {
-      centerX: this.layoutBounds.centerX,
-      top: 5,
-      scale: 0.75
-    } ) );
+    // control panel, scaled to fit
+    var controls = new ExperimentalControls( model );
+    this.addChild( controls );
+    controls.setScaleMagnitude( Math.min( 1, this.layoutBounds.width / controls.width ) );
+    controls.top = 0;
+    controls.centerX = this.layoutBounds.centerX;
 
     // spring with 1 path
     this.addChild( new ParametricSpringNode( model, {
