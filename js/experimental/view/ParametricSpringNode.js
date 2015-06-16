@@ -80,28 +80,30 @@ define( function( require ) {
           backPath.shape = new Shape();
           frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
           backPath.shape.moveToPoint( arrayPosition[ 0 ] );
-          var wasFront = true;
+          var wasFront = true; // was the previous point on the front path?
           for ( index = 1; index < arrayLength; index++ ) {
 
+            // is the current point on the front path?
             var isFront = ( ( 2 * Math.PI * index / options.pointsPerLoop + options.phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
 
-            if ( !wasFront && isFront ) {
-              wasFront = true;
-              frontPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+            if ( isFront ) {
+              // we're in the front
+              if ( !wasFront ) {
+                // ... and we've just moved to the front
+                frontPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+              }
+              frontPath.shape.lineToPoint( arrayPosition[ index ] );
             }
-
-            if ( wasFront && !isFront ) {
-              wasFront = false;
-              backPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
-            }
-
-            if ( !wasFront && !isFront ) {
+            else {
+              // we're in the back
+              if ( wasFront ) {
+                // ... and we've just moved to the back
+                backPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+              }
               backPath.shape.lineToPoint( arrayPosition[ index ] );
             }
 
-            if ( wasFront && isFront ) {
-              frontPath.shape.lineToPoint( arrayPosition[ index ] );
-            }
+            wasFront = isFront;
           }
         }
       } );
