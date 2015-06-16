@@ -18,6 +18,7 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /// constants
+  //TODO replace this with color choosers in ExperimentalControls
   // Note that the '#' for hex colors needs to be URL encoded, eg '#CC66FF' -> '%23CC66FF'
   var SINGLE_COLOR = phet.chipper.getQueryParameter( 'singleColor' ) || 'black';
   var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'lightBlue';
