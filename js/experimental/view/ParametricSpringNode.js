@@ -17,6 +17,12 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Vector2 = require( 'DOT/Vector2' );
 
+  /// constants
+  // Note that the '#' for hex colors needs to be URL encoded, eg '#CC66FF' -> '%23CC66FF'
+  var SINGLE_COLOR = phet.chipper.getQueryParameter( 'singleColor' ) || 'black';
+  var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'lightBlue';
+  var BACK_COLOR = phet.chipper.getQueryParameter( 'backColor' ) || 'blue';
+
   /**
    * @param {ExperimentalModel} model
    * @param {Object} [options]
@@ -25,9 +31,9 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
-      stroke: 'black', // {string|Color} stroke single-path spring
-      frontStroke: 'lightBlue', // {string|Color} stroke for the front path when using 2 paths
-      backStroke: 'blue' // {string|Color} stroke for the back path when using 2 paths
+      stroke: SINGLE_COLOR, // {string|Color} stroke single-path spring
+      frontStroke: FRONT_COLOR, // {string|Color} stroke for the front path when using 2 paths
+      backStroke: BACK_COLOR // {string|Color} stroke for the back path when using 2 paths
     }, options );
 
     Node.call( this );
