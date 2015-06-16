@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.0-dev.13 Mon Jun 15 2015 16:11:51 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.0.0-dev.14 Tue Jun 16 2015 14:52:35 GMT-0600 (MDT)",
   "assert": {
     "sha": "903564a25a0f26acdbd334d3e104039864b405ef",
     "branch": "master"
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "hookes-law": {
-    "sha": "f151f205f86046db49af7a1223d83304b3212736",
+    "sha": "92be94a467fffac0f53765c3e002b1c65b5f5f0d",
     "branch": "master"
   },
   "joist": {
@@ -33,7 +33,7 @@
     "branch": "master"
   },
   "phet-core": {
-    "sha": "5f91bf17b3c849678d49a9e9136e49c0f3eccacc",
+    "sha": "328c6e2f6df1ee3da1bdd41877d2113cfc1e4a71",
     "branch": "master"
   },
   "phetcommon": {
