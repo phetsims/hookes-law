@@ -60,7 +60,7 @@ define( function( require ) {
     var titleNode = new Text( title, { font: options.titleFont } );
 
     var numberDisplay = new NumberDisplay( numberProperty, numberRange, options.units, pattern_0value_1units, {
-      valueFont: options.valueFont,
+      font: options.valueFont,
       decimalPlaces: options.decimalPlaces
     } );
 
