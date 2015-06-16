@@ -29,7 +29,7 @@ define( function( require ) {
   var separateFrontAndBackString = 'separate front & back';
 
   // constants
-  var CONTROL_FONT = new PhetFont( 16 );
+  var CONTROL_FONT = new PhetFont( 22 );
   var TICK_LABEL_FONT = new PhetFont( 14 );
 
   /**
