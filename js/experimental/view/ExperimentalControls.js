@@ -59,16 +59,6 @@ define( function( require ) {
     }, options );
 
     // controls
-    var pitchSizeControl = createNumberControl( 'pitch size:', model.pitchSizeProperty, model.pitchSizeRange, {
-      decimalPlaces: 2,
-      delta: 0.01,
-      minorTickSpacing: 0.1
-    } );
-    var deltaPhaseControl = createNumberControl( 'delta phase:', model.deltaPhaseProperty, model.deltaPhaseRange, {
-      decimalPlaces: 2,
-      delta: 0.01,
-      minorTickSpacing: 1
-    } );
     var radiusControl = createNumberControl( 'radius:', model.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
@@ -77,7 +67,7 @@ define( function( require ) {
     var aspectRatioControl = createNumberControl( 'aspect ratio:', model.aspectRatioProperty, model.aspectRatioRange, {
       decimalPlaces: 2,
       delta: 0.01,
-      minorTickSpacing: 0.1
+      minorTickSpacing: 0.5
     } );
     var pointsPerLoopControl = createNumberControl( 'points per loop:', model.pointsPerLoopProperty, model.pointsPerLoopRange, {
       decimalPlaces: 0,
@@ -89,17 +79,34 @@ define( function( require ) {
       delta: 0.1,
       minorTickSpacing: 1
     } );
+    var phaseControl = createNumberControl( 'phase:', model.phaseProperty, model.phaseRange, {
+      decimalPlaces: 1,
+      delta: 0.1,
+      minorTickSpacing: 1
+    } );
+    var deltaPhaseControl = createNumberControl( 'delta phase:', model.deltaPhaseProperty, model.deltaPhaseRange, {
+      decimalPlaces: 2,
+      delta: 0.1,
+      minorTickSpacing: 1
+    } );
+    var pitchSizeControl = createNumberControl( 'pitch size:', model.pitchSizeProperty, model.pitchSizeRange, {
+      decimalPlaces: 2,
+      delta: 0.01,
+      minorTickSpacing: 0.1
+    } );
 
     // layout
     var xSpacing = 40;
     var ySpacing = 30;
     var content = new HBox( {
       children: [
-        new VBox( { children: [ pitchSizeControl, deltaPhaseControl ], spacing: ySpacing } ),
         new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
-        new VBox( { children: [ pointsPerLoopControl, lineWidthControl ], spacing: ySpacing } )
+        new VBox( { children: [ pointsPerLoopControl, lineWidthControl ], spacing: ySpacing } ),
+        new VBox( { children: [ phaseControl, deltaPhaseControl ], spacing: ySpacing } ),
+        new VBox( { children: [ pitchSizeControl ], spacing: ySpacing } )
       ],
-      spacing: xSpacing
+      spacing: xSpacing,
+      align: 'top'
     } );
 
     Panel.call( this, content, options );

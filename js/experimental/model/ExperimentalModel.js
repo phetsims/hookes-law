@@ -15,21 +15,23 @@ define( function( require ) {
 
   function ExperimentalModel() {
 
-    // ranges and default values
-    this.pitchSizeRange = new Range( 0.1, 2, 1 );
-    this.deltaPhaseRange = new Range( 0, 7, 1 );
-    this.aspectRatioRange = new Range( 0.5, 3, 1 );
-    this.lineWidthRange = new Range( 1, 10, 3 );
+    // ranges and default values for properties
     this.radiusRange = new Range( 20, 70, 50 );
+    this.aspectRatioRange = new Range( 0.5, 3, 1 );
     this.pointsPerLoopRange = new Range( 10, 100, 50 );
+    this.lineWidthRange = new Range( 1, 10, 3 );
+    this.phaseRange = new Range( 0, 5, 0 );
+    this.deltaPhaseRange = new Range( 0, 7, 1 );
+    this.pitchSizeRange = new Range( 0.1, 2, 1 );
 
     PropertySet.call( this, {
-      pitchSize: this.pitchSizeRange.defaultValue,
-      deltaPhase: this.deltaPhaseRange.defaultValue,
-      aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
-      lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
       radius: this.radiusRange.defaultValue, // {number} radius of a loop with aspect ratio of 1:1
-      pointsPerLoop: this.pointsPerLoopRange.defaultValue // {number} number of points used to approximate 1 loop
+      aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
+      pointsPerLoop: this.pointsPerLoopRange.defaultValue, // {number} number of points used to approximate 1 loop
+      lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
+      phase: this.phaseRange.defaultValue,
+      deltaPhase: this.deltaPhaseRange.defaultValue,
+      pitchSize: this.pitchSizeRange.defaultValue
     } );
   }
 

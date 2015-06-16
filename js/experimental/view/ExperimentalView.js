@@ -27,8 +27,8 @@ define( function( require ) {
 
     // control panel
     this.addChild( new ExperimentalControls( model, {
-      left: 20,
-      top: 20,
+      centerX: this.layoutBounds.centerX,
+      top: 5,
       scale: 0.75
     } ) );
 
