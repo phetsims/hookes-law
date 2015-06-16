@@ -26,6 +26,7 @@ define( function( require ) {
   var pitchSizeString = 'pitch size:';
   var pointsPerLoopString = 'points per loop:';
   var radiusString = 'radius:';
+  var separateFrontAndBackString = 'separate front & back';
 
   // constants
   var CONTROL_FONT = new PhetFont( 16 );
@@ -104,7 +105,7 @@ define( function( require ) {
       delta: 0.01,
       minorTickSpacing: 0.1
     } );
-    var frontAndBackCheckBox = new CheckBox( new Text( 'front & back', { font: CONTROL_FONT } ), model.frontAndBackProperty );
+    var frontAndBackCheckBox = new CheckBox( new Text( separateFrontAndBackString, { font: CONTROL_FONT } ), model.frontAndBackProperty );
 
     // layout
     var xSpacing = 40;
