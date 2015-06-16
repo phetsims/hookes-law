@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control panel for the "Experimental" screen.
+ * Controls for the "Experimental" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
