@@ -47,13 +47,12 @@ define( function( require ) {
     } );
     this.addChild( frontPath );
 
-    var index;
-
     // Update the spring geometry
     Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty, model.radiusProperty, model.pointsPerLoopProperty, model.phaseProperty ],
       function( pitchSize, deltaPhase, aspectRatio, radius, pointsPerLoop, phase ) {
 
         var arrayLength = options.loops * pointsPerLoop;
+        var index;
 
         //TODO expand doc for the parametric equation, add a reference
         // compute the points
