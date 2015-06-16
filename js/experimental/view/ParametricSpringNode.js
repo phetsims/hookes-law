@@ -57,6 +57,7 @@ define( function( require ) {
     Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty ],
       function( pitchSize, deltaPhase, aspectRatio ) {
 
+        //TODO expand doc for the parametric equation, add a reference
         // compute the points
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
