@@ -97,7 +97,7 @@ define( function( require ) {
       minorTickSpacing: 1
     } );
     var deltaPhaseControl = createNumberControl( deltaPhaseString, model.deltaPhaseProperty, model.deltaPhaseRange, {
-      decimalPlaces: 2,
+      decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1
     } );

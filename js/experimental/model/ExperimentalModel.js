@@ -23,8 +23,8 @@ define( function( require ) {
     this.aspectRatioRange = new Range( 0.5, 3, 1.5 );
     this.pointsPerLoopRange = new Range( 10, 100, 30 );
     this.lineWidthRange = new Range( 1, 10, 3 );
-    this.phaseRange = new Range( 0, 2 * Math.PI, 0 );
-    this.deltaPhaseRange = new Range( 0, 7, 1.5 );
+    this.phaseRange = new Range( 0, 2 * Math.PI, 0 ); // radians
+    this.deltaPhaseRange = new Range( 0, 2 * Math.PI, 1.5 ); // radians
     this.pitchSizeRange = new Range( 0.1, 2, 1.5 );
 
     PropertySet.call( this, {
