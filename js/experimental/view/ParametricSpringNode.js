@@ -30,7 +30,6 @@ define( function( require ) {
       frontStroke: 'lightBlue', // {string|Color} stroke for the front path when using 2 paths
       backStroke: 'blue' // {string|Color} stroke for the back path when using 2 paths
     }, options );
-    assert && assert( options.paths === 1 || options.paths === 2 );
 
     Node.call( this );
 
