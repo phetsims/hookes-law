@@ -51,7 +51,7 @@ define( function( require ) {
         model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty, model.frontAndBackProperty ],
       function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize, frontAndBack ) {
 
-        var arrayLength = loops * pointsPerLoop;
+        var arrayLength = loops * pointsPerLoop + 1;
         var index;
 
         //TODO expand doc for the parametric equation, add a reference
