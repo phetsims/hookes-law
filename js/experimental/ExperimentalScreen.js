@@ -9,8 +9,8 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var ExperimentalModel = require( 'HOOKES_LAW/experimental/ExperimentalModel' );
-  var ExperimentalView = require( 'HOOKES_LAW/experimental/ExperimentalView' );
+  var ExperimentalModel = require( 'HOOKES_LAW/experimental/model/ExperimentalModel' );
+  var ExperimentalView = require( 'HOOKES_LAW/experimental/view/ExperimentalView' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );

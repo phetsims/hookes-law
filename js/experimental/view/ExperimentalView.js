@@ -9,10 +9,10 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var ExperimentalControls = require( 'HOOKES_LAW/experimental/ExperimentalControls' );
+  var ExperimentalControls = require( 'HOOKES_LAW/experimental/view/ExperimentalControls' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var ParametricSpringNode = require( 'HOOKES_LAW/experimental/ParametricSpringNode' );
+  var ParametricSpringNode = require( 'HOOKES_LAW/experimental/view/ParametricSpringNode' );
   var ScreenView = require( 'JOIST/ScreenView' );
 
   /**
