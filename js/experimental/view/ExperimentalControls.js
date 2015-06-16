@@ -17,6 +17,15 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
+  // strings - no need for i18n since this is a developer-only screen
+  var aspectRatioString = 'aspect ratio:';
+  var deltaPhaseString = 'delta phase:';
+  var lineWidthString = 'line width:';
+  var phaseString = 'phase:';
+  var pitchSizeString = 'pitch size:';
+  var pointsPerLoopString = 'points per loop:';
+  var radiusString = 'radius:';
+
   // constants
   var CONTROL_FONT = new PhetFont( 16 );
   var TICK_LABEL_FONT = new PhetFont( 14 );
@@ -59,37 +68,37 @@ define( function( require ) {
     }, options );
 
     // controls
-    var radiusControl = createNumberControl( 'radius:', model.radiusProperty, model.radiusRange, {
+    var radiusControl = createNumberControl( radiusString, model.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 5
     } );
-    var aspectRatioControl = createNumberControl( 'aspect ratio:', model.aspectRatioProperty, model.aspectRatioRange, {
+    var aspectRatioControl = createNumberControl( aspectRatioString, model.aspectRatioProperty, model.aspectRatioRange, {
       decimalPlaces: 2,
       delta: 0.01,
       minorTickSpacing: 0.5
     } );
-    var pointsPerLoopControl = createNumberControl( 'points per loop:', model.pointsPerLoopProperty, model.pointsPerLoopRange, {
+    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, model.pointsPerLoopProperty, model.pointsPerLoopRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 10
     } );
-    var lineWidthControl = createNumberControl( 'line width:', model.lineWidthProperty, model.lineWidthRange, {
+    var lineWidthControl = createNumberControl( lineWidthString, model.lineWidthProperty, model.lineWidthRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1
     } );
-    var phaseControl = createNumberControl( 'phase:', model.phaseProperty, model.phaseRange, {
+    var phaseControl = createNumberControl( phaseString, model.phaseProperty, model.phaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1
     } );
-    var deltaPhaseControl = createNumberControl( 'delta phase:', model.deltaPhaseProperty, model.deltaPhaseRange, {
+    var deltaPhaseControl = createNumberControl( deltaPhaseString, model.deltaPhaseProperty, model.deltaPhaseRange, {
       decimalPlaces: 2,
       delta: 0.1,
       minorTickSpacing: 1
     } );
-    var pitchSizeControl = createNumberControl( 'pitch size:', model.pitchSizeProperty, model.pitchSizeRange, {
+    var pitchSizeControl = createNumberControl( pitchSizeString, model.pitchSizeProperty, model.pitchSizeRange, {
       decimalPlaces: 2,
       delta: 0.01,
       minorTickSpacing: 0.1
