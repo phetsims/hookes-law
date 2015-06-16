@@ -24,8 +24,8 @@ define( function( require ) {
     PropertySet.call( this, {
       pitchSize: this.pitchSizeRange.defaultValue,
       deltaPhase: this.deltaPhaseRange.defaultValue,
-      aspectRatio: this.aspectRatioRange.defaultValue,
-      lineWidth: this.lineWidthRange.defaultValue
+      aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
+      lineWidth: this.lineWidthRange.defaultValue // {number} lineWidth used to draw the coil
     } );
   }
 
