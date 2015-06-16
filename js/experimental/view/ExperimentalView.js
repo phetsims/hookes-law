@@ -50,7 +50,7 @@ define( function( require ) {
     // A 100-unit vertical line, for comparison
     this.addChild( new Line( 0, 0, 0, 100, {
       stroke: 'red',
-      lineWidth: 10,
+      lineWidth: 5,
       left: 10,
       centerY: 350
     } ) );
