@@ -16,6 +16,7 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var Util = require( 'DOT/Util' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings - no need for i18n since this is a developer-only screen
@@ -44,14 +45,14 @@ define( function( require ) {
     options = _.extend( {
       titleFont: CONTROL_FONT,
       valueFont: CONTROL_FONT,
-      majorTicks: [
-        { value: range.min, label: new Text( range.min, { font: TICK_LABEL_FONT } ) },
-        { value: range.max, label: new Text( range.max, { font: TICK_LABEL_FONT } ) }
-      ],
       minorTickSpacing: 1,
       decimalPlaces: 0,
       delta: 1
     }, options );
+    options.majorTicks = [
+      { value: range.min, label: new Text( Util.toFixed( range.min, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) },
+      { value: range.max, label: new Text( Util.toFixed( range.max, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) }
+    ];
 
     return new NumberControl( label, property, range, options );
   };
