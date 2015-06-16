@@ -29,9 +29,9 @@ define( function( require ) {
       aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
       pointsPerLoop: this.pointsPerLoopRange.defaultValue, // {number} number of points used to approximate 1 loop
       lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
-      phase: this.phaseRange.defaultValue,
-      deltaPhase: this.deltaPhaseRange.defaultValue,
-      pitchSize: this.pitchSizeRange.defaultValue
+      phase: this.phaseRange.defaultValue, // {number} TODO what is this? units?
+      deltaPhase: this.deltaPhaseRange.defaultValue, // {number} TODO what is this? units?
+      pitchSize: this.pitchSizeRange.defaultValue // {number} TODO what is this? units?
     } );
   }
 
