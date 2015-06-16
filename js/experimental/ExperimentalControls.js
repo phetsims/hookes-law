@@ -26,23 +26,23 @@ define( function( require ) {
    * @param {string} label
    * @param {Property.<number>} property
    * @param {Range} range
-   * @param {number} decimalPlaces
-   * @param {number} delta
-   * @param {number} minorTickSpacing
-   * @returns {NumberControl}
+   * @param {Object} [options]
    */
-  var createNumberControl = function( label, property, range, decimalPlaces, delta, minorTickSpacing ) {
-    return new NumberControl( label, property, range, {
+  var createNumberControl = function( label, property, range, options ) {
+
+    options = _.extend( {
       titleFont: CONTROL_FONT,
       valueFont: CONTROL_FONT,
       majorTicks: [
         { value: range.min, label: new Text( range.min, { font: TICK_LABEL_FONT } ) },
         { value: range.max, label: new Text( range.max, { font: TICK_LABEL_FONT } ) }
       ],
-      minorTickSpacing: minorTickSpacing,
-      decimalPlaces: decimalPlaces,
-      delta: delta
-    } );
+      minorTickSpacing: 1,
+      decimalPlaces: 0,
+      delta: 1
+    }, options );
+
+    return new NumberControl( label, property, range, options );
   };
 
   /**
@@ -60,10 +60,26 @@ define( function( require ) {
     }, options );
 
     // controls
-    var pitchSizeControl = createNumberControl( 'pitch size:', model.pitchSizeProperty, model.pitchSizeRange, 2, 0.01, 0.1 );
-    var deltaPhaseControl = createNumberControl( 'delta phase:', model.deltaPhaseProperty, model.deltaPhaseRange, 2, 0.01, 1 );
-    var aspectRatioControl = createNumberControl( 'aspect ratio:', model.aspectRatioProperty, model.aspectRatioRange, 2, 0.01, 0.1 );
-    var lineWidthControl = createNumberControl( 'line width:', model.lineWidthProperty, model.lineWidthRange, 1, 0.1, 1 );
+    var pitchSizeControl = createNumberControl( 'pitch size:', model.pitchSizeProperty, model.pitchSizeRange, {
+      decimalPlaces: 2,
+      delta: 0.01,
+      minorTickSpacing: 0.1
+    } );
+    var deltaPhaseControl = createNumberControl( 'delta phase:', model.deltaPhaseProperty, model.deltaPhaseRange, {
+      decimalPlaces: 2,
+      delta: 0.01,
+      minorTickSpacing: 1
+    } );
+    var aspectRatioControl = createNumberControl( 'aspect ratio:', model.aspectRatioProperty, model.aspectRatioRange, {
+      decimalPlaces: 2,
+      delta: 0.01,
+      minorTickSpacing: 0.1
+    } );
+    var lineWidthControl = createNumberControl( 'line width:', model.lineWidthProperty, model.lineWidthRange, {
+      decimalPlaces: 1,
+      delta: 0.1,
+      minorTickSpacing: 1
+    } );
 
     // layout
     var content = new HBox( {
