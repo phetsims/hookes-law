@@ -18,14 +18,16 @@ define( function( require ) {
     // ranges and default values
     this.pitchSizeRange = new Range( 0.1, 2, 1 );
     this.deltaPhaseRange = new Range( 0, 7, 1 );
-    this.aspectRatioRange = new Range( 0.3, 3, 1 );
+    this.aspectRatioRange = new Range( 0.5, 3, 1 );
     this.lineWidthRange = new Range( 1, 10, 3 );
+    this.amplitudeRange = new Range( 20, 70, 50 );
 
     PropertySet.call( this, {
       pitchSize: this.pitchSizeRange.defaultValue,
       deltaPhase: this.deltaPhaseRange.defaultValue,
       aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
-      lineWidth: this.lineWidthRange.defaultValue // {number} lineWidth used to draw the coil
+      lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
+      amplitude: this.amplitudeRange.defaultValue
     } );
   }
 
