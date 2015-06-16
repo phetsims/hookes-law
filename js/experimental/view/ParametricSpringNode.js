@@ -53,8 +53,8 @@ define( function( require ) {
     } );
 
     // Update the spring geometry
-    Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty, model.radiusProperty, model.pointsPerLoopProperty, model.phaseProperty ],
-      function( pitchSize, deltaPhase, aspectRatio, radius, pointsPerLoop, phase ) {
+    Property.multilink( [ model.radiusProperty, model.aspectRatioProperty, model.pointsPerLoopProperty, model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty ],
+      function( radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize ) {
 
         var arrayLength = options.loops * pointsPerLoop;
         var index;
