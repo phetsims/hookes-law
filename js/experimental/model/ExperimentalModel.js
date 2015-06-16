@@ -21,13 +21,15 @@ define( function( require ) {
     this.aspectRatioRange = new Range( 0.5, 3, 1 );
     this.lineWidthRange = new Range( 1, 10, 3 );
     this.radiusRange = new Range( 20, 70, 50 );
+    this.pointsPerLoopRange = new Range( 10, 100, 50 );
 
     PropertySet.call( this, {
       pitchSize: this.pitchSizeRange.defaultValue,
       deltaPhase: this.deltaPhaseRange.defaultValue,
       aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
       lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
-      radius: this.radiusRange.defaultValue // {number} radius of a loop with aspect ratio of 1:1
+      radius: this.radiusRange.defaultValue, // {number} radius of a loop with aspect ratio of 1:1
+      pointsPerLoop: this.pointsPerLoopRange.defaultValue // {number} number of points used to approximate 1 loop
     } );
   }
 

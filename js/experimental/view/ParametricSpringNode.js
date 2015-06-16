@@ -29,7 +29,6 @@ define( function( require ) {
       frontStroke: 'black',
       backStroke: 'black',
       loops: 10, // {number} number of loops in the coil
-      pointsPerLoop: 50, // {number} number of points used to approximate each loop
       phase: 0 //TODO describe this, add a control?
     }, options );
     assert && assert( options.paths === 1 || options.paths === 2 );
@@ -50,19 +49,20 @@ define( function( require ) {
     } );
     this.addChild( frontPath );
 
-    var arrayLength = options.loops * options.pointsPerLoop;
     var index;
 
     // Update the spring geometry
-    Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty, model.radiusProperty ],
-      function( pitchSize, deltaPhase, aspectRatio, radius ) {
+    Property.multilink( [ model.pitchSizeProperty, model.deltaPhaseProperty, model.aspectRatioProperty, model.radiusProperty, model.pointsPerLoopProperty ],
+      function( pitchSize, deltaPhase, aspectRatio, radius, pointsPerLoop ) {
+
+        var arrayLength = options.loops * pointsPerLoop;
 
         //TODO expand doc for the parametric equation, add a reference
         // compute the points
         var arrayPosition = [];
         for ( index = 0; index < arrayLength; index++ ) {
-          var xCoordinate = radius * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + options.phase ) + pitchSize * (index / options.pointsPerLoop) * radius;
-          var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / options.pointsPerLoop + deltaPhase + options.phase );
+          var xCoordinate = radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + options.phase ) + pitchSize * (index / pointsPerLoop) * radius;
+          var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + options.phase );
           arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
         }
 
@@ -84,7 +84,7 @@ define( function( require ) {
           for ( index = 1; index < arrayLength; index++ ) {
 
             // is the current point on the front path?
-            var isFront = ( ( 2 * Math.PI * index / options.pointsPerLoop + options.phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
+            var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + options.phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
 
             if ( isFront ) {
               // we're in the front

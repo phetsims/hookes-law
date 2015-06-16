@@ -79,6 +79,11 @@ define( function( require ) {
       delta: 0.01,
       minorTickSpacing: 0.1
     } );
+    var pointsPerLoopControl = createNumberControl( 'points per loop:', model.pointsPerLoopProperty, model.pointsPerLoopRange, {
+      decimalPlaces: 0,
+      delta: 1,
+      minorTickSpacing: 10
+    } );
     var lineWidthControl = createNumberControl( 'line width:', model.lineWidthProperty, model.lineWidthRange, {
       decimalPlaces: 1,
       delta: 0.1,
@@ -92,7 +97,7 @@ define( function( require ) {
       children: [
         new VBox( { children: [ pitchSizeControl, deltaPhaseControl ], spacing: ySpacing } ),
         new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
-        new VBox( { children: [ lineWidthControl ], spacing: ySpacing } )
+        new VBox( { children: [ pointsPerLoopControl, lineWidthControl ], spacing: ySpacing } )
       ],
       spacing: xSpacing
     } );
