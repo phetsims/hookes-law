@@ -67,7 +67,7 @@ define( function( require ) {
       yMargin: 10
     }, options );
 
-    // controls
+    // controls, options tweaked to match ranges
     var radiusControl = createNumberControl( radiusString, model.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
