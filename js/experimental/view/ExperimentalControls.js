@@ -77,8 +77,8 @@ define( function( require ) {
       minorTickSpacing: 5
     } );
     var aspectRatioControl = createNumberControl( aspectRatioString, model.aspectRatioProperty, model.aspectRatioRange, {
-      decimalPlaces: 2,
-      delta: 0.01,
+      decimalPlaces: 1,
+      delta: 0.1,
       minorTickSpacing: 0.5
     } );
     var pointsPerLoopControl = createNumberControl( pointsPerLoopString, model.pointsPerLoopProperty, model.pointsPerLoopRange, {
@@ -102,8 +102,8 @@ define( function( require ) {
       minorTickSpacing: 1
     } );
     var pitchSizeControl = createNumberControl( pitchSizeString, model.pitchSizeProperty, model.pitchSizeRange, {
-      decimalPlaces: 2,
-      delta: 0.01,
+      decimalPlaces: 1,
+      delta: 0.1,
       minorTickSpacing: 0.1
     } );
     var frontAndBackCheckBox = new CheckBox( new Text( separateFrontAndBackString, { font: CONTROL_FONT } ), model.frontAndBackProperty );
