@@ -67,7 +67,7 @@ define( function( require ) {
         }
 
         if ( options.paths === 1 ) {
-          // one path for spring
+          // one path
           frontPath.shape = new Shape();
           frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
           for ( index = 1; index < arrayLength; index++ ) {
@@ -75,7 +75,7 @@ define( function( require ) {
           }
         }
         else {
-          // separate front and back for spring
+          // separate paths for front and back
           frontPath.shape = new Shape();
           backPath.shape = new Shape();
           frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
