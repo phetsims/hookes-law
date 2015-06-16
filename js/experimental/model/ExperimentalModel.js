@@ -38,7 +38,7 @@ define( function( require ) {
       deltaPhase: this.deltaPhaseRange.defaultValue, // {number} TODO what is this? units?
       //TODO better name for this?
       pitchSize: this.pitchSizeRange.defaultValue, // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
-      frontAndBack: false // {boolean} false: render spring as one path, true: render front and back as separate paths
+      frontAndBack: true // {boolean} false: render spring as one path, true: render front and back as separate paths
     } );
   }
 

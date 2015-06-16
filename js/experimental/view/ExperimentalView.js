@@ -9,14 +9,20 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var CheckBox = require( 'SUN/CheckBox' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var ExperimentalControls = require( 'HOOKES_LAW/experimental/view/ExperimentalControls' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParametricSpringNode = require( 'HOOKES_LAW/experimental/view/ParametricSpringNode' );
+  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
+  var Text = require( 'SCENERY/nodes/Text' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
+
+  // strings - no need for i18n since this is a developer-only screen
+  var separateFrontAndBackString = 'separate front & back';
 
   /**
    * @param {ExperimentalModel} model
@@ -32,6 +38,13 @@ define( function( require ) {
     controls.setScaleMagnitude( Math.min( 1, this.layoutBounds.width / controls.width ) );
     controls.top = 0;
     controls.centerX = this.layoutBounds.centerX;
+
+    // check box for front/back view
+    var frontAndBackCheckBox = new CheckBox( new Text( separateFrontAndBackString, { font: new PhetFont( 16 ) } ), model.frontAndBackProperty, {
+      left: 20,
+      top: controls.bottom + 15
+    } );
+    this.addChild( frontAndBackCheckBox );
 
     // spring
     var springNode = new ParametricSpringNode( model, {

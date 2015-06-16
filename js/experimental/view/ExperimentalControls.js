@@ -9,7 +9,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var CheckBox = require( 'SUN/CheckBox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
@@ -18,6 +17,7 @@ define( function( require ) {
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
   var VBox = require( 'SCENERY/nodes/VBox' );
+  var VSeparator = require( 'SUN/VSeparator' );
 
   // strings - no need for i18n since this is a developer-only screen
   var aspectRatioString = 'aspect ratio:';
@@ -28,7 +28,6 @@ define( function( require ) {
   var pitchSizeString = 'pitch size:';
   var pointsPerLoopString = 'points per loop:';
   var radiusString = 'radius:';
-  var separateFrontAndBackString = 'separate front & back';
 
   // constants
   var CONTROL_FONT = new PhetFont( 22 );
@@ -67,7 +66,7 @@ define( function( require ) {
 
     options = _.extend( {
       fill: 'rgb(240,240,240)',
-      xMargin: 35,
+      xMargin: 20,
       yMargin: 10
     }, options );
 
@@ -76,6 +75,11 @@ define( function( require ) {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 1
+    } );
+    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, model.pointsPerLoopProperty, model.pointsPerLoopRange, {
+      decimalPlaces: 0,
+      delta: 1,
+      minorTickSpacing: 10
     } );
     var radiusControl = createNumberControl( radiusString, model.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
@@ -87,16 +91,6 @@ define( function( require ) {
       delta: 0.1,
       minorTickSpacing: 0.5
     } );
-    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, model.pointsPerLoopProperty, model.pointsPerLoopRange, {
-      decimalPlaces: 0,
-      delta: 1,
-      minorTickSpacing: 10
-    } );
-    var lineWidthControl = createNumberControl( lineWidthString, model.lineWidthProperty, model.lineWidthRange, {
-      decimalPlaces: 1,
-      delta: 0.1,
-      minorTickSpacing: 1
-    } );
     var phaseControl = createNumberControl( phaseString, model.phaseProperty, model.phaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
@@ -107,22 +101,29 @@ define( function( require ) {
       delta: 0.1,
       minorTickSpacing: 1
     } );
+    var lineWidthControl = createNumberControl( lineWidthString, model.lineWidthProperty, model.lineWidthRange, {
+      decimalPlaces: 1,
+      delta: 0.1,
+      minorTickSpacing: 1,
+      thumbFillEnabled: 'red'
+    } );
     var pitchSizeControl = createNumberControl( pitchSizeString, model.pitchSizeProperty, model.pitchSizeRange, {
       decimalPlaces: 1,
       delta: 0.1,
-      minorTickSpacing: 0.1
+      minorTickSpacing: 0.1,
+      thumbFillEnabled: 'red'
     } );
-    var frontAndBackCheckBox = new CheckBox( new Text( separateFrontAndBackString, { font: CONTROL_FONT } ), model.frontAndBackProperty );
 
     // layout
-    var xSpacing = 40;
+    var xSpacing = 25;
     var ySpacing = 30;
     var content = new HBox( {
       children: [
-        new VBox( { children: [ loopsControl, radiusControl, aspectRatioControl ], spacing: ySpacing } ),
-        new VBox( { children: [ pointsPerLoopControl, lineWidthControl ], spacing: ySpacing } ),
+        new VBox( { children: [ loopsControl, pointsPerLoopControl ], spacing: ySpacing } ),
+        new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
         new VBox( { children: [ phaseControl, deltaPhaseControl ], spacing: ySpacing } ),
-        new VBox( { children: [ pitchSizeControl, frontAndBackCheckBox ], spacing: ySpacing } )
+        new VSeparator( 225 ),
+        new VBox( { children: [ lineWidthControl, pitchSizeControl ], spacing: ySpacing } )
       ],
       spacing: xSpacing,
       align: 'top'
