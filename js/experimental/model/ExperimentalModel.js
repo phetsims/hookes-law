@@ -20,7 +20,7 @@ define( function( require ) {
     this.aspectRatioRange = new Range( 0.5, 3, 1 );
     this.pointsPerLoopRange = new Range( 10, 100, 50 );
     this.lineWidthRange = new Range( 1, 10, 3 );
-    this.phaseRange = new Range( 0, 5, 0 );
+    this.phaseRange = new Range( 0, 10, 0 );
     this.deltaPhaseRange = new Range( 0, 7, 1 );
     this.pitchSizeRange = new Range( 0.1, 2, 1 );
 
