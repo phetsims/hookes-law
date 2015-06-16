@@ -19,6 +19,7 @@ define( function( require ) {
   function ExperimentalModel() {
 
     // ranges and default values for properties
+    this.loopsRange = new Range( 4, 15, 10 );
     this.radiusRange = new Range( 20, 70, 30 );
     this.aspectRatioRange = new Range( 0.5, 3, 1.5 );
     this.pointsPerLoopRange = new Range( 10, 100, 30 );
@@ -28,6 +29,7 @@ define( function( require ) {
     this.pitchSizeRange = new Range( 0.1, 2, 1.5 );
 
     PropertySet.call( this, {
+      loops: this.loopsRange.defaultValue, // {number} number of loops in the spring
       radius: this.radiusRange.defaultValue, // {number} radius of a loop with aspect ratio of 1:1
       aspectRatio: this.aspectRatioRange.defaultValue, // {number} y:x aspect radio of the loop radius
       pointsPerLoop: this.pointsPerLoopRange.defaultValue, // {number} number of points used to approximate 1 loop

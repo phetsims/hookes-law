@@ -23,6 +23,7 @@ define( function( require ) {
   var aspectRatioString = 'aspect ratio:';
   var deltaPhaseString = 'delta phase:';
   var lineWidthString = 'line width:';
+  var loopsString = "loops:";
   var phaseString = 'phase:';
   var pitchSizeString = 'pitch size:';
   var pointsPerLoopString = 'points per loop:';
@@ -71,6 +72,11 @@ define( function( require ) {
     }, options );
 
     // controls, options tweaked empirically to match ranges
+    var loopsControl = createNumberControl( loopsString, model.loopsProperty, model.loopsRange, {
+      decimalPlaces: 0,
+      delta: 1,
+      minorTickSpacing: 1
+    } );
     var radiusControl = createNumberControl( radiusString, model.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
@@ -113,7 +119,7 @@ define( function( require ) {
     var ySpacing = 30;
     var content = new HBox( {
       children: [
-        new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
+        new VBox( { children: [ loopsControl, radiusControl, aspectRatioControl ], spacing: ySpacing } ),
         new VBox( { children: [ pointsPerLoopControl, lineWidthControl ], spacing: ySpacing } ),
         new VBox( { children: [ phaseControl, deltaPhaseControl ], spacing: ySpacing } ),
         new VBox( { children: [ pitchSizeControl, frontAndBackCheckBox ], spacing: ySpacing } )

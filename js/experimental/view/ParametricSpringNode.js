@@ -25,7 +25,6 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
-      loops: 10, // {number} number of loops in the coil
       stroke: 'black', // {string|Color} stroke single-path spring
       frontStroke: 'lightBlue', // {string|Color} stroke for the front path when using 2 paths
       backStroke: 'blue' // {string|Color} stroke for the back path when using 2 paths
@@ -41,11 +40,11 @@ define( function( require ) {
     this.addChild( frontPath );
 
     // Update the spring geometry
-    Property.multilink( [ model.radiusProperty, model.aspectRatioProperty, model.pointsPerLoopProperty,
+    Property.multilink( [ model.loopsProperty, model.radiusProperty, model.aspectRatioProperty, model.pointsPerLoopProperty,
         model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty, model.frontAndBackProperty ],
-      function( radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize, frontAndBack ) {
+      function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize, frontAndBack ) {
 
-        var arrayLength = options.loops * pointsPerLoop;
+        var arrayLength = loops * pointsPerLoop;
         var index;
 
         //TODO expand doc for the parametric equation, add a reference
