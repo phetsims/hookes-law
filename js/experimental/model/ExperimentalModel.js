@@ -13,6 +13,9 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
 
+  /**
+   * @constructor
+   */
   function ExperimentalModel() {
 
     // ranges and default values for properties
