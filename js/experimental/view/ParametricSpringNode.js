@@ -105,6 +105,8 @@ define( function( require ) {
         }
       } );
 
+    //TODO Why does SVGGroup.js fail at line 189 when this is moved before Property.multilink above?
+    //TODO Error: Invalid value for <g> attribute transform="translate(-Infinity,0.00000000000000000000)"
     // Update the line width
     model.lineWidthProperty.link( function( lineWidth ) {
       frontPath.lineWidth = backPath.lineWidth = lineWidth;
