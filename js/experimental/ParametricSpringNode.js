@@ -30,8 +30,8 @@ define( function( require ) {
       backStroke: 'black',
       loops: 10, // {number} number of loops in the coil
       pointsPerLoop: 50, // {number} number of points used to approximate each loop
-      phase: 0,
-      amplitude: 50
+      phase: 0, //TODO describe this, add a control?
+      amplitude: 50 //TODO describe this, add a control?
     }, options );
     assert && assert( options.paths === 1 || options.paths === 2 );
 
