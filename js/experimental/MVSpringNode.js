@@ -13,7 +13,6 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var HSlider = require( 'SUN/HSlider' );
   var Node = require( 'SCENERY/nodes/Node' );
   var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
   var Path = require( 'SCENERY/nodes/Path' );
