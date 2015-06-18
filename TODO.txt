@@ -20,7 +20,7 @@ Shouldn't "Energy" check box be labeled "Potential Energy"?
 Implementation
 -----------------------------------------------------------------------------------
 
-ParametricSpringNode causes assertion failure in Line when horizontal segments are at top or bottom of coil (phase=0, PI, 2*PI
+ParametricSpringNode causes assertion failure in Line when horizontal segments are at top or bottom of coil (phase=0, PI, 2*PI)
 Strange lineCap behavior in ParametricSpringNode, eg lineWidth=6, pitchSize=5.9
 Try gradients for stroking ParametricSpringNode
 Complete cleanup of ParametricSpringNode
