@@ -99,7 +99,7 @@ define( function( require ) {
 
             if ( isFront ) {
               // we're in the front
-              if ( !wasFront ) {
+              if ( !wasFront && index !== 0 ) {
                 // ... and we've just moved to the front
                 frontPath.shape.moveToPoint( points[ index - 1 ] );
               }
@@ -107,7 +107,7 @@ define( function( require ) {
             }
             else {
               // we're in the back
-              if ( wasFront ) {
+              if ( wasFront && index !== 0 ) {
                 // ... and we've just moved to the back
                 backPath.shape.moveToPoint( points[ index - 1 ] );
               }
