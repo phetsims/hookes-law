@@ -93,7 +93,7 @@ define( function( require ) {
         energyBarRadioButton,
         energyXYRadioButton,
         forceXYRadioButton,
-        new HSeparator( maxControlWidth, { stroke: HookesLawColors.CONTROL_PANEL_STROKE } ),
+        new HSeparator( maxControlWidth, HookesLawConstants.SEPARATOR_OPTIONS ),
         appliedForceCheckBox,
         displacementCheckBox,
         equilibriumPositionCheckBox,

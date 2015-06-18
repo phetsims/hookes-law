@@ -68,7 +68,13 @@ define( function( require ) {
     var content = new HBox( {
       spacing: 20,
       resize: false,
-      children: [ leftSpringConstantControl, new VSeparator( separatorHeight ), rightSpringConstantControl, new VSeparator( separatorHeight ), appliedForceControl ]
+      children: [
+        leftSpringConstantControl,
+        new VSeparator( separatorHeight, HookesLawConstants.SEPARATOR_OPTIONS ),
+        rightSpringConstantControl,
+        new VSeparator( separatorHeight, HookesLawConstants.SEPARATOR_OPTIONS ),
+        appliedForceControl
+      ]
     } );
 
     Panel.call( this, content, options );

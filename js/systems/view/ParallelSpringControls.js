@@ -69,7 +69,7 @@ define( function( require ) {
       resize: false,
       children: [
         topSpringConstantControl,
-        new HSeparator( Math.max( topSpringConstantControl.width, bottomSpringConstantControl.width ) ),
+        new HSeparator( Math.max( topSpringConstantControl.width, bottomSpringConstantControl.width ), HookesLawConstants.SEPARATOR_OPTIONS ),
         bottomSpringConstantControl
       ]
     } );
@@ -80,7 +80,11 @@ define( function( require ) {
     var content = new HBox( {
       spacing: 20,
       resize: false,
-      children: [ springControls, new VSeparator( springControls.height ), appliedForceControl ]
+      children: [
+        springControls,
+        new VSeparator( springControls.height, HookesLawConstants.SEPARATOR_OPTIONS ),
+        appliedForceControl
+      ]
     } );
 
     Panel.call( this, content, options );

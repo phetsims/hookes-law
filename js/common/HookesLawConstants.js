@@ -81,6 +81,9 @@ define( function( require ) {
     RADIO_BUTTON_OPTIONS: {
       radius: 12
     },
+    SEPARATOR_OPTIONS: {
+      stroke: HookesLawColors.SEPARATOR_STROKE
+    },
     SPRING_PANEL_OPTIONS: {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
       stroke: HookesLawColors.CONTROL_PANEL_STROKE,

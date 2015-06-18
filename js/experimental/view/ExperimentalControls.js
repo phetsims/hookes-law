@@ -10,6 +10,8 @@ define( function( require ) {
 
   // modules
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'HOOKES_LAW/common/view/NumberControl' );
   var Panel = require( 'SUN/Panel' );
@@ -65,7 +67,8 @@ define( function( require ) {
   function ExperimentalControls( model, options ) {
 
     options = _.extend( {
-      fill: 'rgb(240,240,240)',
+      fill: HookesLawColors.CONTROL_PANEL_FILL,
+      stroke: HookesLawColors.CONTROL_PANEL_STROKE,
       xMargin: 20,
       yMargin: 10
     }, options );
@@ -122,7 +125,7 @@ define( function( require ) {
         new VBox( { children: [ loopsControl, pointsPerLoopControl ], spacing: ySpacing } ),
         new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
         new VBox( { children: [ phaseControl, deltaPhaseControl ], spacing: ySpacing } ),
-        new VSeparator( 225 ),
+        new VSeparator( 225, HookesLawConstants.SEPARATOR_OPTIONS ),
         new VBox( { children: [ lineWidthControl, pitchSizeControl ], spacing: ySpacing } )
       ],
       spacing: xSpacing,

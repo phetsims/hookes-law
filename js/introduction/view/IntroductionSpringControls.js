@@ -47,7 +47,7 @@ define( function( require ) {
       title: StringUtils.format( appliedForceNumberString, options.number )
     } );
 
-    var verticalSeparator = new VSeparator( Math.max( springConstantControl.height, appliedForceControl.height ) );
+    var verticalSeparator = new VSeparator( Math.max( springConstantControl.height, appliedForceControl.height ), HookesLawConstants.SEPARATOR_OPTIONS );
 
     var content = new HBox( {
       spacing: 20,
