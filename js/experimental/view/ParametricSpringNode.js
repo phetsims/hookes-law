@@ -32,6 +32,7 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
+      lineCap: 'round',
       stroke: SINGLE_COLOR, // {string|Color} stroke single-path spring
       frontStroke: FRONT_COLOR, // {string|Color} stroke for the front path when using 2 paths
       backStroke: BACK_COLOR // {string|Color} stroke for the back path when using 2 paths
@@ -39,11 +40,11 @@ define( function( require ) {
 
     Node.call( this );
 
-    var backPath = new Path( null, { stroke: options.backStroke } );
+    var backPath = new Path( null, { lineCap: options.lineCap, stroke: options.backStroke } );
     this.addChild( backPath );
 
     // frontPath is also the sole path when !model.frontAndBackProperty.get()
-    var frontPath = new Path( null );
+    var frontPath = new Path( null, { lineCap: options.lineCap } );
     this.addChild( frontPath );
 
     // Update the spring geometry
