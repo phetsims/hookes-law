@@ -16,7 +16,7 @@ Implementation
 Complete cleanup of ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
-Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
+Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Constrain text size for i18n
 
 -----------------------------------------------------------------------------------
