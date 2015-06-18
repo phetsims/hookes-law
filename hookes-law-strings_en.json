@@ -8,6 +8,9 @@
   "appliedForceNumber": {
     "value": "Applied Force {0}:"
   },
+  "barGraph": {
+    "value": "Bar Graph"
+  },
   "bottomSpring": {
     "value": "Bottom Spring:"
   },
@@ -23,8 +26,14 @@
   "energy": {
     "value": "Energy"
   },
+  "energyPlot": {
+    "value": "Energy Plot"
+  },
   "equilibriumPosition": {
     "value": "Equilibrium Position"
+  },
+  "forcePlot": {
+    "value": "Force Plot"
   },
   "hookes-law.name": {
     "value": "Hooke's Law"

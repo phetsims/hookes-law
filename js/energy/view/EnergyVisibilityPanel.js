@@ -22,7 +22,10 @@ define( function( require ) {
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
+  var barGraphString = require( 'string!HOOKES_LAW/barGraph' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
+  var energyPlotString = require( 'string!HOOKES_LAW/energyPlot' );
+  var forcePlotString = require( 'string!HOOKES_LAW/forcePlot' );
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
   /**
@@ -36,13 +39,13 @@ define( function( require ) {
 
     // radio buttons
     var energyBarRadioButton = new AquaRadioButton( properties.graphProperty, 'energyBar',
-      new Text( 'PE bar', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
+      new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
     var energyXYRadioButton = new AquaRadioButton( properties.graphProperty, 'energyXY',
-      new Text( 'PE bar + PE XY', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
+      new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
     var forceXYRadioButton = new AquaRadioButton( properties.graphProperty, 'forceXY',
-      new Text( 'PE bar + Force XY', HookesLawConstants.CONTROL_TEXT_OPTIONS ), //TODO i18n
+      new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // check boxes
