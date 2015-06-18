@@ -20,10 +20,10 @@ define( function( require ) {
 
   // modules
   var Circle = require( 'SCENERY/nodes/Circle' );
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
-  var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Property = require( 'AXON/Property' );
@@ -110,7 +110,7 @@ define( function( require ) {
     } );
     var xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, { centerY: 0 } ) );
     var xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
-    var xVectorNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
+    var xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
 
     // y nodes
     var yValueNode = new Text( '', {
@@ -151,7 +151,7 @@ define( function( require ) {
       // x vector
       xVectorNode.visible = ( xFixed !== 0 && options.xVectorVisibleProperty.get() ); // can't draw a zero-length arrow
       if ( xFixed !== 0 ) {
-        xVectorNode.setTailAndTip( 0, 0, xView, 0 );
+        xVectorNode.setLine( 0, 0, xView, 0 );
       }
 
       // x tick mark

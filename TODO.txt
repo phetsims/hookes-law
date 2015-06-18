@@ -13,7 +13,6 @@ Energy screen:
 Implementation
 -----------------------------------------------------------------------------------
 
-Remove arrow from displacement line on XY plots
 Complete cleanup of ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
 Compute spring shape as a function of displacement (MV's algorithm)
