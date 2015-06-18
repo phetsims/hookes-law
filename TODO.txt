@@ -6,13 +6,8 @@ Design questions
 
 General:
 Screen icons
-Robotic arm re-design
-Controls are currently at upper-right. Would they look better vertically centered?
-Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior? This is in JavaScript and common code.
 
 Energy screen:
-Visibility controls for the graph are getting complicated and confusing.
-Labels (and icons?) for the graph radio buttons?
 Will the "Energy" check box on Force plot be noticed? Would it work indented under radio button in control panel?
 Shouldn't "Energy" check box be labeled "Potential Energy"?
 
@@ -20,6 +15,7 @@ Shouldn't "Energy" check box be labeled "Potential Energy"?
 Implementation
 -----------------------------------------------------------------------------------
 
+Put "Energy" check box in a panel
 Strange lineCap behavior in ParametricSpringNode, eg lineWidth=6, pitchSize=5.9
 Complete cleanup of ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
