@@ -18,13 +18,13 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Vector2 = require( 'DOT/Vector2' );
 
-  /// constants
-  //TODO replace this with color choosers in ExperimentalControls
-  // Note that if using query parameters, the '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
+  // colors - Note that if using query parameters, the '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
   var SINGLE_COLOR = phet.chipper.getQueryParameter( 'singleColor' ) || 'rgb( 0, 0, 255 )';
   var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'rgb( 150, 150, 255 )';
   var MIDDLE_COLOR = phet.chipper.getQueryParameter( 'middleColor' ) || SINGLE_COLOR;
   var BACK_COLOR = phet.chipper.getQueryParameter( 'backColor' ) || 'rgb( 0, 0, 200 )';
+
+  // constants
   var LEFT_END_LENGTH = 15;
   var RIGHT_END_LENGTH = 25;
 
@@ -36,7 +36,7 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
-      lineCap: 'round'
+      lineCap: 'round' //TODO this results in some strange joints between front and back paths for some settings
     }, options );
 
     Node.call( this );
