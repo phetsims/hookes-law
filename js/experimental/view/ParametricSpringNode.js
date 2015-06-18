@@ -52,13 +52,13 @@ define( function( require ) {
         model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty, model.frontAndBackProperty ],
       function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize, frontAndBack ) {
 
-        var arrayLength = loops * pointsPerLoop + 1;
+        var numberOfPoints = loops * pointsPerLoop + 1;
         var index;
 
         //TODO expand doc for the parametric equation, add a reference
         // compute the points
         var points = []; // {Vector2[]}
-        for ( index = 0; index < arrayLength; index++ ) {
+        for ( index = 0; index < numberOfPoints; index++ ) {
           var xCoordinate = radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * radius;
           var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
           points.push( new Vector2( xCoordinate, yCoordinate ) );
@@ -68,7 +68,7 @@ define( function( require ) {
           // one path
           frontPath.shape = new Shape();
           frontPath.shape.moveToPoint( points[ 0 ] );
-          for ( index = 1; index < arrayLength; index++ ) {
+          for ( index = 1; index < numberOfPoints; index++ ) {
             frontPath.shape.lineToPoint( points[ index ] );
           }
         }
@@ -79,7 +79,7 @@ define( function( require ) {
           frontPath.shape.moveToPoint( points[ 0 ] );
           backPath.shape.moveToPoint( points[ 0 ] );
           var wasFront = true; // was the previous point on the front path?
-          for ( index = 1; index < arrayLength; index++ ) {
+          for ( index = 1; index < numberOfPoints; index++ ) {
 
             // is the current point on the front path?
             var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
