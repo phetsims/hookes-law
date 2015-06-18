@@ -17,10 +17,7 @@ Complete cleanup of ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
-Work on the look of the piece at end of spring(s) that the pincers grab
-Parallel system: truss should be a triangle, will need to compensate for width when positioning arm
 Constrain text size for i18n
-Delete experimental/ subdirectory when done with it, or keep it for posterity?
 
 -----------------------------------------------------------------------------------
 Common Code

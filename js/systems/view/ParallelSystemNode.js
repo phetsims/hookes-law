@@ -88,8 +88,16 @@ define( function( require ) {
     } );
 
     // right ends of both springs are connected to this
-    var trussNode = new Path( new Shape().moveTo( 0, topSpringNode.centerY ).lineTo( 0, bottomSpringNode.centerY ).moveTo( 0, 0 ).lineTo( 6, 0 ), {
-      lineWidth: 2,
+    var trussOverlap = 10;
+    var trussShape = new Shape()
+      // vertical line
+      .moveTo( 0, topSpringNode.centerY - trussOverlap )
+      .lineTo( 0, bottomSpringNode.centerY + trussOverlap )
+      // horizontal line
+      .moveTo( 0, 0 )
+      .lineTo( 10, 0 );
+    var trussNode = new Path( trussShape, {
+      lineWidth: 3,
       stroke: 'black'
     } );
 
