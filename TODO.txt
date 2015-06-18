@@ -21,7 +21,6 @@ Implementation
 -----------------------------------------------------------------------------------
 
 Strange lineCap behavior in ParametricSpringNode, eg lineWidth=6, pitchSize=5.9
-Try gradients for stroking ParametricSpringNode
 Complete cleanup of ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
 Compute spring shape as a function of displacement (MV's algorithm)

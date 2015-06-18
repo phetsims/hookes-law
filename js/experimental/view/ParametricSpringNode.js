@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var LinearGradient = require( 'SCENERY/util/LinearGradient' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
@@ -19,10 +20,11 @@ define( function( require ) {
 
   /// constants
   //TODO replace this with color choosers in ExperimentalControls
-  // Note that the '#' for hex colors needs to be URL encoded, eg '#CC66FF' -> '%23CC66FF'
-  var SINGLE_COLOR = phet.chipper.getQueryParameter( 'singleColor' ) || 'black';
-  var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'lightBlue';
-  var BACK_COLOR = phet.chipper.getQueryParameter( 'backColor' ) || 'blue';
+  // Note that if using query parameters, the '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
+  var SINGLE_COLOR = phet.chipper.getQueryParameter( 'singleColor' ) || 'rgb( 0, 0, 255 )';
+  var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'rgb( 150, 150, 255 )';
+  var MIDDLE_COLOR = phet.chipper.getQueryParameter( 'middleColor' ) || SINGLE_COLOR;
+  var BACK_COLOR = phet.chipper.getQueryParameter( 'backColor' ) || 'rgb( 0, 0, 200 )';
   var LEFT_END_LENGTH = 15;
   var RIGHT_END_LENGTH = 25;
 
@@ -34,15 +36,12 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
-      lineCap: 'round',
-      stroke: SINGLE_COLOR, // {string|Color} stroke single-path spring
-      frontStroke: FRONT_COLOR, // {string|Color} stroke for the front path when using 2 paths
-      backStroke: BACK_COLOR // {string|Color} stroke for the back path when using 2 paths
+      lineCap: 'round'
     }, options );
 
     Node.call( this );
 
-    var backPath = new Path( null, { lineCap: options.lineCap, stroke: options.backStroke } );
+    var backPath = new Path( null, { lineCap: options.lineCap } );
     this.addChild( backPath );
 
     // frontPath is also the sole path when !model.frontAndBackProperty.get()
@@ -127,10 +126,27 @@ define( function( require ) {
         }
       } );
 
-    model.frontAndBackProperty.link( function( frontAndBack ) {
-      frontPath.stroke = frontAndBack ? options.frontStroke : options.stroke;
-      backPath.visible = frontAndBack;
-    } );
+    Property.multilink( [ model.radiusProperty, model.aspectRatioProperty, model.frontAndBackProperty ],
+      function( radius, aspectRatio, frontAndBack ) {
+
+        backPath.visible = frontAndBack;
+
+        if ( frontAndBack ) {
+          var yRadius = radius * aspectRatio;
+          frontPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
+            .addColorStop( 0, MIDDLE_COLOR )
+            .addColorStop( 0.35, FRONT_COLOR )
+            .addColorStop( 0.65, FRONT_COLOR )
+            .addColorStop( 1, MIDDLE_COLOR );
+          backPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
+            .addColorStop( 0, MIDDLE_COLOR )
+            .addColorStop( 0.5, BACK_COLOR )
+            .addColorStop( 1, MIDDLE_COLOR );
+        }
+        else {
+          frontPath.stroke = SINGLE_COLOR;
+        }
+      } );
 
     //TODO Why does SVGGroup.js fail at line 189 when this is moved before Property.multilink above?
     //TODO Error: Invalid value for <g> attribute transform="translate(-Infinity,0.00000000000000000000)"
