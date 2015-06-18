@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.0-dev.16 Tue Jun 16 2015 17:47:45 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.0.0-dev.17 Thu Jun 18 2015 15:00:37 GMT-0600 (MDT)",
   "assert": {
     "sha": "903564a25a0f26acdbd334d3e104039864b405ef",
     "branch": "master"
@@ -13,19 +13,19 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "54cf1a9ef009ad27150368c8c0cb4a5315eba277",
+    "sha": "b2e80d3185e148c4e6f53c88cd8c4d0e769e7652",
     "branch": "master"
   },
   "dot": {
-    "sha": "519e5ff7779eae50084637ef3bda93ea2349c9cb",
+    "sha": "9e9d13ea31d02eb28a133fc4ce67ed1b74092373",
     "branch": "master"
   },
   "hookes-law": {
-    "sha": "3ba8844702c99390fbfcca83d6fcfb8b2c7e2258",
+    "sha": "abe4fdaa027a8fbcd63dbd9537f0893cf31837c5",
     "branch": "master"
   },
   "joist": {
-    "sha": "5592cdb52666d5ee962555440fdda1b0a7a93882",
+    "sha": "2a8ccbb16578eebaa6dded562d4439787de8b350",
     "branch": "master"
   },
   "kite": {
@@ -41,11 +41,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "ce0b7ef6282dc36336c8be452832cb88a85722e0",
+    "sha": "2494686a79bb7024137b680caa4934a5b1a7c103",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "772592a6f485bf732a60cdac5eeddb6a200733f8",
+    "sha": "ea0e0d835c72338dd5c88d52473759125eb95ee1",
     "branch": "master"
   },
   "sherpa": {
