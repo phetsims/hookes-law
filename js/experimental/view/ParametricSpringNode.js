@@ -23,6 +23,8 @@ define( function( require ) {
   var SINGLE_COLOR = phet.chipper.getQueryParameter( 'singleColor' ) || 'black';
   var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'lightBlue';
   var BACK_COLOR = phet.chipper.getQueryParameter( 'backColor' ) || 'blue';
+  var LEFT_END_LENGTH = 15;
+  var RIGHT_END_LENGTH = 25;
 
   /**
    * @param {ExperimentalModel} model
@@ -67,10 +69,11 @@ define( function( require ) {
         if ( !frontAndBack ) {
           // one path
           frontPath.shape = new Shape();
-          frontPath.shape.moveToPoint( points[ 0 ] );
-          for ( index = 1; index < numberOfPoints; index++ ) {
+          frontPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y ); // horizontal line at left end
+          for ( index = 0; index < numberOfPoints; index++ ) {
             frontPath.shape.lineToPoint( points[ index ] );
           }
+          frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y ); // horizontal line at right end
         }
         else {
           // separate paths for front and back
@@ -79,10 +82,20 @@ define( function( require ) {
           frontPath.shape.moveToPoint( points[ 0 ] );
           backPath.shape.moveToPoint( points[ 0 ] );
           var wasFront = true; // was the previous point on the front path?
-          for ( index = 1; index < numberOfPoints; index++ ) {
+          for ( index = 0; index < numberOfPoints; index++ ) {
 
             // is the current point on the front path?
             var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) > Math.PI );
+
+            // horizontal line at left end
+            if ( index === 0 ) {
+              if ( isFront ) {
+                frontPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
+              }
+              else {
+                backPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
+              }
+            }
 
             if ( isFront ) {
               // we're in the front
@@ -102,6 +115,14 @@ define( function( require ) {
             }
 
             wasFront = isFront;
+          }
+
+          // horizontal line at right end
+          if ( wasFront ) {
+            frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
+          }
+          else {
+            backPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
           }
         }
       } );
