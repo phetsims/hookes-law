@@ -20,6 +20,8 @@ Shouldn't "Energy" check box be labeled "Potential Energy"?
 Implementation
 -----------------------------------------------------------------------------------
 
+Try gradients for stroking ParametricSpringNode
+Tweak 'isFront' computation for ParametricSpringNode?
 Complete cleanup of ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
 Compute spring shape as a function of displacement (MV's algorithm)
