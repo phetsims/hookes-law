@@ -19,7 +19,9 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Panel = require( 'SUN/Panel' );
   var Path = require( 'SCENERY/nodes/Path' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
@@ -80,18 +82,21 @@ define( function( require ) {
     // Check box for showing energy on Force XY plot
     var energyIcon = new HBox( {
       children: [
-        new Text( energyString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        new Text( energyString, { font: new HookesLawFont( 14 ) } ),
         new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), { fill: HookesLawColors.ENERGY } )
       ],
       spacing: 6
     } );
-    var energyCheckBox = new CheckBox( energyIcon,
+    var energyControlPanel = new Panel( new CheckBox( energyIcon,
       viewProperties.energyOnForcePlotVisibleProperty,
-      _.extend( {
-        left: forceXYPlot.left + 10,
-        top: forceXYPlot.top + 20
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
-    this.addChild( energyCheckBox );
+      HookesLawConstants.CHECK_BOX_OPTIONS ), {
+      stroke: HookesLawColors.CONTROL_PANEL_STROKE,
+      fill: HookesLawColors.CONTROL_PANEL_FILL,
+      left: forceXYPlot.left + 10,
+      top: forceXYPlot.top + 20,
+      xMargin: 10
+    } );
+    this.addChild( energyControlPanel );
 
     // Energy XY plot
     var energyXYPlot = new EnergyXYPlot( model.system.spring, unitDisplacementLength, {
@@ -116,7 +121,7 @@ define( function( require ) {
     // Observe view properties
     viewProperties.graphProperty.link( function( graph ) {
 
-      forceXYPlot.visible = energyCheckBox.visible = ( graph === 'forceXY' );
+      forceXYPlot.visible = energyControlPanel.visible = ( graph === 'forceXY' );
       energyXYPlot.visible = ( graph === 'energyXY' );
 
       if ( graph === 'energyBar' ) {

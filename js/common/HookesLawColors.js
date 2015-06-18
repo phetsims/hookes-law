@@ -14,6 +14,7 @@ define( function( require ) {
 
   return {
     CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),
+    CONTROL_PANEL_STROKE: new Color( 160, 160, 160 ),
     APPLIED_FORCE: PhetColorScheme.RED_COLORBLIND,
     TOTAL_SPRING_FORCE: new Color( 11, 37, 251 ),
     LEFT_SPRING_FORCE: new Color( '#6D00FF' ),

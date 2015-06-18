@@ -83,11 +83,13 @@ define( function( require ) {
     },
     SPRING_PANEL_OPTIONS: {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
+      stroke: HookesLawColors.CONTROL_PANEL_STROKE,
       xMargin: 20,
       yMargin: 5
     },
     VISIBILITY_PANEL_OPTIONS: {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
+      stroke: HookesLawColors.CONTROL_PANEL_STROKE,
       xMargin: 15,
       yMargin: 15
     }

@@ -8,15 +8,12 @@ General:
 Screen icons
 
 Energy screen:
-Will the "Energy" check box on Force plot be noticed? Would it work indented under radio button in control panel?
-Shouldn't "Energy" check box be labeled "Potential Energy"?
 
 -----------------------------------------------------------------------------------
 Implementation
 -----------------------------------------------------------------------------------
 
-Put "Energy" check box in a panel
-Strange lineCap behavior in ParametricSpringNode, eg lineWidth=6, pitchSize=5.9
+Remove arrow from displacement line on XY plots
 Complete cleanup of ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is at precisely at (tipX,tipY)
 Compute spring shape as a function of displacement (MV's algorithm)
