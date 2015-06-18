@@ -82,7 +82,7 @@ define( function( require ) {
           for ( index = 1; index < numberOfPoints; index++ ) {
 
             // is the current point on the front path?
-            var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) < Math.PI );
+            var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) > Math.PI );
 
             if ( isFront ) {
               // we're in the front
