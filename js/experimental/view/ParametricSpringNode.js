@@ -57,27 +57,27 @@ define( function( require ) {
 
         //TODO expand doc for the parametric equation, add a reference
         // compute the points
-        var arrayPosition = [];
+        var points = []; // {Vector2[]}
         for ( index = 0; index < arrayLength; index++ ) {
           var xCoordinate = radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * radius;
           var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
-          arrayPosition.push( new Vector2( xCoordinate, yCoordinate ) );
+          points.push( new Vector2( xCoordinate, yCoordinate ) );
         }
 
         if ( !frontAndBack ) {
           // one path
           frontPath.shape = new Shape();
-          frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
+          frontPath.shape.moveToPoint( points[ 0 ] );
           for ( index = 1; index < arrayLength; index++ ) {
-            frontPath.shape.lineToPoint( arrayPosition[ index ] );
+            frontPath.shape.lineToPoint( points[ index ] );
           }
         }
         else {
           // separate paths for front and back
           frontPath.shape = new Shape();
           backPath.shape = new Shape();
-          frontPath.shape.moveToPoint( arrayPosition[ 0 ] );
-          backPath.shape.moveToPoint( arrayPosition[ 0 ] );
+          frontPath.shape.moveToPoint( points[ 0 ] );
+          backPath.shape.moveToPoint( points[ 0 ] );
           var wasFront = true; // was the previous point on the front path?
           for ( index = 1; index < arrayLength; index++ ) {
 
@@ -88,17 +88,17 @@ define( function( require ) {
               // we're in the front
               if ( !wasFront ) {
                 // ... and we've just moved to the front
-                frontPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+                frontPath.shape.moveToPoint( points[ index - 1 ] );
               }
-              frontPath.shape.lineToPoint( arrayPosition[ index ] );
+              frontPath.shape.lineToPoint( points[ index ] );
             }
             else {
               // we're in the back
               if ( wasFront ) {
                 // ... and we've just moved to the back
-                backPath.shape.moveToPoint( arrayPosition[ index - 1 ] );
+                backPath.shape.moveToPoint( points[ index - 1 ] );
               }
-              backPath.shape.lineToPoint( arrayPosition[ index ] );
+              backPath.shape.lineToPoint( points[ index ] );
             }
 
             wasFront = isFront;
