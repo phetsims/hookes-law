@@ -26,7 +26,7 @@ define( function( require ) {
     this.lineWidthRange = new Range( 1, 10, 3 );
     this.phaseRange = new Range( 0, 2 * Math.PI, Math.PI ); // radians
     this.deltaPhaseRange = new Range( 0, 2 * Math.PI, 1.5 ); // radians
-    this.pitchSizeRange = new Range( 0.5, 10, 2.5 );
+    this.pitchSizeRange = new Range( 0.5, 11, 2.5 );
 
     PropertySet.call( this, {
       loops: this.loopsRange.defaultValue, // {number} number of loops in the spring
