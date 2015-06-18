@@ -12,7 +12,7 @@ Math.round( 0.5 ) -> 1, Math.round( -0.5 ) -> 0. Is this desired behavior? This 
 
 Energy screen:
 Visibility controls for the graph are getting complicated and confusing.
-Labels for the graph radio buttons?
+Labels (and icons?) for the graph radio buttons?
 Will the "Energy" check box on Force plot be noticed? Would it work indented under radio button in control panel?
 Shouldn't "Energy" check box be labeled "Potential Energy"?
 
