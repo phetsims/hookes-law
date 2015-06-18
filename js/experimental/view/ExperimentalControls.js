@@ -110,7 +110,7 @@ define( function( require ) {
     var pitchSizeControl = createNumberControl( pitchSizeString, model.pitchSizeProperty, model.pitchSizeRange, {
       decimalPlaces: 1,
       delta: 0.1,
-      minorTickSpacing: 0.1,
+      minorTickSpacing: 0.5,
       thumbFillEnabled: 'red'
     } );
 

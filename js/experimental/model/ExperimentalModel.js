@@ -20,13 +20,13 @@ define( function( require ) {
 
     // ranges and default values for properties
     this.loopsRange = new Range( 4, 15, 10 );
-    this.radiusRange = new Range( 5, 70, 30 );
-    this.aspectRatioRange = new Range( 0.5, 4, 1.5 );
+    this.radiusRange = new Range( 5, 70, 10 );
+    this.aspectRatioRange = new Range( 0.5, 10, 4 );
     this.pointsPerLoopRange = new Range( 10, 100, 30 );
     this.lineWidthRange = new Range( 1, 10, 3 );
-    this.phaseRange = new Range( 0, 2 * Math.PI, 0 ); // radians
+    this.phaseRange = new Range( 0, 2 * Math.PI, Math.PI ); // radians
     this.deltaPhaseRange = new Range( 0, 2 * Math.PI, 1.5 ); // radians
-    this.pitchSizeRange = new Range( 0.1, 2, 1.5 );
+    this.pitchSizeRange = new Range( 0.5, 10, 2.5 );
 
     PropertySet.call( this, {
       loops: this.loopsRange.defaultValue, // {number} number of loops in the spring
