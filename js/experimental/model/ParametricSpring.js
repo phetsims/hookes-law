@@ -26,7 +26,7 @@ define( function( require ) {
     this.lineWidthRange = new Range( 1, 10, 3 );
     this.phaseRange = new Range( 0, 2 * Math.PI, Math.PI ); // radians
     this.deltaPhaseRange = new Range( 0, 2 * Math.PI, 1.5 ); // radians
-    this.pitchSizeRange = new Range( 0.5, 11, 2.5 );
+    this.xScaleRange = new Range( 0.5, 11, 2.5 );
 
     PropertySet.call( this, {
       loops: this.loopsRange.defaultValue, // {number} number of loops in the spring
@@ -36,8 +36,7 @@ define( function( require ) {
       lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
       phase: this.phaseRange.defaultValue, // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
       deltaPhase: this.deltaPhaseRange.defaultValue, // {number} TODO what is this? units?
-      //TODO better name for this?
-      pitchSize: this.pitchSizeRange.defaultValue, // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
+      xScale: this.xScaleRange.defaultValue, // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
       frontAndBack: true // {boolean} false: render spring as one path, true: render front and back as separate paths
     } );
   }

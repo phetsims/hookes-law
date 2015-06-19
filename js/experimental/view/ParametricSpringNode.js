@@ -53,9 +53,9 @@ define( function( require ) {
         spring.loopsProperty, spring.radiusProperty,
         spring.aspectRatioProperty, spring.pointsPerLoopProperty,
         spring.phaseProperty, spring.deltaPhaseProperty,
-        spring.pitchSizeProperty, spring.frontAndBackProperty
+        spring.xScaleProperty, spring.frontAndBackProperty
       ],
-      function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize, frontAndBack ) {
+      function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, xScale, frontAndBack ) {
 
         var numberOfPoints = loops * pointsPerLoop + 1;
         var index;
@@ -64,7 +64,7 @@ define( function( require ) {
         // compute the points
         var points = []; // {Vector2[]}
         for ( index = 0; index < numberOfPoints; index++ ) {
-          var xCoordinate = radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + pitchSize * (index / pointsPerLoop) * radius;
+          var xCoordinate = radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + xScale * (index / pointsPerLoop) * radius;
           var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
           points.push( new Vector2( xCoordinate, yCoordinate ) );
         }

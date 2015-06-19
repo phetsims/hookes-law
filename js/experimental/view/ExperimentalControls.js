@@ -27,9 +27,9 @@ define( function( require ) {
   var lineWidthString = 'line width:';
   var loopsString = "loops:";
   var phaseString = 'phase:';
-  var pitchSizeString = 'pitch size:';
   var pointsPerLoopString = 'points per loop:';
   var radiusString = 'radius:';
+  var xScaleString = 'x scale:';
 
   // constants
   var CONTROL_FONT = new PhetFont( 22 );
@@ -110,7 +110,7 @@ define( function( require ) {
       minorTickSpacing: 1,
       thumbFillEnabled: 'red'
     } );
-    var pitchSizeControl = createNumberControl( pitchSizeString, spring.pitchSizeProperty, spring.pitchSizeRange, {
+    var xScaleControl = createNumberControl( xScaleString, spring.xScaleProperty, spring.xScaleRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 0.5,
@@ -126,7 +126,7 @@ define( function( require ) {
         new VBox( { children: [ radiusControl, aspectRatioControl ], spacing: ySpacing } ),
         new VBox( { children: [ phaseControl, deltaPhaseControl ], spacing: ySpacing } ),
         new VSeparator( 225, HookesLawConstants.SEPARATOR_OPTIONS ),
-        new VBox( { children: [ lineWidthControl, pitchSizeControl ], spacing: ySpacing } )
+        new VBox( { children: [ lineWidthControl, xScaleControl ], spacing: ySpacing } )
       ],
       spacing: xSpacing,
       align: 'top'
