@@ -76,17 +76,29 @@ define( function( require ) {
       minorTickSpacing: 0.5,
       thumbFillEnabled: 'black'
     } );
+    assert && assert( spring.phaseRange.min === 0 && spring.phaseRange.max === 2 * Math.PI );
     var phaseControl = createNumberControl( phaseString, spring.phaseProperty, spring.phaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
-      thumbFillEnabled: 'black'
+      thumbFillEnabled: 'black',
+      majorTicks: [
+        { value: spring.phaseRange.min, label: new Text( '0', { font: TICK_LABEL_FONT } ) },
+        { value: spring.phaseRange.getCenter(), label: new Text( '\u03c0', { font: TICK_LABEL_FONT } ) },
+        { value: spring.phaseRange.max, label: new Text( '2\u03c0', { font: TICK_LABEL_FONT } ) }
+      ]
     } );
+    assert && assert( spring.deltaPhaseRange.min === 0 && spring.deltaPhaseRange.max === 2 * Math.PI );
     var deltaPhaseControl = createNumberControl( deltaPhaseString, spring.deltaPhaseProperty, spring.deltaPhaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
-      thumbFillEnabled: 'black'
+      thumbFillEnabled: 'black',
+      majorTicks: [
+        { value: spring.deltaPhaseRange.min, label: new Text( '0', { font: TICK_LABEL_FONT } ) },
+        { value: spring.deltaPhaseRange.getCenter(), label: new Text( '\u03c0', { font: TICK_LABEL_FONT } ) },
+        { value: spring.deltaPhaseRange.max, label: new Text( '2\u03c0', { font: TICK_LABEL_FONT } ) }
+      ]
     } );
     var lineWidthControl = createNumberControl( lineWidthString, spring.lineWidthProperty, spring.lineWidthRange, {
       decimalPlaces: 1,
@@ -136,10 +148,10 @@ define( function( require ) {
       delta: 1
     }, options );
 
-    options.majorTicks = [
-      { value: range.min, label: new Text( Util.toFixed( range.min, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) },
-      { value: range.max, label: new Text( Util.toFixed( range.max, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) }
-    ];
+    options.majorTicks = options.majorTicks || [
+        { value: range.min, label: new Text( Util.toFixed( range.min, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) },
+        { value: range.max, label: new Text( Util.toFixed( range.max, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) }
+      ];
 
     return new NumberControl( label, property, range, options );
   };
