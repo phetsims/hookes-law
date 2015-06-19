@@ -146,7 +146,6 @@ define( function( require ) {
       top: wallNode.bottom + 25,
       maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
     } );
-    console.log( 'parallel springControls.width=' + springControls.width );//XXX
 
     options.children = [
       wallNode, equilibriumPositionNode, trussNode, roboticArmNode, topSpringNode, bottomSpringNode,
