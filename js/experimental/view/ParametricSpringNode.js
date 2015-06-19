@@ -115,6 +115,7 @@ define( function( require ) {
         }
       } );
 
+    // Update the gradients used to stroke the front and back paths
     Property.multilink( [ spring.radiusProperty, spring.aspectRatioProperty ],
       function( radius, aspectRatio ) {
 
