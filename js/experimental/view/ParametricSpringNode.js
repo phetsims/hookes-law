@@ -45,7 +45,7 @@ define( function( require ) {
     var frontPath = new Path( null, { lineCap: options.lineCap } );
     this.addChild( frontPath );
 
-    // Update the spring geometry
+    // Update the shapes
     Property.multilink( [
         spring.loopsProperty, spring.radiusProperty,
         spring.aspectRatioProperty, spring.pointsPerLoopProperty,
@@ -115,7 +115,7 @@ define( function( require ) {
         }
       } );
 
-    // Update the gradients used to stroke the front and back paths
+    // Update the stroke gradients
     Property.multilink( [ spring.radiusProperty, spring.aspectRatioProperty ],
       function( radius, aspectRatio ) {
 
