@@ -2,6 +2,8 @@
 
 /**
  * Controls for experimenting with a ParametricSpring.
+ * Sliders with 'black' thumbs are parameters that will *not* be dynamically changed in the sim.
+ * Sliders with 'red' thumbs are parameters that *will* be dynamically changed in the sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -77,32 +79,38 @@ define( function( require ) {
     var loopsControl = createNumberControl( loopsString, spring.loopsProperty, spring.loopsRange, {
       decimalPlaces: 0,
       delta: 1,
-      minorTickSpacing: 1
+      minorTickSpacing: 1,
+      thumbFillEnabled: 'black'
     } );
     var pointsPerLoopControl = createNumberControl( pointsPerLoopString, spring.pointsPerLoopProperty, spring.pointsPerLoopRange, {
       decimalPlaces: 0,
       delta: 1,
-      minorTickSpacing: 10
+      minorTickSpacing: 10,
+      thumbFillEnabled: 'black'
     } );
     var radiusControl = createNumberControl( radiusString, spring.radiusProperty, spring.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
-      minorTickSpacing: 5
+      minorTickSpacing: 5,
+      thumbFillEnabled: 'black'
     } );
     var aspectRatioControl = createNumberControl( aspectRatioString, spring.aspectRatioProperty, spring.aspectRatioRange, {
       decimalPlaces: 1,
       delta: 0.1,
-      minorTickSpacing: 0.5
+      minorTickSpacing: 0.5,
+      thumbFillEnabled: 'black'
     } );
     var phaseControl = createNumberControl( phaseString, spring.phaseProperty, spring.phaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
-      minorTickSpacing: 1
+      minorTickSpacing: 1,
+      thumbFillEnabled: 'black'
     } );
     var deltaPhaseControl = createNumberControl( deltaPhaseString, spring.deltaPhaseProperty, spring.deltaPhaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
-      minorTickSpacing: 1
+      minorTickSpacing: 1,
+      thumbFillEnabled: 'black'
     } );
     var lineWidthControl = createNumberControl( lineWidthString, spring.lineWidthProperty, spring.lineWidthRange, {
       decimalPlaces: 1,
