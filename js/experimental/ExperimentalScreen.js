@@ -2,6 +2,8 @@
 
 /**
  * The "Experimental" screen.
+ * Provides an extensive test harness for ParametricSpring and ParametricSpringNode,
+ * and is added to the sim when running with 'dev' query parameter.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

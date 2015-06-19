@@ -2,6 +2,7 @@
 
 /**
  * A specialization of Spring that adds additional properties required by the view (ParametricSpringNode).
+ * The "Experimental" screen provides an extensive test harness for ParametricSpring and ParametricSpringNode.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
