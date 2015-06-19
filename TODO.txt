@@ -10,6 +10,7 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
+For things whose visibility changes, update them only when visible
 Complete cleanup of ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
