@@ -38,7 +38,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function SystemsVisibilityPanel( properties, options ) {
+  function SystemsVisibilityControls( properties, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
@@ -168,5 +168,5 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  return inherit( Panel, SystemsVisibilityPanel );
+  return inherit( Panel, SystemsVisibilityControls );
 } );

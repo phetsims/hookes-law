@@ -33,7 +33,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function EnergyVisibilityPanel( properties, options ) {
+  function EnergyVisibilityControls( properties, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
@@ -106,5 +106,5 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  return inherit( Panel, EnergyVisibilityPanel );
+  return inherit( Panel, EnergyVisibilityControls );
 } );

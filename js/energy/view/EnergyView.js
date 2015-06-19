@@ -14,7 +14,7 @@ define( function( require ) {
   var EnergyXYPlot = require( 'HOOKES_LAW/energy/view/EnergyXYPlot' );
   var EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
-  var EnergyVisibilityPanel = require( 'HOOKES_LAW/energy/view/EnergyVisibilityPanel' );
+  var EnergyVisibilityControls = require( 'HOOKES_LAW/energy/view/EnergyVisibilityControls' );
   var ForceXYPlot = require( 'HOOKES_LAW/energy/view/ForceXYPlot' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -45,12 +45,12 @@ define( function( require ) {
     var viewProperties = new EnergyViewProperties();
 
     // Visibility controls
-    var visibilityPanel = new EnergyVisibilityPanel( viewProperties, {
+    var visibilityControls = new EnergyVisibilityControls( viewProperties, {
       right: this.layoutBounds.right - 10,
       top: 10,
       maxWidth: 235 // constrain width for i18n, determining empirically
     } );
-    this.addChild( visibilityPanel );
+    this.addChild( visibilityControls );
 
     // System
     var systemNode = new EnergySystemNode( model.system, viewProperties, {

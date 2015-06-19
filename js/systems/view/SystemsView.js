@@ -16,8 +16,8 @@ define( function( require ) {
   var ScreenView = require( 'JOIST/ScreenView' );
   var SeriesParallelControl = require( 'HOOKES_LAW/systems/view/SeriesParallelControl' );
   var SeriesSystemNode = require( 'HOOKES_LAW/systems/view/SeriesSystemNode' );
-  var SystemsVisibilityPanel = require( 'HOOKES_LAW/systems/view/SystemsVisibilityPanel' );
   var SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
+  var SystemsVisibilityControls = require( 'HOOKES_LAW/systems/view/SystemsVisibilityControls' );
 
   /**
    * @param {SystemsModel} model
@@ -33,17 +33,17 @@ define( function( require ) {
     var viewProperties = new SystemsViewProperties();
 
     // Visibility controls
-    var visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
+    var visiblityControls = new SystemsVisibilityControls( viewProperties, {
       top: this.layoutBounds.top + 10,
       right: this.layoutBounds.right - 10,
       maxWidth: 260 // constrain width for i18n, determining empirically
     } );
-    this.addChild( visibilityPanel );
+    this.addChild( visiblityControls );
 
     // Control for selecting between series and parallel systems
     var seriesParallelControl = new SeriesParallelControl( viewProperties.seriesParallelProperty, {
-      centerX: visibilityPanel.centerX,
-      top: visibilityPanel.bottom + 10
+      centerX: visiblityControls.centerX,
+      top: visiblityControls.bottom + 10
     } );
     this.addChild( seriesParallelControl );
 

@@ -12,8 +12,8 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var IntroductionSystemNode = require( 'HOOKES_LAW/introduction/view/IntroductionSystemNode' );
-  var IntroductionVisibilityPanel = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityPanel' );
   var IntroductionViewProperties = require( 'HOOKES_LAW/introduction/view/IntroductionViewProperties' );
+  var IntroductionVisibilityControls = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityControls' );
   var NumberOfSystemsControl = require( 'HOOKES_LAW/introduction/view/NumberOfSystemsControl' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
@@ -33,17 +33,17 @@ define( function( require ) {
     var viewProperties = new IntroductionViewProperties();
 
     // Visibility controls
-    var visibilityPanel = new IntroductionVisibilityPanel( viewProperties, {
+    var visibilityControls = new IntroductionVisibilityControls( viewProperties, {
       top: this.layoutBounds.top + 10,
       right: this.layoutBounds.right - 10,
       maxWidth: 250 // constrain width for i18n, determining empirically
     } );
-    this.addChild( visibilityPanel );
+    this.addChild( visibilityControls );
 
     // Control for number of systems
     var numberOfSystemsControl = new NumberOfSystemsControl( viewProperties.numberOfSystemsProperty, {
-      centerX: visibilityPanel.centerX,
-      top: visibilityPanel.bottom + 10
+      centerX: visibilityControls.centerX,
+      top: visibilityControls.bottom + 10
     } );
     this.addChild( numberOfSystemsControl );
 
