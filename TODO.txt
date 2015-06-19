@@ -10,6 +10,7 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
+Fix layout for Parallel system
 Complete cleanup of ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
