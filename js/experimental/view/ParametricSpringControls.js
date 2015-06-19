@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Controls for the "Experimental" screen.
+ * Controls for experimenting with a ParametricSpring.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -64,7 +64,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function ExperimentalControls( spring, options ) {
+  function ParametricSpringControls( spring, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -135,5 +135,5 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  return inherit( Panel, ExperimentalControls );
+  return inherit( Panel, ParametricSpringControls );
 } );

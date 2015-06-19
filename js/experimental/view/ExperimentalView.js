@@ -11,9 +11,9 @@ define( function( require ) {
   // modules
   var CheckBox = require( 'SUN/CheckBox' );
   var Dimension2 = require( 'DOT/Dimension2' );
-  var ExperimentalControls = require( 'HOOKES_LAW/experimental/view/ExperimentalControls' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var ParametricSpringControls = require( 'HOOKES_LAW/experimental/view/ParametricSpringControls' );
   var ParametricSpringNode = require( 'HOOKES_LAW/experimental/view/ParametricSpringNode' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
@@ -33,7 +33,7 @@ define( function( require ) {
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // control panel, scaled to fit
-    var controls = new ExperimentalControls( model.spring );
+    var controls = new ParametricSpringControls( model.spring );
     this.addChild( controls );
     controls.setScaleMagnitude( Math.min( 1, this.layoutBounds.width / controls.width ) );
     controls.top = 0;
