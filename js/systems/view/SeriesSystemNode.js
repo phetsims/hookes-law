@@ -127,10 +127,11 @@ define( function( require ) {
     } );
 
     var springControls = new SeriesSpringControls( system, numberOfInteractionsInProgressProperty, {
-      scale: 0.82,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
-      top: wallNode.bottom + 25
+      top: wallNode.bottom + 25,
+      maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
     } );
+    console.log( 'series springControls.width=' + springControls.width );//XXX
 
     options.children = [
       wallNode, equilibriumPositionNode, roboticArmNode, leftSpringNode, rightSpringNode,

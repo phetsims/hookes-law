@@ -35,9 +35,11 @@ define( function( require ) {
     // Visibility controls
     var visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
       top: this.layoutBounds.top + 10,
-      right: this.layoutBounds.right - 10
+      right: this.layoutBounds.right - 10,
+      maxWidth: 260 // constrain width for i18n, determining empirically
     } );
     this.addChild( visibilityPanel );
+    console.log( 'visibilityPanel.width=' + visibilityPanel.width );//XXX
 
     // Control for selecting between series and parallel systems
     var seriesParallelControl = new SeriesParallelControl( viewProperties.seriesParallelProperty, {
