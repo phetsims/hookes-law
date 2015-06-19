@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * A specialization of Spring that adds additional properties required by ParametricSpringNode.
+ * A specialization of Spring that adds additional properties required by the view (ParametricSpringNode).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
