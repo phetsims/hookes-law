@@ -15,7 +15,8 @@ define( function( require ) {
     // enables developer-only features
     DEV: getQueryParameter( 'dev' ) || false,
 
-    // adds the "Experimental" screen
+    // adds the "Experimental" screen, for playing with ParametricSpringNodeπ
+
     EXP: getQueryParameter( 'exp' ) || false,
 
     // Colors for ParametricSpringNode in the "Experimental" screen.
