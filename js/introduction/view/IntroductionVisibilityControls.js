@@ -53,7 +53,7 @@ define( function( require ) {
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
       IconFactory.createVectorCheckBoxContent( springForceTextNode, {
-        arrowFill: HookesLawColors.TOTAL_SPRING_FORCE,
+        arrowFill: HookesLawColors.SINGLE_SPRING,
         spacing: maxTextWidth - springForceTextNode.width + minSpacing
       } ),
       properties.springForceVectorVisibleProperty,

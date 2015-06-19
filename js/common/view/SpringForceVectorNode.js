@@ -22,7 +22,7 @@ define( function( require ) {
   function SpringForceVectorNode( springForceProperty, options ) {
 
     options = _.extend( {
-      fill: HookesLawColors.TOTAL_SPRING_FORCE,
+      fill: HookesLawColors.SINGLE_SPRING,
       decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
       alignZero: 'right' // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
     }, options );

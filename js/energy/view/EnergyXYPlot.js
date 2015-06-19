@@ -40,7 +40,7 @@ define( function( require ) {
       valuesVisibleProperty: new Property( true ),
 
       // point
-      pointFill: HookesLawColors.TOTAL_SPRING_FORCE,
+      pointFill: HookesLawColors.SINGLE_SPRING,
 
       // x axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),

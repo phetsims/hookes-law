@@ -42,7 +42,7 @@ define( function( require ) {
       energyVisibleProperty: new Property( true ), // {boolean} is the energy area (triangle) visible?
 
       // point
-      pointFill: HookesLawColors.TOTAL_SPRING_FORCE,
+      pointFill: HookesLawColors.SINGLE_SPRING,
 
       // x axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),

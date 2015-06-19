@@ -68,7 +68,7 @@ define( function( require ) {
     var topSpringNode = new SpringNode( topSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       numberOfCoils: 6,
-      stroke: HookesLawColors.TOP_SPRING_FORCE,
+      stroke: HookesLawColors.TOP_SPRING,
       left: options.unitDisplacementLength * topSpring.leftProperty.get(),
       centerY: wallNode.top + ( 0.25 * wallNode.height )
     } );
@@ -76,7 +76,7 @@ define( function( require ) {
     var bottomSpringNode = new SpringNode( bottomSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       numberOfCoils: 6,
-      stroke: HookesLawColors.BOTTOM_SPRING_FORCE,
+      stroke: HookesLawColors.BOTTOM_SPRING,
       left: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
       centerY: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
@@ -120,7 +120,7 @@ define( function( require ) {
 
     var topSpringForceVectorNode = new SpringForceVectorNode( topSpring.springForceProperty, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.TOP_SPRING_FORCE,
+      fill: HookesLawColors.TOP_SPRING,
       decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
       // x is determined by topSpring.rightProperty
       centerY: totalSpringForceVectorNode.top
@@ -128,7 +128,7 @@ define( function( require ) {
 
     var bottomSpringForceVectorNode = new SpringForceVectorNode( bottomSpring.springForceProperty, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.BOTTOM_SPRING_FORCE,
+      fill: HookesLawColors.BOTTOM_SPRING,
       decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
       // x is determined by bottomSpring.rightProperty
       centerY: totalSpringForceVectorNode.bottom

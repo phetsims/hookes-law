@@ -13,8 +13,8 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   // constants
-  var SPRING_FORCE_1 = new Color( '#6D00FF' );
-  var SPRING_FORCE_2 = new Color( '#FFBF00' );
+  var SPRING1 = new Color( '#6D00FF' );
+  var SPRING2 = new Color( '#FFBF00' );
 
   return {
 
@@ -23,15 +23,17 @@ define( function( require ) {
     CONTROL_PANEL_STROKE: new Color( 125, 125, 125 ),
     SEPARATOR_STROKE: new Color( 125, 125, 125 ),
 
+    // springs
+    SINGLE_SPRING: new Color( 11, 37, 251 ),
+    LEFT_SPRING: SPRING1,
+    RIGHT_SPRING: SPRING2,
+    TOP_SPRING: SPRING1,
+    BOTTOM_SPRING: SPRING2,
+
     // various quantities
     APPLIED_FORCE: PhetColorScheme.RED_COLORBLIND,
-    TOTAL_SPRING_FORCE: new Color( 11, 37, 251 ),
-    LEFT_SPRING_FORCE: SPRING_FORCE_1,
-    RIGHT_SPRING_FORCE: SPRING_FORCE_2,
-    TOP_SPRING_FORCE: SPRING_FORCE_1,
-    BOTTOM_SPRING_FORCE: SPRING_FORCE_2,
     DISPLACEMENT: new Color( 0, 180, 0 ),
-    EQUILIBRIUM_POSITION: new Color( 0, 180, 0 ),
-    ENERGY: new Color( 3, 205, 255 )
+    ENERGY: new Color( 3, 205, 255 ),
+    EQUILIBRIUM_POSITION: new Color( 0, 180, 0 )
   };
 } );

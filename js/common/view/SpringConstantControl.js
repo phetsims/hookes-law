@@ -37,7 +37,7 @@ define( function( require ) {
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
       majorTicksValues: null,
       minorTickSpacing: 100,
-      thumbFillEnabled: HookesLawColors.TOTAL_SPRING_FORCE
+      thumbFillEnabled: HookesLawColors.SINGLE_SPRING
     }, options );
 
     // major ticks

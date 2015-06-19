@@ -75,15 +75,15 @@ define( function( require ) {
       new HBox( {
         children: [
           new Text( totalString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-          IconFactory.createVectorIcon( { fill: HookesLawColors.TOTAL_SPRING_FORCE } )
+          IconFactory.createVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
         ],
         spacing: 10
       } ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // 'components' radio button
-    var component1Node = IconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING_FORCE } );
-    var component2Node = IconFactory.createVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING_FORCE } );
+    var component1Node = IconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
+    var component2Node = IconFactory.createVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
     var componentsVectorIcons = new VBox( {
       children: [
         component1Node,
@@ -107,8 +107,8 @@ define( function( require ) {
 
     // Change the component vector colors to match the system
     properties.seriesParallelProperty.link( function( seriesParallel ) {
-      component1Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.LEFT_SPRING_FORCE : HookesLawColors.TOP_SPRING_FORCE;
-      component2Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING_FORCE : HookesLawColors.BOTTOM_SPRING_FORCE;
+      component1Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.LEFT_SPRING : HookesLawColors.TOP_SPRING;
+      component2Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
     } );
 
     var radioButtonsBox = new VBox( {

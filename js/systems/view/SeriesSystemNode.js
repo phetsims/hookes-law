@@ -62,7 +62,7 @@ define( function( require ) {
     var leftSpringNode = new SpringNode( leftSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       numberOfCoils: 6,
-      stroke: HookesLawColors.LEFT_SPRING_FORCE,
+      stroke: HookesLawColors.LEFT_SPRING,
       left: options.unitDisplacementLength * leftSpring.leftProperty.get(),
       centerY: yOrigin
     } );
@@ -70,7 +70,7 @@ define( function( require ) {
     var rightSpringNode = new SpringNode( rightSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       numberOfCoils: 6,
-      stroke: HookesLawColors.RIGHT_SPRING_FORCE,
+      stroke: HookesLawColors.RIGHT_SPRING,
       // left is based on rightSpring.leftProperty
       centerY: yOrigin
     } );
@@ -88,21 +88,21 @@ define( function( require ) {
 
     var leftSpringForceVectorNode = new SpringForceVectorNode( leftSpring.springForceProperty, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.LEFT_SPRING_FORCE,
+      fill: HookesLawColors.LEFT_SPRING,
       // x is determined by leftSpring.rightProperty
       bottom: leftSpringNode.top - 25
     } );
 
     var leftAppliedForceVectorNode = new AppliedForceVectorNode( leftSpring.appliedForceProperty, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.RIGHT_SPRING_FORCE,
+      fill: HookesLawColors.RIGHT_SPRING,
       // x is determined by leftSpring.rightProperty
       y: leftSpringForceVectorNode.y
     } );
 
     var rightSpringForceVectorNode = new SpringForceVectorNode( rightSpring.springForceProperty, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.RIGHT_SPRING_FORCE,
+      fill: HookesLawColors.RIGHT_SPRING,
       // x is determined by rightSpring.rightProperty
       bottom: leftSpringForceVectorNode.top - 10
     } );

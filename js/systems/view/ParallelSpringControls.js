@@ -41,7 +41,7 @@ define( function( require ) {
     var topSpring = system.topSpring;
     var topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
       title: topSpringString,
-      thumbFillEnabled: HookesLawColors.TOP_SPRING_FORCE,
+      thumbFillEnabled: HookesLawColors.TOP_SPRING,
       trackSize: SPRING_CONSTANT_TRACK_SIZE,
       majorTickValues: [
         topSpring.springConstantRange.min,
@@ -54,7 +54,7 @@ define( function( require ) {
     var bottomSpringConstantControl = new SpringConstantControl(
       bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
         title: bottomSpringString,
-        thumbFillEnabled: HookesLawColors.BOTTOM_SPRING_FORCE,
+        thumbFillEnabled: HookesLawColors.BOTTOM_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
         majorTickValues: [
           bottomSpring.springConstantRange.min,
