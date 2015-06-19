@@ -19,11 +19,6 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Vector2 = require( 'DOT/Vector2' );
 
-  // colors - Note that if using query parameters, the '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
-  var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'rgb( 150, 150, 255 )';
-  var MIDDLE_COLOR = phet.chipper.getQueryParameter( 'middleColor' ) || 'rgb( 0, 0, 255 )';
-  var BACK_COLOR = phet.chipper.getQueryParameter( 'backColor' ) || 'rgb( 0, 0, 200 )';
-
   // constants
   var LEFT_END_LENGTH = 15;
   var RIGHT_END_LENGTH = 25;
@@ -36,7 +31,10 @@ define( function( require ) {
   function ParametricSpringNode( spring, options ) {
 
     options = _.extend( {
-      lineCap: 'round'
+      lineCap: 'round',
+      frontColor: 'rgb( 150, 150, 255 )',
+      middleColor: 'rgb( 0, 0, 255 )',
+      backColor: 'rgb( 0, 0, 200 )'
     }, options );
 
     Node.call( this );
@@ -119,16 +117,19 @@ define( function( require ) {
 
     Property.multilink( [ spring.radiusProperty, spring.aspectRatioProperty ],
       function( radius, aspectRatio ) {
+
         var yRadius = radius * aspectRatio;
+
         frontPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
-          .addColorStop( 0, MIDDLE_COLOR )
-          .addColorStop( 0.35, FRONT_COLOR )
-          .addColorStop( 0.65, FRONT_COLOR )
-          .addColorStop( 1, MIDDLE_COLOR );
+          .addColorStop( 0, options.middleColor )
+          .addColorStop( 0.35, options.frontColor )
+          .addColorStop( 0.65, options.frontColor )
+          .addColorStop( 1, options.middleColor );
+
         backPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
-          .addColorStop( 0, MIDDLE_COLOR )
-          .addColorStop( 0.5, BACK_COLOR )
-          .addColorStop( 1, MIDDLE_COLOR );
+          .addColorStop( 0, options.middleColor )
+          .addColorStop( 0.5, options.backColor )
+          .addColorStop( 1, options.middleColor );
       } );
 
     //TODO Why does SVGGroup.js fail at line 189 when this is moved before Property.multilink above?

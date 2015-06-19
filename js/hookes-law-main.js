@@ -27,7 +27,7 @@ define( function( require ) {
   ];
 
   // Add test harness for ParametricSpringNode
-  if ( HookesLawQueryParameters.DEV ) {
+  if ( HookesLawQueryParameters.EXP ) {
     screens.push( new ExperimentalScreen() );
   }
 

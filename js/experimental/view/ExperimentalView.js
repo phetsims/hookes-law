@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParametricSpringControls = require( 'HOOKES_LAW/experimental/view/ParametricSpringControls' );
   var ParametricSpringNode = require( 'HOOKES_LAW/experimental/view/ParametricSpringNode' );
@@ -35,6 +36,9 @@ define( function( require ) {
 
     // spring
     var springNode = new ParametricSpringNode( model.spring, {
+      frontColor: HookesLawQueryParameters.FRONT_COLOR,
+      middleColor: HookesLawQueryParameters.MIDDLE_COLOR,
+      backColor: HookesLawQueryParameters.BACK_COLOR,
       left: 50,
       centerY: 375
     } );
