@@ -47,7 +47,8 @@ define( function( require ) {
     // Visibility controls
     var visibilityPanel = new EnergyVisibilityPanel( viewProperties, {
       right: this.layoutBounds.right - 10,
-      top: 10
+      top: 10,
+      maxWidth: 235 // constrain width for i18n, determining empirically
     } );
     this.addChild( visibilityPanel );
 
