@@ -33,21 +33,23 @@ define( function( require ) {
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // control panel, scaled to fit
-    var controls = new ExperimentalControls( model );
+    var controls = new ExperimentalControls( model.spring );
     this.addChild( controls );
     controls.setScaleMagnitude( Math.min( 1, this.layoutBounds.width / controls.width ) );
     controls.top = 0;
     controls.centerX = this.layoutBounds.centerX;
 
     // check box for front/back view
-    var frontAndBackCheckBox = new CheckBox( new Text( separateFrontAndBackString, { font: new PhetFont( 16 ) } ), model.frontAndBackProperty, {
-      left: 20,
-      top: controls.bottom + 15
-    } );
+    var frontAndBackCheckBox = new CheckBox(
+      new Text( separateFrontAndBackString, { font: new PhetFont( 16 ) } ),
+      model.spring.frontAndBackProperty, {
+        left: 20,
+        top: controls.bottom + 15
+      } );
     this.addChild( frontAndBackCheckBox );
 
     // spring
-    var springNode = new ParametricSpringNode( model, {
+    var springNode = new ParametricSpringNode( model.spring, {
       left: 50,
       centerY: 375
     } );

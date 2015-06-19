@@ -60,11 +60,11 @@ define( function( require ) {
   };
 
   /**
-   * @param {ExperimentalModel} model
+   * @param {ParametricSpring} spring
    * @param {Object} [options]
    * @constructor
    */
-  function ExperimentalControls( model, options ) {
+  function ExperimentalControls( spring, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -74,43 +74,43 @@ define( function( require ) {
     }, options );
 
     // controls, options tweaked empirically to match ranges
-    var loopsControl = createNumberControl( loopsString, model.loopsProperty, model.loopsRange, {
+    var loopsControl = createNumberControl( loopsString, spring.loopsProperty, spring.loopsRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 1
     } );
-    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, model.pointsPerLoopProperty, model.pointsPerLoopRange, {
+    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, spring.pointsPerLoopProperty, spring.pointsPerLoopRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 10
     } );
-    var radiusControl = createNumberControl( radiusString, model.radiusProperty, model.radiusRange, {
+    var radiusControl = createNumberControl( radiusString, spring.radiusProperty, spring.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 5
     } );
-    var aspectRatioControl = createNumberControl( aspectRatioString, model.aspectRatioProperty, model.aspectRatioRange, {
+    var aspectRatioControl = createNumberControl( aspectRatioString, spring.aspectRatioProperty, spring.aspectRatioRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 0.5
     } );
-    var phaseControl = createNumberControl( phaseString, model.phaseProperty, model.phaseRange, {
+    var phaseControl = createNumberControl( phaseString, spring.phaseProperty, spring.phaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1
     } );
-    var deltaPhaseControl = createNumberControl( deltaPhaseString, model.deltaPhaseProperty, model.deltaPhaseRange, {
+    var deltaPhaseControl = createNumberControl( deltaPhaseString, spring.deltaPhaseProperty, spring.deltaPhaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1
     } );
-    var lineWidthControl = createNumberControl( lineWidthString, model.lineWidthProperty, model.lineWidthRange, {
+    var lineWidthControl = createNumberControl( lineWidthString, spring.lineWidthProperty, spring.lineWidthRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
       thumbFillEnabled: 'red'
     } );
-    var pitchSizeControl = createNumberControl( pitchSizeString, model.pitchSizeProperty, model.pitchSizeRange, {
+    var pitchSizeControl = createNumberControl( pitchSizeString, spring.pitchSizeProperty, spring.pitchSizeRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 0.5,

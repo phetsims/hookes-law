@@ -29,11 +29,11 @@ define( function( require ) {
   var RIGHT_END_LENGTH = 25;
 
   /**
-   * @param {ExperimentalModel} model
+   * @param {ParametricSpring} spring
    * @param {Object} [options]
    * @constructor
    */
-  function ParametricSpringNode( model, options ) {
+  function ParametricSpringNode( spring, options ) {
 
     options = _.extend( {
       lineCap: 'round'
@@ -49,8 +49,12 @@ define( function( require ) {
     this.addChild( frontPath );
 
     // Update the spring geometry
-    Property.multilink( [ model.loopsProperty, model.radiusProperty, model.aspectRatioProperty, model.pointsPerLoopProperty,
-        model.phaseProperty, model.deltaPhaseProperty, model.pitchSizeProperty, model.frontAndBackProperty ],
+    Property.multilink( [
+        spring.loopsProperty, spring.radiusProperty,
+        spring.aspectRatioProperty, spring.pointsPerLoopProperty,
+        spring.phaseProperty, spring.deltaPhaseProperty,
+        spring.pitchSizeProperty, spring.frontAndBackProperty
+      ],
       function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, pitchSize, frontAndBack ) {
 
         var numberOfPoints = loops * pointsPerLoop + 1;
@@ -126,7 +130,7 @@ define( function( require ) {
         }
       } );
 
-    Property.multilink( [ model.radiusProperty, model.aspectRatioProperty, model.frontAndBackProperty ],
+    Property.multilink( [ spring.radiusProperty, spring.aspectRatioProperty, spring.frontAndBackProperty ],
       function( radius, aspectRatio, frontAndBack ) {
 
         backPath.visible = frontAndBack;
@@ -151,7 +155,7 @@ define( function( require ) {
     //TODO Why does SVGGroup.js fail at line 189 when this is moved before Property.multilink above?
     //TODO Error: Invalid value for <g> attribute transform="translate(-Infinity,0.00000000000000000000)"
     // Update the line width
-    model.lineWidthProperty.link( function( lineWidth ) {
+    spring.lineWidthProperty.link( function( lineWidth ) {
       frontPath.lineWidth = backPath.lineWidth = lineWidth;
     } );
 
