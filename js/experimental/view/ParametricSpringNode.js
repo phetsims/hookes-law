@@ -36,7 +36,7 @@ define( function( require ) {
   function ParametricSpringNode( model, options ) {
 
     options = _.extend( {
-      lineCap: 'round' //TODO this results in some strange joints between front and back paths for some settings
+      lineCap: 'round'
     }, options );
 
     Node.call( this );
