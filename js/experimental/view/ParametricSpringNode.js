@@ -2,6 +2,7 @@
 
 /**
  * Spring described by a parametric equation.
+ * The front and back of are drawn as separate paths to provide pseudo-3D visual cues.
  *
  * @author Martin Veillette (Berea College)
  * @author Chris Malley (PixelZoom, Inc.)
@@ -19,9 +20,8 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   // colors - Note that if using query parameters, the '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
-  var SINGLE_COLOR = phet.chipper.getQueryParameter( 'singleColor' ) || 'rgb( 0, 0, 255 )';
   var FRONT_COLOR = phet.chipper.getQueryParameter( 'frontColor' ) || 'rgb( 150, 150, 255 )';
-  var MIDDLE_COLOR = phet.chipper.getQueryParameter( 'middleColor' ) || SINGLE_COLOR;
+  var MIDDLE_COLOR = phet.chipper.getQueryParameter( 'middleColor' ) || 'rgb( 0, 0, 255 )';
   var BACK_COLOR = phet.chipper.getQueryParameter( 'backColor' ) || 'rgb( 0, 0, 200 )';
 
   // constants
@@ -44,7 +44,6 @@ define( function( require ) {
     var backPath = new Path( null, { lineCap: options.lineCap } );
     this.addChild( backPath );
 
-    // frontPath is also the sole path when !model.frontAndBackProperty.get()
     var frontPath = new Path( null, { lineCap: options.lineCap } );
     this.addChild( frontPath );
 
@@ -53,9 +52,9 @@ define( function( require ) {
         spring.loopsProperty, spring.radiusProperty,
         spring.aspectRatioProperty, spring.pointsPerLoopProperty,
         spring.phaseProperty, spring.deltaPhaseProperty,
-        spring.xScaleProperty, spring.frontAndBackProperty
+        spring.xScaleProperty
       ],
-      function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, xScale, frontAndBack ) {
+      function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, xScale ) {
 
         var numberOfPoints = loops * pointsPerLoop + 1;
         var index;
@@ -69,87 +68,67 @@ define( function( require ) {
           points.push( new Vector2( xCoordinate, yCoordinate ) );
         }
 
-        if ( !frontAndBack ) {
-          // one path
-          frontPath.shape = new Shape();
-          frontPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y ); // horizontal line at left end
-          for ( index = 0; index < numberOfPoints; index++ ) {
-            frontPath.shape.lineToPoint( points[ index ] );
-          }
-          frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y ); // horizontal line at right end
-        }
-        else {
-          // separate paths for front and back
-          frontPath.shape = new Shape();
-          backPath.shape = new Shape();
-          frontPath.shape.moveToPoint( points[ 0 ] );
-          backPath.shape.moveToPoint( points[ 0 ] );
-          var wasFront = true; // was the previous point on the front path?
-          for ( index = 0; index < numberOfPoints; index++ ) {
+        frontPath.shape = new Shape();
+        backPath.shape = new Shape();
+        frontPath.shape.moveToPoint( points[ 0 ] );
+        backPath.shape.moveToPoint( points[ 0 ] );
+        var wasFront = true; // was the previous point on the front path?
+        for ( index = 0; index < numberOfPoints; index++ ) {
 
-            // is the current point on the front path?
-            var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) > Math.PI );
+          // is the current point on the front path?
+          var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) > Math.PI );
 
-            // horizontal line at left end
-            if ( index === 0 ) {
-              if ( isFront ) {
-                frontPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
-              }
-              else {
-                backPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
-              }
-            }
-
+          // horizontal line at left end
+          if ( index === 0 ) {
             if ( isFront ) {
-              // we're in the front
-              if ( !wasFront && index !== 0 ) {
-                // ... and we've just moved to the front
-                frontPath.shape.moveToPoint( points[ index - 1 ] );
-              }
-              frontPath.shape.lineToPoint( points[ index ] );
+              frontPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
             }
             else {
-              // we're in the back
-              if ( wasFront && index !== 0 ) {
-                // ... and we've just moved to the back
-                backPath.shape.moveToPoint( points[ index - 1 ] );
-              }
-              backPath.shape.lineToPoint( points[ index ] );
+              backPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
             }
-
-            wasFront = isFront;
           }
 
-          // horizontal line at right end
-          if ( wasFront ) {
-            frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
+          if ( isFront ) {
+            // we're in the front
+            if ( !wasFront && index !== 0 ) {
+              // ... and we've just moved to the front
+              frontPath.shape.moveToPoint( points[ index - 1 ] );
+            }
+            frontPath.shape.lineToPoint( points[ index ] );
           }
           else {
-            backPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
+            // we're in the back
+            if ( wasFront && index !== 0 ) {
+              // ... and we've just moved to the back
+              backPath.shape.moveToPoint( points[ index - 1 ] );
+            }
+            backPath.shape.lineToPoint( points[ index ] );
           }
+
+          wasFront = isFront;
+        }
+
+        // horizontal line at right end
+        if ( wasFront ) {
+          frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
+        }
+        else {
+          backPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
         }
       } );
 
-    Property.multilink( [ spring.radiusProperty, spring.aspectRatioProperty, spring.frontAndBackProperty ],
-      function( radius, aspectRatio, frontAndBack ) {
-
-        backPath.visible = frontAndBack;
-
-        if ( frontAndBack ) {
-          var yRadius = radius * aspectRatio;
-          frontPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
-            .addColorStop( 0, MIDDLE_COLOR )
-            .addColorStop( 0.35, FRONT_COLOR )
-            .addColorStop( 0.65, FRONT_COLOR )
-            .addColorStop( 1, MIDDLE_COLOR );
-          backPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
-            .addColorStop( 0, MIDDLE_COLOR )
-            .addColorStop( 0.5, BACK_COLOR )
-            .addColorStop( 1, MIDDLE_COLOR );
-        }
-        else {
-          frontPath.stroke = SINGLE_COLOR;
-        }
+    Property.multilink( [ spring.radiusProperty, spring.aspectRatioProperty ],
+      function( radius, aspectRatio ) {
+        var yRadius = radius * aspectRatio;
+        frontPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
+          .addColorStop( 0, MIDDLE_COLOR )
+          .addColorStop( 0.35, FRONT_COLOR )
+          .addColorStop( 0.65, FRONT_COLOR )
+          .addColorStop( 1, MIDDLE_COLOR );
+        backPath.stroke = new LinearGradient( 0, -yRadius, 0, yRadius )
+          .addColorStop( 0, MIDDLE_COLOR )
+          .addColorStop( 0.5, BACK_COLOR )
+          .addColorStop( 1, MIDDLE_COLOR );
       } );
 
     //TODO Why does SVGGroup.js fail at line 189 when this is moved before Property.multilink above?
