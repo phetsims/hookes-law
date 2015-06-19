@@ -2,7 +2,7 @@
 
 /**
  * Spring described by a parametric equation.
- * The front and back of are drawn as separate paths to provide pseudo-3D visual cues.
+ * The front and back of the spring are drawn as separate paths to provide pseudo-3D visual cues.
  *
  * @author Martin Veillette (Berea College)
  * @author Chris Malley (PixelZoom, Inc.)
