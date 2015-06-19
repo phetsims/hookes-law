@@ -25,7 +25,7 @@ define( function( require ) {
     this.pointsPerLoopRange = new Range( 10, 100, 30 );
     this.lineWidthRange = new Range( 1, 10, 3 );
     this.phaseRange = new Range( 0, 2 * Math.PI, Math.PI ); // radians
-    this.deltaPhaseRange = new Range( 0, 2 * Math.PI, 1.5 ); // radians
+    this.deltaPhaseRange = new Range( 0, 2 * Math.PI, Math.PI / 2 ); // radians
     this.xScaleRange = new Range( 0.5, 11, 2.5 );
 
     PropertySet.call( this, {
@@ -35,7 +35,7 @@ define( function( require ) {
       pointsPerLoop: this.pointsPerLoopRange.defaultValue, // {number} number of points used to approximate 1 loop
       lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
       phase: this.phaseRange.defaultValue, // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
-      deltaPhase: this.deltaPhaseRange.defaultValue, // {number} TODO what is this? units?
+      deltaPhase: this.deltaPhaseRange.defaultValue, // {number} period is (0,2*PI) radians, TODO what is this?
       xScale: this.xScaleRange.defaultValue, // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
       frontAndBack: true // {boolean} false: render spring as one path, true: render front and back as separate paths
     } );
