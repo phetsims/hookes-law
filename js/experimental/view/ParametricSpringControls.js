@@ -38,30 +38,6 @@ define( function( require ) {
   var TICK_LABEL_FONT = new PhetFont( 14 );
 
   /**
-   * Creates a NumberControl with labeled slider ticks at the min and max values.
-   * @param {string} label
-   * @param {Property.<number>} property
-   * @param {Range} range
-   * @param {Object} [options]
-   */
-  var createNumberControl = function( label, property, range, options ) {
-
-    options = _.extend( {
-      titleFont: CONTROL_FONT,
-      valueFont: CONTROL_FONT,
-      minorTickSpacing: 1,
-      decimalPlaces: 0,
-      delta: 1
-    }, options );
-    options.majorTicks = [
-      { value: range.min, label: new Text( Util.toFixed( range.min, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) },
-      { value: range.max, label: new Text( Util.toFixed( range.max, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) }
-    ];
-
-    return new NumberControl( label, property, range, options );
-  };
-
-  /**
    * @param {ParametricSpring} spring
    * @param {Object} [options]
    * @constructor
@@ -142,6 +118,30 @@ define( function( require ) {
 
     Panel.call( this, content, options );
   }
+
+  /**
+   * Creates a NumberControl with labeled slider ticks at the min and max values.
+   * @param {string} label
+   * @param {Property.<number>} property
+   * @param {Range} range
+   * @param {Object} [options]
+   */
+  var createNumberControl = function( label, property, range, options ) {
+
+    options = _.extend( {
+      titleFont: CONTROL_FONT,
+      valueFont: CONTROL_FONT,
+      minorTickSpacing: 1,
+      decimalPlaces: 0,
+      delta: 1
+    }, options );
+    options.majorTicks = [
+      { value: range.min, label: new Text( Util.toFixed( range.min, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) },
+      { value: range.max, label: new Text( Util.toFixed( range.max, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) }
+    ];
+
+    return new NumberControl( label, property, range, options );
+  };
 
   return inherit( Panel, ParametricSpringControls );
 } );
