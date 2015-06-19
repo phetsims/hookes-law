@@ -38,7 +38,8 @@ define( function( require ) {
       maxY: 1,
       xString: 'x',
       yString: 'y',
-      font: new PhetFont( 14 )
+      font: new PhetFont( 14 ),
+      xLabelMaxWidth: null
     }, options );
 
     // x axis
@@ -46,7 +47,8 @@ define( function( require ) {
     var xAxisLabel = new Text( options.xString, {
       font: options.font,
       left: xAxisNode.right + 4,
-      centerY: xAxisNode.centerY
+      centerY: xAxisNode.centerY,
+      maxWidth: options.xLabelMaxWidth // constrain for i18n
     } );
 
     // y axis
@@ -54,7 +56,8 @@ define( function( require ) {
     var yAxisLabel = new Text( options.yString, {
       font: options.font,
       centerX: yAxisNode.centerX,
-      bottom: yAxisNode.top - 2
+      bottom: yAxisNode.top - 2,
+      maxWidth: 0.85 * xAxisNode.width // constrain for i18n
     } );
 
     options.children = [ xAxisNode, xAxisLabel, yAxisNode, yAxisLabel ];

@@ -75,6 +75,7 @@ define( function( require ) {
       xValueFill: 'black',
       xUnitLength: 1,
       xVectorVisibleProperty: new Property( true ),
+      xLabelMaxWidth: null,
 
       // y axis
       minY: -1,
@@ -95,7 +96,8 @@ define( function( require ) {
       maxY: options.maxY,
       xString: options.xString,
       yString: options.yString,
-      font: options.axisFont
+      font: options.axisFont,
+      xLabelMaxWidth: options.xLabelMaxWidth
     } );
 
     // point

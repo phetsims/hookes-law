@@ -53,6 +53,7 @@ define( function( require ) {
       xValueFill: HookesLawColors.DISPLACEMENT,
       xVectorVisibleProperty: new Property( true ),
       xUnitLength: unitDisplacementLength,
+      xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
       // y axis
       minY: -HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,

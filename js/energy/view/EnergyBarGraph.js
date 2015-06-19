@@ -57,7 +57,8 @@ define( function( require ) {
       rotation: -Math.PI / 2,
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
       right: yAxisNode.left - 1,
-      centerY: yAxisNode.centerY
+      centerY: yAxisNode.centerY,
+      maxWidth: 0.85 * yAxisNode.height // constrain for i18n
     } );
 
     var barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
