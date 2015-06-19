@@ -17,8 +17,9 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Text = require( 'SCENERY/nodes/Text' );
   var NumberDisplay = require( 'HOOKES_LAW/common/view/NumberDisplay' );
+  var Text = require( 'SCENERY/nodes/Text' );
+  var Util = require( 'DOT/Util' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
@@ -72,14 +73,14 @@ define( function( require ) {
 
     var leftArrowButton = new ArrowButton( 'left', function() {
       var value = numberProperty.get() - delta;
-      value = Math.round( value / delta ) * delta; // constrain to delta
+      value = Util.roundSymmetric( value / delta ) * delta; // constrain to delta
       value = Math.max( value, numberRange.min ); // constrain to range
       numberProperty.set( value );
     }, arrowButtonOptions );
 
     var rightArrowButton = new ArrowButton( 'right', function() {
       var value = numberProperty.get() + delta;
-      value = Math.round( value / delta ) * delta; // constrain to delta
+      value = Util.roundSymmetric( value / delta ) * delta; // constrain to delta
       value = Math.min( value, numberRange.max ); // constrain to range
       numberProperty.set( value );
     }, arrowButtonOptions );
@@ -89,7 +90,7 @@ define( function( require ) {
       endDrag: options.endCallback,
       constrainValue: function( value ) {
         // constrain to delta
-        value = Math.round( value / options.delta ) * options.delta;
+        value = Util.roundSymmetric( value / options.delta ) * options.delta;
         // constrain to range
         return numberRange.constrainValue( value );
       }
