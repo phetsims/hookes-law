@@ -18,7 +18,7 @@ define( function( require ) {
     // adds the "Experimental" screen
     EXP: getQueryParameter( 'exp' ) || false,
 
-    // colors ParametricSpringNode in the "Experimental" screen.
+    // Colors for ParametricSpringNode in the "Experimental" screen.
     // The '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
     FRONT_COLOR: getQueryParameter( 'frontColor' ) || 'rgb( 150, 150, 255 )',
     MIDDLE_COLOR: getQueryParameter( 'middleColor' ) || 'rgb( 0, 0, 255 )',
