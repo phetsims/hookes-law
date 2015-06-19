@@ -47,7 +47,8 @@ define( function( require ) {
       springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
       displacementRange: null, // {Range} displacement range and initial value, units = m
       appliedForceRange: null, // {Range} applied force range and initial value, units = N
-      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA // {number} applied force (and thus spring force) are constrained to this delta
+      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA, // {number} applied force (and thus spring force) are constrained to this delta
+      additionalProperties: {} // additional properties that are added to this PropertySet, used by subtypes
     }, options );
 
     // validate and save options
@@ -82,12 +83,12 @@ define( function( require ) {
 
     // Properties ------------------------------------------------------------------------------------------------------------------------------------
 
-    PropertySet.call( this, {
+    PropertySet.call( this, _.extend( {
       appliedForce: this.appliedForceRange.defaultValue, // {number} F
       springConstant: this.springConstantRange.defaultValue,  // {number} k
       displacement: this.displacementRange.defaultValue,  // {number} x
       left: options.left // {number} location of the left end of the spring, units = m
-    } );
+    }, options.additionalProperties ) );
 
     // Derived properties ----------------------------------------------------------------------------------------------------------------------------
 

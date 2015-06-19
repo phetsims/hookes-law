@@ -12,7 +12,6 @@ Implementation
 
 Complete cleanup of ParametricSpringNode
 Define relationship between displacement and pitchSize
-Combine Spring and ParametricSpring model elements
 Replace SpringNode with ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1/2 and series/parallel radio buttons

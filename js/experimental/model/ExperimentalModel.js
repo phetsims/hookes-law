@@ -10,13 +10,16 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var ParametricSpring = require( 'HOOKES_LAW/experimental/model/ParametricSpring' );
+  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
+  var Range = require( 'DOT/Range' );
 
   /**
    * @constructor
    */
   function ExperimentalModel() {
-    this.spring = new ParametricSpring();
+    this.spring = new ParametricSpring( {
+      appliedForceRange: new Range( -100, 100, 0 )
+    } );
   }
 
   return inherit( Object, ExperimentalModel, {
