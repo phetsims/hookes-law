@@ -63,6 +63,7 @@ define( function( require ) {
       centerY: this.layoutBounds.centerY,
       visible: viewProperties.seriesParallelProperty.get() === 'parallel'
     } );
+    assert && assert( parallelSystemNode.height < this.layoutBounds.height, 'parallel system is too tall' );
     this.addChild( parallelSystemNode );
 
     // Reset All button, bottom right

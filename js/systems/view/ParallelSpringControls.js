@@ -65,7 +65,7 @@ define( function( require ) {
 
     // "top" control above "bottom" control
     var springControls = new VBox( {
-      spacing: 20,
+      spacing: 5,
       resize: false,
       children: [
         topSpringConstantControl,
