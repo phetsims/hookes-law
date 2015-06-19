@@ -36,7 +36,7 @@ define( function( require ) {
     var visibilityPanel = new IntroductionVisibilityPanel( viewProperties, {
       top: this.layoutBounds.top + 10,
       right: this.layoutBounds.right - 10,
-      maxWidth: 235 // constrain width for i18n, determining empirically
+      maxWidth: 250 // constrain width for i18n, determining empirically
     } );
     this.addChild( visibilityPanel );
 
