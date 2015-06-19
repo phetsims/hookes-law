@@ -135,6 +135,7 @@ define( function( require ) {
       decimalPlaces: 0,
       delta: 1
     }, options );
+
     options.majorTicks = [
       { value: range.min, label: new Text( Util.toFixed( range.min, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) },
       { value: range.max, label: new Text( Util.toFixed( range.max, options.decimalPlaces ), { font: TICK_LABEL_FONT } ) }
