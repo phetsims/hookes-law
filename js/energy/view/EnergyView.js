@@ -94,8 +94,9 @@ define( function( require ) {
       stroke: HookesLawColors.CONTROL_PANEL_STROKE,
       fill: HookesLawColors.CONTROL_PANEL_FILL,
       left: forceXYPlot.left + 10,
-      top: forceXYPlot.top + 20,
-      xMargin: 10
+      top: forceXYPlot.top + 30,
+      xMargin: 10,
+      maxWidth: 200 // constrain for i18n, determined empirically
     } );
     this.addChild( energyControlPanel );
 
