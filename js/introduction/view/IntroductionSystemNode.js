@@ -96,7 +96,7 @@ define( function( require ) {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10,
-      maxWidth: 700 // constrain width for i18n, determining empirically
+      maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
     } );
 
     options.children = [
