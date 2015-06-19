@@ -57,6 +57,7 @@ define( function( require ) {
         var numberOfPoints = loops * pointsPerLoop + 1;
         var index;
 
+        //TODO eliminate Vector2 allocations by using separate arrays for x and y coordinates?
         //TODO expand doc for the parametric equation, add a reference
         // compute the points
         var points = []; // {Vector2[]}
