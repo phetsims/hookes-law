@@ -10,6 +10,7 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
+Investigate SVGGroup assertion failure in ParametricSpringNode
 Complete cleanup of ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
