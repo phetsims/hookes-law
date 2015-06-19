@@ -95,7 +95,8 @@ define( function( require ) {
     var springControls = new IntroductionSpringControls( spring, numberOfInteractionsInProgressProperty, {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
-      top: wallNode.bottom + 10
+      top: wallNode.bottom + 10,
+      maxWidth: 690 // constrain width for i18n, determining empirically
     } );
 
     options.children = [
@@ -103,7 +104,7 @@ define( function( require ) {
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
       springControls
     ];
-    Node.call( this, options );
+    Node.call( this );
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
@@ -125,6 +126,8 @@ define( function( require ) {
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
+
+    this.mutate( options );
   }
 
   return inherit( Node, IntroductionSystemNode );
