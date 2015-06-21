@@ -10,8 +10,10 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
-Investigate SVGGroup assertion failure in ParametricSpringNode
+Move ParametricSpringNode to common/view/
+Add MV's notes to ParametricSpringNode
 Complete cleanup of ParametricSpringNode
+Investigate SVGGroup assertion failure in ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
