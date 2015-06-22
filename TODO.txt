@@ -26,4 +26,5 @@ Common Code
 LineArrowNode -> scenery-phet
 NumberControl -> scenery-phet
 NumberDisplay -> scenery-phet
+ParametricSpringNode -> scenery-phet
 
