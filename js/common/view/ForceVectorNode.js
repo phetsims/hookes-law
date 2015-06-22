@@ -39,8 +39,6 @@ define( function( require ) {
       valueVisibleProperty: new Property( true ) // {Property.<boolean>} determines whether the value is visible
     }, options );
 
-    Node.call( this );
-
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {
       fill: options.fill,
       stroke: options.stroke,
@@ -99,7 +97,7 @@ define( function( require ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
 
-    this.mutate( options );
+    Node.call( this, options );
   }
 
   return inherit( Node, ForceVectorNode );

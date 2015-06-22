@@ -38,8 +38,6 @@ define( function( require ) {
       unitDisplacementLength: 1
     }, options );
 
-    Node.call( this );
-
     var arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
 
     var valueNode = new Text( '', {
@@ -83,7 +81,7 @@ define( function( require ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
 
-    this.mutate( options );
+    Node.call( this, options );
   }
 
   return inherit( Node, DisplacementVectorNode );
