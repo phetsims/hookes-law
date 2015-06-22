@@ -56,7 +56,7 @@ define( function( require ) {
     } );
 
     options.children = [ verticalLine, arrowNode, backgroundNode, valueNode ];
-    Node.call( this, options );
+    Node.call( this );
 
     displacementProperty.link( function( displacement ) {
 
@@ -81,6 +81,8 @@ define( function( require ) {
     options.valueVisibleProperty.link( function( visible ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
+
+    this.mutate( options );
   }
 
   return inherit( Node, DisplacementVectorNode );
