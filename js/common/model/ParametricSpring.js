@@ -41,7 +41,7 @@ define( function( require ) {
         pointsPerLoop: this.pointsPerLoopRange.defaultValue, // {number} number of points used to approximate 1 loop
         lineWidth: this.lineWidthRange.defaultValue, // {number} lineWidth used to draw the coil
         phase: this.phaseRange.defaultValue, // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
-        deltaPhase: this.deltaPhaseRange.defaultValue, // {number} period is (0,2*PI) radians, TODO what is this?
+        deltaPhase: this.deltaPhaseRange.defaultValue, // {number} responsible for the leaning of the spring, period is (0,2*PI) radians
         xScale: this.xScaleRange.defaultValue // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
       }
     }, options );
