@@ -10,7 +10,7 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
-Define relationship between displacement and pitchSize
+Define relationship between displacement and xScale
 Replace SpringNode with ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1/2 and series/parallel radio buttons
