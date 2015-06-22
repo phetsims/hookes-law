@@ -39,6 +39,8 @@ define( function( require ) {
       valueVisibleProperty: new Property( true ) // {Property.<boolean>} determines whether the value is visible
     }, options );
 
+    Node.call( this );
+
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {
       fill: options.fill,
       stroke: options.stroke,
@@ -56,7 +58,6 @@ define( function( require ) {
     var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );
 
     options.children = [ arrowNode, backgroundNode, valueNode ];
-    Node.call( this );
 
     forceProperty.link( function( value ) {
 
