@@ -17,19 +17,20 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var LinearGradient = require( 'SCENERY/util/LinearGradient' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
   var Shape = require( 'KITE/Shape' );
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   * @param {ParametricSpring} spring
    * @param {Object} [options]
    * @constructor
    */
-  function ParametricSpringNode( spring, options ) {
+  function ParametricSpringNode( options ) {
 
     options = _.extend( {
+      spring: new ParametricSpring(), // view-specific properties related to this node
       lineCap: 'round',
       frontColor: 'rgb( 150, 150, 255 )',
       middleColor: 'rgb( 0, 0, 255 )',
@@ -38,22 +39,26 @@ define( function( require ) {
       rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
     }, options );
 
+    this.spring = options.spring;  // @public
+    this.leftEndLength = options.leftEndLength; // @private
+    this.rightEndLength = options.rightEndLength; // @private
+
     Node.call( this );
 
     var backPath = new Path( null, { lineCap: options.lineCap } );
     var frontPath = new Path( null, { lineCap: options.lineCap } );
 
     // Update the line width
-    spring.lineWidthProperty.link( function( lineWidth ) {
+    this.spring.lineWidthProperty.link( function( lineWidth ) {
       frontPath.lineWidth = backPath.lineWidth = lineWidth;
     } );
 
     // Update the shapes
     Property.multilink( [
-        spring.loopsProperty, spring.radiusProperty,
-        spring.aspectRatioProperty, spring.pointsPerLoopProperty,
-        spring.phaseProperty, spring.deltaPhaseProperty,
-        spring.xScaleProperty
+        this.spring.loopsProperty, this.spring.radiusProperty,
+        this.spring.aspectRatioProperty, this.spring.pointsPerLoopProperty,
+        this.spring.phaseProperty, this.spring.deltaPhaseProperty,
+        this.spring.xScaleProperty
       ],
       function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, xScale ) {
 
@@ -118,7 +123,7 @@ define( function( require ) {
       } );
 
     // Update the stroke gradients
-    Property.multilink( [ spring.radiusProperty, spring.aspectRatioProperty ],
+    Property.multilink( [ this.spring.radiusProperty, this.spring.aspectRatioProperty ],
       function( radius, aspectRatio ) {
 
         var yRadius = radius * aspectRatio;
@@ -139,5 +144,23 @@ define( function( require ) {
     Node.call( this, options );
   }
 
-  return inherit( Node, ParametricSpringNode );
+  return inherit( Node, ParametricSpringNode, {
+
+    /**
+     * Sets the length of the spring, including the wires that connect to the ends of the coil.
+     * @param {number} length
+     */
+    setLength: function( length ) {
+      var coilLength = length - ( this.leftEndLength + this.rightEndLength );
+      this.spring.xScaleProperty.set( coilLength / ( this.spring.loopsProperty.get() * this.spring.radiusProperty.get() ) );
+    },
+
+    /**
+     * Sets the line width used to stoke the spring.
+     * @param {number} lineWidth
+     */
+    setLineWidth: function( lineWidth ) {
+      this.spring.lineWidthProperty.set( lineWidth );
+    }
+  } );
 } );

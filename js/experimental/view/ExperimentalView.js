@@ -27,33 +27,34 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
+    // A 100-unit vertical "wall", for comparison with the spring size
+    var wallNode = new WallNode( new Dimension2( 25, 100 ), {
+      left: 20,
+      centerY: 375
+    } );
+    this.addChild( wallNode );
+
+    // spring
+    var springNode = new ParametricSpringNode( {
+      frontColor: HookesLawQueryParameters.FRONT_COLOR,
+      middleColor: HookesLawQueryParameters.MIDDLE_COLOR,
+      backColor: HookesLawQueryParameters.BACK_COLOR,
+      left: wallNode.right,
+      centerY: wallNode.centerY
+    } );
+    this.addChild( springNode );
+
     // control panel, scaled to fit
-    var controls = new ParametricSpringControls( model.spring );
+    var controls = new ParametricSpringControls( springNode.spring );
     this.addChild( controls );
     controls.setScaleMagnitude( Math.min( 1, this.layoutBounds.width / controls.width ) );
     controls.top = 0;
     controls.centerX = this.layoutBounds.centerX;
 
-    // spring
-    var springNode = new ParametricSpringNode( model.spring, {
-      frontColor: HookesLawQueryParameters.FRONT_COLOR,
-      middleColor: HookesLawQueryParameters.MIDDLE_COLOR,
-      backColor: HookesLawQueryParameters.BACK_COLOR,
-      left: 50,
-      centerY: 375
-    } );
-    this.addChild( springNode );
-
-    // A 100-unit vertical "wall", for comparison with the spring size
-    this.addChild( new WallNode( new Dimension2( 25, 100 ), {
-      left: 10,
-      centerY: springNode.centerY
-    } ) );
-
     // Reset All button, bottom right
     this.addChild( new ResetAllButton( {
       listener: function() {
-        model.reset();
+        springNode.properties.reset();
       },
       right: this.layoutBounds.maxX - 15,
       bottom: this.layoutBounds.maxY - 15

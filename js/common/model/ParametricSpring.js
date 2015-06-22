@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Properties required by ParametricSpringNode.
+ * View-specific properties that determine the look of ParametricSpringNode.
  * The "Experimental" screen provides an extensive test harness for ParametricSpring and ParametricSpringNode.
  *
  * @author Martin Veillette (Berea College)

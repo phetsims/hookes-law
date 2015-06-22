@@ -10,19 +10,11 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
 
   /**
    * @constructor
    */
-  function ExperimentalModel() {
-    this.spring = new ParametricSpring();
-  }
+  function ExperimentalModel() {}
 
-  return inherit( Object, ExperimentalModel, {
-
-    reset: function() {
-      this.spring.reset();
-    }
-  } );
+  return inherit( Object, ExperimentalModel );
 } );
