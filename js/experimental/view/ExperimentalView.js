@@ -14,7 +14,7 @@ define( function( require ) {
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParametricSpringControls = require( 'HOOKES_LAW/experimental/view/ParametricSpringControls' );
-  var ParametricSpringNode = require( 'HOOKES_LAW/experimental/view/ParametricSpringNode' );
+  var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );

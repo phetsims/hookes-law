@@ -10,7 +10,6 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
-Move ParametricSpringNode to common/view/
 Add MV's notes to ParametricSpringNode
 Complete cleanup of ParametricSpringNode
 Investigate SVGGroup assertion failure in ParametricSpringNode
