@@ -10,8 +10,6 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
-Add MV's notes to ParametricSpringNode
-Complete cleanup of ParametricSpringNode
 Investigate SVGGroup assertion failure in ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
