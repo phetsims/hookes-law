@@ -1,7 +1,10 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Spring described by a parametric equation.
+ * Spring described by a parametric equation. This implementation is a variation of the cycloid equation.
+ * A prolate cycloid (see http://mathworld.wolfram.com/ProlateCycloid.html) comes closest to this implementation,
+ * although it doesn't include aspect ratio and delta phase.
+ *
  * The front and back of the spring are drawn as separate paths to provide pseudo-3D visual cues.
  *
  * @author Martin Veillette (Berea College)
@@ -57,7 +60,6 @@ define( function( require ) {
         var numberOfPoints = loops * pointsPerLoop + 1;
         var index;
 
-        //TODO expand doc for the parametric equation, add a reference
         // compute the points
         var points = []; // {Vector2[]}
         for ( index = 0; index < numberOfPoints; index++ ) {
