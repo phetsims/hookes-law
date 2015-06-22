@@ -15,13 +15,13 @@ define( function( require ) {
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var IntroductionSpringControls = require( 'HOOKES_LAW/introduction/view/IntroductionSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
-  var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -56,17 +56,10 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var springNode = new ParametricSpringNode( spring, {
+    var springNode = new HookesLawSpringNode( spring, {
+      unitDisplacementLength: options.unitDisplacementLength,
       left: options.unitDisplacementLength * spring.leftProperty.get(),
       centerY: yOrigin
-    } );
-    spring.lengthProperty.link( function( length ) {
-      springNode.setLength( length * options.unitDisplacementLength );
-    } );
-    var minLineWidth = 1;
-    var deltaLineWidth = 0.005; // increase in line width per 1 unit of spring constant increas
-    spring.springConstantProperty.link( function( springConstant ) {
-      springNode.setLineWidth( minLineWidth + deltaLineWidth * ( springConstant - spring.springConstantRange.min ) );
     } );
 
     var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
