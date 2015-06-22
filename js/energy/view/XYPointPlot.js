@@ -128,7 +128,6 @@ define( function( require ) {
       yLeaderLine, yTickNode, yValueNode,
       pointNode
     ];
-    Node.call( this, options );
 
     // visibility
     options.xVectorVisibleProperty.link( function( visible ) {
@@ -241,6 +240,8 @@ define( function( require ) {
         xLeaderLine.setLine( xView, 0, xView, yView );
         yLeaderLine.setLine( 0, yView, xView, yView );
       } );
+
+    Node.call( this, options );
   }
 
   return inherit( Node, XYPointPlot );
