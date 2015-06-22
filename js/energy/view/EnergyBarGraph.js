@@ -72,7 +72,6 @@ define( function( require ) {
     } );
 
     options.children = [ barNode, valueNode, xAxisNode, yAxisNode, yAxisLabel ];
-    Node.call( this, options );
 
     spring.energyProperty.link( function( energy ) {
 
@@ -93,6 +92,8 @@ define( function( require ) {
     } );
 
     options.valueVisibleProperty.linkAttribute( valueNode, 'visible' );
+
+    Node.call( this, options );
   }
 
   return inherit( Node, EnergyBarGraph );

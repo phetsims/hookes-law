@@ -96,7 +96,6 @@ define( function( require ) {
       appliedForceVectorNode, displacementVectorNode,
       springControls
     ];
-    Node.call( this, options );
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
@@ -117,6 +116,8 @@ define( function( require ) {
         var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
+
+    Node.call( this, options );
   }
 
   return inherit( Node, EnergySystemNode );
