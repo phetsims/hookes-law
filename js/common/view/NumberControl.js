@@ -85,6 +85,11 @@ define( function( require ) {
       numberProperty.set( value );
     }, arrowButtonOptions );
 
+    numberProperty.link( function( value ) {
+      leftArrowButton.enabled = ( value > numberRange.min );
+      rightArrowButton.enabled = ( value < numberRange.max );
+    } );
+
     var slider = new HSlider( numberProperty, numberRange, _.extend( {
       startDrag: options.startCallback,
       endDrag: options.endCallback,
@@ -124,11 +129,6 @@ define( function( require ) {
       } )
     ];
     VBox.call( this, options );
-
-    numberProperty.link( function( value ) {
-      leftArrowButton.enabled = ( value > numberRange.min );
-      rightArrowButton.enabled = ( value < numberRange.max );
-    } );
   }
 
   return inherit( VBox, NumberControl );
