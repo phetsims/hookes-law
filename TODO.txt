@@ -15,7 +15,6 @@ Replace SpringNode with ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1/2 and series/parallel radio buttons
 If performance issues, only update graphs and vectors when visible.
-Make numberOfInteractionsInProgressProperty an option instead of a @param throughout?
 TODO items in code
 
 
