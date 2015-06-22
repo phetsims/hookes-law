@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
+  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
 
   /**
@@ -22,7 +22,7 @@ define( function( require ) {
     // Components of the system -----------------------------------------------------
 
     // spring
-    this.spring = new ParametricSpring( springOptions );
+    this.spring = new Spring( springOptions );
 
     // arm, left end attached to spring
     this.roboticArm = new RoboticArm( {

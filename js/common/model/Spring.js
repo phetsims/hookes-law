@@ -32,6 +32,7 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
   var PropertySet = require( 'AXON/PropertySet' );
   var Range = require( 'DOT/Range' );
 
@@ -80,15 +81,14 @@ define( function( require ) {
     }
 
     var thisSpring = this;
+    ParametricSpring.call( this );
 
     // Properties ------------------------------------------------------------------------------------------------------------------------------------
 
-    PropertySet.call( this, _.extend( {
-      appliedForce: this.appliedForceRange.defaultValue, // {number} F
-      springConstant: this.springConstantRange.defaultValue,  // {number} k
-      displacement: this.displacementRange.defaultValue,  // {number} x
-      left: options.left // {number} location of the left end of the spring, units = m
-    }, options.additionalProperties ) );
+    this.addProperty( 'appliedForce', this.appliedForceRange.defaultValue ); // {number} F
+    this.addProperty( 'springConstant', this.springConstantRange.defaultValue ); // {number} k
+    this.addProperty( 'displacement', this.displacementRange.defaultValue ); // {number} x
+    this.addProperty( 'left', options.left ); // {number} location of the left end of the spring, units = m
 
     // Derived properties ----------------------------------------------------------------------------------------------------------------------------
 
@@ -180,5 +180,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( PropertySet, Spring );
+  return inherit( ParametricSpring, Spring );
 } );

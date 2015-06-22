@@ -27,7 +27,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
+  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
   var Range = require( 'DOT/Range' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
 
@@ -41,7 +41,7 @@ define( function( require ) {
     // Components of the system ----------------------------------------------------------------------------------------------------------------------
 
     // left spring
-    this.leftSpring = new ParametricSpring( {
+    this.leftSpring = new Spring( {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 0.75, // length of the spring at equilibrium, units = m
       springConstantRange: new Range( 200, 600, 200 ), // range and initial value of k1, units = N/m
@@ -49,7 +49,7 @@ define( function( require ) {
     } );
 
     // right spring, in series with the left spring, with identical configuration
-    this.rightSpring = new ParametricSpring( {
+    this.rightSpring = new Spring( {
       left: this.leftSpring.rightProperty.get(), // attached to the right end of the left spring
       equilibriumLength: this.leftSpring.equilibriumLength,
       springConstantRange: this.leftSpring.springConstantRange,
@@ -57,7 +57,7 @@ define( function( require ) {
     } );
 
     // the single spring that is equivalent to the 2 springs in parallel
-    this.equivalentSpring = new ParametricSpring( {
+    this.equivalentSpring = new Spring( {
       left: this.leftSpring.leftProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,
       // keq = 1 / ( 1/k1 + 1/k2 )
