@@ -104,7 +104,6 @@ define( function( require ) {
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
       springControls
     ];
-    Node.call( this );
 
     // Property observers ----------------------------------------------------------------------------------------------------------------------------
 
@@ -127,7 +126,7 @@ define( function( require ) {
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 
-    this.mutate( options );
+    Node.call( this, options );
   }
 
   return inherit( Node, IntroductionSystemNode );
