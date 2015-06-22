@@ -97,9 +97,6 @@ define( function( require ) {
     var draggableNode = new Node( { children: [ topPincerClosedNode, topPincerOpenNode, bottomPincerClosedNode, bottomPincerOpenNode, hingeNode ] } );
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
-    options.children = [ armNode, boxNode, draggableNode ];
-    Node.call( this, options );
-
     // Drag the pincers or hinge
     var dragHandler = new SimpleDragHandler( {
 
@@ -149,6 +146,9 @@ define( function( require ) {
       topPincerOpenNode.visible = bottomPincerOpenNode.visible = pincersOpen;
       topPincerClosedNode.visible = bottomPincerClosedNode.visible = !pincersOpen;
     };
+
+    options.children = [ armNode, boxNode, draggableNode ];
+    Node.call( this, options );
   }
 
   return inherit( Node, RoboticArmNode );

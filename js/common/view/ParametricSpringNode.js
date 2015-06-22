@@ -41,10 +41,7 @@ define( function( require ) {
     Node.call( this );
 
     var backPath = new Path( null, { lineCap: options.lineCap } );
-    this.addChild( backPath );
-
     var frontPath = new Path( null, { lineCap: options.lineCap } );
-    this.addChild( frontPath );
 
     // Update the line width
     spring.lineWidthProperty.link( function( lineWidth ) {
@@ -138,7 +135,8 @@ define( function( require ) {
           .addColorStop( 1, options.middleColor );
       } );
 
-    this.mutate( options );
+    options.children = [ backPath, frontPath ];
+    Node.call( this, options );
   }
 
   return inherit( Node, ParametricSpringNode );

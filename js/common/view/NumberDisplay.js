@@ -57,7 +57,6 @@ define( function( require ) {
     valueNode.center = background.center;
 
     options.children = [ background, valueNode ];
-    Node.call( this, options );
 
     // display the value
     var numberObserver = function( value ) {
@@ -70,6 +69,8 @@ define( function( require ) {
     this.disposeNumberDisplay = function() {
       numberProperty.unlink( numberObserver );
     };
+
+    Node.call( this, options );
   }
 
   return inherit( Node, NumberDisplay, {
