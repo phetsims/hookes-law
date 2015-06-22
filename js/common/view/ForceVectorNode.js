@@ -56,7 +56,7 @@ define( function( require ) {
     var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );
 
     options.children = [ arrowNode, backgroundNode, valueNode ];
-    Node.call( this, options );
+    Node.call( this );
 
     forceProperty.link( function( value ) {
 
@@ -97,6 +97,8 @@ define( function( require ) {
     options.valueVisibleProperty.link( function( visible ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
+
+    this.mutate( options );
   }
 
   return inherit( Node, ForceVectorNode );
