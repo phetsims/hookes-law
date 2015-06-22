@@ -10,7 +10,6 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
-Investigate SVGGroup assertion failure in ParametricSpringNode
 Define relationship between displacement and pitchSize
 Replace SpringNode with ParametricSpringNode
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)

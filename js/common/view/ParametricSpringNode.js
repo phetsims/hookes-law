@@ -46,6 +46,11 @@ define( function( require ) {
     var frontPath = new Path( null, { lineCap: options.lineCap } );
     this.addChild( frontPath );
 
+    // Update the line width
+    spring.lineWidthProperty.link( function( lineWidth ) {
+      frontPath.lineWidth = backPath.lineWidth = lineWidth;
+    } );
+
     // Update the shapes
     Property.multilink( [
         spring.loopsProperty, spring.radiusProperty,
@@ -132,13 +137,6 @@ define( function( require ) {
           .addColorStop( 0.5, options.backColor )
           .addColorStop( 1, options.middleColor );
       } );
-
-    //TODO Why does SVGGroup.js fail at line 189 when this is moved before Property.multilink above?
-    //TODO Error: Invalid value for <g> attribute transform="translate(-Infinity,0.00000000000000000000)"
-    // Update the line width
-    spring.lineWidthProperty.link( function( lineWidth ) {
-      frontPath.lineWidth = backPath.lineWidth = lineWidth;
-    } );
 
     this.mutate( options );
   }
