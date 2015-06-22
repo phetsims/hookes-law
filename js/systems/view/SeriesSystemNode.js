@@ -37,8 +37,6 @@ define( function( require ) {
       unitDisplacementLength: 1
     }, options );
 
-    Node.call( this );
-
     // to improve readability
     var leftSpring = system.leftSpring;
     var rightSpring = system.rightSpring;
@@ -180,7 +178,7 @@ define( function( require ) {
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 
-    this.mutate( options );
+    Node.call( this, options );
   }
 
   return inherit( Node, SeriesSystemNode );
