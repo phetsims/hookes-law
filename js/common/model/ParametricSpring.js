@@ -16,9 +16,10 @@ define( function( require ) {
   var Range = require( 'DOT/Range' );
 
   /**
+   * @param {Object} [object]
    * @constructor
    */
-  function ParametricSpring() {
+  function ParametricSpring( options ) {
 
     // ranges and default values for properties
     this.loopsRange = new Range( 4, 15, 10 );
@@ -47,7 +48,7 @@ define( function( require ) {
       deltaPhase: this.deltaPhaseRange.defaultValue,
       // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
       xScale: this.xScaleRange.defaultValue
-    } );
+    }, options );
   }
 
   return inherit( PropertySet, ParametricSpring );

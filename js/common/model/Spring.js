@@ -81,7 +81,7 @@ define( function( require ) {
     }
 
     var thisSpring = this;
-    ParametricSpring.call( this );
+    ParametricSpring.call( this, options );
 
     // Properties ------------------------------------------------------------------------------------------------------------------------------------
 

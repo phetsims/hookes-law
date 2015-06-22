@@ -29,7 +29,7 @@ define( function( require ) {
 
     PropertySet.call( this, {
       left: options.left
-    } );
+    }, options );
 
     this.leftProperty.link( function( left ) {
       assert && assert( left < thisArm.right, 'robotic arm is constrained to extend from right to left' );
