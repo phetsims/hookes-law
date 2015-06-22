@@ -22,10 +22,6 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var Vector2 = require( 'DOT/Vector2' );
 
-  // constants
-  var LEFT_END_LENGTH = 15;
-  var RIGHT_END_LENGTH = 25;
-
   /**
    * @param {ParametricSpring} spring
    * @param {Object} [options]
@@ -37,7 +33,9 @@ define( function( require ) {
       lineCap: 'round',
       frontColor: 'rgb( 150, 150, 255 )',
       middleColor: 'rgb( 0, 0, 255 )',
-      backColor: 'rgb( 0, 0, 200 )'
+      backColor: 'rgb( 0, 0, 200 )',
+      leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
+      rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
     }, options );
 
     Node.call( this );
@@ -81,10 +79,10 @@ define( function( require ) {
           // horizontal line at left end
           if ( index === 0 ) {
             if ( isFront ) {
-              frontPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
+              frontPath.shape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
             }
             else {
-              backPath.shape.moveTo( points[ 0 ].x - LEFT_END_LENGTH, points[ 0 ].y );
+              backPath.shape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
             }
           }
 
@@ -110,10 +108,10 @@ define( function( require ) {
 
         // horizontal line at right end
         if ( wasFront ) {
-          frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
+          frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
         }
         else {
-          backPath.shape.lineTo( points[ numberOfPoints - 1 ].x + RIGHT_END_LENGTH, points[ numberOfPoints - 1 ].y );
+          backPath.shape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
         }
       } );
 
