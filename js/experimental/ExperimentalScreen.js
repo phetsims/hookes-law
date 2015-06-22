@@ -20,17 +20,13 @@ define( function( require ) {
   // strings - no need for i18n since this is a developer-only screen
   var experimentalString = 'Experimental';
 
-  var createIcon = function() {
-    return new Rectangle( 0, 0, 100, 100, { fill: 'orange' } );
-  };
-
   /**
    * @constructor
    */
   function IntroductionScreen() {
     Screen.call( this,
       experimentalString,
-      createIcon(),
+      new Rectangle( 0, 0, 100, 100, { fill: 'orange' } ),
       function() { return new ExperimentalModel(); },
       function( model ) { return new ExperimentalView( model ); },
       { backgroundColor: 'white' }

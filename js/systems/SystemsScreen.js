@@ -9,19 +9,17 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var SystemsModel = require( 'HOOKES_LAW/systems/model/SystemsModel' );
   var SystemsView = require( 'HOOKES_LAW/systems/view/SystemsView' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
 
   // strings
   var systemsString = require( 'string!HOOKES_LAW/systems' );
 
-  //TODO design: what does the screen icon look like?
-  var createIcon = function() {
-    return new Rectangle( 0, 0, 100, 100, { fill: 'green' } );
-  };
+  // images
+  var systemsScreenImage = require( 'image!HOOKES_LAW/systems-screen.png' );
 
   /**
    * @constructor
@@ -29,7 +27,7 @@ define( function( require ) {
   function SystemsScreen() {
     Screen.call( this,
       systemsString,
-      createIcon(),
+      new Image( systemsScreenImage ),
       function() { return new SystemsModel(); },
       function( model ) { return new SystemsView( model ); },
       { backgroundColor: 'white' }

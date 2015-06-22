@@ -10,18 +10,16 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var Image = require( 'SCENERY/nodes/Image' );
   var IntroductionModel = require( 'HOOKES_LAW/introduction/model/IntroductionModel' );
   var IntroductionView = require( 'HOOKES_LAW/introduction/view/IntroductionView' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
 
   // strings
   var introductionString = require( 'string!HOOKES_LAW/introduction' );
 
-  //TODO design: what does the screen icon look like?
-  var createIcon = function() {
-    return new Rectangle( 0, 0, 100, 100, { fill: 'red' } );
-  };
+  // images
+  var introductionScreenImage = require( 'image!HOOKES_LAW/introduction-screen.png' );
 
   /**
    * @constructor
@@ -29,7 +27,7 @@ define( function( require ) {
   function IntroductionScreen() {
     Screen.call( this,
       introductionString,
-      createIcon(),
+      new Image( introductionScreenImage ),
       function() { return new IntroductionModel(); },
       function( model ) { return new IntroductionView( model ); },
       { backgroundColor: 'white' }
