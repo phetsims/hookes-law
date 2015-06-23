@@ -12,17 +12,17 @@ Implementation
 
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1/2 and series/parallel radio buttons
-If performance issues, only update graphs and vectors when visible.
-TODO items in code
-
+Draw robotic hinge programmatically?
+QA credits
+schedule code review
 
 -----------------------------------------------------------------------------------
 Common Code
 -----------------------------------------------------------------------------------
 
 LineArrowNode -> scenery-phet
-NumberControl -> scenery-phet
-NumberDisplay -> scenery-phet
+? NumberControl -> scenery-phet
+? NumberDisplay -> scenery-phet
 ParametricSpringNode -> scenery-phet
 
 
