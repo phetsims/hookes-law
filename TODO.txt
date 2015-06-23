@@ -11,7 +11,7 @@ Implementation
 -----------------------------------------------------------------------------------
 
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
-Programmatically create icons for 1/2 and series/parallel radio buttons
+Programmatically create icons for 1|2 and parallel|series radio buttons
 Draw robotic hinge programmatically?
 QA credits
 schedule code review
