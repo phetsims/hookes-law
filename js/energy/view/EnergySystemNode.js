@@ -16,11 +16,11 @@ define( function( require ) {
   var EnergySpringControls = require( 'HOOKES_LAW/energy/view/EnergySpringControls' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -54,7 +54,7 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var springNode = new SpringNode( spring, {
+    var springNode = new HookesLawSpringNode( spring, {
       unitDisplacementLength: options.unitDisplacementLength,
       left: options.unitDisplacementLength * spring.leftProperty.get(),
       centerY: yOrigin
