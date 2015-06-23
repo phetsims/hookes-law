@@ -163,7 +163,7 @@ define( function( require ) {
         loops: 10,
         // {number} radius of a loop with aspect ratio of 1:1
         radius: 10,
-        // {number} y:x aspect radio of the loop radius
+        // {number} y:x aspect ratio of the loop radius
         aspectRatio: 4,
         // {number} number of points used to approximate 1 loop
         pointsPerLoop: 30,
