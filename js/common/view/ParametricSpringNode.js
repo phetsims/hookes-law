@@ -35,7 +35,7 @@ define( function( require ) {
 
     options = _.extend( {
       lineCap: 'round',
-      // {Color|string} colors used for the gradient strokes
+      // {Color|string} colors used for the gradient strokes. middleColor is the dominant color.
       frontColor: 'lightGray',
       middleColor: 'gray',
       backColor: 'black',
