@@ -34,7 +34,7 @@ define( function( require ) {
     } );
     ParametricSpringNode.call( this, propertySet, options );
 
-    // stretch the spring
+    // stretch or compress the spring
     spring.lengthProperty.link( function( length ) {
       var coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
       var xScale = coilLength / ( propertySet.loopsProperty.get() * propertySet.radiusProperty.get() );
