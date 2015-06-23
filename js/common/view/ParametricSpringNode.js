@@ -32,9 +32,9 @@ define( function( require ) {
     options = _.extend( {
       lineCap: 'round',
       // {Color|string} colors used for the gradient strokes
-      frontColor: 'red',
-      middleColor: 'green',
-      backColor: 'blue',
+      frontColor: 'lightGray',
+      middleColor: 'gray',
+      backColor: 'black',
       // {number} length of the horizontal line added to the left end of the coil
       leftEndLength: 15,
       // {number} length of the horizontal line added to the right end of the coil
