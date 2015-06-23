@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
+  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
   var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
 
   /**
@@ -20,23 +21,27 @@ define( function( require ) {
   function HookesLawSpringNode( spring, options ) {
 
     options = _.extend( {
-      unitDisplacementLength: 1,
-      minLineWidth: 1, // lineWidth for minimum spring constant
-      deltaLineWidth: 0.005 // increase in line width per 1 unit of spring constant increase
+      unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
+      minLineWidth: 1, // {number} lineWidth used to stroke the spring for minimum spring constant
+      deltaLineWidth: 0.005, // increase in line width per 1 unit of spring constant increase
+      leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
+      rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
     }, options );
 
-    var thisNode = this;
+    var propertySet = new ParametricSpring(); // view-specific properties that control the look of ParametricSpringNode
+    ParametricSpringNode.call( this, propertySet, options );
 
-    ParametricSpringNode.call( this, options );
-
-    // transform spring length from model to view coordinate frame
+    // stretch the spring
     spring.lengthProperty.link( function( length ) {
-      thisNode.setLength( length * options.unitDisplacementLength );
+      var coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
+      var xScale = coilLength / ( propertySet.loopsProperty.get() * propertySet.radiusProperty.get() );
+      propertySet.xScaleProperty.set( xScale );
     } );
 
     // spring constant determines lineWidth
     spring.springConstantProperty.link( function( springConstant ) {
-      thisNode.setLineWidth( options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min ) );
+      var lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
+      propertySet.lineWidthProperty.set( lineWidth );
     } );
   }
 

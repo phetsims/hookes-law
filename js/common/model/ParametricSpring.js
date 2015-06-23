@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * View-specific properties that determine the look of ParametricSpringNode.
+ * View-specific PropertySet that determines the look of ParametricSpringNode.
  * The "Experimental" screen provides an extensive test harness for ParametricSpring and ParametricSpringNode.
  *
  * @author Martin Veillette (Berea College)
@@ -13,7 +13,6 @@ define( function( require ) {
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
-  var Range = require( 'DOT/Range' );
 
   /**
    * @param {Object} [object]
@@ -21,33 +20,34 @@ define( function( require ) {
    */
   function ParametricSpring( options ) {
 
-    // ranges and default values for properties
-    this.loopsRange = new Range( 4, 15, 10 );
-    this.radiusRange = new Range( 5, 70, 10 );
-    this.aspectRatioRange = new Range( 0.5, 10, 4 );
-    this.pointsPerLoopRange = new Range( 10, 100, 30 );
-    this.lineWidthRange = new Range( 1, 10, 3 );
-    this.phaseRange = new Range( 0, 2 * Math.PI, Math.PI ); // radians
-    this.deltaPhaseRange = new Range( 0, 2 * Math.PI, Math.PI / 2 ); // radians
-    this.xScaleRange = new Range( 0.5, 11, 2.5 );
+    options = _.extend( {
+      // {number} number of loops in the spring
+      loops: 10,
+      // {number} radius of a loop with aspect ratio of 1:1
+      radius: 10,
+      // {number} y:x aspect radio of the loop radius
+      aspectRatio: 4,
+      // {number} number of points used to approximate 1 loop
+      pointsPerLoop: 30,
+      // {number} lineWidth used to draw the coil
+      lineWidth: 3,
+      // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
+      phase: Math.PI,
+      // {number} responsible for the leaning of the spring, variation on a Lissjoue curve, period is (0,2*PI) radians
+      deltaPhase: Math.PI / 2,
+      // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
+      xScale: 2.5
+    }, options );
 
     PropertySet.call( this, {
-      // {number} number of loops in the spring
-      loops: this.loopsRange.defaultValue,
-      // {number} radius of a loop with aspect ratio of 1:1
-      radius: this.radiusRange.defaultValue,
-      // {number} y:x aspect radio of the loop radius
-      aspectRatio: this.aspectRatioRange.defaultValue,
-      // {number} number of points used to approximate 1 loop
-      pointsPerLoop: this.pointsPerLoopRange.defaultValue,
-      // {number} lineWidth used to draw the coil
-      lineWidth: this.lineWidthRange.defaultValue,
-      // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
-      phase: this.phaseRange.defaultValue,
-      // {number} responsible for the leaning of the spring, variation on a Lissjoue curve, period is (0,2*PI) radians
-      deltaPhase: this.deltaPhaseRange.defaultValue,
-      // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
-      xScale: this.xScaleRange.defaultValue
+      loops: options.loops,
+      radius: options.radius,
+      aspectRatio: options.aspectRatio,
+      pointsPerLoop: options.pointsPerLoop,
+      lineWidth: options.lineWidth,
+      phase: options.phase,
+      deltaPhase: options.deltaPhase,
+      xScale: options.xScale
     }, options );
   }
 

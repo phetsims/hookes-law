@@ -5,6 +5,7 @@ Design questions
 -----------------------------------------------------------------------------------
 
 Screen icons
+Shouldn't spring radius decrease as it's stretched?
 
 -----------------------------------------------------------------------------------
 Implementation

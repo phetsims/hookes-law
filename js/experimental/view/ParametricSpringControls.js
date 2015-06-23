@@ -38,11 +38,11 @@ define( function( require ) {
   var TICK_LABEL_FONT = new PhetFont( 14 );
 
   /**
-   * @param {ParametricSpring} spring
+   * @param {ExperimentalModel} model
    * @param {Object} [options]
    * @constructor
    */
-  function ParametricSpringControls( spring, options ) {
+  function ParametricSpringControls( model, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -52,61 +52,61 @@ define( function( require ) {
     }, options );
 
     // controls, options tweaked empirically to match ranges
-    var loopsControl = createNumberControl( loopsString, spring.loopsProperty, spring.loopsRange, {
+    var loopsControl = createNumberControl( loopsString, model.propertySet.loopsProperty, model.loopsRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 1,
       thumbFillEnabled: 'black'
     } );
-    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, spring.pointsPerLoopProperty, spring.pointsPerLoopRange, {
+    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, model.propertySet.pointsPerLoopProperty, model.pointsPerLoopRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 10,
       thumbFillEnabled: 'black'
     } );
-    var radiusControl = createNumberControl( radiusString, spring.radiusProperty, spring.radiusRange, {
+    var radiusControl = createNumberControl( radiusString, model.propertySet.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 5,
       thumbFillEnabled: 'black'
     } );
-    var aspectRatioControl = createNumberControl( aspectRatioString, spring.aspectRatioProperty, spring.aspectRatioRange, {
+    var aspectRatioControl = createNumberControl( aspectRatioString, model.propertySet.aspectRatioProperty, model.aspectRatioRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 0.5,
       thumbFillEnabled: 'black'
     } );
-    assert && assert( spring.phaseRange.min === 0 && spring.phaseRange.max === 2 * Math.PI );
-    var phaseControl = createNumberControl( phaseString, spring.phaseProperty, spring.phaseRange, {
+    assert && assert( model.phaseRange.min === 0 && model.phaseRange.max === 2 * Math.PI );
+    var phaseControl = createNumberControl( phaseString, model.propertySet.phaseProperty, model.phaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
       thumbFillEnabled: 'black',
       majorTicks: [
-        { value: spring.phaseRange.min, label: new Text( '0', { font: TICK_LABEL_FONT } ) },
-        { value: spring.phaseRange.getCenter(), label: new Text( '\u03c0', { font: TICK_LABEL_FONT } ) },
-        { value: spring.phaseRange.max, label: new Text( '2\u03c0', { font: TICK_LABEL_FONT } ) }
+        { value: model.phaseRange.min, label: new Text( '0', { font: TICK_LABEL_FONT } ) },
+        { value: model.phaseRange.getCenter(), label: new Text( '\u03c0', { font: TICK_LABEL_FONT } ) },
+        { value: model.phaseRange.max, label: new Text( '2\u03c0', { font: TICK_LABEL_FONT } ) }
       ]
     } );
-    assert && assert( spring.deltaPhaseRange.min === 0 && spring.deltaPhaseRange.max === 2 * Math.PI );
-    var deltaPhaseControl = createNumberControl( deltaPhaseString, spring.deltaPhaseProperty, spring.deltaPhaseRange, {
+    assert && assert( model.deltaPhaseRange.min === 0 && model.deltaPhaseRange.max === 2 * Math.PI );
+    var deltaPhaseControl = createNumberControl( deltaPhaseString, model.propertySet.deltaPhaseProperty, model.deltaPhaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
       thumbFillEnabled: 'black',
       majorTicks: [
-        { value: spring.deltaPhaseRange.min, label: new Text( '0', { font: TICK_LABEL_FONT } ) },
-        { value: spring.deltaPhaseRange.getCenter(), label: new Text( '\u03c0', { font: TICK_LABEL_FONT } ) },
-        { value: spring.deltaPhaseRange.max, label: new Text( '2\u03c0', { font: TICK_LABEL_FONT } ) }
+        { value: model.deltaPhaseRange.min, label: new Text( '0', { font: TICK_LABEL_FONT } ) },
+        { value: model.deltaPhaseRange.getCenter(), label: new Text( '\u03c0', { font: TICK_LABEL_FONT } ) },
+        { value: model.deltaPhaseRange.max, label: new Text( '2\u03c0', { font: TICK_LABEL_FONT } ) }
       ]
     } );
-    var lineWidthControl = createNumberControl( lineWidthString, spring.lineWidthProperty, spring.lineWidthRange, {
+    var lineWidthControl = createNumberControl( lineWidthString, model.propertySet.lineWidthProperty, model.lineWidthRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
       thumbFillEnabled: 'red'
     } );
-    var xScaleControl = createNumberControl( xScaleString, spring.xScaleProperty, spring.xScaleRange, {
+    var xScaleControl = createNumberControl( xScaleString, model.propertySet.xScaleProperty, model.xScaleRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 0.5,
