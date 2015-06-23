@@ -31,11 +31,14 @@ define( function( require ) {
 
     options = _.extend( {
       lineCap: 'round',
-      frontColor: 'rgb( 150, 150, 255 )',
-      middleColor: 'rgb( 0, 0, 255 )',
-      backColor: 'rgb( 0, 0, 200 )',
-      leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
-      rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
+      // {Color|string} colors used for the gradient strokes
+      frontColor: 'red',
+      middleColor: 'green',
+      backColor: 'blue',
+      // {number} length of the horizontal line added to the left end of the coil
+      leftEndLength: 15,
+      // {number} length of the horizontal line added to the right end of the coil
+      rightEndLength: 25
     }, options );
 
     Node.call( this );

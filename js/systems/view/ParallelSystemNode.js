@@ -66,9 +66,9 @@ define( function( require ) {
     var topSpringNode = new HookesLawSpringNode( topSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: 6,
-      frontColor: HookesLawColors.TOP_SPRING,
-      //TODO middleColor: XXX,
-      //TODO bottomColor: XXX,
+      frontColor: HookesLawColors.TOP_SPRING_FRONT,
+      middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
+      backColor: HookesLawColors.TOP_SPRING_BACK,
       left: options.unitDisplacementLength * topSpring.leftProperty.get(),
       centerY: wallNode.top + ( 0.25 * wallNode.height )
     } );
@@ -76,9 +76,9 @@ define( function( require ) {
     var bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: 6,
-      frontColor: HookesLawColors.BOTTOM_SPRING,
-      //TODO middleColor: XXX,
-      //TODO bottomColor: XXX,
+      frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
+      middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
+      backColor: HookesLawColors.BOTTOM_SPRING_BACK,
       left: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
       centerY: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
