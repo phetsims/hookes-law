@@ -27,7 +27,7 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   * @param {ParametricSpring} propertySet - view-specific PropertySet for this node's dynamic parameters
+   * @param {PropertySet} propertySet - view-specific PropertySet for this node's dynamic parameters, see createPropertySet
    * @param {Object} [options]
    * @constructor
    */
