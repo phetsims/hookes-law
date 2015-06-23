@@ -67,9 +67,6 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    //XXX
-    var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-    var rightSpringNodeXXX = new Rectangle( 0, 0, 200, 100, { fill: HookesLawColors.RIGHT_SPRING_MIDDLE } );
     var rightSpringNode = new HookesLawSpringNode( rightSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
