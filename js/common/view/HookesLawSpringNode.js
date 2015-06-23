@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var ParametricSpring = require( 'HOOKES_LAW/common/model/ParametricSpring' );
   var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
 
   /**
@@ -30,7 +29,7 @@ define( function( require ) {
     }, options );
 
     // view-specific properties that control the look of ParametricSpringNode
-    var propertySet = new ParametricSpring( {
+    var propertySet = ParametricSpringNode.createPropertySet( {
       loops: options.loops
     } );
     ParametricSpringNode.call( this, propertySet, options );
