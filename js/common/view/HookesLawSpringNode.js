@@ -51,7 +51,7 @@ define( function( require ) {
       }
       else {
         // stretched
-        propertySet.aspectRatioProperty.set( options.aspectRatio * ( 1 - 0.25 * displacement / spring.displacementRange.max ) );
+        propertySet.aspectRatioProperty.set( options.aspectRatio * ( 1 - 0.05 * displacement / spring.displacementRange.max ) );
       }
     } );
 
