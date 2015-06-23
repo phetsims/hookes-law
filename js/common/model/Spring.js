@@ -47,8 +47,7 @@ define( function( require ) {
       springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
       displacementRange: null, // {Range} displacement range and initial value, units = m
       appliedForceRange: null, // {Range} applied force range and initial value, units = N
-      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA, // {number} applied force (and thus spring force) are constrained to this delta
-      additionalProperties: {} // additional properties that are added to this PropertySet, used by subtypes
+      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA // {number} applied force (and thus spring force) are constrained to this delta
     }, options );
 
     // validate and save options
