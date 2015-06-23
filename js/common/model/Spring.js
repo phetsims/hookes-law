@@ -5,7 +5,7 @@
  * The left end is attached to something like a wall or another spring.
  * A force is applied to the right end, by something like a robotic arm or another spring.
  *
- * Either displacement range or applied force range can be specified, but not both.
+ * Either displacement range or applied force range must be specified, but not both.
  * The unspecified range is computed, and whichever range is not specified is the
  * quantity that changes when spring constant is modified. For example, if applied force
  * range is specified, then displacement range is computed, and changing spring constant
