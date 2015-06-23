@@ -23,7 +23,7 @@ define( function( require ) {
       loops: 10, // {number} number of loops in the coil
       aspectRatio: 4, // {number} y:x aspect ratio of the loop radius
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      minLineWidth: 1, // {number} lineWidth used to stroke the spring for minimum spring constant
+      minLineWidth: 2, // {number} lineWidth used to stroke the spring for minimum spring constant
       deltaLineWidth: 0.005, // increase in line width per 1 unit of spring constant increase
       leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
       rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
