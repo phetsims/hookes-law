@@ -45,8 +45,6 @@ define( function( require ) {
       rightEndLength: 25
     }, options );
 
-    Node.call( this );
-
     var backPath = new Path( null, { lineCap: options.lineCap } );
     var frontPath = new Path( null, { lineCap: options.lineCap } );
 
