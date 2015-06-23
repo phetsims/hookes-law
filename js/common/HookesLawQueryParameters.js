@@ -8,6 +8,9 @@
 define( function( require ) {
   'use strict';
 
+  // modules
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+
   var getQueryParameter = phet.chipper.getQueryParameter;
 
   return {
@@ -21,8 +24,8 @@ define( function( require ) {
 
     // Colors for ParametricSpringNode in the "Experimental" screen.
     // The '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
-    FRONT_COLOR: getQueryParameter( 'frontColor' ) || 'rgb( 150, 150, 255 )',
-    MIDDLE_COLOR: getQueryParameter( 'middleColor' ) || 'rgb( 0, 0, 255 )',
-    BACK_COLOR: getQueryParameter( 'backColor' ) || 'rgb( 0, 0, 200 )'
+    FRONT_COLOR: getQueryParameter( 'frontColor' ) || HookesLawColors.SINGLE_SPRING_FRONT,
+    MIDDLE_COLOR: getQueryParameter( 'middleColor' ) || HookesLawColors.SINGLE_SPRING_MIDDLE,
+    BACK_COLOR: getQueryParameter( 'backColor' ) || HookesLawColors.SINGLE_SPRING_BACK
   };
 } );
