@@ -34,7 +34,7 @@ define( function( require ) {
   function SeriesSystemNode( system, viewProperties, options ) {
 
     options = _.extend( {
-      unitDisplacementLength: 1
+      unitDisplacementLength: 1 // {number} view length of 1 meter of displacement
     }, options );
 
     // to improve readability

@@ -27,6 +27,7 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
+    // View length of 1 meter of displacement
     var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view
@@ -77,8 +78,8 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
+    // Make one of the 2 systems visible
     viewProperties.seriesParallelProperty.lazyLink( function( seriesParallel ) {
-      // make one of the 2 systems visible
       seriesSystemNode.visible = ( seriesParallel === 'series' );
       parallelSystemNode.visible = ( seriesParallel === 'parallel' );
     } );

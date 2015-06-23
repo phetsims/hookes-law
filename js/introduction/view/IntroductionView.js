@@ -27,6 +27,7 @@ define( function( require ) {
     var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
+    // View length of 1 meter of displacement
     var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view

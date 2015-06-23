@@ -40,7 +40,8 @@ define( function( require ) {
   function ParallelSystemNode( system, viewProperties, options ) {
 
     options = _.extend( {
-      unitDisplacementLength: 1
+      loops: 6, // {number} number of loops in the spring coils
+      unitDisplacementLength: 1 // {number} view length of 1 meter of displacement
     }, options );
 
     // to improve readability
@@ -65,7 +66,7 @@ define( function( require ) {
 
     var topSpringNode = new HookesLawSpringNode( topSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      loops: 6,
+      loops: options.loops,
       frontColor: HookesLawColors.TOP_SPRING_FRONT,
       middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
       backColor: HookesLawColors.TOP_SPRING_BACK,
@@ -75,7 +76,7 @@ define( function( require ) {
 
     var bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      loops: 6,
+      loops: options.loops,
       frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
       middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
       backColor: HookesLawColors.BOTTOM_SPRING_BACK,
