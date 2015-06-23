@@ -15,6 +15,7 @@ Programmatically create icons for 1|2 and parallel|series radio buttons
 Draw robotic hinge programmatically?
 QA credits
 schedule code review
+TODO items in code
 
 -----------------------------------------------------------------------------------
 Common Code

@@ -30,6 +30,7 @@ define( function( require ) {
    */
   function IntroductionSpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
+    //TODO this looks odd
     options = _.extend( {
       number: 1
     }, _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options ) );
