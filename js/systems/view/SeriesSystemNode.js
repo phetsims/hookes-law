@@ -59,7 +59,7 @@ define( function( require ) {
 
     var leftSpringNode = new SpringNode( leftSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      numberOfCoils: 6,
+      numberOfCoils: HookesLawConstants.SERIES_SPRINGS_LOOPS,
       stroke: HookesLawColors.LEFT_SPRING,
       left: options.unitDisplacementLength * leftSpring.leftProperty.get(),
       centerY: yOrigin
@@ -67,7 +67,7 @@ define( function( require ) {
 
     var rightSpringNode = new SpringNode( rightSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      numberOfCoils: 6,
+      numberOfCoils: HookesLawConstants.SERIES_SPRINGS_LOOPS,
       stroke: HookesLawColors.RIGHT_SPRING,
       // left is based on rightSpring.leftProperty
       centerY: yOrigin

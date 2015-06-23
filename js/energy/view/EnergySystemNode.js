@@ -59,6 +59,7 @@ define( function( require ) {
       frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
       middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
       backColor: HookesLawColors.SINGLE_SPRING_BACK,
+      loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
       left: options.unitDisplacementLength * spring.leftProperty.get(),
       centerY: yOrigin
