@@ -15,13 +15,13 @@ define( function( require ) {
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SeriesSpringControls = require( 'HOOKES_LAW/systems/view/SeriesSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
-  var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -57,18 +57,25 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var leftSpringNode = new SpringNode( leftSpring, {
+    var leftSpringNode = new HookesLawSpringNode( leftSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      numberOfCoils: HookesLawConstants.SERIES_SPRINGS_LOOPS,
-      stroke: HookesLawColors.LEFT_SPRING,
+      loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
+      frontColor: HookesLawColors.LEFT_SPRING_FRONT,
+      middleColor: HookesLawColors.LEFT_SPRING_MIDDLE,
+      backColor: HookesLawColors.LEFT_SPRING_BACK,
       left: options.unitDisplacementLength * leftSpring.leftProperty.get(),
       centerY: yOrigin
     } );
 
-    var rightSpringNode = new SpringNode( rightSpring, {
+    //XXX
+    var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+    var rightSpringNodeXXX = new Rectangle( 0, 0, 200, 100, { fill: HookesLawColors.RIGHT_SPRING_MIDDLE } );
+    var rightSpringNode = new HookesLawSpringNode( rightSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      numberOfCoils: HookesLawConstants.SERIES_SPRINGS_LOOPS,
-      stroke: HookesLawColors.RIGHT_SPRING,
+      loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
+      frontColor: HookesLawColors.RIGHT_SPRING_FRONT,
+      middleColor: HookesLawColors.RIGHT_SPRING_MIDDLE,
+      backColor: HookesLawColors.RIGHT_SPRING_BACK,
       // left is based on rightSpring.leftProperty
       centerY: yOrigin
     } );
