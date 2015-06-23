@@ -13,15 +13,17 @@ define( function( require ) {
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   // constants
-  var SPRING0_FRONT = new Color( 150, 150, 255 );
   var SPRING0_MIDDLE = new Color( 0, 0, 255 );
+  var SPRING0_FRONT = new Color( 150, 150, 255 );
   var SPRING0_BACK = new Color( 0, 0, 200 );
-  var SPRING1_FRONT = new Color( '#6D00FF' );
+
   var SPRING1_MIDDLE = new Color( '#6D00FF' );
-  var SPRING1_BACK = new Color( '#6D00FF' );
-  var SPRING2_FRONT= new Color( '#FFBF00' );
-  var SPRING2_MIDDLE = new Color( '#FFBF00' );
-  var SPRING2_BACK = new Color( '#FFBF00' );
+  var SPRING1_FRONT = SPRING1_MIDDLE.colorUtilsBrighter( 0.5 );
+  var SPRING1_BACK = SPRING1_MIDDLE.colorUtilsDarker( 0.15 );
+
+  var SPRING2_MIDDLE= new Color( '#FFBF00' );
+  var SPRING2_FRONT = SPRING2_MIDDLE.colorUtilsBrighter( 0.5 );
+  var SPRING2_BACK = SPRING2_MIDDLE.colorUtilsDarker( 0.15 );
 
   return {
 

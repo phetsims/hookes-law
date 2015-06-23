@@ -10,7 +10,6 @@ Screen icons
 Implementation
 -----------------------------------------------------------------------------------
 
-Define gradient colors for series and parallel systems
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1/2 and series/parallel radio buttons
 If performance issues, only update graphs and vectors when visible.
