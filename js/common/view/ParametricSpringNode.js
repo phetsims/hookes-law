@@ -45,8 +45,8 @@ define( function( require ) {
       rightEndLength: 25
     }, options );
 
-    var backPath = new Path( null, { lineCap: options.lineCap } );
     var frontPath = new Path( null, { lineCap: options.lineCap } );
+    var backPath = new Path( null, { lineCap: options.lineCap } );
 
     // Update the line width
     propertySet.lineWidthProperty.link( function( lineWidth ) {
@@ -73,10 +73,10 @@ define( function( require ) {
           points.push( new Vector2( xCoordinate, yCoordinate ) );
         }
 
-        frontPath.shape = new Shape();
-        backPath.shape = new Shape();
-        frontPath.shape.moveToPoint( points[ 0 ] );
-        backPath.shape.moveToPoint( points[ 0 ] );
+        var frontShape = new Shape();
+        var backShape = new Shape();
+        frontShape.moveToPoint( points[ 0 ] );
+        backShape.moveToPoint( points[ 0 ] );
         var wasFront = true; // was the previous point on the front path?
         for ( index = 0; index < numberOfPoints; index++ ) {
 
@@ -86,10 +86,10 @@ define( function( require ) {
           // horizontal line at left end
           if ( index === 0 ) {
             if ( isFront ) {
-              frontPath.shape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
+              frontShape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
             }
             else {
-              backPath.shape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
+              backShape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
             }
           }
 
@@ -97,17 +97,17 @@ define( function( require ) {
             // we're in the front
             if ( !wasFront && index !== 0 ) {
               // ... and we've just moved to the front
-              frontPath.shape.moveToPoint( points[ index - 1 ] );
+              frontShape.moveToPoint( points[ index - 1 ] );
             }
-            frontPath.shape.lineToPoint( points[ index ] );
+            frontShape.lineToPoint( points[ index ] );
           }
           else {
             // we're in the back
             if ( wasFront && index !== 0 ) {
               // ... and we've just moved to the back
-              backPath.shape.moveToPoint( points[ index - 1 ] );
+              backShape.moveToPoint( points[ index - 1 ] );
             }
-            backPath.shape.lineToPoint( points[ index ] );
+            backShape.lineToPoint( points[ index ] );
           }
 
           wasFront = isFront;
@@ -115,11 +115,14 @@ define( function( require ) {
 
         // horizontal line at right end
         if ( wasFront ) {
-          frontPath.shape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
+          frontShape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
         }
         else {
-          backPath.shape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
+          backShape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
         }
+
+        frontPath.shape = frontShape;
+        backPath.shape = backShape;
       } );
 
     // Update the stroke gradients
