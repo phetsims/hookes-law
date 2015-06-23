@@ -62,9 +62,9 @@ define( function( require ) {
     ENERGY_Y_AXIS_LENGTH: 250,
 
     // number of loops in the spring coil for various systems
-    SINGLE_SPRING_LOOPS: 10,
-    SERIES_SPRINGS_LOOPS: 6,
-    PARALLEL_SPRINGS_LOOPS: 6,
+    SINGLE_SPRING_LOOPS: 12,
+    SERIES_SPRINGS_LOOPS: 8,
+    PARALLEL_SPRINGS_LOOPS: 8,
 
     // options
     CHECK_BOX_OPTIONS: {
