@@ -16,6 +16,7 @@ define( function( require ) {
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParallelSpringControls = require( 'HOOKES_LAW/systems/view/ParallelSpringControls' );
@@ -24,7 +25,6 @@ define( function( require ) {
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var Shape = require( 'KITE/Shape' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
-  var SpringNode = require( 'HOOKES_LAW/common/view/SpringNode' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -63,18 +63,22 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var topSpringNode = new SpringNode( topSpring, {
+    var topSpringNode = new HookesLawSpringNode( topSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      numberOfCoils: 6,
-      stroke: HookesLawColors.TOP_SPRING,
+      loops: 6,
+      frontColor: HookesLawColors.TOP_SPRING,
+      //TODO middleColor: XXX,
+      //TODO bottomColor: XXX,
       left: options.unitDisplacementLength * topSpring.leftProperty.get(),
       centerY: wallNode.top + ( 0.25 * wallNode.height )
     } );
 
-    var bottomSpringNode = new SpringNode( bottomSpring, {
+    var bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      numberOfCoils: 6,
-      stroke: HookesLawColors.BOTTOM_SPRING,
+      loops: 6,
+      frontColor: HookesLawColors.BOTTOM_SPRING,
+      //TODO middleColor: XXX,
+      //TODO bottomColor: XXX,
       left: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
       centerY: wallNode.bottom - ( 0.25 * wallNode.height )
     } );

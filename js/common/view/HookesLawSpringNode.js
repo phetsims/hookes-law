@@ -21,6 +21,7 @@ define( function( require ) {
   function HookesLawSpringNode( spring, options ) {
 
     options = _.extend( {
+      loops: 10, // {number} number of loops in the coil
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
       minLineWidth: 1, // {number} lineWidth used to stroke the spring for minimum spring constant
       deltaLineWidth: 0.005, // increase in line width per 1 unit of spring constant increase
@@ -28,7 +29,10 @@ define( function( require ) {
       rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
     }, options );
 
-    var propertySet = new ParametricSpring(); // view-specific properties that control the look of ParametricSpringNode
+    // view-specific properties that control the look of ParametricSpringNode
+    var propertySet = new ParametricSpring( {
+      loops: options.loops
+    } );
     ParametricSpringNode.call( this, propertySet, options );
 
     // stretch the spring
