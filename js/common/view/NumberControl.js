@@ -68,7 +68,8 @@ define( function( require ) {
     var arrowButtonOptions = {
       delta: options.delta,
       startCallback: options.startCallback,
-      endCallback: options.endCallback
+      endCallback: options.endCallback,
+      scale: 0.85
     };
 
     var leftArrowButton = new ArrowButton( 'left', function() {
