@@ -13,6 +13,9 @@ Implementation
 -----------------------------------------------------------------------------------
 
 Screen icons
+Intro icon: as is, blue spring
+Systems: as is, purple and orange springs
+Different background color for scene selection radio buttons
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1|2 and parallel|series radio buttons
 Draw robotic hinge programmatically?
