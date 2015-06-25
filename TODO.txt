@@ -4,7 +4,6 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
-Screen icons
 Look of box that arm comes out of
 Look of wall that spring attaches to
 
@@ -12,15 +11,13 @@ Look of wall that spring attaches to
 Implementation
 -----------------------------------------------------------------------------------
 
-Screen icons
 Intro icon: as is, blue spring
 Systems: as is, purple and orange springs
-Different background color for scene selection radio buttons
+Energy: as is, exaggerated bar graph
+Different background color for scene selection radio buttons ('yellow'? something that pops)
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1|2 and parallel|series radio buttons
-Draw robotic hinge programmatically?
 QA credits
-schedule code review
 TODO items in code
 
 -----------------------------------------------------------------------------------
@@ -28,8 +25,6 @@ Common Code
 -----------------------------------------------------------------------------------
 
 LineArrowNode -> scenery-phet
-? NumberControl -> scenery-phet
-? NumberDisplay -> scenery-phet
 ParametricSpringNode -> scenery-phet
 
 
