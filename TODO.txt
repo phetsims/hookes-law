@@ -5,6 +5,8 @@ Design questions
 -----------------------------------------------------------------------------------
 
 Screen icons
+Look of box that arm comes out of
+Look of wall that spring attaches to
 
 -----------------------------------------------------------------------------------
 Implementation
