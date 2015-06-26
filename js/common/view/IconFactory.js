@@ -167,6 +167,23 @@ define( function( require ) {
     },
 
     /**
+     * @param {Object} [options]
+     * @returns {*}
+     */
+    createVectorIcon: function( options ) {
+
+      options = _.extend( {
+        length: 30, // {number}
+        fill: 'white', // {Color|string}
+        headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
+        headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
+        tailWidth: 10
+      }, options );
+
+      return new ArrowNode( 0, 0, options.length, 0, options );
+    },
+
+    /**
      * Creates the content for a vector check box, consisting of text and an arrow.
      *
      * @param {Node} textNode - text, positioned to the left of the vector
@@ -220,23 +237,6 @@ define( function( require ) {
         centerY: textNode.centerY
       } );
       return new Node( { children: [ textNode, lineNode ] } );
-    },
-
-    /**
-     * @param {Object} [options]
-     * @returns {*}
-     */
-    createVectorIcon: function( options ) {
-
-      options = _.extend( {
-        length: 30, // {number}
-        fill: 'white', // {Color|string}
-        headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
-        headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
-        tailWidth: 10
-      }, options );
-
-      return new ArrowNode( 0, 0, options.length, 0, options );
     }
   };
 } );
