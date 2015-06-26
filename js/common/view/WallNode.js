@@ -21,8 +21,8 @@ define( function( require ) {
   function WallNode( size, options ) {
 
     options = _.extend( {
-      fill: HookesLawColors.WALL,
-      stroke: 'black',
+      fill: HookesLawColors.WALL_FILL,
+      stroke: HookesLawColors.WALL_STROKE,
       lineWidth: 0.5
     }, options );
 

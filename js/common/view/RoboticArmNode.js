@@ -54,8 +54,8 @@ define( function( require ) {
 
     // origin is at left-center of box
     var boxNode = new Rectangle( 0, 0, 25, 60, {
-      fill: HookesLawColors.ROBOTIC_ANCHOR,
-      stroke: 'black',
+      fill: HookesLawColors.ROBOTIC_ANCHOR_FILL,
+      stroke: HookesLawColors.ROBOTIC_ANCHOR_STROKE,
       lineWidth: 0.5,
       left: 0,
       centerY: 0
@@ -63,13 +63,12 @@ define( function( require ) {
 
     // arm will be sized and positioned by Property observer
     var armNode = new Rectangle( 0, 0, 1, 0, {
-      fill: HookesLawColors.ROBOTIC_ARM,
-      stroke: 'black',
+      fill: HookesLawColors.ROBOTIC_ARM_FILL,
+      stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
       lineWidth: 0.5
     } );
 
     // top pincer, closed and open configurations
-    var PINCER_OVERLAP = 2;
     var topPincerClosedNode = createTopPincerClosed( {
       stroke: PINCER_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
@@ -191,8 +190,8 @@ define( function( require ) {
       } );
 
       var armNode = new Rectangle( 0, 0, 20, ARM_HEIGHT, {
-        fill: HookesLawColors.ROBOTIC_ARM,
-        stroke: 'black',
+        fill: HookesLawColors.ROBOTIC_ARM_FILL,
+        stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
         lineWidth: 0.5,
         left: hingeNode.right - 5,
         centerY: hingeNode.centerY
