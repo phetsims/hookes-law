@@ -25,7 +25,6 @@ define( function( require ) {
 
   // constants
   var PINCER_RADIUS = 35;
-  var PINCER_STROKE = 'black';
   var PINCER_LINE_WIDTH = 6;
   var PINCER_OVERLAP = 2;
   var ARM_HEIGHT = 16;
@@ -70,13 +69,13 @@ define( function( require ) {
 
     // top pincer, closed and open configurations
     var topPincerClosedNode = createTopPincerClosed( {
-      stroke: PINCER_STROKE,
+      stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
       bottom: PINCER_OVERLAP
     } );
     var topPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 ), {
-      stroke: PINCER_STROKE,
+      stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       right: topPincerClosedNode.right,
       bottom: 0
@@ -84,13 +83,13 @@ define( function( require ) {
 
     // bottom pincer, closed and open configurations
     var bottomPincerClosedNode = createBottomPincerClosed( {
-      stroke: PINCER_STROKE,
+      stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
       top: -PINCER_OVERLAP
     } );
     var bottomPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true ), {
-      stroke: PINCER_STROKE,
+      stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       right: bottomPincerClosedNode.right,
       top: 0
@@ -172,13 +171,13 @@ define( function( require ) {
     createIcon: function( options ) {
 
       var topPincerNode = createTopPincerClosed( {
-        stroke: PINCER_STROKE,
+        stroke: HookesLawColors.PINCERS_STROKE,
         lineWidth: PINCER_LINE_WIDTH,
         bottom: PINCER_OVERLAP
       } );
 
       var bottomPincerNode = createBottomPincerClosed( {
-        stroke: PINCER_STROKE,
+        stroke: HookesLawColors.PINCERS_STROKE,
         lineWidth: PINCER_LINE_WIDTH,
         top: -PINCER_OVERLAP
       } );

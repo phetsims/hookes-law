@@ -66,6 +66,7 @@ define( function( require ) {
     ROBOTIC_ARM_STROKE: 'black',
     ROBOTIC_ANCHOR_FILL: new Color( 210, 210, 210 ),
     ROBOTIC_ANCHOR_STROKE: 'black',
+    PINCERS_STROKE: 'black',
 
     // wall that springs connect to
     WALL_FILL: new Color( 210, 210, 210 ),
