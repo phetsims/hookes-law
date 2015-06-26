@@ -12,18 +12,20 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
-  // constants
-  var SPRING0_MIDDLE = new Color( 0, 0, 255 );
+  // colors for the spring in single-spring systems
   var SPRING0_FRONT = new Color( 150, 150, 255 );
+  var SPRING0_MIDDLE = new Color( 0, 0, 255 ); // the dominant color
   var SPRING0_BACK = new Color( 0, 0, 200 );
 
-  var SPRING1_MIDDLE = new Color( '#6D00FF' );
-  var SPRING1_FRONT = SPRING1_MIDDLE.colorUtilsBrighter( 0.5 );
-  var SPRING1_BACK = SPRING1_MIDDLE.colorUtilsDarker( 0.15 );
+  // colors to the first spring (top, left) in 2-spring systems
+  var SPRING1_FRONT = new Color( 182, 127, 255 );
+  var SPRING1_MIDDLE = new Color( 109, 0, 255 ); // the dominant color
+  var SPRING1_BACK = new Color( 93, 0, 217 );
 
-  var SPRING2_MIDDLE= new Color( '#FFBF00' );
-  var SPRING2_FRONT = SPRING2_MIDDLE.colorUtilsBrighter( 0.5 );
-  var SPRING2_BACK = SPRING2_MIDDLE.colorUtilsDarker( 0.15 );
+  // colors for the second spring (bottom, right) in 2-spring systems
+  var SPRING2_FRONT = new Color( 255, 223, 127 );
+  var SPRING2_MIDDLE = new Color( 255, 191, 0 ); // the dominant color
+  var SPRING2_BACK = new Color( 217, 163, 0 );
 
   return {
 
