@@ -28,16 +28,23 @@ define( function( require ) {
   // strings
   var equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
 
-  // constants
+  // PropertySet used by all functions that create a ParametricSpringNode
   var SPRING_PROPERTY_SET = ParametricSpringNode.createPropertySet( {
     loops: 3,
     lineWidth: 5
   } );
 
+  // Spring options for all icons related to scene selection
+  var SCENE_SELECTION_SPRING_OPTIONS = {
+    frontColor: 'rgb( 100, 100, 100 )',
+    middleColor: 'rgb( 50, 50, 50 )',
+    backColor: 'black',
+    scale: 0.35
+  };
+
   //TODO copied from graphing-lines.IconFactory, move to common code?
   /**
-   * Creates a screen icon, all of which have the same rectangular background.
-   * This was factored out because at various times one or more screen icons were created programmatically.
+   * Creates a screen icon by putting a node on a properly-sized rectangular background.
    *
    * @param {Node} contentNode the node to be placed on a background
    * @param {Object} [options]
@@ -237,6 +244,67 @@ define( function( require ) {
         centerY: textNode.centerY
       } );
       return new Node( { children: [ textNode, lineNode ] } );
+    },
+
+    /**
+     * Creates the icon for selecting the single-spring scene on the "Intro" screen.
+     * @returns {Node}
+     */
+    createSingleSpringIcon: function() {
+      return new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+    },
+
+    /**
+     * Creates the icon for selecting the 2-spring scene on the "Intro" screen.
+     * @returns {Node}
+     */
+    createTwoSpringsIcon: function() {
+      return new VBox( _.extend( {
+        spacing: 10,
+        children: [
+          new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS ),
+          new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS )
+        ]
+      } ) );
+    },
+
+    /**
+     * Creates the icon for selecting the series system on the "Systems" screen.
+     * @returns {Node}
+     */
+    createSeriesSystemIcon: function() {
+      var leftSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+      var rightSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+      rightSpringNode.left = leftSpringNode.right;
+      var verticalLineNode = new Line( 0, 0, 0, 1.2 * leftSpringNode.height, {
+        stroke: 'black',
+        lineWidth: 4
+      } );
+      return new HBox( {
+        spacing: 0,
+        children: [ verticalLineNode, leftSpringNode, rightSpringNode ]
+      } );
+    },
+
+    /**
+     * Creates the icon for selecting the parallel system on the "Systems" screen.
+     * @returns {Node}
+     */
+    createParallelSystemIcon: function() {
+      var topSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+      var bottomSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+      var springsBox = new VBox( {
+        spacing: 10,
+        children: [ topSpringNode, bottomSpringNode ]
+      } );
+      var verticalLineNode = new Line( 0, 0, 0, springsBox.height, {
+        stroke: 'black',
+        lineWidth: 4
+      } );
+      return new HBox( {
+        spacing: 0,
+        children: [ verticalLineNode, springsBox ]
+      } );
     }
   };
 } );

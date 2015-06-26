@@ -12,7 +12,6 @@ Color for scene selection buttons
 Implementation
 -----------------------------------------------------------------------------------
 
-Programmatically create icons for 1|2 and parallel|series radio buttons
 Add a big nub on the end of the spring grabbable by pincers
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 QA credits

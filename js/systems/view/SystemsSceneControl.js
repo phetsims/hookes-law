@@ -10,13 +10,9 @@ define( function( require ) {
 
   // modules
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
-  var Image = require( 'SCENERY/nodes/Image' );
+  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
-
-  // images
-  var parallelIcon = require( 'image!HOOKES_LAW/parallel-spring-scene.png' );
-  var seriesIcon = require( 'image!HOOKES_LAW/series-spring-scene.png' );
 
   /**
    * @param {Property.<string>} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
@@ -26,19 +22,18 @@ define( function( require ) {
   function SystemsSceneControl( seriesParallelProperty, options ) {
 
     options = _.extend( {
-      scale: 0.4, //TODO scale image files?
       orientation: 'horizontal',
-      spacing: 20,
+      spacing: 10,
       buttonContentXMargin: 10,
-      buttonContentYMargin: 10,
+      buttonContentYMargin: 5,
       deselectedButtonOpacity: 0.6,
       deselectedContentOpacity: 0.6,
       baseColor: HookesLawQueryParameters.SCENE_SELECTION_COLOR
     }, options );
 
     RadioButtonGroup.call( this, seriesParallelProperty, [
-      { value: 'parallel', node: new Image( parallelIcon ) },
-      { value: 'series', node: new Image( seriesIcon ) }
+      { value: 'parallel', node: IconFactory.createParallelSystemIcon() },
+      { value: 'series', node: IconFactory.createSeriesSystemIcon() }
     ], options );
   }
 

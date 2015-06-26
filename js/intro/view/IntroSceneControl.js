@@ -10,13 +10,9 @@ define( function( require ) {
 
   // modules
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
-  var Image = require( 'SCENERY/nodes/Image' );
+  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
-
-  // images
-  var singleSpringIcon = require( 'image!HOOKES_LAW/single-spring-scene.png' );
-  var twoSpringIcon = require( 'image!HOOKES_LAW/two-spring-scene.png' );
 
   /**
    * @param {Property.<number>} numberOfSystemsProperty
@@ -26,19 +22,18 @@ define( function( require ) {
   function IntroSceneControl( numberOfSystemsProperty, options ) {
 
     options = _.extend( {
-      scale: 0.4, //TODO scale image files?
       orientation: 'horizontal',
-      spacing: 20,
-      buttonContentXMargin: 10,
-      buttonContentYMargin: 10,
+      spacing: 10,
+      buttonContentXMargin: 20,
+      buttonContentYMargin: 5,
       deselectedButtonOpacity: 0.6,
       deselectedContentOpacity: 0.6,
       baseColor: HookesLawQueryParameters.SCENE_SELECTION_COLOR
     }, options );
 
     RadioButtonGroup.call( this, numberOfSystemsProperty, [
-      { value: 1, node: new Image( singleSpringIcon ) },
-      { value: 2, node: new Image( twoSpringIcon ) }
+      { value: 1, node: IconFactory.createSingleSpringIcon() },
+      { value: 2, node: IconFactory.createTwoSpringsIcon() }
     ], options );
   }
 
