@@ -12,7 +12,6 @@ Color for scene selection buttons
 Implementation
 -----------------------------------------------------------------------------------
 
-Add a big nub on the end of the spring grabbable by pincers
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 QA credits
 TODO items in code

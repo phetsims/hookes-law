@@ -18,8 +18,10 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var IntroSpringControls = require( 'HOOKES_LAW/intro/view/IntroSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
@@ -67,6 +69,13 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
+    // pincers grab this
+    var nibNode = new NibNode( {
+      fill: HookesLawColors.SINGLE_SPRING_MIDDLE,
+      // x is based on rightSpring.leftProperty
+      centerY: yOrigin
+    } );
+
     var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
@@ -105,7 +114,7 @@ define( function( require ) {
     } );
 
     options.children = [
-      wallNode, equilibriumPositionNode, roboticArmNode, springNode,
+      wallNode, equilibriumPositionNode, roboticArmNode, springNode, nibNode,
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
       springControls
     ];
@@ -120,7 +129,7 @@ define( function( require ) {
 
     // Position the force vectors at the right end of the spring.
     spring.rightProperty.link( function( right ) {
-      appliedForceVectorNode.x = springForceVectorNode.x = ( options.unitDisplacementLength * right );
+      appliedForceVectorNode.x = springForceVectorNode.x = nibNode.x = ( options.unitDisplacementLength * right );
     } );
 
     // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.

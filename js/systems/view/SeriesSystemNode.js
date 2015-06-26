@@ -17,6 +17,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
@@ -74,6 +75,13 @@ define( function( require ) {
       middleColor: HookesLawColors.RIGHT_SPRING_MIDDLE,
       backColor: HookesLawColors.RIGHT_SPRING_BACK,
       // left is based on rightSpring.leftProperty
+      centerY: yOrigin
+    } );
+
+    // pincers grab this
+    var nibNode = new NibNode( {
+      fill: HookesLawColors.RIGHT_SPRING_MIDDLE,
+      // x is based on rightSpring.leftProperty
       centerY: yOrigin
     } );
 
@@ -135,7 +143,7 @@ define( function( require ) {
     } );
 
     options.children = [
-      wallNode, equilibriumPositionNode, roboticArmNode, leftSpringNode, rightSpringNode,
+      wallNode, equilibriumPositionNode, roboticArmNode, leftSpringNode, rightSpringNode, nibNode,
       leftSpringForceVectorNode, leftAppliedForceVectorNode, rightSpringForceVectorNode,
       appliedForceVectorNode, totalSpringForceVectorNode, displacementVectorNode,
       springControls
@@ -150,7 +158,7 @@ define( function( require ) {
 
     // move the right spring
     rightSpring.leftProperty.link( function( left ) {
-      rightSpringNode.left = options.unitDisplacementLength * left;
+      rightSpringNode.left = ( options.unitDisplacementLength * left );
     } );
 
     // switch between different spring force representations
@@ -171,7 +179,7 @@ define( function( require ) {
       leftSpringForceVectorNode.x = leftAppliedForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
     rightSpring.rightProperty.link( function( right ) {
-      rightSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
+      rightSpringForceVectorNode.x = nibNode.x = ( options.unitDisplacementLength * right );
     } );
 
     // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.

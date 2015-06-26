@@ -18,6 +18,8 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Line = require( 'SCENERY/nodes/Line' );
+  var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParallelSpringControls = require( 'HOOKES_LAW/systems/view/ParallelSpringControls' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -91,16 +93,16 @@ define( function( require ) {
 
     // right ends of both springs are connected to this
     var trussOverlap = 10;
-    var trussShape = new Shape()
-      // vertical line
-      .moveTo( 0, topSpringNode.centerY - trussOverlap )
-      .lineTo( 0, bottomSpringNode.centerY + trussOverlap )
-      // horizontal line
-      .moveTo( 0, 0 )
-      .lineTo( 10, 0 );
-    var trussNode = new Path( trussShape, {
-      lineWidth: 3,
+    var trussNode = new Line( 0, topSpringNode.centerY - trussOverlap, 0, bottomSpringNode.centerY + trussOverlap, {
+      lineWidth: 4,
       stroke: 'black'
+    } );
+
+    // pincers grab this
+    var nibNode = new NibNode( {
+      fill: 'black',
+      // x is based on rightSpring.leftProperty
+      centerY: yOrigin
     } );
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
@@ -150,7 +152,7 @@ define( function( require ) {
     } );
 
     options.children = [
-      wallNode, equilibriumPositionNode, roboticArmNode, topSpringNode, bottomSpringNode, trussNode,
+      wallNode, equilibriumPositionNode, roboticArmNode, topSpringNode, bottomSpringNode, trussNode, nibNode,
       topSpringForceVectorNode, bottomSpringForceVectorNode,
       appliedForceVectorNode, totalSpringForceVectorNode, displacementVectorNode,
       springControls
@@ -175,7 +177,7 @@ define( function( require ) {
 
     // position the vectors and truss
     equivalentSpring.rightProperty.link( function( right ) {
-      trussNode.left = appliedForceVectorNode.x = totalSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
+      trussNode.x = nibNode.x = appliedForceVectorNode.x = totalSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
     topSpring.rightProperty.link( function( right ) {
       topSpringForceVectorNode.x = options.unitDisplacementLength * right;
