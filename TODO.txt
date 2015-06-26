@@ -12,7 +12,6 @@ Color for scene selection buttons
 Implementation
 -----------------------------------------------------------------------------------
 
-Split up number controls into separate panels, like on Energy screen
 Add a big nub on the end of the spring grabbable by pincers
 Intro icon: as is, blue spring
 Systems: as is, purple and orange springs
