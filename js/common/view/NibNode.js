@@ -14,7 +14,11 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
   function NibNode( options ) {
-    Rectangle.call( this, 0, 0, 12, 8, 2, 2, options );
+    options = _.extend( {
+      width: 10,
+      height: 8
+    }, options );
+    Rectangle.call( this, 0, 0, options.width, options.height, 2, 2, options );
   }
 
   return inherit( Rectangle, NibNode );
