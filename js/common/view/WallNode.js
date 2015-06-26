@@ -23,7 +23,9 @@ define( function( require ) {
    */
   function WallNode( size, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      threeD: true //TODO remove this option once we decide whether we like the pseudo-3D look
+    }, options );
 
     var frontNode = new Rectangle( 0, 0, size.width, size.height, {
       fill: HookesLawColors.WALL_FILL,
@@ -43,7 +45,7 @@ define( function( require ) {
       lineWidth: 0.5
     } );
 
-    options.children = [ sideNode, topNode, frontNode ];
+    options.children = options.threeD ? [ sideNode, topNode, frontNode ] : [ frontNode ];
     Node.call( this, options );
   }
 
