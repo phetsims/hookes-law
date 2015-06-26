@@ -39,7 +39,7 @@ define( function( require ) {
     frontColor: 'rgb( 100, 100, 100 )',
     middleColor: 'rgb( 50, 50, 50 )',
     backColor: 'black',
-    scale: 0.35
+    scale: 0.3
   };
 
   //TODO copied from graphing-lines.IconFactory, move to common code?
@@ -276,13 +276,13 @@ define( function( require ) {
       var leftSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
       var rightSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
       rightSpringNode.left = leftSpringNode.right;
-      var verticalLineNode = new Line( 0, 0, 0, 1.2 * leftSpringNode.height, {
+      var wallNode = new Line( 0, 0, 0, 1.2 * leftSpringNode.height, {
         stroke: 'black',
-        lineWidth: 4
+        lineWidth: 2
       } );
       return new HBox( {
         spacing: 0,
-        children: [ verticalLineNode, leftSpringNode, rightSpringNode ]
+        children: [ wallNode, leftSpringNode, rightSpringNode ]
       } );
     },
 
@@ -297,13 +297,13 @@ define( function( require ) {
         spacing: 5,
         children: [ topSpringNode, bottomSpringNode ]
       } );
-      var verticalLineNode = new Line( 0, 0, 0, springsBox.height, {
+      var wallNode = new Line( 0, 0, 0, springsBox.height, {
         stroke: 'black',
-        lineWidth: 4
+        lineWidth: 2
       } );
       return new HBox( {
         spacing: 0,
-        children: [ verticalLineNode, springsBox ]
+        children: [ wallNode, springsBox ]
       } );
     }
   };
