@@ -57,79 +57,6 @@ define( function( require ) {
   return {
 
     /**
-     * Creates the content for a vector check box, consisting of text and an arrow.
-     *
-     * @param {Node} textNode - text, positioned to the left of the vector
-     * @param {Object} [options]
-     * @returns {Node}
-     */
-    createVectorCheckBoxContent: function( textNode, options ) {
-
-      options = _.extend( {
-        maxTextWidth: textNode.width, // width of the max text used to label a vector check box
-        spacing: 10, // {number} space between text and vector
-        arrowLength: 30, // {number}
-        arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
-        arrowType: 'shape', // 'shape' (ArrowNode) or 'line' (LineArrowNode)
-        arrowFill: 'white' // {string|Color}
-      }, options );
-
-      // validate options
-      assert && assert( options.arrowType === 'shape' || options.arrowType === 'line' );
-
-      var arrowNode;
-      if ( options.arrowType === 'shape' ) {
-        arrowNode = this.createVectorIcon( _.extend( { fill: options.arrowFill }, options ) );
-      }
-      else {
-        // options.arrowType === 'line'
-        arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
-          stroke: options.arrowFill,
-          headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
-          headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
-          headLineWidth: 3,
-          tailLineWidth: 3
-        } );
-      }
-      // text - space - vector
-      return new HBox( {
-        children: [ textNode, arrowNode ],
-        spacing: options.spacing
-      } );
-    },
-
-    /**
-     * Creates the icon for the equilibrium position check box, consisting of text and a vertical line.
-     *
-     * @returns {Node}
-     */
-    createEquilibriumPositionCheckBoxContent: function() {
-      var textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
-      var lineNode = new EquilibriumPositionNode( textNode.height, {
-        left: textNode.right + 8,
-        centerY: textNode.centerY
-      } );
-      return new Node( { children: [ textNode, lineNode ] } );
-    },
-
-    /**
-     * @param {Object} [options]
-     * @returns {*}
-     */
-    createVectorIcon: function( options ) {
-
-      options = _.extend( {
-        length: 30, // {number}
-        fill: 'white', // {Color|string}
-        headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
-        headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
-        tailWidth: 10
-      }, options );
-
-      return new ArrowNode( 0, 0, options.length, 0, options );
-    },
-
-    /**
      * Creates the icon for the "Intro" screen, a single spring pulled by a robotic arm.
      * @returns {Node}
      */
@@ -237,6 +164,79 @@ define( function( require ) {
       var contentNode = new Node( { children: [ barNode, yAxisNode ] } );
 
       return createScreenIcon( contentNode );
+    },
+
+    /**
+     * Creates the content for a vector check box, consisting of text and an arrow.
+     *
+     * @param {Node} textNode - text, positioned to the left of the vector
+     * @param {Object} [options]
+     * @returns {Node}
+     */
+    createVectorCheckBoxContent: function( textNode, options ) {
+
+      options = _.extend( {
+        maxTextWidth: textNode.width, // width of the max text used to label a vector check box
+        spacing: 10, // {number} space between text and vector
+        arrowLength: 30, // {number}
+        arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
+        arrowType: 'shape', // 'shape' (ArrowNode) or 'line' (LineArrowNode)
+        arrowFill: 'white' // {string|Color}
+      }, options );
+
+      // validate options
+      assert && assert( options.arrowType === 'shape' || options.arrowType === 'line' );
+
+      var arrowNode;
+      if ( options.arrowType === 'shape' ) {
+        arrowNode = this.createVectorIcon( _.extend( { fill: options.arrowFill }, options ) );
+      }
+      else {
+        // options.arrowType === 'line'
+        arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
+          stroke: options.arrowFill,
+          headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
+          headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
+          headLineWidth: 3,
+          tailLineWidth: 3
+        } );
+      }
+      // text - space - vector
+      return new HBox( {
+        children: [ textNode, arrowNode ],
+        spacing: options.spacing
+      } );
+    },
+
+    /**
+     * Creates the icon for the equilibrium position check box, consisting of text and a vertical line.
+     *
+     * @returns {Node}
+     */
+    createEquilibriumPositionCheckBoxContent: function() {
+      var textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
+      var lineNode = new EquilibriumPositionNode( textNode.height, {
+        left: textNode.right + 8,
+        centerY: textNode.centerY
+      } );
+      return new Node( { children: [ textNode, lineNode ] } );
+    },
+
+    /**
+     * @param {Object} [options]
+     * @returns {*}
+     */
+    createVectorIcon: function( options ) {
+
+      options = _.extend( {
+        length: 30, // {number}
+        fill: 'white', // {Color|string}
+        headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
+        headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
+        tailWidth: 10
+      }, options );
+
+      return new ArrowNode( 0, 0, options.length, 0, options );
     }
   };
 } );
