@@ -1,4 +1,3 @@
-energy-screen.png source=PhET
 introduction-screen.png source=PhET
 parallel-spring-scene.png source=PhET author=Amy Rouinfar
 robotic-arm-hinge.png source=PhET author=Mariah Hermsmeyer

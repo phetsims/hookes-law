@@ -12,14 +12,43 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var Screen = require( 'JOIST/Screen' );
   var Text = require( 'SCENERY/nodes/Text' );
 
   // strings
   var equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
+
+  //TODO copied from graphing-lines.IconFactory, move to common code?
+  /**
+   * Creates a screen icon, all of which have the same rectangular background.
+   * This was factored out because at various times one or more screen icons were created programmatically.
+   *
+   * @param {Node} contentNode the node to be placed on a background
+   * @param {Object} [options]
+   * @returns {Node}
+   */
+  var createScreenIcon = function( contentNode, options ) {
+
+    options = _.extend( {
+      size: Screen.HOME_SCREEN_ICON_SIZE,
+      xScaleFactor: 0.85,
+      yScaleFactor: 0.85,
+      fill: 'white'
+    }, options );
+
+    var background = new Rectangle( 0, 0, options.size.width, options.size.height, { fill: options.fill } );
+
+    contentNode.setScaleMagnitude( Math.min( options.xScaleFactor * background.width / contentNode.width, options.yScaleFactor * background.height / contentNode.height ) );
+    contentNode.center = background.center;
+
+    return new Node( { children: [ background, contentNode ], pickable: false } );
+  };
 
   return {
 
@@ -94,6 +123,28 @@ define( function( require ) {
       }, options );
 
       return new ArrowNode( 0, 0, options.length, 0, options );
+    },
+
+    /**
+     * Creates the icon for the "Energy" screen.
+     */
+    createEnergyScreenIcon: function() {
+
+      var yAxisNode = new ArrowNode( 0, 0, 0, -100, {
+        headHeight: 25,
+        headWidth: 25,
+        tailWidth: 5
+      } );
+
+      var barNode = new Rectangle( 0, 0, 30, 100, {
+        fill: HookesLawColors.ENERGY,
+        left: yAxisNode.right + 10,
+        bottom: yAxisNode.bottom
+      } );
+
+      var contentNode = new Node( { children: [ barNode, yAxisNode ] } );
+
+      return createScreenIcon( contentNode );
     }
   };
 } );

@@ -11,15 +11,12 @@ define( function( require ) {
   // modules
   var EnergyModel = require( 'HOOKES_LAW/energy/model/EnergyModel' );
   var EnergyView = require( 'HOOKES_LAW/energy/view/EnergyView' );
-  var Image = require( 'SCENERY/nodes/Image' );
+  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Screen = require( 'JOIST/Screen' );
 
   // strings
   var energyString = require( 'string!HOOKES_LAW/energy' );
-
-  // images
-  var energyScreenImage = require( 'image!HOOKES_LAW/energy-screen.png' );
 
   /**
    * @constructor
@@ -27,7 +24,7 @@ define( function( require ) {
   function EnergyScreen() {
     Screen.call( this,
       energyString,
-      new Image( energyScreenImage ),
+      IconFactory.createEnergyScreenIcon(),
       function() { return new EnergyModel(); },
       function( model ) { return new EnergyView( model ); },
       { backgroundColor: 'white' }
