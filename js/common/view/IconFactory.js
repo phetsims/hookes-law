@@ -17,6 +17,7 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
+  var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
@@ -82,13 +83,20 @@ define( function( require ) {
         backColor: HookesLawColors.SINGLE_SPRING_BACK
       } );
 
+      // piece that pincers grab
+      var nibNode = new NibNode( {
+        fill: HookesLawColors.SINGLE_SPRING_MIDDLE,
+        x: springNode.right,
+        centerY: springNode.centerY
+      } );
+
       // robotic arm
       var armNode = RoboticArmNode.createIcon( {
         left: springNode.right,
         centerY: springNode.centerY
       } );
 
-      var contentNode = new Node( { children: [ armNode, springNode ] } );
+      var contentNode = new Node( { children: [ armNode, springNode, nibNode ] } );
 
       return createScreenIcon( contentNode );
     },
@@ -119,15 +127,14 @@ define( function( require ) {
       var verticalLineNode = new Line( 0, 0, 0, 0.65 * springsBox.height, {
         stroke: 'black',
         lineWidth: 3,
-        left: springsBox.right,
+        x: springsBox.right,
         centerY: springsBox.centerY
       } );
 
-      // horizontal line that the pincers grab
-      var horizontalLineNode = new Line( 0, 0, 10, 0, {
-        stroke: 'black',
-        lineWidth: 3,
-        left: verticalLineNode.right,
+     // piece that pincers grab
+      var nibNode = new NibNode( {
+        fill: 'black',
+        x: verticalLineNode.x,
         centerY: verticalLineNode.centerY
       } );
 
@@ -143,7 +150,7 @@ define( function( require ) {
           topSpringNode,
           bottomSpringNode,
           verticalLineNode,
-          horizontalLineNode
+          nibNode
         ]
       } );
 

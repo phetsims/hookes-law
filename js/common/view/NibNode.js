@@ -15,6 +15,7 @@ define( function( require ) {
 
   function NibNode( options ) {
     options = _.extend( {
+      fill: 'black',
       width: 10,
       height: 8
     }, options );
