@@ -68,6 +68,7 @@ define( function( require ) {
 
     // options
     CHECK_BOX_OPTIONS: {
+      boxWidth: 15,
       spacing: 8
     },
     CONTROL_TEXT_OPTIONS: {
@@ -84,7 +85,7 @@ define( function( require ) {
       font: new HookesLawFont( 14 )
     },
     RADIO_BUTTON_OPTIONS: {
-      radius: 12
+      radius: 7
     },
     SEPARATOR_OPTIONS: {
       stroke: HookesLawColors.SEPARATOR_STROKE
