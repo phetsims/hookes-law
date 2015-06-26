@@ -14,12 +14,10 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HSeparator = require( 'SUN/HSeparator' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
   var VBox = require( 'SCENERY/nodes/VBox' );
-  var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
   var bottomSpringString = require( 'string!HOOKES_LAW/bottomSpring' );
