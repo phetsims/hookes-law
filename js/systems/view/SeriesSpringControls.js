@@ -17,7 +17,6 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-  var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
   var leftSpringString = require( 'string!HOOKES_LAW/leftSpring' );
@@ -34,7 +33,7 @@ define( function( require ) {
    */
   function SeriesSpringControls( system, numberOfInteractionsInProgressProperty, options ) {
 
-    options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
+    options = options || {};
 
     var leftSpring = system.leftSpring;
     var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
@@ -63,22 +62,14 @@ define( function( require ) {
     var appliedForceControl = new AppliedForceControl(
       system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
 
-    var separatorHeight = Math.max( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ), appliedForceControl.height );
-
-    var content = new HBox( {
-      spacing: 20,
-      resize: false,
-      children: [
-        leftSpringConstantControl,
-        new VSeparator( separatorHeight, HookesLawConstants.SEPARATOR_OPTIONS ),
-        rightSpringConstantControl,
-        new VSeparator( separatorHeight, HookesLawConstants.SEPARATOR_OPTIONS ),
-        appliedForceControl
-      ]
-    } );
-
-    Panel.call( this, content, options );
+    options.spacing = 10;
+    options.children = [
+      new Panel( leftSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
+      new Panel( rightSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
+      new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
+    ];
+    HBox.call( this, options );
   }
 
-  return inherit( Panel, SeriesSpringControls );
+  return inherit( HBox, SeriesSpringControls );
 } );
