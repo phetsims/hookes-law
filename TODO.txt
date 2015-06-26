@@ -6,6 +6,7 @@ Design questions
 
 Look of box that arm comes out of
 Look of wall that spring attaches to
+Color for scene selection buttons
 
 -----------------------------------------------------------------------------------
 Implementation
