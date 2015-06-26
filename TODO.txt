@@ -12,12 +12,13 @@ Color for scene selection buttons
 Implementation
 -----------------------------------------------------------------------------------
 
+Programmatically create icons for 1|2 and parallel|series radio buttons
+rename "Introduction" files and directories to "Intro"
 Add a big nub on the end of the spring grabbable by pincers
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
-Programmatically create icons for 1|2 and parallel|series radio buttons
 QA credits
 TODO items in code
-rename "Introduction" files and directories to "Intro"?
+
 
 -----------------------------------------------------------------------------------
 Common Code
