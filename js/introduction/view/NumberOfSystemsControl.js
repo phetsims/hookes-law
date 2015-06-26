@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
@@ -31,7 +32,8 @@ define( function( require ) {
       buttonContentXMargin: 10,
       buttonContentYMargin: 10,
       deselectedButtonOpacity: 0.6,
-      deselectedContentOpacity: 0.6
+      deselectedContentOpacity: 0.6,
+      baseColor: HookesLawColors.SCENE_SELECTION_BUTTONS
     }, options );
 
     RadioButtonGroup.call( this, numberOfSystemsProperty, [
