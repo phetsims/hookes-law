@@ -144,7 +144,7 @@ define( function( require ) {
     },
 
     /**
-     * Creates the icon for the "Energy" screen, a cartoonish energy bar graph.
+     * Creates the icon for the "Energy" screen, a cartoonish bar graph.
      * @returns {Node}
      */
     createEnergyScreenIcon: function() {
