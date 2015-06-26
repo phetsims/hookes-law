@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Dimension2 = require( 'DOT/Dimension2' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var Image = require( 'SCENERY/nodes/Image' );
@@ -19,6 +20,7 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var Util = require( 'DOT/Util' );
+  var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   // images
   var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
@@ -44,11 +46,8 @@ define( function( require ) {
       unitDisplacementLength: 1  // view length of a 1m displacement
     }, options );
 
-    // origin is at left-center of box
-    var boxNode = new Rectangle( 0, 0, 25, 60, {
-      fill: HookesLawColors.ROBOTIC_ANCHOR_FILL,
-      stroke: HookesLawColors.ROBOTIC_ANCHOR_STROKE,
-      lineWidth: 0.5,
+    // wall at the right end of the arm is attached to, origin is at left-center
+    var wallNode = new WallNode( new Dimension2( 25, 60 ), {
       left: 0,
       centerY: 0
     } );
@@ -134,9 +133,9 @@ define( function( require ) {
 
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box
-      var armLength = ( boxNode.left - draggableNode.right ) + ( 2 * overlap );
+      var armLength = ( wallNode.left - draggableNode.right ) + ( 2 * overlap );
       armNode.setRect( 0, 0, armLength, ARM_HEIGHT );
-      armNode.right = boxNode.left + overlap;
+      armNode.right = wallNode.left + overlap;
       armNode.centerY = 0;
     } );
 
@@ -149,7 +148,7 @@ define( function( require ) {
       topPincerClosedNode.visible = bottomPincerClosedNode.visible = !pincersOpen;
     };
 
-    options.children = [ armNode, boxNode, draggableNode ];
+    options.children = [ armNode, wallNode, draggableNode ];
     Node.call( this, options );
   }
 
