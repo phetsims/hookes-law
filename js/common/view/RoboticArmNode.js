@@ -175,7 +175,7 @@ define( function( require ) {
       var topPincerNode = createTopPincerClosed( {
         stroke: PINCER_STROKE,
         lineWidth: PINCER_LINE_WIDTH,
-        bottom: PINCER_OVERLAP,
+        bottom: PINCER_OVERLAP
       } );
 
       var bottomPincerNode = createBottomPincerClosed( {
