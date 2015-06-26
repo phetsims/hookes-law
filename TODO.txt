@@ -20,6 +20,7 @@ Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX
 Programmatically create icons for 1|2 and parallel|series radio buttons
 QA credits
 TODO items in code
+rename "Introduction" files and directories to "Intro"?
 
 -----------------------------------------------------------------------------------
 Common Code

@@ -30,24 +30,26 @@ define( function( require ) {
     for ( var value = spring.springConstantRange.min; value <= spring.springConstantRange.max; value += 100 ) {
       majorTickValues.push( value );
     }
-    var springConstantControlPanel = new Panel(
-      new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
-        minorTickSpacing: 50,
-        majorTickValues: majorTickValues
-      } ), HookesLawConstants.SPRING_PANEL_OPTIONS );
 
-    var displacementControlPanel = new Panel(
-      new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
-        minorTickSpacing: spring.displacementRange.getLength() / 10,
-        majorTickValues: [
-          spring.displacementRange.min,
-          spring.displacementRange.getCenter(),
-          spring.displacementRange.max
-        ]
-      } ), HookesLawConstants.SPRING_PANEL_OPTIONS );
+    var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
+      minorTickSpacing: 50,
+      majorTickValues: majorTickValues
+    } );
+
+    var displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
+      minorTickSpacing: spring.displacementRange.getLength() / 10,
+      majorTickValues: [
+        spring.displacementRange.min,
+        spring.displacementRange.getCenter(),
+        spring.displacementRange.max
+      ]
+    } );
 
     options.spacing = 10;
-    options.children = [ springConstantControlPanel, displacementControlPanel ];
+    options.children = [
+      new Panel( springConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
+      new Panel( displacementControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
+    ];
     HBox.call( this, options );
   }
 
