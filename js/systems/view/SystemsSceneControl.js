@@ -24,7 +24,7 @@ define( function( require ) {
     options = _.extend( {
       orientation: 'horizontal',
       spacing: 10,
-      buttonContentXMargin: 10,
+      buttonContentXMargin: 5,
       buttonContentYMargin: 5,
       deselectedButtonOpacity: 0.6,
       deselectedContentOpacity: 0.6,

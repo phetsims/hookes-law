@@ -260,7 +260,7 @@ define( function( require ) {
      */
     createTwoSpringsIcon: function() {
       return new VBox( _.extend( {
-        spacing: 10,
+        spacing: 5,
         children: [
           new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS ),
           new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS )
@@ -294,7 +294,7 @@ define( function( require ) {
       var topSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
       var bottomSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
       var springsBox = new VBox( {
-        spacing: 10,
+        spacing: 5,
         children: [ topSpringNode, bottomSpringNode ]
       } );
       var verticalLineNode = new Line( 0, 0, 0, springsBox.height, {
