@@ -19,6 +19,7 @@ define( function( require ) {
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
+  var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -129,11 +130,12 @@ define( function( require ) {
     },
 
     /**
-     * Creates the icon for the "Intro" screen.
+     * Creates the icon for the "Intro" screen, a single spring pulled by a robotic arm.
      * @returns {Node}
      */
     createIntroScreenIcon: function() {
 
+      // spring
       var propertySet = ParametricSpringNode.createPropertySet( {
         loops: 3
       } );
@@ -143,13 +145,19 @@ define( function( require ) {
         backColor: HookesLawColors.SINGLE_SPRING_BACK
       } );
 
-      var contentNode = new Node( { children: [ springNode ] } );
+      // robotic arm
+      var armNode = RoboticArmNode.createIcon( {
+        left: springNode.right,
+        centerY: springNode.centerY
+      } );
+
+      var contentNode = new Node( { children: [ springNode, armNode ] } );
 
       return createScreenIcon( contentNode );
     },
 
     /**
-     * Creates the icon for the "Systems" screen.
+     * Creates the icon for the "Systems" screen, parallel springs pulled by a robotic arm.
      * @returns {Node}
      */
     createSystemsScreenIcon: function() {
@@ -189,12 +197,19 @@ define( function( require ) {
         centerY: verticalLineNode.centerY
       } );
 
+      // robotic arm
+      var armNode = RoboticArmNode.createIcon( {
+        left: verticalLineNode.right,
+        centerY: verticalLineNode.centerY
+      } );
+
       var contentNode = new Node( {
         children: [
           topSpringNode,
           bottomSpringNode,
           verticalLineNode,
-          horizontalLineNode
+          horizontalLineNode,
+          armNode
         ]
       } );
 
@@ -202,7 +217,7 @@ define( function( require ) {
     },
 
     /**
-     * Creates the icon for the "Energy" screen.
+     * Creates the icon for the "Energy" screen, a cartoonish energy bar graph.
      * @returns {Node}
      */
     createEnergyScreenIcon: function() {

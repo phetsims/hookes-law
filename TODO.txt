@@ -13,8 +13,6 @@ Implementation
 -----------------------------------------------------------------------------------
 
 Add a big nub on the end of the spring grabbable by pincers
-Intro icon: as is, blue spring
-Systems: as is, purple and orange springs
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 Programmatically create icons for 1|2 and parallel|series radio buttons
 QA credits

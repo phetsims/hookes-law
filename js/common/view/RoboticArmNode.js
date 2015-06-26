@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -26,6 +27,16 @@ define( function( require ) {
   var PINCER_RADIUS = 35;
   var PINCER_STROKE = 'black';
   var PINCER_LINE_WIDTH = 6;
+  var PINCER_OVERLAP = 2;
+  var ARM_HEIGHT = 16;
+
+  var createTopPincerClosed = function( options ) {
+    return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), options );
+  };
+
+  var createBottomPincerClosed = function( options ) {
+    return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), options );
+  };
 
   /**
    * @param {RoboticArm} roboticArm
@@ -43,7 +54,7 @@ define( function( require ) {
 
     // origin is at left-center of box
     var boxNode = new Rectangle( 0, 0, 25, 60, {
-      fill: 'rgb( 210, 210, 210 )',
+      fill: HookesLawColors.ROBOTIC_ANCHOR,
       stroke: 'black',
       lineWidth: 0.5,
       left: 0,
@@ -52,18 +63,18 @@ define( function( require ) {
 
     // arm will be sized and positioned by Property observer
     var armNode = new Rectangle( 0, 0, 1, 0, {
-      fill: 'rgb( 210, 210, 210 )',
+      fill: HookesLawColors.ROBOTIC_ARM,
       stroke: 'black',
       lineWidth: 0.5
     } );
 
     // top pincer, closed and open configurations
-    var pincersOverlap = 2;
-    var topPincerClosedNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), {
+    var PINCER_OVERLAP = 2;
+    var topPincerClosedNode = createTopPincerClosed( {
       stroke: PINCER_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
-      bottom: pincersOverlap
+      bottom: PINCER_OVERLAP
     } );
     var topPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 ), {
       stroke: PINCER_STROKE,
@@ -73,11 +84,11 @@ define( function( require ) {
     } );
 
     // bottom pincer, closed and open configurations
-    var bottomPincerClosedNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), {
+    var bottomPincerClosedNode = createBottomPincerClosed( {
       stroke: PINCER_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
-      top: -pincersOverlap
+      top: -PINCER_OVERLAP
     } );
     var bottomPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true ), {
       stroke: PINCER_STROKE,
@@ -133,7 +144,7 @@ define( function( require ) {
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box
       var armLength = ( boxNode.left - draggableNode.right ) + ( 2 * overlap );
-      armNode.setRect( 0, 0, armLength, 16 );
+      armNode.setRect( 0, 0, armLength, ARM_HEIGHT );
       armNode.right = boxNode.left + overlap;
       armNode.centerY = 0;
     } );
@@ -151,5 +162,44 @@ define( function( require ) {
     Node.call( this, options );
   }
 
-  return inherit( Node, RoboticArmNode );
+  return inherit( Node, RoboticArmNode, {}, {
+
+    /**
+     * Creates an icon that represents this node.
+     * @param {Object} [options]
+     * @return {Node}
+     * @static
+     */
+    createIcon: function( options ) {
+
+      var topPincerNode = createTopPincerClosed( {
+        stroke: PINCER_STROKE,
+        lineWidth: PINCER_LINE_WIDTH,
+        bottom: PINCER_OVERLAP,
+      } );
+
+      var bottomPincerNode = createBottomPincerClosed( {
+        stroke: PINCER_STROKE,
+        lineWidth: PINCER_LINE_WIDTH,
+        top: -PINCER_OVERLAP
+      } );
+
+      var hingeNode = new Image( hingeImage, {
+        scale: 0.5,
+        left: topPincerNode.right - 12,
+        centerY: 0
+      } );
+
+      var armNode = new Rectangle( 0, 0, 20, ARM_HEIGHT, {
+        fill: HookesLawColors.ROBOTIC_ARM,
+        stroke: 'black',
+        lineWidth: 0.5,
+        left: hingeNode.right - 5,
+        centerY: hingeNode.centerY
+      } );
+
+      options.children = [ topPincerNode, bottomPincerNode, armNode, hingeNode ];
+      return new Node( options );
+    }
+  } );
 } );
