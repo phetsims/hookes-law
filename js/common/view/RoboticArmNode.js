@@ -28,6 +28,7 @@ define( function( require ) {
   var PINCER_LINE_WIDTH = 6;
   var PINCER_OVERLAP = 2;
   var ARM_HEIGHT = 16;
+  var HINGE_SCALE = 0.5; // dependent on image file size
 
   var createTopPincerClosed = function( options ) {
     return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), options );
@@ -97,7 +98,7 @@ define( function( require ) {
 
     // hinge, where the pincers are attached
     var hingeNode = new Image( hingeImage, {
-      scale: 0.5, //TODO scale image file?
+      scale: HINGE_SCALE,
       x: topPincerClosedNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
@@ -183,7 +184,7 @@ define( function( require ) {
       } );
 
       var hingeNode = new Image( hingeImage, {
-        scale: 0.5,
+        scale: HINGE_SCALE,
         left: topPincerNode.right - 12,
         centerY: 0
       } );
