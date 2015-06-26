@@ -11,11 +11,11 @@ define( function( require ) {
   // modules
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ParallelSystemNode = require( 'HOOKES_LAW/systems/view/ParallelSystemNode' );
+  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var SystemsSceneControl = require( 'HOOKES_LAW/systems/view/SystemsSceneControl' );
   var SeriesSystemNode = require( 'HOOKES_LAW/systems/view/SeriesSystemNode' );
+  var SystemsSceneControl = require( 'HOOKES_LAW/systems/view/SystemsSceneControl' );
   var SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
   var SystemsVisibilityControls = require( 'HOOKES_LAW/systems/view/SystemsVisibilityControls' );
 
