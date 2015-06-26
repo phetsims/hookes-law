@@ -14,6 +14,7 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HSeparator = require( 'SUN/HSeparator' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
@@ -66,17 +67,18 @@ define( function( require ) {
       spacing: 5,
       resize: false,
       children: [
-        new Panel( topSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
-        new Panel( bottomSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
+        topSpringConstantControl,
+        new HSeparator( Math.max( topSpringConstantControl.width, bottomSpringConstantControl.width ), HookesLawConstants.SEPARATOR_OPTIONS ),
+        bottomSpringConstantControl
       ]
     } );
 
     var appliedForceControl = new AppliedForceControl(
       system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
 
-    options.spacing = 5;
+    options.spacing = 10;
     options.children = [
-      springControls,
+      new Panel( springControls, HookesLawConstants.SPRING_PANEL_OPTIONS ),
       new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
     ];
     HBox.call( this, options );

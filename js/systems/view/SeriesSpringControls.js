@@ -17,6 +17,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
   var leftSpringString = require( 'string!HOOKES_LAW/leftSpring' );
@@ -59,13 +60,21 @@ define( function( require ) {
       ]
     } );
 
+    var springControls = new HBox( {
+      spacing: 20,
+      children: [
+        leftSpringConstantControl,
+        new VSeparator( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ) ),
+        rightSpringConstantControl
+      ]
+    } );
+
     var appliedForceControl = new AppliedForceControl(
       system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
 
     options.spacing = 10;
     options.children = [
-      new Panel( leftSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
-      new Panel( rightSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
+      new Panel( springControls, HookesLawConstants.SPRING_PANEL_OPTIONS ),
       new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
     ];
     HBox.call( this, options );
