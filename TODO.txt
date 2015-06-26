@@ -16,7 +16,6 @@ Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX
 QA credits
 TODO items in code
 
-
 -----------------------------------------------------------------------------------
 Common Code
 -----------------------------------------------------------------------------------
