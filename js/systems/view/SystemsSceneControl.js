@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Controls how many systems are visible on the screen.
+ * Scene control for the "Systems" screen, switches between series and parallel systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -15,15 +15,15 @@ define( function( require ) {
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
   // images
-  var singleSpringIcon = require( 'image!HOOKES_LAW/single-spring-scene.png' );
-  var twoSpringIcon = require( 'image!HOOKES_LAW/two-spring-scene.png' );
+  var parallelIcon = require( 'image!HOOKES_LAW/parallel-spring-scene.png' );
+  var seriesIcon = require( 'image!HOOKES_LAW/series-spring-scene.png' );
 
   /**
-   * @param {Property.<number>} numberOfSystemsProperty
+   * @param {Property.<string>} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
    * @param {Object} [options]
    * @constructor
    */
-  function NumberOfSystemsControl( numberOfSystemsProperty, options ) {
+  function SystemsSceneControl( seriesParallelProperty, options ) {
 
     options = _.extend( {
       scale: 0.4, //TODO scale image files?
@@ -36,11 +36,11 @@ define( function( require ) {
       baseColor: HookesLawQueryParameters.SCENE_SELECTION_COLOR
     }, options );
 
-    RadioButtonGroup.call( this, numberOfSystemsProperty, [
-      { value: 1, node: new Image( singleSpringIcon ) },
-      { value: 2, node: new Image( twoSpringIcon ) }
+    RadioButtonGroup.call( this, seriesParallelProperty, [
+      { value: 'parallel', node: new Image( parallelIcon ) },
+      { value: 'series', node: new Image( seriesIcon ) }
     ], options );
   }
 
-  return inherit( RadioButtonGroup, NumberOfSystemsControl );
+  return inherit( RadioButtonGroup, SystemsSceneControl );
 } );

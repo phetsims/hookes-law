@@ -14,7 +14,7 @@ define( function( require ) {
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ParallelSystemNode = require( 'HOOKES_LAW/systems/view/ParallelSystemNode' );
   var ScreenView = require( 'JOIST/ScreenView' );
-  var SeriesParallelControl = require( 'HOOKES_LAW/systems/view/SeriesParallelControl' );
+  var SystemsSceneControl = require( 'HOOKES_LAW/systems/view/SystemsSceneControl' );
   var SeriesSystemNode = require( 'HOOKES_LAW/systems/view/SeriesSystemNode' );
   var SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
   var SystemsVisibilityControls = require( 'HOOKES_LAW/systems/view/SystemsVisibilityControls' );
@@ -41,12 +41,12 @@ define( function( require ) {
     } );
     this.addChild( visiblityControls );
 
-    // Control for selecting between series and parallel systems
-    var seriesParallelControl = new SeriesParallelControl( viewProperties.seriesParallelProperty, {
+    // Control for switching between series and parallel systems
+    var sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty, {
       centerX: visiblityControls.centerX,
       top: visiblityControls.bottom + 10
     } );
-    this.addChild( seriesParallelControl );
+    this.addChild( sceneControl );
 
     // Series system
     var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {
