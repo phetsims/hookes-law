@@ -16,7 +16,6 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var VSeparator = require( 'SUN/VSeparator' );
 
   // strings
   var appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
@@ -30,10 +29,7 @@ define( function( require ) {
    */
   function IntroductionSpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
-    //TODO this looks odd
-    options = _.extend( {
-      number: 1
-    }, _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options ) );
+    options = options || {};
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       title: StringUtils.format( springConstantNumberString, options.number ),
@@ -48,16 +44,13 @@ define( function( require ) {
       title: StringUtils.format( appliedForceNumberString, options.number )
     } );
 
-    var verticalSeparator = new VSeparator( Math.max( springConstantControl.height, appliedForceControl.height ), HookesLawConstants.SEPARATOR_OPTIONS );
-
-    var content = new HBox( {
-      spacing: 20,
-      resize: false,
-      children: [ springConstantControl, verticalSeparator, appliedForceControl ]
-    } );
-
-    Panel.call( this, content, options );
+    options.spacing = 10;
+    options.children = [
+      new Panel( springConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ) ,
+      new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
+    ];
+    HBox.call( this, options );
   }
 
-  return inherit( Panel, IntroductionSpringControls );
+  return inherit( HBox, IntroductionSpringControls );
 } );
