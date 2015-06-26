@@ -29,7 +29,9 @@ define( function( require ) {
    */
   function IntroSpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      number: 1 // {number} used to label the controls, eg "Spring Constant 1"
+    }, options );
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       title: StringUtils.format( springConstantNumberString, options.number ),
