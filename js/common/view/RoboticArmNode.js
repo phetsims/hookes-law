@@ -30,14 +30,6 @@ define( function( require ) {
   var ARM_HEIGHT = 16;
   var HINGE_SCALE = 0.5; // dependent on image file size
 
-  var createTopPincerClosed = function( options ) {
-    return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), options );
-  };
-
-  var createBottomPincerClosed = function( options ) {
-    return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), options );
-  };
-
   /**
    * @param {RoboticArm} roboticArm
    * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm
@@ -160,6 +152,24 @@ define( function( require ) {
     options.children = [ armNode, boxNode, draggableNode ];
     Node.call( this, options );
   }
+
+  /**
+   * Creates the top pincer in closed position.
+   * @param {Object} [options]
+   * @returns {Node}
+   */
+  var createTopPincerClosed = function( options ) {
+    return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), options );
+  };
+
+  /**
+   * Creates the bottom pincer in closed position.
+   * @param {Object} [options]
+   * @returns {Node}
+   */
+  var createBottomPincerClosed = function( options ) {
+    return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), options );
+  };
 
   return inherit( Node, RoboticArmNode, {}, {
 
