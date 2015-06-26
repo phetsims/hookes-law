@@ -61,6 +61,13 @@ define( function( require ) {
     BOTTOM_SPRING_MIDDLE: SPRING2_MIDDLE,
     BOTTOM_SPRING_BACK: SPRING2_BACK,
 
+    // robotic arm
+    ROBOTIC_ARM: new Color( 210, 210, 210 ),
+    ROBOTIC_ANCHOR: new Color( 210, 210, 210 ),
+
+    // wall that springs connect to
+    WALL: new Color( 210, 210, 210 ),
+
     // various quantities
     APPLIED_FORCE: PhetColorScheme.RED_COLORBLIND,
     DISPLACEMENT: new Color( 0, 180, 0 ),

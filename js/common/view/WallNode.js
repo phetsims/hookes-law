@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
@@ -20,7 +21,7 @@ define( function( require ) {
   function WallNode( size, options ) {
 
     options = _.extend( {
-      fill: 'rgb( 210, 210, 210 )',
+      fill: HookesLawColors.WALL,
       stroke: 'black',
       lineWidth: 0.5
     }, options );
