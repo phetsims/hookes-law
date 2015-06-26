@@ -28,6 +28,12 @@ define( function( require ) {
   // strings
   var equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
 
+  // constants
+  var SPRING_PROPERTY_SET = ParametricSpringNode.createPropertySet( {
+    loops: 3,
+    lineWidth: 5
+  } );
+
   //TODO copied from graphing-lines.IconFactory, move to common code?
   /**
    * Creates a screen icon, all of which have the same rectangular background.
@@ -63,10 +69,7 @@ define( function( require ) {
     createIntroScreenIcon: function() {
 
       // spring
-      var propertySet = ParametricSpringNode.createPropertySet( {
-        loops: 3
-      } );
-      var springNode = new ParametricSpringNode( propertySet, {
+      var springNode = new ParametricSpringNode( SPRING_PROPERTY_SET, {
         frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
         middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
         backColor: HookesLawColors.SINGLE_SPRING_BACK
@@ -78,7 +81,7 @@ define( function( require ) {
         centerY: springNode.centerY
       } );
 
-      var contentNode = new Node( { children: [ springNode, armNode ] } );
+      var contentNode = new Node( { children: [ armNode, springNode ] } );
 
       return createScreenIcon( contentNode );
     },
@@ -90,15 +93,12 @@ define( function( require ) {
     createSystemsScreenIcon: function() {
 
       // springs
-      var propertySet = ParametricSpringNode.createPropertySet( {
-        loops: 3
-      } );
-      var topSpringNode = new ParametricSpringNode( propertySet, {
+      var topSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, {
         frontColor: HookesLawColors.TOP_SPRING_FRONT,
         middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
         backColor: HookesLawColors.TOP_SPRING_BACK
       } );
-      var bottomSpringNode = new ParametricSpringNode( propertySet, {
+      var bottomSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, {
         frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
         middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
         backColor: HookesLawColors.BOTTOM_SPRING_BACK
@@ -132,11 +132,11 @@ define( function( require ) {
 
       var contentNode = new Node( {
         children: [
+          armNode,
           topSpringNode,
           bottomSpringNode,
           verticalLineNode,
-          horizontalLineNode,
-          armNode
+          horizontalLineNode
         ]
       } );
 
