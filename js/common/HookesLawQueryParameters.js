@@ -25,6 +25,9 @@ define( function( require ) {
     // The '#' for hex colors needs to be URL encoded as '%23', eg '#CC66FF' -> '%23CC66FF'
     FRONT_COLOR: getQueryParameter( 'frontColor' ) || HookesLawColors.SINGLE_SPRING_FRONT,
     MIDDLE_COLOR: getQueryParameter( 'middleColor' ) || HookesLawColors.SINGLE_SPRING_MIDDLE,
-    BACK_COLOR: getQueryParameter( 'backColor' ) || HookesLawColors.SINGLE_SPRING_BACK
+    BACK_COLOR: getQueryParameter( 'backColor' ) || HookesLawColors.SINGLE_SPRING_BACK,
+
+    // Colors for scene-selection buttons
+    SCENE_SELECTION_COLOR: getQueryParameter( 'sceneSelectionColor' ) || HookesLawColors.SCENE_SELECTION_BUTTONS
   };
 } );
