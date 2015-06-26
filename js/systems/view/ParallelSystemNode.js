@@ -22,10 +22,8 @@ define( function( require ) {
   var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParallelSpringControls = require( 'HOOKES_LAW/systems/view/ParallelSpringControls' );
-  var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var Shape = require( 'KITE/Shape' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
