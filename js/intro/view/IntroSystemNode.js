@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Single-spring system for the "Introduction" screen.
+ * Single-spring system for the "Intro" screen.
  * One spring, a robotic arm, and all of the visual representations that go with them.
  * Origin is at the point where the spring attaches to the wall.
  *
@@ -21,18 +21,18 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var IntroductionSpringControls = require( 'HOOKES_LAW/introduction/view/IntroductionSpringControls' );
+  var IntroSpringControls = require( 'HOOKES_LAW/intro/view/IntroSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   /**
    * @param {SingleSpringSystem} system
-   * @param {IntroductionViewProperties} viewProperties
+   * @param {IntroViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
-  function IntroductionSystemNode( system, viewProperties, options ) {
+  function IntroSystemNode( system, viewProperties, options ) {
 
     options = _.extend( {
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
@@ -97,7 +97,7 @@ define( function( require ) {
       top: springNode.bottom + 8
     } );
 
-    var springControls = new IntroductionSpringControls( spring, numberOfInteractionsInProgressProperty, {
+    var springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10,
@@ -134,5 +134,5 @@ define( function( require ) {
     Node.call( this, options );
   }
 
-  return inherit( Node, IntroductionSystemNode );
+  return inherit( Node, IntroSystemNode );
 } );

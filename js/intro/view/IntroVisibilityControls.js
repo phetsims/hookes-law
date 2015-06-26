@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Control panel for visibility of various representations in the "Introductions" view.
+ * Control panel for visibility of various representations in the "Intro" view.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -26,11 +26,11 @@ define( function( require ) {
   var valuesString = require( 'string!HOOKES_LAW/values' );
 
   /**
-   * @param {IntroductionViewProperties} properties
+   * @param {IntroViewProperties} properties
    * @param {Object} [options]
    * @constructor
    */
-  function IntroductionVisibilityControls( properties, options ) {
+  function IntroVisibilityControls( properties, options ) {
 
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
@@ -106,5 +106,5 @@ define( function( require ) {
     Panel.call( this, content, options );
   }
 
-  return inherit( Panel, IntroductionVisibilityControls );
+  return inherit( Panel, IntroVisibilityControls );
 } );

@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Scene control for the "Introduction" screen, switches between 1 and 2 systems.
+ * Scene control for the "Intro" screen, switches between 1 and 2 systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -23,7 +23,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function IntroductionSceneControl( numberOfSystemsProperty, options ) {
+  function IntroSceneControl( numberOfSystemsProperty, options ) {
 
     options = _.extend( {
       scale: 0.4, //TODO scale image files?
@@ -42,5 +42,5 @@ define( function( require ) {
     ], options );
   }
 
-  return inherit( RadioButtonGroup, IntroductionSceneControl );
+  return inherit( RadioButtonGroup, IntroSceneControl );
 } );

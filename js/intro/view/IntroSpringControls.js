@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Spring controls for the "Introduction" screen.
+ * Spring controls for the "Intro" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -27,7 +27,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function IntroductionSpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
+  function IntroSpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
     options = options || {};
 
@@ -52,5 +52,5 @@ define( function( require ) {
     HBox.call( this, options );
   }
 
-  return inherit( HBox, IntroductionSpringControls );
+  return inherit( HBox, IntroSpringControls );
 } );

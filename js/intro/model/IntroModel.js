@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * Model for the "Introduction" screen, two unrelated single-spring systems.
+ * Model for the "Intro" screen, two unrelated single-spring systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -16,7 +16,7 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function IntroductionModel() {
+  function IntroModel() {
     var springOptions = {
       springConstantRange: new Range( 100, 1000, 200 ),
       appliedForceRange: new Range( -100, 100, 0 )
@@ -25,7 +25,7 @@ define( function( require ) {
     this.system2 = new SingleSpringSystem( springOptions );
   }
 
-  return inherit( Object, IntroductionModel, {
+  return inherit( Object, IntroModel, {
 
     reset: function() {
       this.system1.reset();

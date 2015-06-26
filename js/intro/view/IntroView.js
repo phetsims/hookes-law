@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * View for the "Introduction" screen.
+ * View for the "Intro" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -11,18 +11,18 @@ define( function( require ) {
   // modules
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var IntroductionSceneControl = require( 'HOOKES_LAW/introduction/view/IntroductionSceneControl' );
-  var IntroductionSystemNode = require( 'HOOKES_LAW/introduction/view/IntroductionSystemNode' );
-  var IntroductionViewProperties = require( 'HOOKES_LAW/introduction/view/IntroductionViewProperties' );
-  var IntroductionVisibilityControls = require( 'HOOKES_LAW/introduction/view/IntroductionVisibilityControls' );
+  var IntroSceneControl = require( 'HOOKES_LAW/intro/view/IntroSceneControl' );
+  var IntroSystemNode = require( 'HOOKES_LAW/intro/view/IntroSystemNode' );
+  var IntroViewProperties = require( 'HOOKES_LAW/intro/view/IntroViewProperties' );
+  var IntroVisibilityControls = require( 'HOOKES_LAW/intro/view/IntroVisibilityControls' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
 
   /**
-   * @param {IntroductionModel} model
+   * @param {IntroModel} model
    * @constructor
    */
-  function IntroductionView( model ) {
+  function IntroView( model ) {
 
     var thisView = this;
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
@@ -31,10 +31,10 @@ define( function( require ) {
     var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view
-    var viewProperties = new IntroductionViewProperties();
+    var viewProperties = new IntroViewProperties();
 
     // Visibility controls
-    var visibilityControls = new IntroductionVisibilityControls( viewProperties, {
+    var visibilityControls = new IntroVisibilityControls( viewProperties, {
       top: this.layoutBounds.top + 10,
       right: this.layoutBounds.right - 10,
       maxWidth: 250 // constrain width for i18n, determining empirically
@@ -42,14 +42,14 @@ define( function( require ) {
     this.addChild( visibilityControls );
 
     // Control for switching between 1 and 2 systems
-    var sceneControl = new IntroductionSceneControl( viewProperties.numberOfSystemsProperty, {
+    var sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty, {
       centerX: visibilityControls.centerX,
       top: visibilityControls.bottom + 10
     } );
     this.addChild( sceneControl );
 
     // System 1
-    var system1Node = new IntroductionSystemNode( model.system1, viewProperties, {
+    var system1Node = new IntroSystemNode( model.system1, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
@@ -59,7 +59,7 @@ define( function( require ) {
     assert && assert( system1Node.height <= this.layoutBounds.height / 2, 'system1Node is taller than the space available for it' );
 
     // System 2
-    var system2Node = new IntroductionSystemNode( model.system2, viewProperties, {
+    var system2Node = new IntroSystemNode( model.system2, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       number: 2,
       left: system1Node.left,
@@ -121,5 +121,5 @@ define( function( require ) {
     } );
   }
 
-  return inherit( ScreenView, IntroductionView );
+  return inherit( ScreenView, IntroView );
 } );

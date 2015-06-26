@@ -23,7 +23,7 @@ define( function( require ) {
   /**
    * @constructor
    */
-  function IntroductionScreen() {
+  function ExperimentalScreen() {
     Screen.call( this,
       experimentalString,
       new Rectangle( 0, 0, 100, 100, { fill: 'orange' } ),
@@ -33,5 +33,5 @@ define( function( require ) {
     );
   }
 
-  return inherit( Screen, IntroductionScreen );
+  return inherit( Screen, ExperimentalScreen );
 } );
