@@ -36,7 +36,7 @@ define( function( require ) {
    */
   function ParallelSpringControls( system, numberOfInteractionsInProgressProperty, options ) {
 
-    options = _.extend( _.clone( HookesLawConstants.SPRING_PANEL_OPTIONS ), options );
+    options = options || {};
 
     var topSpring = system.topSpring;
     var topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
@@ -68,27 +68,21 @@ define( function( require ) {
       spacing: 5,
       resize: false,
       children: [
-        topSpringConstantControl,
-        new HSeparator( Math.max( topSpringConstantControl.width, bottomSpringConstantControl.width ), HookesLawConstants.SEPARATOR_OPTIONS ),
-        bottomSpringConstantControl
+        new Panel( topSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
+        new Panel( bottomSpringConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
       ]
     } );
 
     var appliedForceControl = new AppliedForceControl(
       system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
 
-    var content = new HBox( {
-      spacing: 20,
-      resize: false,
-      children: [
-        springControls,
-        new VSeparator( springControls.height, HookesLawConstants.SEPARATOR_OPTIONS ),
-        appliedForceControl
-      ]
-    } );
-
-    Panel.call( this, content, options );
+    options.spacing = 5;
+    options.children = [
+      springControls,
+      new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
+    ];
+    HBox.call( this, options );
   }
 
-  return inherit( Panel, ParallelSpringControls );
+  return inherit( HBox, ParallelSpringControls );
 } );
