@@ -9,8 +9,8 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Image = require( 'SCENERY/nodes/Image' );
   var IntroductionModel = require( 'HOOKES_LAW/introduction/model/IntroductionModel' );
   var IntroductionView = require( 'HOOKES_LAW/introduction/view/IntroductionView' );
   var Screen = require( 'JOIST/Screen' );
@@ -18,16 +18,13 @@ define( function( require ) {
   // strings
   var introductionString = require( 'string!HOOKES_LAW/introduction' );
 
-  // images
-  var introductionScreenImage = require( 'image!HOOKES_LAW/introduction-screen.png' );
-
   /**
    * @constructor
    */
   function IntroductionScreen() {
     Screen.call( this,
       introductionString,
-      new Image( introductionScreenImage ),
+      IconFactory.createIntroScreenIcon(),
       function() { return new IntroductionModel(); },
       function( model ) { return new IntroductionView( model ); },
       { backgroundColor: 'white' }

@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Image = require( 'SCENERY/nodes/Image' );
+  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var SystemsModel = require( 'HOOKES_LAW/systems/model/SystemsModel' );
   var SystemsView = require( 'HOOKES_LAW/systems/view/SystemsView' );
@@ -18,16 +18,13 @@ define( function( require ) {
   // strings
   var systemsString = require( 'string!HOOKES_LAW/systems' );
 
-  // images
-  var systemsScreenImage = require( 'image!HOOKES_LAW/systems-screen.png' );
-
   /**
    * @constructor
    */
   function SystemsScreen() {
     Screen.call( this,
       systemsString,
-      new Image( systemsScreenImage ),
+      IconFactory.createSystemsScreenIcon(),
       function() { return new SystemsModel(); },
       function( model ) { return new SystemsView( model ); },
       { backgroundColor: 'white' }

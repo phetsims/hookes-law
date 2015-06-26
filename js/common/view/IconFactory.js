@@ -15,11 +15,14 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
   var Text = require( 'SCENERY/nodes/Text' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
   var equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
@@ -126,7 +129,81 @@ define( function( require ) {
     },
 
     /**
+     * Creates the icon for the "Intro" screen.
+     * @returns {Node}
+     */
+    createIntroScreenIcon: function() {
+
+      var propertySet = ParametricSpringNode.createPropertySet( {
+        loops: 3
+      } );
+      var springNode = new ParametricSpringNode( propertySet, {
+        frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
+        middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
+        backColor: HookesLawColors.SINGLE_SPRING_BACK
+      } );
+
+      var contentNode = new Node( { children: [ springNode ] } );
+
+      return createScreenIcon( contentNode );
+    },
+
+    /**
+     * Creates the icon for the "Systems" screen.
+     * @returns {Node}
+     */
+    createSystemsScreenIcon: function() {
+
+      // springs
+      var propertySet = ParametricSpringNode.createPropertySet( {
+        loops: 3
+      } );
+      var topSpringNode = new ParametricSpringNode( propertySet, {
+        frontColor: HookesLawColors.TOP_SPRING_FRONT,
+        middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
+        backColor: HookesLawColors.TOP_SPRING_BACK
+      } );
+      var bottomSpringNode = new ParametricSpringNode( propertySet, {
+        frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
+        middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
+        backColor: HookesLawColors.BOTTOM_SPRING_BACK
+      } );
+      var springsBox = new VBox( {
+        spacing: 10,
+        children: [ topSpringNode, bottomSpringNode ]
+      } );
+
+      // vertical line that springs connect to
+      var verticalLineNode = new Line( 0, 0, 0, 0.65 * springsBox.height, {
+        stroke: 'black',
+        lineWidth: 3,
+        left: springsBox.right,
+        centerY: springsBox.centerY
+      } );
+
+      // horizontal line that the pincers grab
+      var horizontalLineNode = new Line( 0, 0, 10, 0, {
+        stroke: 'black',
+        lineWidth: 3,
+        left: verticalLineNode.right,
+        centerY: verticalLineNode.centerY
+      } );
+
+      var contentNode = new Node( {
+        children: [
+          topSpringNode,
+          bottomSpringNode,
+          verticalLineNode,
+          horizontalLineNode
+        ]
+      } );
+
+      return createScreenIcon( contentNode );
+    },
+
+    /**
      * Creates the icon for the "Energy" screen.
+     * @returns {Node}
      */
     createEnergyScreenIcon: function() {
 
