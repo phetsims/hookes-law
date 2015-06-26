@@ -17,7 +17,7 @@ define( function( require ) {
   var SPRING0_MIDDLE = new Color( 0, 0, 255 ); // the dominant color
   var SPRING0_BACK = new Color( 0, 0, 200 );
 
-  // colors to the first spring (top, left) in 2-spring systems
+  // colors for the first spring (top, left) in 2-spring systems
   var SPRING1_FRONT = new Color( 182, 127, 255 );
   var SPRING1_MIDDLE = new Color( 109, 0, 255 ); // the dominant color
   var SPRING1_BACK = new Color( 93, 0, 217 );
