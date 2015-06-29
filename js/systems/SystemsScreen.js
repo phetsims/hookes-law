@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
+  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var SystemsModel = require( 'HOOKES_LAW/systems/model/SystemsModel' );
   var SystemsView = require( 'HOOKES_LAW/systems/view/SystemsView' );
@@ -24,7 +24,7 @@ define( function( require ) {
   function SystemsScreen() {
     Screen.call( this,
       systemsString,
-      IconFactory.createSystemsScreenIcon(),
+      HookesLawIconFactory.createSystemsScreenIcon(),
       function() { return new SystemsModel(); },
       function( model ) { return new SystemsView( model ); },
       { backgroundColor: 'white' }

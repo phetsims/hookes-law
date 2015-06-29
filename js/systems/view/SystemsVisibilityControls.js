@@ -17,8 +17,8 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var HStrut = require( 'SCENERY/nodes/HStrut' );
-  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var Property = require( 'AXON/Property' );
@@ -44,7 +44,7 @@ define( function( require ) {
 
     // vector check boxes
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      HookesLawIconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
@@ -53,7 +53,7 @@ define( function( require ) {
       properties.springForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      HookesLawIconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         arrowType: 'line'
       } ),
@@ -62,7 +62,7 @@ define( function( require ) {
 
     // other check boxes
     var equilibriumPositionCheckBox = new CheckBox(
-      IconFactory.createEquilibriumPositionCheckBoxContent(),
+      HookesLawIconFactory.createEquilibriumPositionCheckBoxContent(),
       properties.equilibriumPositionVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(
@@ -75,15 +75,15 @@ define( function( require ) {
       new HBox( {
         children: [
           new Text( totalString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-          IconFactory.createVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
+          HookesLawIconFactory.createVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
         ],
         spacing: 10
       } ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // 'components' radio button
-    var component1Node = IconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
-    var component2Node = IconFactory.createVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
+    var component1Node = HookesLawIconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
+    var component2Node = HookesLawIconFactory.createVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
     var componentsVectorIcons = new VBox( {
       children: [
         component1Node,

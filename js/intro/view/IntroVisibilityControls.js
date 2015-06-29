@@ -12,7 +12,7 @@ define( function( require ) {
   var CheckBox = require( 'SUN/CheckBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
+  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var Property = require( 'AXON/Property' );
@@ -45,21 +45,21 @@ define( function( require ) {
     // vector check boxes, with left-aligned vector icons
     var minSpacing = 10;
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( appliedForceTextNode, {
+      HookesLawIconFactory.createVectorCheckBoxContent( appliedForceTextNode, {
         arrowFill: HookesLawColors.APPLIED_FORCE,
         spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
       } ),
       properties.appliedForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var springForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( springForceTextNode, {
+      HookesLawIconFactory.createVectorCheckBoxContent( springForceTextNode, {
         arrowFill: HookesLawColors.SINGLE_SPRING,
         spacing: maxTextWidth - springForceTextNode.width + minSpacing
       } ),
       properties.springForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( displacementTextNode, {
+      HookesLawIconFactory.createVectorCheckBoxContent( displacementTextNode, {
         arrowType: 'line',
         arrowFill: HookesLawColors.DISPLACEMENT,
         spacing: maxTextWidth - displacementTextNode.width + minSpacing
@@ -69,7 +69,7 @@ define( function( require ) {
 
     // other check boxes
     var equilibriumPositionCheckBox = new CheckBox(
-      IconFactory.createEquilibriumPositionCheckBoxContent(),
+      HookesLawIconFactory.createEquilibriumPositionCheckBoxContent(),
       properties.equilibriumPositionVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(

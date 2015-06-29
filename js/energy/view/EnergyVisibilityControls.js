@@ -14,9 +14,9 @@ define( function( require ) {
   var HBox = require( 'SCENERY/nodes/HBox' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var HSeparator = require( 'SUN/HSeparator' );
   var HStrut = require( 'SCENERY/nodes/HStrut' );
-  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -71,20 +71,20 @@ define( function( require ) {
 
     // check boxes
     var appliedForceCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      HookesLawIconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.APPLIED_FORCE
       } ),
       properties.appliedForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
-      IconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      HookesLawIconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         arrowType: 'line'
       } ),
       properties.displacementVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var equilibriumPositionCheckBox = new CheckBox(
-      IconFactory.createEquilibriumPositionCheckBoxContent(),
+      HookesLawIconFactory.createEquilibriumPositionCheckBoxContent(),
       properties.equilibriumPositionVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var valuesCheckBox = new CheckBox(

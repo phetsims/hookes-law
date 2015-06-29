@@ -9,8 +9,8 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
-  var IconFactory = require( 'HOOKES_LAW/common/view/IconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
@@ -32,8 +32,8 @@ define( function( require ) {
     }, options );
 
     RadioButtonGroup.call( this, seriesParallelProperty, [
-      { value: 'parallel', node: IconFactory.createParallelSystemIcon() },
-      { value: 'series', node: IconFactory.createSeriesSystemIcon() }
+      { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon() },
+      { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon() }
     ], options );
   }
 
