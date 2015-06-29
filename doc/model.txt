@@ -1,9 +1,0 @@
-TODO
-
-see Spring for general spring equations
-
-see SingleSpringSystem for single-spring equations
-
-see SeriesSystem doc for series model equations
-
-see ParallelSystem doc for parallel model equations
