@@ -18,15 +18,14 @@ are referred to as vectors in the code (e.g. `appliedForceVector`).  Since the m
 these "vectors" are implemented as scalars instead of vectors. This simplifies the implementation,
 and allows us to use simple numbers rather than allocating Vector objects.
 
-For two-spring systems, the classical model equations use subscripts '1' and '2' to refer to the springs (e.g.
-k<sub>1</sub>, k<sub>2</sub>).
-Rather than use subscripts, this implementations uses "left" and "right" (for series springs),
-"top" and "bottom" (for parallel springs).
+For systems of springs, the classical model equations use subscripts '1' and '2' to refer to the springs 
+in a system (e.g. k<sub>1</sub>, k<sub>2</sub>). Rather than use subscripts, this implementations 
+uses "left" and "right" (for 2 springs in series), "top" and "bottom" (for 2 springs in parallel).
 
-For systems containing more than 1 spring, you'll see the term "equivalent spring". This is the
+For systems containing more than one spring, you'll see the term "equivalent spring". This is the
 single spring that is equivalent to the system.
 
-The model is general and allows for some things that springs shouldn't do when in a system. For example,
+The model is general and supports some things that springs shouldn't do when in a system. For example,
 the general model supports moving the left end of a spring. But in a series system, the left end of
 the left spring should remain connected to the wall at all times.  Throughout the implementation,
 assertions are used to guard against these types of violations.
