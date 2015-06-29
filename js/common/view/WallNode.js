@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * The vertical wall that the left end of a spring is attached to.
+ * The vertical wall that springs and robotic arm are attached to.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
