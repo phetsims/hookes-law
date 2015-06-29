@@ -43,7 +43,7 @@ define( function( require ) {
     scale: 0.3
   };
 
-  //TODO copied from graphing-lines.GLIconFactory, move to common code?
+  //TODO copied from graphing-lines.GLIconFactory, move to common code? See joist#259
   /**
    * Creates a screen icon by putting a node on a properly-sized rectangular background.
    *
