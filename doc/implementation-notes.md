@@ -9,7 +9,7 @@ Start by reading the model description in https://github.com/phetsims/hookes-law
 Type `Spring` is the heart of the model, start there. Type `SeriesSystem` and `ParallelSystem` expand
 the model to describe series and parallel configurations of 2 springs.
 
-The model is 1 dimensional. Everything occurs along the x (horizontal) axis, with positive value to the right.
+The model is 1 dimensional. Everything occurs along the x (horizontal) axis, with positive values to the right.
 
 Since the model is 1-dimensional, various "vectors" (e.g. `appliedForceVector`) are implemented as scalars. 
 This simplifies the implementation, and allows us to use simple numbers rather than allocating Vector objects.
@@ -29,8 +29,8 @@ assertions are used to guard against these types of violations.
 ## View
 
 Because the model is 1 dimensional, the 2D model-view transform (`ModelViewTransform2`) that is typically found in
-PhET simulations is not required. All conversions are done using unit vectors lengths for the various
-1-dimensional quantities (displacement, force, energy). See `HookesLawConstants.UNIT_*`.
+PhET simulations is not required. All conversions between model and view coordinate frames are done using unit 
+vectors lengths for the various 1-dimensional quantities (displacement, force, energy). See `HookesLawConstants.UNIT_*`.
 
 The robotic arm has a pair of pincers that are open when displacement is zero and no user interaction
 is taking place.  In order to determine whether user interaction is taking place, Property
