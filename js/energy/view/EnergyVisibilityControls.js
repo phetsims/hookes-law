@@ -69,7 +69,7 @@ define( function( require ) {
       energyCheckBox.enabled = ( graph === 'forceXY' );
     } );
 
-    // check boxes
+    // other check boxes
     var appliedForceCheckBox = new CheckBox(
       HookesLawIconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.APPLIED_FORCE

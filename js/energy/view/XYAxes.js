@@ -42,7 +42,7 @@ define( function( require ) {
       xLabelMaxWidth: null
     }, options );
 
-    // x axis
+    // x axis, arrow in positive direction only
     var xAxisNode = new ArrowNode( options.minX, 0, options.maxX, 0, AXIS_OPTIONS );
     var xAxisLabel = new Text( options.xString, {
       font: options.font,
@@ -51,7 +51,7 @@ define( function( require ) {
       maxWidth: options.xLabelMaxWidth // constrain for i18n
     } );
 
-    // y axis
+    // y axis, arrow in positive direction only
     var yAxisNode = new ArrowNode( 0, -options.minY, 0, -options.maxY, AXIS_OPTIONS );
     var yAxisLabel = new Text( options.yString, {
       font: options.font,

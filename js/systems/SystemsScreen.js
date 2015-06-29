@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var SystemsModel = require( 'HOOKES_LAW/systems/model/SystemsModel' );
@@ -27,7 +28,7 @@ define( function( require ) {
       HookesLawIconFactory.createSystemsScreenIcon(),
       function() { return new SystemsModel(); },
       function( model ) { return new SystemsView( model ); },
-      { backgroundColor: 'white' }
+      HookesLawConstants.SCREEN_OPTIONS
     );
   }
 

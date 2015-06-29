@@ -76,7 +76,7 @@ define( function( require ) {
     spring.energyProperty.link( function( energy ) {
 
       // resize the bar
-      barNode.visible = ( energy > 0 );
+      barNode.visible = ( energy > 0 ); // because we can't create a zero height rectangle
       var height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_Y ); // bar must have non-zero size
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 

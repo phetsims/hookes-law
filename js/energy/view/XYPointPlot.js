@@ -62,10 +62,6 @@ define( function( require ) {
       valueFont: new PhetFont( 12 ),
       valuesVisibleProperty: new Property( true ),
 
-      // point
-      pointFill: 'black',
-      pointRadius: 6,
-
       // x axis
       minX: -1,
       maxX: 1,
@@ -84,7 +80,11 @@ define( function( require ) {
       yDecimalPlaces: 0,
       yUnits: '',
       yValueFill: 'black',
-      yUnitLength: 1
+      yUnitLength: 1,
+
+      // point
+      pointFill: 'black',
+      pointRadius: 6
 
     }, options );
 

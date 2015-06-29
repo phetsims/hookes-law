@@ -13,6 +13,7 @@ define( function( require ) {
   // modules
   var ExperimentalModel = require( 'HOOKES_LAW/experimental/model/ExperimentalModel' );
   var ExperimentalView = require( 'HOOKES_LAW/experimental/view/ExperimentalView' );
+  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Screen = require( 'JOIST/Screen' );
@@ -29,7 +30,7 @@ define( function( require ) {
       new Rectangle( 0, 0, 100, 100, { fill: 'orange' } ),
       function() { return new ExperimentalModel(); },
       function( model ) { return new ExperimentalView( model ); },
-      { backgroundColor: 'white' }
+      HookesLawConstants.SCREEN_OPTIONS
     );
   }
 
