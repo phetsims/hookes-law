@@ -21,8 +21,8 @@ define( function( require ) {
   var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
 
   /**
-   * @param {Property.<boolean>} springConstantProperty
-   * @param {Range} springConstantRange
+   * @param {Property.<boolean>} springConstantProperty units = N/m
+   * @param {Range} springConstantRange units = N/m
    * @param {Object} [options]
    * @constructor
    */

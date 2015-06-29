@@ -25,7 +25,7 @@ define( function( require ) {
     DISPLACEMENT_DECIMAL_PLACES: 3,
     ENERGY_DECIMAL_PLACES: 1,
 
-    // delta for controls
+    // deltas for controls
     SPRING_CONSTANT_DELTA: 10, // units = N/m
     APPLIED_FORCE_DELTA: 1, // units = N
     DISPLACEMENT_DELTA: 0.001, // units = m

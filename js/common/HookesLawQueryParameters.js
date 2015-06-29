@@ -27,7 +27,7 @@ define( function( require ) {
     MIDDLE_COLOR: getQueryParameter( 'middleColor' ) || HookesLawColors.SINGLE_SPRING_MIDDLE,
     BACK_COLOR: getQueryParameter( 'backColor' ) || HookesLawColors.SINGLE_SPRING_BACK,
 
-    //TODO delete this when color has been selected
+    //TODO delete this when designers have decided on color
     // Colors for scene-selection buttons
     SCENE_SELECTION_COLOR: getQueryParameter( 'sceneSelectionColor' ) || HookesLawColors.SCENE_SELECTION_BUTTONS
   };

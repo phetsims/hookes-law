@@ -15,7 +15,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
-   * @param {Property.<number>} springForceProperty
+   * @param {Property.<number>} springForceProperty units = N
    * @param {Object} [options]
    * @constructor
    */

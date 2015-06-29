@@ -30,7 +30,7 @@ define( function( require ) {
 
   /**
    * @param {RoboticArm} roboticArm
-   * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm
+   * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm, units = m
    * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
