@@ -48,7 +48,8 @@ define( function( require ) {
     // number of interactions in progress that affect displacement
     var numberOfInteractionsInProgressProperty = new Property( 0 );
 
-    // Scene graph -----------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Scene graph
 
     // origin is at right-center of wall
     var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
@@ -110,7 +111,8 @@ define( function( require ) {
       springControls
     ];
 
-    // Property observers ----------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Property observers
 
     // Attach visibility properties to their respective nodes.
     viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );

@@ -39,7 +39,8 @@ define( function( require ) {
 
     var thisSystem = this;
 
-    // Components of the system ----------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Components of the system
 
     this.topSpring = new Spring( {
       left: 0, // x location of the left end of the spring, units = m
@@ -83,7 +84,8 @@ define( function( require ) {
       right: 3
     } );
 
-    // Property observers ----------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Property observers
 
     // xeq = x1 = x2
     this.equivalentSpring.displacementProperty.link( function( displacement ) {
@@ -116,7 +118,8 @@ define( function( require ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
-    // Check for violations of the general Spring model ----------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Check for violations of the general Spring model
 
     this.topSpring.leftProperty.lazyLink( function( left ) {
       throw new Error( 'Left end of top spring must remain fixed, left=' + left );

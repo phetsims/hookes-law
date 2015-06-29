@@ -80,7 +80,8 @@ define( function( require ) {
 
     var thisSpring = this;
 
-    // Properties ------------------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Properties
 
     PropertySet.call( this, {
       appliedForce: this.appliedForceRange.defaultValue, // {number} F
@@ -89,7 +90,8 @@ define( function( require ) {
       left: options.left // {number} location of the left end of the spring, units = m
     }, options );
 
-    // Derived properties ----------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Derived properties
 
     // -F, spring force opposes the applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
@@ -145,7 +147,8 @@ define( function( require ) {
         return ( springConstant * displacement * displacement ) / 2;
       } );
 
-    // Property observers ----------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Property observers
 
     // F: When applied force changes, maintain the spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {

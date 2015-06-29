@@ -19,7 +19,8 @@ define( function( require ) {
    */
   function SingleSpringSystem( springOptions ) {
 
-    // Components of the system ----------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Components of the system
 
     // spring
     this.spring = new Spring( springOptions );
@@ -30,7 +31,8 @@ define( function( require ) {
       right: 3
     } );
 
-    // Property observers ----------------------------------------------------------------------------------------------------------------------------
+    //------------------------------------------------
+    // Property observers
 
     var thisSystem = this;
 
@@ -44,7 +46,8 @@ define( function( require ) {
       thisSystem.spring.displacementProperty.set( left - thisSystem.spring.equilibriumXProperty.get() );
     } );
 
-    // Check for conditions supported by the general Spring model that aren't allowed by this system -------------------------------------------------
+    //------------------------------------------------
+    // Check for conditions supported by the general Spring model that aren't allowed by this system
 
     this.spring.leftProperty.lazyLink( function( left ) {
       throw new Error( 'Left end of spring must remain fixed, left=' + left );
