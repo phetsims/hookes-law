@@ -13,7 +13,6 @@ define( function( require ) {
   var HingeNode = require( 'HOOKES_LAW/common/view/HingeNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );

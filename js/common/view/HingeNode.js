@@ -13,7 +13,6 @@ define( function( require ) {
   var Dimension2 = require( 'DOT/Dimension2' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'SCENERY/nodes/Line' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
