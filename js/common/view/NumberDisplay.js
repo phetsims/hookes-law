@@ -54,7 +54,7 @@ define( function( require ) {
       fill: options.backgroundFill,
       stroke: options.backgroundStroke
     } );
-    valueNode.center = background.center;
+    valueNode.centerY = background.centerY;
 
     options.children = [ background, valueNode ];
 
