@@ -156,10 +156,12 @@ define( function( require ) {
     },
 
     /**
+     * Creates a force vector icon.
+     *
      * @param {Object} [options]
      * @returns {*}
      */
-    createVectorIcon: function( options ) {
+    createForceVectorIcon: function( options ) {
 
       options = _.extend( {
         length: 30, // {number}
@@ -186,19 +188,19 @@ define( function( require ) {
         spacing: 10, // {number} space between text and vector
         arrowLength: 30, // {number}
         arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
-        arrowType: 'shape', // 'shape' (ArrowNode) or 'line' (LineArrowNode)
+        vectorType: 'force', // 'force' (ArrowNode) or 'displacement' (LineArrowNode)
         arrowFill: 'white' // {string|Color}
       }, options );
 
       // validate options
-      assert && assert( options.arrowType === 'shape' || options.arrowType === 'line' );
+      assert && assert( options.vectorType === 'force' || options.vectorType === 'displacement' );
 
       var arrowNode;
-      if ( options.arrowType === 'shape' ) {
-        arrowNode = this.createVectorIcon( _.extend( { fill: options.arrowFill }, options ) );
+      if ( options.vectorType === 'force' ) {
+        arrowNode = this.createForceVectorIcon( _.extend( { fill: options.arrowFill }, options ) );
       }
       else {
-        // options.arrowType === 'line'
+        // options.vectorType === 'displacement'
         arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
           stroke: options.arrowFill,
           headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
@@ -215,7 +217,7 @@ define( function( require ) {
     },
 
     /**
-     * Creates the icon for the equilibrium position check box, consisting of text and a vertical line.
+     * Creates the icon for the equilibrium position check box, consisting of text and a vertical dashed line.
      *
      * @returns {Node}
      */

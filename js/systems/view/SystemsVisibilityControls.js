@@ -55,7 +55,7 @@ define( function( require ) {
     var displacementCheckBox = new CheckBox(
       HookesLawIconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
-        arrowType: 'line'
+        vectorType: 'displacement'
       } ),
       properties.displacementVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
@@ -75,15 +75,15 @@ define( function( require ) {
       new HBox( {
         children: [
           new Text( totalString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-          HookesLawIconFactory.createVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
+          HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
         ],
         spacing: 10
       } ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
     // 'components' radio button
-    var component1Node = HookesLawIconFactory.createVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
-    var component2Node = HookesLawIconFactory.createVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
+    var component1Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
+    var component2Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
     var componentsVectorIcons = new VBox( {
       children: [
         component1Node,

@@ -21,8 +21,8 @@ define( function( require ) {
   var metersString = require( 'string!HOOKES_LAW/meters' );
 
   /**
-   * @param {Property.<boolean>} displacementProperty
-   * @param {Range} displacementRange
+   * @param {Property.<boolean>} displacementProperty units = m
+   * @param {Range} displacementRange units = m
    * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor

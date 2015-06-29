@@ -24,7 +24,7 @@ define( function( require ) {
   var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   /**
-   * @param {Property.<number>} forceProperty
+   * @param {Property.<number>} forceProperty units = N
    * @param {Object} [options]
    * @constructor
    */

@@ -60,7 +60,7 @@ define( function( require ) {
       HookesLawConstants.CHECK_BOX_OPTIONS );
     var displacementCheckBox = new CheckBox(
       HookesLawIconFactory.createVectorCheckBoxContent( displacementTextNode, {
-        arrowType: 'line',
+        vectorType: 'displacement',
         arrowFill: HookesLawColors.DISPLACEMENT,
         spacing: maxTextWidth - displacementTextNode.width + minSpacing
       } ),
