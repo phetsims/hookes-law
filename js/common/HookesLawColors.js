@@ -70,6 +70,7 @@ define( function( require ) {
     ROBOTIC_ARM_FILL: new Color( 210, 210, 210 ),
     ROBOTIC_ARM_STROKE: 'black',
     PINCERS_STROKE: 'black',
+    HINGE: new Color( 236, 35, 23 ),
 
     // walls that spring and robotic arm are connected to
     WALL_FILL: new Color( 210, 210, 210 ),

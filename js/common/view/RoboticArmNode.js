@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
+  var HingeNode = require( 'HOOKES_LAW/common/view/HingeNode' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var Image = require( 'SCENERY/nodes/Image' );
@@ -22,15 +23,11 @@ define( function( require ) {
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
-  // images
-  var hingeImage = require( 'image!HOOKES_LAW/robotic-arm-hinge.png' );
-
   // constants
   var PINCER_RADIUS = 35;
   var PINCER_LINE_WIDTH = 6;
   var PINCER_OVERLAP = 2;
   var ARM_HEIGHT = 16;
-  var HINGE_SCALE = 0.5; // dependent on image file size
 
   /**
    * @param {RoboticArm} roboticArm
@@ -88,8 +85,7 @@ define( function( require ) {
     } );
 
     // hinge, where the pincers are attached
-    var hingeNode = new Image( hingeImage, {
-      scale: HINGE_SCALE,
+    var hingeNode = new HingeNode( {
       x: topPincerClosedNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
@@ -192,8 +188,7 @@ define( function( require ) {
         top: -PINCER_OVERLAP
       } );
 
-      var hingeNode = new Image( hingeImage, {
-        scale: HINGE_SCALE,
+      var hingeNode = new HingeNode( {
         left: topPincerNode.right - 12,
         centerY: 0
       } );
