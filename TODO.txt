@@ -12,7 +12,6 @@ Color for scene selection buttons
 Implementation
 -----------------------------------------------------------------------------------
 
-Layout of "Intro" and "Systems" screen icons is messed up on Safari and Firefox
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 QA credits
 TODO items in code
