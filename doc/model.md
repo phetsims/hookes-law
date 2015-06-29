@@ -7,7 +7,7 @@ This document describes the model for the Hooke's Law simulation.
 For a single spring, or a system treated as a single "equivalent" spring:
 
 F = k * x
-E = ( k<sub>1</sub> * x1 * x1 ) / 2
+E = ( k<sub>1</sub> * x<sub>1</sub> * x<sub>1</sub> ) / 2
 
 where:
 
@@ -20,10 +20,10 @@ E = potential energy, J
 
 For 2 springs in series:
 
-Feq = F1 = F2
-keq = 1 / ( 1/k1 + 1/k2 )
-xeq = x1 + x2
-Eeq = E1 + E2
+F<sub>eq</sub> = F<sub>1</sub> = F<sub>2</sub>
+k<sub>eq</sub> = 1 / ( 1/k<sub>1</sub> + 1/k</sub>2 )
+x<sub>eq</sub> = x<sub>1</sub> + x<sub>2</sub>
+E<sub>eq</sub> = E<sub>1</sub> + E<sub>2</sub>
 
 where:
 
@@ -35,10 +35,10 @@ subscript "2" pertains to the right spring in this sim
 
 For 2 springs in parallel:
 
-Feq = F1 + F2
-keq = k1 + k2
-xeq = x1 = x2
-Eeq = E1 + E2
+F<sub>eq</sub> = F<sub>1</sub> + F<sub>2</sub>
+k<sub>eq</sub> = k<sub>1</sub> + k<sub>2</sub>
+x<sub>eq</sub> = x<sub>1</sub> = x<sub>2</sub>
+E<sub>eq</sub> = E<sub>1</sub> + E<sub>2</sub>
 
 where:
 
