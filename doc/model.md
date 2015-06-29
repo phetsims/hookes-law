@@ -6,7 +6,8 @@ This document describes the model for the Hooke's Law simulation.
 
 For a single spring, or a system treated as a single "equivalent" spring:
 
-F = k * x\n
+F = k * x
+
 E = ( k<sub>1</sub> * x<sub>1</sub> * x<sub>1</sub> ) / 2
 
 where:
