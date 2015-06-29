@@ -1,4 +1,0 @@
-parallel-spring-scene.png source=PhET author=Amy Rouinfar
-series-spring-scene.png source=PhET author=Amy Rouinfar
-single-spring-scene.png source=PhET author=Amy Rouinfar
-two-spring-scene.png source=PhET author=Amy Rouinfar
