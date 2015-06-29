@@ -11,38 +11,38 @@ E = ( k<sub>1</sub> * x<sub>1</sub> * x<sub>1</sub> ) / 2
 
 where:
 
-F = applied force, N/m
-k = spring constant, N/m
-x = displacement from equilibrium position, m
+F = applied force, N/m<br>
+k = spring constant, N/m<br>
+x = displacement from equilibrium position, m<br>
 E = potential energy, J
 
 ## Series Springs
 
 For 2 springs in series:
 
-F<sub>eq</sub> = F<sub>1</sub> = F<sub>2</sub>
-k<sub>eq</sub> = 1 / ( 1/k<sub>1</sub> + 1/k<sub>2</sub> )
-x<sub>eq</sub> = x<sub>1</sub> + x<sub>2</sub>
+F<sub>eq</sub> = F<sub>1</sub> = F<sub>2</sub><br>
+k<sub>eq</sub> = 1 / ( 1/k<sub>1</sub> + 1/k<sub>2</sub> )<br>
+x<sub>eq</sub> = x<sub>1</sub> + x<sub>2</sub><br>
 E<sub>eq</sub> = E<sub>1</sub> + E<sub>2</sub>
 
 where:
 
-subscript "eq" is a spring that is equivalent to the 2 springs in series
-subscript "1" pertains to the left spring in this sim
+subscript "eq" is a spring that is equivalent to the 2 springs in series<br>
+subscript "1" pertains to the left spring in this sim<br>
 subscript "2" pertains to the right spring in this sim
 
 ## Parallel Springs
 
 For 2 springs in parallel:
 
-F<sub>eq</sub> = F<sub>1</sub> + F<sub>2</sub>
-k<sub>eq</sub> = k<sub>1</sub> + k<sub>2</sub>
-x<sub>eq</sub> = x<sub>1</sub> = x<sub>2</sub>
+F<sub>eq</sub> = F<sub>1</sub> + F<sub>2</sub><br>
+k<sub>eq</sub> = k<sub>1</sub> + k<sub>2</sub><br>
+x<sub>eq</sub> = x<sub>1</sub> = x<sub>2</sub><br>
 E<sub>eq</sub> = E<sub>1</sub> + E<sub>2</sub>
 
 where:
 
-subscript "eq" is a spring that is equivalent to the 2 springs in parallel
-subscript "1" pertains to the top spring in this sim
+subscript "eq" is a spring that is equivalent to the 2 springs in parallel<br>
+subscript "1" pertains to the top spring in this sim<br>
 subscript "2" pertains to the bottom spring in this sim
 
