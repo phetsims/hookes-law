@@ -21,7 +21,7 @@ E = potential energy, J
 For 2 springs in series:
 
 F<sub>eq</sub> = F<sub>1</sub> = F<sub>2</sub>
-k<sub>eq</sub> = 1 / ( 1/k<sub>1</sub> + 1/k</sub>2 )
+k<sub>eq</sub> = 1 / ( 1/k<sub>1</sub> + 1/k<sub>2</sub> )
 x<sub>eq</sub> = x<sub>1</sub> + x<sub>2</sub>
 E<sub>eq</sub> = E<sub>1</sub> + E<sub>2</sub>
 
