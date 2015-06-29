@@ -112,7 +112,7 @@ define( function( require ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );
 
-    // Check for violations of the general Spring model ----------------------------------------------------------------------------------------------
+    // Check for conditions supported by the general Spring model that aren't allowed by this system -------------------------------------------------
 
     this.leftSpring.leftProperty.lazyLink( function( left ) {
       throw new Error( 'Left end of left spring must remain fixed, left=' + left );
