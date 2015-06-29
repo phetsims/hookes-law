@@ -60,6 +60,7 @@ define( function( require ) {
       ]
     } );
 
+    // "left" control to the left of "right" control, to reflect layout of system
     var springControls = new HBox( {
       spacing: 20,
       children: [

@@ -62,7 +62,7 @@ define( function( require ) {
         ]
       } );
 
-    // "top" control above "bottom" control
+    // "top" control above "bottom" control, to reflect layout of system
     var springControls = new VBox( {
       spacing: 5,
       resize: false,
