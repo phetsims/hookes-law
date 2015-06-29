@@ -18,8 +18,8 @@ define( function( require ) {
    */
   function IntroModel() {
     var springOptions = {
-      springConstantRange: new Range( 100, 1000, 200 ),
-      appliedForceRange: new Range( -100, 100, 0 )
+      springConstantRange: new Range( 100, 1000, 200 ), // units = N/m
+      appliedForceRange: new Range( -100, 100, 0 ) // units = N
     };
     this.system1 = new SingleSpringSystem( springOptions );
     this.system2 = new SingleSpringSystem( springOptions );

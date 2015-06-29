@@ -65,7 +65,7 @@ define( function( require ) {
     assert && assert( this.topSpring.equilibriumXProperty.get() === this.bottomSpring.equilibriumXProperty.get(),
       'top and bottom springs must have same equilibrium position' );
 
-    // the single spring that is equivalent to the 2 springs in series
+    // the single spring that is equivalent to the 2 springs in parallel
     this.equivalentSpring = new Spring( {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
@@ -78,7 +78,7 @@ define( function( require ) {
       appliedForceRange: this.topSpring.appliedForceRange
     } );
 
-    // arm, connected to the right end of the equivalent spring
+    // robotic arm, connected to the right end of the equivalent spring
     this.roboticArm = new RoboticArm( {
       left: this.equivalentSpring.rightProperty.get(),
       right: 3
@@ -113,7 +113,7 @@ define( function( require ) {
       }
     } );
 
-    // Connect arm to equivalent spring.
+    // Connect robotic arm to equivalent spring.
     this.equivalentSpring.rightProperty.link( function( right ) {
       thisSystem.roboticArm.leftProperty.set( right );
     } );

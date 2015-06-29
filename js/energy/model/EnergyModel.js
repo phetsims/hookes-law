@@ -18,8 +18,8 @@ define( function( require ) {
    */
   function EnergyModel() {
     this.system = new SingleSpringSystem( {
-      springConstantRange: new Range( 100, 400, 100 ), // F
-      displacementRange: new Range( -1, 1, 0 ) // m
+      springConstantRange: new Range( 100, 400, 100 ), // units = F
+      displacementRange: new Range( -1, 1, 0 ) // units = m
     } );
   }
 
