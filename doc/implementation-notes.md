@@ -34,8 +34,8 @@ vectors lengths for the various 1-dimensional quantities (displacement, force, e
 
 The robotic arm has a pair of pincers that are open when displacement is zero and no user interaction
 is taking place.  In order to determine whether user interaction is taking place, Property
-`numberOfInteractionsInProgressProperty` is passed to any user-interface component that affects
-displacement.  When an interaction begins, numberOfInteractionsInProgressProperty is incremented;
+`numberOfInteractionsInProgressProperty` is passed to all user-interface components that affects
+displacement. When an interaction begins, numberOfInteractionsInProgressProperty is incremented;
 when an interaction ends, numberOfInteractionsInProgressProperty is decremented.  The pincers are
 opened only when `( displacement === 0 && numberOfInteractionsInProgressProperty.get() === 0 )`.
 
