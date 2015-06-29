@@ -3,7 +3,7 @@ Hooke's Law model
 
 This document describes the model for the Hooke's Law simulation.
 
-**Singe Spring**
+# Singe Spring
 
 For a single spring, or a system treated as a single "equivalent" spring:
 
@@ -17,7 +17,7 @@ k = spring constant, N/m
 x = displacement from equilibrium position, m
 E = potential energy, J
 
-**Series Springs**
+# Series Springs
 
 For 2 springs in series:
 
@@ -32,7 +32,7 @@ subscript "eq" is a spring that is equivalent to the 2 springs in series
 subscript "1" pertains to the left spring in this sim
 subscript "2" pertains to the right spring in this sim
 
-**Parallel Springs**
+# Parallel Springs
 
 For 2 springs in parallel:
 
