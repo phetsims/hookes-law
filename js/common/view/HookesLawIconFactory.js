@@ -106,7 +106,7 @@ define( function( require ) {
         centerY: springsBox.centerY
       } );
 
-     // piece that pincers grab
+      // piece that pincers grab
       var nibNode = new NibNode( {
         fill: 'black',
         x: verticalLineNode.x,

@@ -48,7 +48,7 @@ define( function( require ) {
 
     options.spacing = 10;
     options.children = [
-      new Panel( springConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ) ,
+      new Panel( springConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
       new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
     ];
     HBox.call( this, options );

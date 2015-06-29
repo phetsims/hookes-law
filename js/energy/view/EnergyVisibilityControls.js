@@ -116,7 +116,7 @@ define( function( require ) {
         energyXYRadioButton,
         forceXYRadioButton,
         // "Energy" check box indented below "Force Plot" radio button
-        new HBox( { children:[ new HStrut( 25 ), energyCheckBox ] } ),
+        new HBox( { children: [ new HStrut( 25 ), energyCheckBox ] } ),
         new HSeparator( maxControlWidth, HookesLawConstants.SEPARATOR_OPTIONS ),
         appliedForceCheckBox,
         displacementCheckBox,
