@@ -14,7 +14,7 @@
  * Model equations:
  *
  * F = k * x
- * E = ( k1 * x1 * x1 ) / 2
+ * E = ( k * x * x ) / 2
  *
  * where:
  *
