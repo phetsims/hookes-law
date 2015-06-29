@@ -36,3 +36,6 @@ is taking place.  In order to determine whether user interaction is taking place
 displacement.  When an interaction begins, numberOfInteractionsInProgressProperty is incremented;
 when an interaction ends, numberOfInteractionsInProgressProperty is decremented.  The pincers are
 opened only when `( displacement === 0 && numberOfInteractionsInProgressProperty.get() === 0 )`.
+
+The implementation of the spring view is based on a parametric equation known as the prolate cycloid.
+See the documentation in `ParametricSpringNode` for details.
