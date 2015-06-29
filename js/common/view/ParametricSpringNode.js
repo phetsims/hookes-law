@@ -34,7 +34,7 @@ define( function( require ) {
   function ParametricSpringNode( propertySet, options ) {
 
     options = _.extend( {
-      lineCap: 'round',
+      lineCap: 'square',
       // {Color|string} colors used for the gradient strokes. middleColor is the dominant color.
       frontColor: 'lightGray',
       middleColor: 'gray',
