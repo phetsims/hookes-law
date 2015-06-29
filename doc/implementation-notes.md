@@ -18,7 +18,8 @@ are referred to as vectors in the code (e.g. `appliedForceVector`).  Since the m
 these "vectors" are implemented as scalars instead of vectors. This simplifies the implementation,
 and allows us to use simple numbers rather than allocating Vector objects.
 
-For two-spring systems, the classical model equations use subscripts '1' and '2' to refer to the springs.
+For two-spring systems, the classical model equations use subscripts '1' and '2' to refer to the springs (e.g.
+k<sub>1</sub>, k<sub>2</sub>).
 Rather than use subscripts, this implementations uses "left" and "right" (for series springs),
 "top" and "bottom" (for parallel springs).
 
