@@ -61,6 +61,11 @@ define( function( require ) {
     BOTTOM_SPRING_MIDDLE: SPRING2_MIDDLE,
     BOTTOM_SPRING_BACK: SPRING2_BACK,
 
+    // colors for springs in scene selection icons
+    SCENE_SELECTION_SPRING_FRONT: new Color( 100, 100, 100 ),
+    SCENE_SELECTION_SPRING_MIDDLE: new Color( 50, 50, 50 ),
+    SCENE_SELECTION_SPRING_BACK: 'black',
+
     // robotic arm
     ROBOTIC_ARM_FILL: new Color( 210, 210, 210 ),
     ROBOTIC_ARM_STROKE: 'black',

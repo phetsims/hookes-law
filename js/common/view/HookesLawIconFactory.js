@@ -35,12 +35,11 @@ define( function( require ) {
     lineWidth: 5
   } );
 
-  //TODO move colors to HookesLawColors
   // Spring options for all icons related to scene selection
   var SCENE_SELECTION_SPRING_OPTIONS = {
-    frontColor: 'rgb( 100, 100, 100 )',
-    middleColor: 'rgb( 50, 50, 50 )',
-    backColor: 'black',
+    frontColor: HookesLawColors.SCENE_SELECTION_SPRING_FRONT,
+    middleColor: HookesLawColors.SCENE_SELECTION_SPRING_MIDDLE,
+    backColor: HookesLawColors.SCENE_SELECTION_SPRING_BACK,
     scale: 0.3
   };
 
