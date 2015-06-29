@@ -22,7 +22,7 @@ define( function( require ) {
   var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var Screen = require( 'JOIST/Screen' );
+  var ScreenIcon = require( 'JOIST/ScreenIcon' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -41,31 +41,6 @@ define( function( require ) {
     middleColor: HookesLawColors.SCENE_SELECTION_SPRING_MIDDLE,
     backColor: HookesLawColors.SCENE_SELECTION_SPRING_BACK,
     scale: 0.3
-  };
-
-  //TODO copied from graphing-lines.GLIconFactory, move to common code? See joist#259
-  /**
-   * Creates a screen icon by putting a node on a properly-sized rectangular background.
-   *
-   * @param {Node} contentNode the node to be placed on a background
-   * @param {Object} [options]
-   * @returns {Node}
-   */
-  var createScreenIcon = function( contentNode, options ) {
-
-    options = _.extend( {
-      size: Screen.HOME_SCREEN_ICON_SIZE,
-      xScaleFactor: 0.85,
-      yScaleFactor: 0.85,
-      fill: 'white'
-    }, options );
-
-    var background = new Rectangle( 0, 0, options.size.width, options.size.height, { fill: options.fill } );
-
-    contentNode.setScaleMagnitude( Math.min( options.xScaleFactor * background.width / contentNode.width, options.yScaleFactor * background.height / contentNode.height ) );
-    contentNode.center = background.center;
-
-    return new Node( { children: [ background, contentNode ], pickable: false } );
   };
 
   return {
@@ -96,9 +71,9 @@ define( function( require ) {
         centerY: springNode.centerY
       } );
 
-      var contentNode = new Node( { children: [ armNode, springNode, nibNode ] } );
+      var iconNode = new Node( { children: [ armNode, springNode, nibNode ] } );
 
-      return createScreenIcon( contentNode );
+      return new ScreenIcon( iconNode );
     },
 
     /**
@@ -144,7 +119,7 @@ define( function( require ) {
         centerY: verticalLineNode.centerY
       } );
 
-      var contentNode = new Node( {
+      var iconNode = new Node( {
         children: [
           armNode,
           topSpringNode,
@@ -154,7 +129,7 @@ define( function( require ) {
         ]
       } );
 
-      return createScreenIcon( contentNode );
+      return new ScreenIcon( iconNode );
     },
 
     /**
@@ -175,9 +150,9 @@ define( function( require ) {
         bottom: yAxisNode.bottom
       } );
 
-      var contentNode = new Node( { children: [ barNode, yAxisNode ] } );
+      var iconNode = new Node( { children: [ barNode, yAxisNode ] } );
 
-      return createScreenIcon( contentNode );
+      return new ScreenIcon( iconNode );
     },
 
     /**
