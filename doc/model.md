@@ -1,6 +1,7 @@
 # Hooke's Law model
 
-This document describes the model for the Hooke's Law simulation.
+This document describes the model for the Hooke's Law simulation.<br>
+@author Chris Malley (PixelZoom, Inc.)
 
 ## Singe Spring
 
