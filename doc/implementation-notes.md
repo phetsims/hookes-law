@@ -39,3 +39,5 @@ opened only when `( displacement === 0 && numberOfInteractionsInProgressProperty
 
 The implementation of the spring view is based on a parametric equation known as the prolate cycloid.
 See the documentation in `ParametricSpringNode` for details.
+
+For a list of query parameters that are specific to this simulation, see `HookesLawQueryParameters`. 
