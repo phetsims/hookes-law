@@ -18,6 +18,7 @@ define( function( require ) {
   var SystemsSceneControl = require( 'HOOKES_LAW/systems/view/SystemsSceneControl' );
   var SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
   var SystemsVisibilityControls = require( 'HOOKES_LAW/systems/view/SystemsVisibilityControls' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
    * @param {SystemsModel} model
@@ -34,19 +35,20 @@ define( function( require ) {
     var viewProperties = new SystemsViewProperties();
 
     // Visibility controls
-    var visiblityControls = new SystemsVisibilityControls( viewProperties, {
-      top: this.layoutBounds.top + 10,
-      right: this.layoutBounds.right - 10,
+    var visibilityControls = new SystemsVisibilityControls( viewProperties, {
       maxWidth: 260 // constrain width for i18n, determining empirically
     } );
-    this.addChild( visiblityControls );
 
     // Control for switching between series and parallel systems
-    var sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty, {
-      centerX: visiblityControls.centerX,
-      top: visiblityControls.bottom + 10
-    } );
-    this.addChild( sceneControl );
+    var sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty );
+
+    // horizontally center the controls
+    this.addChild( new VBox( {
+      spacing: 10,
+      children: [ visibilityControls, sceneControl ],
+      right: this.layoutBounds.right - 10,
+      top: this.layoutBounds.top + 10
+    } ) );
 
     // Series system
     var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {

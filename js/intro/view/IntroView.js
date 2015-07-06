@@ -17,6 +17,7 @@ define( function( require ) {
   var IntroVisibilityControls = require( 'HOOKES_LAW/intro/view/IntroVisibilityControls' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
    * @param {IntroModel} model
@@ -35,18 +36,19 @@ define( function( require ) {
 
     // Visibility controls
     var visibilityControls = new IntroVisibilityControls( viewProperties, {
-      top: this.layoutBounds.top + 10,
-      right: this.layoutBounds.right - 10,
       maxWidth: 250 // constrain width for i18n, determining empirically
     } );
-    this.addChild( visibilityControls );
 
     // Control for switching between 1 and 2 systems
-    var sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty, {
-      centerX: visibilityControls.centerX,
-      top: visibilityControls.bottom + 10
-    } );
-    this.addChild( sceneControl );
+    var sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty );
+
+    // horizontally center the controls
+    this.addChild( new VBox( {
+      spacing: 10,
+      children: [ visibilityControls, sceneControl ],
+      right: this.layoutBounds.right - 10,
+      top: this.layoutBounds.top + 10
+    } ) );
 
     // System 1
     var system1Node = new IntroSystemNode( model.system1, viewProperties, {
