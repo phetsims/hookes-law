@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
-  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
@@ -26,9 +25,7 @@ define( function( require ) {
       spacing: 10,
       buttonContentXMargin: 5,
       buttonContentYMargin: 5,
-      deselectedButtonOpacity: 0.6,
-      deselectedContentOpacity: 0.6,
-      baseColor: HookesLawQueryParameters.SCENE_SELECTION_COLOR
+      selectedLineWidth: 2
     }, options );
 
     RadioButtonGroup.call( this, seriesParallelProperty, [

@@ -33,7 +33,6 @@ define( function( require ) {
     CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),
     CONTROL_PANEL_STROKE: new Color( 125, 125, 125 ),
     SEPARATOR_STROKE: new Color( 125, 125, 125 ),
-    SCENE_SELECTION_BUTTONS: new Color( 255, 255, 100 ),
 
     // colors for single spring
     SINGLE_SPRING: SPRING0_MIDDLE,

@@ -12,7 +12,6 @@ Look of box that robotic arm comes out of
 Implementation
 -----------------------------------------------------------------------------------
 
-Scene selection: use default blue, thicker stroke to the active scene, as is done in ESPB, Color Vision, and Faraday's Law
 Performance on iPad?
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 QA credits
