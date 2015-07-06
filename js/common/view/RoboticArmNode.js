@@ -55,42 +55,52 @@ define( function( require ) {
       lineWidth: 0.5
     } );
 
-    // top pincer, closed and open configurations
-    var topPincerClosedNode = createTopPincerClosed( {
+    // @private
+    this.topPincerClosedNode = createTopPincerClosed( {
       stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
       bottom: PINCER_OVERLAP
     } );
-    var topPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 ), {
+
+    // @private
+    this.topPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 ), {
       stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
-      right: topPincerClosedNode.right,
+      right: this.topPincerClosedNode.right,
       bottom: 0
     } );
 
-    // bottom pincer, closed and open configurations
-    var bottomPincerClosedNode = createBottomPincerClosed( {
+    // @private
+    this.bottomPincerClosedNode = createBottomPincerClosed( {
       stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
       top: -PINCER_OVERLAP
     } );
-    var bottomPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true ), {
+
+    // @private
+    this.bottomPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true ), {
       stroke: HookesLawColors.PINCERS_STROKE,
       lineWidth: PINCER_LINE_WIDTH,
-      right: bottomPincerClosedNode.right,
+      right: this.bottomPincerClosedNode.right,
       top: 0
     } );
 
     // hinge, where the pincers are attached
     var hingeNode = new HingeNode( {
-      x: topPincerClosedNode.right - 12, // dependent on image file
+      x: this.topPincerClosedNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
 
     // pincers and hinge are draggable, other parts are not
-    var draggableNode = new Node( { children: [ topPincerClosedNode, topPincerOpenNode, bottomPincerClosedNode, bottomPincerOpenNode, hingeNode ] } );
+    var draggableNode = new Node( {
+      children: [
+        this.topPincerClosedNode, this.topPincerOpenNode,
+        this.bottomPincerClosedNode, this.bottomPincerOpenNode,
+        hingeNode
+      ]
+    } );
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
     // Drag the pincers or hinge
@@ -134,15 +144,6 @@ define( function( require ) {
       armNode.centerY = 0;
     } );
 
-    /**
-     * Open and close the pincers
-     * @param {boolean} pincersOpen
-     */
-    this.setPincersOpen = function( pincersOpen ) {
-      topPincerOpenNode.visible = bottomPincerOpenNode.visible = pincersOpen;
-      topPincerClosedNode.visible = bottomPincerClosedNode.visible = !pincersOpen;
-    };
-
     options.children = [ armNode, wallNode, draggableNode ];
     Node.call( this, options );
   }
@@ -165,7 +166,19 @@ define( function( require ) {
     return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), options );
   };
 
-  return inherit( Node, RoboticArmNode, {}, {
+  return inherit( Node, RoboticArmNode, {
+
+    /**
+     * Open and close the pincers
+     * @param {boolean} pincersOpen
+     * @public
+     */
+    setPincersOpen: function( pincersOpen ) {
+      this.topPincerOpenNode.visible = this.bottomPincerOpenNode.visible = pincersOpen;
+      this.topPincerClosedNode.visible = this.bottomPincerClosedNode.visible = !pincersOpen;
+    }
+
+  }, {
 
     /**
      * Creates an icon that represents this node.
