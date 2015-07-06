@@ -46,6 +46,7 @@ define( function( require ) {
       top: arrowNode.bottom + 2 // below the arrow
     } );
 
+    // translucent background, so that value isn't difficult to read when it overlaps with other UI components
     var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );
 
     var verticalLine = new Line( 0, 0, 0, 20, {
