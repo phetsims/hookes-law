@@ -7,7 +7,7 @@
  *
  * The front and back of the spring are drawn as separate paths to provide pseudo-3D visual cues.
  *
- * The "Experimental" screen provides an extensive test harness ParametricSpringNode.
+ * The "Experimental" screen provides an extensive test harness for ParametricSpringNode.
  * Run with query parameter "exp" to add the "Experimental" screen to the sim.
  *
  * @author Martin Veillette (Berea College)
