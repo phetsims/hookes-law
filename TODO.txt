@@ -13,7 +13,6 @@ Implementation
 -----------------------------------------------------------------------------------
 
 Performance on iPad?
-Check box items are calling setVisible twice for their related nodes
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 QA credits
 TODO items in code
