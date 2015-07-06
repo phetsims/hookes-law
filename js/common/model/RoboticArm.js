@@ -28,7 +28,7 @@ define( function( require ) {
     this.right = options.right; // right (fixed) end of the arm, read-only
 
     PropertySet.call( this, {
-      left: options.left
+      left: options.left  // left (movable) end of the arm
     }, options );
 
     this.leftProperty.link( function( left ) {
