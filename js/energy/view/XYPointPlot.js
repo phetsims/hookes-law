@@ -84,7 +84,7 @@ define( function( require ) {
 
       // point
       pointFill: 'black',
-      pointRadius: 6
+      pointRadius: 5
 
     }, options );
 
