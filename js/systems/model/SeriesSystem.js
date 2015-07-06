@@ -57,7 +57,7 @@ define( function( require ) {
       appliedForceRange: this.leftSpring.appliedForceRange
     } );
 
-    // the single spring that is equivalent to the 2 springs in parallel
+    // the single spring that is equivalent to the 2 springs in series
     this.equivalentSpring = new Spring( {
       left: this.leftSpring.leftProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,

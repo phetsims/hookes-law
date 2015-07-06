@@ -159,7 +159,7 @@ define( function( require ) {
      * Creates a force vector icon.
      *
      * @param {Object} [options]
-     * @returns {*}
+     * @returns {Node}
      */
     createForceVectorIcon: function( options ) {
 

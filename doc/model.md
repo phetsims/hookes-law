@@ -3,7 +3,7 @@
 This document describes the model for the Hooke's Law simulation.<br>
 @author Chris Malley (PixelZoom, Inc.)
 
-## Singe Spring
+## Single Spring
 
 For a single spring, or a system treated as a single "equivalent" spring:
 
