@@ -14,7 +14,6 @@ Implementation
 
 Revise purple spring colors: frontColor=rgb(221,191,255), middleColor=rgb(146,64,255), backColor=rgb(124,54,217)
 Scene selection: use default blue, thicker stroke to the active scene, as is done in ESPB, Color Vision, and Faraday's Law
-Make check boxes same height as radio buttons, not same diameter
 Performance on iPad?
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 QA credits

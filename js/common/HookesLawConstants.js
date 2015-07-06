@@ -69,7 +69,7 @@ define( function( require ) {
 
     // options
     CHECK_BOX_OPTIONS: {
-      boxWidth: 15,
+      boxWidth: 18,
       spacing: 8
     },
     CONTROL_TEXT_OPTIONS: {
