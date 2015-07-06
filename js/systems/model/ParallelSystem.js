@@ -77,11 +77,12 @@ define( function( require ) {
       // Feq = F1 + F2
       appliedForceRange: this.topSpring.appliedForceRange
     } );
+    assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 
     // robotic arm, connected to the right end of the equivalent spring
     this.roboticArm = new RoboticArm( {
       left: this.equivalentSpring.rightProperty.get(),
-      right: 3
+      right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get()
     } );
 
     //------------------------------------------------

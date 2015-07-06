@@ -24,11 +24,12 @@ define( function( require ) {
 
     // spring
     this.spring = new Spring( springOptions );
+    assert && assert( this.spring.displacementProperty.get() === 0 ); // spring is at equilibrium
 
     // arm, left end attached to spring
     this.roboticArm = new RoboticArm( {
       left: this.spring.rightProperty.get(),
-      right: 3
+      right: this.spring.rightProperty.get() + this.spring.lengthProperty.get()
     } );
 
     //------------------------------------------------
