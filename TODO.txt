@@ -20,6 +20,6 @@ Common Code
 -----------------------------------------------------------------------------------
 
 LineArrowNode -> scenery-phet
-ParametricSpringNode -> scenery-phet
+ParametricSpringNode (and test harness?) -> scenery-phet
 
 
