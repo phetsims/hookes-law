@@ -43,18 +43,6 @@ define( function( require ) {
       propertySet.xScaleProperty.set( xScale );
     } );
 
-    // shrink the coil radius (y dimension) a bit when stretching the spring, to simulate radius change
-    spring.displacementProperty.link( function( displacement ) {
-      if ( displacement <= 0 ) {
-        // compressed
-        propertySet.aspectRatioProperty.set( options.aspectRatio );
-      }
-      else {
-        // stretched
-        propertySet.aspectRatioProperty.set( options.aspectRatio * ( 1 - 0.05 * displacement / spring.displacementRange.max ) );
-      }
-    } );
-
     // spring constant determines lineWidth
     spring.springConstantProperty.link( function( springConstant ) {
       var lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
