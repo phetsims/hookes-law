@@ -4,9 +4,7 @@ TODO list for hookes-law
 Design questions
 -----------------------------------------------------------------------------------
 
-Color for scene selection buttons (use “sceneSelectionColor” query parameter to experiment)
-Look of wall that spring attaches to
-Look of box that robotic arm comes out of
+Look of walls
 
 -----------------------------------------------------------------------------------
 Implementation
