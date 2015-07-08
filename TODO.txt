@@ -10,7 +10,6 @@ Look of walls
 Implementation
 -----------------------------------------------------------------------------------
 
-Document unlink/dispose/detach requirements
 Performance on iPad
 Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
 QA credits

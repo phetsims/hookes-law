@@ -44,4 +44,9 @@ See the documentation in `ParametricSpringNode` for details.
 
 ## Miscellaneous
 
+Regarding memory management: Everything created in this sim (model and view) exists for the lifetime of the sim,
+there is no dynamic creation/deletion of objects. All observer/observable relationships also exist for the lifetime
+of the sim.  So there is no need to call the various memory-management functions associated with objects
+(unlink, dispose, detach, etc.)
+
 For a list of query parameters that are specific to this simulation, see `HookesLawQueryParameters`. 
