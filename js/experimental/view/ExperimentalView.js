@@ -35,7 +35,19 @@ define( function( require ) {
     this.addChild( wallNode );
 
     // spring
-    var springNode = new ParametricSpringNode( model.propertySet, {
+    var springNode = new ParametricSpringNode( {
+
+      // initial values for Properties
+      loops: model.loopsRange.defaultValue,
+      radius: model.radiusRange.defaultValue,
+      aspectRatio: model.aspectRatioRange.defaultValue,
+      pointsPerLoop: model.pointsPerLoopRange.defaultValue,
+      lineWidth: model.lineWidthRange.defaultValue,
+      phase: model.phaseRange.defaultValue,
+      deltaPhase: model.deltaPhaseRange.defaultValue,
+      xScale: model.xScaleRange.defaultValue,
+
+      // initial values for static fields
       frontColor: HookesLawQueryParameters.FRONT_COLOR,
       middleColor: HookesLawQueryParameters.MIDDLE_COLOR,
       backColor: HookesLawQueryParameters.BACK_COLOR,
@@ -45,7 +57,7 @@ define( function( require ) {
     this.addChild( springNode );
 
     // control panel, scaled to fit
-    var controls = new ParametricSpringControls( model );
+    var controls = new ParametricSpringControls( model, springNode );
     this.addChild( controls );
     controls.setScaleMagnitude( Math.min( 1, this.layoutBounds.width / controls.width ) );
     controls.top = 0;
@@ -54,7 +66,7 @@ define( function( require ) {
     // Reset All button, bottom right
     this.addChild( new ResetAllButton( {
       listener: function() {
-        model.reset();
+        springNode.reset();
       },
       right: this.layoutBounds.maxX - 15,
       bottom: this.layoutBounds.maxY - 15

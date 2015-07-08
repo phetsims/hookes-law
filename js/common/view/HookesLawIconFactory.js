@@ -29,19 +29,19 @@ define( function( require ) {
   // strings
   var equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
 
-  // PropertySet used by all functions that create a ParametricSpringNode
-  var SPRING_PROPERTY_SET = ParametricSpringNode.createPropertySet( {
+  // Spring options common to all icons
+  var COMMON_SPRING_OPTIONS = {
     loops: 3,
     lineWidth: 5
-  } );
+  };
 
   // Spring options for all icons related to scene selection
-  var SCENE_SELECTION_SPRING_OPTIONS = {
+  var SCENE_SELECTION_SPRING_OPTIONS = _.extend( {
     frontColor: HookesLawColors.SCENE_SELECTION_SPRING_FRONT,
     middleColor: HookesLawColors.SCENE_SELECTION_SPRING_MIDDLE,
     backColor: HookesLawColors.SCENE_SELECTION_SPRING_BACK,
     scale: 0.3
-  };
+  }, COMMON_SPRING_OPTIONS );
 
   return {
 
@@ -52,11 +52,11 @@ define( function( require ) {
     createIntroScreenIcon: function() {
 
       // spring
-      var springNode = new ParametricSpringNode( SPRING_PROPERTY_SET, {
+      var springNode = new ParametricSpringNode( _.extend( {
         frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
         middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
         backColor: HookesLawColors.SINGLE_SPRING_BACK
-      } );
+      }, COMMON_SPRING_OPTIONS ) );
 
       // piece that pincers grab
       var nibNode = new NibNode( {
@@ -83,16 +83,16 @@ define( function( require ) {
     createSystemsScreenIcon: function() {
 
       // springs
-      var topSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, {
+      var topSpringNode = new ParametricSpringNode( _.extend( {
         frontColor: HookesLawColors.TOP_SPRING_FRONT,
         middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
         backColor: HookesLawColors.TOP_SPRING_BACK
-      } );
-      var bottomSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, {
+      }, COMMON_SPRING_OPTIONS ) );
+      var bottomSpringNode = new ParametricSpringNode( _.extend( {
         frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
         middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
         backColor: HookesLawColors.BOTTOM_SPRING_BACK
-      } );
+      }, COMMON_SPRING_OPTIONS ) );
       var springsBox = new VBox( {
         spacing: 10,
         children: [ topSpringNode, bottomSpringNode ]
@@ -235,7 +235,7 @@ define( function( require ) {
      * @returns {Node}
      */
     createSingleSpringIcon: function() {
-      return new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+      return new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
     },
 
     /**
@@ -246,8 +246,8 @@ define( function( require ) {
       return new VBox( _.extend( {
         spacing: 5,
         children: [
-          new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS ),
-          new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS )
+          new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS ),
+          new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS )
         ]
       } ) );
     },
@@ -257,8 +257,8 @@ define( function( require ) {
      * @returns {Node}
      */
     createSeriesSystemIcon: function() {
-      var leftSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
-      var rightSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+      var leftSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
+      var rightSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
       rightSpringNode.left = leftSpringNode.right;
       var wallNode = new Line( 0, 0, 0, 1.2 * leftSpringNode.height, {
         stroke: 'black',
@@ -275,8 +275,8 @@ define( function( require ) {
      * @returns {Node}
      */
     createParallelSystemIcon: function() {
-      var topSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
-      var bottomSpringNode = new ParametricSpringNode( SPRING_PROPERTY_SET, SCENE_SELECTION_SPRING_OPTIONS );
+      var topSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
+      var bottomSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
       var springsBox = new VBox( {
         spacing: 5,
         children: [ topSpringNode, bottomSpringNode ]

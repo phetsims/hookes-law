@@ -27,11 +27,10 @@ define( function( require ) {
   var Vector2 = require( 'DOT/Vector2' );
 
   /**
-   * @param {PropertySet} propertySet - view-specific PropertySet for this node's dynamic parameters, see createPropertySet
    * @param {Object} [options]
    * @constructor
    */
-  function ParametricSpringNode( propertySet, options ) {
+  function ParametricSpringNode( options ) {
 
     options = _.extend( {
       lineCap: 'square',
@@ -42,23 +41,50 @@ define( function( require ) {
       // {number} length of the horizontal line added to the left end of the coil
       leftEndLength: 15,
       // {number} length of the horizontal line added to the right end of the coil
-      rightEndLength: 25
+      rightEndLength: 25,
+      // {number} number of loops in the spring
+      loops: 10,
+      // {number} radius of a loop with aspect ratio of 1:1
+      radius: 10,
+      // {number} y:x aspect ratio of the loop radius
+      aspectRatio: 4,
+      // {number} number of points used to approximate 1 loop
+      pointsPerLoop: 30,
+      // {number} lineWidth used to draw the coil
+      lineWidth: 3,
+      // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
+      phase: Math.PI,
+      // {number} responsible for the leaning of the spring, variation on a Lissjoue curve, period is (0,2*PI) radians
+      deltaPhase: Math.PI / 2,
+      // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
+      xScale: 2.5
+    }, options );
+
+    this.propertySet = new PropertySet( {
+      loops: options.loops,
+      radius: options.radius,
+      aspectRatio: options.aspectRatio,
+      pointsPerLoop: options.pointsPerLoop,
+      lineWidth: options.lineWidth,
+      phase: options.phase,
+      deltaPhase: options.deltaPhase,
+      xScale: options.xScale
     }, options );
 
     var frontPath = new Path( null, { lineCap: options.lineCap } );
     var backPath = new Path( null, { lineCap: options.lineCap } );
 
     // Update the line width
-    propertySet.lineWidthProperty.link( function( lineWidth ) {
+    this.propertySet.lineWidthProperty.link( function( lineWidth ) {
       frontPath.lineWidth = backPath.lineWidth = lineWidth;
     } );
 
     // Update the shapes
     Property.multilink( [
-        propertySet.loopsProperty, propertySet.radiusProperty,
-        propertySet.aspectRatioProperty, propertySet.pointsPerLoopProperty,
-        propertySet.phaseProperty, propertySet.deltaPhaseProperty,
-        propertySet.xScaleProperty
+        this.propertySet.loopsProperty, this.propertySet.radiusProperty,
+        this.propertySet.aspectRatioProperty, this.propertySet.pointsPerLoopProperty,
+        this.propertySet.phaseProperty, this.propertySet.deltaPhaseProperty,
+        this.propertySet.xScaleProperty
       ],
       function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, xScale ) {
 
@@ -126,7 +152,7 @@ define( function( require ) {
       } );
 
     // Update the stroke gradients
-    Property.multilink( [ propertySet.radiusProperty, propertySet.aspectRatioProperty ],
+    Property.multilink( [ this.propertySet.radiusProperty, this.propertySet.aspectRatioProperty ],
       function( radius, aspectRatio ) {
 
         var yRadius = radius * aspectRatio;
@@ -147,46 +173,11 @@ define( function( require ) {
     Node.call( this, options );
   }
 
-  return inherit( Node, ParametricSpringNode, {}, {
+  return inherit( Node, ParametricSpringNode, {
 
-    /**
-     * Creates a PropertySet that is used to control the look of ParametricSpringNode.
-     *
-     * @static
-     * @param {Object} [options]
-     * @returns {PropertySet}
-     */
-    createPropertySet: function( options ) {
-
-      options = _.extend( {
-        // {number} number of loops in the spring
-        loops: 10,
-        // {number} radius of a loop with aspect ratio of 1:1
-        radius: 10,
-        // {number} y:x aspect ratio of the loop radius
-        aspectRatio: 4,
-        // {number} number of points used to approximate 1 loop
-        pointsPerLoop: 30,
-        // {number} lineWidth used to draw the coil
-        lineWidth: 3,
-        // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
-        phase: Math.PI,
-        // {number} responsible for the leaning of the spring, variation on a Lissjoue curve, period is (0,2*PI) radians
-        deltaPhase: Math.PI / 2,
-        // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
-        xScale: 2.5
-      }, options );
-
-      return new PropertySet( {
-        loops: options.loops,
-        radius: options.radius,
-        aspectRatio: options.aspectRatio,
-        pointsPerLoop: options.pointsPerLoop,
-        lineWidth: options.lineWidth,
-        phase: options.phase,
-        deltaPhase: options.deltaPhase,
-        xScale: options.xScale
-      }, options );
+    reset: function() {
+      this.propertySet.reset();
     }
   } );
-} );
+} )
+;

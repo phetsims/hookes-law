@@ -29,24 +29,20 @@ define( function( require ) {
       rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
     }, options );
 
-    // view-specific properties that control the look of ParametricSpringNode
-    var propertySet = ParametricSpringNode.createPropertySet( {
-      loops: options.loops,
-      aspectRatio: options.aspectRatio
-    } );
-    ParametricSpringNode.call( this, propertySet, options );
+    var thisNode = this;
+    ParametricSpringNode.call( this, options );
 
     // stretch or compress the spring
     spring.lengthProperty.link( function( length ) {
       var coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
-      var xScale = coilLength / ( propertySet.loopsProperty.get() * propertySet.radiusProperty.get() );
-      propertySet.xScaleProperty.set( xScale );
+      var xScale = coilLength / ( thisNode.propertySet.loopsProperty.get() * thisNode.propertySet.radiusProperty.get() );
+      thisNode.propertySet.xScaleProperty.set( xScale );
     } );
 
     // spring constant determines lineWidth
     spring.springConstantProperty.link( function( springConstant ) {
       var lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
-      propertySet.lineWidthProperty.set( lineWidth );
+      thisNode.propertySet.lineWidthProperty.set( lineWidth );
     } );
   }
 

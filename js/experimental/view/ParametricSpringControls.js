@@ -39,10 +39,11 @@ define( function( require ) {
 
   /**
    * @param {ExperimentalModel} model
+   * @param {ParametricSpringNode} springNode
    * @param {Object} [options]
    * @constructor
    */
-  function ParametricSpringControls( model, options ) {
+  function ParametricSpringControls( model, springNode, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.CONTROL_PANEL_FILL,
@@ -52,32 +53,32 @@ define( function( require ) {
     }, options );
 
     // controls, options tweaked empirically to match ranges
-    var loopsControl = createNumberControl( loopsString, model.propertySet.loopsProperty, model.loopsRange, {
+    var loopsControl = createNumberControl( loopsString, springNode.propertySet.loopsProperty, model.loopsRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 1,
       thumbFillEnabled: 'black'
     } );
-    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, model.propertySet.pointsPerLoopProperty, model.pointsPerLoopRange, {
+    var pointsPerLoopControl = createNumberControl( pointsPerLoopString, springNode.propertySet.pointsPerLoopProperty, model.pointsPerLoopRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 10,
       thumbFillEnabled: 'black'
     } );
-    var radiusControl = createNumberControl( radiusString, model.propertySet.radiusProperty, model.radiusRange, {
+    var radiusControl = createNumberControl( radiusString, springNode.propertySet.radiusProperty, model.radiusRange, {
       decimalPlaces: 0,
       delta: 1,
       minorTickSpacing: 5,
       thumbFillEnabled: 'black'
     } );
-    var aspectRatioControl = createNumberControl( aspectRatioString, model.propertySet.aspectRatioProperty, model.aspectRatioRange, {
+    var aspectRatioControl = createNumberControl( aspectRatioString, springNode.propertySet.aspectRatioProperty, model.aspectRatioRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 0.5,
       thumbFillEnabled: 'black'
     } );
     assert && assert( model.phaseRange.min === 0 && model.phaseRange.max === 2 * Math.PI );
-    var phaseControl = createNumberControl( phaseString, model.propertySet.phaseProperty, model.phaseRange, {
+    var phaseControl = createNumberControl( phaseString, springNode.propertySet.phaseProperty, model.phaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
@@ -89,7 +90,7 @@ define( function( require ) {
       ]
     } );
     assert && assert( model.deltaPhaseRange.min === 0 && model.deltaPhaseRange.max === 2 * Math.PI );
-    var deltaPhaseControl = createNumberControl( deltaPhaseString, model.propertySet.deltaPhaseProperty, model.deltaPhaseRange, {
+    var deltaPhaseControl = createNumberControl( deltaPhaseString, springNode.propertySet.deltaPhaseProperty, model.deltaPhaseRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
@@ -100,13 +101,13 @@ define( function( require ) {
         { value: model.deltaPhaseRange.max, label: new Text( '2\u03c0', { font: TICK_LABEL_FONT } ) }
       ]
     } );
-    var lineWidthControl = createNumberControl( lineWidthString, model.propertySet.lineWidthProperty, model.lineWidthRange, {
+    var lineWidthControl = createNumberControl( lineWidthString, springNode.propertySet.lineWidthProperty, model.lineWidthRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 1,
       thumbFillEnabled: 'red'
     } );
-    var xScaleControl = createNumberControl( xScaleString, model.propertySet.xScaleProperty, model.xScaleRange, {
+    var xScaleControl = createNumberControl( xScaleString, springNode.propertySet.xScaleProperty, model.xScaleRange, {
       decimalPlaces: 1,
       delta: 0.1,
       minorTickSpacing: 0.5,

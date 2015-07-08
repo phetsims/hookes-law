@@ -17,8 +17,7 @@ define( function( require ) {
    * @constructor
    */
   function ExperimentalModel() {
-
-    // @public ranges and default values for Properties
+    // @public ranges and default values for ParametricSpringNode options
     this.loopsRange = new Range( 4, 15, 10 );
     this.radiusRange = new Range( 5, 70, 10 );
     this.aspectRatioRange = new Range( 0.5, 10, 4 );
@@ -27,24 +26,7 @@ define( function( require ) {
     this.phaseRange = new Range( 0, 2 * Math.PI, Math.PI ); // radians
     this.deltaPhaseRange = new Range( 0, 2 * Math.PI, Math.PI / 2 ); // radians
     this.xScaleRange = new Range( 0.5, 11, 2.5 );
-
-    // @public PropertySet that controls the look of ParametricSpringNode
-    this.propertySet = ParametricSpringNode.createPropertySet( {
-      loops: this.loopsRange.defaultValue,
-      radius: this.radiusRange.defaultValue,
-      aspectRatio: this.aspectRatioRange.defaultValue,
-      pointsPerLoop: this.pointsPerLoopRange.defaultValue,
-      lineWidth: this.lineWidthRange.defaultValue,
-      phase: this.phaseRange.defaultValue,
-      deltaPhase: this.deltaPhaseRange.defaultValue,
-      xScale: this.xScaleRange.defaultValue
-    } );
   }
 
-  return inherit( Object, ExperimentalModel, {
-
-    reset: function() {
-      this.propertySet.reset();
-    }
-  } );
+  return inherit( Object, ExperimentalModel );
 } );
