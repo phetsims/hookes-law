@@ -10,9 +10,9 @@ Look of walls
 Implementation
 -----------------------------------------------------------------------------------
 
-Performance on iPad
-Compensate for headLineWidth in LineArrowNode, so that tip is precisely at (tipX,tipY)
-QA credits
+#3 Performance on iPad
+#14 create hookes-law-screenshot.png
+scenery-phet#165 reimplement LineArrowNode
 TODO items in code
 
 -----------------------------------------------------------------------------------
