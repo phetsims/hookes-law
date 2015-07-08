@@ -1,7 +1,6 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
-//TODO generalize and move to common code, scenery-phet#165
-//TODO tip of arrow is precisely at (tipX,tipY) because we're not taking the line width into account
+//TODO scenery-phet#165 reimplement as a Path and move to common code
 /**
  * An arrow that is composed of 3 line segments: one for the tail, and 2 for a V-shaped head
  *
