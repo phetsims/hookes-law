@@ -47,7 +47,7 @@ define( function( require ) {
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
-    var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'white', opacity: 0.8 } );
+    var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
 
     var verticalLine = new Line( 0, 0, 0, 20, {
       stroke: 'black',
