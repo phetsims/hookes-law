@@ -86,7 +86,7 @@ define( function( require ) {
       font: new HookesLawFont( 14 )
     },
     RADIO_BUTTON_OPTIONS: {
-      radius: 7
+      radius: 8
     },
     SEPARATOR_OPTIONS: {
       stroke: HookesLawColors.SEPARATOR_STROKE
