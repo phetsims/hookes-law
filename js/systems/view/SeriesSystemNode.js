@@ -82,7 +82,7 @@ define( function( require ) {
     // pincers grab this
     var nibNode = new NibNode( {
       fill: HookesLawColors.RIGHT_SPRING_MIDDLE,
-      // x is based on rightSpring.leftProperty
+      // x is based on rightSpring.rightProperty
       centerY: yOrigin
     } );
 
