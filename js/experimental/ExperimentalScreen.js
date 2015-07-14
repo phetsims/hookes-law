@@ -27,7 +27,7 @@ define( function( require ) {
   function ExperimentalScreen() {
     Screen.call( this,
       experimentalString,
-      new Rectangle( 0, 0, 100, 100, { fill: 'orange' } ),
+      new Rectangle( 0, 0, Screen.HOME_SCREEN_ICON_SIZE.width, Screen.HOME_SCREEN_ICON_SIZE.height, { fill: 'orange' } ),
       function() { return new ExperimentalModel(); },
       function( model ) { return new ExperimentalView( model ); },
       HookesLawConstants.SCREEN_OPTIONS
