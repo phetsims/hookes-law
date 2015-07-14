@@ -101,8 +101,6 @@ define( function( require ) {
 
         var frontShape = new Shape();
         var backShape = new Shape();
-        frontShape.moveToPoint( points[ 0 ] );
-        backShape.moveToPoint( points[ 0 ] );
         var wasFront = true; // was the previous point on the front path?
         for ( index = 0; index < numberOfPoints; index++ ) {
 
