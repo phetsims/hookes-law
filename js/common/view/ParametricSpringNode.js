@@ -60,7 +60,7 @@ define( function( require ) {
       xScale: 2.5
     }, options );
 
-    this.propertySet = new PropertySet( {
+    this.model = new PropertySet( {
       loops: options.loops,
       radius: options.radius,
       aspectRatio: options.aspectRatio,
@@ -75,16 +75,16 @@ define( function( require ) {
     var backPath = new Path( null, { lineCap: options.lineCap } );
 
     // Update the line width
-    this.propertySet.lineWidthProperty.link( function( lineWidth ) {
+    this.model.lineWidthProperty.link( function( lineWidth ) {
       frontPath.lineWidth = backPath.lineWidth = lineWidth;
     } );
 
     // Update the shapes
     Property.multilink( [
-        this.propertySet.loopsProperty, this.propertySet.radiusProperty,
-        this.propertySet.aspectRatioProperty, this.propertySet.pointsPerLoopProperty,
-        this.propertySet.phaseProperty, this.propertySet.deltaPhaseProperty,
-        this.propertySet.xScaleProperty
+        this.model.loopsProperty, this.model.radiusProperty,
+        this.model.aspectRatioProperty, this.model.pointsPerLoopProperty,
+        this.model.phaseProperty, this.model.deltaPhaseProperty,
+        this.model.xScaleProperty
       ],
       function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, xScale ) {
 
@@ -152,7 +152,7 @@ define( function( require ) {
       } );
 
     // Update the stroke gradients
-    Property.multilink( [ this.propertySet.radiusProperty, this.propertySet.aspectRatioProperty ],
+    Property.multilink( [ this.model.radiusProperty, this.model.aspectRatioProperty ],
       function( radius, aspectRatio ) {
 
         var yRadius = radius * aspectRatio;
@@ -176,7 +176,7 @@ define( function( require ) {
   return inherit( Node, ParametricSpringNode, {
 
     reset: function() {
-      this.propertySet.reset();
+      this.model.reset();
     }
   } );
 } )
