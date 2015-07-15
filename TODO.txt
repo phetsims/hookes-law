@@ -1,25 +1,8 @@
 TODO list for hookes-law
 
------------------------------------------------------------------------------------
-Design questions
------------------------------------------------------------------------------------
-
-Look of walls
-
------------------------------------------------------------------------------------
-Implementation
------------------------------------------------------------------------------------
-
-#3 Performance on iPad
-#14 create hookes-law-screenshot.png
-scenery-phet#165 reimplement LineArrowNode
-TODO items in code
-
------------------------------------------------------------------------------------
-Common Code
------------------------------------------------------------------------------------
-
-LineArrowNode -> scenery-phet
-ParametricSpringNode (and test harness?) -> scenery-phet
+hookes-law#3 performance on iPad
+hookes-law#14 create hookes-law-screenshot.png
+hookes-law#17 look of the walls
+scenery-phet#165 reimplement LineArrowNode and migrate to scenery-phet
 
 
