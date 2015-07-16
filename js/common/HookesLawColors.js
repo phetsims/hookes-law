@@ -72,7 +72,7 @@ define( function( require ) {
     HINGE: new Color( 236, 35, 23 ),
 
     // walls that spring and robotic arm are connected to
-    WALL_FILL: new Color( 210, 210, 210 ),
+    WALL_FILL: new Color( 180, 180, 180 ),
     WALL_STROKE: 'black',
 
     // various quantities
