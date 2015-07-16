@@ -9,9 +9,10 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Bounds2 = require( 'DOT/Bounds2' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var ShadedRectangle = require( 'SCENERY_PHET/ShadedRectangle' );
 
   /**
    * @param {Dimension2} size
@@ -21,13 +22,14 @@ define( function( require ) {
   function WallNode( size, options ) {
 
     options = _.extend( {
-      fill: HookesLawColors.WALL_FILL,
+      baseColor: HookesLawColors.WALL_FILL,
       stroke: HookesLawColors.WALL_STROKE,
-      lineWidth: 0.5
+      lineWidth: 0.5,
+      cornerRadius: 6
     }, options );
 
-    Rectangle.call( this, 0, 0, size.width, size.height, options );
+    ShadedRectangle.call( this, new Bounds2( 0, 0, size.width, size.height ), options );
   }
 
-  return inherit( Rectangle, WallNode );
+  return inherit( ShadedRectangle, WallNode );
 } );
