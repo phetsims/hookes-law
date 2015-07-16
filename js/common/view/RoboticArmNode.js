@@ -211,7 +211,7 @@ define( function( require ) {
       } );
 
       var armNode = new Rectangle( 0, 0, 20, ARM_HEIGHT, {
-        fill: HookesLawColors.ROBOTIC_ARM_FILL,
+        fill: ARM_GRADIENT,
         stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
         lineWidth: 0.5,
         left: hingeNode.right - 5,
