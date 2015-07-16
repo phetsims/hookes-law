@@ -1,6 +1,6 @@
 {
   "name": "hookes-law",
-  "version": "1.0.0-dev.24",
+  "version": "1.0.0-dev.25",
   "license": "GPLv3",
   "simTitleStringKey": "HOOKES_LAW/hookes-law.name",
   "phetLibs": [
