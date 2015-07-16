@@ -49,7 +49,7 @@ define( function( require ) {
       // {number} y:x aspect ratio of the loop radius
       aspectRatio: 4,
       // {number} number of points used to approximate 1 loop
-      pointsPerLoop: 30,
+      pointsPerLoop: 40,
       // {number} lineWidth used to draw the coil
       lineWidth: 3,
       // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
