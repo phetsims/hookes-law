@@ -14,6 +14,7 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var LinearGradient = require( 'SCENERY/util/LinearGradient' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -26,7 +27,11 @@ define( function( require ) {
   var PINCER_RADIUS = 35;
   var PINCER_LINE_WIDTH = 6;
   var PINCER_OVERLAP = 2;
-  var ARM_HEIGHT = 16;
+  var ARM_HEIGHT = 14;
+  var ARM_GRADIENT = new LinearGradient( 0, 0, 0, ARM_HEIGHT )
+    .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
+    .addColorStop( 0.3, 'white' )
+    .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
 
   /**
    * @param {RoboticArm} roboticArm
@@ -49,8 +54,8 @@ define( function( require ) {
     } );
 
     // arm will be sized and positioned by Property observer
-    var armNode = new Rectangle( 0, 0, 1, 0, {
-      fill: HookesLawColors.ROBOTIC_ARM_FILL,
+    var armNode = new Rectangle( 0, 0, 1, ARM_HEIGHT, {
+      fill: ARM_GRADIENT,
       stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
       lineWidth: 0.5
     } );
