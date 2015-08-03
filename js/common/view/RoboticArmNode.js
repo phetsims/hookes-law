@@ -2,6 +2,7 @@
 
 /**
  * The robotic arm used to pull the spring(s).
+ * Origin is at the left-center of the red box.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -21,7 +22,6 @@ define( function( require ) {
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   var Util = require( 'DOT/Util' );
-  var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   // constants
   var PINCER_RADIUS = 35;
@@ -32,6 +32,11 @@ define( function( require ) {
     .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
     .addColorStop( 0.3, 'white' )
     .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
+  var BOX_SIZE = new Dimension2( 20, 60 );
+  var BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
+      .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
+      .addColorStop( 0.5, 'white' )
+      .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
 
   /**
    * @param {RoboticArm} roboticArm
@@ -47,9 +52,21 @@ define( function( require ) {
       unitDisplacementLength: 1  // view length of a 1m displacement
     }, options );
 
-    // wall at the right end of the arm is attached to, origin is at left-center
-    var wallNode = new WallNode( new Dimension2( 25, 60 ), {
+    // red box at right end of the arm, origin is at left-center
+    var redBox = new Rectangle( 0, 0, 7, 30, {
+      stroke: 'black',
+      fill: HookesLawColors.HINGE, // same color as hinge
+      lineWidth: 0.5,
       left: 0,
+      centerY: 0
+    } );
+
+    // gradient box to the right of red box
+    var gradientBox = new Rectangle( 0, 0, BOX_SIZE.width, BOX_SIZE.height, {
+      stroke: 'black',
+      fill: BOX_GRADIENT,
+      lineWidth: 0.5,
+      left: redBox.right - 1,
       centerY: 0
     } );
 
@@ -143,13 +160,13 @@ define( function( require ) {
 
       // resize the arm
       var overlap = 10; // hide ends of arm behind hinge and box
-      var armLength = ( wallNode.left - draggableNode.right ) + ( 2 * overlap );
+      var armLength = ( gradientBox.left - draggableNode.right ) + ( 2 * overlap );
       armNode.setRect( 0, 0, armLength, ARM_HEIGHT );
-      armNode.right = wallNode.left + overlap;
+      armNode.right = gradientBox.left + overlap;
       armNode.centerY = 0;
     } );
 
-    options.children = [ armNode, wallNode, draggableNode ];
+    options.children = [ armNode, redBox, gradientBox, draggableNode ];
     Node.call( this, options );
   }
 

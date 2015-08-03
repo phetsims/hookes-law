@@ -1,7 +1,7 @@
 // Copyright 2002-2015, University of Colorado Boulder
 
 /**
- * The vertical wall that springs and robotic arm are attached to.
+ * The vertical wall that springs are attached to.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
