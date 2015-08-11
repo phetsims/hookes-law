@@ -52,13 +52,13 @@ define( function( require ) {
 
     // validate and save options
     assert && assert( options.equilibriumLength > 0, 'equilibriumLength must be > 0 : ' + options.equilibriumLength );
-    this.equilibriumLength = options.equilibriumLength; // read-only
+    this.equilibriumLength = options.equilibriumLength; // @public read-only
 
     assert && assert( options.springConstantRange.min > 0, 'minimum spring constant must be positive : ' + options.springConstantRange.min );
-    this.springConstantRange = options.springConstantRange; // read-only
+    this.springConstantRange = options.springConstantRange; // @public read-only
 
     assert && assert( options.appliedForceDelta > 0, 'appliedForceDelta must be > 0 : ' + options.appliedForceDelta );
-    this.appliedForceDelta = options.appliedForceDelta; // read-only
+    this.appliedForceDelta = options.appliedForceDelta; // @public read-only
 
     // Either applied force range or displacement range can be specified, the other is computed.
     assert && assert( options.displacementRange && !options.appliedForceRange || !options.displacementRange && options.appliedForceRange,
@@ -84,6 +84,7 @@ define( function( require ) {
     // Properties
 
     PropertySet.call( this, {
+      // @public
       appliedForce: this.appliedForceRange.defaultValue, // {number} F
       springConstant: this.springConstantRange.defaultValue,  // {number} k
       displacement: this.displacementRange.defaultValue,  // {number} x
@@ -93,19 +94,19 @@ define( function( require ) {
     //------------------------------------------------
     // Derived properties
 
-    // -F, spring force opposes the applied force, units = N
+    // @public -F, spring force opposes the applied force, units = N
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
       function( appliedForce ) {
         return -appliedForce;
       } );
 
-    // equilibrium x location, units = m
+    // @public equilibrium x location, units = m
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
       function( left ) {
         return left + thisSpring.equilibriumLength;
       } );
 
-    // x location of the right end of the spring, units = m
+    // @public x location of the right end of the spring, units = m
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
       function( equilibriumX, displacement ) {
         var left = thisSpring.leftProperty.get();
@@ -115,6 +116,7 @@ define( function( require ) {
       } );
 
     /**
+     * @public
      * Range of the right end of the spring, units = m
      * Derivation differs depending on whether changing spring constant modifies applied force or displacement.
      */
@@ -135,13 +137,13 @@ define( function( require ) {
         } );
     }
 
-    // length of the spring, units = m
+    // @public length of the spring, units = m
     this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
       function( left, right ) {
         return Math.abs( right - left );
       } );
 
-    // potential energy, E = ( k1 * x1 * x1 ) / 2
+    // @public potential energy, E = ( k1 * x1 * x1 ) / 2
     this.energyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;

@@ -25,6 +25,7 @@ define( function( require ) {
 
   return inherit( Object, EnergyModel, {
 
+    // @public
     reset: function() {
       this.system.reset();
     }

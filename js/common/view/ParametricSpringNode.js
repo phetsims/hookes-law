@@ -61,6 +61,7 @@ define( function( require ) {
     }, options );
 
     this.model = new PropertySet( {
+      // @public
       loops: options.loops,
       radius: options.radius,
       aspectRatio: options.aspectRatio,
@@ -173,6 +174,7 @@ define( function( require ) {
 
   return inherit( Node, ParametricSpringNode, {
 
+    // @public
     reset: function() {
       this.model.reset();
     }

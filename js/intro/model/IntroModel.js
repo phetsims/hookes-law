@@ -21,12 +21,13 @@ define( function( require ) {
       springConstantRange: new Range( 100, 1000, 200 ), // units = N/m
       appliedForceRange: new Range( -100, 100, 0 ) // units = N
     };
-    this.system1 = new SingleSpringSystem( springOptions );
-    this.system2 = new SingleSpringSystem( springOptions );
+    this.system1 = new SingleSpringSystem( springOptions ); // @public
+    this.system2 = new SingleSpringSystem( springOptions ); // @public
   }
 
   return inherit( Object, IntroModel, {
 
+    // @public
     reset: function() {
       this.system1.reset();
       this.system2.reset();

@@ -75,6 +75,7 @@ define( function( require ) {
 
   return inherit( Node, NumberDisplay, {
 
+    // @public
     dispose: function() {
       this.disposeNumberDisplay();
     }

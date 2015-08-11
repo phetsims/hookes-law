@@ -25,12 +25,13 @@ define( function( require ) {
       right: 1 // {number} initial x location of the right (fixed) end of the arm, units = m
     }, options );
 
-    this.right = options.right; // right (fixed) end of the arm, read-only
+    this.right = options.right; // @public right (fixed) end of the arm, read-only
 
     PropertySet.call( this, {
-      left: options.left  // left (movable) end of the arm
+      left: options.left  // @public left (movable) end of the arm
     }, options );
 
+    // @public
     this.leftProperty.link( function( left ) {
       assert && assert( left < thisArm.right, 'robotic arm is constrained to extend from right to left' );
     } );

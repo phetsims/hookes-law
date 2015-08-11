@@ -22,6 +22,7 @@ define( function( require ) {
     var checked = HookesLawQueryParameters.DEV ? true : false;
 
     PropertySet.call( this, {
+      // @public
       graph: 'energyBar', // {string} which graph is visible, 'energyBar'|'energyXY'|'forceXY'
       appliedForceVectorVisible: checked, // {boolean} is the applied force vector visible?
       displacementVectorVisible: checked, // {boolean} is the displacement vector visible?

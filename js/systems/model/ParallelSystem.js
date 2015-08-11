@@ -42,6 +42,7 @@ define( function( require ) {
     //------------------------------------------------
     // Components of the system
 
+    // @public
     this.topSpring = new Spring( {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
@@ -50,7 +51,7 @@ define( function( require ) {
       appliedForceDelta: HookesLawConstants.PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA
     } );
 
-    // bottom spring, in parallel with top spring, with identical configuration
+    // @public bottom spring, in parallel with top spring, with identical configuration
     this.bottomSpring = new Spring( {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
@@ -65,7 +66,7 @@ define( function( require ) {
     assert && assert( this.topSpring.equilibriumXProperty.get() === this.bottomSpring.equilibriumXProperty.get(),
       'top and bottom springs must have same equilibrium position' );
 
-    // the single spring that is equivalent to the 2 springs in parallel
+    // @public the single spring that is equivalent to the 2 springs in parallel
     this.equivalentSpring = new Spring( {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
@@ -79,7 +80,7 @@ define( function( require ) {
     } );
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 
-    // robotic arm, connected to the right end of the equivalent spring
+    // @public robotic arm, connected to the right end of the equivalent spring
     this.roboticArm = new RoboticArm( {
       left: this.equivalentSpring.rightProperty.get(),
       right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get()
@@ -141,6 +142,7 @@ define( function( require ) {
 
   return inherit( Object, ParallelSystem, {
 
+    // @public
     reset: function() {
       this.topSpring.reset();
       this.bottomSpring.reset();

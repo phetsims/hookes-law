@@ -41,7 +41,7 @@ define( function( require ) {
     //------------------------------------------------
     // Components of the system
 
-    // left spring
+    // @public left spring
     this.leftSpring = new Spring( {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 0.75, // length of the spring at equilibrium, units = m
@@ -49,7 +49,7 @@ define( function( require ) {
       appliedForceRange: new Range( -100, 100, 0 ) // range and initial value of Feq, units = N
     } );
 
-    // right spring, in series with the left spring, with identical configuration
+    // @public right spring, in series with the left spring, with identical configuration
     this.rightSpring = new Spring( {
       left: this.leftSpring.rightProperty.get(), // attached to the right end of the left spring
       equilibriumLength: this.leftSpring.equilibriumLength,
@@ -57,7 +57,7 @@ define( function( require ) {
       appliedForceRange: this.leftSpring.appliedForceRange
     } );
 
-    // the single spring that is equivalent to the 2 springs in series
+    // @public the single spring that is equivalent to the 2 springs in series
     this.equivalentSpring = new Spring( {
       left: this.leftSpring.leftProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,
@@ -70,7 +70,7 @@ define( function( require ) {
     } );
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 
-    // robotic arm, attached to right end of equivalent spring
+    // @public robotic arm, attached to right end of equivalent spring
     this.roboticArm = new RoboticArm( {
       left: this.equivalentSpring.rightProperty.get(),
       right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get()
@@ -133,6 +133,7 @@ define( function( require ) {
 
   return inherit( Object, SeriesSystem, {
 
+    // @public
     reset: function() {
       this.leftSpring.reset();
       this.rightSpring.reset();

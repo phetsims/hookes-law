@@ -22,11 +22,11 @@ define( function( require ) {
     //------------------------------------------------
     // Components of the system
 
-    // spring
+    // @public spring
     this.spring = new Spring( springOptions );
     assert && assert( this.spring.displacementProperty.get() === 0 ); // spring is at equilibrium
 
-    // arm, left end attached to spring
+    // @public arm, left end attached to spring
     this.roboticArm = new RoboticArm( {
       left: this.spring.rightProperty.get(),
       right: this.spring.rightProperty.get() + this.spring.lengthProperty.get()

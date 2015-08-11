@@ -22,6 +22,7 @@ define( function( require ) {
     var checked = HookesLawQueryParameters.DEV ? true : false;
 
     PropertySet.call( this, {
+      // @public
       seriesParallel: 'parallel', // {string} which system is visible, 'series'|'parallel'
       appliedForceVectorVisible: checked, // {boolean} is the applied force vector visible?
       springForceVectorVisible: checked, // {boolean} is the spring force vector visible?
