@@ -5,7 +5,11 @@
  * A prolate cycloid (see http://mathworld.wolfram.com/ProlateCycloid.html) comes closest to this implementation,
  * although it doesn't include aspect ratio and delta phase.
  *
+ * The origin (0, 0) of this node is at its left center.
  * The front and back of the spring are drawn as separate paths to provide pseudo-3D visual cues.
+ * Performance can be improved dramatically by setting options.pathBoundsMethod to 'none', at
+ * the expense of layout accuracy. If you use this option, you can only rely on x and y for
+ * doing layout.  See Path.boundsMethod for additional details.
  *
  * The "Experimental" screen provides an extensive test harness for ParametricSpringNode.
  * Run with query parameter "exp" to add the "Experimental" screen to the sim.
@@ -17,6 +21,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Circle = require( 'SCENERY/nodes/Circle' );
   var inherit = require( 'PHET_CORE/inherit' );
   var LinearGradient = require( 'SCENERY/util/LinearGradient' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -25,6 +30,9 @@ define( function( require ) {
   var PropertySet = require( 'AXON/PropertySet' );
   var Shape = require( 'KITE/Shape' );
   var Vector2 = require( 'DOT/Vector2' );
+
+  // constants
+  var SHOW_ORIGIN = false; // {boolean} draws a red circle at the origin, for layout debugging
 
   /**
    * @param {Object} [options]
@@ -102,7 +110,7 @@ define( function( require ) {
         // compute the points
         var points = []; // {Vector2[]}
         for ( index = 0; index < numberOfPoints; index++ ) {
-          var xCoordinate = radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + xScale * (index / pointsPerLoop) * radius;
+          var xCoordinate = ( options.leftEndLength + radius ) + radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + xScale * (index / pointsPerLoop) * radius;
           var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
           points.push( new Vector2( xCoordinate, yCoordinate ) );
         }
@@ -118,10 +126,10 @@ define( function( require ) {
           // horizontal line at left end
           if ( index === 0 ) {
             if ( isFront ) {
-              frontShape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
+              frontShape.moveTo( 0, points[ 0 ].y );
             }
             else {
-              backShape.moveTo( points[ 0 ].x - options.leftEndLength, points[ 0 ].y );
+              backShape.moveTo( 0, points[ 0 ].y );
             }
           }
 
@@ -177,6 +185,10 @@ define( function( require ) {
 
     options.children = [ backPath, frontPath ];
     Node.call( this, options );
+
+    if ( SHOW_ORIGIN ) {
+      this.addChild( new Circle( 3, { fill: 'red' } ) );
+    }
   }
 
   return inherit( Node, ParametricSpringNode, {
