@@ -1,6 +1,6 @@
 {
   "name": "hookes-law",
-  "version": "1.0.0-dev.26",
+  "version": "1.0.0-dev.27",
   "license": "GPLv3",
   "requirejsNamespace": "HOOKES_LAW",
   "simTitleStringKey": "HOOKES_LAW/hookes-law.name",
