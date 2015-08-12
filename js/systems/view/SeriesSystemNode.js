@@ -28,7 +28,7 @@ define( function( require ) {
 
   /**
    * @param {SeriesSystem} system
-   * @param {SystemViewProperties} viewProperties
+   * @param {SystemsViewProperties} viewProperties
    * @param {Object} [options]
    * @constructor
    */
