@@ -8,7 +8,7 @@
  * The origin (0, 0) of this node is at its left center.
  * The front and back of the spring are drawn as separate paths to provide pseudo-3D visual cues.
  * Performance can be improved dramatically by setting options.pathBoundsMethod to 'none', at
- * the expense of layout accuracy. If you use this option, you can only rely on x and y for
+ * the expense of layout accuracy. If you use this option, you can only rely on Node.x and Node.y for
  * doing layout.  See Path.boundsMethod for additional details.
  *
  * The "Experimental" screen provides an extensive test harness for ParametricSpringNode.
