@@ -100,7 +100,7 @@ define( function( require ) {
     // pincers grab this
     var nibNode = new NibNode( {
       fill: 'black',
-      // x is based on rightSpring.leftProperty
+      // x is determined by rightSpring.leftProperty
       centerY: yOrigin
     } );
 
