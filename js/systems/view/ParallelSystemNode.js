@@ -70,6 +70,7 @@ define( function( require ) {
       frontColor: HookesLawColors.TOP_SPRING_FRONT,
       middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
       backColor: HookesLawColors.TOP_SPRING_BACK,
+      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * topSpring.leftProperty.get(),
       y: wallNode.top + ( 0.25 * wallNode.height )
     } );
@@ -80,6 +81,7 @@ define( function( require ) {
       frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
       middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
       backColor: HookesLawColors.BOTTOM_SPRING_BACK,
+      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
       y: wallNode.bottom - ( 0.25 * wallNode.height )
     } );

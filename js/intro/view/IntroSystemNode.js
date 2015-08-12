@@ -66,6 +66,7 @@ define( function( require ) {
       backColor: HookesLawColors.SINGLE_SPRING_BACK,
       loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
+      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: xOrigin,
       y: yOrigin
     } );

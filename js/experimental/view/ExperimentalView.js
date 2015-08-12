@@ -51,6 +51,8 @@ define( function( require ) {
       frontColor: HookesLawQueryParameters.FRONT_COLOR,
       middleColor: HookesLawQueryParameters.MIDDLE_COLOR,
       backColor: HookesLawQueryParameters.BACK_COLOR,
+
+      // use x,y exclusively for layout, because we're using boundsMethod:'none'
       x: wallNode.right,
       y: wallNode.centerY
     } );

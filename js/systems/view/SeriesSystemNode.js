@@ -65,6 +65,7 @@ define( function( require ) {
       frontColor: HookesLawColors.LEFT_SPRING_FRONT,
       middleColor: HookesLawColors.LEFT_SPRING_MIDDLE,
       backColor: HookesLawColors.LEFT_SPRING_BACK,
+      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * leftSpring.leftProperty.get(),
       y: yOrigin
     } );
@@ -75,6 +76,7 @@ define( function( require ) {
       frontColor: HookesLawColors.RIGHT_SPRING_FRONT,
       middleColor: HookesLawColors.RIGHT_SPRING_MIDDLE,
       backColor: HookesLawColors.RIGHT_SPRING_BACK,
+      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       // x is based on rightSpring.leftProperty
       y: yOrigin
     } );
@@ -160,6 +162,7 @@ define( function( require ) {
 
     // move the right spring
     rightSpring.leftProperty.link( function( left ) {
+      // use x for positioning, other translation options are inaccurate because we're using boundsMethod:'none'
       rightSpringNode.x = ( options.unitDisplacementLength * left );
     } );
 
