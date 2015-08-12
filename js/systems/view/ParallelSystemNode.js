@@ -92,7 +92,7 @@ define( function( require ) {
 
     // right ends of both springs are connected to this
     var trussOverlap = 10;
-    var trussNode = new Line( 0, topSpringNode.centerY - trussOverlap, 0, bottomSpringNode.centerY + trussOverlap, {
+    var trussNode = new Line( 0, topSpringNode.y - trussOverlap, 0, bottomSpringNode.y + trussOverlap, {
       lineWidth: 4,
       stroke: 'black'
     } );
