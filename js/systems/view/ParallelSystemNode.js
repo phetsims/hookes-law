@@ -112,7 +112,7 @@ define( function( require ) {
     var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by bottomSpring.rightProperty
-      bottom: topSpringNode.top - 40
+      bottom: topSpringNode.y - 80 // determined empirically, topSpringNode.top is not accurate because we're using boundMethod:'none'
     } );
 
     var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, {
@@ -141,7 +141,7 @@ define( function( require ) {
       unitDisplacementLength: options.unitDisplacementLength,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
-      top: bottomSpringNode.bottom + 8
+      top: bottomSpringNode.y + 50 // determined empirically, bottomSpringNode.bottom is not accurate because we're using boundMethod:'none'
     } );
 
     var springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {

@@ -101,7 +101,7 @@ define( function( require ) {
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       fill: HookesLawColors.LEFT_SPRING,
       // x is determined by leftSpring.rightProperty
-      bottom: leftSpringNode.top - 25
+      bottom: leftSpringNode.y - 65 // determined empirically, leftSpringNode.top is not accurate because we're using boundMethod:'none'
     } );
 
     var leftAppliedForceVectorNode = new AppliedForceVectorNode( leftSpring.appliedForceProperty, {
@@ -134,7 +134,7 @@ define( function( require ) {
       unitDisplacementLength: options.unitDisplacementLength,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
-      top: leftSpringNode.bottom + 8
+      top: leftSpringNode.y + 50 // determined empirically, leftSpringNode.bottom is not accurate because we're using boundMethod:'none'
     } );
 
     var springControls = new SeriesSpringControls( system, numberOfInteractionsInProgressProperty, {
