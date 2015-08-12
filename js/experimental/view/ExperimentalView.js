@@ -51,8 +51,8 @@ define( function( require ) {
       frontColor: HookesLawQueryParameters.FRONT_COLOR,
       middleColor: HookesLawQueryParameters.MIDDLE_COLOR,
       backColor: HookesLawQueryParameters.BACK_COLOR,
-      left: wallNode.right,
-      centerY: wallNode.centerY
+      x: wallNode.right,
+      y: wallNode.centerY
     } );
     this.addChild( springNode );
 
