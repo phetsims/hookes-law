@@ -65,8 +65,8 @@ define( function( require ) {
       frontColor: HookesLawColors.LEFT_SPRING_FRONT,
       middleColor: HookesLawColors.LEFT_SPRING_MIDDLE,
       backColor: HookesLawColors.LEFT_SPRING_BACK,
-      left: options.unitDisplacementLength * leftSpring.leftProperty.get(),
-      centerY: yOrigin
+      x: options.unitDisplacementLength * leftSpring.leftProperty.get(),
+      y: yOrigin
     } );
 
     var rightSpringNode = new HookesLawSpringNode( rightSpring, {
@@ -75,8 +75,8 @@ define( function( require ) {
       frontColor: HookesLawColors.RIGHT_SPRING_FRONT,
       middleColor: HookesLawColors.RIGHT_SPRING_MIDDLE,
       backColor: HookesLawColors.RIGHT_SPRING_BACK,
-      // left is based on rightSpring.leftProperty
-      centerY: yOrigin
+      // x is based on rightSpring.leftProperty
+      y: yOrigin
     } );
 
     // pincers grab this
@@ -160,7 +160,7 @@ define( function( require ) {
 
     // move the right spring
     rightSpring.leftProperty.link( function( left ) {
-      rightSpringNode.left = ( options.unitDisplacementLength * left );
+      rightSpringNode.x = ( options.unitDisplacementLength * left );
     } );
 
     // switch between different spring force representations

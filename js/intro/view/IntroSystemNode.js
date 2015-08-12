@@ -45,6 +45,7 @@ define( function( require ) {
     var roboticArm = system.roboticArm;
 
     // This sim operates in 1 dimension (x), so center everything on y = 0.
+    var xOrigin = options.unitDisplacementLength * spring.leftProperty.get();
     var yOrigin = 0;
 
     // number of interactions in progress that affect displacement
@@ -55,7 +56,7 @@ define( function( require ) {
 
     // origin is at right-center of wall
     var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
-      right: options.unitDisplacementLength * spring.leftProperty.get(),
+      right: xOrigin,
       centerY: yOrigin
     } );
 
@@ -65,8 +66,8 @@ define( function( require ) {
       backColor: HookesLawColors.SINGLE_SPRING_BACK,
       loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
-      left: options.unitDisplacementLength * spring.leftProperty.get(),
-      centerY: yOrigin
+      x: xOrigin,
+      y: yOrigin
     } );
 
     // pincers grab this

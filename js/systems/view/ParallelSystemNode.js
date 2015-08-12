@@ -70,8 +70,8 @@ define( function( require ) {
       frontColor: HookesLawColors.TOP_SPRING_FRONT,
       middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
       backColor: HookesLawColors.TOP_SPRING_BACK,
-      left: options.unitDisplacementLength * topSpring.leftProperty.get(),
-      centerY: wallNode.top + ( 0.25 * wallNode.height )
+      x: options.unitDisplacementLength * topSpring.leftProperty.get(),
+      y: wallNode.top + ( 0.25 * wallNode.height )
     } );
 
     var bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
@@ -80,8 +80,8 @@ define( function( require ) {
       frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
       middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
       backColor: HookesLawColors.BOTTOM_SPRING_BACK,
-      left: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
-      centerY: wallNode.bottom - ( 0.25 * wallNode.height )
+      x: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
+      y: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
 
     var roboticArmNode = new RoboticArmNode( roboticArm, equivalentSpring.rightRangeProperty, numberOfInteractionsInProgressProperty, {

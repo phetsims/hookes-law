@@ -63,8 +63,8 @@ define( function( require ) {
       backColor: HookesLawColors.SINGLE_SPRING_BACK,
       loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
-      left: options.unitDisplacementLength * spring.leftProperty.get(),
-      centerY: yOrigin
+      x: options.unitDisplacementLength * spring.leftProperty.get(),
+      y: yOrigin
     } );
 
     // pincers grab this
