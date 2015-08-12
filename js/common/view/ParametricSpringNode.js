@@ -57,7 +57,9 @@ define( function( require ) {
       // {number} responsible for the leaning of the spring, variation on a Lissjoue curve, period is (0,2*PI) radians
       deltaPhase: Math.PI / 2,
       // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
-      xScale: 2.5
+      xScale: 2.5,
+      // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
+      pathBoundsMethod: 'accurate'
     }, options );
 
     this.model = new PropertySet( {
@@ -72,8 +74,13 @@ define( function( require ) {
       xScale: options.xScale
     }, options );
 
-    var frontPath = new Path( null, { lineCap: options.lineCap } );
-    var backPath = new Path( null, { lineCap: options.lineCap } );
+    // Paths for the front (foreground) and back (background) parts of the spring
+    var pathOptions = {
+      boundsMethod: options.pathBoundsMethod,
+      lineCap: options.lineCap
+    };
+    var frontPath = new Path( null, pathOptions );
+    var backPath = new Path( null, pathOptions );
 
     // Update the line width
     this.model.lineWidthProperty.link( function( lineWidth ) {
