@@ -26,7 +26,8 @@ define( function( require ) {
       minLineWidth: 3, // {number} lineWidth used to stroke the spring for minimum spring constant
       deltaLineWidth: 0.005, // increase in line width per 1 unit of spring constant increase
       leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
-      rightEndLength: 25 // {number} length of the horizontal line added to the right end of the coil
+      rightEndLength: 25, // {number} length of the horizontal line added to the right end of the coil
+      pathBoundsMethod: 'accurate' // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
     }, options );
 
     var thisNode = this;
