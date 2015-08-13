@@ -32,7 +32,6 @@ define( function( require ) {
       left: 20,
       centerY: 375
     } );
-    this.addChild( wallNode );
 
     // spring
     var springNode = new ParametricSpringNode( {
@@ -56,14 +55,16 @@ define( function( require ) {
       x: wallNode.right,
       y: wallNode.centerY
     } );
-    this.addChild( springNode );
 
     // control panel, scaled to fit
     var controls = new ParametricSpringControls( model, springNode );
-    this.addChild( controls );
     controls.setScaleMagnitude( Math.min( 1, this.layoutBounds.width / controls.width ) );
     controls.top = 0;
     controls.centerX = this.layoutBounds.centerX;
+
+    this.addChild( controls );
+    this.addChild( springNode );
+    this.addChild( wallNode );
 
     // Reset All button, bottom right
     this.addChild( new ResetAllButton( {

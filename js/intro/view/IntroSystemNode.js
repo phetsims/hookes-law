@@ -116,7 +116,7 @@ define( function( require ) {
     } );
 
     options.children = [
-      wallNode, equilibriumPositionNode, roboticArmNode, springNode, nibNode,
+      equilibriumPositionNode, roboticArmNode, springNode, wallNode, nibNode,
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
       springControls
     ];
