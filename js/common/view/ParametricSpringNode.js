@@ -41,7 +41,6 @@ define( function( require ) {
   function ParametricSpringNode( options ) {
 
     options = _.extend( {
-      lineCap: 'square',
       // {Color|string} colors used for the gradient strokes. middleColor is the dominant color.
       frontColor: 'lightGray',
       middleColor: 'gray',
@@ -85,7 +84,7 @@ define( function( require ) {
     // Paths for the front (foreground) and back (background) parts of the spring
     var pathOptions = {
       boundsMethod: options.pathBoundsMethod,
-      lineCap: options.lineCap
+      lineCap: 'round'
     };
     var frontPath = new Path( null, pathOptions );
     var backPath = new Path( null, pathOptions );
