@@ -49,21 +49,21 @@ define( function( require ) {
       leftEndLength: 15,
       // {number} length of the horizontal line added to the right end of the coil
       rightEndLength: 25,
-      // {number} number of loops in the spring
+      // {number} number of loops in the coil
       loops: 10,
       // {number} radius of a loop with aspect ratio of 1:1
       radius: 10,
       // {number} y:x aspect ratio of the loop radius
       aspectRatio: 4,
-      // {number} number of points used to approximate 1 loop
+      // {number} number of points used to approximate 1 loop of the coil
       pointsPerLoop: 40,
-      // {number} lineWidth used to draw the coil
+      // {number} lineWidth used to stroke the Paths
       lineWidth: 3,
       // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
       phase: Math.PI,
-      // {number} responsible for the leaning of the spring, variation on a Lissjoue curve, period is (0,2*PI) radians
+      // {number} responsible for the leaning of the coil, variation on a Lissjoue curve, period is (0,2*PI) radians
       deltaPhase: Math.PI / 2,
-      // {number} multiplier for radius in the x dimensions, makes the spring appear to get longer
+      // {number} multiplier for radius in the x dimensions, makes the coil appear to get longer
       xScale: 2.5,
       // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
       pathBoundsMethod: 'accurate'
@@ -103,12 +103,12 @@ define( function( require ) {
       ],
       function( loops, radius, aspectRatio, pointsPerLoop, phase, deltaPhase, xScale ) {
 
-        var numberOfPoints = loops * pointsPerLoop + 1;
+        var numberOfCoilPoints = loops * pointsPerLoop + 1;
         var index;
 
-        // compute the points
+        // compute the points for the coil
         var points = []; // {Vector2[]}
-        for ( index = 0; index < numberOfPoints; index++ ) {
+        for ( index = 0; index < numberOfCoilPoints; index++ ) {
           var xCoordinate = ( options.leftEndLength + radius ) + radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + xScale * (index / pointsPerLoop) * radius;
           var yCoordinate = aspectRatio * radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
           points.push( new Vector2( xCoordinate, yCoordinate ) );
@@ -117,7 +117,7 @@ define( function( require ) {
         var frontShape = new Shape();
         var backShape = new Shape();
         var wasFront = true; // was the previous point on the front path?
-        for ( index = 0; index < numberOfPoints; index++ ) {
+        for ( index = 0; index < numberOfCoilPoints; index++ ) {
 
           // is the current point on the front path?
           var isFront = ( ( 2 * Math.PI * index / pointsPerLoop + phase + deltaPhase ) % ( 2 * Math.PI ) > Math.PI );
@@ -154,10 +154,10 @@ define( function( require ) {
 
         // horizontal line at right end
         if ( wasFront ) {
-          frontShape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
+          frontShape.lineTo( points[ numberOfCoilPoints - 1 ].x + options.rightEndLength, points[ numberOfCoilPoints - 1 ].y );
         }
         else {
-          backShape.lineTo( points[ numberOfPoints - 1 ].x + options.rightEndLength, points[ numberOfPoints - 1 ].y );
+          backShape.lineTo( points[ numberOfCoilPoints - 1 ].x + options.rightEndLength, points[ numberOfCoilPoints - 1 ].y );
         }
 
         frontPath.shape = frontShape;
