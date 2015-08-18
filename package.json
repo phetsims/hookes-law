@@ -2,14 +2,6 @@
   "name": "hookes-law",
   "version": "1.0.0-dev.27",
   "license": "GPLv3",
-  "requirejsNamespace": "HOOKES_LAW",
-  "simTitleStringKey": "HOOKES_LAW/hookes-law.name",
-  "phetLibs": [
-    "hookes-law"
-  ],
-  "preload": [
-    "../sherpa/lib/Tween-r12.js"
-  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/phetsims/hookes-law.git"
@@ -20,5 +12,15 @@
     "grunt-contrib-jshint": "~0.6.4",
     "uglify-js": "~2.4.0",
     "requirejs": "~2.1.8"
+  },
+  "phet": {
+    "requirejsNamespace": "HOOKES_LAW",
+    "simTitleStringKey": "HOOKES_LAW/hookes-law.name",
+    "phetLibs": [
+      "hookes-law"
+    ],
+    "preload": [
+      "../sherpa/lib/Tween-r12.js"
+    ]
   }
 }
