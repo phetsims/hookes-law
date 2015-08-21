@@ -15,7 +15,6 @@
   },
   "phet": {
     "requirejsNamespace": "HOOKES_LAW",
-    "simTitleStringKey": "HOOKES_LAW/hookes-law.name",
     "preload": [
       "../sherpa/lib/Tween-r12.js"
     ]
