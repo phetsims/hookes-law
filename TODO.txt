@@ -1,7 +1,0 @@
-TODO list for hookes-law
-
-hookes-law#3 performance on iPad
-hookes-law#14 create hookes-law-screenshot.png
-scenery-phet#165 reimplement LineArrowNode and migrate to scenery-phet
-
-
