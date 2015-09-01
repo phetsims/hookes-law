@@ -21,6 +21,8 @@ define( function( require ) {
 
     options = _.extend( {
       loops: 10, // {number} number of loops in the coil
+      pointsPerLoop: 40, // {number} number of points per loop
+      radius: 10, // {number} radius of a loop with aspect ratio of 1:1
       aspectRatio: 4, // {number} y:x aspect ratio of the loop radius
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
       minLineWidth: 3, // {number} lineWidth used to stroke the spring for minimum spring constant
