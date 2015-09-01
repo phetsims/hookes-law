@@ -19,7 +19,7 @@ define( function( require ) {
   var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
   var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
+  var ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var ScreenIcon = require( 'JOIST/ScreenIcon' );
