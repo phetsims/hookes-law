@@ -221,7 +221,7 @@ define( function( require ) {
           springPoints[ index + 1 ].setXY( coilX, coilY );
         }
 
-        // mutate the end of the rightmost horizontal wire
+        // mutate horizontal line at right end
         var lastCoilPoint = springPoints[ springPoints.length - 2 ];
         springPoints[ springPoints.length - 1 ].setXY( lastCoilPoint.x + options.rightEndLength, lastCoilPoint.y );
 
