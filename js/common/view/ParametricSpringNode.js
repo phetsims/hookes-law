@@ -41,30 +41,42 @@ define( function( require ) {
   function ParametricSpringNode( options ) {
 
     options = _.extend( {
+
       // {Color|string} colors used for the gradient strokes. middleColor is the dominant color.
       frontColor: 'lightGray',
       middleColor: 'gray',
       backColor: 'black',
+
       // {number} length of the horizontal line added to the left end of the coil
       leftEndLength: 15,
+
       // {number} length of the horizontal line added to the right end of the coil
       rightEndLength: 25,
+
       // {number} number of loops in the coil
       loops: 10,
-      // {number} radius of a loop with aspect ratio of 1:1
-      radius: 10,
-      // {number} y:x aspect ratio of the loop radius
-      aspectRatio: 4,
+
       // {number} number of points used to approximate 1 loop of the coil
       pointsPerLoop: 40,
+
+      // {number} radius of a loop with aspect ratio of 1:1
+      radius: 10,
+
+      // {number} y:x aspect ratio of the loop radius
+      aspectRatio: 4,
+
       // {number} lineWidth used to stroke the Paths
       lineWidth: 3,
+
       // {number} phase angle of where the loop starts, period is (0,2*PI) radians, counterclockwise
       phase: Math.PI,
+
       // {number} responsible for the leaning of the coil, variation on a Lissjoue curve, period is (0,2*PI) radians
       deltaPhase: Math.PI / 2,
+
       // {number} multiplier for radius in the x dimensions, makes the coil appear to get longer
       xScale: 2.5,
+
       // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
       pathBoundsMethod: 'accurate'
     }, options );
