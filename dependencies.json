@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.0-dev.27 Mon Aug 31 2015 11:51:00 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.0.0-dev.28 Tue Sep 01 2015 07:45:51 GMT-0600 (MDT)",
   "assert": {
     "sha": "858e65ac477bf1861883ce06eed56d9fdefa5027",
     "branch": "master"
@@ -9,11 +9,11 @@
     "branch": "master"
   },
   "brand": {
-    "sha": "2af17fe775352982468b0b7215096f413339a32a",
+    "sha": "f2c42d7b920e24dab53d747201598260a5f74128",
     "branch": "master"
   },
   "chipper": {
-    "sha": "41fa5d853eb2885bfebea6737d6fd9510664a615",
+    "sha": "8231151b898729c2be006ad2a74043d26c9bebd8",
     "branch": "master"
   },
   "dot": {
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "hookes-law": {
-    "sha": "0f47a444e1fed2f60409ec3c3cf188cfeb3b3e5c",
+    "sha": "ebb3616fc3dc244917c01e9f9e0a08f464b58c48",
     "branch": "master"
   },
   "joist": {
