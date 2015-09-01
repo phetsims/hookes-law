@@ -112,7 +112,8 @@ define( function( require ) {
     var springPoints = []; // {Vector2[]} points in the spring (includes the horizontal ends)
     var frontShape, backShape;  // {Shape}
 
-    // Changes to these properties require new points (Vector2) and Shapes
+    // Changes to these properties require new points (Vector2) and Shapes, because the change
+    // the number of points and/or how the points are allocated to frontShape and backShape.
     Property.multilink( [
         this.model.loopsProperty, this.model.pointsPerLoopProperty,
         this.model.aspectRatioProperty, this.model.phaseProperty, this.model.deltaPhaseProperty
@@ -133,8 +134,8 @@ define( function( require ) {
         var numberOfCoilPoints = computeNumberOfCoilPoints( loops, pointsPerLoop );
         var index;
         for ( index = 0; index < numberOfCoilPoints; index++ ) {
-          var coilX = computeCoilX( options.leftEndLength, radius, index, pointsPerLoop, phase, xScale );
-          var coilY = computeCoilY( aspectRatio, radius, index, pointsPerLoop, deltaPhase, phase );
+          var coilX = computeCoilX( index, radius, pointsPerLoop, phase, xScale, options.leftEndLength );
+          var coilY = computeCoilY( index, radius, pointsPerLoop, phase, deltaPhase, aspectRatio );
           coilPoints.push( new Vector2( coilX, coilY ) );
         }
 
@@ -198,7 +199,8 @@ define( function( require ) {
         backPath.shape = backShape;
       } );
 
-    // Changes to these properties can be accomplished by mutating existing points (Vector2) and Shapes
+    // Changes to these properties can be accomplished by mutating existing points (Vector2) and Shapes,
+    // because the number of points remains the same, as does their allocation to frontShape and backShape.
     Property.lazyMultilink( [ this.model.radiusProperty, this.model.xScaleProperty ],
       function( radius, xScale ) {
 
@@ -216,10 +218,14 @@ define( function( require ) {
 
         // mutate the coil points
         for ( var index = 0; index < numberOfCoilPoints; index++ ) {
-          var coilX = computeCoilX( options.leftEndLength, radius, index, pointsPerLoop, phase, xScale );
-          var coilY = computeCoilY( aspectRatio, radius, index, pointsPerLoop, deltaPhase, phase );
+          var coilX = computeCoilX( index, radius, pointsPerLoop, phase, xScale, options.leftEndLength );
+          var coilY = computeCoilY( index, radius, pointsPerLoop, phase, deltaPhase, aspectRatio );
           springPoints[ index + 1 ].setXY( coilX, coilY );
         }
+
+        // mutate horizontal line at left end
+        var firstCoilPoint = springPoints[ 1 ];
+        springPoints[ 0 ].setXY( 0, firstCoilPoint.y );
 
         // mutate horizontal line at right end
         var lastCoilPoint = springPoints[ springPoints.length - 2 ];
@@ -256,15 +262,18 @@ define( function( require ) {
     }
   }
 
+  // Gets the number of points in the coil part of the spring.
   var computeNumberOfCoilPoints = function( loops, pointsPerLoop ) {
     return loops * pointsPerLoop + 1;
   };
 
-  var computeCoilX = function( leftEndLength, radius, index, pointsPerLoop, phase, xScale ) {
+  // Computes the x coordinate for a point on the coil.
+  var computeCoilX = function( index, radius, pointsPerLoop, phase, xScale, leftEndLength ) {
     return ( leftEndLength + radius ) + radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + phase ) + xScale * (index / pointsPerLoop) * radius;
   };
 
-  var computeCoilY = function( aspectRatio, radius, index, pointsPerLoop, deltaPhase, phase ) {
+  // Computes the y coordinate for a point on the coil.
+  var computeCoilY = function( index, radius, pointsPerLoop, phase, deltaPhase, aspectRatio ) {
     return aspectRatio * radius * Math.cos( 2 * Math.PI * index / pointsPerLoop + deltaPhase + phase );
   };
 
