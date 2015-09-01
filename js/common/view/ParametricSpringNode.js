@@ -141,6 +141,7 @@ define( function( require ) {
         var p; // {Vector2} reusable point, hoisted explicitly
         var wasFront = true; // was the previous point on the front path?
 
+        // Add points to Shapes
         for ( index = 0; index < numberOfCoilPoints; index++ ) {
 
           // is the current point on the front path?
