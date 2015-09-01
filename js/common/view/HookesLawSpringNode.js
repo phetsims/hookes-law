@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var inherit = require( 'PHET_CORE/inherit' );
-  var ParametricSpringNode = require( 'HOOKES_LAW/common/view/ParametricSpringNode' );
+  var ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
 
   /**
    * @param {Spring} spring
