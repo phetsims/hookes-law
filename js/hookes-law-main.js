@@ -10,8 +10,6 @@ define( function( require ) {
 
   // modules
   var EnergyScreen = require( 'HOOKES_LAW/energy/EnergyScreen' );
-  var ExperimentalScreen = require( 'HOOKES_LAW/experimental/ExperimentalScreen' );
-  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var IntroScreen = require( 'HOOKES_LAW/intro/IntroScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
@@ -25,11 +23,6 @@ define( function( require ) {
     new SystemsScreen(),
     new EnergyScreen()
   ];
-
-  // Add test harness for ParametricSpringNode
-  if ( HookesLawQueryParameters.EXP ) {
-    screens.push( new ExperimentalScreen() );
-  }
 
   var options = {
     credits: {
