@@ -27,8 +27,8 @@ define( function( require ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
-    // A 100-unit vertical "wall", for comparison with the spring size
-    var wallNode = new WallNode( new Dimension2( 25, 100 ), {
+    // A 200-unit vertical "wall", for comparison with the spring size
+    var wallNode = new WallNode( new Dimension2( 25, 200 ), {
       left: 20,
       centerY: 375
     } );
