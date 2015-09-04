@@ -33,6 +33,7 @@ define( function( require ) {
   function DisplacementVectorNode( displacementProperty, options ) {
 
     options = _.extend( {
+      maxWidth: 150, // i18n
       verticalLineVisible: true,
       valueVisibleProperty: new Property( true ), // {Property.<boolean>} determines whether the value is visible
       unitDisplacementLength: 1

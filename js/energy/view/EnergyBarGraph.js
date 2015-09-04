@@ -67,6 +67,7 @@ define( function( require ) {
     } );
 
     var valueNode = new Text( '', {
+      maxWidth: 100, // i18n
       fill: HookesLawColors.ENERGY,
       font: HookesLawConstants.BAR_GRAPH_VALUE_FONT
     } );

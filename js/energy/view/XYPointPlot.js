@@ -107,6 +107,7 @@ define( function( require ) {
 
     // x nodes
     var xValueNode = new Text( '', {
+      maxWidth: 150, // i18n
       fill: options.xValueFill,
       font: options.valueFont
     } );
@@ -116,6 +117,7 @@ define( function( require ) {
 
     // y nodes
     var yValueNode = new Text( '', {
+      maxWidth: 150, // i18n
       fill: options.yValueFill,
       font: options.valueFont
     } );

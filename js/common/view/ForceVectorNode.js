@@ -31,6 +31,7 @@ define( function( require ) {
   function ForceVectorNode( forceProperty, options ) {
 
     options = _.extend( {
+      maxWidth: 150, // i18n
       fill: 'white',
       stroke: 'black',
       decimalPlaces: 0,
