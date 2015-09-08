@@ -71,7 +71,7 @@ define( function( require ) {
     // The line that corresponds to F = kx
     var forceLineNode = new Line( 0, 0, 1, 1, {
       stroke: HookesLawColors.APPLIED_FORCE,
-      lineWidth: 2
+      lineWidth: 3
     } );
     this.addChild( forceLineNode );
     forceLineNode.moveToBack();
