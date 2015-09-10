@@ -16,7 +16,7 @@ define( function( require ) {
   var SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
 
   // strings
-  var title = require( 'string!HOOKES_LAW/hookes-law.name' );
+  var title = require( 'string!HOOKES_LAW/hookes-law.title' );
 
   var screens = [
     new IntroScreen(),
