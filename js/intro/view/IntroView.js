@@ -86,10 +86,14 @@ define( function( require ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 
+      sceneControl.pickable = false; // so we don't select a scene while animation is in progress
+
       // animate system 1 into position
       var tweenPosition, tweenOpacity, tweenParameters;
       if ( numberOfSystems === 1 ) {
+
         tweenParameters = { y: system1Node.centerY, opacity: 1 };
+
         // fade out system 2
         tweenOpacity = new TWEEN.Tween( tweenParameters )
           .to( { opacity: 0 }, 500 )
@@ -99,25 +103,33 @@ define( function( require ) {
             system2Node.opacity = 1;
             tweenPosition.start();
           } );
+
         // move system 1 to center of screen
         tweenPosition = new TWEEN.Tween( tweenParameters )
           .to( { y: thisView.layoutBounds.centerY }, 500 )
-          .onUpdate( function() { system1Node.centerY = tweenParameters.y; } );
+          .onUpdate( function() { system1Node.centerY = tweenParameters.y; } )
+          .onComplete( function() { sceneControl.pickable = true; } );
+
         tweenOpacity.start();
       }
       else {
+
         tweenParameters = { y: system1Node.centerY, opacity: 0 };
+
         // move system 1 to top half of screen
         tweenPosition = new TWEEN.Tween( tweenParameters )
           .to( { y: 0.25 * thisView.layoutBounds.height }, 500 )
           .onUpdate( function() { system1Node.centerY = tweenParameters.y; } )
           .onComplete( function() { tweenOpacity.start(); } );
+
         // fade in system 2
         system2Node.opacity = 0;
         system2Node.visible = true;
         tweenOpacity = new TWEEN.Tween( tweenParameters )
           .to( { opacity: 1 }, 500 )
-          .onUpdate( function() { system2Node.opacity = tweenParameters.opacity; } );
+          .onUpdate( function() { system2Node.opacity = tweenParameters.opacity; } )
+          .onComplete( function() { sceneControl.pickable = true; } );
+
         tweenPosition.start();
       }
     } );
