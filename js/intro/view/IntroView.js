@@ -82,55 +82,71 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
+    var tweenPosition1, tweenOpacity1; // Tween instances for system 1
+    var tweenPosition2, tweenOpacity2; // Tween instances for system 2
+
     viewProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 
-      sceneControl.pickable = false; // so we don't select a scene while animation is in progress
+      // Stop any animation that is in progress
+      tweenPosition1 && tweenPosition1.stop();
+      tweenOpacity1 && tweenOpacity1.stop();
+      tweenPosition2 && tweenPosition2.stop();
+      tweenOpacity2 && tweenOpacity2.stop();
 
       // animate system 1 into position
-      var tweenPosition, tweenOpacity, tweenParameters;
+      var tweenParameters;
       if ( numberOfSystems === 1 ) {
 
         tweenParameters = { y: system1Node.centerY, opacity: 1 };
 
         // fade out system 2
-        tweenOpacity = new TWEEN.Tween( tweenParameters )
+        tweenOpacity2 = new TWEEN.Tween( tweenParameters )
           .to( { opacity: 0 }, 500 )
-          .onUpdate( function() { system2Node.opacity = tweenParameters.opacity; } )
+          .onUpdate( function() {
+            system2Node.opacity = tweenParameters.opacity;
+          } )
           .onComplete( function() {
             system2Node.visible = false;
-            system2Node.opacity = 1;
-            tweenPosition.start();
+            tweenPosition1.start();
           } );
 
         // move system 1 to center of screen
-        tweenPosition = new TWEEN.Tween( tweenParameters )
+        tweenPosition1 = new TWEEN.Tween( tweenParameters )
           .to( { y: thisView.layoutBounds.centerY }, 500 )
-          .onUpdate( function() { system1Node.centerY = tweenParameters.y; } )
-          .onComplete( function() { sceneControl.pickable = true; } );
+          .onUpdate( function() {
+            system1Node.centerY = tweenParameters.y;
+          } );
 
-        tweenOpacity.start();
+        tweenOpacity2.start();
       }
       else {
 
         tweenParameters = { y: system1Node.centerY, opacity: 0 };
 
         // move system 1 to top half of screen
-        tweenPosition = new TWEEN.Tween( tweenParameters )
+        tweenPosition1 = new TWEEN.Tween( tweenParameters )
           .to( { y: 0.25 * thisView.layoutBounds.height }, 500 )
-          .onUpdate( function() { system1Node.centerY = tweenParameters.y; } )
-          .onComplete( function() { tweenOpacity.start(); } );
+          .onUpdate( function() {
+            system1Node.centerY = tweenParameters.y;
+          } )
+          .onComplete( function() {
+            tweenOpacity2.start();
+          } );
 
         // fade in system 2
-        system2Node.opacity = 0;
-        system2Node.visible = true;
-        tweenOpacity = new TWEEN.Tween( tweenParameters )
+        tweenOpacity2 = new TWEEN.Tween( tweenParameters )
           .to( { opacity: 1 }, 500 )
-          .onUpdate( function() { system2Node.opacity = tweenParameters.opacity; } )
-          .onComplete( function() { sceneControl.pickable = true; } );
+          .onStart( function() {
+            system2Node.opacity = 0;
+            system2Node.visible = true;
+          } )
+          .onUpdate( function() {
+            system2Node.opacity = tweenParameters.opacity;
+          } );
 
-        tweenPosition.start();
+        tweenPosition1.start();
       }
     } );
   }
