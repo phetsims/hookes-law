@@ -169,8 +169,10 @@ define( function( require ) {
     // switch between different spring force representations
     Property.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
       function( springForceVectorVisible, springForceRepresentation ) {
+
         // total
         totalSpringForceVectorNode.visible = springForceVectorVisible && springForceRepresentation === 'total';
+
         // components
         var componentsVisible = springForceVectorVisible && springForceRepresentation === 'components';
         rightSpringForceVectorNode.visible = leftSpringForceVectorNode.visible = leftAppliedForceVectorNode.visible = componentsVisible;

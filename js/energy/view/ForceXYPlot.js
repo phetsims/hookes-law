@@ -85,9 +85,11 @@ define( function( require ) {
 
     // update force line
     spring.springConstantProperty.link( function( springConstant ) {
+
       // x
       var minDisplacement = options.xUnitLength * spring.displacementRange.min;
       var maxDisplacement = options.xUnitLength * spring.displacementRange.max;
+
       // F = kx
       var minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
       var maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;

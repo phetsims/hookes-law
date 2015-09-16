@@ -65,6 +65,7 @@ define( function( require ) {
       'specify either displacementRange or appliedForceRange, but not both' );
     if ( options.appliedForceRange ) {
       this.appliedForceRange = options.appliedForceRange; // read-only
+
       // x = F/k, read-only
       this.displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min,
         this.appliedForceRange.max / this.springConstantRange.min,
@@ -72,6 +73,7 @@ define( function( require ) {
     }
     else {
       this.displacementRange = options.displacementRange; // read-only
+
       // F = kx, read-only
       this.appliedForceRange = new Range( this.springConstantRange.max * this.displacementRange.min,
         this.springConstantRange.max * this.displacementRange.max,

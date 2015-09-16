@@ -13,12 +13,18 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
+  /**
+   * @param {Object} [options]
+   * @constructor
+   */
   function NibNode( options ) {
+
     options = _.extend( {
       fill: 'black',
       width: 10,
       height: 8
     }, options );
+
     Rectangle.call( this, 0, 0, options.width, options.height, 2, 2, options );
   }
 
