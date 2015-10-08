@@ -55,7 +55,9 @@ define( function( require ) {
 
     options = _.extend( {
       title: appliedForceColonString,
+      titleMaxWidth: 200, // i18n, determined empirically
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueMaxWidth: 100, // i18n, determined empirically
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       units: newtonsString,

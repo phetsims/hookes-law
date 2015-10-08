@@ -30,7 +30,9 @@ define( function( require ) {
   function DisplacementControl( displacementProperty, displacementRange, numberOfInteractionsInProgressProperty, options ) {
 
     options = _.extend( {
+      titleMaxWidth: 200, // i18n, determined empirically
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueMaxWidth: 100, // i18n, determined empirically
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       units: metersString,
