@@ -1,51 +1,51 @@
 {
-  "comment": "# hookes-law 1.0.0-dev.31 Fri Sep 11 2015 15:12:00 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.1.0-dev.1 Thu Oct 08 2015 16:34:40 GMT-0600 (MDT)",
   "assert": {
-    "sha": "858e65ac477bf1861883ce06eed56d9fdefa5027",
+    "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "master"
   },
   "axon": {
-    "sha": "1db622f9bd98a8cf1e6c70f487f1bf628f894ebf",
+    "sha": "47eaa1debf675c416f38018a2d78afa679164cbb",
     "branch": "master"
   },
   "brand": {
-    "sha": "f2c42d7b920e24dab53d747201598260a5f74128",
+    "sha": "8a756e53f976c89cf091350b67f880fc9b521096",
     "branch": "master"
   },
   "chipper": {
-    "sha": "0d7e23a754f3fd36f0dce2f1ac8defb64216337b",
+    "sha": "d93dfe7e182926939d643848c53e2a282c6c2ad4",
     "branch": "master"
   },
   "dot": {
-    "sha": "e34c6b2c53b83ea1f8d2a5091cadfdc6353a501d",
+    "sha": "09f891ace62dfdfca83e0b8be797ccf159792986",
     "branch": "master"
   },
   "hookes-law": {
-    "sha": "238e2eeb56b2d945f7da070b5a57bac5a8e50282",
+    "sha": "12cede3b472c3c1723762d903949a06570cc89e0",
     "branch": "master"
   },
   "joist": {
-    "sha": "9244eafb7edfe635e94d9881792bff8049a95d59",
+    "sha": "3fbd99f92334bb9731dec2c57865ab34439fac2b",
     "branch": "master"
   },
   "kite": {
-    "sha": "d5b7c07c150acbcb2904f8dddcf2efaaae2b5b4f",
+    "sha": "81ce58cadc3b6e947c3fe9cce21f7f7616034e57",
     "branch": "master"
   },
   "phet-core": {
-    "sha": "8e31808c67a23066b43fbbd2080784daa44433c2",
+    "sha": "f6348fbaa6212456c040daaa05940c3dfc0f6e2a",
     "branch": "master"
   },
   "phetcommon": {
-    "sha": "acbbf59bfc34f60422ed5dd5972447226152c457",
+    "sha": "0e4754feb35bc853b9a1f685e0270f5d53b9b7f8",
     "branch": "master"
   },
   "scenery": {
-    "sha": "547e128f059dbd3a7f9ec769b45dc39aa6b57164",
+    "sha": "80935892c0bd7992991a77129b8eadd50a9d5a9e",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "51940a3ecc65ca7de268ec7d77cbdf7ee5c367ef",
+    "sha": "34b1186d52b72bbe8b33e3d3f3c3e2d60a0de422",
     "branch": "master"
   },
   "sherpa": {
@@ -53,7 +53,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "382140f8705ffa3e8583b05570b755255d88efdf",
+    "sha": "b66398a529a18e696832fd10cae1adf90598e75e",
     "branch": "master"
   }
 }
