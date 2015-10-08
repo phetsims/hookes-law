@@ -33,7 +33,6 @@ define( function( require ) {
   function DisplacementVectorNode( displacementProperty, options ) {
 
     options = _.extend( {
-      maxWidth: 150, // i18n
       verticalLineVisible: true,
       valueVisibleProperty: new Property( true ), // {Property.<boolean>} determines whether the value is visible
       unitDisplacementLength: 1
@@ -42,6 +41,7 @@ define( function( require ) {
     var arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
 
     var valueNode = new Text( '', {
+      maxWidth: 150, // i18n
       fill: HookesLawColors.DISPLACEMENT,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
       top: arrowNode.bottom + 2 // below the arrow
