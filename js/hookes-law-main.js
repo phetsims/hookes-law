@@ -29,7 +29,7 @@ define( function( require ) {
       leadDesign: 'Amy Rouinfar',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
       team: 'Mike Dubson, Bruna Shinohara de Mendonça, Ariel Paul, Kathy Perkins, Martin Veillette',
-      qualityAssurance: 'Elise Morgan, Oliver Orejola, Brian Yoelin',
+      qualityAssurance: 'Steele Dalton, Elise Morgan, Oliver Orejola, Bryan Yoelin',
       graphicArts: 'Mariah Hermsmeyer'
     }
   };
