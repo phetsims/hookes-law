@@ -31,7 +31,6 @@ define( function( require ) {
   function ForceVectorNode( forceProperty, options ) {
 
     options = _.extend( {
-      maxWidth: 150, // i18n
       fill: 'white',
       stroke: 'black',
       decimalPlaces: 0,
@@ -49,6 +48,7 @@ define( function( require ) {
     } );
 
     var valueNode = new Text( '', {
+      maxWidth: 150, // i18n
       fill: options.fill,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
       bottom: arrowNode.top - 2 // above the arrow
