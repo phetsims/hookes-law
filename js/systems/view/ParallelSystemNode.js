@@ -148,8 +148,7 @@ define( function( require ) {
 
     var springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
-      top: wallNode.bottom + 25,
-      maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
+      top: wallNode.bottom + 25
     } );
 
     options.children = [

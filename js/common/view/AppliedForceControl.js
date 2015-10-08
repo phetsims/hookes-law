@@ -54,7 +54,9 @@ define( function( require ) {
     } ];
 
     options = _.extend( {
+      titleMaxWidth: 200, // i18n, determined empirically
       title: appliedForceColonString,
+      valueMaxWidth: 100, // i18n, determined empirically
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,

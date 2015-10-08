@@ -30,7 +30,9 @@ define( function( require ) {
 
     options = _.extend( {
       title: springConstantString,
+      titleMaxWidth: 200, // i18n, determined empirically
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+      valueMaxWidth: 100, // i18n, determined empirically
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
       units: newtonsPerMeterString,
