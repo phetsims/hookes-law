@@ -102,7 +102,8 @@ define( function( require ) {
 
     var springControls = new EnergySpringControls( spring, numberOfInteractionsInProgressProperty, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
-      top: wallNode.bottom + 10
+      top: wallNode.bottom + 10,
+      maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
     } );
 
     options.children = [
