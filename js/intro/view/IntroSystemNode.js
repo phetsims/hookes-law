@@ -111,7 +111,8 @@ define( function( require ) {
     var springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
-      top: wallNode.bottom + 10
+      top: wallNode.bottom + 10,
+      maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
     } );
 
     options.children = [
