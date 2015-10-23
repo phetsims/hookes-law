@@ -82,8 +82,13 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    var tweenPosition1, tweenOpacity1; // Tween instances for system 1
-    var tweenPosition2, tweenOpacity2; // Tween instances for system 2
+    // Tween instances for system 1
+    var tweenPosition1;
+    var tweenOpacity1;
+
+    // Tween instances for system 2
+    var tweenPosition2;
+    var tweenOpacity2;
 
     viewProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
 
