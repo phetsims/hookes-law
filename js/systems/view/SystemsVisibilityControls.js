@@ -27,7 +27,7 @@ define( function( require ) {
 
   // strings
   var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
-  var componentsSpring = require( 'string!HOOKES_LAW/components' );
+  var componentsString = require( 'string!HOOKES_LAW/components' );
   var displacementString = require( 'string!HOOKES_LAW/displacement' );
   var springForceString = require( 'string!HOOKES_LAW/springForce' );
   var totalString = require( 'string!HOOKES_LAW/total' );
@@ -94,7 +94,7 @@ define( function( require ) {
     var componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'components',
       new HBox( {
         children: [
-          new Text( componentsSpring, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+          new Text( componentsString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
           new BracketNode( {
             orientation: 'left',
             bracketLength: componentsVectorIcons.height
