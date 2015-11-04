@@ -23,7 +23,7 @@ define( function( require ) {
 
   // strings
   var joulesString = require( 'string!HOOKES_LAW/joules' );
-  var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+  var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
   var potentialEnergyString = require( 'string!HOOKES_LAW/potentialEnergy' );
 
   // constants
@@ -82,7 +82,7 @@ define( function( require ) {
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
-      valueNode.text = StringUtils.format( pattern_0value_1units, Util.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
+      valueNode.text = StringUtils.format( pattern0Value1UnitsString, Util.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
       valueNode.left = barNode.right + 5;
       if ( !barNode.visible || barNode.height < valueNode.height / 2 ) {
         valueNode.bottom = xAxisNode.bottom;

@@ -33,7 +33,7 @@ define( function( require ) {
   var XYAxes = require( 'HOOKES_LAW/energy/view/XYAxes' );
 
   // strings
-  var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+  var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
   var LEADER_LINE_OPTIONS = {
@@ -163,7 +163,7 @@ define( function( require ) {
 
       // x value
       var xText = Util.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      xValueNode.text = StringUtils.format( pattern_0value_1units, xText, options.xUnits );
+      xValueNode.text = StringUtils.format( pattern0Value1UnitsString, xText, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
       if ( options.minY === 0 ) {
@@ -203,7 +203,7 @@ define( function( require ) {
 
       // y value
       var yText = Util.toFixed( yFixed, options.yDecimalPlaces );
-      yValueNode.text = StringUtils.format( pattern_0value_1units, yText, options.yUnits );
+      yValueNode.text = StringUtils.format( pattern0Value1UnitsString, yText, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes
       var X_SPACING = 10;

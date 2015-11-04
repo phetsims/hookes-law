@@ -16,7 +16,7 @@ define( function( require ) {
   var SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
 
   // strings
-  var title = require( 'string!HOOKES_LAW/hookes-law.title' );
+  var hookesLawTitleString = require( 'string!HOOKES_LAW/hookes-law.title' );
 
   var screens = [
     new IntroScreen(),
@@ -35,7 +35,7 @@ define( function( require ) {
   };
 
   SimLauncher.launch( function() {
-    var sim = new Sim( title, screens, options );
+    var sim = new Sim( hookesLawTitleString, screens, options );
     sim.start();
   } );
 } );

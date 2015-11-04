@@ -23,7 +23,7 @@ define( function( require ) {
 
   // strings
   var metersString = require( 'string!HOOKES_LAW/meters' );
-  var pattern_0value_1units = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+  var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   /**
    * @param {Property.<number>} displacementProperty units = m
@@ -69,7 +69,7 @@ define( function( require ) {
 
       // update the value
       var displacementText = Util.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      valueNode.text = StringUtils.format( pattern_0value_1units, displacementText, metersString );
+      valueNode.text = StringUtils.format( pattern0Value1UnitsString, displacementText, metersString );
 
       // center value on arrow
       valueNode.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
