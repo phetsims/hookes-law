@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var EnergyModel = require( 'HOOKES_LAW/energy/model/EnergyModel' );
   var EnergyView = require( 'HOOKES_LAW/energy/view/EnergyView' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -31,6 +32,8 @@ define( function( require ) {
       HookesLawConstants.SCREEN_OPTIONS
     );
   }
+
+  hookesLaw.register( 'EnergyScreen', EnergyScreen );
 
   return inherit( Screen, EnergyScreen );
 } );

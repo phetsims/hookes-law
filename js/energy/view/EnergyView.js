@@ -15,6 +15,7 @@ define( function( require ) {
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
   var EnergyVisibilityControls = require( 'HOOKES_LAW/energy/view/EnergyVisibilityControls' );
   var ForceXYPlot = require( 'HOOKES_LAW/energy/view/ForceXYPlot' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
@@ -105,6 +106,8 @@ define( function( require ) {
       }
     } );
   }
+
+  hookesLaw.register( 'EnergyView', EnergyView );
 
   return inherit( ScreenView, EnergyView );
 } );

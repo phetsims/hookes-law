@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
 
@@ -36,6 +37,8 @@ define( function( require ) {
       assert && assert( left < thisArm.right, 'robotic arm is constrained to extend from right to left' );
     } );
   }
+
+  hookesLaw.register( 'RoboticArm', RoboticArm );
 
   return inherit( PropertySet, RoboticArm );
 } );

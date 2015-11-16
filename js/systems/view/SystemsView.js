@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParallelSystemNode = require( 'HOOKES_LAW/systems/view/ParallelSystemNode' );
@@ -86,6 +87,8 @@ define( function( require ) {
       parallelSystemNode.visible = ( seriesParallel === 'parallel' );
     } );
   }
+
+  hookesLaw.register( 'SystemsView', SystemsView );
 
   return inherit( ScreenView, SystemsView );
 } );

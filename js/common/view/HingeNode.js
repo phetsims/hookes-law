@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var Circle = require( 'SCENERY/nodes/Circle' );
   var Dimension2 = require( 'DOT/Dimension2' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -81,6 +82,8 @@ define( function( require ) {
     options.children = [ pivotNode, pinNode, pinCenterNode, bodyNode, highlightNode ];
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'HingeNode', HingeNode );
 
   return inherit( Node, HingeNode );
 } );

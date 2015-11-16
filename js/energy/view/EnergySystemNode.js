@@ -15,6 +15,7 @@ define( function( require ) {
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var EnergySpringControls = require( 'HOOKES_LAW/energy/view/EnergySpringControls' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
@@ -135,6 +136,8 @@ define( function( require ) {
 
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'EnergySystemNode', EnergySystemNode );
 
   return inherit( Node, EnergySystemNode );
 } );

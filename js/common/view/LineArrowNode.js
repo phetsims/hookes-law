@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
@@ -56,6 +57,8 @@ define( function( require ) {
     options.children = [ this.tailNode, this.headNode ];
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'LineArrowNode', LineArrowNode );
 
   return inherit( Node, LineArrowNode, {
 

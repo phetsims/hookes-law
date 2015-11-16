@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var IntroSceneControl = require( 'HOOKES_LAW/intro/view/IntroSceneControl' );
@@ -155,6 +156,8 @@ define( function( require ) {
       }
     } );
   }
+
+  hookesLaw.register( 'IntroView', IntroView );
 
   return inherit( ScreenView, IntroView );
 } );

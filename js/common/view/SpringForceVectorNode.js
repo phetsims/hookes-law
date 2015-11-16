@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var ForceVectorNode = require( 'HOOKES_LAW/common/view/ForceVectorNode' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -29,6 +30,8 @@ define( function( require ) {
 
     ForceVectorNode.call( this, springForceProperty, options );
   }
+
+  hookesLaw.register( 'SpringForceVectorNode', SpringForceVectorNode );
 
   return inherit( ForceVectorNode, SpringForceVectorNode );
 } );

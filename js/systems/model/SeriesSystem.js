@@ -26,6 +26,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
   var Range = require( 'DOT/Range' );
@@ -130,6 +131,8 @@ define( function( require ) {
       throw new Error( 'Equilibrium position of equivalent spring must remain fixed, equilibriumX=' + equilibriumX );
     } );
   }
+
+  hookesLaw.register( 'SeriesSystem', SeriesSystem );
 
   return inherit( Object, SeriesSystem, {
 

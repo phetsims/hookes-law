@@ -8,11 +8,18 @@
 define( function( require ) {
   'use strict';
 
+  // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+
   var getQueryParameter = phet.chipper.getQueryParameter;
 
-  return {
+  var HookesLawQueryParameters = {
 
     // enables developer-only features
     DEV: getQueryParameter( 'dev' ) || false
   };
+
+  hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );
+
+  return HookesLawQueryParameters;
 } );

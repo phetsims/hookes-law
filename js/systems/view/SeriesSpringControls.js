@@ -12,6 +12,7 @@ define( function( require ) {
   var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -80,6 +81,8 @@ define( function( require ) {
     ];
     HBox.call( this, options );
   }
+
+  hookesLaw.register( 'SeriesSpringControls', SeriesSpringControls );
 
   return inherit( HBox, SeriesSpringControls );
 } );

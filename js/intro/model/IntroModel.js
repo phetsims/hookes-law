@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
   var SingleSpringSystem = require( 'HOOKES_LAW/common/model/SingleSpringSystem' );
@@ -24,6 +25,8 @@ define( function( require ) {
     this.system1 = new SingleSpringSystem( springOptions ); // @public
     this.system2 = new SingleSpringSystem( springOptions ); // @public
   }
+
+  hookesLaw.register( 'IntroModel', IntroModel );
 
   return inherit( Object, IntroModel, {
 

@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
 
@@ -48,6 +49,8 @@ define( function( require ) {
       thisNode.model.lineWidthProperty.set( lineWidth );
     } );
   }
+
+  hookesLaw.register( 'HookesLawSpringNode', HookesLawSpringNode );
 
   return inherit( ParametricSpringNode, HookesLawSpringNode );
 } );

@@ -11,6 +11,7 @@ define( function( require ) {
   // modules
   var DisplacementControl = require( 'HOOKES_LAW/common/view/DisplacementControl' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
@@ -52,6 +53,8 @@ define( function( require ) {
     ];
     HBox.call( this, options );
   }
+
+  hookesLaw.register( 'EnergySpringControls', EnergySpringControls );
 
   return inherit( HBox, EnergySpringControls );
 } );

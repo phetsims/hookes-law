@@ -11,10 +11,11 @@ define( function( require ) {
   // modules
   var Bounds2 = require( 'DOT/Bounds2' );
   var Dimension2 = require( 'DOT/Dimension2' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
 
-  return {
+  var HookesLawConstants = {
 
     SCREEN_OPTIONS: { backgroundColor: 'white' },
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
@@ -104,4 +105,8 @@ define( function( require ) {
       yMargin: 15
     }
   };
+
+  hookesLaw.register( 'HookesLawConstants', HookesLawConstants );
+
+  return HookesLawConstants;
 } );

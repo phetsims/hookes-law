@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Range = require( 'DOT/Range' );
   var SingleSpringSystem = require( 'HOOKES_LAW/common/model/SingleSpringSystem' );
@@ -22,6 +23,8 @@ define( function( require ) {
       displacementRange: new Range( -1, 1, 0 ) // units = m
     } );
   }
+
+  hookesLaw.register( 'EnergyModel', EnergyModel );
 
   return inherit( Object, EnergyModel, {
 

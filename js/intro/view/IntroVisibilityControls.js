@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var CheckBox = require( 'SUN/CheckBox' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
@@ -105,6 +106,8 @@ define( function( require ) {
 
     Panel.call( this, content, options );
   }
+
+  hookesLaw.register( 'IntroVisibilityControls', IntroVisibilityControls );
 
   return inherit( Panel, IntroVisibilityControls );
 } );

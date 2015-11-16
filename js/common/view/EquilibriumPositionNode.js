@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
@@ -28,6 +29,8 @@ define( function( require ) {
 
     Line.call( this, 0, 0, 0, length, options );
   }
+
+  hookesLaw.register( 'EquilibriumPositionNode', EquilibriumPositionNode );
 
   return inherit( Line, EquilibriumPositionNode );
 } );

@@ -14,6 +14,7 @@ define( function( require ) {
   var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
   var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
@@ -145,6 +146,8 @@ define( function( require ) {
 
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'IntroSystemNode', IntroSystemNode );
 
   return inherit( Node, IntroSystemNode );
 } );

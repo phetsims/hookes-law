@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
@@ -101,6 +102,8 @@ define( function( require ) {
 
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'ForceVectorNode', ForceVectorNode );
 
   return inherit( Node, ForceVectorNode );
 } );

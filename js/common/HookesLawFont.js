@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
@@ -31,6 +32,8 @@ define( function( require ) {
 
     PhetFont.call( this, options );
   }
+
+  hookesLaw.register( 'HookesLawFont', HookesLawFont );
 
   return inherit( PhetFont, HookesLawFont );
 } );

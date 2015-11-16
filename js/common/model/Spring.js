@@ -30,6 +30,7 @@ define( function( require ) {
 
   // modules
   var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
@@ -185,6 +186,8 @@ define( function( require ) {
       thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
     } );
   }
+
+  hookesLaw.register( 'Spring', Spring );
 
   return inherit( PropertySet, Spring );
 } );

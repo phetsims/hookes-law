@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -85,6 +86,8 @@ define( function( require ) {
 
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'DisplacementVectorNode', DisplacementVectorNode );
 
   return inherit( Node, DisplacementVectorNode );
 } );

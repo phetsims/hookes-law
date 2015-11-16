@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParallelSystem = require( 'HOOKES_LAW/systems/model/ParallelSystem' );
   var SeriesSystem = require( 'HOOKES_LAW/systems/model/SeriesSystem' );
@@ -20,6 +21,8 @@ define( function( require ) {
     this.seriesSystem = new SeriesSystem();
     this.parallelSystem = new ParallelSystem();
   }
+
+  hookesLaw.register( 'SystemsModel', SystemsModel );
 
   return inherit( Object, SystemsModel, {
 

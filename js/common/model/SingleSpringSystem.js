@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
@@ -58,6 +59,8 @@ define( function( require ) {
       throw new Error( 'Equilibrium position must remain fixed, equilibriumX=' + equilibriumX );
     } );
   }
+
+  hookesLaw.register( 'SingleSpringSystem', SingleSpringSystem );
 
   return inherit( Object, SingleSpringSystem, {
 

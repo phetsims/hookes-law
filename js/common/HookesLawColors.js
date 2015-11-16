@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var Color = require( 'SCENERY/util/Color' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   // colors for the spring in single-spring systems
@@ -27,7 +28,7 @@ define( function( require ) {
   var SPRING2_MIDDLE = new Color( 255, 191, 0 ); // the dominant color
   var SPRING2_BACK = new Color( 217, 163, 0 );
 
-  return {
+  var HookesLawColors = {
 
     // UI components
     CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),
@@ -81,4 +82,8 @@ define( function( require ) {
     ENERGY: new Color( 3, 205, 255 ),
     EQUILIBRIUM_POSITION: new Color( 0, 180, 0 )
   };
+
+  hookesLaw.register( 'HookesLawColors', HookesLawColors );
+
+  return HookesLawColors;
 } );

@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -113,6 +114,8 @@ define( function( require ) {
         .quadraticCurveTo( cpx, cpy, x1, y1 );
     } );
   }
+
+  hookesLaw.register( 'EnergyXYPlot', EnergyXYPlot );
 
   return inherit( Node, EnergyXYPlot );
 } );

@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
@@ -31,6 +32,8 @@ define( function( require ) {
       energyOnForcePlotVisible: checked // {boolean} is energy depicted on the Force plot?
     } );
   }
+
+  hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );
 
   return inherit( PropertySet, EnergyViewProperties );
 } );

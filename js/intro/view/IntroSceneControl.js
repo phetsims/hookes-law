@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
@@ -33,6 +34,8 @@ define( function( require ) {
       { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon() }
     ], options );
   }
+
+  hookesLaw.register( 'IntroSceneControl', IntroSceneControl );
 
   return inherit( RadioButtonGroup, IntroSceneControl );
 } );

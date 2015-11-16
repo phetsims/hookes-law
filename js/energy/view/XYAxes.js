@@ -11,6 +11,7 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
@@ -63,6 +64,8 @@ define( function( require ) {
     options.children = [ xAxisNode, xAxisLabel, yAxisNode, yAxisLabel ];
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'XYAxes', XYAxes );
 
   return inherit( Node, XYAxes );
 } );

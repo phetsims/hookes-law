@@ -12,6 +12,7 @@ define( function( require ) {
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
   var HBox = require( 'SCENERY/nodes/HBox' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
@@ -43,7 +44,7 @@ define( function( require ) {
     scale: 0.3
   }, COMMON_SPRING_OPTIONS );
 
-  return {
+  var HookesLawIconFactory = {
 
     /**
      * Creates the icon for the "Intro" screen, a single spring pulled by a robotic arm.
@@ -300,4 +301,8 @@ define( function( require ) {
       } );
     }
   };
+
+  hookesLaw.register( 'HookesLawIconFactory', HookesLawIconFactory );
+
+  return HookesLawIconFactory;
 } );

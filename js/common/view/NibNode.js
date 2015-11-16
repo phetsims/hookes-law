@@ -10,6 +10,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
@@ -27,6 +28,8 @@ define( function( require ) {
 
     Rectangle.call( this, 0, 0, options.width, options.height, 2, 2, options );
   }
+
+  hookesLaw.register( 'NibNode', NibNode );
 
   return inherit( Rectangle, NibNode );
 } );

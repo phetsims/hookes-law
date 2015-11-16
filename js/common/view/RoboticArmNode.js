@@ -12,6 +12,7 @@ define( function( require ) {
   // modules
   var Dimension2 = require( 'DOT/Dimension2' );
   var HingeNode = require( 'HOOKES_LAW/common/view/HingeNode' );
+  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -169,6 +170,8 @@ define( function( require ) {
     options.children = [ armNode, redBox, gradientBox, draggableNode ];
     Node.call( this, options );
   }
+
+  hookesLaw.register( 'RoboticArmNode', RoboticArmNode );
 
   /**
    * Creates the top pincer in closed position.
