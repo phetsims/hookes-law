@@ -61,7 +61,8 @@ define( function( require ) {
       yUnits: joulesString,
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
       yValueFill: HookesLawColors.ENERGY,
-      yUnitLength: HookesLawConstants.UNIT_ENERGY_Y // length of a 1J energy vector
+      yUnitLength: HookesLawConstants.UNIT_ENERGY_Y, // length of a 1J energy vector
+      yValueBackgroundColor: 'rgba( 255, 255, 255, 0.7)' // translucent background, because value sometimes overlaps the curve
 
     }, options );
 
