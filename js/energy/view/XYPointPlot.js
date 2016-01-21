@@ -28,6 +28,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var PhetFont = require( 'SCENERY_PHET/PhetFont' );
   var Property = require( 'AXON/Property' );
+  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
@@ -37,6 +38,9 @@ define( function( require ) {
   var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
+  var VALUE_X_MARGIN = 6;
+  var VALUE_Y_MARGIN = 3;
+  var VALUE_BACKGROUND_CORNER_RADIUS = 3;
   var LEADER_LINE_OPTIONS = {
     stroke: 'black',
     lineWidth: 1,
@@ -73,6 +77,7 @@ define( function( require ) {
       xUnitLength: 1,
       xVectorVisibleProperty: new Property( true ),
       xLabelMaxWidth: null,
+      xValueBackgroundColor: null,
 
       // y axis
       minY: -1,
@@ -82,6 +87,7 @@ define( function( require ) {
       yUnits: '',
       yValueFill: 'black',
       yUnitLength: 1,
+      yValueBackgroundColor: null,
 
       // point
       pointFill: 'black',
@@ -115,6 +121,7 @@ define( function( require ) {
     var xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, { centerY: 0 } ) );
     var xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
     var xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
+    var xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
 
     // y nodes
     var yValueNode = new Text( '', {
@@ -124,11 +131,12 @@ define( function( require ) {
     } );
     var yTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, { centerX: 0 } ) );
     var yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
+    var yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
 
     options.children = [
       axesNode,
-      xLeaderLine, xTickNode, xValueNode, xVectorNode,
-      yLeaderLine, yTickNode, yValueNode,
+      xLeaderLine, xTickNode, xValueBackgroundNode, xValueNode, xVectorNode,
+      yLeaderLine, yTickNode, yValueBackgroundNode, yValueNode,
       pointNode
     ];
 
@@ -138,11 +146,16 @@ define( function( require ) {
       xVectorNode.visible = ( visible && xFixed !== 0 );
     } );
     options.valuesVisibleProperty.link( function( visible ) {
-      // this is more efficient than linkAttribute for each node
+
+      // x-axis nodes
       xValueNode.visible = visible;
+      xValueBackgroundNode.visible = visible;
       xTickNode.visible = visible;
       xLeaderLine.visible = visible;
+
+      // y axis nodes
       yValueNode.visible = visible;
+      yValueBackgroundNode.visible = visible;
       yTickNode.visible = visible;
       yLeaderLine.visible = visible;
     } );
@@ -191,6 +204,12 @@ define( function( require ) {
           xValueNode.bottom = -Y_SPACING; // above the x axis
         }
       }
+
+      // x value background
+      xValueBackgroundNode.setRect( 0, 0,
+        xValueNode.width + ( 2 * VALUE_X_MARGIN ), xValueNode.height + ( 2 * VALUE_Y_MARGIN ),
+        VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
+      xValueBackgroundNode.center = xValueNode.center;
     } );
 
     yProperty.link( function( y ) {
@@ -225,6 +244,12 @@ define( function( require ) {
       else {
         yValueNode.top = Y_SPACING; // below the x axis
       }
+
+      // y value background
+      yValueBackgroundNode.setRect( 0, 0,
+        yValueNode.width + ( 2 * VALUE_X_MARGIN ), yValueNode.height + ( 2 * VALUE_Y_MARGIN ),
+        VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
+      yValueBackgroundNode.center = yValueNode.center;
     } );
 
     // Move point and leader lines
