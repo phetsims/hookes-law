@@ -127,20 +127,19 @@ define( function( require ) {
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
     // Drag the pincers or hinge
+    var startOffsetX = 0;
     var dragHandler = new SimpleDragHandler( {
 
         allowTouchSnag: true,
 
-        startOffsetX: 0,
-
         start: function( event ) {
           numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
           var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
-          this.startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
+          startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
         },
 
         drag: function( event ) {
-          var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - ( this.startOffsetX );
+          var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - startOffsetX;
           var length = parentX / options.unitDisplacementLength;
           var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
           left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
