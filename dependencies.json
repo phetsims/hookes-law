@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.2 Tue Feb 23 2016 16:13:23 GMT-0700 (Mountain Standard Time)",
+  "comment": "# hookes-law 1.0.2 Thu Feb 25 2016 13:27:30 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "683699dc4a3c2e47d2b8f0e70904c7ae2531b7d7",
+    "sha": "695360ce1c4200911d7c04d46c1c8f8a2bddb5b4",
     "branch": "1.0"
   },
   "joist": {
@@ -42,7 +42,7 @@
   },
   "scenery": {
     "sha": "b77a94aff25273a001a08abea0e13265805a34a8",
-    "branch": "hookes-law-1.0"
+    "branch": "HEAD"
   },
   "scenery-phet": {
     "sha": "88ade50794057afc23b6b98e3d1757b61612d938",
