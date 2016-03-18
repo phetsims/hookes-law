@@ -18,12 +18,6 @@ define( function( require ) {
   // strings
   var hookesLawTitleString = require( 'string!HOOKES_LAW/hookes-law.title' );
 
-  var screens = [
-    new IntroScreen(),
-    new SystemsScreen(),
-    new EnergyScreen()
-  ];
-
   var options = {
     credits: {
       leadDesign: 'Amy Rouinfar',
@@ -35,6 +29,11 @@ define( function( require ) {
   };
 
   SimLauncher.launch( function() {
+    var screens = [
+      new IntroScreen(),
+      new SystemsScreen(),
+      new EnergyScreen()
+    ];
     var sim = new Sim( hookesLawTitleString, screens, options );
     sim.start();
   } );
