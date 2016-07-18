@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Range = require( 'DOT/Range' );
+  var RangeWithValue = require( 'DOT/RangeWithValue' );
   var SingleSpringSystem = require( 'HOOKES_LAW/common/model/SingleSpringSystem' );
 
   /**
@@ -19,8 +19,8 @@ define( function( require ) {
    */
   function EnergyModel() {
     this.system = new SingleSpringSystem( {
-      springConstantRange: new Range( 100, 400, 100 ), // units = F
-      displacementRange: new Range( -1, 1, 0 ) // units = m
+      springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = F
+      displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m
     } );
   }
 

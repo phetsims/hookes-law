@@ -34,7 +34,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PropertySet = require( 'AXON/PropertySet' );
-  var Range = require( 'DOT/Range' );
+  var RangeWithValue = require( 'DOT/RangeWithValue' );
 
   /**
    * @param {Object} [options]
@@ -45,7 +45,7 @@ define( function( require ) {
     options = _.extend( {
       left: 0, // {number} x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
-      springConstantRange: new Range( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
+      springConstantRange: new RangeWithValue( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
       displacementRange: null, // {Range} displacement range and initial value, units = m
       appliedForceRange: null, // {Range} applied force range and initial value, units = N
       appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA // {number} applied force (and thus spring force) are constrained to this delta
@@ -68,7 +68,7 @@ define( function( require ) {
       this.appliedForceRange = options.appliedForceRange; // read-only
 
       // x = F/k, read-only
-      this.displacementRange = new Range( this.appliedForceRange.min / this.springConstantRange.min,
+      this.displacementRange = new RangeWithValue( this.appliedForceRange.min / this.springConstantRange.min,
         this.appliedForceRange.max / this.springConstantRange.min,
         this.appliedForceRange.defaultValue / this.springConstantRange.defaultValue );
     }
@@ -76,7 +76,7 @@ define( function( require ) {
       this.displacementRange = options.displacementRange; // read-only
 
       // F = kx, read-only
-      this.appliedForceRange = new Range( this.springConstantRange.max * this.displacementRange.min,
+      this.appliedForceRange = new RangeWithValue( this.springConstantRange.max * this.displacementRange.min,
         this.springConstantRange.max * this.displacementRange.max,
         this.springConstantRange.defaultValue * this.displacementRange.defaultValue );
     }
@@ -129,13 +129,13 @@ define( function( require ) {
         function( springConstant, equilibriumX ) {
           var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
           var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
-          return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
+          return new RangeWithValue( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
         } );
     }
     else {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
-          return new Range( equilibriumX + thisSpring.displacementRange.min, equilibriumX + thisSpring.displacementRange.max
+          return new RangeWithValue( equilibriumX + thisSpring.displacementRange.min, equilibriumX + thisSpring.displacementRange.max
           );
         } );
     }

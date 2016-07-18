@@ -29,7 +29,7 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
-  var Range = require( 'DOT/Range' );
+  var RangeWithValue = require( 'DOT/RangeWithValue' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
 
   /**
@@ -46,8 +46,8 @@ define( function( require ) {
     this.leftSpring = new Spring( {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 0.75, // length of the spring at equilibrium, units = m
-      springConstantRange: new Range( 200, 600, 200 ), // range and initial value of k1, units = N/m
-      appliedForceRange: new Range( -100, 100, 0 ) // range and initial value of Feq, units = N
+      springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
+      appliedForceRange: new RangeWithValue( -100, 100, 0 ) // range and initial value of Feq, units = N
     } );
 
     // @public right spring, in series with the left spring, with identical configuration
@@ -63,7 +63,7 @@ define( function( require ) {
       left: this.leftSpring.leftProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,
       // keq = 1 / ( 1/k1 + 1/k2 )
-      springConstantRange: new Range(
+      springConstantRange: new RangeWithValue(
         1 / ( ( 1 / this.leftSpring.springConstantRange.min ) + ( 1 / this.rightSpring.springConstantRange.min ) ),
         1 / ( ( 1 / this.leftSpring.springConstantRange.max ) + ( 1 / this.rightSpring.springConstantRange.max ) ),
         1 / ( ( 1 / this.leftSpring.springConstantRange.defaultValue ) + ( 1 / this.rightSpring.springConstantRange.defaultValue ) ) ),
