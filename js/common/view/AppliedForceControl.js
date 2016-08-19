@@ -14,12 +14,17 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'SCENERY_PHET/NumberControl' );
+  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
 
   // strings
   var appliedForceColonString = require( 'string!HOOKES_LAW/appliedForceColon' );
   var newtonsString = require( 'string!HOOKES_LAW/newtons' );
+  var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+
+  // fill in the {1} units, but leave the {0} value alone.
+  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString, '{0}', newtonsString );
 
   // constants
   var MINOR_TICK_SPACING = 10;
@@ -61,7 +66,7 @@ define( function( require ) {
       valueMaxWidth: 100, // i18n, determined empirically
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-      units: newtonsString,
+      valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.APPLIED_FORCE_DELTA,
       majorTicks: majorTicks,
       minorTickSpacing: MINOR_TICK_SPACING,

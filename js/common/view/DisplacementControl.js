@@ -14,12 +14,17 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'SCENERY_PHET/NumberControl' );
+  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
 
   // strings
   var displacementColonString = require( 'string!HOOKES_LAW/displacementColon' );
   var metersString = require( 'string!HOOKES_LAW/meters' );
+  var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+
+  // fill in the {1} units, but leave the {0} value alone.
+  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString, '{0}', metersString );
 
   /**
    * @param {Property.<boolean>} displacementProperty units = m
@@ -36,7 +41,7 @@ define( function( require ) {
       valueMaxWidth: 100, // i18n, determined empirically
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
-      units: metersString,
+      valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.DISPLACEMENT_DELTA,
       majorTicksValues: null,
       minorTickSpacing: 1,
