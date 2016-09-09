@@ -24,12 +24,16 @@ define( function( require ) {
    * @constructor
    */
   function EnergyScreen() {
+
+    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+      name: energyString,
+      homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon()
+    } );
+
     Screen.call( this,
-      energyString,
-      HookesLawIconFactory.createEnergyScreenIcon(),
       function() { return new EnergyModel(); },
       function( model ) { return new EnergyView( model ); },
-      HookesLawConstants.SCREEN_OPTIONS
+      options
     );
   }
 

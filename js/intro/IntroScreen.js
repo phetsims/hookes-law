@@ -24,12 +24,16 @@ define( function( require ) {
    * @constructor
    */
   function IntroScreen() {
+
+    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+      name: introString,
+      homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon()
+    } );
+
     Screen.call( this,
-      introString,
-      HookesLawIconFactory.createIntroScreenIcon(),
       function() { return new IntroModel(); },
       function( model ) { return new IntroView( model ); },
-      HookesLawConstants.SCREEN_OPTIONS
+      options
     );
   }
 

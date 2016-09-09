@@ -24,12 +24,16 @@ define( function( require ) {
    * @constructor
    */
   function SystemsScreen() {
+
+    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+      name: systemsString,
+      homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon()
+    } );
+
     Screen.call( this,
-      systemsString,
-      HookesLawIconFactory.createSystemsScreenIcon(),
       function() { return new SystemsModel(); },
       function( model ) { return new SystemsView( model ); },
-      HookesLawConstants.SCREEN_OPTIONS
+      options
     );
   }
 
