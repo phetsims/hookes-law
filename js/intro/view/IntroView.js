@@ -115,7 +115,7 @@ define( function( require ) {
           } )
           .onComplete( function() {
             system2Node.visible = false;
-            tweenPosition1.start();
+            tweenPosition1.start( phet.joist.elapsedTime );
           } );
 
         // move system 1 to center of screen
@@ -125,7 +125,7 @@ define( function( require ) {
             system1Node.centerY = tweenParameters.y;
           } );
 
-        tweenOpacity2.start();
+        tweenOpacity2.start( phet.joist.elapsedTime );
       }
       else {
 
@@ -138,7 +138,7 @@ define( function( require ) {
             system1Node.centerY = tweenParameters.y;
           } )
           .onComplete( function() {
-            tweenOpacity2.start();
+            tweenOpacity2.start( phet.joist.elapsedTime );
           } );
 
         // fade in system 2
@@ -152,7 +152,7 @@ define( function( require ) {
             system2Node.opacity = tweenParameters.opacity;
           } );
 
-        tweenPosition1.start();
+        tweenPosition1.start( phet.joist.elapsedTime );
       }
     } );
   }
