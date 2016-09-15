@@ -33,20 +33,21 @@ define( function( require ) {
       pathBoundsMethod: 'none' // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
     }, options );
 
-    var thisNode = this;
+    var self = this;
+    
     ParametricSpringNode.call( this, options );
 
     // stretch or compress the spring
     spring.lengthProperty.link( function( length ) {
       var coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
-      var xScale = coilLength / ( thisNode.model.loopsProperty.get() * thisNode.model.radiusProperty.get() );
-      thisNode.model.xScaleProperty.set( xScale );
+      var xScale = coilLength / ( self.model.loopsProperty.get() * self.model.radiusProperty.get() );
+      self.model.xScaleProperty.set( xScale );
     } );
 
     // spring constant determines lineWidth
     spring.springConstantProperty.link( function( springConstant ) {
       var lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
-      thisNode.model.lineWidthProperty.set( lineWidth );
+      self.model.lineWidthProperty.set( lineWidth );
     } );
   }
 

@@ -36,16 +36,16 @@ define( function( require ) {
     //------------------------------------------------
     // Property observers
 
-    var thisSystem = this;
+    var self = this;
 
     // Connect arm to spring.
     this.spring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.leftProperty.set( right );
+      self.roboticArm.leftProperty.set( right );
     } );
 
     // Robotic arm sets displacement of spring.
     this.roboticArm.leftProperty.link( function( left ) {
-      thisSystem.spring.displacementProperty.set( left - thisSystem.spring.equilibriumXProperty.get() );
+      self.spring.displacementProperty.set( left - self.spring.equilibriumXProperty.get() );
     } );
 
     //------------------------------------------------

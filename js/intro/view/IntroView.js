@@ -26,7 +26,8 @@ define( function( require ) {
    */
   function IntroView( model ) {
 
-    var thisView = this;
+    var self = this;
+    
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
     // View length of 1 meter of displacement
@@ -120,7 +121,7 @@ define( function( require ) {
 
         // move system 1 to center of screen
         tweenPosition1 = new TWEEN.Tween( tweenParameters )
-          .to( { y: thisView.layoutBounds.centerY }, 500 )
+          .to( { y: self.layoutBounds.centerY }, 500 )
           .onUpdate( function() {
             system1Node.centerY = tweenParameters.y;
           } );
@@ -133,7 +134,7 @@ define( function( require ) {
 
         // move system 1 to top half of screen
         tweenPosition1 = new TWEEN.Tween( tweenParameters )
-          .to( { y: 0.25 * thisView.layoutBounds.height }, 500 )
+          .to( { y: 0.25 * self.layoutBounds.height }, 500 )
           .onUpdate( function() {
             system1Node.centerY = tweenParameters.y;
           } )

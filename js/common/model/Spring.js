@@ -81,7 +81,7 @@ define( function( require ) {
         this.springConstantRange.defaultValue * this.displacementRange.defaultValue );
     }
 
-    var thisSpring = this;
+    var self = this;
 
     //------------------------------------------------
     // Properties
@@ -106,13 +106,13 @@ define( function( require ) {
     // @public equilibrium x location, units = m
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
       function( left ) {
-        return left + thisSpring.equilibriumLength;
+        return left + self.equilibriumLength;
       } );
 
     // @public x location of the right end of the spring, units = m
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
       function( equilibriumX, displacement ) {
-        var left = thisSpring.leftProperty.get();
+        var left = self.leftProperty.get();
         var right = equilibriumX + displacement;
         assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
         return right;
@@ -127,15 +127,15 @@ define( function( require ) {
     if ( options.appliedForceRange ) {
       this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
         function( springConstant, equilibriumX ) {
-          var minDisplacement = thisSpring.appliedForceRange.min / springConstant;
-          var maxDisplacement = thisSpring.appliedForceRange.max / springConstant;
+          var minDisplacement = self.appliedForceRange.min / springConstant;
+          var maxDisplacement = self.appliedForceRange.max / springConstant;
           return new RangeWithValue( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
         } );
     }
     else {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
-          return new RangeWithValue( equilibriumX + thisSpring.displacementRange.min, equilibriumX + thisSpring.displacementRange.max
+          return new RangeWithValue( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max
           );
         } );
     }
@@ -157,33 +157,33 @@ define( function( require ) {
 
     // F: When applied force changes, maintain the spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {
-      assert && assert( thisSpring.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
-      thisSpring.displacement = appliedForce / thisSpring.springConstant; // x = F/k
+      assert && assert( self.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
+      self.displacement = appliedForce / self.springConstant; // x = F/k
     } );
 
     // k: When spring constant changes, adjust either displacement or applied force
     this.springConstantProperty.link( function( springConstant ) {
-      assert && assert( thisSpring.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
+      assert && assert( self.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
       if ( options.appliedForceRange ) {
         // if the applied force range was specified, then maintain the applied force, change displacement
-        thisSpring.displacement = thisSpring.appliedForce / springConstant; // x = F/k
+        self.displacement = self.appliedForce / springConstant; // x = F/k
       }
       else {
         // if the displacement range was specified, maintain the displacement, change applied force
-        thisSpring.appliedForce = springConstant * thisSpring.displacement; // F = kx
+        self.appliedForce = springConstant * self.displacement; // F = kx
       }
     } );
 
     // x: When displacement changes, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
-      assert && assert( thisSpring.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
-      var appliedForce = thisSpring.springConstant * displacement; // F = kx
+      assert && assert( self.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
+      var appliedForce = self.springConstant * displacement; // F = kx
       // constrain to delta if the applied force range was specified
       if ( options.appliedForceRange ) {
         appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
       }
       // constrain to range
-      thisSpring.appliedForce = thisSpring.appliedForceRange.constrainValue( appliedForce );
+      self.appliedForce = self.appliedForceRange.constrainValue( appliedForce );
     } );
   }
 

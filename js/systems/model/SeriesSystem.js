@@ -37,7 +37,7 @@ define( function( require ) {
    */
   function SeriesSystem() {
 
-    var thisSystem = this;
+    var self = this;
 
     //------------------------------------------------
     // Components of the system
@@ -82,15 +82,15 @@ define( function( require ) {
 
     // Feq = F1 = F2
     this.equivalentSpring.appliedForceProperty.link( function( appliedForce ) {
-      thisSystem.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
-      thisSystem.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq
+      self.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
+      self.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq
     } );
 
     // keq = 1 / ( 1/k1 + 1/k2 )
     var updateEquivalentSpringConstant = function() {
-      var leftSpringConstant = thisSystem.leftSpring.springConstantProperty.get();
-      var rightSpringConstant = thisSystem.rightSpring.springConstantProperty.get();
-      thisSystem.equivalentSpring.springConstantProperty.set( 1 / ( ( 1 / leftSpringConstant ) + ( 1 / rightSpringConstant ) ) );
+      var leftSpringConstant = self.leftSpring.springConstantProperty.get();
+      var rightSpringConstant = self.rightSpring.springConstantProperty.get();
+      self.equivalentSpring.springConstantProperty.set( 1 / ( ( 1 / leftSpringConstant ) + ( 1 / rightSpringConstant ) ) );
     };
     this.leftSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.rightSpring.springConstantProperty.link( updateEquivalentSpringConstant );
@@ -101,19 +101,19 @@ define( function( require ) {
       if ( !ignoreUpdates ) {
         // this will affect the displacement of both springs
         ignoreUpdates = true;
-        thisSystem.equivalentSpring.displacementProperty.set( left - thisSystem.equivalentSpring.equilibriumXProperty.get() );
+        self.equivalentSpring.displacementProperty.set( left - self.equivalentSpring.equilibriumXProperty.get() );
         ignoreUpdates = false;
       }
     } );
 
     // Connect right spring to left spring.
     this.leftSpring.rightProperty.link( function( right ) {
-      thisSystem.rightSpring.leftProperty.set( right );
+      self.rightSpring.leftProperty.set( right );
     } );
 
     // Connect robotic arm to equivalent spring.
     this.equivalentSpring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.leftProperty.set( right );
+      self.roboticArm.leftProperty.set( right );
     } );
 
     //------------------------------------------------

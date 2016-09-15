@@ -38,7 +38,7 @@ define( function( require ) {
    */
   function ParallelSystem() {
 
-    var thisSystem = this;
+    var self = this;
 
     //------------------------------------------------
     // Components of the system
@@ -92,15 +92,15 @@ define( function( require ) {
 
     // xeq = x1 = x2
     this.equivalentSpring.displacementProperty.link( function( displacement ) {
-      thisSystem.topSpring.displacementProperty.set( displacement ); // x1 = xeq
-      thisSystem.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
+      self.topSpring.displacementProperty.set( displacement ); // x1 = xeq
+      self.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
     } );
 
     // keq = k1 + k2
     var updateEquivalentSpringConstant = function() {
-      var topSpringConstant = thisSystem.topSpring.springConstantProperty.get();
-      var bottomSpringConstant = thisSystem.bottomSpring.springConstantProperty.get();
-      thisSystem.equivalentSpring.springConstantProperty.set( topSpringConstant + bottomSpringConstant );
+      var topSpringConstant = self.topSpring.springConstantProperty.get();
+      var bottomSpringConstant = self.bottomSpring.springConstantProperty.get();
+      self.equivalentSpring.springConstantProperty.set( topSpringConstant + bottomSpringConstant );
     };
     this.topSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.bottomSpring.springConstantProperty.link( updateEquivalentSpringConstant );
@@ -111,14 +111,14 @@ define( function( require ) {
       if ( !ignoreUpdates ) {
         // this will affect the displacement of both springs
         ignoreUpdates = true;
-        thisSystem.equivalentSpring.displacementProperty.set( left - thisSystem.equivalentSpring.equilibriumXProperty.get() );
+        self.equivalentSpring.displacementProperty.set( left - self.equivalentSpring.equilibriumXProperty.get() );
         ignoreUpdates = false;
       }
     } );
 
     // Connect robotic arm to equivalent spring.
     this.equivalentSpring.rightProperty.link( function( right ) {
-      thisSystem.roboticArm.leftProperty.set( right );
+      self.roboticArm.leftProperty.set( right );
     } );
 
     //------------------------------------------------
