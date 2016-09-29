@@ -33,7 +33,7 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
+  var Property = require( 'AXON/Property' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
 
   /**
@@ -86,13 +86,17 @@ define( function( require ) {
     //------------------------------------------------
     // Properties
 
-    PropertySet.call( this, {
-      // @public
-      appliedForce: this.appliedForceRange.defaultValue, // {number} F
-      springConstant: this.springConstantRange.defaultValue,  // {number} k
-      displacement: this.displacementRange.defaultValue,  // {number} x
-      left: options.left // {number} location of the left end of the spring, units = m
-    }, options );
+    // @public {number} F
+    this.appliedForceProperty = new Property( this.appliedForceRange.defaultValue );
+
+    // @public {number} k
+    this.springConstantProperty = new Property( this.springConstantRange.defaultValue );
+
+    // @public {number} x
+    this.displacementProperty = new Property( this.displacementRange.defaultValue );
+
+    // @public {number} location of the left end of the spring, units = m
+    this.leftProperty = new Property( options.left );
 
     //------------------------------------------------
     // Derived properties
@@ -189,5 +193,14 @@ define( function( require ) {
 
   hookesLaw.register( 'Spring', Spring );
 
-  return inherit( PropertySet, Spring );
+  return inherit( Object, Spring, {
+
+    // @public
+    reset: function() {
+      this.appliedForceProperty.reset();
+      this.springConstantProperty.reset();
+      this.displacementProperty.reset();
+      this.leftProperty.reset();
+    }
+  } );
 } );

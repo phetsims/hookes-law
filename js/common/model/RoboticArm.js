@@ -1,4 +1,4 @@
-// Copyright 2015, University of Colorado Boulder
+// Copyright 2015-2016, University of Colorado Boulder
 
 /**
  * The robotic arm. The left end is movable, the right end is fixed.
@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var PropertySet = require( 'AXON/PropertySet' );
+  var Property = require( 'AXON/Property' );
 
   /**
    * @param {Object} [options]
@@ -26,19 +26,21 @@ define( function( require ) {
       right: 1 // {number} initial x location of the right (fixed) end of the arm, units = m
     }, options );
 
-    this.right = options.right; // @public right (fixed) end of the arm, read-only
-
-    PropertySet.call( this, {
-      left: options.left  // @public left (movable) end of the arm
-    }, options );
-
-    // @public
+    // @public left (movable) end of the arm
+    this.leftProperty = new Property( options.left );
     this.leftProperty.link( function( left ) {
       assert && assert( left < self.right, 'robotic arm is constrained to extend from right to left' );
     } );
+
+    this.right = options.right; // @public right (fixed) end of the arm, read-only
   }
 
   hookesLaw.register( 'RoboticArm', RoboticArm );
 
-  return inherit( PropertySet, RoboticArm );
+  return inherit( Object, RoboticArm, {
+
+    reset: function() {
+      this.leftProperty.reset();
+    }
+  } );
 } );
