@@ -26,13 +26,13 @@ define( function( require ) {
       right: 1 // {number} initial x location of the right (fixed) end of the arm, units = m
     }, options );
 
+    this.right = options.right; // @public right (fixed) end of the arm, read-only
+
     // @public left (movable) end of the arm
     this.leftProperty = new Property( options.left );
     this.leftProperty.link( function( left ) {
       assert && assert( left < self.right, 'robotic arm is constrained to extend from right to left' );
     } );
-
-    this.right = options.right; // @public right (fixed) end of the arm, read-only
   }
 
   hookesLaw.register( 'RoboticArm', RoboticArm );
