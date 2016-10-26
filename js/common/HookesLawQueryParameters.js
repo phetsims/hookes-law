@@ -11,13 +11,11 @@ define( function( require ) {
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
 
-  var getQueryParameter = phet.chipper.getQueryParameter;
-
-  var HookesLawQueryParameters = {
+  var HookesLawQueryParameters = QueryStringMachine.getAll( {
 
     // enables developer-only features
-    DEV: getQueryParameter( 'dev' ) || false
-  };
+    dev: { type: 'flag' }
+  } );
 
   hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );
 

@@ -20,7 +20,7 @@ define( function( require ) {
   function IntroViewProperties() {
 
     // to make development easier
-    var checked = HookesLawQueryParameters.DEV ? true : false;
+    var checked = HookesLawQueryParameters.dev;
 
     // @public {number} number of systems visible, 1 or 2
     this.numberOfSystemsProperty = new Property( 1 );
