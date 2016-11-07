@@ -40,14 +40,14 @@ define( function( require ) {
     // stretch or compress the spring
     spring.lengthProperty.link( function( length ) {
       var coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
-      var xScale = coilLength / ( self.model.loopsProperty.get() * self.model.radiusProperty.get() );
-      self.model.xScaleProperty.set( xScale );
+      var xScale = coilLength / ( self.loopsProperty.get() * self.radiusProperty.get() );
+      self.xScaleProperty.set( xScale );
     } );
 
     // spring constant determines lineWidth
     spring.springConstantProperty.link( function( springConstant ) {
       var lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
-      self.model.lineWidthProperty.set( lineWidth );
+      self.lineWidthProperty.set( lineWidth );
     } );
   }
 
