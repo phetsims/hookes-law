@@ -19,8 +19,8 @@ define( function( require ) {
    */
   function IntroViewProperties() {
 
-    // to make development easier
-    var checked = HookesLawQueryParameters.dev;
+    // check all CheckBoxes, to make development easier
+    var checked = HookesLawQueryParameters.checkAll;
 
     // @public {number} number of systems visible, 1 or 2
     this.numberOfSystemsProperty = new Property( 1 );

@@ -19,8 +19,8 @@ define( function( require ) {
    */
   function EnergyViewProperties() {
 
-    // to make development easier
-    var checked = HookesLawQueryParameters.dev;
+    // check all CheckBoxes, to make development easier
+    var checked = HookesLawQueryParameters.checkAll;
 
     // @public {string} which graph is visible, 'energyBar'|'energyXY'|'forceXY'
     this.graphProperty = new Property( 'energyBar' );

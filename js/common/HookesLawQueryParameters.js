@@ -1,4 +1,4 @@
-// Copyright 2015, University of Colorado Boulder
+// Copyright 2016, University of Colorado Boulder
 
 /**
  * Query parameters used in sim-specific code.
@@ -13,8 +13,8 @@ define( function( require ) {
 
   var HookesLawQueryParameters = QueryStringMachine.getAll( {
 
-    // enables developer-only features
-    dev: { type: 'flag' }
+    // checks all Check Boxes, to make development easier
+    checkAll: { type: 'flag' }
   } );
 
   hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );

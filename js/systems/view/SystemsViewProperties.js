@@ -19,8 +19,8 @@ define( function( require ) {
    */
   function SystemsViewProperties() {
 
-    // to make development easier
-    var checked = HookesLawQueryParameters.dev;
+    // check all CheckBoxes, to make development easier
+    var checked = HookesLawQueryParameters.checkAll;
 
     // @public {string} which system is visible, 'series'|'parallel'
     this.seriesParallelProperty = new Property( 'parallel' );
