@@ -14,10 +14,12 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  var Property = require( 'AXON/Property' );
+  var Color = require( 'SCENERY/util/Color' );
 
   var HookesLawConstants = {
 
-    SCREEN_OPTIONS: { backgroundColor: 'white' },
+    SCREEN_OPTIONS: { backgroundColorProperty: new Property( Color.toColor( 'white' ) ) },
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
 
     // number of decimal places for quantities
