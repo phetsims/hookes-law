@@ -39,7 +39,7 @@ define( function( require ) {
     var appliedForceTextNode = new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     var springForceTextNode = new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     var displacementTextNode = new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    var maxTextWidth = _.max( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], function( node ) {
+    var maxTextWidth = _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], function( node ) {
       return node.width;
     } ).width;
 

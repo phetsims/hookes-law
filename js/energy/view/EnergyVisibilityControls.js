@@ -109,7 +109,7 @@ define( function( require ) {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
-    var maxControlWidth = _.max( controls, function( node ) { return node.width; } ).width;
+    var maxControlWidth = _.maxBy( controls, function( node ) { return node.width; } ).width;
 
     var content = new VBox( {
       children: [
