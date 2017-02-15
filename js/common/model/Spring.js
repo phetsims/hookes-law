@@ -162,7 +162,7 @@ define( function( require ) {
     // F: When applied force changes, maintain the spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {
       assert && assert( self.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
-      self.displacement = appliedForce / self.springConstant; // x = F/k
+      self.displacementProperty.set( appliedForce / self.springConstantProperty.get() ); // x = F/k
     } );
 
     // k: When spring constant changes, adjust either displacement or applied force
@@ -170,24 +170,24 @@ define( function( require ) {
       assert && assert( self.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
       if ( options.appliedForceRange ) {
         // if the applied force range was specified, then maintain the applied force, change displacement
-        self.displacement = self.appliedForce / springConstant; // x = F/k
+        self.displacementProperty.set( self.appliedForceProperty.get() / springConstant ); // x = F/k
       }
       else {
         // if the displacement range was specified, maintain the displacement, change applied force
-        self.appliedForce = springConstant * self.displacement; // F = kx
+        self.appliedForceProperty.set(  springConstant * self.displacementProperty.get() ); // F = kx
       }
     } );
 
     // x: When displacement changes, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
       assert && assert( self.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
-      var appliedForce = self.springConstant * displacement; // F = kx
+      var appliedForce = self.springConstantProperty.get() * displacement; // F = kx
       // constrain to delta if the applied force range was specified
       if ( options.appliedForceRange ) {
         appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
       }
       // constrain to range
-      self.appliedForce = self.appliedForceRange.constrainValue( appliedForce );
+      self.appliedForceProperty.set( self.appliedForceRange.constrainValue( appliedForce ) );
     } );
   }
 
