@@ -207,7 +207,7 @@ define( function( require ) {
     /**
      * Creates an icon that represents this node.
      * @param {Object} [options]
-     * @return {Node}
+     * @returns {Node}
      * @public
      * @static
      */
