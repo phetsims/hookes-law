@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.8 Fri Apr 07 2017 17:21:33 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.0.8 Thu Apr 13 2017 13:20:43 GMT-0600 (MDT)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -9,19 +9,19 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "a0790638ceff8276249d820275b3a8f5b8d56651",
-    "branch": "HEAD"
+    "sha": "26f286417818a18f8e426b49764984bf77b1a3cc",
+    "branch": "hookes-law-1.0"
   },
   "chipper": {
     "sha": "157b9cf31c1ba02fe4171acf25ff27b94e058e4e",
-    "branch": "HEAD"
+    "branch": "hookes-law-1.0"
   },
   "dot": {
     "sha": "d99cbe46e8496bbfe2554ddfcc15022ffdfcae83",
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "9281e9003697d573fa9d2a99f62bbb8e99c7be28",
+    "sha": "15fb9c051f02a6dcfb236f76a330baef19d28e94",
     "branch": "1.0"
   },
   "joist": {
@@ -37,8 +37,8 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "fc9d54dd0d8bfac904ec04148df476e1d3f81031",
-    "branch": "HEAD"
+    "sha": "4ed5868b77d135dff388420a238ecf8dbac32c52",
+    "branch": "hookes-law-1.0"
   },
   "scenery": {
     "sha": "42dbb7a935b8e6a6e04759d56bacd3b1a77c0b58",
