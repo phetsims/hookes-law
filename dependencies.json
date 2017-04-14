@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.9-rc.1 Thu Apr 13 2017 22:31:44 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.0.9 Fri Apr 14 2017 17:40:46 GMT-0600 (MDT)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "a1e98de1c3e8b5da37b371d876333ae7b836dd11",
+    "sha": "57ccd196cd03ffd01d2dd3057af0fa6b6bfbb364",
     "branch": "1.0"
   },
   "joist": {
