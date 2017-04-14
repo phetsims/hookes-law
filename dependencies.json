@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.8 Thu Apr 13 2017 19:23:44 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.0.8 Thu Apr 13 2017 21:12:36 GMT-0600 (MDT)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -21,12 +21,12 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "a9f75566f31aa5a58af0c96beba0b24bdc3c287e",
+    "sha": "c1406c3ac1fc213cbfe841bc9e571cf572388395",
     "branch": "1.0"
   },
   "joist": {
     "sha": "1992b14b15e298ba1df7afac5055b55f238d0871",
-    "branch": "hookes-law-1.0"
+    "branch": "HEAD"
   },
   "kite": {
     "sha": "40dc703a07c774464f060dda6a67485704ca9e22",
@@ -37,8 +37,8 @@
     "branch": "HEAD"
   },
   "phetcommon": {
-    "sha": "4ed5868b77d135dff388420a238ecf8dbac32c52",
-    "branch": "HEAD"
+    "sha": "8bdfd991943156e645b6f77a269ccc191800a21f",
+    "branch": "hookes-law-1.0"
   },
   "scenery": {
     "sha": "42dbb7a935b8e6a6e04759d56bacd3b1a77c0b58",
