@@ -24,7 +24,7 @@ define( function( require ) {
    * @param {IntroModel} model
    * @constructor
    */
-  function IntroView( model ) {
+  function IntroScreenView( model ) {
 
     var self = this;
     
@@ -158,7 +158,7 @@ define( function( require ) {
     } );
   }
 
-  hookesLaw.register( 'IntroView', IntroView );
+  hookesLaw.register( 'IntroScreenView', IntroScreenView );
 
-  return inherit( ScreenView, IntroView );
+  return inherit( ScreenView, IntroScreenView );
 } );

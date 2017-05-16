@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var EnergyModel = require( 'HOOKES_LAW/energy/model/EnergyModel' );
-  var EnergyView = require( 'HOOKES_LAW/energy/view/EnergyView' );
+  var EnergyScreenView = require( 'HOOKES_LAW/energy/view/EnergyScreenView' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
@@ -32,7 +32,7 @@ define( function( require ) {
 
     Screen.call( this,
       function() { return new EnergyModel(); },
-      function( model ) { return new EnergyView( model ); },
+      function( model ) { return new EnergyScreenView( model ); },
       options
     );
   }

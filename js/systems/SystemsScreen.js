@@ -14,7 +14,7 @@ define( function( require ) {
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var SystemsModel = require( 'HOOKES_LAW/systems/model/SystemsModel' );
-  var SystemsView = require( 'HOOKES_LAW/systems/view/SystemsView' );
+  var SystemsScreenView = require( 'HOOKES_LAW/systems/view/SystemsScreenView' );
   var Screen = require( 'JOIST/Screen' );
 
   // strings
@@ -32,7 +32,7 @@ define( function( require ) {
 
     Screen.call( this,
       function() { return new SystemsModel(); },
-      function( model ) { return new SystemsView( model ); },
+      function( model ) { return new SystemsScreenView( model ); },
       options
     );
   }

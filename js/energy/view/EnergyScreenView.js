@@ -25,7 +25,7 @@ define( function( require ) {
    * @param {EnergyModel} model
    * @constructor
    */
-  function EnergyView( model ) {
+  function EnergyScreenView( model ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
@@ -107,7 +107,7 @@ define( function( require ) {
     } );
   }
 
-  hookesLaw.register( 'EnergyView', EnergyView );
+  hookesLaw.register( 'EnergyScreenView', EnergyScreenView );
 
-  return inherit( ScreenView, EnergyView );
+  return inherit( ScreenView, EnergyScreenView );
 } );

@@ -25,7 +25,7 @@ define( function( require ) {
    * @param {SystemsModel} model
    * @constructor
    */
-  function SystemsView( model ) {
+  function SystemsScreenView( model ) {
 
     ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
 
@@ -88,7 +88,7 @@ define( function( require ) {
     } );
   }
 
-  hookesLaw.register( 'SystemsView', SystemsView );
+  hookesLaw.register( 'SystemsScreenView', SystemsScreenView );
 
-  return inherit( ScreenView, SystemsView );
+  return inherit( ScreenView, SystemsScreenView );
 } );
