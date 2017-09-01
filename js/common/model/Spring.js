@@ -45,9 +45,9 @@ define( function( require ) {
     options = _.extend( {
       left: 0, // {number} x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
-      springConstantRange: new RangeWithValue( 100, 1000, 200 ), // {Range} spring constant range and initial value, units = N/m
-      displacementRange: null, // {Range} displacement range and initial value, units = m
-      appliedForceRange: null, // {Range} applied force range and initial value, units = N
+      springConstantRange: new RangeWithValue( 100, 1000, 200 ), // {RangeWithValue} spring constant range and initial value, units = N/m
+      displacementRange: null, // {RangeWithValue} displacement range and initial value, units = m
+      appliedForceRange: null, // {RangeWithValue} applied force range and initial value, units = N
       appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA // {number} applied force (and thus spring force) are constrained to this delta
     }, options );
 
