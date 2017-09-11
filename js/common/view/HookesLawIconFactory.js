@@ -21,8 +21,8 @@ define( function( require ) {
   var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
-  var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var ScreenIcon = require( 'JOIST/ScreenIcon' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );

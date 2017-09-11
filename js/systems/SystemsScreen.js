@@ -13,9 +13,9 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Screen = require( 'JOIST/Screen' );
   var SystemsModel = require( 'HOOKES_LAW/systems/model/SystemsModel' );
   var SystemsScreenView = require( 'HOOKES_LAW/systems/view/SystemsScreenView' );
-  var Screen = require( 'JOIST/Screen' );
 
   // strings
   var systemsString = require( 'string!HOOKES_LAW/systems' );

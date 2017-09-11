@@ -19,11 +19,11 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var IntroSpringControls = require( 'HOOKES_LAW/intro/view/IntroSpringControls' );
   var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var IntroSpringControls = require( 'HOOKES_LAW/intro/view/IntroSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );

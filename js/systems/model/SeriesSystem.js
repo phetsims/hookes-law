@@ -28,9 +28,9 @@ define( function( require ) {
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
+  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
    * @constructor
