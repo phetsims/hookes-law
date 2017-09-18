@@ -20,13 +20,7 @@ define( function( require ) {
   hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );
 
   // log the values of all sim-specific query parameters
-  if ( phet.log ) {
-    for ( var property in HookesLawQueryParameters ) {
-      if ( HookesLawQueryParameters.hasOwnProperty( property ) ) {
-        phet.log( property + '=' + HookesLawQueryParameters[ property ] );
-      }
-    }
-  }
+  phet.log && phet.log( 'query parameters: ' + JSON.stringify( HookesLawQueryParameters, null, 2 ) );
 
   return HookesLawQueryParameters;
 } );
