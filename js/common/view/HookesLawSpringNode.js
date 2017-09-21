@@ -1,4 +1,4 @@
-// Copyright 2015, University of Colorado Boulder
+// Copyright 2015-2016, University of Colorado Boulder
 
 /**
  * A specialization of ParametricSpringNode that adapts it to the Hooke's Law spring model.

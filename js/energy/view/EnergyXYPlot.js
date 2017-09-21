@@ -1,4 +1,4 @@
-// Copyright 2015, University of Colorado Boulder
+// Copyright 2015-2016, University of Colorado Boulder
 
 /**
  * The "Energy Graph" is an XY plot of displacement (x axis) vs energy (y axis).
