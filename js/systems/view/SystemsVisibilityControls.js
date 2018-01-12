@@ -43,7 +43,7 @@ define( function( require ) {
 
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
-    // vector check boxes
+    // vector checkboxes
     var appliedForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         { arrowFill: HookesLawColors.APPLIED_FORCE } ),
@@ -61,7 +61,7 @@ define( function( require ) {
       properties.displacementVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
 
-    // other check boxes
+    // other checkboxes
     var equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
@@ -126,7 +126,7 @@ define( function( require ) {
       spacing: 5
     } );
 
-    // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
+    // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
     Property.multilink(
       [ properties.appliedForceVectorVisibleProperty, properties.springForceVectorVisibleProperty, properties.displacementVectorVisibleProperty ],
       function( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) {

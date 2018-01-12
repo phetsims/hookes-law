@@ -180,7 +180,7 @@ define( function( require ) {
     },
 
     /**
-     * Creates the content for a vector check box, consisting of text and an arrow.
+     * Creates the content for a vector checkbox, consisting of text and an arrow.
      *
      * @param {Node} textNode - text, positioned to the left of the vector
      * @param {Object} [options]
@@ -190,7 +190,7 @@ define( function( require ) {
     createVectorCheckboxContent: function( textNode, options ) {
 
       options = _.extend( {
-        maxTextWidth: textNode.width, // width of the max text used to label a vector check box
+        maxTextWidth: textNode.width, // width of the max text used to label a vector checkbox
         spacing: 10, // {number} space between text and vector
         arrowLength: 30, // {number}
         arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
@@ -223,7 +223,7 @@ define( function( require ) {
     },
 
     /**
-     * Creates the icon for the equilibrium position check box, consisting of text and a vertical dashed line.
+     * Creates the icon for the equilibrium position checkbox, consisting of text and a vertical dashed line.
      * @returns {Node}
      * @public
      */

@@ -35,7 +35,7 @@ define( function( require ) {
 
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
-    // text labels on the vector check boxes
+    // text labels on the vector checkboxes
     var appliedForceTextNode = new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     var springForceTextNode = new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     var displacementTextNode = new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
@@ -43,7 +43,7 @@ define( function( require ) {
       return node.width;
     } ).width;
 
-    // vector check boxes, with left-aligned vector icons
+    // vector checkboxes, with left-aligned vector icons
     var minSpacing = 10;
     var appliedForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( appliedForceTextNode, {
@@ -68,7 +68,7 @@ define( function( require ) {
       properties.displacementVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
 
-    // other check boxes
+    // other checkboxes
     var equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
@@ -78,7 +78,7 @@ define( function( require ) {
       properties.valuesVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
 
-    // 'Values' check box pertains to vectors, so enable that check box only if one or more of the vectors is selected.
+    // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
     Property.multilink(
       [ properties.appliedForceVectorVisibleProperty, properties.springForceVectorVisibleProperty, properties.displacementVectorVisibleProperty ],
       function( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) {

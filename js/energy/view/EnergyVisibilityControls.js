@@ -54,7 +54,7 @@ define( function( require ) {
       new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       HookesLawConstants.RADIO_BUTTON_OPTIONS );
 
-    // energy check box, enabled when "Force Plot" radio button is selected
+    // energy checkbox, enabled when "Force Plot" radio button is selected
     var energyIcon = new HBox( {
       children: [
         new Text( energyString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
@@ -70,7 +70,7 @@ define( function( require ) {
       energyCheckbox.enabled = ( graph === 'forceXY' );
     } );
 
-    // other check boxes
+    // other checkboxes
     var appliedForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.APPLIED_FORCE
@@ -116,7 +116,7 @@ define( function( require ) {
         energyBarRadioButton,
         energyXYRadioButton,
         forceXYRadioButton,
-        // "Energy" check box indented below "Force Plot" radio button
+        // "Energy" checkbox indented below "Force Plot" radio button
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
         new HSeparator( maxControlWidth, HookesLawConstants.SEPARATOR_OPTIONS ),
         appliedForceCheckbox,
