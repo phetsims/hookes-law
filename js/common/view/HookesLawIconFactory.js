@@ -187,7 +187,7 @@ define( function( require ) {
      * @returns {Node}
      * @public
      */
-    createVectorCheckBoxContent: function( textNode, options ) {
+    createVectorCheckboxContent: function( textNode, options ) {
 
       options = _.extend( {
         maxTextWidth: textNode.width, // width of the max text used to label a vector check box
@@ -227,7 +227,7 @@ define( function( require ) {
      * @returns {Node}
      * @public
      */
-    createEquilibriumPositionCheckBoxContent: function() {
+    createEquilibriumPositionCheckboxContent: function() {
       var textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
       var lineNode = new EquilibriumPositionNode( textNode.height, {
         left: textNode.right + 8,

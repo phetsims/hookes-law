@@ -9,7 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var CheckBox = require( 'SUN/CheckBox' );
+  var Checkbox = require( 'SUN/Checkbox' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -45,22 +45,22 @@ define( function( require ) {
 
     // vector check boxes, with left-aligned vector icons
     var minSpacing = 10;
-    var appliedForceCheckBox = new CheckBox(
-      HookesLawIconFactory.createVectorCheckBoxContent( appliedForceTextNode, {
+    var appliedForceCheckbox = new Checkbox(
+      HookesLawIconFactory.createVectorCheckboxContent( appliedForceTextNode, {
         arrowFill: HookesLawColors.APPLIED_FORCE,
         spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
       } ),
       properties.appliedForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var springForceCheckBox = new CheckBox(
-      HookesLawIconFactory.createVectorCheckBoxContent( springForceTextNode, {
+    var springForceCheckbox = new Checkbox(
+      HookesLawIconFactory.createVectorCheckboxContent( springForceTextNode, {
         arrowFill: HookesLawColors.SINGLE_SPRING,
         spacing: maxTextWidth - springForceTextNode.width + minSpacing
       } ),
       properties.springForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var displacementCheckBox = new CheckBox(
-      HookesLawIconFactory.createVectorCheckBoxContent( displacementTextNode, {
+    var displacementCheckbox = new Checkbox(
+      HookesLawIconFactory.createVectorCheckboxContent( displacementTextNode, {
         vectorType: 'displacement',
         arrowFill: HookesLawColors.DISPLACEMENT,
         spacing: maxTextWidth - displacementTextNode.width + minSpacing
@@ -69,11 +69,11 @@ define( function( require ) {
       HookesLawConstants.CHECK_BOX_OPTIONS );
 
     // other check boxes
-    var equilibriumPositionCheckBox = new CheckBox(
-      HookesLawIconFactory.createEquilibriumPositionCheckBoxContent(),
+    var equilibriumPositionCheckbox = new Checkbox(
+      HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var valuesCheckBox = new CheckBox(
+    var valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
@@ -82,24 +82,24 @@ define( function( require ) {
     Property.multilink(
       [ properties.appliedForceVectorVisibleProperty, properties.springForceVectorVisibleProperty, properties.displacementVectorVisibleProperty ],
       function( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) {
-        valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
+        valuesCheckbox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
     // Adjust touch areas
     var spacing = 20;
-    var checkBoxes = [
-      appliedForceCheckBox,
-      springForceCheckBox,
-      displacementCheckBox,
-      equilibriumPositionCheckBox,
-      valuesCheckBox
+    var checkboxes = [
+      appliedForceCheckbox,
+      springForceCheckbox,
+      displacementCheckbox,
+      equilibriumPositionCheckbox,
+      valuesCheckbox
     ];
-    for ( var i = 0; i < checkBoxes.length; i++ ) {
-      checkBoxes[ i ].touchArea = checkBoxes[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+    for ( var i = 0; i < checkboxes.length; i++ ) {
+      checkboxes[ i ].touchArea = checkboxes[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
     var content = new VBox( {
-      children: checkBoxes,
+      children: checkboxes,
       align: 'left',
       spacing: spacing
     } );

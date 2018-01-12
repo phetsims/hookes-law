@@ -13,7 +13,7 @@ define( function( require ) {
   // modules
   var AquaRadioButton = require( 'SUN/AquaRadioButton' );
   var BracketNode = require( 'SCENERY_PHET/BracketNode' );
-  var CheckBox = require( 'SUN/CheckBox' );
+  var Checkbox = require( 'SUN/Checkbox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -44,17 +44,17 @@ define( function( require ) {
     options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
 
     // vector check boxes
-    var appliedForceCheckBox = new CheckBox(
-      HookesLawIconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+    var appliedForceCheckbox = new Checkbox(
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var springForceCheckBox = new CheckBox(
+    var springForceCheckbox = new Checkbox(
       new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var displacementCheckBox = new CheckBox(
-      HookesLawIconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    var displacementCheckbox = new Checkbox(
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
       } ),
@@ -62,11 +62,11 @@ define( function( require ) {
       HookesLawConstants.CHECK_BOX_OPTIONS );
 
     // other check boxes
-    var equilibriumPositionCheckBox = new CheckBox(
-      HookesLawIconFactory.createEquilibriumPositionCheckBoxContent(),
+    var equilibriumPositionCheckbox = new Checkbox(
+      HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var valuesCheckBox = new CheckBox(
+    var valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
@@ -130,7 +130,7 @@ define( function( require ) {
     Property.multilink(
       [ properties.appliedForceVectorVisibleProperty, properties.springForceVectorVisibleProperty, properties.displacementVectorVisibleProperty ],
       function( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) {
-        valuesCheckBox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
+        valuesCheckbox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
     // Radio buttons should be enabled only if 'spring force' is checked
@@ -141,11 +141,11 @@ define( function( require ) {
     // Adjust touch areas
     var spacing = 20;
     var controls = [
-      appliedForceCheckBox,
-      springForceCheckBox,
-      displacementCheckBox,
-      equilibriumPositionCheckBox,
-      valuesCheckBox,
+      appliedForceCheckbox,
+      springForceCheckbox,
+      displacementCheckbox,
+      equilibriumPositionCheckbox,
+      valuesCheckbox,
       totalRadioButton,
       componentsRadioButton
     ];
@@ -155,12 +155,12 @@ define( function( require ) {
 
     var content = new VBox( {
       children: [
-        appliedForceCheckBox,
-        springForceCheckBox,
+        appliedForceCheckbox,
+        springForceCheckbox,
         radioButtonsSubPanel,
-        displacementCheckBox,
-        equilibriumPositionCheckBox,
-        valuesCheckBox
+        displacementCheckbox,
+        equilibriumPositionCheckbox,
+        valuesCheckbox
       ],
       align: 'left',
       spacing: spacing

@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var AquaRadioButton = require( 'SUN/AquaRadioButton' );
-  var CheckBox = require( 'SUN/CheckBox' );
+  var Checkbox = require( 'SUN/Checkbox' );
   var HBox = require( 'SCENERY/nodes/HBox' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -63,32 +63,32 @@ define( function( require ) {
       ],
       spacing: 6
     } );
-    var energyCheckBox = new CheckBox( energyIcon,
+    var energyCheckbox = new Checkbox( energyIcon,
       properties.energyOnForcePlotVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
     properties.graphProperty.link( function( graph ) {
-      energyCheckBox.enabled = ( graph === 'forceXY' );
+      energyCheckbox.enabled = ( graph === 'forceXY' );
     } );
 
     // other check boxes
-    var appliedForceCheckBox = new CheckBox(
-      HookesLawIconFactory.createVectorCheckBoxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    var appliedForceCheckbox = new Checkbox(
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.APPLIED_FORCE
       } ),
       properties.appliedForceVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var displacementCheckBox = new CheckBox(
-      HookesLawIconFactory.createVectorCheckBoxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    var displacementCheckbox = new Checkbox(
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
       } ),
       properties.displacementVectorVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var equilibriumPositionCheckBox = new CheckBox(
-      HookesLawIconFactory.createEquilibriumPositionCheckBoxContent(),
+    var equilibriumPositionCheckbox = new Checkbox(
+      HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
-    var valuesCheckBox = new CheckBox(
+    var valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       HookesLawConstants.CHECK_BOX_OPTIONS );
@@ -99,11 +99,11 @@ define( function( require ) {
       energyBarRadioButton,
       energyXYRadioButton,
       forceXYRadioButton,
-      energyCheckBox,
-      appliedForceCheckBox,
-      displacementCheckBox,
-      equilibriumPositionCheckBox,
-      valuesCheckBox
+      energyCheckbox,
+      appliedForceCheckbox,
+      displacementCheckbox,
+      equilibriumPositionCheckbox,
+      valuesCheckbox
     ];
     for ( var i = 0; i < controls.length; i++ ) {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
@@ -117,12 +117,12 @@ define( function( require ) {
         energyXYRadioButton,
         forceXYRadioButton,
         // "Energy" check box indented below "Force Plot" radio button
-        new HBox( { children: [ new HStrut( 25 ), energyCheckBox ] } ),
+        new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
         new HSeparator( maxControlWidth, HookesLawConstants.SEPARATOR_OPTIONS ),
-        appliedForceCheckBox,
-        displacementCheckBox,
-        equilibriumPositionCheckBox,
-        valuesCheckBox
+        appliedForceCheckbox,
+        displacementCheckbox,
+        equilibriumPositionCheckbox,
+        valuesCheckbox
       ],
       align: 'left',
       spacing: spacing
