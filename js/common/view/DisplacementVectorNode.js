@@ -14,7 +14,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
-  var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
+  var ArrowNode = require( 'SCENERY_PHET/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -39,7 +39,7 @@ define( function( require ) {
       unitDisplacementLength: 1
     }, options );
 
-    var arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
+    var arrowNode = new ArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
 
     var valueNode = new Text( '', {
       maxWidth: 150, // i18n

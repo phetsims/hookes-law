@@ -82,7 +82,8 @@ define( function( require ) {
       headWidth: 20,
       headHeight: 10,
       headLineWidth: 3,
-      tailLineWidth: 3
+      tailLineWidth: 3,
+      useArrowNode:false
     },
     MAJOR_TICK_LABEL_OPTIONS: {
       font: new HookesLawFont( 14 )
