@@ -28,10 +28,8 @@ define( function( require ) {
 
     this.right = options.right; // @public right (fixed) end of the arm, read-only
 
-    // @public left (movable) end of the arm
+    // @public left (movable) end of the arm, constrained to extend from right to left
     this.leftProperty = new NumberProperty( options.left, {
-
-      // robotic arm is constrained to extend from right to left
       isValidValue: function( value ) { return value < self.right; }
     } );
   }
