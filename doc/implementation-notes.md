@@ -32,7 +32,8 @@ assertions are used to guard against these types of violations.
 
 Because the model is 1 dimensional, the 2D model-view transform (`ModelViewTransform2`) that is typically found in
 PhET simulations is not required. All conversions between model and view coordinate frames are done using unit 
-vectors lengths for the various 1-dimensional quantities (displacement, force, energy). See `HookesLawConstants.UNIT_*`.
+vectors lengths for the various 1-dimensional quantities (displacement, force, energy).
+See [HookesLawConstants](https://github.com/phetsims/hookes-law/blob/master/js/common/HookesLawConstants.js)`.UNIT_*`.
 
 The robotic arm has a pair of pincers that are open when displacement is zero and no user interaction
 is taking place.  In order to determine whether user interaction is taking place, Property
