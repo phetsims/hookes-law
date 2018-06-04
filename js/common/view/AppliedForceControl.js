@@ -30,9 +30,9 @@ define( function( require ) {
   var MINOR_TICK_SPACING = 10;
 
   /**
-   * @param {Property.<number>} appliedForceProperty units = N
+   * @param {NumberProperty} appliedForceProperty units = N
    * @param {Range} appliedForceRange
-   * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */

@@ -27,7 +27,7 @@ define( function( require ) {
   var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString, '{0}', newtonsPerMeterString );
 
   /**
-   * @param {Property.<boolean>} springConstantProperty units = N/m
+   * @param {BooleanProperty} springConstantProperty units = N/m
    * @param {Range} springConstantRange units = N/m
    * @param {Object} [options]
    * @constructor

@@ -54,8 +54,8 @@ define( function( require ) {
   };
 
   /**
-   * @param {Property.<number>} xProperty
-   * @param {Property.<number>} yProperty
+   * @param {NumberProperty} xProperty
+   * @param {NumberProperty} yProperty
    * @param {Object} [options]
    * @constructor
    */

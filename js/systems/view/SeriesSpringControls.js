@@ -29,7 +29,7 @@ define( function( require ) {
 
   /**
    * @param {SeriesSystem} system
-   * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */

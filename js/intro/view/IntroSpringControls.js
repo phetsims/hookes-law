@@ -24,7 +24,7 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
-   * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */

@@ -16,7 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
-   * @param {Property.<number>} appliedForceProperty units = N
+   * @param {NumberProperty} appliedForceProperty units = N
    * @param {Object} [options]
    * @constructor
    */

@@ -15,7 +15,7 @@ define( function( require ) {
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
   /**
-   * @param {Property.<number>} numberOfSystemsProperty
+   * @param {NumberProperty} numberOfSystemsProperty
    * @param {Object} [options]
    * @constructor
    */

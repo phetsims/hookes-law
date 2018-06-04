@@ -15,7 +15,7 @@ define( function( require ) {
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
 
   /**
-   * @param {Property.<string>} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
+   * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
    * @param {Object} [options]
    * @constructor
    */

@@ -27,9 +27,9 @@ define( function( require ) {
   var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString, '{0}', metersString );
 
   /**
-   * @param {Property.<boolean>} displacementProperty units = m
+   * @param {BooleanProperty} displacementProperty units = m
    * @param {Range} displacementRange units = m
-   * @param {Property.<number>} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
    * @param {Object} [options]
    * @constructor
    */
