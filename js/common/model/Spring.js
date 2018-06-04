@@ -1,7 +1,7 @@
 // Copyright 2015-2017, University of Colorado Boulder
 
 /**
- * Model of a spring, contains purely model properties.
+ * Model of a spring, contains purely model Properties.
  * The left end is attached to something like a wall or another spring.
  * A force is applied to the right end, by something like a robotic arm or another spring.
  *
