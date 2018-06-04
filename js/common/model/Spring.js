@@ -52,13 +52,16 @@ define( function( require ) {
     }, options );
 
     // validate and save options
-    assert && assert( options.equilibriumLength > 0, 'equilibriumLength must be > 0 : ' + options.equilibriumLength );
+    assert && assert( options.equilibriumLength > 0,
+      'equilibriumLength must be > 0 : ' + options.equilibriumLength );
     this.equilibriumLength = options.equilibriumLength; // @public read-only
 
-    assert && assert( options.springConstantRange.min > 0, 'minimum spring constant must be positive : ' + options.springConstantRange.min );
+    assert && assert( options.springConstantRange.min > 0,
+      'minimum spring constant must be positive : ' + options.springConstantRange.min );
     this.springConstantRange = options.springConstantRange; // @public read-only
 
-    assert && assert( options.appliedForceDelta > 0, 'appliedForceDelta must be > 0 : ' + options.appliedForceDelta );
+    assert && assert( options.appliedForceDelta > 0,
+      'appliedForceDelta must be > 0 : ' + options.appliedForceDelta );
     this.appliedForceDelta = options.appliedForceDelta; // @public read-only
 
     // Either applied force range or displacement range can be specified, the other is computed.
