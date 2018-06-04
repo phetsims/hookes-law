@@ -28,7 +28,7 @@ E<sub>eq</sub> = E<sub>1</sub> + E<sub>2</sub>
 
 where:
 
-- subscript "eq" denotes a spring that is equivalent to the 2 springs in series
+- subscript "eq" pertains to a spring that is equivalent to the 2 springs in series
 - subscript "1" pertains to the *left* spring in this sim
 - subscript "2" pertains to the *right* spring in this sim
 
@@ -43,7 +43,7 @@ E<sub>eq</sub> = E<sub>1</sub> + E<sub>2</sub>
 
 where:
 
-- subscript "eq" denotes a spring that is equivalent to the 2 springs in parallel
+- subscript "eq" pertains to a spring that is equivalent to the 2 springs in parallel
 - subscript "1" pertains to the *top* spring in this sim
 - subscript "2" pertains to the *bottom* spring in this sim
 
