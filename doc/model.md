@@ -12,7 +12,7 @@ E = kx<sup>2</sup> / 2
 
 where:
 
-- F = applied force, N/m<br>
+- F = applied force, N<br>
 - k = spring constant, N/m<br>
 - x = displacement from equilibrium position, m<br>
 - E = potential energy, J
