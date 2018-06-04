@@ -9,10 +9,11 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
+  var StringProperty = require( 'AXON/StringProperty' );
 
   /**
    * @constructor
@@ -22,23 +23,25 @@ define( function( require ) {
     // check all Checkboxes, to make development easier
     var checked = HookesLawQueryParameters.checkAll;
 
-    // @public {string} which graph is visible, 'energyBar'|'energyXY'|'forceXY'
-    this.graphProperty = new Property( 'energyBar' );
+    // @public which graph is visible
+    this.graphProperty = new StringProperty( 'energyBar', {
+      validValues: [ 'energyBar', 'energyXY', 'forceXY' ]
+    } );
 
-    // @public {boolean} is the applied force vector visible?
-    this.appliedForceVectorVisibleProperty = new Property( checked );
+    // @public is the applied force vector visible?
+    this.appliedForceVectorVisibleProperty = new BooleanProperty( checked );
 
-    // @public {boolean} is the displacement vector visible?
-    this.displacementVectorVisibleProperty = new Property( checked );
+    // @public is the displacement vector visible?
+    this.displacementVectorVisibleProperty = new BooleanProperty( checked );
 
-    // @public {boolean} is the equilibrium position visible?
-    this.equilibriumPositionVisibleProperty = new Property( checked );
+    // @public is the equilibrium position visible?
+    this.equilibriumPositionVisibleProperty = new BooleanProperty( checked );
 
-    // @public {boolean} are numeric values visible?
-    this.valuesVisibleProperty = new Property( checked );
+    // @public are numeric values visible?
+    this.valuesVisibleProperty = new BooleanProperty( checked );
 
-    // @public {boolean} is energy depicted on the Force plot?
-    this.energyOnForcePlotVisibleProperty = new Property( checked );
+    // @public is energy depicted on the Force plot?
+    this.energyOnForcePlotVisibleProperty = new BooleanProperty( checked );
   }
 
   hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );

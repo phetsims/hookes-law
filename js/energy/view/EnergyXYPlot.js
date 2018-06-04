@@ -9,13 +9,13 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
-  var Property = require( 'AXON/Property' );
   var Shape = require( 'KITE/Shape' );
   var XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
 
@@ -38,7 +38,7 @@ define( function( require ) {
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
       valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
-      valuesVisibleProperty: new Property( true ),
+      valuesVisibleProperty: new BooleanProperty( true ),
 
       // point
       pointFill: HookesLawColors.SINGLE_SPRING,
@@ -51,7 +51,7 @@ define( function( require ) {
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
       xUnitLength: unitDisplacementLength,
-      xVectorVisibleProperty: new Property( true ),
+      xVectorVisibleProperty: new BooleanProperty( true ),
       xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
       // y axis

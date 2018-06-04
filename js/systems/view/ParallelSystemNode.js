@@ -22,6 +22,7 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var NumberProperty = require( 'AXON/NumberProperty' );
   var ParallelSpringControls = require( 'HOOKES_LAW/systems/view/ParallelSpringControls' );
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
@@ -54,7 +55,10 @@ define( function( require ) {
     var yOrigin = 0;
 
     // number of interactions in progress that affect displacement
-    var numberOfInteractionsInProgressProperty = new Property( 0 );
+    var numberOfInteractionsInProgressProperty = new NumberProperty( 0, {
+      numberType: 'Integer',
+      isValidValue: function( value ) { return value >= 0; }
+    } );
 
     //------------------------------------------------
     // Scene graph

@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -16,7 +17,6 @@ define( function( require ) {
   var Line = require( 'SCENERY/nodes/Line' );
   var LineArrowNode = require( 'SCENERY_PHET/LineArrowNode' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -35,7 +35,7 @@ define( function( require ) {
 
     options = _.extend( {
       verticalLineVisible: true,
-      valueVisibleProperty: new Property( true ), // {Property.<boolean>} determines whether the value is visible
+      valueVisibleProperty: new BooleanProperty( true ), // determines whether the value is visible
       unitDisplacementLength: 1
     }, options );
 

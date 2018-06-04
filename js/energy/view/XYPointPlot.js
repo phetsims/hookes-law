@@ -19,6 +19,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -65,7 +66,7 @@ define( function( require ) {
       // both axes
       axisFont: new PhetFont( 12 ),
       valueFont: new PhetFont( 12 ),
-      valuesVisibleProperty: new Property( true ),
+      valuesVisibleProperty: new BooleanProperty( true ),
 
       // x axis
       minX: -1,
@@ -75,7 +76,7 @@ define( function( require ) {
       xUnits: '',
       xValueFill: 'black',
       xUnitLength: 1,
-      xVectorVisibleProperty: new Property( true ),
+      xVectorVisibleProperty: new BooleanProperty( true ),
       xLabelMaxWidth: null,
       xValueBackgroundColor: null,
 

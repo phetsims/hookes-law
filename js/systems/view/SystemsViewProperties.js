@@ -9,10 +9,11 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
+  var StringProperty = require( 'AXON/StringProperty' );
 
   /**
    * @constructor
@@ -22,26 +23,30 @@ define( function( require ) {
     // check all Checkboxes, to make development easier
     var checked = HookesLawQueryParameters.checkAll;
 
-    // @public {string} which system is visible, 'series'|'parallel'
-    this.seriesParallelProperty = new Property( 'parallel' );
+    // @public which system is visible
+    this.seriesParallelProperty = new StringProperty( 'parallel', {
+      validValues: [ 'series', 'parallel' ]
+    } );
 
     // @public {boolean} is the applied force vector visible?
-    this.appliedForceVectorVisibleProperty = new Property( checked );
+    this.appliedForceVectorVisibleProperty = new BooleanProperty( checked );
 
-    // @public {boolean} is the spring force vector visible?
-    this.springForceVectorVisibleProperty = new Property( checked );
+    // @public is the spring force vector visible?
+    this.springForceVectorVisibleProperty = new BooleanProperty( checked );
 
-    // @public {string} how spring force is represented, 'total'|'components'
-    this.springForceRepresentationProperty = new Property( 'total' );
+    // @public how spring force is represented
+    this.springForceRepresentationProperty = new StringProperty( 'total', {
+      validValues: [ 'total', 'components' ]
+    } );
 
-    // @public {boolean} is the displacement vector visible?
-    this.displacementVectorVisibleProperty = new Property( checked );
+    // @public is the displacement vector visible?
+    this.displacementVectorVisibleProperty = new BooleanProperty( checked );
 
-    // @public {boolean} is the equilibrium position visible?
-    this.equilibriumPositionVisibleProperty = new Property( checked );
+    // @public is the equilibrium position visible?
+    this.equilibriumPositionVisibleProperty = new BooleanProperty( checked );
 
-    // @public {boolean} are numeric values visible?
-    this.valuesVisibleProperty = new Property( checked );
+    // @public are numeric values visible?
+    this.valuesVisibleProperty = new BooleanProperty( checked );
   }
 
   hookesLaw.register( 'SystemsViewProperties', SystemsViewProperties );

@@ -10,11 +10,11 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -37,7 +37,7 @@ define( function( require ) {
       decimalPlaces: 0,
       unitLength: HookesLawConstants.UNIT_FORCE_X, // view length of a 1N vector
       alignZero: 'left', // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
-      valueVisibleProperty: new Property( true ) // {Property.<boolean>} determines whether the value is visible
+      valueVisibleProperty: new BooleanProperty( true ) // determines whether the value is visible
     }, options );
 
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {

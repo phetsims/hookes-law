@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
+  var NumberProperty = require( 'AXON/NumberProperty' );
 
   /**
    * @param {Object} [options]
@@ -29,9 +29,10 @@ define( function( require ) {
     this.right = options.right; // @public right (fixed) end of the arm, read-only
 
     // @public left (movable) end of the arm
-    this.leftProperty = new Property( options.left );
-    this.leftProperty.link( function( left ) {
-      assert && assert( left < self.right, 'robotic arm is constrained to extend from right to left' );
+    this.leftProperty = new NumberProperty( options.left, {
+
+      // robotic arm is constrained to extend from right to left
+      isValidValue: function( value ) { return value < self.right; }
     } );
   }
 

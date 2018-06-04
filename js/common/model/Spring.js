@@ -33,7 +33,7 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var Property = require( 'AXON/Property' );
+  var NumberProperty = require( 'AXON/NumberProperty' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
 
   /**
@@ -86,17 +86,17 @@ define( function( require ) {
     //------------------------------------------------
     // Properties
 
-    // @public {number} F
-    this.appliedForceProperty = new Property( this.appliedForceRange.defaultValue );
+    // @public F, applied force, units = N
+    this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue );
 
-    // @public {number} k
-    this.springConstantProperty = new Property( this.springConstantRange.defaultValue );
+    // @public k, spring constant, N/m
+    this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue );
 
-    // @public {number} x
-    this.displacementProperty = new Property( this.displacementRange.defaultValue );
+    // @public x, displacement from equilibrium position, units = m
+    this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue );
 
-    // @public {number} location of the left end of the spring, units = m
-    this.leftProperty = new Property( options.left );
+    // @public location of the left end of the spring, units = m
+    this.leftProperty = new NumberProperty( options.left );
 
     //------------------------------------------------
     // Derived properties

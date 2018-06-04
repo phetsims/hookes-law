@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -39,8 +40,8 @@ define( function( require ) {
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
       valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
-      valuesVisibleProperty: new Property( true ), // {boolean} are numeric values visible?
-      energyVisibleProperty: new Property( true ), // {boolean} is the energy area (triangle) visible?
+      valuesVisibleProperty: new BooleanProperty( true ), // are numeric values visible?
+      energyVisibleProperty: new BooleanProperty( true ), // is the energy area (triangle) visible?
 
       // point
       pointFill: HookesLawColors.SINGLE_SPRING,
@@ -52,7 +53,7 @@ define( function( require ) {
       xUnits: metersString,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
-      xVectorVisibleProperty: new Property( true ),
+      xVectorVisibleProperty: new BooleanProperty( true ),
       xUnitLength: unitDisplacementLength,
       xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
