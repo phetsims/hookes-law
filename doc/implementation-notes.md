@@ -42,7 +42,8 @@ when an interaction ends, numberOfInteractionsInProgressProperty is decremented.
 opened only when `( displacement === 0 && numberOfInteractionsInProgressProperty.get() === 0 )`.
 
 The implementation of the spring view is based on a parametric equation known as the prolate cycloid.
-See the documentation in `ParametricSpringNode` for details.
+See the documentation in [ParametricSpringNode](https://github.com/phetsims/scenery-phet/blob/master/js/ParametricSpringNode.js)
+for details.
 
 ## Miscellaneous
 
