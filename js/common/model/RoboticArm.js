@@ -40,6 +40,7 @@ define( function( require ) {
 
   return inherit( Object, RoboticArm, {
 
+    // @public
     reset: function() {
       this.leftProperty.reset();
     }

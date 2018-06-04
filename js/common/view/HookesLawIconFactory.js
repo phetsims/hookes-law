@@ -50,6 +50,7 @@ define( function( require ) {
      * Creates the icon for the "Intro" screen, a single spring pulled by a robotic arm.
      * @returns {Node}
      * @public
+     * @static
      */
     createIntroScreenIcon: function() {
 
@@ -82,6 +83,7 @@ define( function( require ) {
      * Creates the icon for the "Systems" screen, parallel springs pulled by a robotic arm.
      * @returns {Node}
      * @public
+     * @static
      */
     createSystemsScreenIcon: function() {
 
@@ -139,6 +141,7 @@ define( function( require ) {
      * Creates the icon for the "Energy" screen, a cartoonish bar graph.
      * @returns {Node}
      * @public
+     * @static
      */
     createEnergyScreenIcon: function() {
 
@@ -165,6 +168,7 @@ define( function( require ) {
      * @param {Object} [options]
      * @returns {Node}
      * @public
+     * @static
      */
     createForceVectorIcon: function( options ) {
 
@@ -186,6 +190,7 @@ define( function( require ) {
      * @param {Object} [options]
      * @returns {Node}
      * @public
+     * @static
      */
     createVectorCheckboxContent: function( textNode, options ) {
 
@@ -226,6 +231,7 @@ define( function( require ) {
      * Creates the icon for the equilibrium position checkbox, consisting of text and a vertical dashed line.
      * @returns {Node}
      * @public
+     * @static
      */
     createEquilibriumPositionCheckboxContent: function() {
       var textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
@@ -240,6 +246,7 @@ define( function( require ) {
      * Creates the icon for selecting the single-spring scene on the "Intro" screen.
      * @returns {Node}
      * @public
+     * @static
      */
     createSingleSpringIcon: function() {
       return new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
@@ -249,6 +256,7 @@ define( function( require ) {
      * Creates the icon for selecting the 2-spring scene on the "Intro" screen.
      * @returns {Node}
      * @public
+     * @static
      */
     createTwoSpringsIcon: function() {
       return new VBox( _.extend( {
@@ -264,6 +272,7 @@ define( function( require ) {
      * Creates the icon for selecting the series system on the "Systems" screen.
      * @returns {Node}
      * @public
+     * @static
      */
     createSeriesSystemIcon: function() {
       var leftSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
@@ -283,6 +292,7 @@ define( function( require ) {
      * Creates the icon for selecting the parallel system on the "Systems" screen.
      * @returns {Node}
      * @public
+     * @static
      */
     createParallelSystemIcon: function() {
       var topSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );

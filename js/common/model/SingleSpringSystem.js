@@ -64,6 +64,7 @@ define( function( require ) {
 
   return inherit( Object, SingleSpringSystem, {
 
+    // @public
     reset: function() {
       this.spring.reset();
       this.roboticArm.reset();
