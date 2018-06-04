@@ -6,7 +6,9 @@ This document contains notes that will be helpful to developers and future maint
 
 Start by reading the model description in https://github.com/phetsims/hookes-law/blob/master/doc/model.md
 
-Type `Spring` is the heart of the model, start there. Type `SeriesSystem` and `ParallelSystem` expand
+Type [Spring](https://github.com/phetsims/hookes-law/blob/master/js/common/model/Spring.js) is the heart of the model,
+start there. Type [SeriesSystem](https://github.com/phetsims/hookes-law/blob/master/js/systems/model/SeriesSystem.js)
+and [ParallelSystem](https://github.com/phetsims/hookes-law/blob/master/js/systems/model/ParallelSystem.js) expand
 the model to describe series and parallel configurations of 2 springs.
 
 The model is 1 dimensional. Everything occurs along the x (horizontal) axis, with positive values to the right.
