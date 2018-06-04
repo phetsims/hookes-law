@@ -49,4 +49,4 @@ there is no dynamic creation/deletion of objects. All observer/observable relati
 of the sim.  So there is no need to call the various memory-management functions associated with objects
 (unlink, dispose, detach, etc.)
 
-For a list of query parameters that are specific to this simulation, see `HookesLawQueryParameters`. 
+For a list of query parameters that are specific to this simulation, see [HookesLawQueryParameters](https://github.com/phetsims/hookes-law/blob/master/js/common/HookesLawQueryParameters.js).
