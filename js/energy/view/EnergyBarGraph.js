@@ -73,6 +73,7 @@ define( function( require ) {
       font: HookesLawConstants.BAR_GRAPH_VALUE_FONT
     } );
 
+    assert && assert( !options.children, 'EnergyBarGraph sets children' );
     options.children = [ barNode, valueNode, xAxisNode, yAxisNode, yAxisLabel ];
 
     spring.energyProperty.link( function( energy ) {

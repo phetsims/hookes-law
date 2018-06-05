@@ -58,6 +58,7 @@ define( function( require ) {
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
     var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
 
+    assert && assert( !options.children, 'ForceVectorNode sets children' );
     options.children = [ arrowNode, backgroundNode, valueNode ];
 
     forceProperty.link( function( value ) {

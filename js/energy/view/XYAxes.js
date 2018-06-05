@@ -61,7 +61,9 @@ define( function( require ) {
       maxWidth: 0.85 * xAxisNode.width // constrain for i18n
     } );
 
+    assert && assert( !options.children, 'XYAxes sets children' );
     options.children = [ xAxisNode, xAxisLabel, yAxisNode, yAxisLabel ];
+
     Node.call( this, options );
   }
 

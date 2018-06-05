@@ -31,7 +31,10 @@ define( function( require ) {
   function IntroSpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
     options = _.extend( {
-      number: 1 // {number} used to label the controls, eg "Spring Constant 1"
+      number: 1, // {number} used to label the controls, eg "Spring Constant 1"
+
+      // HBox options
+      spacing: 10
     }, options );
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
@@ -47,7 +50,7 @@ define( function( require ) {
       title: StringUtils.format( appliedForceNumberString, options.number )
     } );
 
-    options.spacing = 10;
+    assert && assert( !options.children, 'IntroSpringControls sets children' );
     options.children = [
       new Panel( springConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
       new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )

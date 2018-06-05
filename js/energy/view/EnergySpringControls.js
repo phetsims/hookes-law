@@ -25,7 +25,11 @@ define( function( require ) {
    */
   function EnergySpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
-    options = options || {};
+    options = _.extend( {
+
+      // HBox options
+      spacing: 10
+    }, options );
 
     var majorTickValues = [];
     for ( var value = spring.springConstantRange.min; value <= spring.springConstantRange.max; value += 100 ) {
@@ -46,11 +50,12 @@ define( function( require ) {
       ]
     } );
 
-    options.spacing = 10;
+    assert && assert( !options.children, 'EnergySpringControls sets children' );
     options.children = [
       new Panel( springConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
       new Panel( displacementControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
     ];
+
     HBox.call( this, options );
   }
 

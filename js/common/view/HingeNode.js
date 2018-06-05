@@ -79,7 +79,9 @@ define( function( require ) {
       scale: 0.85
     } );
 
+    assert && assert( !options.children, 'HingeNode sets children' );
     options.children = [ pivotNode, pinNode, pinCenterNode, bodyNode, highlightNode ];
+
     Node.call( this, options );
   }
 

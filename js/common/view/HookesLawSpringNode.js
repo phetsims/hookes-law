@@ -21,6 +21,8 @@ define( function( require ) {
   function HookesLawSpringNode( spring, options ) {
 
     options = _.extend( {
+
+      // ParametricSpringNode options
       loops: 10, // {number} number of loops in the coil
       pointsPerLoop: 40, // {number} number of points per loop
       radius: 10, // {number} radius of a loop with aspect ratio of 1:1

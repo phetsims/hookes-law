@@ -58,6 +58,7 @@ define( function( require ) {
       visible: options.verticalLineVisible
     } );
 
+    assert && assert( !options.children, 'DisplacementVectorNode sets children' );
     options.children = [ verticalLine, arrowNode, backgroundNode, valueNode ];
 
     displacementProperty.link( function( displacement ) {

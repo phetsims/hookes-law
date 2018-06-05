@@ -36,6 +36,9 @@ define( function( require ) {
   function DisplacementControl( displacementProperty, displacementRange, numberOfInteractionsInProgressProperty, options ) {
 
     options = _.extend( {
+      majorTicksValues: null, // {number[]|null} values for major ticks
+
+      // NumberControl options
       titleMaxWidth: 200, // i18n, determined empirically
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
       valueMaxWidth: 100, // i18n, determined empirically
@@ -43,7 +46,6 @@ define( function( require ) {
       decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.DISPLACEMENT_DELTA,
-      majorTicksValues: null,
       minorTickSpacing: 1,
       thumbFillEnabled: HookesLawColors.DISPLACEMENT,
       startCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 ); },

@@ -134,6 +134,7 @@ define( function( require ) {
     var yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
     var yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
 
+    assert && assert( !options.children, 'XYPointPlot sets children' );
     options.children = [
       axesNode,
       xLeaderLine, xTickNode, xValueBackgroundNode, xValueNode, xVectorNode,

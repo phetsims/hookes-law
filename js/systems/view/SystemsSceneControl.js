@@ -22,6 +22,8 @@ define( function( require ) {
   function SystemsSceneControl( seriesParallelProperty, options ) {
 
     options = _.extend( {
+
+      // RadioButtonGroup options
       orientation: 'horizontal',
       spacing: 10,
       buttonContentXMargin: 5,

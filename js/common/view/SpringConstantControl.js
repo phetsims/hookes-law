@@ -35,6 +35,9 @@ define( function( require ) {
   function SpringConstantControl( springConstantProperty, springConstantRange, options ) {
 
     options = _.extend( {
+      majorTicksValues: null, // {number[]|null} values for major ticks
+
+      // NumberControl options
       title: springConstantString,
       titleMaxWidth: 200, // i18n, determined empirically
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
@@ -43,7 +46,6 @@ define( function( require ) {
       decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
       valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
-      majorTicksValues: null,
       minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.SINGLE_SPRING
     }, options );

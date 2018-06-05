@@ -36,7 +36,11 @@ define( function( require ) {
    */
   function ParallelSpringControls( system, numberOfInteractionsInProgressProperty, options ) {
 
-    options = options || {};
+    options = _.extend( {
+
+      // HBox options
+      spacing: 10
+    }, options );
 
     var topSpring = system.topSpring;
     var topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
@@ -77,11 +81,12 @@ define( function( require ) {
     var appliedForceControl = new AppliedForceControl(
       system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
 
-    options.spacing = 10;
+    assert && assert( !options.children, 'ParallelSpringControls sets children' );
     options.children = [
       new Panel( springControls, HookesLawConstants.SPRING_PANEL_OPTIONS ),
       new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
     ];
+
     HBox.call( this, options );
   }
 

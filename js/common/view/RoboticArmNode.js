@@ -166,7 +166,9 @@ define( function( require ) {
       armNode.centerY = 0;
     } );
 
+    assert && assert( !options.children, 'RoboticArmNode sets children' );
     options.children = [ armNode, redBox, gradientBox, draggableNode ];
+
     Node.call( this, options );
   }
 

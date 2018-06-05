@@ -22,6 +22,8 @@ define( function( require ) {
   function IntroSceneControl( numberOfSystemsProperty, options ) {
 
     options = _.extend( {
+
+      // RadioButtonGroup options
       orientation: 'horizontal',
       spacing: 10,
       buttonContentXMargin: 20,

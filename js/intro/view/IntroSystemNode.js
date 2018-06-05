@@ -120,6 +120,7 @@ define( function( require ) {
       maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
     } );
 
+    assert && assert( !options.children, 'IntroSystemNode sets children' );
     options.children = [
       equilibriumPositionNode, roboticArmNode, springNode, wallNode, nibNode,
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
