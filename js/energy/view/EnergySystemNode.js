@@ -95,14 +95,16 @@ define( function( require ) {
       unitLength: HookesLawConstants.ENERGY_UNIT_FORCE_X, // view length of a 1N force vector
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       // x is determined by spring.rightProperty
-      bottom: springNode.y - 50 // determined empirically, springNode.top is not accurate because we're using boundMethod:'none'
+      // bottom determined empirically, springNode.top is not accurate because we're using boundMethod:'none'
+      bottom: springNode.y - 50
     } );
 
     var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       valueVisibleProperty: viewProperties.valuesVisibleProperty,
       x: equilibriumPositionNode.centerX,
-      top: springNode.y + 50 // determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
+      // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
+      top: springNode.y + 50
     } );
 
     var springControls = new EnergySpringControls( spring, numberOfInteractionsInProgressProperty, {
