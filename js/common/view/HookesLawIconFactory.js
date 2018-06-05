@@ -204,6 +204,7 @@ define( function( require ) {
       }, options );
 
       // validate options
+      assert && assert( options.arrowDirection === 'left' || options.arrowDirection === 'right' );
       assert && assert( options.vectorType === 'force' || options.vectorType === 'displacement' );
 
       var arrowNode;
