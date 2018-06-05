@@ -78,7 +78,8 @@ define( function( require ) {
     this.appliedForceDelta = options.appliedForceDelta; // @public read-only
 
     // Either applied force range or displacement range can be specified, the other is computed.
-    assert && assert( options.displacementRange && !options.appliedForceRange || !options.displacementRange && options.appliedForceRange,
+    assert && assert( options.displacementRange && !options.appliedForceRange ||
+                      !options.displacementRange && options.appliedForceRange,
       'specify either displacementRange or appliedForceRange, but not both' );
     if ( options.appliedForceRange ) {
       this.appliedForceRange = options.appliedForceRange; // read-only
@@ -195,7 +196,8 @@ define( function( require ) {
 
     // x: When displacement changes, maintain the spring constant, change applied force.
     this.displacementProperty.link( function( displacement ) {
-      assert && assert( self.displacementRange.contains( displacement ), 'displacement is out of range: ' + displacement );
+      assert && assert( self.displacementRange.contains( displacement ),
+        'displacement is out of range: ' + displacement );
       var appliedForce = self.springConstantProperty.get() * displacement; // F = kx
       // constrain to delta if the applied force range was specified
       if ( options.appliedForceRange ) {
