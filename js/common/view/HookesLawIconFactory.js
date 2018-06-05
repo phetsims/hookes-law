@@ -17,7 +17,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var Line = require( 'SCENERY/nodes/Line' );
-  var LineArrowNode = require( 'HOOKES_LAW/common/view/LineArrowNode' );
+  var LineArrowNode = require( 'SCENERY_PHET/LineArrowNode' );
   var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   var Node = require( 'SCENERY/nodes/Node' );
   var ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
