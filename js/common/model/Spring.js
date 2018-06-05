@@ -18,7 +18,7 @@
  *
  * where:
  *
- * F = applied force, N/m
+ * F = applied force, N
  * k = spring constant, N/m
  * x = displacement from equilibrium position, m
  * E = potential energy, J
