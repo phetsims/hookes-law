@@ -43,12 +43,25 @@ define( function( require ) {
   function Spring( options ) {
 
     options = _.extend( {
-      left: 0, // {number} x location of the left end of the spring, units = m
-      equilibriumLength: 1.5, // {number} length of the spring at equilibrium, units = m
-      springConstantRange: new RangeWithValue( 100, 1000, 200 ), // {RangeWithValue} spring constant range and initial value, units = N/m
-      displacementRange: null, // {RangeWithValue} displacement range and initial value, units = m
-      appliedForceRange: null, // {RangeWithValue} applied force range and initial value, units = N
-      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA // {number} applied force (and thus spring force) are constrained to this delta
+
+      // {number} x location of the left end of the spring, units = m
+      left: 0,
+
+      // {number} length of the spring at equilibrium, units = m
+      equilibriumLength: 1.5,
+
+      // {RangeWithValue} spring constant range and initial value, units = N/m
+      springConstantRange: new RangeWithValue( 100, 1000, 200 ),
+
+      // {RangeWithValue|null} displacement range and initial value, units = m
+      displacementRange: null,
+
+      // {RangeWithValue|null} applied force range and initial value, units = N
+      appliedForceRange: null,
+
+      // {number} applied force (and thus spring force) are constrained to this delta
+      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA 
+
     }, options );
 
     // validate and save options
@@ -142,8 +155,7 @@ define( function( require ) {
     else {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
-          return new RangeWithValue( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max
-          );
+          return new RangeWithValue( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
         } );
     }
 
