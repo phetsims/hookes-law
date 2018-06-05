@@ -46,9 +46,10 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange, numberOfInteractionsInProgressProperty, {
-      title: StringUtils.format( appliedForceNumberString, options.number )
-    } );
+    var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
+      numberOfInteractionsInProgressProperty, {
+        title: StringUtils.format( appliedForceNumberString, options.number )
+      } );
 
     assert && assert( !options.children, 'IntroSpringControls sets children' );
     options.children = [

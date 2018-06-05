@@ -75,8 +75,8 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl(
-      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
+    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
+      system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
 
     assert && assert( !options.children, 'SeriesSpringControls sets children' );
     options.children = [

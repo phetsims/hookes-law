@@ -78,8 +78,8 @@ define( function( require ) {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl(
-      system.equivalentSpring.appliedForceProperty, system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
+    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
+      system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
 
     assert && assert( !options.children, 'ParallelSpringControls sets children' );
     options.children = [
