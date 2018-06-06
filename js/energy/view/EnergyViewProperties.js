@@ -1,7 +1,7 @@
 // Copyright 2015-2018, University of Colorado Boulder
 
 /**
- * Properties that are specific to visibility of things in the "Energy" view.
+ * View-specific properties for the "Energy" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
