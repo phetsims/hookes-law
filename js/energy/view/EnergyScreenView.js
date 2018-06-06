@@ -60,23 +60,22 @@ define( function( require ) {
     this.addChild( energyBarGraph );
 
     // Force XY plot
-    var forceXYPlot = new ForceXYPlot( model.system.spring, unitDisplacementLength, {
-      xVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
-      valuesVisibleProperty: viewProperties.valuesVisibleProperty,
-      energyVisibleProperty: viewProperties.energyOnForcePlotVisibleProperty,
-      // origin aligned with equilibrium position
-      x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
-      bottom: energyBarGraph.bottom
-    } );
+    var forceXYPlot = new ForceXYPlot( model.system.spring, unitDisplacementLength,
+      viewProperties.valuesVisibleProperty,
+      viewProperties.displacementVectorVisibleProperty,
+      viewProperties.energyOnForcePlotVisibleProperty, {
+        // origin aligned with equilibrium position
+        x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
+        bottom: energyBarGraph.bottom
+      } );
     this.addChild( forceXYPlot );
 
     // Energy XY plot
-    var energyXYPlot = new EnergyXYPlot( model.system.spring, unitDisplacementLength, {
-      xVectorVisibleProperty: viewProperties.displacementVectorVisibleProperty,
-      valuesVisibleProperty: viewProperties.valuesVisibleProperty,
-      x: forceXYPlot.x,
-      y: energyBarGraph.bottom
-    } );
+    var energyXYPlot = new EnergyXYPlot( model.system.spring, unitDisplacementLength,
+      viewProperties.valuesVisibleProperty, viewProperties.displacementVectorVisibleProperty, {
+        x: forceXYPlot.x,
+        y: energyBarGraph.bottom
+      } );
     this.addChild( energyXYPlot );
 
     // Reset All button, bottom right

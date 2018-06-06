@@ -1,7 +1,7 @@
 // Copyright 2015-2018, University of Colorado Boulder
 
 /**
- * Base type for the Force and Energy XY plots.
+ * Abstract base type for the Force and Energy XY plots.
  *
  * Responsibilities:
  * - draws the axes
@@ -19,7 +19,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var Circle = require( 'SCENERY/nodes/Circle' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
@@ -54,19 +53,21 @@ define( function( require ) {
   };
 
   /**
-   * @param {NumberProperty} xProperty
-   * @param {NumberProperty} yProperty
+   * @param {NumberProperty} xProperty - x coordinate value
+   * @param {NumberProperty} yProperty - y coordinate value
+   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
+   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
    * @param {Object} [options]
    * @constructor
+   * @abstract
    */
-  function XYPointPlot( xProperty, yProperty, options ) {
+  function XYPointPlot( xProperty, yProperty, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
 
     options = _.extend( {
 
       // both axes
       axisFont: new PhetFont( 12 ),
       valueFont: new PhetFont( 12 ),
-      valuesVisibleProperty: new BooleanProperty( true ),
 
       // x axis
       minX: -1,
@@ -76,7 +77,6 @@ define( function( require ) {
       xUnits: '',
       xValueFill: 'black',
       xUnitLength: 1,
-      xVectorVisibleProperty: new BooleanProperty( true ),
       xLabelMaxWidth: null,
       xValueBackgroundColor: null,
 
@@ -143,11 +143,11 @@ define( function( require ) {
     ];
 
     // visibility
-    options.xVectorVisibleProperty.link( function( visible ) {
+    displacementVectorVisibleProperty.link( function( visible ) {
       var xFixed = Util.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
       xVectorNode.visible = ( visible && xFixed !== 0 );
     } );
-    options.valuesVisibleProperty.link( function( visible ) {
+    valuesVisibleProperty.link( function( visible ) {
 
       // x-axis nodes
       xValueNode.visible = visible;
@@ -168,13 +168,13 @@ define( function( require ) {
       var xView = options.xUnitLength * xFixed;
 
       // x vector
-      xVectorNode.visible = ( xFixed !== 0 && options.xVectorVisibleProperty.get() ); // can't draw a zero-length arrow
+      xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.get() ); // can't draw a zero-length arrow
       if ( xFixed !== 0 ) {
         xVectorNode.setLine( 0, 0, xView, 0 );
       }
 
       // x tick mark
-      xTickNode.visible = ( xFixed !== 0 && options.valuesVisibleProperty.get() );
+      xTickNode.visible = ( xFixed !== 0 && valuesVisibleProperty.get() );
       xTickNode.centerX = xView;
 
       // x value
@@ -220,7 +220,7 @@ define( function( require ) {
       var yView = yFixed * options.yUnitLength;
 
       // y tick mark
-      yTickNode.visible = ( yFixed !== 0 && options.valuesVisibleProperty.get() );
+      yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.get() );
       yTickNode.centerY = -yView;
 
       // y value

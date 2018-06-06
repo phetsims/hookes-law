@@ -1,7 +1,8 @@
 // Copyright 2015-2018, University of Colorado Boulder
 
 /**
- *  The "Force Graph" is an XY plot of displacement (x axis) vs force (y axis), with energy (E) being the area under the curve.
+ *  The "Force Graph" is an XY plot of displacement (x axis) vs force (y axis),
+ *  with energy (E) being the area under the curve.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -9,7 +10,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -30,18 +30,20 @@ define( function( require ) {
   /**
    * @param {Spring} spring
    * @param {number} unitDisplacementLength - view length of a 1m displacement vector
+   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
+   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
+   * @param {BooleanProperty} energyVisibleProperty - whether the area that represents energy is filled in
    * @param {Object} [options]
    * @constructor
    */
-  function ForceXYPlot( spring, unitDisplacementLength, options ) {
+  function ForceXYPlot( spring, unitDisplacementLength,
+                        valuesVisibleProperty, displacementVectorVisibleProperty, energyVisibleProperty, options ) {
 
     options = _.extend( {
 
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
       valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
-      valuesVisibleProperty: new BooleanProperty( true ), // are numeric values visible?
-      energyVisibleProperty: new BooleanProperty( true ), // is the energy area (triangle) visible?
 
       // point
       pointFill: HookesLawColors.SINGLE_SPRING,
@@ -53,7 +55,6 @@ define( function( require ) {
       xUnits: metersString,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
-      xVectorVisibleProperty: new BooleanProperty( true ),
       xUnitLength: unitDisplacementLength,
       xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
@@ -68,7 +69,8 @@ define( function( require ) {
 
     }, options );
 
-    XYPointPlot.call( this, spring.displacementProperty, spring.appliedForceProperty, options );
+    XYPointPlot.call( this, spring.displacementProperty, spring.appliedForceProperty,
+      valuesVisibleProperty, displacementVectorVisibleProperty, options );
 
     // The line that corresponds to F = kx
     var forceLineNode = new Line( 0, 0, 1, 1, {
@@ -99,7 +101,7 @@ define( function( require ) {
     } );
 
     // update energy area (triangle)
-    Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, options.energyVisibleProperty ],
+    Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
       function( displacement, appliedForce, visible ) {
         var fixedDisplacement = Util.toFixedNumber( displacement, options.xDecimalPlaces );
         var x = options.xUnitLength * fixedDisplacement;

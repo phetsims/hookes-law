@@ -9,7 +9,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -28,17 +27,18 @@ define( function( require ) {
   /**
    * @param {Spring} spring
    * @param {number} unitDisplacementLength - view length of a 1m displacement vector
+   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
+   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
    * @param {Object} [options]
    * @constructor
    */
-  function EnergyXYPlot( spring, unitDisplacementLength, options ) {
+  function EnergyXYPlot( spring, unitDisplacementLength, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
 
     options = _.extend( {
 
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
       valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
-      valuesVisibleProperty: new BooleanProperty( true ),
 
       // point
       pointFill: HookesLawColors.SINGLE_SPRING,
@@ -51,7 +51,6 @@ define( function( require ) {
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
       xUnitLength: unitDisplacementLength,
-      xVectorVisibleProperty: new BooleanProperty( true ),
       xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
       // y axis
@@ -66,7 +65,8 @@ define( function( require ) {
 
     }, options );
 
-    XYPointPlot.call( this, spring.displacementProperty, spring.energyProperty, options );
+    XYPointPlot.call( this, spring.displacementProperty, spring.energyProperty,
+      valuesVisibleProperty, displacementVectorVisibleProperty, options );
 
     // Parabola that corresponds to E = ( k * x * x ) / 2
     var energyParabolaNode = new Path( null, {
