@@ -21,6 +21,8 @@ define( function( require ) {
    */
   function SystemsViewProperties() {
 
+    ViewProperties.call( this );
+
     // @public which system is visible
     this.seriesParallelProperty = new StringProperty( 'parallel', {
       validValues: [ 'series', 'parallel' ]
@@ -33,8 +35,6 @@ define( function( require ) {
     this.springForceRepresentationProperty = new StringProperty( 'total', {
       validValues: [ 'total', 'components' ]
     } );
-
-    ViewProperties.call( this );
   }
 
   hookesLaw.register( 'SystemsViewProperties', SystemsViewProperties );

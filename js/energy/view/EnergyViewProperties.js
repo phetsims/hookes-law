@@ -21,6 +21,8 @@ define( function( require ) {
    */
   function EnergyViewProperties() {
 
+    ViewProperties.call( this );
+
     // @public which graph is visible
     this.graphProperty = new StringProperty( 'energyBar', {
       validValues: [ 'energyBar', 'energyXY', 'forceXY' ]
@@ -28,8 +30,6 @@ define( function( require ) {
 
     // @public is energy depicted on the Force plot?
     this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
-
-    ViewProperties.call( this );
   }
 
   hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );

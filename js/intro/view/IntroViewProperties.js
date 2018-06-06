@@ -21,6 +21,8 @@ define( function( require ) {
    */
   function IntroViewProperties() {
 
+    ViewProperties.call( this );
+    
     // @public number of systems visible
     this.numberOfSystemsProperty = new NumberProperty( 1, {
       validValues: [ 1, 2 ]
@@ -28,8 +30,6 @@ define( function( require ) {
 
     // @public is the spring force vector visible?
     this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
-
-    ViewProperties.call( this );
   }
 
   hookesLaw.register( 'IntroViewProperties', IntroViewProperties );
