@@ -36,7 +36,10 @@ define( function( require ) {
 
   return inherit( ViewProperties, EnergyViewProperties, {
 
-    // @public
+    /**
+     * @public
+     * @override
+     */
     reset: function() {
       this.graphProperty.reset();
       this.valuesVisibleProperty.reset();

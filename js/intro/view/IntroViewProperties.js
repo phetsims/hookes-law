@@ -36,7 +36,10 @@ define( function( require ) {
 
   return inherit( ViewProperties, IntroViewProperties, {
 
-    // @public
+    /**
+     * @public
+     * @override
+     */
     reset: function() {
       this.numberOfSystemsProperty.reset();
       this.springForceVectorVisibleProperty.reset();

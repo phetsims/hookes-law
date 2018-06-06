@@ -41,7 +41,10 @@ define( function( require ) {
 
   return inherit( ViewProperties, SystemsViewProperties, {
 
-    // @public
+    /**
+     * @public
+     * @override
+     */
     reset: function() {
       this.seriesParallelProperty.reset();
       this.springForceVectorVisibleProperty.reset();
