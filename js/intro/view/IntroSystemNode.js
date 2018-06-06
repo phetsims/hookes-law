@@ -94,26 +94,26 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      // x is determined by spring.rightProperty
-      // bottom determined empirically, springNode.top is not accurate because we're using boundsMethod:'none'
-      bottom: springNode.y - 50
-    } );
+    var appliedForceVectorNode = new AppliedForceVectorNode(
+      spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+        // x is determined by spring.rightProperty
+        // bottom determined empirically, springNode.top is not accurate because we're using boundsMethod:'none'
+        bottom: springNode.y - 50
+      } );
 
-    var springForceVectorNode = new SpringForceVectorNode( spring.springForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      // x is determined by spring.rightProperty
-      y: appliedForceVectorNode.y
-    } );
+    var springForceVectorNode = new SpringForceVectorNode(
+      spring.springForceProperty, viewProperties.valuesVisibleProperty, {
+        // x is determined by spring.rightProperty
+        y: appliedForceVectorNode.y
+      } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
-      unitDisplacementLength: options.unitDisplacementLength,
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      x: equilibriumPositionNode.centerX,
-      // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
-      top: springNode.y + 50
-    } );
+    var displacementVectorNode = new DisplacementVectorNode(
+      spring.displacementProperty, viewProperties.valuesVisibleProperty, {
+        unitDisplacementLength: options.unitDisplacementLength,
+        x: equilibriumPositionNode.centerX,
+        // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
+        top: springNode.y + 50
+      } );
 
     var springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {
       number: options.number,

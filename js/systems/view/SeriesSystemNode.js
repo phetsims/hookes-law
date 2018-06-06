@@ -104,47 +104,47 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var leftSpringForceVectorNode = new SpringForceVectorNode( leftSpring.springForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.LEFT_SPRING,
-      // x is determined by leftSpring.rightProperty
-      // bottom determined empirically, leftSpringNode.top is not accurate because we're using boundsMethod:'none'
-      bottom: leftSpringNode.y - 65
-    } );
+    var leftSpringForceVectorNode = new SpringForceVectorNode(
+      leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+        fill: HookesLawColors.LEFT_SPRING,
+        // x is determined by leftSpring.rightProperty
+        // bottom determined empirically, leftSpringNode.top is not accurate because we're using boundsMethod:'none'
+        bottom: leftSpringNode.y - 65
+      } );
 
-    var leftAppliedForceVectorNode = new AppliedForceVectorNode( leftSpring.appliedForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.RIGHT_SPRING,
-      // x is determined by leftSpring.rightProperty
-      y: leftSpringForceVectorNode.y
-    } );
+    var leftAppliedForceVectorNode = new AppliedForceVectorNode(
+      leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+        fill: HookesLawColors.RIGHT_SPRING,
+        // x is determined by leftSpring.rightProperty
+        y: leftSpringForceVectorNode.y
+      } );
 
-    var rightSpringForceVectorNode = new SpringForceVectorNode( rightSpring.springForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.RIGHT_SPRING,
-      // x is determined by rightSpring.rightProperty
-      bottom: leftSpringForceVectorNode.top - 10
-    } );
+    var rightSpringForceVectorNode = new SpringForceVectorNode(
+      rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+        fill: HookesLawColors.RIGHT_SPRING,
+        // x is determined by rightSpring.rightProperty
+        bottom: leftSpringForceVectorNode.top - 10
+      } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      // x is determined by rightSpring.rightProperty
-      y: rightSpringForceVectorNode.y
-    } );
+    var appliedForceVectorNode = new AppliedForceVectorNode(
+      equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+        // x is determined by rightSpring.rightProperty
+        y: rightSpringForceVectorNode.y
+      } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      // x is determined by rightSpring.rightProperty
-      y: appliedForceVectorNode.y
-    } );
+    var totalSpringForceVectorNode = new SpringForceVectorNode(
+      equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+        // x is determined by rightSpring.rightProperty
+        y: appliedForceVectorNode.y
+      } );
 
-    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, {
-      unitDisplacementLength: options.unitDisplacementLength,
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      x: equilibriumPositionNode.centerX,
-      // top determined empirically, leftSpringNode.bottom is not accurate because we're using boundMethod:'none'
-      top: leftSpringNode.y + 50
-    } );
+    var displacementVectorNode = new DisplacementVectorNode(
+      equivalentSpring.displacementProperty, viewProperties.valuesVisibleProperty, {
+        unitDisplacementLength: options.unitDisplacementLength,
+        x: equilibriumPositionNode.centerX,
+        // top determined empirically, leftSpringNode.bottom is not accurate because we're using boundMethod:'none'
+        top: leftSpringNode.y + 50
+      } );
 
     var springControls = new SeriesSpringControls( system, numberOfInteractionsInProgressProperty, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,

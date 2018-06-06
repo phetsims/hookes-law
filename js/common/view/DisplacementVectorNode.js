@@ -9,7 +9,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -28,14 +27,14 @@ define( function( require ) {
 
   /**
    * @param {NumberProperty} displacementProperty units = m
+   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
    * @param {Object} [options]
    * @constructor
    */
-  function DisplacementVectorNode( displacementProperty, options ) {
+  function DisplacementVectorNode( displacementProperty, valueVisibleProperty, options ) {
 
     options = _.extend( {
       verticalLineVisible: true,
-      valueVisibleProperty: new BooleanProperty( true ), // determines whether the value is visible
       unitDisplacementLength: 1
     }, options );
 
@@ -81,7 +80,7 @@ define( function( require ) {
       backgroundNode.center = valueNode.center;
     } );
 
-    options.valueVisibleProperty.link( function( visible ) {
+    valueVisibleProperty.link( function( visible ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
 

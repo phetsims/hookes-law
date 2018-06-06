@@ -53,8 +53,7 @@ define( function( require ) {
     this.addChild( systemNode );
 
     // Energy bar graph
-    var energyBarGraph = new EnergyBarGraph( model.system.spring, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
+    var energyBarGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
       // x position depends on whether XY plots are visible
       bottom: systemNode.top - 35
     } );

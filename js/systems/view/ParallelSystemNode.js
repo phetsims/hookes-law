@@ -116,42 +116,42 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( equivalentSpring.appliedForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      // x is determined by bottomSpring.rightProperty
-      // bottom determined empirically, topSpringNode.top is not accurate because we're using boundsMethod:'none'
-      bottom: topSpringNode.y - 80
-    } );
+    var appliedForceVectorNode = new AppliedForceVectorNode(
+      equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+        // x is determined by bottomSpring.rightProperty
+        // bottom determined empirically, topSpringNode.top is not accurate because we're using boundsMethod:'none'
+        bottom: topSpringNode.y - 80
+      } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode( equivalentSpring.springForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      // x is determined by bottomSpring.rightProperty
-      centerY: appliedForceVectorNode.centerY
-    } );
+    var totalSpringForceVectorNode = new SpringForceVectorNode(
+      equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+        // x is determined by bottomSpring.rightProperty
+        centerY: appliedForceVectorNode.centerY
+      } );
 
-    var topSpringForceVectorNode = new SpringForceVectorNode( topSpring.springForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.TOP_SPRING,
-      decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
-      // x is determined by topSpring.rightProperty
-      centerY: totalSpringForceVectorNode.top
-    } );
+    var topSpringForceVectorNode = new SpringForceVectorNode(
+      topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+        fill: HookesLawColors.TOP_SPRING,
+        decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
+        // x is determined by topSpring.rightProperty
+        centerY: totalSpringForceVectorNode.top
+      } );
 
-    var bottomSpringForceVectorNode = new SpringForceVectorNode( bottomSpring.springForceProperty, {
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      fill: HookesLawColors.BOTTOM_SPRING,
-      decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
-      // x is determined by bottomSpring.rightProperty
-      centerY: totalSpringForceVectorNode.bottom
-    } );
+    var bottomSpringForceVectorNode = new SpringForceVectorNode(
+      bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
+        fill: HookesLawColors.BOTTOM_SPRING,
+        decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
+        // x is determined by bottomSpring.rightProperty
+        centerY: totalSpringForceVectorNode.bottom
+      } );
 
-    var displacementVectorNode = new DisplacementVectorNode( equivalentSpring.displacementProperty, {
-      unitDisplacementLength: options.unitDisplacementLength,
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      x: equilibriumPositionNode.centerX,
-      // top determined empirically, bottomSpringNode.bottom is not accurate because we're using boundMethod:'none'
-      top: bottomSpringNode.y + 50
-    } );
+    var displacementVectorNode = new DisplacementVectorNode(
+      equivalentSpring.displacementProperty, viewProperties.valuesVisibleProperty, {
+        unitDisplacementLength: options.unitDisplacementLength,
+        x: equilibriumPositionNode.centerX,
+        // top determined empirically, bottomSpringNode.bottom is not accurate because we're using boundMethod:'none'
+        top: bottomSpringNode.y + 50
+      } );
 
     var springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,

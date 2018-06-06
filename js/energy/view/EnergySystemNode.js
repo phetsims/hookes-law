@@ -91,21 +91,21 @@ define( function( require ) {
       centerY: yOrigin
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode( spring.appliedForceProperty, {
-      unitLength: HookesLawConstants.ENERGY_UNIT_FORCE_X, // view length of a 1N force vector
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      // x is determined by spring.rightProperty
-      // bottom determined empirically, springNode.top is not accurate because we're using boundMethod:'none'
-      bottom: springNode.y - 50
-    } );
+    var appliedForceVectorNode = new AppliedForceVectorNode(
+      spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
+        unitLength: HookesLawConstants.ENERGY_UNIT_FORCE_X, // view length of a 1N force vector
+        // x is determined by spring.rightProperty
+        // bottom determined empirically, springNode.top is not accurate because we're using boundMethod:'none'
+        bottom: springNode.y - 50
+      } );
 
-    var displacementVectorNode = new DisplacementVectorNode( spring.displacementProperty, {
-      unitDisplacementLength: options.unitDisplacementLength,
-      valueVisibleProperty: viewProperties.valuesVisibleProperty,
-      x: equilibriumPositionNode.centerX,
-      // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
-      top: springNode.y + 50
-    } );
+    var displacementVectorNode = new DisplacementVectorNode(
+      spring.displacementProperty, viewProperties.valuesVisibleProperty, {
+        unitDisplacementLength: options.unitDisplacementLength,
+        x: equilibriumPositionNode.centerX,
+        // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
+        top: springNode.y + 50
+      } );
 
     var springControls = new EnergySpringControls( spring, numberOfInteractionsInProgressProperty, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,

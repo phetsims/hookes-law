@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
@@ -32,14 +31,13 @@ define( function( require ) {
 
   /**
    * @param {Spring} spring
+   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the graph
    * @param {Object} [options]
    * @constructor
    */
-  function EnergyBarGraph( spring, options ) {
+  function EnergyBarGraph( spring, valueVisibleProperty, options ) {
 
-    options = _.extend( {
-      valueVisibleProperty: new BooleanProperty( true )
-    }, options );
+    options = options || {};
 
     var xAxisNode = new Line( 0, 0, 1.65 * BAR_WIDTH, 0, {
       stroke: 'black',
@@ -94,7 +92,7 @@ define( function( require ) {
       }
     } );
 
-    options.valueVisibleProperty.linkAttribute( valueNode, 'visible' );
+    valueVisibleProperty.linkAttribute( valueNode, 'visible' );
 
     Node.call( this, options );
   }

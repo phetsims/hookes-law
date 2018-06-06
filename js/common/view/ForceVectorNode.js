@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -26,18 +25,18 @@ define( function( require ) {
 
   /**
    * @param {NumberProperty} forceProperty units = N
+   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
    * @param {Object} [options]
    * @constructor
    */
-  function ForceVectorNode( forceProperty, options ) {
+  function ForceVectorNode( forceProperty, valueVisibleProperty, options ) {
 
     options = _.extend( {
       fill: 'white',
       stroke: 'black',
       decimalPlaces: 0,
       unitLength: HookesLawConstants.UNIT_FORCE_X, // view length of a 1N vector
-      alignZero: 'left', // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
-      valueVisibleProperty: new BooleanProperty( true ) // determines whether the value is visible
+      alignZero: 'left' // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
     }, options );
 
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {
@@ -97,7 +96,7 @@ define( function( require ) {
       backgroundNode.center = valueNode.center;
     } );
 
-    options.valueVisibleProperty.link( function( visible ) {
+    valueVisibleProperty.link( function( visible ) {
       valueNode.visible = backgroundNode.visible = visible;
     } );
 

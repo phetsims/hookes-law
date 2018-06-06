@@ -17,17 +17,18 @@ define( function( require ) {
 
   /**
    * @param {NumberProperty} appliedForceProperty units = N
+   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
    * @param {Object} [options]
    * @constructor
    */
-  function AppliedForceVectorNode( appliedForceProperty, options ) {
+  function AppliedForceVectorNode( appliedForceProperty, valueVisibleProperty, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.APPLIED_FORCE,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES
     }, options );
 
-    ForceVectorNode.call( this, appliedForceProperty, options );
+    ForceVectorNode.call( this, appliedForceProperty, valueVisibleProperty, options );
   }
 
   hookesLaw.register( 'AppliedForceVectorNode', AppliedForceVectorNode );

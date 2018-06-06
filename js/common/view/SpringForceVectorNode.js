@@ -17,10 +17,11 @@ define( function( require ) {
 
   /**
    * @param {NumberProperty} springForceProperty units = N
+   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
    * @param {Object} [options]
    * @constructor
    */
-  function SpringForceVectorNode( springForceProperty, options ) {
+  function SpringForceVectorNode( springForceProperty, valueVisibleProperty, options ) {
 
     options = _.extend( {
       fill: HookesLawColors.SINGLE_SPRING,
@@ -28,7 +29,7 @@ define( function( require ) {
       alignZero: 'right' // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
     }, options );
 
-    ForceVectorNode.call( this, springForceProperty, options );
+    ForceVectorNode.call( this, springForceProperty, valueVisibleProperty, options );
   }
 
   hookesLaw.register( 'SpringForceVectorNode', SpringForceVectorNode );
