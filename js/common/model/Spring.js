@@ -139,11 +139,8 @@ define( function( require ) {
         return right;
       } );
 
-    /**
-     * @public
-     * Range of the right end of the spring, units = m
-     * Derivation differs depending on whether changing spring constant modifies applied force or displacement.
-     */
+    // @public Range of the right end of the spring, units = m
+    // Derivation differs depending on whether changing spring constant modifies applied force or displacement.
     this.rightRangeProperty = null;
     if ( options.appliedForceRange ) {
       this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
@@ -166,7 +163,7 @@ define( function( require ) {
         return Math.abs( right - left );
       } );
 
-    // @public potential energy, E = ( k1 * x1 * x1 ) / 2
+    // @public potential energy, E = ( k1 * x1 * x1 ) / 2, units = J
     this.energyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
