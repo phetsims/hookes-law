@@ -14,54 +14,39 @@ define( function( require ) {
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var StringProperty = require( 'AXON/StringProperty' );
+  var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   /**
    * @constructor
    */
   function SystemsViewProperties() {
 
-    // check all Checkboxes, to make development easier
-    var checked = HookesLawQueryParameters.checkAll;
-
     // @public which system is visible
     this.seriesParallelProperty = new StringProperty( 'parallel', {
       validValues: [ 'series', 'parallel' ]
     } );
 
-    // @public {boolean} is the applied force vector visible?
-    this.appliedForceVectorVisibleProperty = new BooleanProperty( checked );
-
     // @public is the spring force vector visible?
-    this.springForceVectorVisibleProperty = new BooleanProperty( checked );
+    this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
 
     // @public how spring force is represented
     this.springForceRepresentationProperty = new StringProperty( 'total', {
       validValues: [ 'total', 'components' ]
     } );
 
-    // @public is the displacement vector visible?
-    this.displacementVectorVisibleProperty = new BooleanProperty( checked );
-
-    // @public is the equilibrium position visible?
-    this.equilibriumPositionVisibleProperty = new BooleanProperty( checked );
-
-    // @public are numeric values visible?
-    this.valuesVisibleProperty = new BooleanProperty( checked );
+    ViewProperties.call( this );
   }
 
   hookesLaw.register( 'SystemsViewProperties', SystemsViewProperties );
 
-  return inherit( Object, SystemsViewProperties, {
+  return inherit( ViewProperties, SystemsViewProperties, {
 
     // @public
     reset: function() {
       this.seriesParallelProperty.reset();
-      this.appliedForceVectorVisibleProperty.reset();
       this.springForceVectorVisibleProperty.reset();
       this.springForceRepresentationProperty.reset();
-      this.displacementVectorVisibleProperty.reset();
-      this.equilibriumPositionVisibleProperty.reset();
-      this.valuesVisibleProperty.reset();
+      ViewProperties.prototype.reset.call( this );
     }
   } );
 } );
