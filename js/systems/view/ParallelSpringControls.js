@@ -55,7 +55,8 @@ define( function( require ) {
         topSpring.springConstantRange.min,
         topSpring.springConstantRange.getCenter(),
         topSpring.springConstantRange.max
-      ]
+      ],
+      tandem: options.tandem.createTandem( 'topSpringConstantControl' )
     } );
 
     var bottomSpring = system.bottomSpring;
@@ -68,7 +69,8 @@ define( function( require ) {
           bottomSpring.springConstantRange.min,
           bottomSpring.springConstantRange.getCenter(),
           bottomSpring.springConstantRange.max
-        ]
+        ],
+        tandem: options.tandem.createTandem( 'bottomSpringConstantControl' )
       } );
 
     // "top" control above "bottom" control, to reflect layout of system
@@ -79,11 +81,14 @@ define( function( require ) {
         topSpringConstantControl,
         new HSeparator( Math.max( topSpringConstantControl.width, bottomSpringConstantControl.width ), HookesLawConstants.SEPARATOR_OPTIONS ),
         bottomSpringConstantControl
-      ]
+      ],
+      tandem: options.tandem.createTandem( 'springControls' )
     } );
 
     var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
-      system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
+      system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty, {
+        tandem: options.tandem.createTandem( 'appliedForceControl' )
+      } );
 
     assert && assert( !options.children, 'ParallelSpringControls sets children' );
     options.children = [
