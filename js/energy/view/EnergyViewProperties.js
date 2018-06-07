@@ -17,19 +17,23 @@ define( function( require ) {
   var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function EnergyViewProperties() {
+  function EnergyViewProperties( tandem ) {
 
-    ViewProperties.call( this );
+    ViewProperties.call( this, tandem );
 
     // @public which graph is visible
     this.graphProperty = new StringProperty( 'energyBar', {
-      validValues: [ 'energyBar', 'energyXY', 'forceXY' ]
+      validValues: [ 'energyBar', 'energyXY', 'forceXY' ],
+      tandem: tandem.createTandem( 'graphProperty' )
     } );
 
     // @public is energy depicted on the Force plot?
-    this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
+    this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'energyOnForcePlotVisibleProperty' )
+    } );
   }
 
   hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );

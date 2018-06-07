@@ -15,21 +15,30 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function ViewProperties() {
+  function ViewProperties( tandem ) {
 
     // @public is the applied force vector visible?
-    this.appliedForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
+    this.appliedForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'appliedForceVectorVisibleProperty' )
+    } );
 
     // @public is the displacement vector visible?
-    this.displacementVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
+    this.displacementVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'displacementVectorVisibleProperty' )
+    } );
 
     // @public is the equilibrium position visible?
-    this.equilibriumPositionVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
+    this.equilibriumPositionVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'equilibriumPositionVisibleProperty' )
+    } );
 
     // @public are numeric values visible?
-    this.valuesVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
+    this.valuesVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'valuesVisibleProperty' )
+    } );
   }
 
   hookesLaw.register( 'ViewProperties', ViewProperties );

@@ -17,19 +17,23 @@ define( function( require ) {
   var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function IntroViewProperties() {
+  function IntroViewProperties( tandem ) {
 
-    ViewProperties.call( this );
+    ViewProperties.call( this, tandem );
     
     // @public number of systems visible
     this.numberOfSystemsProperty = new NumberProperty( 1, {
-      validValues: [ 1, 2 ]
+      validValues: [ 1, 2 ],
+      tandem: tandem.createTandem( 'numberOfSystemsProperty' )
     } );
 
     // @public is the spring force vector visible?
-    this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
+    this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
+    } );
   }
 
   hookesLaw.register( 'IntroViewProperties', IntroViewProperties );

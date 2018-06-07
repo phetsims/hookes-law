@@ -17,23 +17,28 @@ define( function( require ) {
   var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function SystemsViewProperties() {
+  function SystemsViewProperties( tandem ) {
 
-    ViewProperties.call( this );
+    ViewProperties.call( this, tandem );
 
     // @public which system is visible
     this.seriesParallelProperty = new StringProperty( 'parallel', {
-      validValues: [ 'series', 'parallel' ]
+      validValues: [ 'series', 'parallel' ],
+      tandem: tandem.createTandem( 'seriesParallelProperty' )
     } );
 
     // @public is the spring force vector visible?
-    this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll );
+    this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
+    } );
 
     // @public how spring force is represented
     this.springForceRepresentationProperty = new StringProperty( 'total', {
-      validValues: [ 'total', 'components' ]
+      validValues: [ 'total', 'components' ],
+      tandem: tandem.createTandem( 'springForceRepresentationProperty' )
     } );
   }
 

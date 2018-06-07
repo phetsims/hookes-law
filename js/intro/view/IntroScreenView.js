@@ -37,7 +37,7 @@ define( function( require ) {
     var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view
-    var viewProperties = new IntroViewProperties();
+    var viewProperties = new IntroViewProperties( tandem.createTandem( 'viewProperties' ) );
 
     // Visibility controls
     var visibilityControls = new IntroVisibilityControls( viewProperties, {
