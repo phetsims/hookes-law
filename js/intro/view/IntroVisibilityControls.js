@@ -46,22 +46,29 @@ define( function( require ) {
       return node.width;
     } ).width;
 
-    // vector checkboxes, with left-aligned vector icons
     var minSpacing = 10;
+
+    // vector checkboxes, with left-aligned vector icons
     var appliedForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( appliedForceTextNode, {
         arrowFill: HookesLawColors.APPLIED_FORCE,
         spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
       } ),
       properties.appliedForceVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var springForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( springForceTextNode, {
         arrowFill: HookesLawColors.SINGLE_SPRING,
         spacing: maxTextWidth - springForceTextNode.width + minSpacing
       } ),
       properties.springForceVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'springForceCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( displacementTextNode, {
         vectorType: 'displacement',
@@ -69,7 +76,9 @@ define( function( require ) {
         spacing: maxTextWidth - displacementTextNode.width + minSpacing
       } ),
       properties.displacementVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'displacementCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // other checkboxes
     var equilibriumPositionCheckbox = new Checkbox(
@@ -79,7 +88,9 @@ define( function( require ) {
     var valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
     Property.multilink(

@@ -49,13 +49,21 @@ define( function( require ) {
     // radio buttons
     var energyBarRadioButton = new AquaRadioButton( properties.graphProperty, 'energyBar',
       new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      HookesLawConstants.RADIO_BUTTON_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'energyBarRadioButton' )
+      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
+
     var energyXYRadioButton = new AquaRadioButton( properties.graphProperty, 'energyXY',
       new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      HookesLawConstants.RADIO_BUTTON_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'energyXYRadioButton' )
+      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
+
     var forceXYRadioButton = new AquaRadioButton( properties.graphProperty, 'forceXY',
       new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      HookesLawConstants.RADIO_BUTTON_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'forceXYRadioButton' )
+      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     // energy checkbox, enabled when "Force Plot" radio button is selected
     var energyIcon = new HBox( {
@@ -68,7 +76,9 @@ define( function( require ) {
     } );
     var energyCheckbox = new Checkbox( energyIcon,
       properties.energyOnForcePlotVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'energyCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
     properties.graphProperty.link( function( graph ) {
       energyCheckbox.enabled = ( graph === 'forceXY' );
     } );
@@ -79,22 +89,33 @@ define( function( require ) {
         arrowFill: HookesLawColors.APPLIED_FORCE
       } ),
       properties.appliedForceVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
       } ),
       properties.displacementVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'displacementCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'valuesCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // Adjust touch areas
     var spacing = 20;

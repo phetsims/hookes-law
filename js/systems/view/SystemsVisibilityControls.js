@@ -51,28 +51,41 @@ define( function( require ) {
       HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var springForceCheckbox = new Checkbox(
       new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'springForceCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
       } ),
       properties.displacementVectorVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'displacementCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // other checkboxes
     var equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'valuesCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // 'total' radio button
     var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
@@ -83,7 +96,9 @@ define( function( require ) {
         ],
         spacing: 10
       } ),
-      HookesLawConstants.RADIO_BUTTON_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'totalRadioButton' )
+      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     // 'components' radio button
     var component1Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
@@ -107,7 +122,9 @@ define( function( require ) {
         ],
         spacing: 10
       } ),
-      HookesLawConstants.RADIO_BUTTON_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'componentsRadioButton' )
+      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     // Change the component vector colors to match the system
     properties.seriesParallelProperty.link( function( seriesParallel ) {
