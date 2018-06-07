@@ -13,6 +13,7 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Line = require( 'SCENERY/nodes/Line' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {number} length
@@ -24,7 +25,8 @@ define( function( require ) {
     options = _.extend( {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
-      lineDash: [ 3, 3 ]
+      lineDash: [ 3, 3 ],
+      tandem: Tandem.required
     }, options );
 
     Line.call( this, 0, 0, 0, length, options );

@@ -14,6 +14,7 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {NumberProperty} springForceProperty units = N
@@ -26,7 +27,8 @@ define( function( require ) {
     options = _.extend( {
       fill: HookesLawColors.SINGLE_SPRING,
       decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
-      alignZero: 'right' // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
+      alignZero: 'right', // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
+      tandem: Tandem.required
     }, options );
 
     ForceVectorNode.call( this, springForceProperty, valueVisibleProperty, options );

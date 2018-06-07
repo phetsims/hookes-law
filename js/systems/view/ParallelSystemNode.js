@@ -115,20 +115,23 @@ define( function( require ) {
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.get(),
-      centerY: yOrigin
+      centerY: yOrigin,
+      tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
     var appliedForceVectorNode = new AppliedForceVectorNode(
       equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by bottomSpring.rightProperty
         // bottom determined empirically, topSpringNode.top is not accurate because we're using boundsMethod:'none'
-        bottom: topSpringNode.y - 80
+        bottom: topSpringNode.y - 80,
+        tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
     var totalSpringForceVectorNode = new SpringForceVectorNode(
       equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by bottomSpring.rightProperty
-        centerY: appliedForceVectorNode.centerY
+        centerY: appliedForceVectorNode.centerY,
+        tandem: options.tandem.createTandem( 'totalSpringForceVectorNode' )
       } );
 
     var topSpringForceVectorNode = new SpringForceVectorNode(
@@ -136,7 +139,8 @@ define( function( require ) {
         fill: HookesLawColors.TOP_SPRING,
         decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
         // x is determined by topSpring.rightProperty
-        centerY: totalSpringForceVectorNode.top
+        centerY: totalSpringForceVectorNode.top,
+        tandem: options.tandem.createTandem( 'topSpringForceVectorNode' )
       } );
 
     var bottomSpringForceVectorNode = new SpringForceVectorNode(
@@ -144,7 +148,8 @@ define( function( require ) {
         fill: HookesLawColors.BOTTOM_SPRING,
         decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
         // x is determined by bottomSpring.rightProperty
-        centerY: totalSpringForceVectorNode.bottom
+        centerY: totalSpringForceVectorNode.bottom,
+        tandem: options.tandem.createTandem( 'bottomSpringForceVectorNode' )
       } );
 
     var displacementVectorNode = new DisplacementVectorNode(
@@ -152,7 +157,8 @@ define( function( require ) {
         unitDisplacementLength: options.unitDisplacementLength,
         x: equilibriumPositionNode.centerX,
         // top determined empirically, bottomSpringNode.bottom is not accurate because we're using boundMethod:'none'
-        top: bottomSpringNode.y + 50
+        top: bottomSpringNode.y + 50,
+        tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
     var springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {

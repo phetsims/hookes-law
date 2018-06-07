@@ -95,20 +95,23 @@ define( function( require ) {
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * spring.equilibriumXProperty.get(),
-      centerY: yOrigin
+      centerY: yOrigin,
+      tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
     var appliedForceVectorNode = new AppliedForceVectorNode(
       spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
         // bottom determined empirically, springNode.top is not accurate because we're using boundsMethod:'none'
-        bottom: springNode.y - 50
+        bottom: springNode.y - 50,
+        tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
     var springForceVectorNode = new SpringForceVectorNode(
       spring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
-        y: appliedForceVectorNode.y
+        y: appliedForceVectorNode.y,
+        tandem: options.tandem.createTandem( 'springForceVectorNode' )
       } );
 
     var displacementVectorNode = new DisplacementVectorNode(
@@ -116,7 +119,8 @@ define( function( require ) {
         unitDisplacementLength: options.unitDisplacementLength,
         x: equilibriumPositionNode.centerX,
         // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
-        top: springNode.y + 50
+        top: springNode.y + 50,
+        tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
     var springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {

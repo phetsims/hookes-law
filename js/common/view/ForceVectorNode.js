@@ -16,6 +16,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
 
@@ -36,7 +37,8 @@ define( function( require ) {
       stroke: 'black',
       decimalPlaces: 0,
       unitLength: HookesLawConstants.UNIT_FORCE_X, // view length of a 1N vector
-      alignZero: 'left' // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
+      alignZero: 'left', // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
+      tandem: Tandem.required
     }, options );
 
     var arrowNode = new ArrowNode( 0, 0, 50, 0, {
