@@ -35,13 +35,13 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
-   * @param {Tandem} tandem
    * @param {Object} [options]
    * @constructor
    */
-  function Spring( tandem, options ) {
+  function Spring( options ) {
 
     options = _.extend( {
 
@@ -61,7 +61,10 @@ define( function( require ) {
       appliedForceRange: null,
 
       // {number} applied force (and thus spring force) are constrained to this delta
-      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA 
+      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA,
+
+      // phet-io
+      tandem: Tandem.required
 
     }, options );
 

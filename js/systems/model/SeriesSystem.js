@@ -44,23 +44,25 @@ define( function( require ) {
     // Components of the system
 
     // @public left spring
-    this.leftSpring = new Spring( tandem.createTandem( 'leftSpring' ), {
+    this.leftSpring = new Spring( {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 0.75, // length of the spring at equilibrium, units = m
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
-      appliedForceRange: new RangeWithValue( -100, 100, 0 ) // range and initial value of Feq, units = N
+      appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of Feq, units = N
+      tandem: tandem.createTandem( 'leftSpring' )
     } );
 
     // @public right spring, in series with the left spring, with identical configuration
-    this.rightSpring = new Spring( tandem.createTandem( 'rightSpring' ), {
+    this.rightSpring = new Spring( {
       left: this.leftSpring.rightProperty.get(), // attached to the right end of the left spring
       equilibriumLength: this.leftSpring.equilibriumLength,
       springConstantRange: this.leftSpring.springConstantRange,
-      appliedForceRange: this.leftSpring.appliedForceRange
+      appliedForceRange: this.leftSpring.appliedForceRange,
+      tandem: tandem.createTandem( 'rightSpring' )
     } );
 
     // @public the single spring that is equivalent to the 2 springs in series
-    this.equivalentSpring = new Spring( tandem.createTandem( 'equivalentSpring' ), {
+    this.equivalentSpring = new Spring( {
       left: this.leftSpring.leftProperty.get(),
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,
       // keq = 1 / ( 1/k1 + 1/k2 )
@@ -68,14 +70,16 @@ define( function( require ) {
         1 / ( ( 1 / this.leftSpring.springConstantRange.min ) + ( 1 / this.rightSpring.springConstantRange.min ) ),
         1 / ( ( 1 / this.leftSpring.springConstantRange.max ) + ( 1 / this.rightSpring.springConstantRange.max ) ),
         1 / ( ( 1 / this.leftSpring.springConstantRange.defaultValue ) + ( 1 / this.rightSpring.springConstantRange.defaultValue ) ) ),
-      appliedForceRange: this.leftSpring.appliedForceRange // Feq = F1 = F2
+      appliedForceRange: this.leftSpring.appliedForceRange, // Feq = F1 = F2
+      tandem: tandem.createTandem( 'equivalentSpring' )
     } );
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 
     // @public robotic arm, attached to right end of equivalent spring
-    this.roboticArm = new RoboticArm( tandem.createTandem( 'roboticArm' ), {
+    this.roboticArm = new RoboticArm( {
       left: this.equivalentSpring.rightProperty.get(),
-      right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get()
+      right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get(),
+      tandem: tandem.createTandem( 'roboticArm' )
     } );
 
     //------------------------------------------------

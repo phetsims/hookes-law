@@ -12,19 +12,20 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
-   * @param {Tandem} tandem
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArm( tandem, options ) {
+  function RoboticArm( options ) {
 
     var self = this;
     
     options = _.extend( {
       left: 0,  // {number} initial x location of the left (movable) end of the arm, units = m
-      right: 1 // {number} initial x location of the right (fixed) end of the arm, units = m
+      right: 1, // {number} initial x location of the right (fixed) end of the arm, units = m
+      tandem: Tandem.required
     }, options );
 
     this.right = options.right; // @public right (fixed) end of the arm, read-only
@@ -32,7 +33,7 @@ define( function( require ) {
     // @public left (movable) end of the arm, constrained to extend from right to left
     this.leftProperty = new NumberProperty( options.left, {
       isValidValue: function( value ) { return value < self.right; },
-      tandem: tandem.createTandem( 'leftProperty' )
+      tandem: options.tandem.createTandem( 'leftProperty' )
     } );
   }
 
