@@ -21,14 +21,15 @@ define( function( require ) {
   var systemsString = require( 'string!HOOKES_LAW/systems' );
 
   /**
+   * @param {Object} [options]
    * @constructor
    */
-  function SystemsScreen() {
+  function SystemsScreen( options ) {
 
-    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: systemsString,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon()
-    } );
+    }, options );
 
     Screen.call( this,
       function() { return new SystemsModel(); },

@@ -14,6 +14,7 @@ define( function( require ) {
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   // strings
   var hookesLawTitleString = require( 'string!HOOKES_LAW/hookes-law.title' );
@@ -30,9 +31,9 @@ define( function( require ) {
 
   SimLauncher.launch( function() {
     var screens = [
-      new IntroScreen(),
-      new SystemsScreen(),
-      new EnergyScreen()
+      new IntroScreen( { tandem: Tandem.rootTandem.createTandem( 'introScreen' ) } ),
+      new SystemsScreen( { tandem: Tandem.rootTandem.createTandem( 'systemsScreen' ) } ),
+      new EnergyScreen( { tandem: Tandem.rootTandem.createTandem( 'energyScreen' ) } )
     ];
     var sim = new Sim( hookesLawTitleString, screens, options );
     sim.start();

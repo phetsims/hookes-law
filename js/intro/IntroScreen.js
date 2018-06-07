@@ -21,14 +21,15 @@ define( function( require ) {
   var introString = require( 'string!HOOKES_LAW/intro' );
 
   /**
+   * @param {Object} [options]
    * @constructor
    */
-  function IntroScreen() {
+  function IntroScreen( options ) {
 
-    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: introString,
       homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon()
-    } );
+    }, options );
 
     Screen.call( this,
       function() { return new IntroModel(); },

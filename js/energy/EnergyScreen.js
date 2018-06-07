@@ -21,14 +21,15 @@ define( function( require ) {
   var energyString = require( 'string!HOOKES_LAW/energy' );
 
   /**
+   * @param {Object} [options]
    * @constructor
    */
-  function EnergyScreen() {
+  function EnergyScreen( options ) {
 
-    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: energyString,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon()
-    } );
+    }, options );
 
     Screen.call( this,
       function() { return new EnergyModel(); },
