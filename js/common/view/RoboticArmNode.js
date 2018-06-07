@@ -36,9 +36,9 @@ define( function( require ) {
     .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
   var BOX_SIZE = new Dimension2( 20, 60 );
   var BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
-      .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
-      .addColorStop( 0.5, 'white' )
-      .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
+    .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
+    .addColorStop( 0.5, 'white' )
+    .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
 
   /**
    * @param {RoboticArm} roboticArm
@@ -52,7 +52,7 @@ define( function( require ) {
     options = _.extend( {
       cursor: 'pointer',
       unitDisplacementLength: 1,  // view length of a 1m displacement
-      tandem: Tandem.required
+      tandem: Tandem.optional // because this node is used to create icons
     }, options );
 
     // red box at right end of the arm, origin is at left-center
@@ -132,27 +132,26 @@ define( function( require ) {
     var startOffsetX = 0;
     var dragHandler = new SimpleDragHandler( {
 
-        allowTouchSnag: true,
+      allowTouchSnag: true,
 
-        start: function( event ) {
-          numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
-          var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
-          startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
-        },
+      start: function( event ) {
+        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
+        var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
+        startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
+      },
 
-        drag: function( event ) {
-          var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - startOffsetX;
-          var length = parentX / options.unitDisplacementLength;
-          var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
-          left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-          roboticArm.leftProperty.set( left );
-        },
+      drag: function( event ) {
+        var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - startOffsetX;
+        var length = parentX / options.unitDisplacementLength;
+        var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
+        left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        roboticArm.leftProperty.set( left );
+      },
 
-        end: function( event ) {
-          numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
-        }
+      end: function( event ) {
+        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
       }
-    );
+    } );
     draggableNode.addInputListener( dragHandler );
 
     roboticArm.leftProperty.link( function( left ) {
