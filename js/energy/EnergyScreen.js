@@ -21,19 +21,20 @@ define( function( require ) {
   var energyString = require( 'string!HOOKES_LAW/energy' );
 
   /**
-   * @param {Object} [options]
+   * @param {Tandem} tandem
    * @constructor
    */
-  function EnergyScreen( options ) {
+  function EnergyScreen( tandem ) {
 
-    options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: energyString,
-      homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon()
-    }, options );
+      homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
+      tandem: tandem
+    } );
 
     Screen.call( this,
-      function() { return new EnergyModel(); },
-      function( model ) { return new EnergyScreenView( model ); },
+      function() { return new EnergyModel( tandem.createTandem( 'model' ) ); },
+      function( model ) { return new EnergyScreenView( model, tandem.createTandem( 'view' ) ); },
       options
     );
   }

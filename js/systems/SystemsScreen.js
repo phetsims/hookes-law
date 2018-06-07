@@ -21,19 +21,20 @@ define( function( require ) {
   var systemsString = require( 'string!HOOKES_LAW/systems' );
 
   /**
-   * @param {Object} [options]
+   * @param {Tandem} tandem
    * @constructor
    */
-  function SystemsScreen( options ) {
+  function SystemsScreen( tandem ) {
 
-    options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: systemsString,
-      homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon()
-    }, options );
+      homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
+      tandem: tandem
+    } );
 
     Screen.call( this,
-      function() { return new SystemsModel(); },
-      function( model ) { return new SystemsScreenView( model ); },
+      function() { return new SystemsModel( tandem.createTandem( 'model' ) ); },
+      function( model ) { return new SystemsScreenView( model, tandem.createTandem( 'view' ) ); },
       options
     );
   }

@@ -33,9 +33,10 @@ define( function( require ) {
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function SeriesSystem() {
+  function SeriesSystem( tandem ) {
 
     var self = this;
 

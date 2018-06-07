@@ -15,11 +15,12 @@ define( function( require ) {
   var SeriesSystem = require( 'HOOKES_LAW/systems/model/SeriesSystem' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function SystemsModel() {
-    this.seriesSystem = new SeriesSystem();
-    this.parallelSystem = new ParallelSystem();
+  function SystemsModel( tandem ) {
+    this.seriesSystem = new SeriesSystem( tandem.createTandem( 'seriesSystem' ) );
+    this.parallelSystem = new ParallelSystem( tandem.createTandem( 'parallelSystem' ) );
   }
 
   hookesLaw.register( 'SystemsModel', SystemsModel );

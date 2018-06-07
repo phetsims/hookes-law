@@ -15,10 +15,11 @@ define( function( require ) {
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
+   * @param {Tandem} tandem
    * @param {Object} [springOptions] - options that are passed to Spring
    * @constructor
    */
-  function SingleSpringSystem( springOptions ) {
+  function SingleSpringSystem( tandem, springOptions ) {
 
     //------------------------------------------------
     // Components of the system

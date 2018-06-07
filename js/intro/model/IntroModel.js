@@ -15,15 +15,19 @@ define( function( require ) {
   var SingleSpringSystem = require( 'HOOKES_LAW/common/model/SingleSpringSystem' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function IntroModel() {
+  function IntroModel( tandem ) {
+
     var springOptions = {
       springConstantRange: new RangeWithValue( 100, 1000, 200 ), // units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ) // units = N
     };
-    this.system1 = new SingleSpringSystem( springOptions ); // @public
-    this.system2 = new SingleSpringSystem( springOptions ); // @public
+
+    // @public
+    this.system1 = new SingleSpringSystem( tandem.createTandem( 'system1' ), springOptions );
+    this.system2 = new SingleSpringSystem( tandem.createTandem( 'system2' ), springOptions );
   }
 
   hookesLaw.register( 'IntroModel', IntroModel );

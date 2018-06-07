@@ -21,19 +21,20 @@ define( function( require ) {
   var introString = require( 'string!HOOKES_LAW/intro' );
 
   /**
-   * @param {Object} [options]
+   * @param {Tandem} tandem
    * @constructor
    */
-  function IntroScreen( options ) {
+  function IntroScreen( tandem ) {
 
-    options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: introString,
-      homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon()
-    }, options );
+      homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
+      tandem: tandem
+    } );
 
     Screen.call( this,
-      function() { return new IntroModel(); },
-      function( model ) { return new IntroScreenView( model ); },
+      function() { return new IntroModel( tandem.createTandem( 'model' ) ); },
+      function( model ) { return new IntroScreenView( model, tandem.createTandem( 'view' ) ); },
       options
     );
   }

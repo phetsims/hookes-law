@@ -23,11 +23,14 @@ define( function( require ) {
 
   /**
    * @param {SystemsModel} model
+   * @param {Tandem} tandem
    * @constructor
    */
-  function SystemsScreenView( model ) {
+  function SystemsScreenView( model, tandem ) {
 
-    ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
+    ScreenView.call( this, _.extend( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
+      tandem: tandem
+    } ) );
 
     // View length of 1 meter of displacement
     var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;

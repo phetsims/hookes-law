@@ -22,13 +22,16 @@ define( function( require ) {
 
   /**
    * @param {IntroModel} model
+   * @param {Tandem} tandem
    * @constructor
    */
-  function IntroScreenView( model ) {
+  function IntroScreenView( model, tandem ) {
 
     var self = this;
-    
-    ScreenView.call( this, HookesLawConstants.SCREEN_VIEW_OPTIONS );
+
+    ScreenView.call( this, _.extend( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
+      tandem: tandem
+    } ) );
 
     // View length of 1 meter of displacement
     var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;

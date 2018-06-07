@@ -15,10 +15,11 @@ define( function( require ) {
   var SingleSpringSystem = require( 'HOOKES_LAW/common/model/SingleSpringSystem' );
 
   /**
+   * @param {Tandem} tandem
    * @constructor
    */
-  function EnergyModel() {
-    this.system = new SingleSpringSystem( {
+  function EnergyModel( tandem ) {
+    this.system = new SingleSpringSystem( tandem.createTandem( 'system' ), {
       springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = N/m
       displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m
     } );

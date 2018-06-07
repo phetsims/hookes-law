@@ -31,9 +31,9 @@ define( function( require ) {
 
   SimLauncher.launch( function() {
     var screens = [
-      new IntroScreen( { tandem: Tandem.rootTandem.createTandem( 'introScreen' ) } ),
-      new SystemsScreen( { tandem: Tandem.rootTandem.createTandem( 'systemsScreen' ) } ),
-      new EnergyScreen( { tandem: Tandem.rootTandem.createTandem( 'energyScreen' ) } )
+      new IntroScreen( Tandem.rootTandem.createTandem( 'introScreen' ) ),
+      new SystemsScreen( Tandem.rootTandem.createTandem( 'systemsScreen' ) ),
+      new EnergyScreen( Tandem.rootTandem.createTandem( 'energyScreen' ) )
     ];
     var sim = new Sim( hookesLawTitleString, screens, options );
     sim.start();
