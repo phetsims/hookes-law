@@ -25,11 +25,11 @@ define( function( require ) {
     // Components of the system
 
     // @public spring
-    this.spring = new Spring( springOptions );
+    this.spring = new Spring( tandem.createTandem( 'spring' ), springOptions );
     assert && assert( this.spring.displacementProperty.get() === 0 ); // spring is at equilibrium
 
     // @public arm, left end attached to spring
-    this.roboticArm = new RoboticArm( {
+    this.roboticArm = new RoboticArm( tandem.createTandem( 'roboticArm' ), {
       left: this.spring.rightProperty.get(),
       right: this.spring.rightProperty.get() + this.spring.lengthProperty.get()
     } );

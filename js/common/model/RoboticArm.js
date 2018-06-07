@@ -14,10 +14,11 @@ define( function( require ) {
   var NumberProperty = require( 'AXON/NumberProperty' );
 
   /**
+   * @param {Tandem} tandem
    * @param {Object} [options]
    * @constructor
    */
-  function RoboticArm( options ) {
+  function RoboticArm( tandem, options ) {
 
     var self = this;
     
@@ -30,7 +31,8 @@ define( function( require ) {
 
     // @public left (movable) end of the arm, constrained to extend from right to left
     this.leftProperty = new NumberProperty( options.left, {
-      isValidValue: function( value ) { return value < self.right; }
+      isValidValue: function( value ) { return value < self.right; },
+      tandem: tandem.createTandem( 'leftProperty' )
     } );
   }
 

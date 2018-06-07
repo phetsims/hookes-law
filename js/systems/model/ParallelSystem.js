@@ -45,7 +45,7 @@ define( function( require ) {
     // Components of the system
 
     // @public
-    this.topSpring = new Spring( {
+    this.topSpring = new Spring( tandem.createTandem( 'topSpring' ), {
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
@@ -54,7 +54,7 @@ define( function( require ) {
     } );
 
     // @public bottom spring, in parallel with top spring, with identical configuration
-    this.bottomSpring = new Spring( {
+    this.bottomSpring = new Spring( tandem.createTandem( 'bottomSpring' ), {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange,
@@ -69,7 +69,7 @@ define( function( require ) {
       'top and bottom springs must have same equilibrium position' );
 
     // @public the single spring that is equivalent to the 2 springs in parallel
-    this.equivalentSpring = new Spring( {
+    this.equivalentSpring = new Spring( tandem.createTandem( 'equivalentSpring' ), {
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       // keq = k1 + k2
@@ -83,7 +83,7 @@ define( function( require ) {
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 
     // @public robotic arm, connected to the right end of the equivalent spring
-    this.roboticArm = new RoboticArm( {
+    this.roboticArm = new RoboticArm( tandem.createTandem( 'roboticArm' ), {
       left: this.equivalentSpring.rightProperty.get(),
       right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get()
     } );

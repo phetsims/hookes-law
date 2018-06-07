@@ -37,10 +37,11 @@ define( function( require ) {
   var RangeWithValue = require( 'DOT/RangeWithValue' );
 
   /**
+   * @param {Tandem} tandem
    * @param {Object} [options]
    * @constructor
    */
-  function Spring( options ) {
+  function Spring( tandem, options ) {
 
     options = _.extend( {
 
