@@ -30,6 +30,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
   var XYAxes = require( 'HOOKES_LAW/energy/view/XYAxes' );
@@ -92,7 +93,10 @@ define( function( require ) {
 
       // point
       pointFill: 'black',
-      pointRadius: 5
+      pointRadius: 5,
+
+      // phet-io
+      tandem: Tandem.required
 
     }, options );
 
