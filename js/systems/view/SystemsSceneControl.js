@@ -36,8 +36,8 @@ define( function( require ) {
     }, options );
 
     RadioButtonGroup.call( this, seriesParallelProperty, [
-      { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon() },
-      { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon() }
+      { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
+      { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
     ], options );
   }
 

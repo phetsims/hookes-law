@@ -84,12 +84,15 @@ define( function( require ) {
     var equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
-      HookesLawConstants.CHECK_BOX_OPTIONS );
+      _.extend( {
+        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+
     var valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       _.extend( {
-        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+        tandem: options.tandem.createTandem( 'valuesCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.

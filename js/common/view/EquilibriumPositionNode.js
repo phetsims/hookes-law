@@ -26,7 +26,7 @@ define( function( require ) {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],
-      tandem: Tandem.required
+      tandem: Tandem.optional // because this node is used to create icons
     }, options );
 
     Line.call( this, 0, 0, 0, length, options );

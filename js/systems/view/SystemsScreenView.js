@@ -62,7 +62,8 @@ define( function( require ) {
       unitDisplacementLength: unitDisplacementLength,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.seriesParallelProperty.get() === 'series'
+      visible: viewProperties.seriesParallelProperty.get() === 'series',
+      tandem: tandem.createTandem( 'seriesSystemNode' )
     } );
     this.addChild( seriesSystemNode );
 
@@ -71,7 +72,8 @@ define( function( require ) {
       unitDisplacementLength: unitDisplacementLength,
       left: seriesSystemNode.left,
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.seriesParallelProperty.get() === 'parallel'
+      visible: viewProperties.seriesParallelProperty.get() === 'parallel',
+      tandem: tandem.createTandem( 'parallelSystemNode' )
     } );
     assert && assert( parallelSystemNode.height < this.layoutBounds.height, 'parallel system is too tall' );
     this.addChild( parallelSystemNode );

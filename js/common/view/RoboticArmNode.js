@@ -150,7 +150,10 @@ define( function( require ) {
 
       end: function( event ) {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
-      }
+      },
+
+      // phet-io
+      tandem: options.tandem.createTandem( 'dragHandler' )
     } );
     draggableNode.addInputListener( dragHandler );
 

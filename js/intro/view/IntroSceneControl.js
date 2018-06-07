@@ -36,8 +36,8 @@ define( function( require ) {
     }, options );
 
     RadioButtonGroup.call( this, numberOfSystemsProperty, [
-      { value: 1, node: HookesLawIconFactory.createSingleSpringIcon() },
-      { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon() }
+      { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
+      { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
     ], options );
   }
 
