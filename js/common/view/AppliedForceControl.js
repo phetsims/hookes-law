@@ -15,6 +15,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'SCENERY_PHET/NumberControl' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
 
@@ -60,6 +61,8 @@ define( function( require ) {
     } ];
 
     options = _.extend( {
+
+      // NumberControl options
       title: appliedForceColonString,
       titleMaxWidth: 200, // i18n, determined empirically
       titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
@@ -72,7 +75,10 @@ define( function( require ) {
       minorTickSpacing: MINOR_TICK_SPACING,
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
       startCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 ); },
-      endCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 ); }
+      endCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 ); },
+
+      // phet-io
+      tandem: Tandem.required
     }, options );
 
     NumberControl.call( this, options.title, appliedForceProperty, appliedForceRange, options );

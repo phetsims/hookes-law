@@ -54,7 +54,8 @@ define( function( require ) {
         leftSpring.springConstantRange.min,
         leftSpring.springConstantRange.getCenter(),
         leftSpring.springConstantRange.max
-      ]
+      ],
+      tandem: options.tandem.createTandem( 'leftSpringConstantControl' )
     } );
 
     var rightSpring = system.rightSpring;
@@ -66,7 +67,8 @@ define( function( require ) {
         rightSpring.springConstantRange.min,
         rightSpring.springConstantRange.getCenter(),
         rightSpring.springConstantRange.max
-      ]
+      ],
+      tandem: options.tandem.createTandem( 'rightSpringConstantControl' )
     } );
 
     // "left" control to the left of "right" control, to reflect layout of system
@@ -80,7 +82,9 @@ define( function( require ) {
     } );
 
     var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
-      system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty );
+      system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty, {
+        tandem: options.tandem.createTandem( 'appliedForceControl' )
+      } );
 
     assert && assert( !options.children, 'SeriesSpringControls sets children' );
     options.children = [

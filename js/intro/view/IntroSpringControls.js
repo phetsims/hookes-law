@@ -47,12 +47,14 @@ define( function( require ) {
         spring.springConstantRange.min,
         spring.springConstantRange.max / 2,
         spring.springConstantRange.max
-      ]
+      ],
+      tandem: options.tandem.createTandem( 'springConstantControl' )
     } );
 
     var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
       numberOfInteractionsInProgressProperty, {
-        title: StringUtils.format( appliedForceNumberString, options.number )
+        title: StringUtils.format( appliedForceNumberString, options.number ),
+        tandem: options.tandem.createTandem( 'appliedForceControl' )
       } );
 
     assert && assert( !options.children, 'IntroSpringControls sets children' );

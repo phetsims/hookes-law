@@ -15,6 +15,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'SCENERY_PHET/NumberControl' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
 
@@ -47,7 +48,10 @@ define( function( require ) {
       valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
       minorTickSpacing: 100,
-      thumbFillEnabled: HookesLawColors.SINGLE_SPRING
+      thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
+
+      // phet-io
+      tandem: Tandem.required
     }, options );
 
     // major ticks
