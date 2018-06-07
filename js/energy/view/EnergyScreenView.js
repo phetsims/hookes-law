@@ -42,7 +42,8 @@ define( function( require ) {
     var visibilityControls = new EnergyVisibilityControls( viewProperties, {
       right: this.layoutBounds.right - 10,
       top: 10,
-      maxWidth: 235 // constrain width for i18n, determining empirically
+      maxWidth: 235, // constrain width for i18n, determining empirically
+      tandem: tandem.createTandem( 'visibilityControls' )
     } );
     this.addChild( visibilityControls );
 
@@ -51,14 +52,16 @@ define( function( require ) {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 35,
-      bottom: this.layoutBounds.bottom - 10
+      bottom: this.layoutBounds.bottom - 10,
+      tandem: tandem.createTandem( 'systemNode' )
     } );
     this.addChild( systemNode );
 
     // Energy bar graph
     var energyBarGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
       // x position depends on whether XY plots are visible
-      bottom: systemNode.top - 35
+      bottom: systemNode.top - 35,
+      tandem: tandem.createTandem( 'energyBarGraph' )
     } );
     this.addChild( energyBarGraph );
 
@@ -69,7 +72,8 @@ define( function( require ) {
       viewProperties.energyOnForcePlotVisibleProperty, {
         // origin aligned with equilibrium position
         x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
-        bottom: energyBarGraph.bottom
+        bottom: energyBarGraph.bottom,
+        tandem: tandem.createTandem( 'forceXYPlot' )
       } );
     this.addChild( forceXYPlot );
 
@@ -77,7 +81,8 @@ define( function( require ) {
     var energyXYPlot = new EnergyXYPlot( model.system.spring, unitDisplacementLength,
       viewProperties.valuesVisibleProperty, viewProperties.displacementVectorVisibleProperty, {
         x: forceXYPlot.x,
-        y: energyBarGraph.bottom
+        y: energyBarGraph.bottom,
+        tandem: tandem.createTandem( 'energyXYPlot' )
       } );
     this.addChild( energyXYPlot );
 
@@ -88,7 +93,8 @@ define( function( require ) {
         viewProperties.reset();
       },
       right: this.layoutBounds.maxX - 15,
-      bottom: this.layoutBounds.maxY - 15
+      bottom: this.layoutBounds.maxY - 15,
+      tandem: tandem.createTandem( 'resetAllButton' )
     } );
     this.addChild( resetAllButton );
 

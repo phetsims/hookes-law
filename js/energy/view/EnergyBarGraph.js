@@ -18,6 +18,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
 
@@ -37,7 +38,10 @@ define( function( require ) {
    */
   function EnergyBarGraph( spring, valueVisibleProperty, options ) {
 
-    options = options || {};
+    options = _.extend( {
+      // phet-io
+      tandem: Tandem.required
+    }, options );
 
     var xAxisNode = new Line( 0, 0, 1.65 * BAR_WIDTH, 0, {
       stroke: 'black',

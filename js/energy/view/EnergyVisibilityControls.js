@@ -22,6 +22,7 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -41,7 +42,9 @@ define( function( require ) {
    */
   function EnergyVisibilityControls( properties, options ) {
 
-    options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
+    options = _.extend( {
+      tandem: Tandem.required
+    }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
     var energyBarRadioButton = new AquaRadioButton( properties.graphProperty, 'energyBar',

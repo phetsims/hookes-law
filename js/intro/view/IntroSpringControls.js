@@ -17,6 +17,7 @@ define( function( require ) {
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   // strings
   var appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
@@ -34,7 +35,10 @@ define( function( require ) {
       number: 1, // {number} used to label the controls, eg "Spring Constant 1"
 
       // HBox options
-      spacing: 10
+      spacing: 10,
+
+      // phet-io
+      tandem: Tandem.required
     }, options );
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {

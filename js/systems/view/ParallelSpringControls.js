@@ -19,6 +19,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
@@ -39,7 +40,10 @@ define( function( require ) {
     options = _.extend( {
 
       // HBox options
-      spacing: 10
+      spacing: 10,
+
+      // phet-io
+      tandem: Tandem.required
     }, options );
 
     var topSpring = system.topSpring;

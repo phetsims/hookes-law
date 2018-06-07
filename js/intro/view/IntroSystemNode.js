@@ -26,6 +26,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -39,7 +40,10 @@ define( function( require ) {
 
     options = _.extend( {
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      number: 1 // integer used to label the system
+      number: 1, // integer used to label the system
+
+      // phet-io
+      tandem: Tandem.required
     }, options );
 
     // to improve readability
@@ -119,7 +123,8 @@ define( function( require ) {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10,
-      maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
+      maxWidth: roboticArmNode.right - wallNode.left, // constrain width for i18n
+      tandem: options.tandem.createTandem( 'springControls' )
     } );
 
     assert && assert( !options.children, 'IntroSystemNode sets children' );

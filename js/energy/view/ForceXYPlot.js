@@ -18,6 +18,7 @@ define( function( require ) {
   var Path = require( 'SCENERY/nodes/Path' );
   var Property = require( 'AXON/Property' );
   var Shape = require( 'KITE/Shape' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Util = require( 'DOT/Util' );
   var XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
 
@@ -65,7 +66,10 @@ define( function( require ) {
       yUnits: newtonsString,
       yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       yValueFill: HookesLawColors.APPLIED_FORCE,
-      yUnitLength: HookesLawConstants.UNIT_FORCE_Y
+      yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
+
+      // phet-io
+      tandem: Tandem.required
 
     }, options );
 

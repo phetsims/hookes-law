@@ -16,6 +16,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {Spring} spring
@@ -28,7 +29,8 @@ define( function( require ) {
     options = _.extend( {
 
       // HBox options
-      spacing: 10
+      spacing: 10,
+      tandem: Tandem.required
     }, options );
 
     var majorTickValues = [];

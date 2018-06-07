@@ -25,6 +25,7 @@ define( function( require ) {
   var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   var SeriesSpringControls = require( 'HOOKES_LAW/systems/view/SeriesSpringControls' );
   var SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Util = require( 'DOT/Util' );
   var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
@@ -37,7 +38,8 @@ define( function( require ) {
   function SeriesSystemNode( system, viewProperties, options ) {
 
     options = _.extend( {
-      unitDisplacementLength: 1 // {number} view length of 1 meter of displacement
+      unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
+      tandem: Tandem.required
     }, options );
 
     // to improve readability
@@ -149,7 +151,8 @@ define( function( require ) {
     var springControls = new SeriesSpringControls( system, numberOfInteractionsInProgressProperty, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 25,
-      maxWidth: roboticArmNode.right - wallNode.left // constrain width for i18n
+      maxWidth: roboticArmNode.right - wallNode.left, // constrain width for i18n
+      tandem: options.tandem.createTandem( 'springControls' )
     } );
 
     assert && assert( !options.children, 'SeriesSystemNode sets children' );

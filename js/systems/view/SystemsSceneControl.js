@@ -13,6 +13,7 @@ define( function( require ) {
   var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
@@ -28,7 +29,10 @@ define( function( require ) {
       spacing: 10,
       buttonContentXMargin: 5,
       buttonContentYMargin: 5,
-      selectedLineWidth: 2
+      selectedLineWidth: 2,
+
+      // phet-io
+      tandem: Tandem.required
     }, options );
 
     RadioButtonGroup.call( this, seriesParallelProperty, [

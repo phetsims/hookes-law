@@ -17,6 +17,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var Panel = require( 'SUN/Panel' );
   var Property = require( 'AXON/Property' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var VBox = require( 'SCENERY/nodes/VBox' );
 
@@ -33,7 +34,9 @@ define( function( require ) {
    */
   function IntroVisibilityControls( properties, options ) {
 
-    options = _.extend( _.clone( HookesLawConstants.VISIBILITY_PANEL_OPTIONS ), options );
+    options = _.extend( {
+      tandem: Tandem.required
+    }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // text labels on the vector checkboxes
     var appliedForceTextNode = new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );

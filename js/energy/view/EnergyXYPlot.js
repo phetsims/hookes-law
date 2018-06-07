@@ -16,6 +16,7 @@ define( function( require ) {
   var Node = require( 'SCENERY/nodes/Node' );
   var Path = require( 'SCENERY/nodes/Path' );
   var Shape = require( 'KITE/Shape' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
 
   // strings
@@ -61,7 +62,10 @@ define( function( require ) {
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
       yValueFill: HookesLawColors.ENERGY,
       yUnitLength: HookesLawConstants.UNIT_ENERGY_Y, // length of a 1J energy vector
-      yValueBackgroundColor: 'rgba( 255, 255, 255, 0.7)' // translucent background, because value sometimes overlaps the curve
+      yValueBackgroundColor: 'rgba( 255, 255, 255, 0.7)', // translucent background, because value sometimes overlaps the curve
+
+      // phet-io
+      tandem: Tandem.required
 
     }, options );
 

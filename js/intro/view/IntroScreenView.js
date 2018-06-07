@@ -30,6 +30,8 @@ define( function( require ) {
     var self = this;
 
     ScreenView.call( this, _.extend( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
+
+      // phet-io
       tandem: tandem
     } ) );
 
@@ -41,11 +43,14 @@ define( function( require ) {
 
     // Visibility controls
     var visibilityControls = new IntroVisibilityControls( viewProperties, {
-      maxWidth: 250 // constrain width for i18n, determining empirically
+      maxWidth: 250, // constrain width for i18n, determining empirically
+      tandem: tandem.createTandem( 'visibilityControls' )
     } );
 
     // Control for switching between 1 and 2 systems
-    var sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty );
+    var sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty, {
+      tandem: tandem.createTandem( 'sceneControl' )
+    } );
 
     // horizontally center the controls
     this.addChild( new VBox( {
@@ -60,7 +65,8 @@ define( function( require ) {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
-      centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height )
+      centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height ),
+      tandem: tandem.createTandem( 'system1Node' )
     } );
     this.addChild( system1Node );
     assert && assert( system1Node.height <= this.layoutBounds.height / 2, 'system1Node is taller than the space available for it' );
@@ -71,7 +77,8 @@ define( function( require ) {
       number: 2,
       left: system1Node.left,
       centerY: 0.75 * this.layoutBounds.height,
-      visible: ( viewProperties.numberOfSystemsProperty.get() === 2 )
+      visible: ( viewProperties.numberOfSystemsProperty.get() === 2 ),
+      tandem: tandem.createTandem( 'system2Node' )
     } );
     this.addChild( system2Node );
     assert && assert( system2Node.height <= this.layoutBounds.height / 2, 'system2Node is taller than the space available for it' );
@@ -83,7 +90,8 @@ define( function( require ) {
         viewProperties.reset();
       },
       right: this.layoutBounds.maxX - 15,
-      bottom: this.layoutBounds.maxY - 15
+      bottom: this.layoutBounds.maxY - 15,
+      tandem: tandem.createTandem( 'resetAllButton' )
     } );
     this.addChild( resetAllButton );
 

@@ -40,11 +40,14 @@ define( function( require ) {
 
     // Visibility controls
     var visibilityControls = new SystemsVisibilityControls( viewProperties, {
-      maxWidth: 260 // constrain width for i18n, determining empirically
+      maxWidth: 260, // constrain width for i18n, determining empirically
+      tandem: tandem.createTandem( 'visibilityControls' )
     } );
 
     // Control for switching between series and parallel systems
-    var sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty );
+    var sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty, {
+      tandem: tandem.createTandem( 'sceneControl' )
+    } );
 
     // horizontally center the controls
     this.addChild( new VBox( {
@@ -80,7 +83,8 @@ define( function( require ) {
         viewProperties.reset();
       },
       right: this.layoutBounds.maxX - 15,
-      bottom: this.layoutBounds.maxY - 15
+      bottom: this.layoutBounds.maxY - 15,
+      tandem: tandem.createTandem( 'resetAllButton' )
     } );
     this.addChild( resetAllButton );
 
