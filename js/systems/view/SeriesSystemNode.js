@@ -63,7 +63,8 @@ define( function( require ) {
     // origin is at right-center of wall
     var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
       right: options.unitDisplacementLength * leftSpring.leftProperty.get(),
-      centerY: yOrigin
+      centerY: yOrigin,
+      tandem: options.tandem.createTandem( 'wallNode' )
     } );
 
     var leftSpringNode = new HookesLawSpringNode( leftSpring, {
@@ -74,7 +75,8 @@ define( function( require ) {
       backColor: HookesLawColors.LEFT_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * leftSpring.leftProperty.get(),
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'leftSpringNode' )
     } );
 
     var rightSpringNode = new HookesLawSpringNode( rightSpring, {
@@ -85,7 +87,8 @@ define( function( require ) {
       backColor: HookesLawColors.RIGHT_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       // x is based on rightSpring.leftProperty
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'rightSpringNode' )
     } );
 
     // pincers grab this
@@ -98,12 +101,14 @@ define( function( require ) {
     var roboticArmNode = new RoboticArmNode( roboticArm, rightSpring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'roboticArmNode' )
     } );
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.get(),
-      centerY: yOrigin
+      centerY: yOrigin,
+      tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
     var leftSpringForceVectorNode = new SpringForceVectorNode(
@@ -111,33 +116,38 @@ define( function( require ) {
         fill: HookesLawColors.LEFT_SPRING,
         // x is determined by leftSpring.rightProperty
         // bottom determined empirically, leftSpringNode.top is not accurate because we're using boundsMethod:'none'
-        bottom: leftSpringNode.y - 65
+        bottom: leftSpringNode.y - 65,
+        tandem: options.tandem.createTandem( 'leftSpringForceVectorNode' )
       } );
 
     var leftAppliedForceVectorNode = new AppliedForceVectorNode(
       leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.RIGHT_SPRING,
         // x is determined by leftSpring.rightProperty
-        y: leftSpringForceVectorNode.y
+        y: leftSpringForceVectorNode.y,
+        tandem: options.tandem.createTandem( 'leftAppliedForceVectorNode' )
       } );
 
     var rightSpringForceVectorNode = new SpringForceVectorNode(
       rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.RIGHT_SPRING,
         // x is determined by rightSpring.rightProperty
-        bottom: leftSpringForceVectorNode.top - 10
+        bottom: leftSpringForceVectorNode.top - 10,
+        tandem: options.tandem.createTandem( 'rightSpringForceVectorNode' )
       } );
 
     var appliedForceVectorNode = new AppliedForceVectorNode(
       equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by rightSpring.rightProperty
-        y: rightSpringForceVectorNode.y
+        y: rightSpringForceVectorNode.y,
+        tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
     var totalSpringForceVectorNode = new SpringForceVectorNode(
       equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by rightSpring.rightProperty
-        y: appliedForceVectorNode.y
+        y: appliedForceVectorNode.y,
+        tandem: options.tandem.createTandem( 'totalSpringForceVectorNode' )
       } );
 
     var displacementVectorNode = new DisplacementVectorNode(
@@ -145,7 +155,8 @@ define( function( require ) {
         unitDisplacementLength: options.unitDisplacementLength,
         x: equilibriumPositionNode.centerX,
         // top determined empirically, leftSpringNode.bottom is not accurate because we're using boundMethod:'none'
-        top: leftSpringNode.y + 50
+        top: leftSpringNode.y + 50,
+        tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
     var springControls = new SeriesSpringControls( system, numberOfInteractionsInProgressProperty, {

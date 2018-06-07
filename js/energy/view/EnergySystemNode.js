@@ -61,7 +61,8 @@ define( function( require ) {
     // origin is at right-center of wall
     var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
       right: options.unitDisplacementLength * spring.leftProperty.get(),
-      centerY: yOrigin
+      centerY: yOrigin,
+      tandem: options.tandem.createTandem( 'wallNode' )
     } );
 
     var springNode = new HookesLawSpringNode( spring, {
@@ -72,7 +73,8 @@ define( function( require ) {
       unitDisplacementLength: options.unitDisplacementLength,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * spring.leftProperty.get(),
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'springNode' )
     } );
 
     // pincers grab this
@@ -85,7 +87,8 @@ define( function( require ) {
     var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'roboticArmNode' )
     } );
 
     var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {

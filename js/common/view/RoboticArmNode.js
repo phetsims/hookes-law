@@ -22,6 +22,7 @@ define( function( require ) {
   var Rectangle = require( 'SCENERY/nodes/Rectangle' );
   var Shape = require( 'KITE/Shape' );
   var SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
+  var Tandem = require( 'TANDEM/Tandem' );
   var Util = require( 'DOT/Util' );
 
   // constants
@@ -50,7 +51,8 @@ define( function( require ) {
 
     options = _.extend( {
       cursor: 'pointer',
-      unitDisplacementLength: 1  // view length of a 1m displacement
+      unitDisplacementLength: 1,  // view length of a 1m displacement
+      tandem: Tandem.required
     }, options );
 
     // red box at right end of the arm, origin is at left-center

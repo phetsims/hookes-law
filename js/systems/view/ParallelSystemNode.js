@@ -68,7 +68,8 @@ define( function( require ) {
     // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {
       right: options.unitDisplacementLength * equivalentSpring.leftProperty.get(),
-      centerY: yOrigin
+      centerY: yOrigin,
+      tandem: options.tandem.createTandem( 'wallNode' )
     } );
 
     var topSpringNode = new HookesLawSpringNode( topSpring, {
@@ -79,7 +80,8 @@ define( function( require ) {
       backColor: HookesLawColors.TOP_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * topSpring.leftProperty.get(),
-      y: wallNode.top + ( 0.25 * wallNode.height )
+      y: wallNode.top + ( 0.25 * wallNode.height ),
+      tandem: options.tandem.createTandem( 'topSpringNode' )
     } );
 
     var bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
@@ -90,13 +92,15 @@ define( function( require ) {
       backColor: HookesLawColors.BOTTOM_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
-      y: wallNode.bottom - ( 0.25 * wallNode.height )
+      y: wallNode.bottom - ( 0.25 * wallNode.height ),
+      tandem: options.tandem.createTandem( 'bottomSpringNode' )
     } );
 
     var roboticArmNode = new RoboticArmNode( roboticArm, equivalentSpring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'roboticArmNode' )
     } );
 
     // right ends of both springs are connected to this

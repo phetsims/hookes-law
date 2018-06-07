@@ -14,6 +14,7 @@ define( function( require ) {
   var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ShadedRectangle = require( 'SCENERY_PHET/ShadedRectangle' );
+  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {Dimension2} size
@@ -26,7 +27,10 @@ define( function( require ) {
       baseColor: HookesLawColors.WALL_FILL,
       stroke: HookesLawColors.WALL_STROKE,
       lineWidth: 0.5,
-      cornerRadius: 6
+      cornerRadius: 6,
+
+      // phet-io
+      tandem: Tandem.required
     }, options );
 
     ShadedRectangle.call( this, new Bounds2( 0, 0, size.width, size.height ), options );
