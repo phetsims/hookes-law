@@ -16,6 +16,7 @@ define( function( require ) {
   var IntroSystemNode = require( 'HOOKES_LAW/intro/view/IntroSystemNode' );
   var IntroViewProperties = require( 'HOOKES_LAW/intro/view/IntroViewProperties' );
   var IntroVisibilityControls = require( 'HOOKES_LAW/intro/view/IntroVisibilityControls' );
+  var NumberProperty = require( 'AXON/NumberProperty' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -103,6 +104,14 @@ define( function( require ) {
     var tweenPosition2;
     var tweenOpacity2;
 
+    // The vertical position of system 1, controlled via a Property to support PhET-iO record & playback. See #53.
+    var system1CenterYProperty = new NumberProperty( system1Node.centerY, {
+      tandem: tandem.createTandem( 'system1CenterYProperty' )
+    } );
+    system1CenterYProperty.link( function( centerY ) {
+      system1Node.centerY = centerY;
+    } );
+
     viewProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
@@ -117,7 +126,7 @@ define( function( require ) {
       var tweenParameters;
       if ( numberOfSystems === 1 ) {
 
-        tweenParameters = { y: system1Node.centerY, opacity: 1 };
+        tweenParameters = { y: system1CenterYProperty.get(), opacity: 1 };
 
         // fade out system 2
         tweenOpacity2 = new TWEEN.Tween( tweenParameters )
@@ -134,20 +143,20 @@ define( function( require ) {
         tweenPosition1 = new TWEEN.Tween( tweenParameters )
           .to( { y: self.layoutBounds.centerY }, 500 )
           .onUpdate( function() {
-            system1Node.centerY = tweenParameters.y;
+            system1CenterYProperty.set( tweenParameters.y );
           } );
 
         tweenOpacity2.start( phet.joist.elapsedTime );
       }
       else {
 
-        tweenParameters = { y: system1Node.centerY, opacity: 0 };
+        tweenParameters = { y: system1CenterYProperty.get(), opacity: 0 };
 
         // move system 1 to top half of screen
         tweenPosition1 = new TWEEN.Tween( tweenParameters )
           .to( { y: 0.25 * self.layoutBounds.height }, 500 )
           .onUpdate( function() {
-            system1Node.centerY = tweenParameters.y;
+            system1CenterYProperty.set( tweenParameters.y );
           } )
           .onComplete( function() {
             tweenOpacity2.start( phet.joist.elapsedTime );
