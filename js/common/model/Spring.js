@@ -34,12 +34,14 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var Range = require( 'DOT/Range' );
-  var RangeIO = require( 'ifphetio!PHET_IO/types/RangeIO' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
+
+  // ifphetio
+  var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
+  var RangeIO = require( 'ifphetio!PHET_IO/types/RangeIO' );
 
   /**
    * @param {Object} [options]
