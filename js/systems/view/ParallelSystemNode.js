@@ -68,8 +68,7 @@ define( function( require ) {
     // origin is at right-center of wall
     var wallNode = new WallNode( WALL_SIZE, {
       right: options.unitDisplacementLength * equivalentSpring.leftProperty.get(),
-      centerY: yOrigin,
-      tandem: options.tandem.createTandem( 'wallNode' )
+      centerY: yOrigin
     } );
 
     var topSpringNode = new HookesLawSpringNode( topSpring, {
