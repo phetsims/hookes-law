@@ -41,7 +41,7 @@ define( function( require ) {
 
   // ifphetio
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
-  var RangeIO = require( 'ifphetio!PHET_IO/types/RangeIO' );
+  var RangeIO = require( 'ifphetio!DOT/RangeIO' );
 
   /**
    * @param {Object} [options]
