@@ -21,6 +21,8 @@ define( function( require ) {
    */
   function SingleSpringSystem( tandem, springOptions ) {
 
+    var self = this;
+
     //------------------------------------------------
     // Components of the system
 
@@ -39,8 +41,6 @@ define( function( require ) {
 
     //------------------------------------------------
     // Property observers
-
-    var self = this;
 
     // Connect arm to spring.
     this.spring.rightProperty.link( function( right ) {

@@ -21,6 +21,8 @@ define( function( require ) {
    */
   function HookesLawSpringNode( spring, options ) {
 
+    var self = this;
+
     options = _.extend( {
 
       // ParametricSpringNode options
@@ -39,8 +41,6 @@ define( function( require ) {
       tandem: Tandem.required
     }, options );
 
-    var self = this;
-    
     ParametricSpringNode.call( this, options );
 
     // stretch or compress the spring
