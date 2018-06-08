@@ -27,6 +27,7 @@ define( function( require ) {
 
   // constants
   var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
+  var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
   /**
    * @param {SeriesSystem} system
@@ -45,6 +46,10 @@ define( function( require ) {
       tandem: Tandem.required
     }, options );
 
+    // Tandems for Panels that contain the controls
+    var springConstantsPanelTandem = options.tandem.createTandem( 'springConstantsPanel' );
+    var appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
+
     var leftSpring = system.leftSpring;
     var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
       title: leftSpringString,
@@ -55,7 +60,7 @@ define( function( require ) {
         leftSpring.springConstantRange.getCenter(),
         leftSpring.springConstantRange.max
       ],
-      tandem: options.tandem.createTandem( 'leftSpringConstantControl' )
+      tandem: springConstantsPanelTandem.createTandem( 'leftSpringConstantControl' )
     } );
 
     var rightSpring = system.rightSpring;
@@ -68,7 +73,7 @@ define( function( require ) {
         rightSpring.springConstantRange.getCenter(),
         rightSpring.springConstantRange.max
       ],
-      tandem: options.tandem.createTandem( 'rightSpringConstantControl' )
+      tandem: springConstantsPanelTandem.createTandem( 'rightSpringConstantControl' )
     } );
 
     // "left" control to the left of "right" control, to reflect layout of system
@@ -83,13 +88,13 @@ define( function( require ) {
 
     var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
       system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty, {
-        tandem: options.tandem.createTandem( 'appliedForceControl' )
+        tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
       } );
 
     assert && assert( !options.children, 'SeriesSpringControls sets children' );
     options.children = [
-      new Panel( springControls, HookesLawConstants.SPRING_PANEL_OPTIONS ),
-      new Panel( appliedForceControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
+      new Panel( springControls, _.extend( { tandem: springConstantsPanelTandem }, SPRING_PANEL_OPTIONS ) ),
+      new Panel( appliedForceControl, _.extend( { tandem: appliedForcePanelTandem }, SPRING_PANEL_OPTIONS ) )
     ];
 
     HBox.call( this, options );

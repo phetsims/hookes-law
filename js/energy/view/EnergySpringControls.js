@@ -36,20 +36,19 @@ define( function( require ) {
       tandem: Tandem.required
     }, options );
 
-    var majorTickValues = [];
-    for ( var value = spring.springConstantRange.min; value <= spring.springConstantRange.max; value += 100 ) {
-      majorTickValues.push( value );
-    }
+    // Tandems for Panels that contain the controls
+    var springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
+    var displacementPanelTandem = options.tandem.createTandem( 'displacementPanel' );
 
-    // Create tandems to instrument the Panel instances, and use as the parent for the panel contents, so that the
-    // contents will have the correct nested tandems
-    var springConstantControlPanelTandem = options.tandem.createTandem( 'springConstantControlPanel' );
-    var displacementControlPanelTandem = options.tandem.createTandem( 'displacementControlPanel' );
+    var springConstantMajorTickValues = [];
+    for ( var value = spring.springConstantRange.min; value <= spring.springConstantRange.max; value += 100 ) {
+      springConstantMajorTickValues.push( value );
+    }
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       minorTickSpacing: 50,
-      majorTickValues: majorTickValues,
-      tandem: springConstantControlPanelTandem.createTandem( 'springConstantControl' )
+      majorTickValues: springConstantMajorTickValues,
+      tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
     } );
 
     var displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
@@ -59,14 +58,14 @@ define( function( require ) {
         spring.displacementRange.getCenter(),
         spring.displacementRange.max
       ],
-      tandem: displacementControlPanelTandem.createTandem( 'displacementControl' )
+      tandem: displacementPanelTandem.createTandem( 'displacementControl' )
     } );
 
     assert && assert( !options.children, 'EnergySpringControls sets children' );
 
     options.children = [
-      new Panel( springConstantControl, _.extend( { tandem: springConstantControlPanelTandem }, SPRING_PANEL_OPTIONS ) ),
-      new Panel( displacementControl, _.extend( { tandem: displacementControlPanelTandem }, SPRING_PANEL_OPTIONS ) )
+      new Panel( springConstantControl, _.extend( { tandem: springConstantPanelTandem }, SPRING_PANEL_OPTIONS ) ),
+      new Panel( displacementControl, _.extend( { tandem: displacementPanelTandem }, SPRING_PANEL_OPTIONS ) )
     ];
 
     HBox.call( this, options );
