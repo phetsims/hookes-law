@@ -52,6 +52,7 @@ define( function( require ) {
     options = _.extend( {
       cursor: 'pointer',
       unitDisplacementLength: 1,  // view length of a 1m displacement
+      displacementInterval: null, // {number|null} dragging the arm will snap to multiples of this interval
       tandem: Tandem.optional // because this node is used to create icons
     }, options );
 
@@ -146,7 +147,9 @@ define( function( require ) {
         var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
 
         // constrain to multiples of a specific interval, see #54
-        left = Util.roundSymmetric( left / HookesLawConstants.DISPLACEMENT_INTERVAL ) * HookesLawConstants.DISPLACEMENT_INTERVAL;
+        if ( options.displacementInterval ) {
+          left = Util.roundSymmetric( left / options.displacementInterval ) * options.displacementInterval;
+        }
         left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArm.leftProperty.set( left );
       },

@@ -85,6 +85,7 @@ define( function( require ) {
 
     var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
+      displacementInterval: HookesLawConstants.DISPLACEMENT_INTERVAL,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin,
       tandem: options.tandem.createTandem( 'roboticArmNode' )
