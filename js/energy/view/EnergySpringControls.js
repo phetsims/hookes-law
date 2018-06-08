@@ -18,6 +18,9 @@ define( function( require ) {
   var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
   var Tandem = require( 'TANDEM/Tandem' );
 
+  // constants
+  var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
+
   /**
    * @param {Spring} spring
    * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
@@ -38,10 +41,15 @@ define( function( require ) {
       majorTickValues.push( value );
     }
 
+    // Create tandems to instrument the Panel instances, and use as the parent for the panel contents, so that the
+    // contents will have the correct nested tandems
+    var springConstantControlPanelTandem = options.tandem.createTandem( 'springConstantControlPanel' );
+    var displacementControlPanelTandem = options.tandem.createTandem( 'displacementControlPanel' );
+
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       minorTickSpacing: 50,
       majorTickValues: majorTickValues,
-      tandem: options.tandem.createTandem( 'springConstantControl' )
+      tandem: springConstantControlPanelTandem.createTandem( 'springConstantControl' )
     } );
 
     var displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
@@ -51,13 +59,14 @@ define( function( require ) {
         spring.displacementRange.getCenter(),
         spring.displacementRange.max
       ],
-      tandem: options.tandem.createTandem( 'displacementControl' )
+      tandem: displacementControlPanelTandem.createTandem( 'displacementControl' )
     } );
 
     assert && assert( !options.children, 'EnergySpringControls sets children' );
+
     options.children = [
-      new Panel( springConstantControl, HookesLawConstants.SPRING_PANEL_OPTIONS ),
-      new Panel( displacementControl, HookesLawConstants.SPRING_PANEL_OPTIONS )
+      new Panel( springConstantControl, _.extend( { tandem: springConstantControlPanelTandem }, SPRING_PANEL_OPTIONS ) ),
+      new Panel( displacementControl, _.extend( { tandem: displacementControlPanelTandem }, SPRING_PANEL_OPTIONS ) )
     ];
 
     HBox.call( this, options );
