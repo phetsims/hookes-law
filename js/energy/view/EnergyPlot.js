@@ -1,7 +1,7 @@
 // Copyright 2015-2018, University of Colorado Boulder
 
 /**
- * The "Energy Graph" is an XY plot of displacement (x axis) vs energy (y axis).
+ * EnergyPlot is an XY plot of displacement (x axis) vs energy (y axis).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -33,7 +33,7 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function EnergyXYPlot( spring, unitDisplacementLength, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
+  function EnergyPlot( spring, unitDisplacementLength, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
 
     options = _.extend( {
 
@@ -120,7 +120,7 @@ define( function( require ) {
     } );
   }
 
-  hookesLaw.register( 'EnergyXYPlot', EnergyXYPlot );
+  hookesLaw.register( 'EnergyPlot', EnergyPlot );
 
-  return inherit( Node, EnergyXYPlot );
+  return inherit( Node, EnergyPlot );
 } );

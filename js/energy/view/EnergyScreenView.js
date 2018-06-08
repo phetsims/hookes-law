@@ -13,8 +13,8 @@ define( function( require ) {
   var EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
   var EnergyVisibilityControls = require( 'HOOKES_LAW/energy/view/EnergyVisibilityControls' );
-  var EnergyXYPlot = require( 'HOOKES_LAW/energy/view/EnergyXYPlot' );
-  var ForceXYPlot = require( 'HOOKES_LAW/energy/view/ForceXYPlot' );
+  var EnergyPlot = require( 'HOOKES_LAW/energy/view/EnergyPlot' );
+  var ForcePlot = require( 'HOOKES_LAW/energy/view/ForcePlot' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -58,33 +58,33 @@ define( function( require ) {
     this.addChild( systemNode );
 
     // Energy bar graph
-    var energyBarGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
+    var barGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
       // x position depends on whether XY plots are visible
       bottom: systemNode.top - 35,
-      tandem: tandem.createTandem( 'energyBarGraph' )
+      tandem: tandem.createTandem( 'barGraph' )
     } );
-    this.addChild( energyBarGraph );
+    this.addChild( barGraph );
 
-    // Force XY plot
-    var forceXYPlot = new ForceXYPlot( model.system.spring, unitDisplacementLength,
+    // Force plot
+    var forcePlot = new ForcePlot( model.system.spring, unitDisplacementLength,
       viewProperties.valuesVisibleProperty,
       viewProperties.displacementVectorVisibleProperty,
       viewProperties.energyOnForcePlotVisibleProperty, {
         // origin aligned with equilibrium position
         x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
-        bottom: energyBarGraph.bottom,
-        tandem: tandem.createTandem( 'forceXYPlot' )
+        bottom: barGraph.bottom,
+        tandem: tandem.createTandem( 'forcePlot' )
       } );
-    this.addChild( forceXYPlot );
+    this.addChild( forcePlot );
 
-    // Energy XY plot
-    var energyXYPlot = new EnergyXYPlot( model.system.spring, unitDisplacementLength,
+    // Energy plot
+    var energyPlot = new EnergyPlot( model.system.spring, unitDisplacementLength,
       viewProperties.valuesVisibleProperty, viewProperties.displacementVectorVisibleProperty, {
-        x: forceXYPlot.x,
-        y: energyBarGraph.bottom,
-        tandem: tandem.createTandem( 'energyXYPlot' )
+        x: forcePlot.x,
+        y: barGraph.bottom,
+        tandem: tandem.createTandem( 'energyPlot' )
       } );
-    this.addChild( energyXYPlot );
+    this.addChild( energyPlot );
 
     // Reset All button, bottom right
     var resetAllButton = new ResetAllButton( {
@@ -101,15 +101,15 @@ define( function( require ) {
     // Observe view properties
     viewProperties.graphProperty.link( function( graph ) {
 
-      forceXYPlot.visible = ( graph === 'forceXY' );
-      energyXYPlot.visible = ( graph === 'energyXY' );
+      forcePlot.visible = ( graph === 'forcePlot' );
+      energyPlot.visible = ( graph === 'energyPlot' );
 
       if ( graph === 'energyBar' ) {
         // aligned with equilibrium position
-        energyBarGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
+        barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
       }
       else {
-        energyBarGraph.left = 15;
+        barGraph.left = 15;
       }
     } );
   }

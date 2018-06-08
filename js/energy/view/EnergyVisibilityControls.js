@@ -47,22 +47,22 @@ define( function( require ) {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
-    var energyBarRadioButton = new AquaRadioButton( properties.graphProperty, 'energyBar',
+    var barGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'barGraph',
       new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       _.extend( {
-        tandem: options.tandem.createTandem( 'energyBarRadioButton' )
+        tandem: options.tandem.createTandem( 'barGraphRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    var energyXYRadioButton = new AquaRadioButton( properties.graphProperty, 'energyXY',
+    var energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, 'energyPlot',
       new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       _.extend( {
-        tandem: options.tandem.createTandem( 'energyXYRadioButton' )
+        tandem: options.tandem.createTandem( 'energyPlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    var forceXYRadioButton = new AquaRadioButton( properties.graphProperty, 'forceXY',
+    var forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, 'forcePlot',
       new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       _.extend( {
-        tandem: options.tandem.createTandem( 'forceXYRadioButton' )
+        tandem: options.tandem.createTandem( 'forcePlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     // energy checkbox, enabled when "Force Plot" radio button is selected
@@ -80,7 +80,7 @@ define( function( require ) {
         tandem: options.tandem.createTandem( 'energyCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
     properties.graphProperty.link( function( graph ) {
-      energyCheckbox.enabled = ( graph === 'forceXY' );
+      energyCheckbox.enabled = ( graph === 'forcePlot' );
     } );
 
     // other checkboxes
@@ -120,9 +120,9 @@ define( function( require ) {
     // Adjust touch areas
     var spacing = 20;
     var controls = [
-      energyBarRadioButton,
-      energyXYRadioButton,
-      forceXYRadioButton,
+      barGraphRadioButton,
+      energyPlotRadioButton,
+      forcePlotRadioButton,
       energyCheckbox,
       appliedForceCheckbox,
       displacementCheckbox,
@@ -137,9 +137,9 @@ define( function( require ) {
 
     var content = new VBox( {
       children: [
-        energyBarRadioButton,
-        energyXYRadioButton,
-        forceXYRadioButton,
+        barGraphRadioButton,
+        energyPlotRadioButton,
+        forcePlotRadioButton,
         // "Energy" checkbox indented below "Force Plot" radio button
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
         new HSeparator( maxControlWidth, HookesLawConstants.SEPARATOR_OPTIONS ),

@@ -1,7 +1,7 @@
 // Copyright 2015-2018, University of Colorado Boulder
 
 /**
- *  The "Force Graph" is an XY plot of displacement (x axis) vs force (y axis),
+ *  ForcePlot is an XY plot of displacement (x axis) vs force (y axis),
  *  with energy (E) being the area under the curve.
  *
  * @author Chris Malley (PixelZoom, Inc.)
@@ -37,8 +37,8 @@ define( function( require ) {
    * @param {Object} [options]
    * @constructor
    */
-  function ForceXYPlot( spring, unitDisplacementLength,
-                        valuesVisibleProperty, displacementVectorVisibleProperty, energyVisibleProperty, options ) {
+  function ForcePlot( spring, unitDisplacementLength,
+                      valuesVisibleProperty, displacementVectorVisibleProperty, energyVisibleProperty, options ) {
 
     options = _.extend( {
 
@@ -117,7 +117,7 @@ define( function( require ) {
       } );
   }
 
-  hookesLaw.register( 'ForceXYPlot', ForceXYPlot );
+  hookesLaw.register( 'ForcePlot', ForcePlot );
 
-  return inherit( XYPointPlot, ForceXYPlot );
+  return inherit( XYPointPlot, ForcePlot );
 } );

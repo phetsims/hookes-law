@@ -25,8 +25,8 @@ define( function( require ) {
     ViewProperties.call( this, tandem );
 
     // @public which graph is visible
-    this.graphProperty = new StringProperty( 'energyBar', {
-      validValues: [ 'energyBar', 'energyXY', 'forceXY' ],
+    this.graphProperty = new StringProperty( 'barGraph', {
+      validValues: [ 'barGraph', 'energyPlot', 'forcePlot' ],
       tandem: tandem.createTandem( 'graphProperty' )
     } );
 
