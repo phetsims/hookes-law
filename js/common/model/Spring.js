@@ -36,6 +36,8 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
   var NumberProperty = require( 'AXON/NumberProperty' );
+  var Range = require( 'DOT/Range' );
+  var RangeIO = require( 'ifphetio!PHET_IO/types/RangeIO' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
 
@@ -75,6 +77,8 @@ define( function( require ) {
       'equilibriumLength must be > 0 : ' + options.equilibriumLength );
     this.equilibriumLength = options.equilibriumLength; // @public read-only
 
+    assert && assert( options.springConstantRange instanceof RangeWithValue,
+      'invalid springConstantRange: ' + options.springConstantRange );
     assert && assert( options.springConstantRange.min > 0,
       'minimum spring constant must be positive : ' + options.springConstantRange.min );
     this.springConstantRange = options.springConstantRange; // @public read-only
@@ -88,6 +92,8 @@ define( function( require ) {
                       !options.displacementRange && options.appliedForceRange,
       'specify either displacementRange or appliedForceRange, but not both' );
     if ( options.appliedForceRange ) {
+      assert && assert( options.appliedForceRange instanceof RangeWithValue,
+        'invalid appliedForceRange: ' + options.appliedForceRange );
       this.appliedForceRange = options.appliedForceRange; // read-only
 
       // x = F/k, read-only
@@ -96,6 +102,8 @@ define( function( require ) {
         this.appliedForceRange.defaultValue / this.springConstantRange.defaultValue );
     }
     else {
+      assert && assert( options.displacementRange instanceof RangeWithValue,
+        'invalid displacementRange: ' + options.displacementRange );
       this.displacementRange = options.displacementRange; // read-only
 
       // F = kx, read-only
@@ -111,18 +119,21 @@ define( function( require ) {
 
     // @public applied force (F)
     this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue, {
+      range: this.appliedForceRange,
       units: 'newtons',
       tandem: options.tandem.createTandem( 'appliedForceProperty' )
     } );
 
     // @public spring constant (k)
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
+      range: this.springConstantRange,
       units: 'newtons/meters',
       tandem: options.tandem.createTandem( 'springConstantProperty' )
     } );
 
     // @public displacement from equilibrium position (x)
     this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
+      range: this.displacementRange,
       units: 'meters',
       tandem: options.tandem.createTandem( 'displacementProperty' )
     } );
@@ -174,7 +185,8 @@ define( function( require ) {
     this.rightRangeProperty = null;
     var rightRangePropertyOptions = {
       units: 'meters',
-      phetioType: DerivedPropertyIO( NumberIO ),
+      valueType: Range,
+      phetioType: DerivedPropertyIO( RangeIO ),
       tandem: options.tandem.createTandem( 'rightRangeProperty' )
     };
     if ( options.appliedForceRange ) {
@@ -182,13 +194,13 @@ define( function( require ) {
         function( springConstant, equilibriumX ) {
           var minDisplacement = self.appliedForceRange.min / springConstant;
           var maxDisplacement = self.appliedForceRange.max / springConstant;
-          return new RangeWithValue( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
+          return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
         }, rightRangePropertyOptions );
     }
     else {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
-          return new RangeWithValue( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
+          return new Range( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
         }, rightRangePropertyOptions );
     }
 
