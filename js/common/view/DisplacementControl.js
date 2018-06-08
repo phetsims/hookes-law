@@ -51,6 +51,12 @@ define( function( require ) {
       thumbFillEnabled: HookesLawColors.DISPLACEMENT,
       startCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 ); },
       endCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 ); },
+      constrainValue: function( value ) {
+
+        // constrain to multiples of a specific interval, see #54
+        var constrainedValue = Util.roundSymmetric( value / HookesLawConstants.DISPLACEMENT_INTERVAL ) * HookesLawConstants.DISPLACEMENT_INTERVAL;
+        return Util.toFixedNumber( constrainedValue, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      },
 
       // phet-io
       tandem: Tandem.required

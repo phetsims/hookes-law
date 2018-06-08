@@ -28,10 +28,13 @@ define( function( require ) {
     DISPLACEMENT_DECIMAL_PLACES: 3,
     ENERGY_DECIMAL_PLACES: 1,
 
-    // deltas for controls
+    // deltas, used by the arrow controls
     SPRING_CONSTANT_DELTA: 10, // units = N/m
     APPLIED_FORCE_DELTA: 1, // units = N
     DISPLACEMENT_DELTA: 0.001, // units = m
+
+    // constrain movement of slider thumb and robotic arm to these increments
+    DISPLACEMENT_INTERVAL: 0.05, // units = m
 
     // unit vectors, for 1-dimensional model-view transforms
     UNIT_DISPLACEMENT_X: 225, // view length of a 1m displacement vector, when drawn in the x dimension

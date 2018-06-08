@@ -144,6 +144,9 @@ define( function( require ) {
         var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - startOffsetX;
         var length = parentX / options.unitDisplacementLength;
         var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
+
+        // constrain to multiples of a specific interval, see #54
+        left = Util.roundSymmetric( left / HookesLawConstants.DISPLACEMENT_INTERVAL ) * HookesLawConstants.DISPLACEMENT_INTERVAL;
         left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArm.leftProperty.set( left );
       },
