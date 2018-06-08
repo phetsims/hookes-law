@@ -35,6 +35,10 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
+
+  // phet-io modules
+  var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
+  var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
   var Tandem = require( 'TANDEM/Tandem' );
 
   /**
@@ -107,70 +111,107 @@ define( function( require ) {
     //------------------------------------------------
     // Properties
 
-    // @public F, applied force, units = N
-    this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue );
+    // @public applied force (F)
+    this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue, {
+      units: 'newtons',
+      tandem: options.tandem.createTandem( 'appliedForceProperty' )
+    } );
 
-    // @public k, spring constant, N/m
-    this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue );
+    // @public spring constant (k)
+    this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
+      units: 'newtons/meters',
+      tandem: options.tandem.createTandem( 'springConstantProperty' )
+    } );
 
-    // @public x, displacement from equilibrium position, units = m
-    this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue );
+    // @public displacement from equilibrium position (x)
+    this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
+      units: 'meters',
+      tandem: options.tandem.createTandem( 'displacementProperty' )
+    } );
 
-    // @public location of the left end of the spring, units = m
-    this.leftProperty = new NumberProperty( options.left );
+    // @public location of the left end of the spring
+    this.leftProperty = new NumberProperty( options.left, {
+      units: 'meters',
+      tandem: options.tandem.createTandem( 'leftProperty' )
+    } );
 
     //------------------------------------------------
     // Derived properties
 
-    // @public -F, spring force opposes the applied force, units = N
+    // @public spring force opposes the applied force (-F)
     this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
       function( appliedForce ) {
         return -appliedForce;
+      }, {
+        units: 'newtons',
+        phetioType: DerivedPropertyIO( NumberIO ),
+        tandem: options.tandem.createTandem( 'springForceProperty' )
       } );
 
-    // @public equilibrium x location, units = m
+    // @public equilibrium x location
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
       function( left ) {
         return left + self.equilibriumLength;
+      }, {
+        units: 'meters',
+        phetioType: DerivedPropertyIO( NumberIO ),
+        tandem: options.tandem.createTandem( 'equilibriumXProperty' )
       } );
 
-    // @public x location of the right end of the spring, units = m
+    // @public x location of the right end of the spring
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
       function( equilibriumX, displacement ) {
         var left = self.leftProperty.get();
         var right = equilibriumX + displacement;
         assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
         return right;
+      }, {
+        units: 'meters',
+        phetioType: DerivedPropertyIO( NumberIO ),
+        tandem: options.tandem.createTandem( 'rightProperty' )
       } );
 
-    // @public Range of the right end of the spring, units = m
+    // @public Range of the right end of the spring
     // Derivation differs depending on whether changing spring constant modifies applied force or displacement.
     this.rightRangeProperty = null;
+    var rightRangePropertyOptions = {
+      units: 'meters',
+      phetioType: DerivedPropertyIO( NumberIO ),
+      tandem: options.tandem.createTandem( 'rightRangeProperty' )
+    };
     if ( options.appliedForceRange ) {
       this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
         function( springConstant, equilibriumX ) {
           var minDisplacement = self.appliedForceRange.min / springConstant;
           var maxDisplacement = self.appliedForceRange.max / springConstant;
           return new RangeWithValue( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
-        } );
+        }, rightRangePropertyOptions );
     }
     else {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
           return new RangeWithValue( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
-        } );
+        }, rightRangePropertyOptions );
     }
 
-    // @public length of the spring, units = m
+    // @public length of the spring
     this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
       function( left, right ) {
         return Math.abs( right - left );
+      }, {
+        units: 'meters',
+        phetioType: DerivedPropertyIO( NumberIO ),
+        tandem: options.tandem.createTandem( 'lengthProperty' )
       } );
 
-    // @public potential energy, E = ( k1 * x1 * x1 ) / 2, units = J
+    // @public potential energy, E = ( k1 * x1 * x1 ) / 2
     this.energyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
+      }, {
+        units: 'joules',
+        phetioType: DerivedPropertyIO( NumberIO ),
+        tandem: options.tandem.createTandem( 'energyProperty' )
       } );
 
     //------------------------------------------------

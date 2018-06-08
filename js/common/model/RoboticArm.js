@@ -33,6 +33,7 @@ define( function( require ) {
     // @public left (movable) end of the arm, constrained to extend from right to left
     this.leftProperty = new NumberProperty( options.left, {
       isValidValue: function( value ) { return value < self.right; },
+      units: 'meters',
       tandem: options.tandem.createTandem( 'leftProperty' )
     } );
   }
