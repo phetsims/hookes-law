@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.1.0-dev.4 Tue Jun 05 2018 10:06:26 GMT-0600 (MDT)",
+  "comment": "# hookes-law 1.1.0-dev.5 Fri Jun 08 2018 12:43:16 GMT-0600 (MDT)",
   "assert": {
     "sha": "928741cfc8fe804334d5b35292140314511f8678",
     "branch": "master"
@@ -13,7 +13,7 @@
     "branch": "master"
   },
   "chipper": {
-    "sha": "7d12527d4489798ede76256734ca6c88ba755dd1",
+    "sha": "bc1f66fea88338fb61de4aad469470909a0e2281",
     "branch": "master"
   },
   "dot": {
@@ -21,7 +21,7 @@
     "branch": "master"
   },
   "hookes-law": {
-    "sha": "7bb4ddc7a4ccbc4673ee5aa20bfc6c92d882c05d",
+    "sha": "2e5733d94dc42b2a19e7757abc10e78eaf9a42d4",
     "branch": "master"
   },
   "joist": {
@@ -33,11 +33,11 @@
     "branch": "master"
   },
   "phet-core": {
-    "sha": "a34b9659688200bfabca19ae9b0c56fa34bc4616",
+    "sha": "e0cec207f36f211f56382ea1897f007110284e46",
     "branch": "master"
   },
   "phet-io": {
-    "sha": "9ca8975206caded77af0d40a4d8b3a844d882aef",
+    "sha": "e5c7148f3344b343b57fe7108a902facd1d875ec",
     "branch": "master"
   },
   "phet-io-wrapper-classroom-activity": {
@@ -49,11 +49,11 @@
     "branch": "master"
   },
   "phet-io-wrappers": {
-    "sha": "f014e58f3f4f588133abb4c8ae3ca7df1351f2c6",
+    "sha": "f3701e8d52f8b67db016f549ee07cb63362c7104",
     "branch": "master"
   },
   "phetcommon": {
-    "sha": "ddb76c0cc894fc9ef328bab0e00a0ac969eebf5c",
+    "sha": "80414edbe26f41b5f5544377c2dae03a8cca9922",
     "branch": "master"
   },
   "query-string-machine": {
@@ -61,11 +61,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "dc89d619a81f36e4cd35b010bd5679b6847e6122",
+    "sha": "3b05db543840cd399fa9438b46603d6e77076ce2",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "5a796ec3ec67e325508292bd9634b2299f3f1779",
+    "sha": "f37bff38730ed9d5d6182768a44c52f4a3637f62",
     "branch": "master"
   },
   "sherpa": {
@@ -73,7 +73,7 @@
     "branch": "master"
   },
   "sun": {
-    "sha": "8ed9818bfa3c56ef8b50ff564bcd18c2b5bce861",
+    "sha": "00b9c74c4b94ea7b5871a3afe5b59d49d9ea2fca",
     "branch": "master"
   },
   "tandem": {
