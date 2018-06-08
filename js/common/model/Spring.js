@@ -30,15 +30,13 @@ define( function( require ) {
 
   // modules
   var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
-
-  // phet-io modules
-  var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
-  var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
   var Tandem = require( 'TANDEM/Tandem' );
 
   /**
