@@ -33,7 +33,7 @@ define( function( require ) {
     APPLIED_FORCE_DELTA: 1, // units = N
     DISPLACEMENT_DELTA: 0.001, // units = m
 
-    // constrain movement of displacement slider thumb and robotic arm to these increments, see #54
+    // constrain dragging of displacement slider thumb and robotic arm to multiples of this interval, see #54
     DISPLACEMENT_INTERVAL: 0.05, // units = m
 
     // unit vectors, for 1-dimensional model-view transforms
