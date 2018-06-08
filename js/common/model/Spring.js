@@ -49,6 +49,8 @@ define( function( require ) {
    */
   function Spring( options ) {
 
+    var self = this;
+
     options = _.extend( {
 
       // {number} x location of the left end of the spring, units = m
@@ -113,8 +115,6 @@ define( function( require ) {
         this.springConstantRange.max * this.displacementRange.max,
         this.springConstantRange.defaultValue * this.displacementRange.defaultValue );
     }
-
-    var self = this;
 
     //------------------------------------------------
     // Properties
