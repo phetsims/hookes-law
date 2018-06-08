@@ -85,6 +85,8 @@ define( function( require ) {
 
     var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
+
+      // constrain dragging to multiples of this interval, see #54
       displacementInterval: HookesLawConstants.DISPLACEMENT_INTERVAL,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin,
