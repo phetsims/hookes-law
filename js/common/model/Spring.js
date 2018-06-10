@@ -244,7 +244,7 @@ define( function( require ) {
       }
       else {
         // if the displacement range was specified, maintain the displacement, change applied force
-        self.appliedForceProperty.set(  springConstant * self.displacementProperty.get() ); // F = kx
+        self.appliedForceProperty.set( springConstant * self.displacementProperty.get() ); // F = kx
       }
     } );
 

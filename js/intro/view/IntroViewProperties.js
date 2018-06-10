@@ -23,7 +23,7 @@ define( function( require ) {
   function IntroViewProperties( tandem ) {
 
     ViewProperties.call( this, tandem );
-    
+
     // @public number of systems visible
     this.numberOfSystemsProperty = new NumberProperty( 1, {
       validValues: [ 1, 2 ],
