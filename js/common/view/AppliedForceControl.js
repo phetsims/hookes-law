@@ -76,6 +76,9 @@ define( function( require ) {
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
       startCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 ); },
       endCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 ); },
+      constrainValue: function( value ) {
+        return Util.toFixedNumber( value, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES );
+      },
 
       // phet-io
       tandem: Tandem.required
