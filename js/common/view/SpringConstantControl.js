@@ -49,9 +49,6 @@ define( function( require ) {
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
       minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
-      constrainValue: function( value ) {
-        return Util.toFixedNumber( value, HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES );
-      },
 
       // phet-io
       tandem: Tandem.required
