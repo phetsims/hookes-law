@@ -101,7 +101,8 @@ define( function( require ) {
       this.appliedForceRange = options.appliedForceRange; // read-only
 
       // x = F/k, read-only
-      this.displacementRange = new RangeWithValue( this.appliedForceRange.min / this.springConstantRange.min,
+      this.displacementRange = new RangeWithValue(
+        this.appliedForceRange.min / this.springConstantRange.min,
         this.appliedForceRange.max / this.springConstantRange.min,
         this.appliedForceRange.defaultValue / this.springConstantRange.defaultValue );
     }
@@ -111,7 +112,8 @@ define( function( require ) {
       this.displacementRange = options.displacementRange; // read-only
 
       // F = kx, read-only
-      this.appliedForceRange = new RangeWithValue( this.springConstantRange.max * this.displacementRange.min,
+      this.appliedForceRange = new RangeWithValue(
+        this.springConstantRange.max * this.displacementRange.min,
         this.springConstantRange.max * this.displacementRange.max,
         this.springConstantRange.defaultValue * this.displacementRange.defaultValue );
     }
