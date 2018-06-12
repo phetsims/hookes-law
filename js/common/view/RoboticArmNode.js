@@ -148,7 +148,7 @@ define( function( require ) {
 
         // constrain to multiples of a specific interval, see #54
         if ( options.displacementInterval ) {
-          left = Util.roundSymmetric( left / options.displacementInterval ) * options.displacementInterval;
+          left = Util.roundToInterval( left, options.displacementInterval );
         }
         left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArm.leftProperty.set( left );
