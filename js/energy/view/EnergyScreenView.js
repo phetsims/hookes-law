@@ -104,7 +104,7 @@ define( function( require ) {
       forcePlot.visible = ( graph === 'forcePlot' );
       energyPlot.visible = ( graph === 'energyPlot' );
 
-      if ( graph === 'energyBar' ) {
+      if ( graph === 'barGraph' ) {
         // aligned with equilibrium position
         barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
       }
