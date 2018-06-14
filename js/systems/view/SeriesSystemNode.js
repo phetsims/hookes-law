@@ -74,8 +74,7 @@ define( function( require ) {
       backColor: HookesLawColors.LEFT_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * leftSpring.leftProperty.get(),
-      y: yOrigin,
-      tandem: options.tandem.createTandem( 'leftSpringNode' )
+      y: yOrigin
     } );
 
     var rightSpringNode = new HookesLawSpringNode( rightSpring, {
@@ -86,8 +85,7 @@ define( function( require ) {
       backColor: HookesLawColors.RIGHT_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       // x is based on rightSpring.leftProperty
-      y: yOrigin,
-      tandem: options.tandem.createTandem( 'rightSpringNode' )
+      y: yOrigin
     } );
 
     // pincers grab this

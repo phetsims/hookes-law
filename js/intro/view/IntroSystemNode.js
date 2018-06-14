@@ -77,8 +77,7 @@ define( function( require ) {
       unitDisplacementLength: options.unitDisplacementLength,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: xOrigin,
-      y: yOrigin,
-      tandem: options.tandem.createTandem( 'springNode' )
+      y: yOrigin
     } );
 
     // pincers grab this

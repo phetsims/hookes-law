@@ -12,7 +12,6 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
-  var Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {Spring} spring
@@ -35,10 +34,7 @@ define( function( require ) {
       deltaLineWidth: 0.005, // increase in line width per 1 unit of spring constant increase
       leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
       rightEndLength: 25, // {number} length of the horizontal line added to the right end of the coil
-      pathBoundsMethod: 'none', // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
-
-      // phet-io
-      tandem: Tandem.required
+      pathBoundsMethod: 'none' // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
     }, options );
 
     ParametricSpringNode.call( this, options );
