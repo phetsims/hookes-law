@@ -142,7 +142,9 @@ define( function( require ) {
         forcePlotRadioButton,
         // "Energy" checkbox indented below "Force Plot" radio button
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
-        new HSeparator( maxControlWidth, HookesLawConstants.SEPARATOR_OPTIONS ),
+        new HSeparator( maxControlWidth, _.extend( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
+          tandem: options.tandem.createTandem( 'separator' )
+        } ) ),
         appliedForceCheckbox,
         displacementCheckbox,
         equilibriumPositionCheckbox,
