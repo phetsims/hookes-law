@@ -51,7 +51,8 @@ define( function( require ) {
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of F1, units = N
       appliedForceDelta: HookesLawConstants.PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA,
-      tandem: tandem.createTandem( 'topSpring' )
+      tandem: tandem.createTandem( 'topSpring' ),
+      phetioInstanceDocumentation: 'the top spring in the parallel system.'
     } );
 
     // @public bottom spring, in parallel with top spring, with identical configuration
@@ -61,7 +62,8 @@ define( function( require ) {
       springConstantRange: this.topSpring.springConstantRange,
       appliedForceRange: this.topSpring.appliedForceRange,
       appliedForceDelta: this.topSpring.appliedForceDelta,
-      tandem: tandem.createTandem( 'bottomSpring' )
+      tandem: tandem.createTandem( 'bottomSpring' ),
+      phetioInstanceDocumentation: 'the bottom spring in the parallel system.'
     } );
 
     // verify that springs are indeed parallel

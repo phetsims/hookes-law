@@ -49,7 +49,8 @@ define( function( require ) {
       equilibriumLength: 0.75, // length of the spring at equilibrium, units = m
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of Feq, units = N
-      tandem: tandem.createTandem( 'leftSpring' )
+      tandem: tandem.createTandem( 'leftSpring' ),
+      phetioInstanceDocumentation: 'the left spring in the series system.'
     } );
 
     // @public right spring, in series with the left spring, with identical configuration
@@ -58,7 +59,8 @@ define( function( require ) {
       equilibriumLength: this.leftSpring.equilibriumLength,
       springConstantRange: this.leftSpring.springConstantRange,
       appliedForceRange: this.leftSpring.appliedForceRange,
-      tandem: tandem.createTandem( 'rightSpring' )
+      tandem: tandem.createTandem( 'rightSpring' ),
+      phetioInstanceDocumentation: 'the right spring in the series system.'
     } );
 
     // @public the single spring that is equivalent to the 2 springs in series
