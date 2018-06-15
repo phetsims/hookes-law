@@ -69,7 +69,8 @@ define( function( require ) {
       // {RangeWithValue|null} applied force range and initial value, units = N
       appliedForceRange: null,
 
-      // {number} applied force (and thus spring force) are constrained to this delta
+      // {number} applied force (and thus spring force) are constrained to this delta,
+      // if options.appliedForceRange is non-null
       appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA,
 
       // phet-io
