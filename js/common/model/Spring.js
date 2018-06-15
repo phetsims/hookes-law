@@ -35,6 +35,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
+  var PhetioObject = require( 'TANDEM/PhetioObject' );
   var Range = require( 'DOT/Range' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
@@ -74,7 +75,8 @@ define( function( require ) {
       appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA,
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.required,
+      phetioState: false // since this type has no inherent state to save, to avoid circular JSON error
 
     }, options );
 
@@ -274,11 +276,13 @@ define( function( require ) {
       // constrain to range
       self.appliedForceProperty.set( self.appliedForceRange.constrainValue( appliedForce ) );
     } );
+
+    PhetioObject.call( this, options );
   }
 
   hookesLaw.register( 'Spring', Spring );
 
-  return inherit( Object, Spring, {
+  return inherit( PhetioObject, Spring, {
 
     // @public
     reset: function() {
