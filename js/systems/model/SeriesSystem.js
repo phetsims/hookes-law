@@ -72,7 +72,7 @@ define( function( require ) {
         1 / ( ( 1 / this.leftSpring.springConstantRange.defaultValue ) + ( 1 / this.rightSpring.springConstantRange.defaultValue ) ) ),
       appliedForceRange: this.leftSpring.appliedForceRange, // Feq = F1 = F2
       tandem: tandem.createTandem( 'equivalentSpring' ),
-      phetioInstanceDocumentation: 'the single spring that is equivalent to the 2 springs in series'
+      phetioInstanceDocumentation: 'the single spring that is equivalent to the 2 springs in series.'
     } );
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 

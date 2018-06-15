@@ -34,7 +34,8 @@ define( function( require ) {
     this.leftProperty = new NumberProperty( options.left, {
       isValidValue: function( value ) { return value < self.right; },
       units: 'meters',
-      tandem: options.tandem.createTandem( 'leftProperty' )
+      tandem: options.tandem.createTandem( 'leftProperty' ),
+      phetioInstanceDocumentation: 'the left (movable) end of the robotic arm.'
     } );
   }
 

@@ -147,7 +147,8 @@ define( function( require ) {
     // @public location of the left end of the spring
     this.leftProperty = new NumberProperty( options.left, {
       units: 'meters',
-      tandem: options.tandem.createTandem( 'leftProperty' )
+      tandem: options.tandem.createTandem( 'leftProperty' ),
+      phetioInstanceDocumentation: 'location of the left end of the spring.'
     } );
 
     //------------------------------------------------
@@ -183,7 +184,8 @@ define( function( require ) {
       }, {
         units: 'meters',
         phetioType: DerivedPropertyIO( NumberIO ),
-        tandem: options.tandem.createTandem( 'rightProperty' )
+        tandem: options.tandem.createTandem( 'rightProperty' ),
+        phetioInstanceDocumentation: 'location of the right end of the spring.'
       } );
 
     // @public Range of the right end of the spring
