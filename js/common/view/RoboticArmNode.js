@@ -179,7 +179,8 @@ define( function( require ) {
     assert && assert( !options.children, 'RoboticArmNode sets children' );
     options.children = [ armNode, redBox, gradientBox, draggableNode ];
 
-    Node.call( this, options );
+    // Do not pass tandem to the supertype, since this Node is not part of the PhET-iO API. See #58.
+    Node.call( this, _.omit( options, [ 'tandem' ] ) );
   }
 
   hookesLaw.register( 'RoboticArmNode', RoboticArmNode );
