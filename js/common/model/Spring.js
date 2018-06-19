@@ -160,7 +160,7 @@ define( function( require ) {
     phet.log && this.springConstantProperty.link(
       function( springConstant ) { phet.log( logName + ' springConstant=' + springConstant ); } );
     phet.log && this.springConstantProperty.link(
-      function( displacement ) { phet.log( logName + 'Spring displacement=' + displacement ); } );
+      function( displacement ) { phet.log( logName + ' displacement=' + displacement ); } );
     phet.log && this.leftProperty.link(
       function( left ) { phet.log( logName + ' left=' + left ); } );
 
