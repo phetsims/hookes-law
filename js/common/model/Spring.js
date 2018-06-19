@@ -254,7 +254,7 @@ define( function( require ) {
       self.displacementProperty.set( displacement );
     } );
 
-    // k: When spring constant changes, adjust either displacement or applied force
+    // k: When spring constant changes, adjust either displacement or applied force.
     this.springConstantProperty.link( function( springConstant ) {
       assert && assert( self.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
       if ( options.appliedForceRange ) {
@@ -266,7 +266,8 @@ define( function( require ) {
         self.displacementProperty.set( displacement );
       }
       else {
-        // if the displacement range was specified, maintain the displacement, change applied force
+        // If the displacement range was specified, maintain the displacement, change applied force.
+        // F = kx
         self.appliedForceProperty.set( springConstant * self.displacementProperty.get() ); // F = kx
       }
     } );
@@ -275,12 +276,13 @@ define( function( require ) {
     this.displacementProperty.link( function( displacement ) {
       assert && assert( self.displacementRange.contains( displacement ),
         'displacement is out of range: ' + displacement );
-      var appliedForce = self.springConstantProperty.get() * displacement; // F = kx
-      // constrain to delta if the applied force range was specified
+      // F = kx
+      var appliedForce = self.springConstantProperty.get() * displacement;
+      // Constrain to delta if the applied force range was specified.
       if ( options.appliedForceRange ) {
         appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
       }
-      // constrain to range
+      // Constrain to range.
       self.appliedForceProperty.set( self.appliedForceRange.constrainValue( appliedForce ) );
     } );
 
