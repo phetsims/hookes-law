@@ -259,7 +259,8 @@ define( function( require ) {
       assert && assert( self.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
       if ( options.appliedForceRange ) {
 
-        // If the applied force range was specified, then maintain the applied force, change displacement.
+        // The applied force range was specified via options - maintain the applied force, change displacement.
+        // This applies to the Intro and Systems screens.
         // x = F/k
         var displacement = Util.toFixedNumber( self.appliedForceProperty.get() / springConstant,
           HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
@@ -267,7 +268,8 @@ define( function( require ) {
       }
       else {
 
-        // If the displacement range was specified, maintain the displacement, change applied force.
+        // The displacement range was specified via options - maintain the displacement, change applied force.
+        // This applies to the Energy screen.
         // F = kx
         self.appliedForceProperty.set( springConstant * self.displacementProperty.get() ); // F = kx
       }
@@ -281,7 +283,8 @@ define( function( require ) {
       // F = kx
       var appliedForce = self.springConstantProperty.get() * displacement;
 
-      // Constrain to delta if the applied force range was specified.
+      // Constrain to delta if the applied force range was specified via options.
+      // This occurs in the Intro and Systems screens.
       if ( options.appliedForceRange ) {
         appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
       }

@@ -28,17 +28,16 @@ define( function( require ) {
       tandem: Tandem.required
     }, options );
 
-    this.right = options.right; // @public right (fixed) end of the arm, read-only
+    // @public (read-only) right (fixed) end of the arm
+    this.right = options.right;
 
-    // @public left (movable) end of the arm, constrained to extend from right to left
+    // @public left (movable) end of the arm
     this.leftProperty = new NumberProperty( options.left, {
       isValidValue: function( value ) { return value < self.right; },
       units: 'meters',
       tandem: options.tandem.createTandem( 'leftProperty' ),
       phetioInstanceDocumentation: 'the left (movable) end of the robotic arm.'
     } );
-
-    // log value change
     phet.log && this.leftProperty.link( function( left ) { phet.log( 'RoboticArm left=' + left ); } );
   }
 
