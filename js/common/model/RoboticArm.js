@@ -37,6 +37,9 @@ define( function( require ) {
       tandem: options.tandem.createTandem( 'leftProperty' ),
       phetioInstanceDocumentation: 'the left (movable) end of the robotic arm.'
     } );
+
+    // log value change
+    phet.log && this.leftProperty.link( function( left ) { phet.log( 'RoboticArm left=' + left ); } );
   }
 
   hookesLaw.register( 'RoboticArm', RoboticArm );
