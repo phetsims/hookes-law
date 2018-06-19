@@ -157,7 +157,7 @@ define( function( require ) {
     phet.log && this.appliedForceProperty.link( function( appliedForce ) { phet.log( 'Spring appliedForce=' + appliedForce ); } );
     phet.log && this.springConstantProperty.link( function( springConstant ) { phet.log( 'Spring springConstant=' + springConstant ); } );
     phet.log && this.springConstantProperty.link( function( displacement ) { phet.log( 'Spring displacement=' + displacement ); } );
-    phet.log && this.leftProperty.link( function( left ) { phet.log( 'RoboticArm left=' + left ); } );
+    phet.log && this.leftProperty.link( function( left ) { phet.log( 'Spring left=' + left ); } );
 
     //------------------------------------------------
     // Derived properties
@@ -195,6 +195,7 @@ define( function( require ) {
         tandem: options.tandem.createTandem( 'rightProperty' ),
         phetioInstanceDocumentation: 'location of the right end of the spring.'
       } );
+    phet.log && this.rightProperty.link( function( right ) { phet.log( 'Spring right=' + right ); } );
 
     // @public Range of the right end of the spring
     // Derivation differs depending on whether changing spring constant modifies applied force or displacement.
