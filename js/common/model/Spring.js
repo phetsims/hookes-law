@@ -249,8 +249,10 @@ define( function( require ) {
       assert && assert( self.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
 
       // x = F/k
-      var displacement = Util.toFixedNumber( appliedForce / self.springConstantProperty.get(),
-        HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      var displacement = appliedForce / self.springConstantProperty.get();
+
+      // Constrain number of decimal places
+      displacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       self.displacementProperty.set( displacement );
     } );
 
@@ -262,8 +264,10 @@ define( function( require ) {
         // The applied force range was specified via options - maintain the applied force, change displacement.
         // This applies to the Intro and Systems screens.
         // x = F/k
-        var displacement = Util.toFixedNumber( self.appliedForceProperty.get() / springConstant,
-          HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        var displacement = self.appliedForceProperty.get() / springConstant;
+
+        // Constrain number of decimal places
+        displacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         self.displacementProperty.set( displacement );
       }
       else {
@@ -290,7 +294,9 @@ define( function( require ) {
       }
 
       // Constrain to range.
-      self.appliedForceProperty.set( self.appliedForceRange.constrainValue( appliedForce ) );
+      appliedForce = self.appliedForceRange.constrainValue( appliedForce );
+
+      self.appliedForceProperty.set( appliedForce );
     } );
 
     PhetioObject.call( this, options );
