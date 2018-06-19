@@ -155,10 +155,14 @@ define( function( require ) {
     } );
 
     // log each NumberProperty value when it changes
-    phet.log && this.appliedForceProperty.link( function( appliedForce ) { phet.log( logName + ' appliedForce=' + appliedForce ); } );
-    phet.log && this.springConstantProperty.link( function( springConstant ) { phet.log( logName + ' springConstant=' + springConstant ); } );
-    phet.log && this.springConstantProperty.link( function( displacement ) { phet.log( logName + 'Spring displacement=' + displacement ); } );
-    phet.log && this.leftProperty.link( function( left ) { phet.log( logName + ' left=' + left ); } );
+    phet.log && this.appliedForceProperty.link(
+      function( appliedForce ) { phet.log( logName + ' appliedForce=' + appliedForce ); } );
+    phet.log && this.springConstantProperty.link(
+      function( springConstant ) { phet.log( logName + ' springConstant=' + springConstant ); } );
+    phet.log && this.springConstantProperty.link(
+      function( displacement ) { phet.log( logName + 'Spring displacement=' + displacement ); } );
+    phet.log && this.leftProperty.link(
+      function( left ) { phet.log( logName + ' left=' + left ); } );
 
     //------------------------------------------------
     // Derived properties
