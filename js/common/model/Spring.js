@@ -153,7 +153,7 @@ define( function( require ) {
       phetioInstanceDocumentation: 'location of the left end of the spring.'
     } );
 
-    // log each Property value when it changes
+    // log each NumberProperty value when it changes
     phet.log && this.appliedForceProperty.link( function( appliedForce ) { phet.log( 'Spring appliedForce=' + appliedForce ); } );
     phet.log && this.springConstantProperty.link( function( springConstant ) { phet.log( 'Spring springConstant=' + springConstant ); } );
     phet.log && this.springConstantProperty.link( function( displacement ) { phet.log( 'Spring displacement=' + displacement ); } );
