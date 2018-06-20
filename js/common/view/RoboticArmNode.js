@@ -136,6 +136,7 @@ define( function( require ) {
       allowTouchSnag: true,
 
       start: function( event ) {
+        phet.log && phet.log( 'RoboticArmNode start drag' );
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
         var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
         startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
@@ -156,6 +157,7 @@ define( function( require ) {
 
       end: function( event ) {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
+        phet.log && phet.log( 'RoboticArmNode end drag' );
       },
 
       // phet-io
