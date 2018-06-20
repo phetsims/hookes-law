@@ -173,6 +173,8 @@ define( function( require ) {
       function( springForce ) { phet.log( options.logName + ' springForce=' + springForce ); } );
 
     // @public equilibrium x location
+    // This must be a Property to support systems of springs. For example, for 2 springs in series,
+    // equilibriumXProperty changes for the right spring, whose left end moves.
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
       function( left ) {
         return left + self.equilibriumLength;
