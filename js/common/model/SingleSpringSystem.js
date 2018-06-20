@@ -29,7 +29,7 @@ define( function( require ) {
     // Components of the system
 
     // @public spring
-    this.spring = new Spring( 'singleSpring', _.extend( {}, springOptions, {
+    this.spring = new Spring( _.extend( {}, springOptions, {
       tandem: tandem.createTandem( 'spring' )
     } ) );
     assert && assert( this.spring.displacementProperty.get() === 0 ); // spring is at equilibrium

@@ -19,10 +19,14 @@ define( function( require ) {
    * @constructor
    */
   function EnergyModel( tandem ) {
-    this.system = new SingleSpringSystem( tandem.createTandem( 'system' ), {
+
+    var springOptions = {
+      logName: 'spring',
       springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = N/m
       displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m
-    } );
+    };
+
+    this.system = new SingleSpringSystem( tandem.createTandem( 'system' ), springOptions );
   }
 
   hookesLaw.register( 'EnergyModel', EnergyModel );

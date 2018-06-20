@@ -45,7 +45,8 @@ define( function( require ) {
     // Components of the system
 
     // @public
-    this.topSpring = new Spring( 'topSpring', {
+    this.topSpring = new Spring( {
+      logName: 'topSpring',
       left: 0, // x location of the left end of the spring, units = m
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
@@ -56,7 +57,8 @@ define( function( require ) {
     } );
 
     // @public bottom spring, in parallel with top spring, with identical configuration
-    this.bottomSpring = new Spring( 'bottomSpring', {
+    this.bottomSpring = new Spring( {
+      logName: 'bottomSpring',
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange,
@@ -73,7 +75,8 @@ define( function( require ) {
       'top and bottom springs must have same equilibrium position' );
 
     // @public the single spring that is equivalent to the 2 springs in parallel
-    this.equivalentSpring = new Spring( 'equivalentSpring', {
+    this.equivalentSpring = new Spring( {
+      logName: 'equivalentSpring',
       left: this.topSpring.leftProperty.get(),
       equilibriumLength: this.topSpring.equilibriumLength,
       // keq = k1 + k2

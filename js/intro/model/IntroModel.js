@@ -26,8 +26,10 @@ define( function( require ) {
     };
 
     // @public
-    this.system1 = new SingleSpringSystem( tandem.createTandem( 'system1' ), springOptions );
-    this.system2 = new SingleSpringSystem( tandem.createTandem( 'system2' ), springOptions );
+    this.system1 = new SingleSpringSystem( tandem.createTandem( 'system1' ),
+      _.extend( {}, springOptions, { logName: 'spring1' } ) );
+    this.system2 = new SingleSpringSystem( tandem.createTandem( 'system2' ),
+      _.extend( {}, springOptions, { logName: 'spring2' } ) );
   }
 
   hookesLaw.register( 'IntroModel', IntroModel );

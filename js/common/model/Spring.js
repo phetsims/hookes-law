@@ -45,15 +45,17 @@ define( function( require ) {
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
 
   /**
-   * @param {string} logName - name that appears in log messages
    * @param {Object} [options]
    * @constructor
    */
-  function Spring( logName, options ) {
+  function Spring( options ) {
 
     var self = this;
 
     options = _.extend( {
+
+      // name that appears in log messages
+      logName: null,
 
       // {number} x location of the left end of the spring, units = m
       left: 0,
@@ -151,11 +153,11 @@ define( function( require ) {
 
     // log each PhET-iO instrumented NumberProperty value when it changes
     phet.log && this.appliedForceProperty.link(
-      function( appliedForce ) { phet.log( logName + ' appliedForce=' + appliedForce ); } );
+      function( appliedForce ) { phet.log( options.logName + ' appliedForce=' + appliedForce ); } );
     phet.log && this.springConstantProperty.link(
-      function( springConstant ) { phet.log( logName + ' springConstant=' + springConstant ); } );
+      function( springConstant ) { phet.log( options.logName + ' springConstant=' + springConstant ); } );
     phet.log && this.displacementProperty.link(
-      function( displacement ) { phet.log( logName + ' displacement=' + displacement ); } );
+      function( displacement ) { phet.log( options.logName + ' displacement=' + displacement ); } );
 
     //------------------------------------------------
     // Derived properties
