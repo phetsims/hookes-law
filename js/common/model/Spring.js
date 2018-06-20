@@ -271,12 +271,6 @@ define( function( require ) {
       // F = kx
       var appliedForce = self.springConstantProperty.get() * displacement;
 
-      // Constrain to delta if the applied force range was specified via options.
-      // This occurs in the Intro and Systems screens.
-      if ( options.appliedForceRange ) {
-        appliedForce = Math.round( appliedForce / options.appliedForceDelta ) * options.appliedForceDelta;
-      }
-
       // Constrain to range.
       appliedForce = self.appliedForceRange.constrainValue( appliedForce );
 
