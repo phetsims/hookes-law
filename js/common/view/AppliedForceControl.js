@@ -74,8 +74,14 @@ define( function( require ) {
       majorTicks: majorTicks,
       minorTickSpacing: MINOR_TICK_SPACING,
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
-      startCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 ); },
-      endCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 ); },
+      startCallback: function() {
+        phet.log && phet.log( 'AppliedForceControl start drag' );
+        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
+      },
+      endCallback: function() {
+        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
+        phet.log && phet.log( 'AppliedForceControl end drag' );
+      },
 
       // phet-io
       tandem: Tandem.required

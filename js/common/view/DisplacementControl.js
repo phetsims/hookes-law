@@ -49,8 +49,14 @@ define( function( require ) {
       delta: HookesLawConstants.DISPLACEMENT_DELTA,
       minorTickSpacing: 1,
       thumbFillEnabled: HookesLawColors.DISPLACEMENT,
-      startCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 ); },
-      endCallback: function() { numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 ); },
+      startCallback: function() {
+        phet.log && phet.log( 'DisplacementControl start drag' );
+        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
+      },
+      endCallback: function() {
+        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
+        phet.log && phet.log( 'DisplacementControl end drag' );
+      },
       constrainValue: function( value ) {
         // constrain to multiples of a specific interval, see #54
         return Util.roundToInterval( value, HookesLawConstants.DISPLACEMENT_INTERVAL );

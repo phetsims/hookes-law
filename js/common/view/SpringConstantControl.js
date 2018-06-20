@@ -49,6 +49,12 @@ define( function( require ) {
       delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
       minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
+      startCallback: function() {
+        phet.log && phet.log( 'SpringConstantControl start drag' );
+      },
+      endCallback: function() {
+        phet.log && phet.log( 'SpringConstantControl end drag' );
+      },
 
       // phet-io
       tandem: Tandem.required
