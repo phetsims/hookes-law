@@ -133,6 +133,8 @@ define( function( require ) {
       units: 'newtons',
       tandem: options.tandem.createTandem( 'appliedForceProperty' )
     } );
+    phet.log && this.appliedForceProperty.link(
+      function( appliedForce ) { phet.log( options.logName + ' appliedForce=' + appliedForce ); } );
 
     // @public spring constant (k)
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
@@ -140,6 +142,8 @@ define( function( require ) {
       units: 'newtons/meters',
       tandem: options.tandem.createTandem( 'springConstantProperty' )
     } );
+    phet.log && this.springConstantProperty.link(
+      function( springConstant ) { phet.log( options.logName + ' springConstant=' + springConstant ); } );
 
     // @public displacement from equilibrium position (x)
     this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
@@ -147,17 +151,11 @@ define( function( require ) {
       units: 'meters',
       tandem: options.tandem.createTandem( 'displacementProperty' )
     } );
+    phet.log && this.displacementProperty.link(
+      function( displacement ) { phet.log( options.logName + ' displacement=' + displacement ); } );
 
     // @public location of the left end of the spring
     this.leftProperty = new NumberProperty( options.left );
-
-    // log each PhET-iO instrumented NumberProperty value when it changes
-    phet.log && this.appliedForceProperty.link(
-      function( appliedForce ) { phet.log( options.logName + ' appliedForce=' + appliedForce ); } );
-    phet.log && this.springConstantProperty.link(
-      function( springConstant ) { phet.log( options.logName + ' springConstant=' + springConstant ); } );
-    phet.log && this.displacementProperty.link(
-      function( displacement ) { phet.log( options.logName + ' displacement=' + displacement ); } );
 
     //------------------------------------------------
     // Derived properties
@@ -171,6 +169,8 @@ define( function( require ) {
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'springForceProperty' )
       } );
+    phet.log && this.springForceProperty.link(
+      function( springForce ) { phet.log( options.logName + ' springForce=' + springForce ); } );
 
     // @public equilibrium x location
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
@@ -212,14 +212,16 @@ define( function( require ) {
       } );
 
     // @public potential energy, E = ( k1 * x1 * x1 ) / 2
-    this.energyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
+    this.potentialEnergyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
       }, {
         units: 'joules',
         phetioType: DerivedPropertyIO( NumberIO ),
-        tandem: options.tandem.createTandem( 'energyProperty' )
+        tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
       } );
+    phet.log && this.potentialEnergyProperty.link(
+      function( potentialEnergy ) { phet.log( options.logName + ' potentialEnergy=' + potentialEnergy ); } );
 
     //------------------------------------------------
     // Property observers

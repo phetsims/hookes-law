@@ -69,7 +69,7 @@ define( function( require ) {
 
     }, options );
 
-    XYPointPlot.call( this, spring.displacementProperty, spring.energyProperty,
+    XYPointPlot.call( this, spring.displacementProperty, spring.potentialEnergyProperty,
       valuesVisibleProperty, displacementVectorVisibleProperty, options );
 
     // Parabola that corresponds to E = ( k * x * x ) / 2

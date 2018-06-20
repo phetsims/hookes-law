@@ -78,7 +78,7 @@ define( function( require ) {
     assert && assert( !options.children, 'EnergyBarGraph sets children' );
     options.children = [ barNode, valueNode, xAxisNode, yAxisNode, yAxisLabel ];
 
-    spring.energyProperty.link( function( energy ) {
+    spring.potentialEnergyProperty.link( function( energy ) {
 
       // resize the bar
       barNode.visible = ( energy > 0 ); // because we can't create a zero height rectangle
