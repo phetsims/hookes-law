@@ -117,6 +117,7 @@ define( function( require ) {
       } );
 
     var springControls = new EnergySpringControls( spring, numberOfInteractionsInProgressProperty, {
+      displacementDelta: HookesLawConstants.ENERGY_SCREEN_DISPLACEMENT_DELTA,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10,
       maxWidth: roboticArmNode.right - wallNode.left, // constrain width for i18n

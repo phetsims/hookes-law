@@ -32,6 +32,7 @@ define( function( require ) {
     SPRING_CONSTANT_DELTA: 10, // units = N/m
     APPLIED_FORCE_DELTA: 1, // units = N
     DISPLACEMENT_DELTA: 0.001, // units = m
+    ENERGY_SCREEN_DISPLACEMENT_DELTA: 0.01, // units = m
 
     // constrain dragging of displacement slider thumb and robotic arm to multiples of this interval, see #54
     DISPLACEMENT_INTERVAL: 0.05, // units = m
