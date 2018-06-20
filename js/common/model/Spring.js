@@ -43,7 +43,6 @@ define( function( require ) {
 
   // ifphetio
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
-  var RangeIO = require( 'ifphetio!DOT/RangeIO' );
 
   /**
    * @param {string} logName - name that appears in log messages
@@ -148,21 +147,15 @@ define( function( require ) {
     } );
 
     // @public location of the left end of the spring
-    this.leftProperty = new NumberProperty( options.left, {
-      units: 'meters',
-      tandem: options.tandem.createTandem( 'leftProperty' ),
-      phetioInstanceDocumentation: 'location of the left end of the spring.'
-    } );
+    this.leftProperty = new NumberProperty( options.left );
 
-    // log each NumberProperty value when it changes
+    // log each PhET-iO instrumented NumberProperty value when it changes
     phet.log && this.appliedForceProperty.link(
       function( appliedForce ) { phet.log( logName + ' appliedForce=' + appliedForce ); } );
     phet.log && this.springConstantProperty.link(
       function( springConstant ) { phet.log( logName + ' springConstant=' + springConstant ); } );
-    phet.log && this.springConstantProperty.link(
+    phet.log && this.displacementProperty.link(
       function( displacement ) { phet.log( logName + ' displacement=' + displacement ); } );
-    phet.log && this.leftProperty.link(
-      function( left ) { phet.log( logName + ' left=' + left ); } );
 
     //------------------------------------------------
     // Derived properties
@@ -181,10 +174,6 @@ define( function( require ) {
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
       function( left ) {
         return left + self.equilibriumLength;
-      }, {
-        units: 'meters',
-        phetioType: DerivedPropertyIO( NumberIO ),
-        tandem: options.tandem.createTandem( 'equilibriumXProperty' )
       } );
 
     // @public x location of the right end of the spring
@@ -194,46 +183,30 @@ define( function( require ) {
         var right = equilibriumX + displacement;
         assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
         return right;
-      }, {
-        units: 'meters',
-        phetioType: DerivedPropertyIO( NumberIO ),
-        tandem: options.tandem.createTandem( 'rightProperty' ),
-        phetioInstanceDocumentation: 'location of the right end of the spring.'
       } );
-    phet.log && this.rightProperty.link( function( right ) { phet.log( logName + ' right=' + right ); } );
 
     // @public Range of the right end of the spring
     // Derivation differs depending on whether changing spring constant modifies applied force or displacement.
     this.rightRangeProperty = null;
-    var rightRangePropertyOptions = {
-      units: 'meters',
-      valueType: Range,
-      phetioType: DerivedPropertyIO( RangeIO ),
-      tandem: options.tandem.createTandem( 'rightRangeProperty' )
-    };
     if ( options.appliedForceRange ) {
       this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
         function( springConstant, equilibriumX ) {
           var minDisplacement = self.appliedForceRange.min / springConstant;
           var maxDisplacement = self.appliedForceRange.max / springConstant;
           return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
-        }, rightRangePropertyOptions );
+        } );
     }
     else {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
           return new Range( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
-        }, rightRangePropertyOptions );
+        } );
     }
 
     // @public length of the spring
     this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
       function( left, right ) {
         return Math.abs( right - left );
-      }, {
-        units: 'meters',
-        phetioType: DerivedPropertyIO( NumberIO ),
-        tandem: options.tandem.createTandem( 'lengthProperty' )
       } );
 
     // @public potential energy, E = ( k1 * x1 * x1 ) / 2

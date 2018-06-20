@@ -33,12 +33,8 @@ define( function( require ) {
 
     // @public left (movable) end of the arm
     this.leftProperty = new NumberProperty( options.left, {
-      isValidValue: function( value ) { return value < self.right; },
-      units: 'meters',
-      tandem: options.tandem.createTandem( 'leftProperty' ),
-      phetioInstanceDocumentation: 'the left (movable) end of the robotic arm.'
+      isValidValue: function( value ) { return value < self.right; }
     } );
-    phet.log && this.leftProperty.link( function( left ) { phet.log( 'RoboticArm left=' + left ); } );
   }
 
   hookesLaw.register( 'RoboticArm', RoboticArm );
