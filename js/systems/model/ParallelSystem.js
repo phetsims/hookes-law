@@ -53,7 +53,7 @@ define( function( require ) {
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of F1, units = N
       appliedForceDelta: HookesLawConstants.PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA,
       tandem: tandem.createTandem( 'topSpring' ),
-      phetioInstanceDocumentation: 'the top spring in the parallel system.'
+      phetioInstanceDocumentation: 'The top spring in the parallel system'
     } );
 
     // @public bottom spring, in parallel with top spring, with identical configuration
@@ -65,7 +65,7 @@ define( function( require ) {
       appliedForceRange: this.topSpring.appliedForceRange,
       appliedForceDelta: this.topSpring.appliedForceDelta,
       tandem: tandem.createTandem( 'bottomSpring' ),
-      phetioInstanceDocumentation: 'the bottom spring in the parallel system.'
+      phetioInstanceDocumentation: 'The bottom spring in the parallel system'
     } );
 
     // verify that springs are indeed parallel
@@ -87,7 +87,7 @@ define( function( require ) {
       // Feq = F1 + F2
       appliedForceRange: this.topSpring.appliedForceRange,
       tandem: tandem.createTandem( 'equivalentSpring' ),
-      phetioInstanceDocumentation: 'the single spring that is equivalent to the 2 springs in parallel.'
+      phetioInstanceDocumentation: 'The single spring that is equivalent to the 2 springs in parallel'
     } );
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 
