@@ -64,9 +64,11 @@ define( function( require ) {
     if ( options.majorTickValues ) {
       options.majorTicks = [];
       for ( var i = 0; i < options.majorTickValues.length; i++ ) {
+        var tickValue = options.majorTickValues[ i ];
+        assert && assert( Util.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
         options.majorTicks.push( {
-          value: options.majorTickValues[ i ],
-          label: new Text( Util.toFixed( options.majorTickValues[ i ], HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+          value: tickValue,
+          label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
         } );
       }
     }
