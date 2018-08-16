@@ -86,7 +86,7 @@ define( function( require ) {
       unitDisplacementLength: options.unitDisplacementLength,
 
       // constrain dragging to multiples of this interval, see #54
-      displacementInterval: HookesLawConstants.DISPLACEMENT_INTERVAL,
+      displacementInterval: HookesLawConstants.ROBOTIC_ARM_DISPLACEMENT_INTERVAL,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin,
       tandem: options.tandem.createTandem( 'roboticArmNode' )
@@ -117,7 +117,6 @@ define( function( require ) {
       } );
 
     var springControls = new EnergySpringControls( spring, numberOfInteractionsInProgressProperty, {
-      displacementDelta: HookesLawConstants.ENERGY_SCREEN_DISPLACEMENT_DELTA,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10,
       maxWidth: roboticArmNode.right - wallNode.left, // constrain width for i18n

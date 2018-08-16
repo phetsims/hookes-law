@@ -70,7 +70,7 @@ define( function( require ) {
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       valuePattern: VALUE_PATTERN,
-      delta: HookesLawConstants.APPLIED_FORCE_DELTA,
+      delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
       majorTicks: majorTicks,
       minorTickSpacing: MINOR_TICK_SPACING,
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
@@ -81,6 +81,9 @@ define( function( require ) {
       endCallback: function() {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
         phet.log && phet.log( 'AppliedForceControl end drag' );
+      },
+      constrainValue: function( value ) {
+        return Util.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
       },
 
       // phet-io

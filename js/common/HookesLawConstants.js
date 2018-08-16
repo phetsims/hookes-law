@@ -28,14 +28,22 @@ define( function( require ) {
     DISPLACEMENT_DECIMAL_PLACES: 3,
     ENERGY_DECIMAL_PLACES: 1,
 
-    // deltas, used by the arrow (tweaker) controls
-    SPRING_CONSTANT_DELTA: 10, // units = N/m
-    APPLIED_FORCE_DELTA: 1, // units = N
-    DISPLACEMENT_DELTA: 0.001, // units = m
-    ENERGY_SCREEN_DISPLACEMENT_DELTA: 0.01, // units = m
+    // slider thumb intervals, see #60
+    SPRING_CONSTANT_THUMB_INTERVAL: 10, // N/m
+    APPLIED_FORCE_THUMB_INTERVAL: 5, // N
+    DISPLACEMENT_THUMB_INTERVAL: 0.05, // m
 
-    // constrain dragging of displacement slider thumb and robotic arm to multiples of this interval, see #54
-    DISPLACEMENT_INTERVAL: 0.05, // units = m
+    // tweaker intervals, see #60
+    SPRING_CONSTANT_TWEAKER_INTERVAL: 1, // N/m
+    APPLIED_FORCE_TWEAKER_INTERVAL: 1, // N
+    DISPLACEMENT_TWEAKER_INTERVAL: 0.01, // m
+
+    // drag intervals
+    ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.05, // m, see #54
+
+    //TODO delete these?
+    // deltas, used by the arrow (tweaker) controls
+    APPLIED_FORCE_DELTA: 1, // units = N
 
     // unit vectors, for 1-dimensional model-view transforms
     UNIT_DISPLACEMENT_X: 225, // view length of a 1m displacement vector, when drawn in the x dimension

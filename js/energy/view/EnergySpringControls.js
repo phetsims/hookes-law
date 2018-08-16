@@ -31,9 +31,6 @@ define( function( require ) {
 
     options = _.extend( {
 
-      // {number} delta used by tweakers in displace control
-      displacementDelta: HookesLawConstants.DISPLACEMENT_DELTA,
-
       // HBox options
       spacing: 10,
       tandem: Tandem.required
@@ -55,7 +52,6 @@ define( function( require ) {
     } );
 
     var displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
-      delta: options.displacementDelta,
       minorTickSpacing: spring.displacementRange.getLength() / 10,
       majorTickValues: [
         spring.displacementRange.min,

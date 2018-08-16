@@ -46,7 +46,7 @@ define( function( require ) {
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       valuePattern: VALUE_PATTERN,
-      delta: HookesLawConstants.DISPLACEMENT_DELTA,
+      delta: HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL,
       minorTickSpacing: 1,
       thumbFillEnabled: HookesLawColors.DISPLACEMENT,
       startCallback: function() {
@@ -59,7 +59,7 @@ define( function( require ) {
       },
       constrainValue: function( value ) {
         // constrain to multiples of a specific interval, see #54
-        return Util.roundToInterval( value, HookesLawConstants.DISPLACEMENT_INTERVAL );
+        return Util.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
       },
 
       // phet-io

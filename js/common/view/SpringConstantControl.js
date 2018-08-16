@@ -46,7 +46,7 @@ define( function( require ) {
       valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
       decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
       valuePattern: VALUE_PATTERN,
-      delta: HookesLawConstants.SPRING_CONSTANT_DELTA,
+      delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
       minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
       startCallback: function() {
@@ -54,6 +54,9 @@ define( function( require ) {
       },
       endCallback: function() {
         phet.log && phet.log( 'SpringConstantControl end drag' );
+      },
+      constrainValue: function( value ) {
+        return Util.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
       },
 
       // phet-io
