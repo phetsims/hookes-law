@@ -45,7 +45,7 @@ define( function( require ) {
     assert && assert( Util.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
     var majorTicks = [ {
       value: appliedForceRange.min,
-      label: new Text( Util.toFixed( appliedForceRange.min, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+      label: new Text( Util.toFixed( appliedForceRange.min, 0 ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
     }, {
       value: appliedForceRange.min / 2,
       label: null
@@ -57,7 +57,7 @@ define( function( require ) {
       label: null
     }, {
       value: appliedForceRange.max,
-      label: new Text( Util.toFixed( appliedForceRange.max, HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+      label: new Text( Util.toFixed( appliedForceRange.max, 0 ), HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
     } ];
 
     options = _.extend( {
