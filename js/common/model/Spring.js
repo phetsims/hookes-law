@@ -38,6 +38,7 @@ define( function( require ) {
   var Range = require( 'DOT/Range' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
+  var ToleranceProperty = require( 'HOOKES_LAW/common/model/ToleranceProperty' );
 
   // ifphetio
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
@@ -118,7 +119,10 @@ define( function( require ) {
     // Properties
 
     // @public applied force (F)
-    this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue, {
+    // Computation of this Property's value often results in floating point error that cause update cycles,
+    // so use a Property that updates only if the new value is sufficiently different from the current value.
+    // See https://github.com/phetsims/hookes-law/issues/52
+    this.appliedForceProperty = new ToleranceProperty( this.appliedForceRange.defaultValue, {
       range: this.appliedForceRange,
       units: 'newtons',
       tandem: options.tandem.createTandem( 'appliedForceProperty' )
@@ -136,7 +140,10 @@ define( function( require ) {
       function( springConstant ) { phet.log( options.logName + ' springConstant=' + springConstant ); } );
 
     // @public displacement from equilibrium position (x)
-    this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
+    // Computation of this Property's value often results in floating point error that cause update cycles,
+    // so use a Property that updates only if the new value is sufficiently different from the current value.
+    // See https://github.com/phetsims/hookes-law/issues/52
+    this.displacementProperty = new ToleranceProperty( this.displacementRange.defaultValue, {
       range: this.displacementRange,
       units: 'meters',
       tandem: options.tandem.createTandem( 'displacementProperty' )
@@ -214,6 +221,7 @@ define( function( require ) {
       function( length ) { phet.log( options.logName + ' length=' + length ); } );
 
     // @public potential energy, E = ( k1 * x1 * x1 ) / 2
+    // To avoid intermediate values, define this *after* the listeners that update its dependencies.
     this.potentialEnergyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
