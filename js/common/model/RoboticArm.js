@@ -35,6 +35,7 @@ define( function( require ) {
     this.leftProperty = new NumberProperty( options.left, {
       isValidValue: function( value ) { return value < self.right; }
     } );
+    phet.log && this.leftProperty.link( function( left ) { phet.log( 'roboticArm leftProperty=' + left ); } );
   }
 
   hookesLaw.register( 'RoboticArm', RoboticArm );

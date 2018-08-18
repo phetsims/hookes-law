@@ -146,6 +146,8 @@ define( function( require ) {
 
     // @public location of the left end of the spring
     this.leftProperty = new NumberProperty( options.left );
+    phet.log && this.leftProperty.link(
+      function( left ) { phet.log( options.logName + ' left=' + left ); } );
 
     //------------------------------------------------
     // Derived properties
@@ -169,6 +171,8 @@ define( function( require ) {
       function( left ) {
         return left + self.equilibriumLength;
       } );
+    phet.log && this.equilibriumXProperty.link(
+      function( equilibriumX ) { phet.log( options.logName + ' equilibriumX=' + equilibriumX ); } );
 
     // @public x location of the right end of the spring
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
@@ -178,6 +182,8 @@ define( function( require ) {
         assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
         return right;
       } );
+    phet.log && this.rightProperty.link(
+      function( right ) { phet.log( options.logName + ' right=' + right ); } );
 
     // @public Range of the right end of the spring
     // Derivation differs depending on whether changing spring constant modifies applied force or displacement.
@@ -196,12 +202,16 @@ define( function( require ) {
           return new Range( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
         } );
     }
+    phet.log && this.rightRangeProperty.link(
+      function( rightRange ) { phet.log( options.logName + ' rightRange=' + rightRange ); } );
 
     // @public length of the spring
     this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
       function( left, right ) {
         return Math.abs( right - left );
       } );
+    phet.log && this.lengthProperty.link(
+      function( length ) { phet.log( options.logName + ' length=' + length ); } );
 
     // @public potential energy, E = ( k1 * x1 * x1 ) / 2
     this.potentialEnergyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
@@ -223,7 +233,8 @@ define( function( require ) {
       assert && assert( self.appliedForceRange.contains( appliedForce ),
         'appliedForce is out of range: ' + appliedForce );
 
-      self.displacementProperty.set( appliedForce / self.springConstantProperty.get() ); // x = F/k
+      // x = F/k
+      self.displacementProperty.set( appliedForce / self.springConstantProperty.get() );
     } );
 
     // k: When spring constant changes, adjust either displacement or applied force.
@@ -233,15 +244,16 @@ define( function( require ) {
 
       if ( options.appliedForceRange ) {
 
-         // if the applied force range was specified, then maintain the applied force, change displacement
-         self.displacementProperty.set( self.appliedForceProperty.get() / springConstant ); // x = F/k
+        // If the applied force range was specified, then maintain the applied force, change displacement.
+        // x = F/k
+        self.displacementProperty.set( self.appliedForceProperty.get() / springConstant );
       }
       else {
 
         // The displacement range was specified via options - maintain the displacement, change applied force.
         // This applies to the Energy screen.
         // F = kx
-        self.appliedForceProperty.set( springConstant * self.displacementProperty.get() ); // F = kx
+        self.appliedForceProperty.set( springConstant * self.displacementProperty.get() );
       }
     } );
 
