@@ -75,12 +75,12 @@ define( function( require ) {
       minorTickSpacing: MINOR_TICK_SPACING,
       thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
       startCallback: function() {
-        phet.log && phet.log( 'AppliedForceControl start drag' );
+        phet.log && phet.log( 'AppliedForceControl start interaction' );
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
       },
       endCallback: function() {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
-        phet.log && phet.log( 'AppliedForceControl end drag' );
+        phet.log && phet.log( 'AppliedForceControl end interaction' );
       },
       constrainValue: function( value ) {
         return Util.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
