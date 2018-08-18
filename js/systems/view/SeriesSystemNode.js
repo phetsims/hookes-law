@@ -111,6 +111,7 @@ define( function( require ) {
     var leftSpringForceVectorNode = new SpringForceVectorNode(
       leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.LEFT_SPRING,
+        decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by leftSpring.rightProperty
         // bottom determined empirically, leftSpringNode.top is not accurate because we're using boundsMethod:'none'
         bottom: leftSpringNode.y - 65,
@@ -128,6 +129,7 @@ define( function( require ) {
     var rightSpringForceVectorNode = new SpringForceVectorNode(
       rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.RIGHT_SPRING,
+        decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by rightSpring.rightProperty
         bottom: leftSpringForceVectorNode.top - 10,
         tandem: options.tandem.createTandem( 'rightSpringForceVectorNode' )

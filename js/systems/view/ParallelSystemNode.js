@@ -138,7 +138,7 @@ define( function( require ) {
     var topSpringForceVectorNode = new SpringForceVectorNode(
       topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.TOP_SPRING,
-        decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
+        decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by topSpring.rightProperty
         centerY: totalSpringForceVectorNode.top,
         tandem: options.tandem.createTandem( 'topSpringForceVectorNode' )
@@ -147,7 +147,7 @@ define( function( require ) {
     var bottomSpringForceVectorNode = new SpringForceVectorNode(
       bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.BOTTOM_SPRING,
-        decimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
+        decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by bottomSpring.rightProperty
         centerY: totalSpringForceVectorNode.bottom,
         tandem: options.tandem.createTandem( 'bottomSpringForceVectorNode' )
