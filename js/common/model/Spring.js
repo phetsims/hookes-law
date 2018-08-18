@@ -32,14 +32,12 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var PhetioObject = require( 'TANDEM/PhetioObject' );
   var Range = require( 'DOT/Range' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
-  var Util = require( 'DOT/Util' );
 
   // ifphetio
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
@@ -72,10 +70,6 @@ define( function( require ) {
       // {RangeWithValue|null} applied force range and initial value, units = N
       appliedForceRange: null,
 
-      // {number} applied force (and thus spring force) are constrained to this delta,
-      // if options.appliedForceRange is non-null
-      appliedForceDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-
       // phet-io
       tandem: Tandem.required,
       phetioState: false // since this type has no inherent state to save, to avoid circular JSON error
@@ -92,8 +86,6 @@ define( function( require ) {
     assert && assert( options.springConstantRange.min > 0,
       'minimum spring constant must be positive : ' + options.springConstantRange.min );
     this.springConstantRange = options.springConstantRange; // @public read-only
-
-    this.appliedForceDecimalPlaces = options.appliedForceDecimalPlaces; // @public read-only
 
     // Either applied force range or displacement range can be specified, the other is computed.
     assert && assert( options.displacementRange && !options.appliedForceRange ||
@@ -257,13 +249,7 @@ define( function( require ) {
       // F = kx
       var appliedForce = self.springConstantProperty.get() * displacement;
 
-      // Constrain if the applied force range was specified via options.
-      // This occurs in the Intro and Systems screens.
-      if ( options.appliedForceRange ) {
-        appliedForce = Util.toFixedNumber( appliedForce, options.appliedForceDecimalPlaces );
-      }
-
-      // Constrain to range.
+      // Constrain to range, needed due to floating point error.
       appliedForce = self.appliedForceRange.constrainValue( appliedForce );
 
       self.appliedForceProperty.set( appliedForce );

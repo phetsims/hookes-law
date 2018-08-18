@@ -27,7 +27,6 @@ define( function( require ) {
 
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
@@ -51,7 +50,6 @@ define( function( require ) {
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of F1, units = N
-      appliedForceDecimalPlaces: HookesLawConstants.PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES,
       tandem: tandem.createTandem( 'topSpring' ),
       phetioInstanceDocumentation: 'The top spring in the parallel system'
     } );
@@ -63,7 +61,6 @@ define( function( require ) {
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange,
       appliedForceRange: this.topSpring.appliedForceRange,
-      appliedForceDecimalPlaces: this.topSpring.appliedForceDecimalPlaces,
       tandem: tandem.createTandem( 'bottomSpring' ),
       phetioInstanceDocumentation: 'The bottom spring in the parallel system'
     } );
