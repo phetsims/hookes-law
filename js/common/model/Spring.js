@@ -157,6 +157,52 @@ define( function( require ) {
       function( left ) { phet.log( options.logName + ' left=' + left ); } );
 
     //------------------------------------------------
+    // Property observers
+
+    // F: When applied force changes, maintain the spring constant, change displacement.
+    this.appliedForceProperty.link( function( appliedForce ) {
+      assert && assert( self.appliedForceRange.contains( appliedForce ),
+        'appliedForce is out of range: ' + appliedForce );
+
+      // x = F/k
+      self.displacementProperty.set( appliedForce / self.springConstantProperty.get() );
+    } );
+
+    // k: When spring constant changes, adjust either displacement or applied force.
+    this.springConstantProperty.link( function( springConstant ) {
+      assert && assert( self.springConstantRange.contains( springConstant ),
+        'springConstant is out of range: ' + springConstant );
+
+      if ( options.appliedForceRange ) {
+
+        // If the applied force range was specified, then maintain the applied force, change displacement.
+        // x = F/k
+        self.displacementProperty.set( self.appliedForceProperty.get() / springConstant );
+      }
+      else {
+
+        // The displacement range was specified via options - maintain the displacement, change applied force.
+        // This applies to the Energy screen.
+        // F = kx
+        self.appliedForceProperty.set( springConstant * self.displacementProperty.get() );
+      }
+    } );
+
+    // x: When displacement changes, maintain the spring constant, change applied force.
+    this.displacementProperty.link( function( displacement ) {
+      assert && assert( self.displacementRange.contains( displacement ),
+        'displacement is out of range: ' + displacement );
+
+      // F = kx
+      var appliedForce = self.springConstantProperty.get() * displacement;
+
+      // Constrain to range, needed due to floating point error.
+      appliedForce = self.appliedForceRange.constrainValue( appliedForce );
+
+      self.appliedForceProperty.set( appliedForce );
+    } );
+
+    //------------------------------------------------
     // Derived properties
 
     // @public spring force opposes the applied force (-F)
@@ -232,52 +278,6 @@ define( function( require ) {
       } );
     phet.log && this.potentialEnergyProperty.link(
       function( potentialEnergy ) { phet.log( options.logName + ' potentialEnergy=' + potentialEnergy ); } );
-
-    //------------------------------------------------
-    // Property observers
-
-    // F: When applied force changes, maintain the spring constant, change displacement.
-    this.appliedForceProperty.link( function( appliedForce ) {
-      assert && assert( self.appliedForceRange.contains( appliedForce ),
-        'appliedForce is out of range: ' + appliedForce );
-
-      // x = F/k
-      self.displacementProperty.set( appliedForce / self.springConstantProperty.get() );
-    } );
-
-    // k: When spring constant changes, adjust either displacement or applied force.
-    this.springConstantProperty.link( function( springConstant ) {
-      assert && assert( self.springConstantRange.contains( springConstant ),
-        'springConstant is out of range: ' + springConstant );
-
-      if ( options.appliedForceRange ) {
-
-        // If the applied force range was specified, then maintain the applied force, change displacement.
-        // x = F/k
-        self.displacementProperty.set( self.appliedForceProperty.get() / springConstant );
-      }
-      else {
-
-        // The displacement range was specified via options - maintain the displacement, change applied force.
-        // This applies to the Energy screen.
-        // F = kx
-        self.appliedForceProperty.set( springConstant * self.displacementProperty.get() );
-      }
-    } );
-
-    // x: When displacement changes, maintain the spring constant, change applied force.
-    this.displacementProperty.link( function( displacement ) {
-      assert && assert( self.displacementRange.contains( displacement ),
-        'displacement is out of range: ' + displacement );
-
-      // F = kx
-      var appliedForce = self.springConstantProperty.get() * displacement;
-
-      // Constrain to range, needed due to floating point error.
-      appliedForce = self.appliedForceRange.constrainValue( appliedForce );
-
-      self.appliedForceProperty.set( appliedForce );
-    } );
 
     PhetioObject.call( this, options );
   }
