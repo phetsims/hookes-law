@@ -39,7 +39,7 @@ define( function( require ) {
     DISPLACEMENT_TWEAKER_INTERVAL: 0.01, // m
 
     // drag intervals
-    ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.05, // m, see #54
+    ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.05, // m, Energy screen only, see #54
 
     //TODO delete these?
     // deltas, used by the arrow (tweaker) controls
