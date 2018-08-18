@@ -24,7 +24,7 @@ define( function( require ) {
     SCREEN_OPTIONS: { backgroundColorProperty: new Property( 'white' ) },
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
 
-    // number of decimal places for quantities
+    // number of decimal places for displayed values
     APPLIED_FORCE_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES,
     SPRING_FORCE_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES,
     SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES, // series system
@@ -33,12 +33,12 @@ define( function( require ) {
     DISPLACEMENT_DECIMAL_PLACES: 3,
     ENERGY_DECIMAL_PLACES: 1,
 
-    // slider thumb intervals, see #60
+    // slider thumb intervals
     APPLIED_FORCE_THUMB_INTERVAL: 5, // N
     SPRING_CONSTANT_THUMB_INTERVAL: 10, // N/m
     DISPLACEMENT_THUMB_INTERVAL: 0.05, // m
 
-    // tweaker intervals, see #60
+    // tweaker intervals
     APPLIED_FORCE_TWEAKER_INTERVAL: 1, // N
     SPRING_CONSTANT_TWEAKER_INTERVAL: 1, // N/m
     DISPLACEMENT_TWEAKER_INTERVAL: 0.01, // m
