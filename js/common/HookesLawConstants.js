@@ -16,6 +16,9 @@ define( function( require ) {
   var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   var Property = require( 'AXON/Property' );
 
+  // constants
+  var APPLIED_FORCE_DECIMAL_PLACES = 1;
+
   var HookesLawConstants = {
 
     SCREEN_OPTIONS: { backgroundColorProperty: new Property( 'white' ) },
@@ -23,10 +26,11 @@ define( function( require ) {
 
     // number of decimal places for quantities
     SPRING_CONSTANT_DECIMAL_PLACES: 0,
-    APPLIED_FORCE_DECIMAL_PLACES: 1,
-    SPRING_FORCE_DECIMAL_PLACES: 1,
+    APPLIED_FORCE_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES,
+    SPRING_FORCE_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES,
     DISPLACEMENT_DECIMAL_PLACES: 3,
     ENERGY_DECIMAL_PLACES: 1,
+    PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES + 1, // parallel system
 
     // slider thumb intervals, see #60
     SPRING_CONSTANT_THUMB_INTERVAL: 10, // N/m
@@ -41,22 +45,12 @@ define( function( require ) {
     // drag intervals
     ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.05, // m, Energy screen only, see #54
 
-    //TODO delete these?
-    // deltas, used by the arrow (tweaker) controls
-    APPLIED_FORCE_DELTA: 1, // units = N
-
     // unit vectors, for 1-dimensional model-view transforms
     UNIT_DISPLACEMENT_X: 225, // view length of a 1m displacement vector, when drawn in the x dimension
     UNIT_FORCE_X: 1.45, // view length of a 1N force vector, when drawn in the x dimension
     UNIT_FORCE_Y: 0.25, // view length of a 1N force vector, when drawn in the y dimension
     UNIT_ENERGY_Y: 1.1, // view length of a 1J energy vector, when drawn in the y dimension
-
-    // specific to parallel system, where spring-force components require a decimal place
-    PARALLEL_COMPONENTS_SPRING_FORCE_DECIMAL_PLACES: 1,
-    PARALLEL_COMPONENTS_APPLIED_FORCE_DELTA: 0.1,
-
-    // specific to Energy screen, where ranges are different
-    ENERGY_UNIT_FORCE_X: 0.4, // view length of a 1N force vector, when drawn in the x dimension
+    ENERGY_UNIT_FORCE_X: 0.4, // Energy screen: view length of a 1N force vector, when drawn in the x dimension
 
     // fonts
     CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),

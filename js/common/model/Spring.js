@@ -39,6 +39,7 @@ define( function( require ) {
   var Range = require( 'DOT/Range' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
+  var Util = require( 'DOT/Util' );
 
   // ifphetio
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
@@ -73,7 +74,7 @@ define( function( require ) {
 
       // {number} applied force (and thus spring force) are constrained to this delta,
       // if options.appliedForceRange is non-null
-      appliedForceDelta: HookesLawConstants.APPLIED_FORCE_DELTA,
+      appliedForceDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
 
       // phet-io
       tandem: Tandem.required,
@@ -92,9 +93,7 @@ define( function( require ) {
       'minimum spring constant must be positive : ' + options.springConstantRange.min );
     this.springConstantRange = options.springConstantRange; // @public read-only
 
-    assert && assert( options.appliedForceDelta > 0,
-      'appliedForceDelta must be > 0 : ' + options.appliedForceDelta );
-    this.appliedForceDelta = options.appliedForceDelta; // @public read-only
+    this.appliedForceDecimalPlaces = options.appliedForceDecimalPlaces; // @public read-only
 
     // Either applied force range or displacement range can be specified, the other is computed.
     assert && assert( options.displacementRange && !options.appliedForceRange ||
@@ -257,6 +256,12 @@ define( function( require ) {
 
       // F = kx
       var appliedForce = self.springConstantProperty.get() * displacement;
+
+      // Constrain if the applied force range was specified via options.
+      // This occurs in the Intro and Systems screens.
+      if ( options.appliedForceRange ) {
+        appliedForce = Util.toFixedNumber( appliedForce, options.appliedForceDecimalPlaces );
+      }
 
       // Constrain to range.
       appliedForce = self.appliedForceRange.constrainValue( appliedForce );
