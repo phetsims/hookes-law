@@ -39,7 +39,6 @@ define( function( require ) {
   var Range = require( 'DOT/Range' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
-  var Util = require( 'DOT/Util' );
 
   // ifphetio
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
@@ -231,13 +230,7 @@ define( function( require ) {
     // F: When applied force changes, maintain the spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {
       assert && assert( self.appliedForceRange.contains( appliedForce ), 'appliedForce is out of range: ' + appliedForce );
-
-      // x = F/k
-      var displacement = appliedForce / self.springConstantProperty.get();
-
-      // Constrain number of decimal places
-      displacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      self.displacementProperty.set( displacement );
+      self.displacementProperty.set( appliedForce / self.springConstantProperty.get() ); // x = F/k
     } );
 
     // k: When spring constant changes, adjust either displacement or applied force.
@@ -245,14 +238,8 @@ define( function( require ) {
       assert && assert( self.springConstantRange.contains( springConstant ), 'springConstant is out of range: ' + springConstant );
       if ( options.appliedForceRange ) {
 
-        // The applied force range was specified via options - maintain the applied force, change displacement.
-        // This applies to the Intro and Systems screens.
-        // x = F/k
-        var displacement = self.appliedForceProperty.get() / springConstant;
-
-        // Constrain number of decimal places
-        displacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-        self.displacementProperty.set( displacement );
+         // if the applied force range was specified, then maintain the applied force, change displacement
+         self.displacementProperty.set( self.appliedForceProperty.get() / springConstant ); // x = F/k
       }
       else {
 

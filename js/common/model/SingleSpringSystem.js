@@ -10,11 +10,9 @@ define( function( require ) {
 
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
   var Spring = require( 'HOOKES_LAW/common/model/Spring' );
-  var Util = require( 'DOT/Util' );
 
   /**
    * @param {Tandem} tandem
@@ -51,9 +49,7 @@ define( function( require ) {
 
     // Robotic arm sets displacement of spring.
     this.roboticArm.leftProperty.link( function( left ) {
-      var displacement = Util.toFixedNumber( left - self.spring.equilibriumXProperty.get(),
-        HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      self.spring.displacementProperty.set( displacement );
+      self.spring.displacementProperty.set( left - self.spring.equilibriumXProperty.get() );
     } );
 
     //------------------------------------------------
