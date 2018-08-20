@@ -66,11 +66,11 @@ define( function( require ) {
       // {RangeWithValue} spring constant range and initial value, units = N/m
       springConstantRange: new RangeWithValue( 100, 1000, 200 ),
 
-      // {RangeWithValue|null} displacement range and initial value, units = m
-      displacementRange: null,
-
       // {RangeWithValue|null} applied force range and initial value, units = N
       appliedForceRange: null,
+
+      // {RangeWithValue|null} displacement range and initial value, units = m
+      displacementRange: null,
 
       // phet-io
       tandem: Tandem.required,
@@ -89,10 +89,11 @@ define( function( require ) {
       'minimum spring constant must be positive : ' + options.springConstantRange.min );
     this.springConstantRange = options.springConstantRange; // @public read-only
 
-    // Either applied force range or displacement range can be specified, the other is computed.
-    assert && assert( options.displacementRange && !options.appliedForceRange ||
-                      !options.displacementRange && options.appliedForceRange,
-      'specify either displacementRange or appliedForceRange, but not both' );
+    // Either appliedForceRange or displacementRange must be specified, and the other is computed.
+    // Intro and Systems screens specify appliedForceRange. Energy screen specifies displacementRange.
+    assert && assert( ( options.appliedForceRange && !options.displacementRange ) ||
+                      ( !options.appliedForceRange && options.displacementRange ),
+      'specify either appliedForceRange or displacementRange, but not both' );
     if ( options.appliedForceRange ) {
       assert && assert( options.appliedForceRange instanceof RangeWithValue,
         'invalid appliedForceRange: ' + options.appliedForceRange );
@@ -120,7 +121,7 @@ define( function( require ) {
     // Properties
 
     // @public applied force (F)
-    // Computation of this Property's value often results in floating point error that cause update cycles,
+    // Computation of this Property's value often results in floating-point error that causes update cycles,
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
     this.appliedForceProperty = new EpsilonProperty( this.appliedForceRange.defaultValue, {
@@ -143,7 +144,7 @@ define( function( require ) {
       function( springConstant ) { phet.log( options.logName + ' springConstant=' + springConstant ); } );
 
     // @public displacement from equilibrium position (x)
-    // Computation of this Property's value often results in floating point error that cause update cycles,
+    // Computation of this Property's value often results in floating-point error that causes update cycles,
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
     this.displacementProperty = new EpsilonProperty( this.displacementRange.defaultValue, {
@@ -163,7 +164,7 @@ define( function( require ) {
     //------------------------------------------------
     // Property observers
 
-    // F: When applied force changes, maintain the spring constant, change displacement.
+    // F: When applied force changes, maintain spring constant, change displacement.
     this.appliedForceProperty.link( function( appliedForce ) {
       assert && assert( self.appliedForceRange.contains( appliedForce ),
         'appliedForce is out of range: ' + appliedForce );
@@ -179,13 +180,14 @@ define( function( require ) {
 
       if ( options.appliedForceRange ) {
 
-        // If the applied force range was specified, then maintain the applied force, change displacement.
+        // If the applied force range was specified via options, then maintain the applied force, change displacement.
+        // This applies to the Intro and Systems screens.
         // x = F/k
         self.displacementProperty.set( self.appliedForceProperty.get() / springConstant );
       }
       else {
 
-        // The displacement range was specified via options - maintain the displacement, change applied force.
+        // If displacement range was specified via options, maintain the displacement, change applied force.
         // This applies to the Energy screen.
         // F = kx
         self.appliedForceProperty.set( springConstant * self.displacementProperty.get() );
@@ -200,7 +202,7 @@ define( function( require ) {
       // F = kx
       var appliedForce = self.springConstantProperty.get() * displacement;
 
-      // Constrain to range, needed due to floating point error.
+      // Constrain to range, needed due to floating-point error.
       appliedForce = self.appliedForceRange.constrainValue( appliedForce );
 
       self.appliedForceProperty.set( appliedForce );
