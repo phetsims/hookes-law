@@ -123,6 +123,7 @@ define( function( require ) {
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
     this.appliedForceProperty = new ToleranceProperty( this.appliedForceRange.defaultValue, {
+      reentrant: false,
       range: this.appliedForceRange,
       units: 'newtons',
       tandem: options.tandem.createTandem( 'appliedForceProperty' )
@@ -132,6 +133,7 @@ define( function( require ) {
 
     // @public spring constant (k)
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
+      reentrant: false,
       range: this.springConstantRange,
       units: 'newtons/meters',
       tandem: options.tandem.createTandem( 'springConstantProperty' )
@@ -144,6 +146,7 @@ define( function( require ) {
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
     this.displacementProperty = new ToleranceProperty( this.displacementRange.defaultValue, {
+      reentrant: false,
       range: this.displacementRange,
       units: 'meters',
       tandem: options.tandem.createTandem( 'displacementProperty' )
@@ -152,7 +155,9 @@ define( function( require ) {
       function( displacement ) { phet.log( options.logName + ' displacement=' + displacement ); } );
 
     // @public location of the left end of the spring
-    this.leftProperty = new NumberProperty( options.left );
+    this.leftProperty = new NumberProperty( options.left, {
+      reentrant: false
+    } );
     phet.log && this.leftProperty.link(
       function( left ) { phet.log( options.logName + ' left=' + left ); } );
 
@@ -210,6 +215,7 @@ define( function( require ) {
       function( appliedForce ) {
         return -appliedForce;
       }, {
+        reentrant: false,
         units: 'newtons',
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'springForceProperty' )
@@ -223,6 +229,8 @@ define( function( require ) {
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
       function( left ) {
         return left + self.equilibriumLength;
+      }, {
+        reentrant: false
       } );
     phet.log && this.equilibriumXProperty.link(
       function( equilibriumX ) { phet.log( options.logName + ' equilibriumX=' + equilibriumX ); } );
@@ -234,6 +242,8 @@ define( function( require ) {
         var right = equilibriumX + displacement;
         assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
         return right;
+      }, {
+        reentrant: false
       } );
     phet.log && this.rightProperty.link(
       function( right ) { phet.log( options.logName + ' right=' + right ); } );
@@ -247,12 +257,16 @@ define( function( require ) {
           var minDisplacement = self.appliedForceRange.min / springConstant;
           var maxDisplacement = self.appliedForceRange.max / springConstant;
           return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
+        }, {
+          reentrant: false
         } );
     }
     else {
       this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
         function( equilibriumX ) {
           return new Range( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
+        }, {
+          reentrant: false
         } );
     }
     phet.log && this.rightRangeProperty.link(
@@ -262,6 +276,8 @@ define( function( require ) {
     this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
       function( left, right ) {
         return Math.abs( right - left );
+      }, {
+        reentrant: false
       } );
     phet.log && this.lengthProperty.link(
       function( length ) { phet.log( options.logName + ' length=' + length ); } );
@@ -272,6 +288,7 @@ define( function( require ) {
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
       }, {
+        reentrant: false,
         units: 'joules',
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
