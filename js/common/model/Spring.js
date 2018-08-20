@@ -31,6 +31,7 @@ define( function( require ) {
   // modules
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
+  var EpsilonProperty = require( 'HOOKES_LAW/common/model/EpsilonProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
@@ -38,7 +39,6 @@ define( function( require ) {
   var Range = require( 'DOT/Range' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
-  var ToleranceProperty = require( 'HOOKES_LAW/common/model/ToleranceProperty' );
 
   // ifphetio
   var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
@@ -122,7 +122,7 @@ define( function( require ) {
     // Computation of this Property's value often results in floating point error that cause update cycles,
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
-    this.appliedForceProperty = new ToleranceProperty( this.appliedForceRange.defaultValue, {
+    this.appliedForceProperty = new EpsilonProperty( this.appliedForceRange.defaultValue, {
       reentrant: false,
       range: this.appliedForceRange,
       units: 'newtons',
@@ -145,7 +145,7 @@ define( function( require ) {
     // Computation of this Property's value often results in floating point error that cause update cycles,
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
-    this.displacementProperty = new ToleranceProperty( this.displacementRange.defaultValue, {
+    this.displacementProperty = new EpsilonProperty( this.displacementRange.defaultValue, {
       reentrant: false,
       range: this.displacementRange,
       units: 'meters',
