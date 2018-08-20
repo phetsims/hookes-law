@@ -5,12 +5,6 @@
  * The left end is attached to something like a wall or another spring.
  * A force is applied to the right end, by something like a robotic arm or another spring.
  *
- * Either displacement range or applied force range must be specified, but not both.
- * The unspecified range is computed, and whichever range is not specified is the
- * quantity that changes when spring constant is modified. For example, if applied force
- * range is specified, then displacement range is computed, and changing spring constant
- * will modify displacement.
- *
  * Model equations:
  *
  * F = k * x
@@ -22,6 +16,24 @@
  * k = spring constant, N/m
  * x = displacement from equilibrium position, m
  * E = potential energy, J
+ *
+ * Either displacement range or applied force range must be specified, but not both.
+ * The unspecified range is computed, and whichever range is not specified is the
+ * quantity that changes when spring constant is modified. For example, if applied force
+ * range is specified, then displacement range is computed, and changing spring constant
+ * will modify displacement. Here's how that applies to this sim's screens:
+ *
+ * Intro and Systems screens (appliedForceRange specified):
+ *
+ * F change => compute x
+ * k change => compute x
+ * x change => compute F
+ *
+ * Energy screen (displacementRange specified):
+ *
+ * F change => compute x
+ * k change => compute F
+ * x change => compute F
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
