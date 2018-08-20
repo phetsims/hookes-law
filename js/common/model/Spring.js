@@ -173,7 +173,7 @@ define( function( require ) {
       self.displacementProperty.set( appliedForce / self.springConstantProperty.get() );
     } );
 
-    // k: When spring constant changes, adjust either displacement or applied force.
+    // k: When spring constant changes, adjust either applied force or displacement.
     this.springConstantProperty.link( function( springConstant ) {
       assert && assert( self.springConstantRange.contains( springConstant ),
         'springConstant is out of range: ' + springConstant );
