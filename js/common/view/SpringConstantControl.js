@@ -50,10 +50,10 @@ define( function( require ) {
       minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
       startCallback: function() {
-        phet.log && phet.log( 'SpringConstantControl start interaction' );
+        phet.log && phet.log( '>>>>> SpringConstantControl start interaction' );
       },
       endCallback: function() {
-        phet.log && phet.log( 'SpringConstantControl end interaction' );
+        phet.log && phet.log( '>>>>> SpringConstantControl end interaction' );
       },
       constrainValue: function( value ) {
         return Util.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );

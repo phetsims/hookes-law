@@ -50,12 +50,12 @@ define( function( require ) {
       minorTickSpacing: 1,
       thumbFillEnabled: HookesLawColors.DISPLACEMENT,
       startCallback: function() {
-        phet.log && phet.log( 'DisplacementControl start interaction' );
+        phet.log && phet.log( '>>>>> DisplacementControl start interaction' );
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
       },
       endCallback: function() {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
-        phet.log && phet.log( 'DisplacementControl end interaction' );
+        phet.log && phet.log( '>>>>> DisplacementControl end interaction' );
       },
       constrainValue: function( value ) {
         // constrain to multiples of a specific interval, see #54
