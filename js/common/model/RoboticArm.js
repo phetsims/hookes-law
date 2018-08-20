@@ -36,7 +36,6 @@ define( function( require ) {
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
     this.leftProperty = new EpsilonProperty( options.left, {
-      reentrant: false,
       isValidValue: function( value ) { return value < self.right; }
     } );
     phet.log && this.leftProperty.link( function( left ) { phet.log( 'roboticArm left=' + left ); } );
