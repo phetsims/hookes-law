@@ -11,7 +11,7 @@ define( function( require ) {
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var NumberProperty = require( 'AXON/NumberProperty' );
+  var EpsilonProperty = require( 'HOOKES_LAW/common/model/EpsilonProperty' );
   var Tandem = require( 'TANDEM/Tandem' );
 
   /**
@@ -32,7 +32,10 @@ define( function( require ) {
     this.right = options.right;
 
     // @public left (movable) end of the arm
-    this.leftProperty = new NumberProperty( options.left, {
+    // Computation of this Property's value often results in floating-point error that causes update cycles,
+    // so use a Property that updates only if the new value is sufficiently different from the current value.
+    // See https://github.com/phetsims/hookes-law/issues/52
+    this.leftProperty = new EpsilonProperty( options.left, {
       reentrant: false,
       isValidValue: function( value ) { return value < self.right; }
     } );
