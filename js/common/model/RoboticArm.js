@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var EpsilonProperty = require( 'HOOKES_LAW/common/model/EpsilonProperty' );
   var Tandem = require( 'TANDEM/Tandem' );
@@ -36,8 +37,8 @@ define( function( require ) {
     // so use a Property that updates only if the new value is sufficiently different from the current value.
     // See https://github.com/phetsims/hookes-law/issues/52
     this.leftProperty = new EpsilonProperty( options.left, {
-      isValidValue: function( value ) { return value < self.right; },
-      reentrant: true
+      reentrant: HookesLawQueryParameters.reentrant,
+      isValidValue: function( value ) { return value < self.right; }
     } );
     phet.log && this.leftProperty.link( function( left ) { phet.log( 'roboticArm left=' + left ); } );
   }
