@@ -9,6 +9,8 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Animation = require( 'TWIXT/Animation' );
+  var Easing = require( 'TWIXT/Easing' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -96,15 +98,16 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    // Tween instances for system 1
-    var tweenPosition1;
-    var tweenOpacity1;
+    // @private Animations for system 1
+    this.animationPosition1 = null;
+    this.animationOpacity1 = null;
 
-    // Tween instances for system 2
-    var tweenPosition2;
-    var tweenOpacity2;
+    // @private Animations for system 2
+    this.animationPosition2 = null;
+    this.animationOpacity2 = null;
 
-    // The vertical position of system 1, controlled via a Property to support PhET-iO record & playback. See #53.
+    // The vertical position of system 1, controlled via a Property to support
+    // animation and PhET-iO record & playback. See #46 and #53.
     var system1CenterYProperty = new NumberProperty( system1Node.centerY, {
       tandem: tandem.createTandem( 'system1CenterYProperty' )
     } );
@@ -112,73 +115,113 @@ define( function( require ) {
       system1Node.centerY = centerY;
     } );
 
+    // The opacity of system 2, controlled via a Property to support animation. See #46.
+    var system2OpacityProperty = new NumberProperty( 0, {
+      isValidValue: function( value ) { return value >= 0 && value <= 1; }
+    } );
+    system2OpacityProperty.link( function( opacity ) {
+      system2Node.opacity = opacity;
+    } );
+
     viewProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
 
       assert && assert( numberOfSystems === 1 || numberOfSystems === 2 );
 
       // Stop any animation that is in progress
-      tweenPosition1 && tweenPosition1.stop();
-      tweenOpacity1 && tweenOpacity1.stop();
-      tweenPosition2 && tweenPosition2.stop();
-      tweenOpacity2 && tweenOpacity2.stop();
+      self.animationPosition1 && self.animationPosition1.stop();
+      self.animationOpacity1 && self.animationOpacity1.stop();
+      self.animationPosition2 && self.animationPosition2.stop();
+      self.animationOpacity2 && self.animationOpacity2.stop();
 
-      // animate system 1 into position
-      var tweenParameters;
       if ( numberOfSystems === 1 ) {
 
-        tweenParameters = { y: system1CenterYProperty.get(), opacity: 1 };
+        // Fade out system 2, then move system 1 to vertical center of layoutBounds.
 
-        // fade out system 2
-        tweenOpacity2 = new TWEEN.Tween( tweenParameters )
-          .to( { opacity: 0 }, 500 )
-          .onUpdate( function() {
-            system2Node.opacity = tweenParameters.opacity;
-          } )
-          .onComplete( function() {
-            system2Node.visible = false;
-            tweenPosition1.start( phet.joist.elapsedTime );
-          } );
+        // animate system 1 to the vertical center of the screen
+        self.animationPosition1 = new Animation( {
+          stepper: 'manual',
+          duration: 0.5, // seconds
+          targets: [ {
+            property: system1CenterYProperty,
+            easing: Easing.LINEAR,
+            to: self.layoutBounds.centerY
+          } ]
+        } );
 
-        // move system 1 to center of screen
-        tweenPosition1 = new TWEEN.Tween( tweenParameters )
-          .to( { y: self.layoutBounds.centerY }, 500 )
-          .onUpdate( function() {
-            system1CenterYProperty.set( tweenParameters.y );
-          } );
+        self.animationPosition1.finishEmitter.addListener( function() {
+          self.animationPosition1 = null;
+        } );
 
-        tweenOpacity2.start( phet.joist.elapsedTime );
+        self.animationOpacity2 = new Animation( {
+          stepper: 'manual',
+          duration: 0.5, // seconds
+          targets: [ {
+            property: system2OpacityProperty,
+            easing: Easing.LINEAR,
+            to: 0
+          } ]
+        } );
+
+        self.animationOpacity2.finishEmitter.addListener( function() {
+          system2Node.visible = false;
+          self.animationOpacity2 = null;
+          self.animationPosition1.start();
+        } );
+
+        self.animationOpacity2.start();
       }
       else {
 
-        tweenParameters = { y: system1CenterYProperty.get(), opacity: 0 };
+        // Move system 1 to top of layoutBounds, then fade in system 2.
 
-        // move system 1 to top half of screen
-        tweenPosition1 = new TWEEN.Tween( tweenParameters )
-          .to( { y: 0.25 * self.layoutBounds.height }, 500 )
-          .onUpdate( function() {
-            system1CenterYProperty.set( tweenParameters.y );
-          } )
-          .onComplete( function() {
-            tweenOpacity2.start( phet.joist.elapsedTime );
-          } );
+        // animate system 1 to the top of the screen
+        self.animationPosition1 = new Animation( {
+          stepper: 'manual', // by calling step
+          duration: 0.5, // seconds
+          targets: [ {
+            property: system1CenterYProperty,
+            easing: Easing.LINEAR,
+            to: self.layoutBounds.minY + ( 0.25 * self.layoutBounds.height )
+          } ]
+        } );
 
-        // fade in system 2
-        tweenOpacity2 = new TWEEN.Tween( tweenParameters )
-          .to( { opacity: 1 }, 500 )
-          .onStart( function() {
-            system2Node.opacity = 0;
-            system2Node.visible = true;
-          } )
-          .onUpdate( function() {
-            system2Node.opacity = tweenParameters.opacity;
-          } );
+        self.animationPosition1.finishEmitter.addListener( function() {
+          self.animationPosition1 = null;
+          system2Node.visible = true;
+          self.animationOpacity2.start();
+        } );
 
-        tweenPosition1.start( phet.joist.elapsedTime );
+        self.animationOpacity2 = new Animation( {
+          stepper: 'manual', // by calling step
+          duration: 0.5, // seconds
+          targets: [ {
+            property: system2OpacityProperty,
+            easing: Easing.LINEAR,
+            to: 1
+          } ]
+        } );
+
+        self.animationOpacity2.finishEmitter.addListener( function() {
+          self.animationOpacity2 = null;
+        } );
+
+        self.animationPosition1.start();
       }
     } );
   }
 
   hookesLaw.register( 'IntroScreenView', IntroScreenView );
 
-  return inherit( ScreenView, IntroScreenView );
+  return inherit( ScreenView, IntroScreenView, {
+
+    // @public
+    step: function( dt ) {
+
+      // step animations
+      this.animationPosition1 && this.animationPosition1.step( dt );
+      this.animationOpacity1 && this.animationOpacity1.step( dt );
+      this.animationPosition2 && this.animationPosition2.step( dt );
+      this.animationOpacity2 && this.animationOpacity2.step( dt );
+    }
+  } );
 } );
