@@ -12,12 +12,11 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var IntroAnimation = require( 'HOOKES_LAW/intro/view/IntroAnimation' );
+  var IntroAnimator = require( 'HOOKES_LAW/intro/view/IntroAnimator' );
   var IntroSceneControl = require( 'HOOKES_LAW/intro/view/IntroSceneControl' );
   var IntroSystemNode = require( 'HOOKES_LAW/intro/view/IntroSystemNode' );
   var IntroViewProperties = require( 'HOOKES_LAW/intro/view/IntroViewProperties' );
   var IntroVisibilityControls = require( 'HOOKES_LAW/intro/view/IntroVisibilityControls' );
-  var NumberProperty = require( 'AXON/NumberProperty' );
   var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   var ScreenView = require( 'JOIST/ScreenView' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -28,8 +27,6 @@ define( function( require ) {
    * @constructor
    */
   function IntroScreenView( model, tandem ) {
-
-    var self = this;
 
     ScreenView.call( this, _.extend( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
 
@@ -97,43 +94,22 @@ define( function( require ) {
     } );
     this.addChild( resetAllButton );
 
-    // Vertical position of system 1.
-    // Instrumented and persistent for PhET-iO to support record/playback, see #53 and #62.
-    var system1CenterYProperty = new NumberProperty( system1Node.centerY, {
-      tandem: tandem.createTandem( 'system1CenterYProperty' )
-    } );
-    system1CenterYProperty.link( function( centerY ) {
-      system1Node.centerY = centerY;
-    } );
-
-    // Opacity of system 2.
-    // Instrumented and persistent for PhET-iO to support record/playback, see #53 and #62.
-    var system2OpacityProperty = new NumberProperty( system2Node.opacity, {
-      isValidValue: function( value ) { return value >= 0 && value <= 1; },
-      tandem: tandem.createTandem( 'system2OpacityProperty' )
-    } );
-    system2OpacityProperty.link( function( opacity ) {
-      system2Node.opacity = opacity;
-    } );
-
-    // @private When the number of systems changes, animate the systems.
-    this.animation = null;
-    viewProperties.numberOfSystemsProperty.lazyLink( function( numberOfSystems ) {
-      self.animation && self.animation.stop();
-      self.animation = new IntroAnimation( numberOfSystems, self.layoutBounds,
-        system1CenterYProperty, system2OpacityProperty, system2Node, tandem );
-      self.animation.finishEmitter.addListener( function() { self.animation = null; } );
-      self.animation.start();
-    } );
+    // @private Animates the transitions between 1 and 2 systems
+    this.animator = new IntroAnimator( viewProperties.numberOfSystemsProperty, system1Node, system2Node,
+      this.layoutBounds, tandem );
   }
 
   hookesLaw.register( 'IntroScreenView', IntroScreenView );
 
   return inherit( ScreenView, IntroScreenView, {
 
-    // @public
+    /**
+     * Advances animation.
+     * @param {number} dt - time step, in seconds
+     * @public
+     */
     step: function( dt ) {
-      this.animation && this.animation.step( dt );
+      this.animator.step( dt );
     }
   } );
 } );
