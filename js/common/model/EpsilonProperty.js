@@ -12,6 +12,7 @@ define( function( require ) {
 
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
 
@@ -23,7 +24,7 @@ define( function( require ) {
   function EpsilonProperty( value, options ) {
 
     options = _.extend( {
-      epsilon: 1e-10
+      epsilon: HookesLawQueryParameters.epsilon
     }, options );
 
     // @private

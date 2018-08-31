@@ -1,4 +1,4 @@
-// Copyright 2015-2017, University of Colorado Boulder
+// Copyright 2018, University of Colorado Boulder
 
 /**
  * Query parameters used in sim-specific code.
@@ -22,6 +22,15 @@ define( function( require ) {
     reentrant: {
       type: 'boolean',
       defaultValue: true
+    },
+
+    // Calls to set for some NumberProperty values will be ignored if the new and old value differ
+    // by less that this amount.  Set to 0 to effectively disable.
+    // See https://github.com/phetsims/hookes-law/issues/52
+    epsilon: {
+      type: 'number',
+      defaultValue: 1e-10,
+      isValidValue: function( value ) { return value >= 0; }
     }
   } );
 
