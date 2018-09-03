@@ -132,7 +132,7 @@ define( function( require ) {
 
     // @public applied force (F)
     this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue, {
-      reentrant: true,
+      reentrant: true, // because this both changes and is derived from displacement (x), see #63
       range: this.appliedForceRange,
       units: 'newtons',
       tandem: options.tandem.createTandem( 'appliedForceProperty' )
@@ -151,7 +151,7 @@ define( function( require ) {
 
     // @public displacement from equilibrium position (x)
     this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
-      reentrant: true,
+      reentrant: true, // because this both changes and is derived from applied force (F), see #63
       range: this.displacementRange,
       units: 'meters',
       tandem: options.tandem.createTandem( 'displacementProperty' )

@@ -33,7 +33,7 @@ define( function( require ) {
 
     // @public left (movable) end of the arm
     this.leftProperty = new NumberProperty( options.left, {
-      reentrant: true,
+      reentrant: true, // because this both changes and is derived from displacement (x), see #63
       isValidValue: function( value ) { return value < self.right; }
     } );
     phet.log && this.leftProperty.link( function( left ) { phet.log( 'roboticArm left=' + left ); } );
