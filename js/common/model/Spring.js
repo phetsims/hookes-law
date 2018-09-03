@@ -282,7 +282,6 @@ define( function( require ) {
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
       }, {
-        reentrant: true,
         units: 'joules',
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
