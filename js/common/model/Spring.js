@@ -1,4 +1,4 @@
-// Copyright 2015-2018, University of Colorado Boulder
+// Copyright 2018, University of Colorado Boulder
 
 /**
  * Model of a spring, contains purely model Properties.
@@ -43,7 +43,6 @@ define( function( require ) {
   // modules
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
-  var EpsilonProperty = require( 'HOOKES_LAW/common/model/EpsilonProperty' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -133,10 +132,7 @@ define( function( require ) {
     // Properties
 
     // @public applied force (F)
-    // Computation of this Property's value often results in floating-point error that causes update cycles,
-    // so use a Property that updates only if the new value is sufficiently different from the current value.
-    // See https://github.com/phetsims/hookes-law/issues/52
-    this.appliedForceProperty = new EpsilonProperty( this.appliedForceRange.defaultValue, {
+    this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue, {
       reentrant: HookesLawQueryParameters.reentrant,
       range: this.appliedForceRange,
       units: 'newtons',
@@ -156,10 +152,7 @@ define( function( require ) {
       function( springConstant ) { phet.log( options.logName + ' springConstant=' + springConstant ); } );
 
     // @public displacement from equilibrium position (x)
-    // Computation of this Property's value often results in floating-point error that causes update cycles,
-    // so use a Property that updates only if the new value is sufficiently different from the current value.
-    // See https://github.com/phetsims/hookes-law/issues/52
-    this.displacementProperty = new EpsilonProperty( this.displacementRange.defaultValue, {
+    this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
       reentrant: HookesLawQueryParameters.reentrant,
       range: this.displacementRange,
       units: 'meters',

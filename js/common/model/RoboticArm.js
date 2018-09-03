@@ -1,4 +1,4 @@
-// Copyright 2015-2018, University of Colorado Boulder
+// Copyright 2018, University of Colorado Boulder
 
 /**
  * The robotic arm. The left end is movable, the right end is fixed.
@@ -12,7 +12,7 @@ define( function( require ) {
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var EpsilonProperty = require( 'HOOKES_LAW/common/model/EpsilonProperty' );
+  var NumberProperty = require( 'AXON/NumberProperty' );
   var Tandem = require( 'TANDEM/Tandem' );
 
   /**
@@ -33,10 +33,7 @@ define( function( require ) {
     this.right = options.right;
 
     // @public left (movable) end of the arm
-    // Computation of this Property's value often results in floating-point error that causes update cycles,
-    // so use a Property that updates only if the new value is sufficiently different from the current value.
-    // See https://github.com/phetsims/hookes-law/issues/52
-    this.leftProperty = new EpsilonProperty( options.left, {
+    this.leftProperty = new NumberProperty( options.left, {
       reentrant: HookesLawQueryParameters.reentrant,
       isValidValue: function( value ) { return value < self.right; }
     } );
