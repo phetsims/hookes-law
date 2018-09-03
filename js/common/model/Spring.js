@@ -220,7 +220,7 @@ define( function( require ) {
       function( appliedForce ) {
         return -appliedForce;
       }, {
-        reentrant: true,
+        // reentrant: true,
         units: 'newtons',
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'springForceProperty' )
