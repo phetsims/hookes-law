@@ -33,7 +33,11 @@ define( function( require ) {
 
     // @public left (movable) end of the arm
     this.leftProperty = new NumberProperty( options.left, {
-      reentrant: true, // because this both changes and is derived from displacement (x), see #63
+
+      // The left end of the robotic arm and the spring's displacement (x) participate in a 2-way relationship,
+      // where changing one of them results in recalculation of the other.  For some values, this results in
+      // floating-point error that causes reentrant behavior.  See #63.
+      reentrant: true,
       isValidValue: function( value ) { return value < self.right; }
     } );
     phet.log && this.leftProperty.link( function( left ) { phet.log( 'roboticArm left=' + left ); } );
