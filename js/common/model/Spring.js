@@ -142,7 +142,6 @@ define( function( require ) {
 
     // @public spring constant (k)
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
-      reentrant: true,
       range: this.springConstantRange,
       units: 'newtons/meters',
       tandem: options.tandem.createTandem( 'springConstantProperty' )
