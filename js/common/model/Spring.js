@@ -44,7 +44,6 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var PhetioObject = require( 'TANDEM/PhetioObject' );
@@ -133,7 +132,7 @@ define( function( require ) {
 
     // @public applied force (F)
     this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue, {
-      reentrant: HookesLawQueryParameters.reentrant,
+      reentrant: true,
       range: this.appliedForceRange,
       units: 'newtons',
       tandem: options.tandem.createTandem( 'appliedForceProperty' )
@@ -143,7 +142,7 @@ define( function( require ) {
 
     // @public spring constant (k)
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
-      reentrant: HookesLawQueryParameters.reentrant,
+      reentrant: true,
       range: this.springConstantRange,
       units: 'newtons/meters',
       tandem: options.tandem.createTandem( 'springConstantProperty' )
@@ -153,7 +152,7 @@ define( function( require ) {
 
     // @public displacement from equilibrium position (x)
     this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
-      reentrant: HookesLawQueryParameters.reentrant,
+      reentrant: true,
       range: this.displacementRange,
       units: 'meters',
       tandem: options.tandem.createTandem( 'displacementProperty' )
@@ -221,7 +220,7 @@ define( function( require ) {
       function( appliedForce ) {
         return -appliedForce;
       }, {
-        reentrant: HookesLawQueryParameters.reentrant,
+        reentrant: true,
         units: 'newtons',
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'springForceProperty' )
@@ -284,7 +283,7 @@ define( function( require ) {
       function( springConstant, displacement ) {
         return ( springConstant * displacement * displacement ) / 2;
       }, {
-        reentrant: HookesLawQueryParameters.reentrant,
+        reentrant: true,
         units: 'joules',
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'potentialEnergyProperty' )

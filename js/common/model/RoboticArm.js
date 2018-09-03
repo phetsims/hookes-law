@@ -10,7 +10,6 @@ define( function( require ) {
 
   // modules
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var Tandem = require( 'TANDEM/Tandem' );
@@ -34,7 +33,7 @@ define( function( require ) {
 
     // @public left (movable) end of the arm
     this.leftProperty = new NumberProperty( options.left, {
-      reentrant: HookesLawQueryParameters.reentrant,
+      reentrant: true,
       isValidValue: function( value ) { return value < self.right; }
     } );
     phet.log && this.leftProperty.link( function( left ) { phet.log( 'roboticArm left=' + left ); } );
