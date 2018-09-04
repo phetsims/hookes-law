@@ -51,7 +51,7 @@ for details.
 A few Properties require the use of the `reentrant: true` option, because they participate in cyclic relationships,
 and because their computation is prone to floating-point error that triggers cycles.
 
-The first relationship is _x_ = _p_ - _e_, where _x_ is the spring's displacement from equilibrium (as above),
+The first relationship is _x_ = _p_ - _e_, where _x_ is the spring's displacement from equilibrium,
 _p_ is the position of the robotic arm's pincer, and _e_ is the spring's equilibrium position.
 The user can change _x_ (via a slider) or _p_ (by dragging the robotic arm). Changing _x_ results in computation
 of _p_; changing _p_ results in computation of _p_.   So the Properties for _x_ and _p_, `displacementProperty`
