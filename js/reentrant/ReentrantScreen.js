@@ -69,7 +69,7 @@ define( function( require ) {
     // @public p: position of robotic arm's pincer
     // This corresponds to RoboticArm leftProperty.
     this.pProperty = new NumberProperty( SPRING_EQUILIBRIUM_X + this.xProperty.get(), {
-      range: new Range( -8.5, 11.5 ),
+      range: new Range( SPRING_EQUILIBRIUM_X + this.xProperty.range.min, SPRING_EQUILIBRIUM_X + this.xProperty.range.max ),
       reentrant: REENTRANT
     } );
 
