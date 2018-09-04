@@ -49,7 +49,7 @@ for details.
 ## Reentrant Properties
 
 A few Properties require the use of the `reentrant: true` option, because they participate in cyclic relationships,
-and because their computation is prone to floating point error that triggers cycles.
+and because their computation is prone to floating-point error that triggers cycles.
 
 The first relationship is _F_ = _kx_, where _F_ is applied force, _k_ is spring constant, and _x_ is the spring's
 displacement from equilibrium. The user can change _F_, _k_ and _x_. Changing _x_ results in computation of _F_;
