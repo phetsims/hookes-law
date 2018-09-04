@@ -159,6 +159,7 @@ define( function( require ) {
       // Applied force (F) and displacement (x) participate in a 2-way relationship, where changing
       // one of them results in recalculation of the other.  For some values, this results in floating-point
       // error that causes reentrant behavior.  See #63.
+      reentrant: true,
       range: this.displacementRange,
       units: 'meters',
       tandem: options.tandem.createTandem( 'displacementProperty' )
