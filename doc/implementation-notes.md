@@ -59,7 +59,7 @@ require `reentrant: true`.
 
 The second relationship is _x_ = _p_ - _e_, where _x_ is the spring's displacement from equilibrium (as above),
 _p_ is the position of the robotic arm's pincer, and _e_ is the spring's equilibrium position.
-The user can change _x_ (via a slider) or _p_ (by dragging the robotic arm.   Changing _x_ results in computation
+The user can change _x_ (via a slider) or _p_ (by dragging the robotic arm). Changing _x_ results in computation
 of _p_; changing _p_ results in computation of _p_.   So the Properties for _x_ and _p_, `displacementProperty`
 in Spring.js and `leftProperty` in RoboticArm.js respectively, have `reentrant: true`.
 
