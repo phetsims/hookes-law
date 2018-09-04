@@ -46,6 +46,23 @@ The implementation of the spring view is based on a parametric equation known as
 See the documentation in [ParametricSpringNode](https://github.com/phetsims/scenery-phet/blob/master/js/ParametricSpringNode.js)
 for details.
 
+## Reentrant Properties
+
+A few Properties require the use of the `reentrant: true` option, because they participate in cyclic relationships,
+and because their computation is prone to floating point error that triggers cycles.
+
+The first relationship is _F_ = _kx_, where _F_ is applied force, _k_ is spring constant, and _x_ is the spring's
+displacement from equilibrium. The user can change _F_, _k_ and _x_. Changing _x_ results in computation of _F_;
+changing _F_ results in computation of _x_.  (_k_ can be ignored for the purposes of this discussion.) So the
+Properties for _x_ and _F_, `displacementProperty` and `appliedForceProperty` respectively in Spring.js,
+require `reentrant: true`.
+
+The second relationship is _x_ = _p_ - _e_, where _x_ is the spring's displacement from equilibrium (as above),
+_p_ is the position of the robotic arm's pincer, and _e_ is the spring's equilibrium position.
+The user can change _x_ (via a slider) or _p_ (by dragging the robotic arm.   Changing _x_ results in computation
+of _p_; changing _p_ results in computation of _p_.   So the Properties for _x_ and _p_, `displacementProperty`
+in Spring.js and `leftProperty` in RoboticArm.js respectively, have `reentrant: true`.
+
 ## Miscellaneous
 
 Regarding memory management: Everything created in this sim (model and view) exists for the lifetime of the sim,
