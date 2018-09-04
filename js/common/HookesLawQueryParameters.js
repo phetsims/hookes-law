@@ -14,7 +14,10 @@ define( function( require ) {
   var HookesLawQueryParameters = QueryStringMachine.getAll( {
 
     // checks all Check Boxes, to make development easier
-    checkAll: { type: 'flag' }
+    checkAll: { type: 'flag' },
+
+    // Adds the 'Reentrant' screen, see https://github.com/phetsims/phet-io/issues/1349
+    reentrant: { type: 'flag' }
   } );
 
   hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );
