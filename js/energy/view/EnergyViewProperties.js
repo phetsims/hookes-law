@@ -1,7 +1,7 @@
 // Copyright 2015-2018, University of Colorado Boulder
 
 /**
- * View-specific properties for the "Energy" screen.
+ * View-specific Properties and properties for the "Energy" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
