@@ -51,7 +51,7 @@ define( function( require ) {
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of Feq, units = N
       tandem: tandem.createTandem( 'leftSpring' ),
-      phetioInstanceDocumentation: 'The left spring in the series system'
+      phetioDocumentation: 'The left spring in the series system'
     } );
 
     // @public right spring, in series with the left spring, with identical configuration
@@ -62,7 +62,7 @@ define( function( require ) {
       springConstantRange: this.leftSpring.springConstantRange,
       appliedForceRange: this.leftSpring.appliedForceRange,
       tandem: tandem.createTandem( 'rightSpring' ),
-      phetioInstanceDocumentation: 'The right spring in the series system'
+      phetioDocumentation: 'The right spring in the series system'
     } );
 
     // @public the single spring that is equivalent to the 2 springs in series
@@ -77,7 +77,7 @@ define( function( require ) {
         1 / ( ( 1 / this.leftSpring.springConstantRange.defaultValue ) + ( 1 / this.rightSpring.springConstantRange.defaultValue ) ) ),
       appliedForceRange: this.leftSpring.appliedForceRange, // Feq = F1 = F2
       tandem: tandem.createTandem( 'equivalentSpring' ),
-      phetioInstanceDocumentation: 'The single spring that is equivalent to the 2 springs in series'
+      phetioDocumentation: 'The single spring that is equivalent to the 2 springs in series'
     } );
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 

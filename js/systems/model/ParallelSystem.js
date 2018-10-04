@@ -51,7 +51,7 @@ define( function( require ) {
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of F1, units = N
       tandem: tandem.createTandem( 'topSpring' ),
-      phetioInstanceDocumentation: 'The top spring in the parallel system'
+      phetioDocumentation: 'The top spring in the parallel system'
     } );
 
     // @public bottom spring, in parallel with top spring, with identical configuration
@@ -62,7 +62,7 @@ define( function( require ) {
       springConstantRange: this.topSpring.springConstantRange,
       appliedForceRange: this.topSpring.appliedForceRange,
       tandem: tandem.createTandem( 'bottomSpring' ),
-      phetioInstanceDocumentation: 'The bottom spring in the parallel system'
+      phetioDocumentation: 'The bottom spring in the parallel system'
     } );
 
     // verify that springs are indeed parallel
@@ -84,7 +84,7 @@ define( function( require ) {
       // Feq = F1 + F2
       appliedForceRange: this.topSpring.appliedForceRange,
       tandem: tandem.createTandem( 'equivalentSpring' ),
-      phetioInstanceDocumentation: 'The single spring that is equivalent to the 2 springs in parallel'
+      phetioDocumentation: 'The single spring that is equivalent to the 2 springs in parallel'
     } );
     assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
 
