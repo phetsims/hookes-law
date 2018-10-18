@@ -52,7 +52,7 @@ define( function( require ) {
   var Tandem = require( 'TANDEM/Tandem' );
 
   // ifphetio
-  var NumberIO = require( 'ifphetio!PHET_IO/types/NumberIO' );
+  var NumberIO = require( 'TANDEM/types/NumberIO' );
 
   /**
    * @param {Object} [options]
