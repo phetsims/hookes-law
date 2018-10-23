@@ -45,14 +45,12 @@ define( function( require ) {
   var DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var NumberIO = require( 'TANDEM/types/NumberIO' );
   var NumberProperty = require( 'AXON/NumberProperty' );
   var PhetioObject = require( 'TANDEM/PhetioObject' );
   var Range = require( 'DOT/Range' );
   var RangeWithValue = require( 'DOT/RangeWithValue' );
   var Tandem = require( 'TANDEM/Tandem' );
-
-  // ifphetio
-  var NumberIO = require( 'TANDEM/types/NumberIO' );
 
   /**
    * @param {Object} [options]
