@@ -10,10 +10,10 @@ define( function( require ) {
 
   // modules
   var EnergyBarGraph = require( 'HOOKES_LAW/energy/view/EnergyBarGraph' );
+  var EnergyPlot = require( 'HOOKES_LAW/energy/view/EnergyPlot' );
   var EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
   var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
   var EnergyVisibilityControls = require( 'HOOKES_LAW/energy/view/EnergyVisibilityControls' );
-  var EnergyPlot = require( 'HOOKES_LAW/energy/view/EnergyPlot' );
   var ForcePlot = require( 'HOOKES_LAW/energy/view/ForcePlot' );
   var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
