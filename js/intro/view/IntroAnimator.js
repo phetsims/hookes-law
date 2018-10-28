@@ -16,7 +16,7 @@ define( function( require ) {
   var NumberProperty = require( 'AXON/NumberProperty' );
 
   // constants
-  var STEPPER = 'manual'; // step method must be called by the client
+  var STEPPER = null; // step method must be called by the client
   var TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation, in seconds
   var OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seconds
 
@@ -68,7 +68,7 @@ define( function( require ) {
 
         // Fade out system 2.
         system2Animation = new Animation( {
-          stepper: STEPPER,
+          animationStepEmitter: STEPPER,
           duration: OPACITY_DURATION,
           targets: [ {
             property: system2OpacityProperty,
@@ -79,7 +79,7 @@ define( function( require ) {
 
         // Translate system 1.
         system1Animaton = new Animation( {
-          stepper: STEPPER,
+          animationStepEmitter: STEPPER,
           duration: TRANSLATION_DURATION,
           targets: [ {
             property: system1CenterYProperty,
@@ -109,7 +109,7 @@ define( function( require ) {
 
         // Translate system 1.
         system1Animaton = new Animation( {
-          stepper: STEPPER,
+          animationStepEmitter: STEPPER,
           duration: TRANSLATION_DURATION,
           targets: [ {
             property: system1CenterYProperty,
@@ -120,7 +120,7 @@ define( function( require ) {
 
         // Fade in system 2.
         system2Animation = new Animation( {
-          stepper: STEPPER,
+          animationStepEmitter: STEPPER,
           duration: OPACITY_DURATION,
           targets: [ {
             property: system2OpacityProperty,
