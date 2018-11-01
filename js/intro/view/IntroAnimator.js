@@ -68,7 +68,7 @@ define( function( require ) {
 
         // Fade out system 2.
         system2Animation = new Animation( {
-          animationStepEmitter: STEPPER,
+          stepEmitter: STEPPER,
           duration: OPACITY_DURATION,
           targets: [ {
             property: system2OpacityProperty,
@@ -79,7 +79,7 @@ define( function( require ) {
 
         // Translate system 1.
         system1Animaton = new Animation( {
-          animationStepEmitter: STEPPER,
+          stepEmitter: STEPPER,
           duration: TRANSLATION_DURATION,
           targets: [ {
             property: system1CenterYProperty,
@@ -109,7 +109,7 @@ define( function( require ) {
 
         // Translate system 1.
         system1Animaton = new Animation( {
-          animationStepEmitter: STEPPER,
+          stepEmitter: STEPPER,
           duration: TRANSLATION_DURATION,
           targets: [ {
             property: system1CenterYProperty,
@@ -120,7 +120,7 @@ define( function( require ) {
 
         // Fade in system 2.
         system2Animation = new Animation( {
-          animationStepEmitter: STEPPER,
+          stepEmitter: STEPPER,
           duration: OPACITY_DURATION,
           targets: [ {
             property: system2OpacityProperty,
