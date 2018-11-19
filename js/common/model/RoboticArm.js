@@ -1,4 +1,4 @@
-// Copyright 2018, University of Colorado Boulder
+// Copyright 2015-2018, University of Colorado Boulder
 
 /**
  * The robotic arm. The left end is movable, the right end is fixed.
