@@ -25,7 +25,7 @@ define( function( require ) {
     credits: {
       leadDesign: 'Amy Rouinfar',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-      team: 'Michael Dubson, Bruna Shinohara de Mendonça, Ariel Paul, Kathy Perkins, Martin Veillette',
+      team: 'Michael Dubson, Bruna Shinohara de Mendon\u00e7a, Ariel Paul, Kathy Perkins, Martin Veillette',
       qualityAssurance: 'Steele Dalton, Elise Morgan, Oliver Orejola, Bryan Yoelin',
       graphicArts: 'Mariah Hermsmeyer'
     }
