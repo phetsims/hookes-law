@@ -79,7 +79,7 @@ define( function( require ) {
     // various quantities
     APPLIED_FORCE: PhetColorScheme.RED_COLORBLIND,
     DISPLACEMENT: new Color( 0, 180, 0 ),
-    ENERGY: new Color( 3, 205, 255 ),
+    ENERGY: PhetColorScheme.ELASTIC_ENERGY,
     EQUILIBRIUM_POSITION: new Color( 0, 180, 0 )
   };
 
