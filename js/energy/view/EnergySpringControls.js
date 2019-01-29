@@ -46,18 +46,22 @@ define( function( require ) {
     }
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
-      minorTickSpacing: 50,
-      majorTickValues: springConstantMajorTickValues,
+      sliderOptions: {
+        minorTickSpacing: 50,
+        majorTickValues: springConstantMajorTickValues
+      },
       tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
     } );
 
     var displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
-      minorTickSpacing: spring.displacementRange.getLength() / 10,
-      majorTickValues: [
-        spring.displacementRange.min,
-        spring.displacementRange.getCenter(),
-        spring.displacementRange.max
-      ],
+      sliderOptions: {
+        minorTickSpacing: spring.displacementRange.getLength() / 10,
+        majorTickValues: [
+          spring.displacementRange.min,
+          spring.displacementRange.getCenter(),
+          spring.displacementRange.max
+        ]
+      },
       tandem: displacementPanelTandem.createTandem( 'displacementControl' )
     } );
 

@@ -40,36 +40,46 @@ define( function( require ) {
 
       // NumberControl options
       title: springConstantString,
-      titleMaxWidth: 200, // i18n, determined empirically
-      titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-      valueMaxWidth: 100, // i18n, determined empirically
-      valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
-      decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
-      valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
-      minorTickSpacing: 100,
-      thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
       startCallback: function() {
         phet.log && phet.log( '>>>>> SpringConstantControl start interaction' );
       },
       endCallback: function() {
         phet.log && phet.log( '>>>>> SpringConstantControl end interaction' );
       },
-      constrainValue: function( value ) {
-        return Util.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
+      titleNodeOptions: {
+        maxWidth: 200, // i18n, determined empirically
+        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
       },
+      numberDisplayOptions: {
+        maxWidth: 100, // i18n, determined empirically
+        font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
+        decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
+        valuePattern: VALUE_PATTERN
+      },
+
+      // slider options passed when control is initialized
+      sliderOptions: null,
 
       // phet-io
       tandem: Tandem.required
     }, options );
 
+    options.sliderOptions = _.extend( {
+      minorTickSpacing: 100,
+      thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
+      constrainValue: function( value ) {
+        return Util.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
+      }
+    }, options.sliderOptions );
+
     // major ticks
-    if ( options.majorTickValues ) {
-      options.majorTicks = [];
-      for ( var i = 0; i < options.majorTickValues.length; i++ ) {
-        var tickValue = options.majorTickValues[ i ];
+    if ( options.sliderOptions.majorTickValues ) {
+      options.sliderOptions.majorTicks = [];
+      for ( var i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
+        var tickValue = options.sliderOptions.majorTickValues[ i ];
         assert && assert( Util.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
-        options.majorTicks.push( {
+        options.sliderOptions.majorTicks.push( {
           value: tickValue,
           label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
         } );

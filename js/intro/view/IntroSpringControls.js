@@ -50,11 +50,13 @@ define( function( require ) {
 
     var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       title: StringUtils.format( springConstantNumberString, options.number ),
-      majorTickValues: [
-        spring.springConstantRange.min,
-        spring.springConstantRange.max / 2,
-        spring.springConstantRange.max
-      ],
+      sliderOptions: {
+        majorTickValues: [
+          spring.springConstantRange.min,
+          spring.springConstantRange.max / 2,
+          spring.springConstantRange.max
+        ]
+      },
       tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
     } );
 

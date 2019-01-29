@@ -53,26 +53,30 @@ define( function( require ) {
     var leftSpring = system.leftSpring;
     var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
       title: leftSpringString,
-      thumbFillEnabled: HookesLawColors.LEFT_SPRING,
-      trackSize: SPRING_CONSTANT_TRACK_SIZE,
-      majorTickValues: [
-        leftSpring.springConstantRange.min,
-        leftSpring.springConstantRange.getCenter(),
-        leftSpring.springConstantRange.max
-      ],
+      sliderOptions: {
+        thumbFillEnabled: HookesLawColors.LEFT_SPRING,
+        trackSize: SPRING_CONSTANT_TRACK_SIZE,
+        majorTickValues: [
+          leftSpring.springConstantRange.min,
+          leftSpring.springConstantRange.getCenter(),
+          leftSpring.springConstantRange.max
+        ]
+      },
       tandem: springConstantsPanelTandem.createTandem( 'leftSpringConstantControl' )
     } );
 
     var rightSpring = system.rightSpring;
     var rightSpringConstantControl = new SpringConstantControl( system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
       title: rightSpringString,
-      thumbFillEnabled: HookesLawColors.RIGHT_SPRING,
-      trackSize: SPRING_CONSTANT_TRACK_SIZE,
-      majorTickValues: [
-        rightSpring.springConstantRange.min,
-        rightSpring.springConstantRange.getCenter(),
-        rightSpring.springConstantRange.max
-      ],
+      sliderOptions: {
+        thumbFillEnabled: HookesLawColors.RIGHT_SPRING,
+        trackSize: SPRING_CONSTANT_TRACK_SIZE,
+        majorTickValues: [
+          rightSpring.springConstantRange.min,
+          rightSpring.springConstantRange.getCenter(),
+          rightSpring.springConstantRange.max
+        ]
+      },
       tandem: springConstantsPanelTandem.createTandem( 'rightSpringConstantControl' )
     } );
 

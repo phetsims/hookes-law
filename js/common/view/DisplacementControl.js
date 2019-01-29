@@ -37,18 +37,9 @@ define( function( require ) {
   function DisplacementControl( displacementProperty, displacementRange, numberOfInteractionsInProgressProperty, options ) {
 
     options = _.extend( {
-      majorTicksValues: null, // {number[]|null} values for major ticks
 
       // NumberControl options
-      titleMaxWidth: 200, // i18n, determined empirically
-      titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-      valueMaxWidth: 100, // i18n, determined empirically
-      valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
-      decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
-      valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL,
-      minorTickSpacing: 1,
-      thumbFillEnabled: HookesLawColors.DISPLACEMENT,
       startCallback: function() {
         phet.log && phet.log( '>>>>> DisplacementControl start interaction' );
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
@@ -57,22 +48,44 @@ define( function( require ) {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
         phet.log && phet.log( '>>>>> DisplacementControl end interaction' );
       },
-      constrainValue: function( value ) {
-        // constrain to multiples of a specific interval, see #54
-        return Util.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
+
+      // options passed to subcomponents
+      titleNodeOptions: {
+        maxWidth: 200, // i18n, determined empirically
+        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
       },
+      numberDisplayOptions: {
+        maxWidth: 100, // i18n, determined empirically
+        font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
+        decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
+        valuePattern: VALUE_PATTERN
+      },
+
+      // slider options passed in when DisplacementControl is instantiated
+      sliderOptions: null,
 
       // phet-io
       tandem: Tandem.required
     }, options );
 
+    // options passed to NumberControl's HSlider subcomponent
+    options.sliderOptions = _.extend( {
+      majorTicksValues: null, // {number[]|null} values for major ticks
+      minorTickSpacing: 1,
+      thumbFillEnabled: HookesLawColors.DISPLACEMENT,
+      constrainValue: function( value ) {
+        // constrain to multiples of a specific interval, see #54
+        return Util.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
+      }
+    }, options.sliderOptions );
+
     // major ticks
-    if ( options.majorTickValues ) {
-      options.majorTicks = [];
-      for ( var i = 0; i < options.majorTickValues.length; i++ ) {
-        var tickValue = options.majorTickValues[ i ];
+    if ( options.sliderOptions.majorTickValues ) {
+      options.sliderOptions.majorTicks = [];
+      for ( var i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
+        var tickValue = options.sliderOptions.majorTickValues[ i ];
         assert && assert( Util.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
-        options.majorTicks.push( {
+        options.sliderOptions.majorTicks.push( {
           value: tickValue,
           label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
         } );

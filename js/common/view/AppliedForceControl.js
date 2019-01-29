@@ -64,16 +64,7 @@ define( function( require ) {
 
       // NumberControl options
       title: appliedForceColonString,
-      titleMaxWidth: 200, // i18n, determined empirically
-      titleFont: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
-      valueMaxWidth: 100, // i18n, determined empirically
-      valueFont: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
-      decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-      valuePattern: VALUE_PATTERN,
       delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
-      majorTicks: majorTicks,
-      minorTickSpacing: MINOR_TICK_SPACING,
-      thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
       startCallback: function() {
         phet.log && phet.log( '>>>>> AppliedForceControl start interaction' );
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
@@ -82,8 +73,25 @@ define( function( require ) {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
         phet.log && phet.log( '>>>>> AppliedForceControl end interaction' );
       },
-      constrainValue: function( value ) {
-        return Util.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
+
+      // options passed to subcomponents
+      titleNodeOptions: {
+        maxWidth: 200, // i18n, determined empirically
+        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
+      },
+      numberDisplayOptions: {
+        maxWidth: 100, // i18n, determined empirically
+        font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
+        decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
+        valuePattern: VALUE_PATTERN
+      },
+      sliderOptions: {
+        majorTicks: majorTicks,
+        minorTickSpacing: MINOR_TICK_SPACING,
+        thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
+        constrainValue: function( value ) {
+          return Util.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
+        }
       },
 
       // phet-io
