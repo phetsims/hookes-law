@@ -53,6 +53,8 @@ define( function( require ) {
     var leftSpring = system.leftSpring;
     var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
       title: leftSpringString,
+      
+      // NumberControl options
       sliderOptions: {
         thumbFillEnabled: HookesLawColors.LEFT_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
@@ -68,6 +70,8 @@ define( function( require ) {
     var rightSpring = system.rightSpring;
     var rightSpringConstantControl = new SpringConstantControl( system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
       title: rightSpringString,
+
+      // NumberControl options
       sliderOptions: {
         thumbFillEnabled: HookesLawColors.RIGHT_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,

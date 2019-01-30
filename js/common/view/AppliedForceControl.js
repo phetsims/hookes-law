@@ -61,9 +61,9 @@ define( function( require ) {
     } ];
 
     options = _.extend( {
+      title: appliedForceColonString,
 
       // NumberControl options
-      title: appliedForceColonString,
       delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
       startCallback: function() {
         phet.log && phet.log( '>>>>> AppliedForceControl start interaction' );

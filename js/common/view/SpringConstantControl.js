@@ -36,10 +36,9 @@ define( function( require ) {
   function SpringConstantControl( springConstantProperty, springConstantRange, options ) {
 
     options = _.extend( {
-      majorTicksValues: null, // {number[]|null} values for major ticks
-
-      // NumberControl options
       title: springConstantString,
+      
+      // NumberControl options
       delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
       startCallback: function() {
         phet.log && phet.log( '>>>>> SpringConstantControl start interaction' );
@@ -65,7 +64,9 @@ define( function( require ) {
       tandem: Tandem.required
     }, options );
 
+    // sldier option defaults
     options.sliderOptions = _.extend( {
+      majorTicksValues: null, // {number[]|null} values for major ticks
       minorTickSpacing: 100,
       thumbFillEnabled: HookesLawColors.SINGLE_SPRING,
       constrainValue: function( value ) {
