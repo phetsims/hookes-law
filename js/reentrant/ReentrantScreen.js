@@ -116,7 +116,7 @@ define( function( require ) {
       spacing: 40,
       children: [
         createNumberControl( 'x:', model.xProperty, {
-          decimalPlaces: 3,
+          numberDisplayOptions: { decimalPlaces: 3 },
           delta: 0.01
         } ),
         new VBox( {
@@ -136,7 +136,7 @@ define( function( require ) {
       spacing: 40,
       children: [
         createNumberControl( 'F:', model.fProperty, {
-          decimalPlaces: 1,
+          numberDisplayOptions: { decimalPlaces: 1 },
           delta: 1
         } ),
         new RichText( 'F = ' + SPRING_CONSTANT + ' * x', { font: FONT } )
@@ -150,7 +150,7 @@ define( function( require ) {
       spacing: 40,
       children: [
         createNumberControl( 'p:', model.pProperty, {
-          decimalPlaces: 3,
+          numberDisplayOptions: { decimalPlaces: 3 },
           delta: 0.01
         } ),
         new RichText( 'p = ' + SPRING_EQUILIBRIUM_X + ' + x', { font: FONT } )
@@ -182,14 +182,21 @@ define( function( require ) {
    */
   function createNumberControl( label, property, options ) {
     assert && assert( property.range, 'missing range' );
-    return new NumberControl( label, property, property.range, _.extend( {
-      titleFont: FONT,
-      valueFont: FONT,
-      majorTicks: [
-        { value: property.range.min, label: new RichText( property.range.min ) },
-        { value: property.range.max, label: new RichText( property.range.max ) }
-      ]
-    }, options ) );
+
+    // construct nested options for NumberControl
+    options = _.extend( {
+      titleNodeOptions: { font: FONT },
+      numberDisplayOptions: null,
+      sliderOptions:{
+        majorTicks: [
+          { value: property.range.min, label: new RichText( property.range.min ) },
+          { value: property.range.max, label: new RichText( property.range.max ) }
+        ]
+      }
+    }, options );
+    options.numberDisplayOptions = _.extend( { font: FONT }, options.numberDisplayOptions );
+
+    return new NumberControl( label, property, property.range, options );
   }
 
   return ReentrantScreen;
