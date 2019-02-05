@@ -14,6 +14,7 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'SCENERY_PHET/NumberControl' );
+  var NumberDisplay = require( 'SCENERY_PHET/NumberDisplay' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
@@ -25,7 +26,7 @@ define( function( require ) {
   var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // fill in the {1} units, but leave the {0} value alone.
-  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString, '{0}', metersString );
+  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString, NumberDisplay.NUMBERED_PLACEHOLDER, metersString );
 
   /**
    * @param {BooleanProperty} displacementProperty units = m
