@@ -14,8 +14,8 @@ define( function( require ) {
   var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   var inherit = require( 'PHET_CORE/inherit' );
   var NumberControl = require( 'SCENERY_PHET/NumberControl' );
-  var NumberDisplay = require( 'SCENERY_PHET/NumberDisplay' );
   var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  var SunConstants = require( 'SUN/SunConstants' );
   var Tandem = require( 'TANDEM/Tandem' );
   var Text = require( 'SCENERY/nodes/Text' );
   var Util = require( 'DOT/Util' );
@@ -26,7 +26,8 @@ define( function( require ) {
   var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
 
   // fill in the {1} units, but leave the {0} value alone.
-  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString, NumberDisplay.NUMBERED_PLACEHOLDER, newtonsPerMeterString );
+  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
+    SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsPerMeterString );
 
   /**
    * @param {BooleanProperty} springConstantProperty units = N/m
