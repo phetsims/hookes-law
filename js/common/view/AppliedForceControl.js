@@ -90,7 +90,7 @@ define( function( require ) {
       sliderOptions: {
         majorTicks: majorTicks,
         minorTickSpacing: MINOR_TICK_SPACING,
-        thumbFillEnabled: HookesLawColors.APPLIED_FORCE,
+        thumbFill: HookesLawColors.APPLIED_FORCE,
         constrainValue: function( value ) {
           return Util.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
         }

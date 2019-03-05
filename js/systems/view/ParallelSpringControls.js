@@ -55,7 +55,7 @@ define( function( require ) {
     var topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
       title: topSpringString,
       sliderOptions: {
-        thumbFillEnabled: HookesLawColors.TOP_SPRING,
+        thumbFill: HookesLawColors.TOP_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
         majorTickValues: [
           topSpring.springConstantRange.min,
@@ -71,7 +71,7 @@ define( function( require ) {
       bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
         title: bottomSpringString,
         sliderOptions: {
-          thumbFillEnabled: HookesLawColors.BOTTOM_SPRING,
+          thumbFill: HookesLawColors.BOTTOM_SPRING,
           trackSize: SPRING_CONSTANT_TRACK_SIZE,
           majorTickValues: [
             bottomSpring.springConstantRange.min,

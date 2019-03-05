@@ -56,7 +56,7 @@ define( function( require ) {
       
       // NumberControl options
       sliderOptions: {
-        thumbFillEnabled: HookesLawColors.LEFT_SPRING,
+        thumbFill: HookesLawColors.LEFT_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
         majorTickValues: [
           leftSpring.springConstantRange.min,
@@ -73,7 +73,7 @@ define( function( require ) {
 
       // NumberControl options
       sliderOptions: {
-        thumbFillEnabled: HookesLawColors.RIGHT_SPRING,
+        thumbFill: HookesLawColors.RIGHT_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
         majorTickValues: [
           rightSpring.springConstantRange.min,

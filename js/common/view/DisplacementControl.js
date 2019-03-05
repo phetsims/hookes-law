@@ -74,7 +74,7 @@ define( function( require ) {
     options.sliderOptions = _.extend( {
       majorTicksValues: null, // {number[]|null} values for major ticks
       minorTickSpacing: 1,
-      thumbFillEnabled: HookesLawColors.DISPLACEMENT,
+      thumbFill: HookesLawColors.DISPLACEMENT,
       constrainValue: function( value ) {
         // constrain to multiples of a specific interval, see #54
         return Util.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
