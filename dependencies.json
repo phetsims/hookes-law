@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.15 Fri Mar 08 2019 13:37:16 GMT-0500 (EST)",
+  "comment": "# hookes-law 1.0.15 Tue Mar 19 2019 16:52:40 GMT-0400 (EDT)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -10,23 +10,23 @@
   },
   "brand": {
     "sha": "efeaf32ea2c6155125d15335055e1897264b4855",
-    "branch": "hookes-law-1.0"
+    "branch": "HEAD"
   },
   "chipper": {
-    "sha": "727145d1f1576a7bbeb594c68be604b4f9f64318",
-    "branch": "HEAD"
+    "sha": "c544406ecfc8947341afd94512f69ce1881498df",
+    "branch": "hookes-law-1.0"
   },
   "dot": {
     "sha": "d99cbe46e8496bbfe2554ddfcc15022ffdfcae83",
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "a73ac0c3318dc120b4fcd7645711292e501b7435",
+    "sha": "a94c326fe9c307b261fd89af8727ee462e0060be",
     "branch": "1.0"
   },
   "joist": {
     "sha": "a7f0363877d85b0947f882477842c93d1a751c0c",
-    "branch": "hookes-law-1.0"
+    "branch": "HEAD"
   },
   "kite": {
     "sha": "40dc703a07c774464f060dda6a67485704ca9e22",
@@ -38,6 +38,10 @@
   },
   "phetcommon": {
     "sha": "6ad192fd8707b6770f468087df57405ee44a8cbf",
+    "branch": "HEAD"
+  },
+  "phetmarks": {
+    "sha": "4e37505a02f8549b830f497381ed0f175e651fe3",
     "branch": "HEAD"
   },
   "scenery": {
@@ -59,9 +63,5 @@
   "tandem": {
     "sha": "c54f108248c06ef22c3091a36e60cdf27d3e0919",
     "branch": "HEAD"
-  },
-  "phetmarks": {
-    "branch": "master",
-    "sha": "4e37505a02f8549b830f497381ed0f175e651fe3"
   }
 }
