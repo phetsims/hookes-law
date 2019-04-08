@@ -11,9 +11,6 @@
   },
   "phet": {
     "requirejsNamespace": "HOOKES_LAW",
-    "preload": [
-      "../sherpa/lib/Tween-r12.js"
-    ],
     "phetLibs": [
       "twixt"
     ],
