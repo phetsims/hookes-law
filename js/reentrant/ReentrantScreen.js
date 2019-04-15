@@ -92,7 +92,6 @@ define( function( require ) {
     } );
   }
 
-  hookesLaw.register( 'ReentrantScreen.ReentrantModel', ReentrantModel );
   inherit( Object, ReentrantModel, {
 
     // @public
@@ -171,7 +170,6 @@ define( function( require ) {
     } ) );
   }
 
-  hookesLaw.register( 'ReentrantScreen.ReentrantScreenView', ReentrantScreenView );
   inherit( ScreenView, ReentrantScreenView );
 
   /**
