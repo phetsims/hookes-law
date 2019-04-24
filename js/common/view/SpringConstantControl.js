@@ -58,6 +58,7 @@ define( function( require ) {
         decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
         valuePattern: VALUE_PATTERN
       },
+      arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
 
       // slider options passed when control is initialized
       sliderOptions: null,

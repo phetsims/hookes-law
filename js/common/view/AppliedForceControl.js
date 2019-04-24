@@ -95,6 +95,7 @@ define( function( require ) {
           return Util.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
         }
       },
+      arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
 
       // phet-io
       tandem: Tandem.required

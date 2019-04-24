@@ -62,6 +62,7 @@ define( function( require ) {
         decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
         valuePattern: VALUE_PATTERN
       },
+      arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
 
       // slider options passed in when DisplacementControl is instantiated
       sliderOptions: null,

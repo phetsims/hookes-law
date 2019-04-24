@@ -112,6 +112,10 @@ define( function( require ) {
       stroke: HookesLawColors.CONTROL_PANEL_STROKE,
       xMargin: 15,
       yMargin: 15
+    },
+    ARROW_BUTTON_OPTIONS: {
+      touchAreaXDilation: 10,
+      touchAreaYDilation: 10
     }
   };
 
