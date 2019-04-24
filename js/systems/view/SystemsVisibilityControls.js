@@ -132,6 +132,10 @@ define( function( require ) {
       component2Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
     } );
 
+    // Radio button touch areas
+    totalRadioButton.touchArea = totalRadioButton.localBounds.dilatedXY( 10, 4 );
+    componentsRadioButton.touchArea = componentsRadioButton.localBounds.dilatedXY( 10, 4 );
+
     var radioButtonsBox = new VBox( {
       children: [
         totalRadioButton,
@@ -165,9 +169,7 @@ define( function( require ) {
       springForceCheckbox,
       displacementCheckbox,
       equilibriumPositionCheckbox,
-      valuesCheckbox,
-      totalRadioButton,
-      componentsRadioButton
+      valuesCheckbox
     ];
     for ( var i = 0; i < controls.length; i++ ) {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
