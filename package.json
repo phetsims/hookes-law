@@ -20,7 +20,12 @@
       "phet-io",
       "adapted-from-phet"
     ],
-    "simulation": true
+    "simulation": true,
+    "phet-io": {
+      "phetLibs": [
+        "phet-io-wrapper-hookes-law-energy"
+      ]
+    }
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js"
