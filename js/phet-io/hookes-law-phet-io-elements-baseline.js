@@ -309,7 +309,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.resetAllButton.pressListener.pressedAction": {
+    "hookesLaw.energyScreen.view.resetAllButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -320,7 +320,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.resetAllButton.pressListener.releasedAction": {
+    "hookesLaw.energyScreen.view.resetAllButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -518,33 +518,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.draggedAction": {
+    "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -650,7 +650,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -661,7 +661,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -859,7 +859,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -870,7 +870,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -1002,33 +1002,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -1057,33 +1057,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -1332,7 +1332,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -1343,7 +1343,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -1541,7 +1541,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -1552,7 +1552,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -1684,33 +1684,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -1739,33 +1739,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -2025,7 +2025,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.toggledAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2080,7 +2080,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.pressedAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2091,7 +2091,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.releasedAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2190,7 +2190,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.toggledAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2267,7 +2267,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.toggledAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2322,7 +2322,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.pressedAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2333,7 +2333,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.releasedAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2432,7 +2432,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.toggledAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2487,7 +2487,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.pressedAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2498,7 +2498,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.releasedAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2663,7 +2663,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.toggledAction": {
+    "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2740,7 +2740,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.general.barrierRectangle.inputListener.pressedAction": {
+    "hookesLaw.general.barrierRectangle.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2751,7 +2751,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.general.barrierRectangle.inputListener.releasedAction": {
+    "hookesLaw.general.barrierRectangle.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2861,7 +2861,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.penCanceledAction": {
+    "hookesLaw.general.controller.input.penCancelAction": {
       "phetioDocumentation": "Emits when a pen is canceled",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2872,7 +2872,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<NumberIO, Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.penEndedAction": {
+    "hookesLaw.general.controller.input.penEndAction": {
       "phetioDocumentation": "Emits when a pen is lifted",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2883,7 +2883,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<NumberIO, Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.penMovedAction": {
+    "hookesLaw.general.controller.input.penMoveAction": {
       "phetioDocumentation": "Emits when a pen is moved",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2894,7 +2894,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<NumberIO, Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.penStartedAction": {
+    "hookesLaw.general.controller.input.penStartAction": {
       "phetioDocumentation": "Emits when a pen touches the screen",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2905,7 +2905,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<NumberIO, Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.touchCanceledAction": {
+    "hookesLaw.general.controller.input.touchCancelAction": {
       "phetioDocumentation": "Emits when a touch is canceled",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2916,7 +2916,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<NumberIO, Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.touchEndedAction": {
+    "hookesLaw.general.controller.input.touchEndAction": {
       "phetioDocumentation": "Emits when a touch ends",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2927,7 +2927,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<NumberIO, Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.touchMovedAction": {
+    "hookesLaw.general.controller.input.touchMoveAction": {
       "phetioDocumentation": "Emits when a touch moves",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2938,7 +2938,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<NumberIO, Vector2IO, DOMEventIO>"
     },
-    "hookesLaw.general.controller.input.touchStartedAction": {
+    "hookesLaw.general.controller.input.touchStartAction": {
       "phetioDocumentation": "Emits when a touch begins",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2960,7 +2960,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<>"
     },
-    "hookesLaw.general.controller.input.wheelScrolledAction": {
+    "hookesLaw.general.controller.input.wheelScrollAction": {
       "phetioDocumentation": "Emits when the mouse wheel scrolls",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -2993,7 +2993,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PhetioCommandProcessorIO"
     },
-    "hookesLaw.general.resizedAction": {
+    "hookesLaw.general.resizeAction": {
       "phetioDocumentation": "Executes when the sim is resized",
       "phetioEventType": "model",
       "phetioFeatured": false,
@@ -3092,7 +3092,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.pressedAction": {
+    "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3103,7 +3103,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.releasedAction": {
+    "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3224,7 +3224,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.pressedAction": {
+    "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3235,7 +3235,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.releasedAction": {
+    "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3356,7 +3356,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.pressedAction": {
+    "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3367,7 +3367,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.releasedAction": {
+    "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3488,7 +3488,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.pressedAction": {
+    "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3499,7 +3499,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.releasedAction": {
+    "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3642,7 +3642,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.pressedAction": {
+    "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3653,7 +3653,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.releasedAction": {
+    "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3774,7 +3774,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.pressedAction": {
+    "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -3785,7 +3785,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.releasedAction": {
+    "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4192,7 +4192,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.resetAllButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.resetAllButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4203,7 +4203,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.resetAllButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.resetAllButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4291,7 +4291,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4302,7 +4302,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4401,7 +4401,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4412,7 +4412,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4632,33 +4632,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.draggedAction": {
+    "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -4764,7 +4764,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4775,7 +4775,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4973,7 +4973,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -4984,7 +4984,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -5116,33 +5116,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -5171,33 +5171,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -5446,7 +5446,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -5457,7 +5457,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -5655,7 +5655,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -5666,7 +5666,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -5798,33 +5798,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -5853,33 +5853,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -6227,33 +6227,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.draggedAction": {
+    "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -6359,7 +6359,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -6370,7 +6370,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -6568,7 +6568,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -6579,7 +6579,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -6711,33 +6711,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -6766,33 +6766,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -7041,7 +7041,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -7052,7 +7052,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -7250,7 +7250,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -7261,7 +7261,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -7393,33 +7393,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -7448,33 +7448,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -7789,7 +7789,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.toggledAction": {
+    "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -7866,7 +7866,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.toggledAction": {
+    "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -7943,7 +7943,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.toggledAction": {
+    "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8042,7 +8042,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.toggledAction": {
+    "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8119,7 +8119,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.toggledAction": {
+    "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8262,7 +8262,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.navigationBar.energyScreenButton.pressListener.pressedAction": {
+    "hookesLaw.navigationBar.energyScreenButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8273,7 +8273,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.navigationBar.energyScreenButton.pressListener.releasedAction": {
+    "hookesLaw.navigationBar.energyScreenButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8405,7 +8405,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.navigationBar.homeButton.pressListener.pressedAction": {
+    "hookesLaw.navigationBar.homeButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8416,7 +8416,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.navigationBar.homeButton.pressListener.releasedAction": {
+    "hookesLaw.navigationBar.homeButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8537,7 +8537,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.navigationBar.introScreenButton.pressListener.pressedAction": {
+    "hookesLaw.navigationBar.introScreenButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8548,7 +8548,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.navigationBar.introScreenButton.pressListener.releasedAction": {
+    "hookesLaw.navigationBar.introScreenButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8691,7 +8691,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.pressedAction": {
+    "hookesLaw.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8702,7 +8702,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.releasedAction": {
+    "hookesLaw.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8768,7 +8768,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.pressedAction": {
+    "hookesLaw.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8779,7 +8779,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.releasedAction": {
+    "hookesLaw.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8834,7 +8834,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.navigationBar.phetButton.pressListener.pressedAction": {
+    "hookesLaw.navigationBar.phetButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8845,7 +8845,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.navigationBar.phetButton.pressListener.releasedAction": {
+    "hookesLaw.navigationBar.phetButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8955,7 +8955,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.navigationBar.systemsScreenButton.pressListener.pressedAction": {
+    "hookesLaw.navigationBar.systemsScreenButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -8966,7 +8966,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.navigationBar.systemsScreenButton.pressListener.releasedAction": {
+    "hookesLaw.navigationBar.systemsScreenButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -9747,33 +9747,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.draggedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -9879,7 +9879,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -9890,7 +9890,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -10088,7 +10088,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -10099,7 +10099,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -10231,33 +10231,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -10286,33 +10286,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -10539,7 +10539,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -10550,7 +10550,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -10748,7 +10748,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -10759,7 +10759,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -10891,33 +10891,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -10946,33 +10946,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -11155,7 +11155,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -11166,7 +11166,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -11364,7 +11364,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -11375,7 +11375,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -11507,33 +11507,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -11562,33 +11562,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -11925,7 +11925,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.resetAllButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.resetAllButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -11936,7 +11936,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.resetAllButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.resetAllButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12035,7 +12035,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12046,7 +12046,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12134,7 +12134,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12145,7 +12145,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12486,33 +12486,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.draggedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -12618,7 +12618,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12629,7 +12629,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12827,7 +12827,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12838,7 +12838,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -12970,33 +12970,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -13025,33 +13025,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -13278,7 +13278,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -13289,7 +13289,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -13487,7 +13487,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -13498,7 +13498,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -13630,33 +13630,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -13685,33 +13685,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -13894,7 +13894,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -13905,7 +13905,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14103,7 +14103,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14114,7 +14114,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14246,33 +14246,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -14301,33 +14301,33 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ObjectIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragEndedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragStartedAction": {
-      "phetioDocumentation": "",
-      "phetioEventType": "model",
-      "phetioFeatured": false,
-      "phetioHighFrequency": false,
-      "phetioPlayback": false,
-      "phetioReadOnly": false,
-      "phetioState": false,
-      "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
-    },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.draggedAction": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragAction": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": false,
+      "phetioStudioControl": true,
+      "phetioTypeName": "ActionIO.<Vector2IO, VoidIO>"
+    },
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
+      "phetioDocumentation": "",
+      "phetioEventType": "model",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
       "phetioState": false,
@@ -14642,7 +14642,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.toggledAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14697,7 +14697,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14708,7 +14708,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14807,7 +14807,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.toggledAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14884,7 +14884,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.toggledAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -14983,7 +14983,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.toggledAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -15038,7 +15038,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "EmitterIO.<>"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.pressedAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.pressAction": {
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -15049,7 +15049,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "ActionIO.<EventIO, VoidIO, VoidIO>"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.releasedAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.releaseAction": {
       "phetioDocumentation": "Executes whenever a release occurs.",
       "phetioEventType": "user",
       "phetioFeatured": false,
@@ -15148,7 +15148,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioStudioControl": true,
       "phetioTypeName": "LinkedElementIO"
     },
-    "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.toggledAction": {
+    "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.toggleAction": {
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state.",
       "phetioEventType": "user",
       "phetioFeatured": false,
