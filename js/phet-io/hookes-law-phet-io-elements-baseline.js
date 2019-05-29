@@ -906,7 +906,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -1104,7 +1104,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -1588,7 +1588,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -1786,7 +1786,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -5020,7 +5020,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -5218,7 +5218,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -5702,7 +5702,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -5900,7 +5900,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -6615,7 +6615,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -6813,7 +6813,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -7297,7 +7297,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -7495,7 +7495,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -8675,7 +8675,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": true,
+      "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "NodeIO"
@@ -8719,30 +8719,30 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": true,
+      "phetioReadOnly": false,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.navigationBar.phetButton.phetMenu.aboutMenuItem.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": true,
+      "phetioReadOnly": false,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
     "hookesLaw.navigationBar.phetButton.phetMenu.aboutMenuItem.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": true,
-      "phetioState": true,
+      "phetioReadOnly": false,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
     },
@@ -8797,7 +8797,7 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
-      "phetioState": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
@@ -8808,18 +8808,18 @@ window.phet.phetio.phetioElementsBaseline =
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
-      "phetioState": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
     "hookesLaw.navigationBar.phetButton.phetMenu.screenshotMenuItem.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
-      "phetioState": true,
+      "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
     },
@@ -10135,7 +10135,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -10333,7 +10333,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -10795,7 +10795,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -10993,7 +10993,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -11411,7 +11411,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -11609,7 +11609,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -12874,7 +12874,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -13072,7 +13072,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -13534,7 +13534,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -13732,7 +13732,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -14150,7 +14150,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.enabledProperty": {
       "phetioDocumentation": "",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
@@ -14348,7 +14348,7 @@ window.phet.phetio.phetioElementsBaseline =
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioEventType": "model",
-      "phetioFeatured": false,
+      "phetioFeatured": true,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
       "phetioReadOnly": false,
