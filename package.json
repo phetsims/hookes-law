@@ -22,7 +22,7 @@
     ],
     "simulation": true,
     "phet-io": {
-      "phetLibs": [
+      "wrappers": [
         "phet-io-wrapper-hookes-law-energy"
       ]
     }
