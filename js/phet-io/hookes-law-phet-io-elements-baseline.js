@@ -781,62 +781,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueNode": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -1537,62 +1537,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -6313,62 +6313,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -7069,62 +7069,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -8077,62 +8077,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -8833,62 +8833,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -10921,62 +10921,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -11653,62 +11653,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueNode": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -12337,62 +12337,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueNode": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -13945,62 +13945,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -14677,62 +14677,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueNode": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
@@ -15361,62 +15361,62 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueNode": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": false,
       "phetioStudioControl": true,
       "phetioTypeName": "TextIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueNode.opacityProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "NumberPropertyIO"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueNode.pickableProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.pickableProperty": {
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<NullableIO.<BooleanIO>>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueNode.textProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.textProperty": {
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<StringIO>"
     },
-    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueNode.visibleProperty": {
+    "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
       "phetioPlayback": false,
-      "phetioReadOnly": false,
+      "phetioReadOnly": true,
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
