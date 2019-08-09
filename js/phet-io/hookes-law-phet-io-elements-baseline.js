@@ -13,6 +13,18 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
     },
+    "hookesLaw.energyScreen.model.system.roboticArm.leftProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": false,
+      "phetioTypeName": "NumberPropertyIO"
+    },
     "hookesLaw.energyScreen.model.system.spring": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -5365,6 +5377,18 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "PropertyIO.<BooleanIO>"
     },
+    "hookesLaw.introScreen.model.system1.roboticArm.leftProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": false,
+      "phetioTypeName": "NumberPropertyIO"
+    },
     "hookesLaw.introScreen.model.system1.spring": {
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
@@ -5436,6 +5460,18 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "DerivedPropertyIO.<NumberIO>"
+    },
+    "hookesLaw.introScreen.model.system2.roboticArm.leftProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": false,
+      "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system2.spring": {
       "phetioDocumentation": "",
@@ -10153,6 +10189,18 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioStudioControl": true,
       "phetioTypeName": "DerivedPropertyIO.<NumberIO>"
     },
+    "hookesLaw.systemsScreen.model.parallelSystem.roboticArm.leftProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": false,
+      "phetioTypeName": "NumberPropertyIO"
+    },
     "hookesLaw.systemsScreen.model.parallelSystem.topSpring": {
       "phetioDocumentation": "The top spring in the parallel system",
       "phetioDynamicElement": false,
@@ -10440,6 +10488,18 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioState": true,
       "phetioStudioControl": true,
       "phetioTypeName": "DerivedPropertyIO.<NumberIO>"
+    },
+    "hookesLaw.systemsScreen.model.seriesSystem.roboticArm.leftProperty": {
+      "phetioDocumentation": "",
+      "phetioDynamicElement": false,
+      "phetioEventType": "MODEL",
+      "phetioFeatured": false,
+      "phetioHighFrequency": false,
+      "phetioPlayback": false,
+      "phetioReadOnly": false,
+      "phetioState": true,
+      "phetioStudioControl": false,
+      "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view": {
       "phetioDocumentation": "",

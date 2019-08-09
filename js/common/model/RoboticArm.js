@@ -38,7 +38,9 @@ define( function( require ) {
       // where changing one of them results in recalculation of the other.  For some values, this results in
       // floating-point error that causes reentrant behavior.  See #63.
       reentrant: true,
-      isValidValue: function( value ) { return value < self.right; }
+      isValidValue: function( value ) { return value < self.right; },
+      tandem: options.tandem.createTandem( 'leftProperty' ),
+      phetioStudioControl: false // because the range is dynamic
     } );
     phet.log && this.leftProperty.link( function( left ) { phet.log( 'roboticArm left=' + left ); } );
   }
