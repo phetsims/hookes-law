@@ -1,4 +1,4 @@
-// Copyright 2015-2018, University of Colorado Boulder
+// Copyright 2015-2019, University of Colorado Boulder
 
 /**
  * Query parameters used in sim-specific code.
@@ -14,10 +14,7 @@ define( function( require ) {
   var HookesLawQueryParameters = QueryStringMachine.getAll( {
 
     // checks all Check Boxes, to make development easier
-    checkAll: { type: 'flag' },
-
-    // Adds the 'Reentrant' screen, see https://github.com/phetsims/phet-io/issues/1349
-    reentrant: { type: 'flag' }
+    checkAll: { type: 'flag' }
   } );
 
   hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );

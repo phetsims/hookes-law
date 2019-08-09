@@ -10,9 +10,7 @@ define( function( require ) {
 
   // modules
   var EnergyScreen = require( 'HOOKES_LAW/energy/EnergyScreen' );
-  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
   var IntroScreen = require( 'HOOKES_LAW/intro/IntroScreen' );
-  var ReentrantScreen = require( 'HOOKES_LAW/reentrant/ReentrantScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
@@ -38,10 +36,6 @@ define( function( require ) {
       new SystemsScreen( Tandem.rootTandem.createTandem( 'systemsScreen' ) ),
       new EnergyScreen( Tandem.rootTandem.createTandem( 'energyScreen' ) )
     ];
-
-    if ( HookesLawQueryParameters.reentrant ) {
-      screens.push( new ReentrantScreen() );
-    }
 
     var sim = new Sim( hookesLawTitleString, screens, options );
     sim.start();
