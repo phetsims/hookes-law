@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.19 Mon Aug 05 2019 15:59:42 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# hookes-law 1.0.19 Mon Aug 19 2019 14:06:40 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -21,12 +21,12 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "fd1a367441b4facd5d7b876bad4b31f977f53678",
+    "sha": "8436db1a03bb6871826c8ba0109c83aa57c36fd8",
     "branch": "1.0"
   },
   "joist": {
-    "sha": "a7f0363877d85b0947f882477842c93d1a751c0c",
-    "branch": "HEAD"
+    "sha": "dd068ec3d3d63ffb5fd441ea6a05b2537d999129",
+    "branch": "hookes-law-1.0"
   },
   "kite": {
     "sha": "40dc703a07c774464f060dda6a67485704ca9e22",
@@ -49,8 +49,8 @@
     "branch": "HEAD"
   },
   "scenery-phet": {
-    "sha": "88ade50794057afc23b6b98e3d1757b61612d938",
-    "branch": "HEAD"
+    "sha": "7e595b38e621ed8f9138fc6d4f43e0a68cc4502a",
+    "branch": "hookes-law-1.0"
   },
   "sherpa": {
     "sha": "1759eadefb4f6d680f85aef394ea7727df1928e6",
