@@ -5,16 +5,16 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var Bounds2 = require( 'DOT/Bounds2' );
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
-  var Property = require( 'AXON/Property' );
+  const Bounds2 = require( 'DOT/Bounds2' );
+  const Dimension2 = require( 'DOT/Dimension2' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  const Property = require( 'AXON/Property' );
 
   // constants
   var APPLIED_FORCE_DECIMAL_PLACES = 1;

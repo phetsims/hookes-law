@@ -6,13 +6,13 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var PhetFont = require( 'SCENERY_PHET/PhetFont' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const PhetFont = require( 'SCENERY_PHET/PhetFont' );
 
   /**
    * @param {Object|number} options - {Object} font options or {number} font size

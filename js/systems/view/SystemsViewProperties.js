@@ -5,16 +5,16 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var BooleanProperty = require( 'AXON/BooleanProperty' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var StringProperty = require( 'AXON/StringProperty' );
-  var ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
+  const BooleanProperty = require( 'AXON/BooleanProperty' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const StringProperty = require( 'AXON/StringProperty' );
+  const ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
 
   /**
    * @param {Tandem} tandem

@@ -5,15 +5,15 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
-  var Tandem = require( 'TANDEM/Tandem' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'

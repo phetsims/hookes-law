@@ -5,15 +5,15 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'SCENERY/nodes/Line' );
-  var Tandem = require( 'TANDEM/Tandem' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Line = require( 'SCENERY/nodes/Line' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   /**
    * @param {number} length

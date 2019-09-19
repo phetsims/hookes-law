@@ -5,20 +5,20 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var EnergyModel = require( 'HOOKES_LAW/energy/model/EnergyModel' );
-  var EnergyScreenView = require( 'HOOKES_LAW/energy/view/EnergyScreenView' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Screen = require( 'JOIST/Screen' );
+  const EnergyModel = require( 'HOOKES_LAW/energy/model/EnergyModel' );
+  const EnergyScreenView = require( 'HOOKES_LAW/energy/view/EnergyScreenView' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Screen = require( 'JOIST/Screen' );
 
   // strings
-  var energyString = require( 'string!HOOKES_LAW/energy' );
+  const energyString = require( 'string!HOOKES_LAW/energy' );
 
   /**
    * @param {Tandem} tandem

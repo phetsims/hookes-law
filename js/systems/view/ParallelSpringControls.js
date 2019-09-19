@@ -5,26 +5,26 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HSeparator = require( 'SUN/HSeparator' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
+  const Dimension2 = require( 'DOT/Dimension2' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const HSeparator = require( 'SUN/HSeparator' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Panel = require( 'SUN/Panel' );
+  const SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  var bottomSpringString = require( 'string!HOOKES_LAW/bottomSpring' );
-  var topSpringString = require( 'string!HOOKES_LAW/topSpring' );
+  const bottomSpringString = require( 'string!HOOKES_LAW/bottomSpring' );
+  const topSpringString = require( 'string!HOOKES_LAW/topSpring' );
 
   // constants
   var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );

@@ -5,35 +5,35 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var AquaRadioButton = require( 'SUN/AquaRadioButton' );
-  var Checkbox = require( 'SUN/Checkbox' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
-  var HSeparator = require( 'SUN/HSeparator' );
-  var HStrut = require( 'SCENERY/nodes/HStrut' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var Shape = require( 'KITE/Shape' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const AquaRadioButton = require( 'SUN/AquaRadioButton' );
+  const Checkbox = require( 'SUN/Checkbox' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
+  const HSeparator = require( 'SUN/HSeparator' );
+  const HStrut = require( 'SCENERY/nodes/HStrut' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Panel = require( 'SUN/Panel' );
+  const Path = require( 'SCENERY/nodes/Path' );
+  const Shape = require( 'KITE/Shape' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
-  var barGraphString = require( 'string!HOOKES_LAW/barGraph' );
-  var displacementString = require( 'string!HOOKES_LAW/displacement' );
-  var energyPlotString = require( 'string!HOOKES_LAW/energyPlot' );
-  var energyString = require( 'string!HOOKES_LAW/energy' );
-  var forcePlotString = require( 'string!HOOKES_LAW/forcePlot' );
-  var valuesString = require( 'string!HOOKES_LAW/values' );
+  const appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
+  const barGraphString = require( 'string!HOOKES_LAW/barGraph' );
+  const displacementString = require( 'string!HOOKES_LAW/displacement' );
+  const energyPlotString = require( 'string!HOOKES_LAW/energyPlot' );
+  const energyString = require( 'string!HOOKES_LAW/energy' );
+  const forcePlotString = require( 'string!HOOKES_LAW/forcePlot' );
+  const valuesString = require( 'string!HOOKES_LAW/values' );
 
   /**
    * @param {EnergyViewProperties} properties

@@ -5,21 +5,21 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ParallelSystemNode = require( 'HOOKES_LAW/systems/view/ParallelSystemNode' );
-  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var ScreenView = require( 'JOIST/ScreenView' );
-  var SeriesSystemNode = require( 'HOOKES_LAW/systems/view/SeriesSystemNode' );
-  var SystemsSceneControl = require( 'HOOKES_LAW/systems/view/SystemsSceneControl' );
-  var SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
-  var SystemsVisibilityControls = require( 'HOOKES_LAW/systems/view/SystemsVisibilityControls' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ParallelSystemNode = require( 'HOOKES_LAW/systems/view/ParallelSystemNode' );
+  const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  const ScreenView = require( 'JOIST/ScreenView' );
+  const SeriesSystemNode = require( 'HOOKES_LAW/systems/view/SeriesSystemNode' );
+  const SystemsSceneControl = require( 'HOOKES_LAW/systems/view/SystemsSceneControl' );
+  const SystemsViewProperties = require( 'HOOKES_LAW/systems/view/SystemsViewProperties' );
+  const SystemsVisibilityControls = require( 'HOOKES_LAW/systems/view/SystemsVisibilityControls' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
    * @param {SystemsModel} model

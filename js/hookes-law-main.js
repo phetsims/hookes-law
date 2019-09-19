@@ -5,19 +5,19 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var EnergyScreen = require( 'HOOKES_LAW/energy/EnergyScreen' );
-  var IntroScreen = require( 'HOOKES_LAW/intro/IntroScreen' );
-  var Sim = require( 'JOIST/Sim' );
-  var SimLauncher = require( 'JOIST/SimLauncher' );
-  var SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
-  var Tandem = require( 'TANDEM/Tandem' );
+  const EnergyScreen = require( 'HOOKES_LAW/energy/EnergyScreen' );
+  const IntroScreen = require( 'HOOKES_LAW/intro/IntroScreen' );
+  const Sim = require( 'JOIST/Sim' );
+  const SimLauncher = require( 'JOIST/SimLauncher' );
+  const SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   // strings
-  var hookesLawTitleString = require( 'string!HOOKES_LAW/hookes-law.title' );
+  const hookesLawTitleString = require( 'string!HOOKES_LAW/hookes-law.title' );
 
   var options = {
     credits: {

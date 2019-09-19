@@ -5,25 +5,25 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
-  var Dimension2 = require( 'DOT/Dimension2' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var VSeparator = require( 'SUN/VSeparator' );
+  const AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
+  const Dimension2 = require( 'DOT/Dimension2' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Panel = require( 'SUN/Panel' );
+  const SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const VSeparator = require( 'SUN/VSeparator' );
 
   // strings
-  var leftSpringString = require( 'string!HOOKES_LAW/leftSpring' );
-  var rightSpringString = require( 'string!HOOKES_LAW/rightSpring' );
+  const leftSpringString = require( 'string!HOOKES_LAW/leftSpring' );
+  const rightSpringString = require( 'string!HOOKES_LAW/rightSpring' );
 
   // constants
   var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );

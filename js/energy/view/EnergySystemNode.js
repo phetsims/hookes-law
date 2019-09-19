@@ -7,27 +7,27 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
-  var DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
-  var EnergySpringControls = require( 'HOOKES_LAW/energy/view/EnergySpringControls' );
-  var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var NumberProperty = require( 'AXON/NumberProperty' );
-  var Property = require( 'AXON/Property' );
-  var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var Util = require( 'DOT/Util' );
-  var WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
+  const AppliedForceVectorNode = require( 'HOOKES_LAW/common/view/AppliedForceVectorNode' );
+  const DisplacementVectorNode = require( 'HOOKES_LAW/common/view/DisplacementVectorNode' );
+  const EnergySpringControls = require( 'HOOKES_LAW/energy/view/EnergySpringControls' );
+  const EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const NumberProperty = require( 'AXON/NumberProperty' );
+  const Property = require( 'AXON/Property' );
+  const RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const Util = require( 'DOT/Util' );
+  const WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   /**
    * @param {SingleSpringSystem} system

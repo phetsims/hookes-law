@@ -5,18 +5,18 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var DisplacementControl = require( 'HOOKES_LAW/common/view/DisplacementControl' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-  var Tandem = require( 'TANDEM/Tandem' );
+  const DisplacementControl = require( 'HOOKES_LAW/common/view/DisplacementControl' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Panel = require( 'SUN/Panel' );
+  const SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   // constants
   var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;

@@ -5,30 +5,30 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
-  var EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
-  var Line = require( 'SCENERY/nodes/Line' );
-  var LineArrowNode = require( 'SCENERY_PHET/LineArrowNode' );
-  var NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
-  var Rectangle = require( 'SCENERY/nodes/Rectangle' );
-  var RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
-  var ScreenIcon = require( 'JOIST/ScreenIcon' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
+  const EquilibriumPositionNode = require( 'HOOKES_LAW/common/view/EquilibriumPositionNode' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
+  const Line = require( 'SCENERY/nodes/Line' );
+  const LineArrowNode = require( 'SCENERY_PHET/LineArrowNode' );
+  const NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
+  const Rectangle = require( 'SCENERY/nodes/Rectangle' );
+  const RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
+  const ScreenIcon = require( 'JOIST/ScreenIcon' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  var equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
+  const equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
 
   // Spring options common to all icons
   var COMMON_SPRING_OPTIONS = {

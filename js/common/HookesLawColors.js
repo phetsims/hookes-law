@@ -5,13 +5,13 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var Color = require( 'SCENERY/util/Color' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
+  const Color = require( 'SCENERY/util/Color' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   // colors for the spring in single-spring systems
   var SPRING0_FRONT = new Color( 150, 150, 255 );

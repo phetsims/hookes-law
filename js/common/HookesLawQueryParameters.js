@@ -5,11 +5,11 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
 
   var HookesLawQueryParameters = QueryStringMachine.getAll( {
 

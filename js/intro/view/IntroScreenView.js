@@ -5,21 +5,21 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var IntroAnimator = require( 'HOOKES_LAW/intro/view/IntroAnimator' );
-  var IntroSceneControl = require( 'HOOKES_LAW/intro/view/IntroSceneControl' );
-  var IntroSystemNode = require( 'HOOKES_LAW/intro/view/IntroSystemNode' );
-  var IntroViewProperties = require( 'HOOKES_LAW/intro/view/IntroViewProperties' );
-  var IntroVisibilityControls = require( 'HOOKES_LAW/intro/view/IntroVisibilityControls' );
-  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var ScreenView = require( 'JOIST/ScreenView' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const IntroAnimator = require( 'HOOKES_LAW/intro/view/IntroAnimator' );
+  const IntroSceneControl = require( 'HOOKES_LAW/intro/view/IntroSceneControl' );
+  const IntroSystemNode = require( 'HOOKES_LAW/intro/view/IntroSystemNode' );
+  const IntroViewProperties = require( 'HOOKES_LAW/intro/view/IntroViewProperties' );
+  const IntroVisibilityControls = require( 'HOOKES_LAW/intro/view/IntroVisibilityControls' );
+  const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  const ScreenView = require( 'JOIST/ScreenView' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   /**
    * @param {IntroModel} model

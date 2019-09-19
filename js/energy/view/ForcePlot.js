@@ -6,27 +6,27 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Line = require( 'SCENERY/nodes/Line' );
-  var Path = require( 'SCENERY/nodes/Path' );
-  var Property = require( 'AXON/Property' );
-  var Shape = require( 'KITE/Shape' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var Util = require( 'DOT/Util' );
-  var XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Line = require( 'SCENERY/nodes/Line' );
+  const Path = require( 'SCENERY/nodes/Path' );
+  const Property = require( 'AXON/Property' );
+  const Shape = require( 'KITE/Shape' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const Util = require( 'DOT/Util' );
+  const XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
 
   // strings
-  var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
-  var displacementString = require( 'string!HOOKES_LAW/displacement' );
-  var metersString = require( 'string!HOOKES_LAW/meters' );
-  var newtonsString = require( 'string!HOOKES_LAW/newtons' );
+  const appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
+  const displacementString = require( 'string!HOOKES_LAW/displacement' );
+  const metersString = require( 'string!HOOKES_LAW/meters' );
+  const newtonsString = require( 'string!HOOKES_LAW/newtons' );
 
   /**
    * @param {Spring} spring

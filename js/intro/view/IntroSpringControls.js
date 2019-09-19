@@ -5,23 +5,23 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var Tandem = require( 'TANDEM/Tandem' );
+  const AppliedForceControl = require( 'HOOKES_LAW/common/view/AppliedForceControl' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Panel = require( 'SUN/Panel' );
+  const SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
+  const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  const Tandem = require( 'TANDEM/Tandem' );
 
   // strings
-  var appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
-  var springConstantNumberString = require( 'string!HOOKES_LAW/springConstantNumber' );
+  const appliedForceNumberString = require( 'string!HOOKES_LAW/appliedForceNumber' );
+  const springConstantNumberString = require( 'string!HOOKES_LAW/springConstantNumber' );
 
   // constants
   var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;

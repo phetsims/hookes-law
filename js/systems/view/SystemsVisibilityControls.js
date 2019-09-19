@@ -7,33 +7,33 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var AquaRadioButton = require( 'SUN/AquaRadioButton' );
-  var BracketNode = require( 'SCENERY_PHET/BracketNode' );
-  var Checkbox = require( 'SUN/Checkbox' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
-  var HStrut = require( 'SCENERY/nodes/HStrut' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var Panel = require( 'SUN/Panel' );
-  var Property = require( 'AXON/Property' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
+  const AquaRadioButton = require( 'SUN/AquaRadioButton' );
+  const BracketNode = require( 'SCENERY_PHET/BracketNode' );
+  const Checkbox = require( 'SUN/Checkbox' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
+  const HStrut = require( 'SCENERY/nodes/HStrut' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const Panel = require( 'SUN/Panel' );
+  const Property = require( 'AXON/Property' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
-  var appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
-  var componentsString = require( 'string!HOOKES_LAW/components' );
-  var displacementString = require( 'string!HOOKES_LAW/displacement' );
-  var springForceString = require( 'string!HOOKES_LAW/springForce' );
-  var totalString = require( 'string!HOOKES_LAW/total' );
-  var valuesString = require( 'string!HOOKES_LAW/values' );
+  const appliedForceString = require( 'string!HOOKES_LAW/appliedForce' );
+  const componentsString = require( 'string!HOOKES_LAW/components' );
+  const displacementString = require( 'string!HOOKES_LAW/displacement' );
+  const springForceString = require( 'string!HOOKES_LAW/springForce' );
+  const totalString = require( 'string!HOOKES_LAW/total' );
+  const valuesString = require( 'string!HOOKES_LAW/values' );
 
   /**
    * @param {SystemsViewProperties} properties

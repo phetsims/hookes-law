@@ -5,25 +5,25 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var NumberControl = require( 'SCENERY_PHET/NumberControl' );
-  var StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  var SunConstants = require( 'SUN/SunConstants' );
-  var Tandem = require( 'TANDEM/Tandem' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var Util = require( 'DOT/Util' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const NumberControl = require( 'SCENERY_PHET/NumberControl' );
+  const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
+  const SunConstants = require( 'SUN/SunConstants' );
+  const Tandem = require( 'TANDEM/Tandem' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const Util = require( 'DOT/Util' );
 
   // strings
-  var newtonsPerMeterString = require( 'string!HOOKES_LAW/newtonsPerMeter' );
-  var pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
-  var springConstantString = require( 'string!HOOKES_LAW/springConstant' );
+  const newtonsPerMeterString = require( 'string!HOOKES_LAW/newtonsPerMeter' );
+  const pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+  const springConstantString = require( 'string!HOOKES_LAW/springConstant' );
 
   // fill in the {1} units, but leave the {0} value alone.
   var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,

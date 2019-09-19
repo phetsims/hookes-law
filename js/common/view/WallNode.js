@@ -5,15 +5,15 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var Bounds2 = require( 'DOT/Bounds2' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ShadedRectangle = require( 'SCENERY_PHET/ShadedRectangle' );
+  const Bounds2 = require( 'DOT/Bounds2' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ShadedRectangle = require( 'SCENERY_PHET/ShadedRectangle' );
 
   /**
    * @param {Dimension2} size

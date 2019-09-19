@@ -22,15 +22,15 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var RangeWithValue = require( 'DOT/RangeWithValue' );
-  var RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
-  var Spring = require( 'HOOKES_LAW/common/model/Spring' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const RangeWithValue = require( 'DOT/RangeWithValue' );
+  const RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
+  const Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
   /**
    * @param {Tandem} tandem

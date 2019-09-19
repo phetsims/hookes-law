@@ -5,14 +5,14 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ParallelSystem = require( 'HOOKES_LAW/systems/model/ParallelSystem' );
-  var SeriesSystem = require( 'HOOKES_LAW/systems/model/SeriesSystem' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ParallelSystem = require( 'HOOKES_LAW/systems/model/ParallelSystem' );
+  const SeriesSystem = require( 'HOOKES_LAW/systems/model/SeriesSystem' );
 
   /**
    * @param {Tandem} tandem

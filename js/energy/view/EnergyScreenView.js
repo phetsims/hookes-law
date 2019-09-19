@@ -5,21 +5,21 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var EnergyBarGraph = require( 'HOOKES_LAW/energy/view/EnergyBarGraph' );
-  var EnergyPlot = require( 'HOOKES_LAW/energy/view/EnergyPlot' );
-  var EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
-  var EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
-  var EnergyVisibilityControls = require( 'HOOKES_LAW/energy/view/EnergyVisibilityControls' );
-  var ForcePlot = require( 'HOOKES_LAW/energy/view/ForcePlot' );
-  var hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  var HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
-  var ScreenView = require( 'JOIST/ScreenView' );
+  const EnergyBarGraph = require( 'HOOKES_LAW/energy/view/EnergyBarGraph' );
+  const EnergyPlot = require( 'HOOKES_LAW/energy/view/EnergyPlot' );
+  const EnergySystemNode = require( 'HOOKES_LAW/energy/view/EnergySystemNode' );
+  const EnergyViewProperties = require( 'HOOKES_LAW/energy/view/EnergyViewProperties' );
+  const EnergyVisibilityControls = require( 'HOOKES_LAW/energy/view/EnergyVisibilityControls' );
+  const ForcePlot = require( 'HOOKES_LAW/energy/view/ForcePlot' );
+  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
+  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
+  const inherit = require( 'PHET_CORE/inherit' );
+  const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
+  const ScreenView = require( 'JOIST/ScreenView' );
 
   /**
    * @param {EnergyModel} model
