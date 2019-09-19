@@ -14,21 +14,21 @@ define( require => {
   const PhetColorScheme = require( 'SCENERY_PHET/PhetColorScheme' );
 
   // colors for the spring in single-spring systems
-  var SPRING0_FRONT = new Color( 150, 150, 255 );
-  var SPRING0_MIDDLE = new Color( 0, 0, 255 ); // the dominant color
-  var SPRING0_BACK = new Color( 0, 0, 200 );
+  const SPRING0_FRONT = new Color( 150, 150, 255 );
+  const SPRING0_MIDDLE = new Color( 0, 0, 255 ); // the dominant color
+  const SPRING0_BACK = new Color( 0, 0, 200 );
 
   // colors for the first spring (top, left) in 2-spring systems
-  var SPRING1_FRONT = new Color( 221, 191, 255 );
-  var SPRING1_MIDDLE = new Color( 146, 64, 255 ); // the dominant color
-  var SPRING1_BACK = new Color( 124, 54, 217 );
+  const SPRING1_FRONT = new Color( 221, 191, 255 );
+  const SPRING1_MIDDLE = new Color( 146, 64, 255 ); // the dominant color
+  const SPRING1_BACK = new Color( 124, 54, 217 );
 
   // colors for the second spring (bottom, right) in 2-spring systems
-  var SPRING2_FRONT = new Color( 255, 223, 127 );
-  var SPRING2_MIDDLE = new Color( 255, 191, 0 ); // the dominant color
-  var SPRING2_BACK = new Color( 217, 163, 0 );
+  const SPRING2_FRONT = new Color( 255, 223, 127 );
+  const SPRING2_MIDDLE = new Color( 255, 191, 0 ); // the dominant color
+  const SPRING2_BACK = new Color( 217, 163, 0 );
 
-  var HookesLawColors = {
+  const HookesLawColors = {
 
     // UI components
     CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),

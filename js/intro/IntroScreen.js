@@ -26,7 +26,7 @@ define( require => {
    */
   function IntroScreen( tandem ) {
 
-    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: introString,
       homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
       tandem: tandem

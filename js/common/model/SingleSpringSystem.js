@@ -21,7 +21,7 @@ define( require => {
    */
   function SingleSpringSystem( tandem, springOptions ) {
 
-    var self = this;
+    const self = this;
 
     //------------------------------------------------
     // Components of the system

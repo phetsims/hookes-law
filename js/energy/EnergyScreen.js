@@ -26,7 +26,7 @@ define( require => {
    */
   function EnergyScreen( tandem ) {
 
-    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: energyString,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
       tandem: tandem

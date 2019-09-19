@@ -33,13 +33,13 @@ define( require => {
     } ) );
 
     // View length of 1 meter of displacement
-    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
+    const unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view
-    var viewProperties = new EnergyViewProperties( tandem.createTandem( 'viewProperties' ) );
+    const viewProperties = new EnergyViewProperties( tandem.createTandem( 'viewProperties' ) );
 
     // Visibility controls
-    var visibilityControls = new EnergyVisibilityControls( viewProperties, {
+    const visibilityControls = new EnergyVisibilityControls( viewProperties, {
       right: this.layoutBounds.right - 10,
       top: 10,
       maxWidth: 235, // constrain width for i18n, determining empirically
@@ -48,7 +48,7 @@ define( require => {
     this.addChild( visibilityControls );
 
     // System
-    var systemNode = new EnergySystemNode( model.system, viewProperties, {
+    const systemNode = new EnergySystemNode( model.system, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 35,
@@ -58,7 +58,7 @@ define( require => {
     this.addChild( systemNode );
 
     // Energy bar graph
-    var barGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
+    const barGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
       // x position depends on whether XY plots are visible
       bottom: systemNode.top - 35,
       tandem: tandem.createTandem( 'barGraph' )
@@ -66,7 +66,7 @@ define( require => {
     this.addChild( barGraph );
 
     // Force plot
-    var forcePlot = new ForcePlot( model.system.spring, unitDisplacementLength,
+    const forcePlot = new ForcePlot( model.system.spring, unitDisplacementLength,
       viewProperties.valuesVisibleProperty,
       viewProperties.displacementVectorVisibleProperty,
       viewProperties.energyOnForcePlotVisibleProperty, {
@@ -78,7 +78,7 @@ define( require => {
     this.addChild( forcePlot );
 
     // Energy plot
-    var energyPlot = new EnergyPlot( model.system.spring, unitDisplacementLength,
+    const energyPlot = new EnergyPlot( model.system.spring, unitDisplacementLength,
       viewProperties.valuesVisibleProperty, viewProperties.displacementVectorVisibleProperty, {
         x: forcePlot.x,
         y: barGraph.bottom,
@@ -87,7 +87,7 @@ define( require => {
     this.addChild( energyPlot );
 
     // Reset All button, bottom right
-    var resetAllButton = new ResetAllButton( {
+    const resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
         viewProperties.reset();

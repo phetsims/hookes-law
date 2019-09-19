@@ -16,9 +16,9 @@ define( require => {
   const NumberProperty = require( 'AXON/NumberProperty' );
 
   // constants
-  var STEPPER = null; // step method must be called by the client
-  var TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation, in seconds
-  var OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seconds
+  const STEPPER = null; // step method must be called by the client
+  const TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation, in seconds
+  const OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seconds
 
   /**
    * @param {NumberProperty} numberOfSystemsProperty
@@ -30,13 +30,13 @@ define( require => {
    */
   function IntroAnimator( numberOfSystemsProperty, system1Node, system2Node, layoutBounds, tandem ) {
 
-    var self = this;
+    const self = this;
 
     // @private which {Animation|null} in the chain should be stepped
     this.activeAnimation = null;
 
     // Vertical position of system 1, instrumented for PhET-iO to support record/playback, see #53.
-    var system1CenterYProperty = new NumberProperty( system1Node.centerY, {
+    const system1CenterYProperty = new NumberProperty( system1Node.centerY, {
       tandem: tandem.createTandem( 'system1CenterYProperty' )
     } );
     system1CenterYProperty.link( function( centerY ) {
@@ -44,7 +44,7 @@ define( require => {
     } );
 
     // Opacity of system 2, instrumented for PhET-iO to support record/playback, see #53.
-    var system2OpacityProperty = new NumberProperty( system2Node.opacity, {
+    const system2OpacityProperty = new NumberProperty( system2Node.opacity, {
       isValidValue: function( value ) { return value >= 0 && value <= 1; },
       tandem: tandem.createTandem( 'system2OpacityProperty' )
     } );
@@ -52,8 +52,8 @@ define( require => {
       system2Node.opacity = opacity;
     } );
 
-    var system1Animaton = null; // {Animation|null} animation for system 1 translation
-    var system2Animation = null; // {Animation|null} animation for system 2 opacity (fade)
+    let system1Animaton = null; // {Animation|null} animation for system 1 translation
+    let system2Animation = null; // {Animation|null} animation for system 2 opacity (fade)
 
     // unlink not needed
     numberOfSystemsProperty.link( function( numberOfSystems ) {

@@ -18,7 +18,7 @@ define( require => {
   const Text = require( 'SCENERY/nodes/Text' );
 
   // constants
-  var AXIS_OPTIONS = {
+  const AXIS_OPTIONS = {
     headHeight: 10,
     headWidth: 10,
     tailWidth: 1,
@@ -44,8 +44,8 @@ define( require => {
     }, options );
 
     // x axis, arrow in positive direction only
-    var xAxisNode = new ArrowNode( options.minX, 0, options.maxX, 0, AXIS_OPTIONS );
-    var xAxisLabel = new Text( options.xString, {
+    const xAxisNode = new ArrowNode( options.minX, 0, options.maxX, 0, AXIS_OPTIONS );
+    const xAxisLabel = new Text( options.xString, {
       font: options.font,
       left: xAxisNode.right + 4,
       centerY: xAxisNode.centerY,
@@ -53,8 +53,8 @@ define( require => {
     } );
 
     // y axis, arrow in positive direction only
-    var yAxisNode = new ArrowNode( 0, -options.minY, 0, -options.maxY, AXIS_OPTIONS );
-    var yAxisLabel = new Text( options.yString, {
+    const yAxisNode = new ArrowNode( 0, -options.minY, 0, -options.maxY, AXIS_OPTIONS );
+    const yAxisLabel = new Text( options.yString, {
       font: options.font,
       centerX: yAxisNode.centerX,
       bottom: yAxisNode.top - 2,

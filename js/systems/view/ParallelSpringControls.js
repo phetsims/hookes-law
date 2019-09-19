@@ -27,8 +27,8 @@ define( require => {
   const topSpringString = require( 'string!HOOKES_LAW/topSpring' );
 
   // constants
-  var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
-  var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
+  const SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
+  const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
   /**
    * @param {ParallelSystem} system
@@ -48,11 +48,11 @@ define( require => {
     }, options );
 
     // Tandems for Panels that contain the controls
-    var springConstantsPanelTandem = options.tandem.createTandem( 'springConstantsPanel' );
-    var appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
+    const springConstantsPanelTandem = options.tandem.createTandem( 'springConstantsPanel' );
+    const appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
 
-    var topSpring = system.topSpring;
-    var topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
+    const topSpring = system.topSpring;
+    const topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
       title: topSpringString,
       sliderOptions: {
         thumbFill: HookesLawColors.TOP_SPRING,
@@ -66,8 +66,8 @@ define( require => {
       tandem: springConstantsPanelTandem.createTandem( 'topSpringConstantControl' )
     } );
 
-    var bottomSpring = system.bottomSpring;
-    var bottomSpringConstantControl = new SpringConstantControl(
+    const bottomSpring = system.bottomSpring;
+    const bottomSpringConstantControl = new SpringConstantControl(
       bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
         title: bottomSpringString,
         sliderOptions: {
@@ -83,7 +83,7 @@ define( require => {
       } );
 
     // "top" control above "bottom" control, to reflect layout of system
-    var springControls = new VBox( {
+    const springControls = new VBox( {
       spacing: 5,
       resize: false,
       children: [
@@ -94,7 +94,7 @@ define( require => {
       tandem: options.tandem.createTandem( 'springControls' )
     } );
 
-    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
+    const appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
       system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty, {
         tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
       } );

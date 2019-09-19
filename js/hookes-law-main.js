@@ -19,7 +19,7 @@ define( require => {
   // strings
   const hookesLawTitleString = require( 'string!HOOKES_LAW/hookes-law.title' );
 
-  var options = {
+  const options = {
     credits: {
       leadDesign: 'Amy Rouinfar',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
@@ -31,13 +31,13 @@ define( require => {
 
   SimLauncher.launch( function() {
 
-    var screens = [
+    const screens = [
       new IntroScreen( Tandem.rootTandem.createTandem( 'introScreen' ) ),
       new SystemsScreen( Tandem.rootTandem.createTandem( 'systemsScreen' ) ),
       new EnergyScreen( Tandem.rootTandem.createTandem( 'energyScreen' ) )
     ];
 
-    var sim = new Sim( hookesLawTitleString, screens, options );
+    const sim = new Sim( hookesLawTitleString, screens, options );
     sim.start();
   } );
 } );

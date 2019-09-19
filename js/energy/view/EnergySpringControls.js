@@ -19,7 +19,7 @@ define( require => {
   const Tandem = require( 'TANDEM/Tandem' );
 
   // constants
-  var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
+  const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
   /**
    * @param {Spring} spring
@@ -37,15 +37,15 @@ define( require => {
     }, options );
 
     // Tandems for Panels that contain the controls
-    var springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
-    var displacementPanelTandem = options.tandem.createTandem( 'displacementPanel' );
+    const springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
+    const displacementPanelTandem = options.tandem.createTandem( 'displacementPanel' );
 
-    var springConstantMajorTickValues = [];
-    for ( var value = spring.springConstantRange.min; value <= spring.springConstantRange.max; value += 100 ) {
+    const springConstantMajorTickValues = [];
+    for ( let value = spring.springConstantRange.min; value <= spring.springConstantRange.max; value += 100 ) {
       springConstantMajorTickValues.push( value );
     }
 
-    var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
+    const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       sliderOptions: {
         minorTickSpacing: 50,
         majorTickValues: springConstantMajorTickValues
@@ -53,7 +53,7 @@ define( require => {
       tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
     } );
 
-    var displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
+    const displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
       sliderOptions: {
         minorTickSpacing: spring.displacementRange.getLength() / 10,
         majorTickValues: [

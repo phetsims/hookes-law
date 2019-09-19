@@ -39,16 +39,16 @@ define( require => {
   const pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // constants
-  var VALUE_X_MARGIN = 6;
-  var VALUE_Y_MARGIN = 3;
-  var VALUE_BACKGROUND_CORNER_RADIUS = 3;
-  var LEADER_LINE_OPTIONS = {
+  const VALUE_X_MARGIN = 6;
+  const VALUE_Y_MARGIN = 3;
+  const VALUE_BACKGROUND_CORNER_RADIUS = 3;
+  const LEADER_LINE_OPTIONS = {
     stroke: 'black',
     lineWidth: 1,
     lineDash: [ 3, 3 ]
   };
-  var TICK_LENGTH = 12;
-  var TICK_OPTIONS = {
+  const TICK_LENGTH = 12;
+  const TICK_OPTIONS = {
     stroke: 'black',
     lineWidth: 1
   };
@@ -101,7 +101,7 @@ define( require => {
     }, options );
 
     // XY axes
-    var axesNode = new XYAxes( {
+    const axesNode = new XYAxes( {
       minX: options.minX,
       maxX: options.maxX,
       minY: options.minY,
@@ -113,30 +113,30 @@ define( require => {
     } );
 
     // point
-    var pointNode = new Circle( options.pointRadius, {
+    const pointNode = new Circle( options.pointRadius, {
       fill: options.pointFill
     } );
 
     // x nodes
-    var xValueNode = new Text( '', {
+    const xValueNode = new Text( '', {
       maxWidth: 150, // i18n
       fill: options.xValueFill,
       font: options.valueFont
     } );
-    var xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, { centerY: 0 } ) );
-    var xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
-    var xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
-    var xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
+    const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, { centerY: 0 } ) );
+    const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
+    const xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
+    const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
 
     // y nodes
-    var yValueNode = new Text( '', {
+    const yValueNode = new Text( '', {
       maxWidth: 150, // i18n
       fill: options.yValueFill,
       font: options.valueFont
     } );
-    var yTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, { centerX: 0 } ) );
-    var yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
-    var yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
+    const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, { centerX: 0 } ) );
+    const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
+    const yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
 
     assert && assert( !options.children, 'XYPointPlot sets children' );
     options.children = [
@@ -148,7 +148,7 @@ define( require => {
 
     // visibility
     displacementVectorVisibleProperty.link( function( visible ) {
-      var xFixed = Util.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
+      const xFixed = Util.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
       xVectorNode.visible = ( visible && xFixed !== 0 );
     } );
     valuesVisibleProperty.link( function( visible ) {
@@ -168,8 +168,8 @@ define( require => {
 
     xProperty.link( function( x ) {
 
-      var xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
-      var xView = options.xUnitLength * xFixed;
+      const xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
+      const xView = options.xUnitLength * xFixed;
 
       // x vector
       xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.get() ); // can't draw a zero-length arrow
@@ -182,7 +182,7 @@ define( require => {
       xTickNode.centerX = xView;
 
       // x value
-      var xText = Util.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      const xText = Util.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       xValueNode.text = StringUtils.format( pattern0Value1UnitsString, xText, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
@@ -191,7 +191,7 @@ define( require => {
         xValueNode.top = 12; // below the x axis
       }
       else {
-        var X_SPACING = 6;
+        const X_SPACING = 6;
         if ( Math.abs( xView ) > ( X_SPACING + xValueNode.width / 2 ) ) {
           xValueNode.centerX = xView; // centered on the tick
         }
@@ -202,7 +202,7 @@ define( require => {
           xValueNode.right = -X_SPACING; // to the left of the y axis
         }
 
-        var Y_SPACING = 12;
+        const Y_SPACING = 12;
         if ( yProperty.get() >= 0 ) {
           xValueNode.top = Y_SPACING; // below the x axis
         }
@@ -220,19 +220,19 @@ define( require => {
 
     yProperty.link( function( y ) {
 
-      var yFixed = Util.toFixedNumber( y, options.yDecimalPlaces );
-      var yView = yFixed * options.yUnitLength;
+      const yFixed = Util.toFixedNumber( y, options.yDecimalPlaces );
+      const yView = yFixed * options.yUnitLength;
 
       // y tick mark
       yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.get() );
       yTickNode.centerY = -yView;
 
       // y value
-      var yText = Util.toFixed( yFixed, options.yDecimalPlaces );
+      const yText = Util.toFixed( yFixed, options.yDecimalPlaces );
       yValueNode.text = StringUtils.format( pattern0Value1UnitsString, yText, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes
-      var X_SPACING = 10;
+      const X_SPACING = 10;
       if ( xProperty.get() >= 0 ) {
         yValueNode.right = -X_SPACING; // to the left of the y axis
       }
@@ -240,7 +240,7 @@ define( require => {
         yValueNode.left = X_SPACING; // to the right of the y axis
       }
 
-      var Y_SPACING = 4;
+      const Y_SPACING = 4;
       if ( Math.abs( yView ) > Y_SPACING + yValueNode.height / 2 ) {
         yValueNode.centerY = -yView; // centered on the tick
       }
@@ -262,9 +262,9 @@ define( require => {
     Property.multilink( [ xProperty, yProperty ],
       function( x, y ) {
 
-        var xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
-        var xView = options.xUnitLength * xFixed;
-        var yView = -y * options.yUnitLength;
+        const xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
+        const xView = options.xUnitLength * xFixed;
+        const yView = -y * options.yUnitLength;
 
         // point
         pointNode.x = xView;

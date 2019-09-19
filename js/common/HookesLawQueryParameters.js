@@ -11,7 +11,7 @@ define( require => {
   // modules
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
 
-  var HookesLawQueryParameters = QueryStringMachine.getAll( {
+  const HookesLawQueryParameters = QueryStringMachine.getAll( {
 
     // checks all Check Boxes, to make development easier
     checkAll: { type: 'flag' }

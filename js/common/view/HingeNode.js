@@ -19,9 +19,9 @@ define( require => {
   const Shape = require( 'KITE/Shape' );
 
   // constants
-  var BODY_SIZE = new Dimension2( 9, 40 );
-  var PIVOT_SIZE = new Dimension2( 26, 25 );
-  var SCREW_RADIUS = 3;
+  const BODY_SIZE = new Dimension2( 9, 40 );
+  const PIVOT_SIZE = new Dimension2( 26, 25 );
+  const SCREW_RADIUS = 3;
 
   /**
    * @param {Object} [options]
@@ -30,7 +30,7 @@ define( require => {
   function HingeNode( options ) {
 
     // piece that the pincers pivot in, shape described clockwise from upper-left
-    var pivotNode = new Path( new Shape()
+    const pivotNode = new Path( new Shape()
       .moveTo( 0, -0.25 * PIVOT_SIZE.height )
       .lineTo( PIVOT_SIZE.width, -0.5 * PIVOT_SIZE.height )
       .lineTo( PIVOT_SIZE.width, 0.5 * PIVOT_SIZE.height )
@@ -41,7 +41,7 @@ define( require => {
     } );
 
     // pin at the pivot point
-    var pinNode = new Circle( SCREW_RADIUS, {
+    const pinNode = new Circle( SCREW_RADIUS, {
       fill: 'white',
       stroke: 'black',
       centerX: pivotNode.left + 10,
@@ -49,15 +49,15 @@ define( require => {
     } );
 
     // center of the pin
-    var pinCenterNode = new Circle( 0.45 * SCREW_RADIUS, {
+    const pinCenterNode = new Circle( 0.45 * SCREW_RADIUS, {
       fill: 'black',
       center: pinNode.center
     } );
 
     // body of the hinge, shape described clockwise from top of arc
-    var theta = Math.atan( ( 0.5 * BODY_SIZE.height ) / BODY_SIZE.width );
-    var radius = ( 0.5 * BODY_SIZE.height ) / Math.sin( theta );
-    var bodyNode = new Path( new Shape()
+    const theta = Math.atan( ( 0.5 * BODY_SIZE.height ) / BODY_SIZE.width );
+    const radius = ( 0.5 * BODY_SIZE.height ) / Math.sin( theta );
+    const bodyNode = new Path( new Shape()
       .arc( 0, 0, radius, -theta, theta )
       .lineTo( 0, 0.5 * BODY_SIZE.height )
       .lineTo( 0, -0.5 * BODY_SIZE.height )
@@ -69,7 +69,7 @@ define( require => {
     } );
 
     // specular highlight on the body
-    var highlightNode = new Path( new Shape()
+    const highlightNode = new Path( new Shape()
       .arc( 0, 4, 6, -0.75 * Math.PI, -0.25 * Math.PI )
       .arc( 0, -4, 6, 0.25 * Math.PI, 0.75 * Math.PI )
       .close(), {

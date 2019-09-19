@@ -20,7 +20,7 @@ define( require => {
    */
   function EnergyModel( tandem ) {
 
-    var springOptions = {
+    const springOptions = {
       logName: 'spring',
       springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = N/m
       displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m

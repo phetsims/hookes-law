@@ -26,7 +26,7 @@ define( require => {
   const pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // fill in the {1} units, but leave the {0} value alone.
-  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
+  const VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
     SunConstants.VALUE_NUMBERED_PLACEHOLDER, metersString );
 
   /**
@@ -85,8 +85,8 @@ define( require => {
     // major ticks
     if ( options.sliderOptions.majorTickValues ) {
       options.sliderOptions.majorTicks = [];
-      for ( var i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
-        var tickValue = options.sliderOptions.majorTickValues[ i ];
+      for ( let i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
+        const tickValue = options.sliderOptions.majorTickValues[ i ];
         assert && assert( Util.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
         options.sliderOptions.majorTicks.push( {
           value: tickValue,

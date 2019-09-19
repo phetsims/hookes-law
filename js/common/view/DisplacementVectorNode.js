@@ -40,9 +40,9 @@ define( require => {
       tandem: Tandem.required
     }, options );
 
-    var arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
+    const arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
 
-    var valueNode = new Text( '', {
+    const valueNode = new Text( '', {
       maxWidth: 150, // i18n
       fill: HookesLawColors.DISPLACEMENT,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
@@ -50,9 +50,9 @@ define( require => {
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
-    var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
+    const backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
 
-    var verticalLine = new Line( 0, 0, 0, 20, {
+    const verticalLine = new Line( 0, 0, 0, 20, {
       stroke: 'black',
       lineWidth: 2,
       centerY: arrowNode.centerY,
@@ -71,7 +71,7 @@ define( require => {
       }
 
       // update the value
-      var displacementText = Util.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      const displacementText = Util.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       valueNode.text = StringUtils.format( pattern0Value1UnitsString, displacementText, metersString );
 
       // center value on arrow

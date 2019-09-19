@@ -41,7 +41,7 @@ define( require => {
       tandem: Tandem.required
     }, options );
 
-    var arrowNode = new ArrowNode( 0, 0, 50, 0, {
+    const arrowNode = new ArrowNode( 0, 0, 50, 0, {
       fill: options.fill,
       stroke: options.stroke,
       tailWidth: 10,
@@ -49,7 +49,7 @@ define( require => {
       headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height
     } );
 
-    var valueNode = new Text( '', {
+    const valueNode = new Text( '', {
       maxWidth: 150, // i18n
       fill: options.fill,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
@@ -57,7 +57,7 @@ define( require => {
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
-    var backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
+    const backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
 
     assert && assert( !options.children, 'ForceVectorNode sets children' );
     options.children = [ arrowNode, backgroundNode, valueNode ];
@@ -74,7 +74,7 @@ define( require => {
       valueNode.text = StringUtils.format( pattern0Value1UnitsString, Util.toFixed( Math.abs( value ), options.decimalPlaces ), newtonsString );
 
       // value position
-      var margin = 5;
+      const margin = 5;
       if ( value === 0 ) {
         if ( options.alignZero === 'left' ) {
           valueNode.left = margin;

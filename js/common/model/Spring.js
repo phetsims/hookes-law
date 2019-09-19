@@ -58,7 +58,7 @@ define( require => {
    */
   function Spring( options ) {
 
-    var self = this;
+    const self = this;
 
     options = _.extend( {
 
@@ -209,7 +209,7 @@ define( require => {
         'displacement is out of range: ' + displacement );
 
       // F = kx
-      var appliedForce = self.springConstantProperty.get() * displacement;
+      let appliedForce = self.springConstantProperty.get() * displacement;
 
       // Constrain to range, needed due to floating-point error.
       appliedForce = self.appliedForceRange.constrainValue( appliedForce );
@@ -245,8 +245,8 @@ define( require => {
     // @public x location of the right end of the spring
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
       function( equilibriumX, displacement ) {
-        var left = self.leftProperty.get();
-        var right = equilibriumX + displacement;
+        const left = self.leftProperty.get();
+        const right = equilibriumX + displacement;
         assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
         return right;
       } );
@@ -259,8 +259,8 @@ define( require => {
     if ( options.appliedForceRange ) {
       this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
         function( springConstant, equilibriumX ) {
-          var minDisplacement = self.appliedForceRange.min / springConstant;
-          var maxDisplacement = self.appliedForceRange.max / springConstant;
+          const minDisplacement = self.appliedForceRange.min / springConstant;
+          const maxDisplacement = self.appliedForceRange.max / springConstant;
           return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
         } );
     }

@@ -47,15 +47,15 @@ define( require => {
     }, options );
 
     // to improve readability
-    var spring = system.spring;
-    var roboticArm = system.roboticArm;
+    const spring = system.spring;
+    const roboticArm = system.roboticArm;
 
     // This sim operates in 1 dimension (x), so center everything on y = 0.
-    var xOrigin = options.unitDisplacementLength * spring.leftProperty.get();
-    var yOrigin = 0;
+    const xOrigin = options.unitDisplacementLength * spring.leftProperty.get();
+    const yOrigin = 0;
 
     // number of interactions in progress that affect displacement
-    var numberOfInteractionsInProgressProperty = new NumberProperty( 0, {
+    const numberOfInteractionsInProgressProperty = new NumberProperty( 0, {
       numberType: 'Integer',
       isValidValue: function( value ) { return value >= 0; }
     } );
@@ -64,12 +64,12 @@ define( require => {
     // Scene graph
 
     // origin is at right-center of wall
-    var wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
+    const wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
       right: xOrigin,
       centerY: yOrigin
     } );
 
-    var springNode = new HookesLawSpringNode( spring, {
+    const springNode = new HookesLawSpringNode( spring, {
       frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
       middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
       backColor: HookesLawColors.SINGLE_SPRING_BACK,
@@ -81,26 +81,26 @@ define( require => {
     } );
 
     // pincers grab this
-    var nibNode = new NibNode( {
+    const nibNode = new NibNode( {
       fill: HookesLawColors.SINGLE_SPRING_MIDDLE,
       // x is based on rightSpring.leftProperty
       centerY: yOrigin
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
+    const roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin,
       tandem: options.tandem.createTandem( 'roboticArmNode' )
     } );
 
-    var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
+    const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * spring.equilibriumXProperty.get(),
       centerY: yOrigin,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode(
+    const appliedForceVectorNode = new AppliedForceVectorNode(
       spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
         // bottom determined empirically, springNode.top is not accurate because we're using boundsMethod:'none'
@@ -108,14 +108,14 @@ define( require => {
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
-    var springForceVectorNode = new SpringForceVectorNode(
+    const springForceVectorNode = new SpringForceVectorNode(
       spring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
         y: appliedForceVectorNode.y,
         tandem: options.tandem.createTandem( 'springForceVectorNode' )
       } );
 
-    var displacementVectorNode = new DisplacementVectorNode(
+    const displacementVectorNode = new DisplacementVectorNode(
       spring.displacementProperty, viewProperties.valuesVisibleProperty, {
         unitDisplacementLength: options.unitDisplacementLength,
         x: equilibriumPositionNode.centerX,
@@ -124,7 +124,7 @@ define( require => {
         tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
-    var springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {
+    const springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {
       number: options.number,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10,
@@ -157,7 +157,7 @@ define( require => {
     Property.multilink( [ numberOfInteractionsInProgressProperty, spring.displacementProperty ],
       function( numberOfInteractions, displacement ) {
         assert && assert( numberOfInteractions >= 0 );
-        var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        const fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 

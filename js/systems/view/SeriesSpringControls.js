@@ -26,8 +26,8 @@ define( require => {
   const rightSpringString = require( 'string!HOOKES_LAW/rightSpring' );
 
   // constants
-  var SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
-  var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
+  const SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
+  const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
   /**
    * @param {SeriesSystem} system
@@ -47,11 +47,11 @@ define( require => {
     }, options );
 
     // Tandems for Panels that contain the controls
-    var springConstantsPanelTandem = options.tandem.createTandem( 'springConstantsPanel' );
-    var appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
+    const springConstantsPanelTandem = options.tandem.createTandem( 'springConstantsPanel' );
+    const appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
 
-    var leftSpring = system.leftSpring;
-    var leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
+    const leftSpring = system.leftSpring;
+    const leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
       title: leftSpringString,
       
       // NumberControl options
@@ -67,8 +67,8 @@ define( require => {
       tandem: springConstantsPanelTandem.createTandem( 'leftSpringConstantControl' )
     } );
 
-    var rightSpring = system.rightSpring;
-    var rightSpringConstantControl = new SpringConstantControl( system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
+    const rightSpring = system.rightSpring;
+    const rightSpringConstantControl = new SpringConstantControl( system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
       title: rightSpringString,
 
       // NumberControl options
@@ -85,7 +85,7 @@ define( require => {
     } );
 
     // "left" control to the left of "right" control, to reflect layout of system
-    var springControls = new HBox( {
+    const springControls = new HBox( {
       spacing: 20,
       children: [
         leftSpringConstantControl,
@@ -94,7 +94,7 @@ define( require => {
       ]
     } );
 
-    var appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
+    const appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
       system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty, {
         tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
       } );

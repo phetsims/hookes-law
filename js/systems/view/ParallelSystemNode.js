@@ -32,7 +32,7 @@ define( require => {
   const WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   // constants
-  var WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
+  const WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
 
   /**
    * @param {ParallelSystem} system
@@ -48,16 +48,16 @@ define( require => {
     }, options );
 
     // to improve readability
-    var topSpring = system.topSpring;
-    var bottomSpring = system.bottomSpring;
-    var roboticArm = system.roboticArm;
-    var equivalentSpring = system.equivalentSpring;
+    const topSpring = system.topSpring;
+    const bottomSpring = system.bottomSpring;
+    const roboticArm = system.roboticArm;
+    const equivalentSpring = system.equivalentSpring;
 
     // This sim operates in 1 dimension (x), so center everything on y = 0.
-    var yOrigin = 0;
+    const yOrigin = 0;
 
     // number of interactions in progress that affect displacement
-    var numberOfInteractionsInProgressProperty = new NumberProperty( 0, {
+    const numberOfInteractionsInProgressProperty = new NumberProperty( 0, {
       numberType: 'Integer',
       isValidValue: function( value ) { return value >= 0; }
     } );
@@ -66,12 +66,12 @@ define( require => {
     // Scene graph
 
     // origin is at right-center of wall
-    var wallNode = new WallNode( WALL_SIZE, {
+    const wallNode = new WallNode( WALL_SIZE, {
       right: options.unitDisplacementLength * equivalentSpring.leftProperty.get(),
       centerY: yOrigin
     } );
 
-    var topSpringNode = new HookesLawSpringNode( topSpring, {
+    const topSpringNode = new HookesLawSpringNode( topSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
       frontColor: HookesLawColors.TOP_SPRING_FRONT,
@@ -82,7 +82,7 @@ define( require => {
       y: wallNode.top + ( 0.25 * wallNode.height )
     } );
 
-    var bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
+    const bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
       frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
@@ -93,7 +93,7 @@ define( require => {
       y: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
 
-    var roboticArmNode = new RoboticArmNode( roboticArm, equivalentSpring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
+    const roboticArmNode = new RoboticArmNode( roboticArm, equivalentSpring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin,
@@ -101,26 +101,26 @@ define( require => {
     } );
 
     // right ends of both springs are connected to this
-    var trussOverlap = 10;
-    var trussNode = new Line( 0, topSpringNode.y - trussOverlap, 0, bottomSpringNode.y + trussOverlap, {
+    const trussOverlap = 10;
+    const trussNode = new Line( 0, topSpringNode.y - trussOverlap, 0, bottomSpringNode.y + trussOverlap, {
       lineWidth: 4,
       stroke: 'black'
     } );
 
     // pincers grab this
-    var nibNode = new NibNode( {
+    const nibNode = new NibNode( {
       fill: 'black',
       // x is determined by rightSpring.leftProperty
       centerY: yOrigin
     } );
 
-    var equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
+    const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.get(),
       centerY: yOrigin,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
-    var appliedForceVectorNode = new AppliedForceVectorNode(
+    const appliedForceVectorNode = new AppliedForceVectorNode(
       equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by bottomSpring.rightProperty
         // bottom determined empirically, topSpringNode.top is not accurate because we're using boundsMethod:'none'
@@ -128,14 +128,14 @@ define( require => {
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
-    var totalSpringForceVectorNode = new SpringForceVectorNode(
+    const totalSpringForceVectorNode = new SpringForceVectorNode(
       equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by bottomSpring.rightProperty
         centerY: appliedForceVectorNode.centerY,
         tandem: options.tandem.createTandem( 'totalSpringForceVectorNode' )
       } );
 
-    var topSpringForceVectorNode = new SpringForceVectorNode(
+    const topSpringForceVectorNode = new SpringForceVectorNode(
       topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.TOP_SPRING,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
@@ -144,7 +144,7 @@ define( require => {
         tandem: options.tandem.createTandem( 'topSpringForceVectorNode' )
       } );
 
-    var bottomSpringForceVectorNode = new SpringForceVectorNode(
+    const bottomSpringForceVectorNode = new SpringForceVectorNode(
       bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.BOTTOM_SPRING,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
@@ -153,7 +153,7 @@ define( require => {
         tandem: options.tandem.createTandem( 'bottomSpringForceVectorNode' )
       } );
 
-    var displacementVectorNode = new DisplacementVectorNode(
+    const displacementVectorNode = new DisplacementVectorNode(
       equivalentSpring.displacementProperty, viewProperties.valuesVisibleProperty, {
         unitDisplacementLength: options.unitDisplacementLength,
         x: equilibriumPositionNode.centerX,
@@ -162,7 +162,7 @@ define( require => {
         tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
-    var springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {
+    const springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 25,
       maxWidth: roboticArmNode.right - wallNode.left, // constrain width for i18n
@@ -191,7 +191,7 @@ define( require => {
         // total
         totalSpringForceVectorNode.visible = springForceVectorVisible && springForceRepresentation === 'total';
         // components
-        var componentsVisible = springForceVectorVisible && springForceRepresentation === 'components';
+        const componentsVisible = springForceVectorVisible && springForceRepresentation === 'components';
         bottomSpringForceVectorNode.visible = topSpringForceVectorNode.visible = componentsVisible;
       } );
 
@@ -210,7 +210,7 @@ define( require => {
     Property.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
       function( numberOfInteractions, displacement ) {
         assert && assert( numberOfInteractions >= 0 );
-        var fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        const fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 

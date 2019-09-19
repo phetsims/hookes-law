@@ -31,20 +31,20 @@ define( require => {
   const equilibriumPositionString = require( 'string!HOOKES_LAW/equilibriumPosition' );
 
   // Spring options common to all icons
-  var COMMON_SPRING_OPTIONS = {
+  const COMMON_SPRING_OPTIONS = {
     loops: 3,
     lineWidth: 5
   };
 
   // Spring options for all icons related to scene selection
-  var SCENE_SELECTION_SPRING_OPTIONS = _.extend( {
+  const SCENE_SELECTION_SPRING_OPTIONS = _.extend( {
     frontColor: HookesLawColors.SCENE_SELECTION_SPRING_FRONT,
     middleColor: HookesLawColors.SCENE_SELECTION_SPRING_MIDDLE,
     backColor: HookesLawColors.SCENE_SELECTION_SPRING_BACK,
     scale: 0.3
   }, COMMON_SPRING_OPTIONS );
 
-  var HookesLawIconFactory = {
+  const HookesLawIconFactory = {
 
     /**
      * Creates the icon for the "Intro" screen, a single spring pulled by a robotic arm.
@@ -55,26 +55,26 @@ define( require => {
     createIntroScreenIcon: function() {
 
       // spring
-      var springNode = new ParametricSpringNode( _.extend( {
+      const springNode = new ParametricSpringNode( _.extend( {
         frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
         middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
         backColor: HookesLawColors.SINGLE_SPRING_BACK
       }, COMMON_SPRING_OPTIONS ) );
 
       // piece that pincers grab
-      var nibNode = new NibNode( {
+      const nibNode = new NibNode( {
         fill: HookesLawColors.SINGLE_SPRING_MIDDLE,
         x: springNode.right,
         centerY: springNode.centerY
       } );
 
       // robotic arm
-      var armNode = RoboticArmNode.createIcon( {
+      const armNode = RoboticArmNode.createIcon( {
         left: springNode.right,
         centerY: springNode.centerY
       } );
 
-      var iconNode = new Node( { children: [ armNode, springNode, nibNode ] } );
+      const iconNode = new Node( { children: [ armNode, springNode, nibNode ] } );
 
       return new ScreenIcon( iconNode );
     },
@@ -88,23 +88,23 @@ define( require => {
     createSystemsScreenIcon: function() {
 
       // springs
-      var topSpringNode = new ParametricSpringNode( _.extend( {
+      const topSpringNode = new ParametricSpringNode( _.extend( {
         frontColor: HookesLawColors.TOP_SPRING_FRONT,
         middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
         backColor: HookesLawColors.TOP_SPRING_BACK
       }, COMMON_SPRING_OPTIONS ) );
-      var bottomSpringNode = new ParametricSpringNode( _.extend( {
+      const bottomSpringNode = new ParametricSpringNode( _.extend( {
         frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
         middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
         backColor: HookesLawColors.BOTTOM_SPRING_BACK
       }, COMMON_SPRING_OPTIONS ) );
-      var springsBox = new VBox( {
+      const springsBox = new VBox( {
         spacing: 10,
         children: [ topSpringNode, bottomSpringNode ]
       } );
 
       // vertical line that springs connect to
-      var verticalLineNode = new Line( 0, 0, 0, 0.65 * springsBox.height, {
+      const verticalLineNode = new Line( 0, 0, 0, 0.65 * springsBox.height, {
         stroke: 'black',
         lineWidth: 3,
         x: springsBox.right,
@@ -112,19 +112,19 @@ define( require => {
       } );
 
       // piece that pincers grab
-      var nibNode = new NibNode( {
+      const nibNode = new NibNode( {
         fill: 'black',
         x: verticalLineNode.x,
         centerY: verticalLineNode.centerY
       } );
 
       // robotic arm
-      var armNode = RoboticArmNode.createIcon( {
+      const armNode = RoboticArmNode.createIcon( {
         left: verticalLineNode.right,
         centerY: verticalLineNode.centerY
       } );
 
-      var iconNode = new Node( {
+      const iconNode = new Node( {
         children: [
           armNode,
           topSpringNode,
@@ -145,19 +145,19 @@ define( require => {
      */
     createEnergyScreenIcon: function() {
 
-      var yAxisNode = new ArrowNode( 0, 0, 0, -100, {
+      const yAxisNode = new ArrowNode( 0, 0, 0, -100, {
         headHeight: 25,
         headWidth: 25,
         tailWidth: 5
       } );
 
-      var barNode = new Rectangle( 0, 0, 30, 100, {
+      const barNode = new Rectangle( 0, 0, 30, 100, {
         fill: HookesLawColors.ENERGY,
         left: yAxisNode.right + 10,
         bottom: yAxisNode.bottom
       } );
 
-      var iconNode = new Node( { children: [ barNode, yAxisNode ] } );
+      const iconNode = new Node( { children: [ barNode, yAxisNode ] } );
 
       return new ScreenIcon( iconNode );
     },
@@ -207,7 +207,7 @@ define( require => {
       assert && assert( options.arrowDirection === 'left' || options.arrowDirection === 'right' );
       assert && assert( options.vectorType === 'force' || options.vectorType === 'displacement' );
 
-      var arrowNode;
+      let arrowNode;
       if ( options.vectorType === 'force' ) {
         arrowNode = this.createForceVectorIcon( _.extend( { fill: options.arrowFill }, options ) );
       }
@@ -235,8 +235,8 @@ define( require => {
      * @static
      */
     createEquilibriumPositionCheckboxContent: function() {
-      var textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
-      var lineNode = new EquilibriumPositionNode( textNode.height, {
+      const textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
+      const lineNode = new EquilibriumPositionNode( textNode.height, {
         left: textNode.right + 8,
         centerY: textNode.centerY
       } );
@@ -276,10 +276,10 @@ define( require => {
      * @static
      */
     createSeriesSystemIcon: function() {
-      var leftSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
-      var rightSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
+      const leftSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
+      const rightSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
       rightSpringNode.left = leftSpringNode.right;
-      var wallNode = new Line( 0, 0, 0, 1.2 * leftSpringNode.height, {
+      const wallNode = new Line( 0, 0, 0, 1.2 * leftSpringNode.height, {
         stroke: 'black',
         lineWidth: 2
       } );
@@ -296,13 +296,13 @@ define( require => {
      * @static
      */
     createParallelSystemIcon: function() {
-      var topSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
-      var bottomSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
-      var springsBox = new VBox( {
+      const topSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
+      const bottomSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
+      const springsBox = new VBox( {
         spacing: 5,
         children: [ topSpringNode, bottomSpringNode ]
       } );
-      var wallNode = new Line( 0, 0, 0, springsBox.height, {
+      const wallNode = new Line( 0, 0, 0, springsBox.height, {
         stroke: 'black',
         lineWidth: 2
       } );

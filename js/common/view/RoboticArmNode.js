@@ -26,16 +26,16 @@ define( require => {
   const Util = require( 'DOT/Util' );
 
   // constants
-  var PINCER_RADIUS = 35;
-  var PINCER_LINE_WIDTH = 6;
-  var PINCER_OVERLAP = 2;
-  var ARM_HEIGHT = 14;
-  var ARM_GRADIENT = new LinearGradient( 0, 0, 0, ARM_HEIGHT )
+  const PINCER_RADIUS = 35;
+  const PINCER_LINE_WIDTH = 6;
+  const PINCER_OVERLAP = 2;
+  const ARM_HEIGHT = 14;
+  const ARM_GRADIENT = new LinearGradient( 0, 0, 0, ARM_HEIGHT )
     .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
     .addColorStop( 0.3, 'white' )
     .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
-  var BOX_SIZE = new Dimension2( 20, 60 );
-  var BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
+  const BOX_SIZE = new Dimension2( 20, 60 );
+  const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
     .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
     .addColorStop( 0.5, 'white' )
     .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
@@ -57,7 +57,7 @@ define( require => {
     }, options );
 
     // red box at right end of the arm, origin is at left-center
-    var redBox = new Rectangle( 0, 0, 7, 30, {
+    const redBox = new Rectangle( 0, 0, 7, 30, {
       stroke: 'black',
       fill: HookesLawColors.HINGE, // same color as hinge
       lineWidth: 0.5,
@@ -66,7 +66,7 @@ define( require => {
     } );
 
     // gradient box to the right of red box
-    var gradientBox = new Rectangle( 0, 0, BOX_SIZE.width, BOX_SIZE.height, {
+    const gradientBox = new Rectangle( 0, 0, BOX_SIZE.width, BOX_SIZE.height, {
       stroke: 'black',
       fill: BOX_GRADIENT,
       lineWidth: 0.5,
@@ -75,7 +75,7 @@ define( require => {
     } );
 
     // arm will be sized and positioned by Property observer
-    var armNode = new Rectangle( 0, 0, 1, ARM_HEIGHT, {
+    const armNode = new Rectangle( 0, 0, 1, ARM_HEIGHT, {
       fill: ARM_GRADIENT,
       stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
       lineWidth: 0.5
@@ -114,13 +114,13 @@ define( require => {
     } );
 
     // hinge, where the pincers are attached
-    var hingeNode = new HingeNode( {
+    const hingeNode = new HingeNode( {
       x: this.topPincerClosedNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
 
     // pincers and hinge are draggable, other parts are not
-    var draggableNode = new Node( {
+    const draggableNode = new Node( {
       children: [
         this.topPincerClosedNode, this.topPincerOpenNode,
         this.bottomPincerClosedNode, this.bottomPincerOpenNode,
@@ -130,21 +130,21 @@ define( require => {
     draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
 
     // Drag the pincers or hinge
-    var startOffsetX = 0;
-    var dragHandler = new SimpleDragHandler( {
+    let startOffsetX = 0;
+    const dragHandler = new SimpleDragHandler( {
 
       allowTouchSnag: true,
 
       start: function( event ) {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
-        var length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
+        const length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
         startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
       },
 
       drag: function( event ) {
-        var parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - startOffsetX;
-        var length = parentX / options.unitDisplacementLength;
-        var left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
+        const parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - startOffsetX;
+        const length = parentX / options.unitDisplacementLength;
+        let left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
 
         // constrain to multiples of a specific interval, see #54
         if ( options.displacementInterval ) {
@@ -171,8 +171,8 @@ define( require => {
       draggableNode.x = options.unitDisplacementLength * ( left - roboticArm.right );
 
       // resize the arm
-      var overlap = 10; // hide ends of arm behind hinge and box
-      var armLength = ( gradientBox.left - draggableNode.right ) + ( 2 * overlap );
+      const overlap = 10; // hide ends of arm behind hinge and box
+      const armLength = ( gradientBox.left - draggableNode.right ) + ( 2 * overlap );
       armNode.setRect( 0, 0, armLength, ARM_HEIGHT );
       armNode.right = gradientBox.left + overlap;
       armNode.centerY = 0;
@@ -228,24 +228,24 @@ define( require => {
      */
     createIcon: function( options ) {
 
-      var topPincerNode = createTopPincerClosed( {
+      const topPincerNode = createTopPincerClosed( {
         stroke: HookesLawColors.PINCERS_STROKE,
         lineWidth: PINCER_LINE_WIDTH,
         bottom: PINCER_OVERLAP
       } );
 
-      var bottomPincerNode = createBottomPincerClosed( {
+      const bottomPincerNode = createBottomPincerClosed( {
         stroke: HookesLawColors.PINCERS_STROKE,
         lineWidth: PINCER_LINE_WIDTH,
         top: -PINCER_OVERLAP
       } );
 
-      var hingeNode = new HingeNode( {
+      const hingeNode = new HingeNode( {
         left: topPincerNode.right - 12,
         centerY: 0
       } );
 
-      var armNode = new Rectangle( 0, 0, 20, ARM_HEIGHT, {
+      const armNode = new Rectangle( 0, 0, 20, ARM_HEIGHT, {
         fill: ARM_GRADIENT,
         stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
         lineWidth: 0.5,

@@ -47,26 +47,26 @@ define( require => {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
-    var barGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'barGraph',
+    const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'barGraph',
       new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       _.extend( {
         tandem: options.tandem.createTandem( 'barGraphRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    var energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, 'energyPlot',
+    const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, 'energyPlot',
       new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       _.extend( {
         tandem: options.tandem.createTandem( 'energyPlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    var forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, 'forcePlot',
+    const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, 'forcePlot',
       new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       _.extend( {
         tandem: options.tandem.createTandem( 'forcePlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     // energy checkbox, enabled when "Force Plot" radio button is selected
-    var energyIcon = new HBox( {
+    const energyIcon = new HBox( {
       children: [
         new Text( energyString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         // triangle
@@ -74,7 +74,7 @@ define( require => {
       ],
       spacing: 6
     } );
-    var energyCheckbox = new Checkbox( energyIcon,
+    const energyCheckbox = new Checkbox( energyIcon,
       properties.energyOnForcePlotVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'energyCheckbox' )
@@ -84,7 +84,7 @@ define( require => {
     } );
 
     // other checkboxes
-    var appliedForceCheckbox = new Checkbox(
+    const appliedForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.APPLIED_FORCE
       } ),
@@ -93,7 +93,7 @@ define( require => {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var displacementCheckbox = new Checkbox(
+    const displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
@@ -103,14 +103,14 @@ define( require => {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var equilibriumPositionCheckbox = new Checkbox(
+    const equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var valuesCheckbox = new Checkbox(
+    const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       _.extend( {
@@ -118,8 +118,8 @@ define( require => {
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // Adjust touch areas
-    var spacing = 20;
-    var controls = [
+    const spacing = 20;
+    const controls = [
       barGraphRadioButton,
       energyPlotRadioButton,
       forcePlotRadioButton,
@@ -129,13 +129,13 @@ define( require => {
       equilibriumPositionCheckbox,
       valuesCheckbox
     ];
-    for ( var i = 0; i < controls.length; i++ ) {
+    for ( let i = 0; i < controls.length; i++ ) {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
-    var maxControlWidth = _.maxBy( controls, function( node ) { return node.width; } ).width;
+    const maxControlWidth = _.maxBy( controls, function( node ) { return node.width; } ).width;
 
-    var content = new VBox( {
+    const content = new VBox( {
       children: [
         barGraphRadioButton,
         energyPlotRadioButton,

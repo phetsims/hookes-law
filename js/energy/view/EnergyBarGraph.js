@@ -28,7 +28,7 @@ define( require => {
   const potentialEnergyString = require( 'string!HOOKES_LAW/potentialEnergy' );
 
   // constants
-  var BAR_WIDTH = 20;
+  const BAR_WIDTH = 20;
 
   /**
    * @param {Spring} spring
@@ -43,12 +43,12 @@ define( require => {
       tandem: Tandem.required
     }, options );
 
-    var xAxisNode = new Line( 0, 0, 1.65 * BAR_WIDTH, 0, {
+    const xAxisNode = new Line( 0, 0, 1.65 * BAR_WIDTH, 0, {
       stroke: 'black',
       lineWidth: 0.25
     } );
 
-    var yAxisNode = new ArrowNode( 0, 0, 0, -HookesLawConstants.ENERGY_Y_AXIS_LENGTH, {
+    const yAxisNode = new ArrowNode( 0, 0, 0, -HookesLawConstants.ENERGY_Y_AXIS_LENGTH, {
       headHeight: 10,
       headWidth: 10,
       tailWidth: 1,
@@ -56,7 +56,7 @@ define( require => {
       stroke: null
     } );
 
-    var yAxisLabel = new Text( potentialEnergyString, {
+    const yAxisLabel = new Text( potentialEnergyString, {
       rotation: -Math.PI / 2,
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
       right: yAxisNode.left - 1,
@@ -64,12 +64,12 @@ define( require => {
       maxWidth: 0.85 * yAxisNode.height // constrain for i18n
     } );
 
-    var barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
+    const barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
       fill: HookesLawColors.ENERGY,
       centerX: xAxisNode.centerX
     } );
 
-    var valueNode = new Text( '', {
+    const valueNode = new Text( '', {
       maxWidth: 100, // i18n
       fill: HookesLawColors.ENERGY,
       font: HookesLawConstants.BAR_GRAPH_VALUE_FONT
@@ -82,7 +82,7 @@ define( require => {
 
       // resize the bar
       barNode.visible = ( energy > 0 ); // because we can't create a zero height rectangle
-      var height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_Y ); // bar must have non-zero size
+      const height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_Y ); // bar must have non-zero size
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value

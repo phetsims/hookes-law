@@ -26,11 +26,11 @@ define( require => {
   const pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
 
   // fill in the {1} units, but leave the {0} value alone.
-  var VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
+  const VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
     SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsString );
 
   // constants
-  var MINOR_TICK_SPACING = 10;
+  const MINOR_TICK_SPACING = 10;
 
   /**
    * @param {NumberProperty} appliedForceProperty units = N
@@ -45,7 +45,7 @@ define( require => {
     assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
     assert && assert( Util.isInteger( appliedForceRange.max ) && Util.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
     assert && assert( Util.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
-    var majorTicks = [ {
+    const majorTicks = [ {
       value: appliedForceRange.min,
       label: new Text( appliedForceRange.min, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
     }, {

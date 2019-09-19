@@ -35,19 +35,19 @@ define( require => {
     } ) );
 
     // View length of 1 meter of displacement
-    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
+    const unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view
-    var viewProperties = new IntroViewProperties( tandem.createTandem( 'viewProperties' ) );
+    const viewProperties = new IntroViewProperties( tandem.createTandem( 'viewProperties' ) );
 
     // Visibility controls
-    var visibilityControls = new IntroVisibilityControls( viewProperties, {
+    const visibilityControls = new IntroVisibilityControls( viewProperties, {
       maxWidth: 250, // constrain width for i18n, determining empirically
       tandem: tandem.createTandem( 'visibilityControls' )
     } );
 
     // Control for switching between 1 and 2 systems
-    var sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty, {
+    const sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty, {
       tandem: tandem.createTandem( 'sceneControl' )
     } );
 
@@ -60,7 +60,7 @@ define( require => {
     } ) );
 
     // System 1
-    var system1Node = new IntroSystemNode( model.system1, viewProperties, {
+    const system1Node = new IntroSystemNode( model.system1, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
@@ -71,7 +71,7 @@ define( require => {
     assert && assert( system1Node.height <= this.layoutBounds.height / 2, 'system1Node is taller than the space available for it' );
 
     // System 2
-    var system2Node = new IntroSystemNode( model.system2, viewProperties, {
+    const system2Node = new IntroSystemNode( model.system2, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       number: 2,
       left: system1Node.left,
@@ -83,7 +83,7 @@ define( require => {
     assert && assert( system2Node.height <= this.layoutBounds.height / 2, 'system2Node is taller than the space available for it' );
 
     // Reset All button, bottom right
-    var resetAllButton = new ResetAllButton( {
+    const resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
         viewProperties.reset();

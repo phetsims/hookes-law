@@ -24,7 +24,7 @@ define( require => {
   const springConstantNumberString = require( 'string!HOOKES_LAW/springConstantNumber' );
 
   // constants
-  var SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
+  const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
   /**
    * @param {Spring} spring
@@ -45,10 +45,10 @@ define( require => {
     }, options );
 
     // Tandems for Panels that contain the controls
-    var springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
-    var appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
+    const springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
+    const appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
 
-    var springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
+    const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       title: StringUtils.format( springConstantNumberString, options.number ),
       sliderOptions: {
         majorTickValues: [
@@ -60,7 +60,7 @@ define( require => {
       tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
     } );
 
-    var appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
+    const appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
       numberOfInteractionsInProgressProperty, {
         title: StringUtils.format( appliedForceNumberString, options.number ),
         tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )

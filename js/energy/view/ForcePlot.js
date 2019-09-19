@@ -77,7 +77,7 @@ define( require => {
       valuesVisibleProperty, displacementVectorVisibleProperty, options );
 
     // The line that corresponds to F = kx
-    var forceLineNode = new Line( 0, 0, 1, 1, {
+    const forceLineNode = new Line( 0, 0, 1, 1, {
       stroke: HookesLawColors.APPLIED_FORCE,
       lineWidth: 3
     } );
@@ -85,7 +85,7 @@ define( require => {
     forceLineNode.moveToBack();
 
     // energy area
-    var energyPath = new Path( null, {
+    const energyPath = new Path( null, {
       fill: HookesLawColors.ENERGY
     } );
     this.addChild( energyPath );
@@ -95,21 +95,21 @@ define( require => {
     spring.springConstantProperty.link( function( springConstant ) {
 
       // x
-      var minDisplacement = options.xUnitLength * spring.displacementRange.min;
-      var maxDisplacement = options.xUnitLength * spring.displacementRange.max;
+      const minDisplacement = options.xUnitLength * spring.displacementRange.min;
+      const maxDisplacement = options.xUnitLength * spring.displacementRange.max;
 
       // F = kx
-      var minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
-      var maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;
+      const minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
+      const maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;
       forceLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
     } );
 
     // update energy area (triangle)
     Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
       function( displacement, appliedForce, visible ) {
-        var fixedDisplacement = Util.toFixedNumber( displacement, options.xDecimalPlaces );
-        var x = options.xUnitLength * fixedDisplacement;
-        var y = -appliedForce * options.yUnitLength;
+        const fixedDisplacement = Util.toFixedNumber( displacement, options.xDecimalPlaces );
+        const x = options.xUnitLength * fixedDisplacement;
+        const y = -appliedForce * options.yUnitLength;
         energyPath.visible = ( fixedDisplacement !== 0 && visible );
         if ( energyPath.visible ) {
           energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( x, 0 ).lineTo( x, y ).close();

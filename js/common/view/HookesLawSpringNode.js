@@ -20,7 +20,7 @@ define( require => {
    */
   function HookesLawSpringNode( spring, options ) {
 
-    var self = this;
+    const self = this;
 
     options = _.extend( {
 
@@ -41,14 +41,14 @@ define( require => {
 
     // stretch or compress the spring
     spring.lengthProperty.link( function( length ) {
-      var coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
-      var xScale = coilLength / ( self.loopsProperty.get() * self.radiusProperty.get() );
+      const coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
+      const xScale = coilLength / ( self.loopsProperty.get() * self.radiusProperty.get() );
       self.xScaleProperty.set( xScale );
     } );
 
     // spring constant determines lineWidth
     spring.springConstantProperty.link( function( springConstant ) {
-      var lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
+      const lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
       self.lineWidthProperty.set( lineWidth );
     } );
   }

@@ -47,7 +47,7 @@ define( require => {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // vector checkboxes
-    var appliedForceCheckbox = new Checkbox(
+    const appliedForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
@@ -55,14 +55,14 @@ define( require => {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var springForceCheckbox = new Checkbox(
+    const springForceCheckbox = new Checkbox(
       new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var displacementCheckbox = new Checkbox(
+    const displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
@@ -73,14 +73,14 @@ define( require => {
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // other checkboxes
-    var equilibriumPositionCheckbox = new Checkbox(
+    const equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var valuesCheckbox = new Checkbox(
+    const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       _.extend( {
@@ -88,7 +88,7 @@ define( require => {
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // 'total' radio button
-    var totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
+    const totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
       new HBox( {
         children: [
           new Text( totalString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
@@ -101,16 +101,16 @@ define( require => {
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     // 'components' radio button
-    var component1Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
-    var component2Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
-    var componentsVectorIcons = new VBox( {
+    const component1Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
+    const component2Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
+    const componentsVectorIcons = new VBox( {
       children: [
         component1Node,
         component2Node
       ],
       spacing: 10
     } );
-    var componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'components',
+    const componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'components',
       new HBox( {
         children: [
           new Text( componentsString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
@@ -136,7 +136,7 @@ define( require => {
     totalRadioButton.touchArea = totalRadioButton.localBounds.dilatedXY( 10, 4 );
     componentsRadioButton.touchArea = componentsRadioButton.localBounds.dilatedXY( 10, 4 );
 
-    var radioButtonsBox = new VBox( {
+    const radioButtonsBox = new VBox( {
       children: [
         totalRadioButton,
         componentsRadioButton
@@ -145,7 +145,7 @@ define( require => {
       spacing: 10
     } );
 
-    var radioButtonsSubPanel = new HBox( {
+    const radioButtonsSubPanel = new HBox( {
       children: [ new HStrut( 25 ), radioButtonsBox ],
       spacing: 5
     } );
@@ -163,19 +163,19 @@ define( require => {
     } );
 
     // Adjust touch areas
-    var spacing = 20;
-    var controls = [
+    const spacing = 20;
+    const controls = [
       appliedForceCheckbox,
       springForceCheckbox,
       displacementCheckbox,
       equilibriumPositionCheckbox,
       valuesCheckbox
     ];
-    for ( var i = 0; i < controls.length; i++ ) {
+    for ( let i = 0; i < controls.length; i++ ) {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
-    var content = new VBox( {
+    const content = new VBox( {
       children: [
         appliedForceCheckbox,
         springForceCheckbox,

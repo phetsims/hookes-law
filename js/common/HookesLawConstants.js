@@ -17,9 +17,9 @@ define( require => {
   const Property = require( 'AXON/Property' );
 
   // constants
-  var APPLIED_FORCE_DECIMAL_PLACES = 1;
+  const APPLIED_FORCE_DECIMAL_PLACES = 1;
 
-  var HookesLawConstants = {
+  const HookesLawConstants = {
 
     SCREEN_OPTIONS: { backgroundColorProperty: new Property( 'white' ) },
     SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },

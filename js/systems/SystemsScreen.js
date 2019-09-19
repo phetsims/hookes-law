@@ -26,7 +26,7 @@ define( require => {
    */
   function SystemsScreen( tandem ) {
 
-    var options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: systemsString,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
       tandem: tandem

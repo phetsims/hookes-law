@@ -39,17 +39,17 @@ define( require => {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // text labels on the vector checkboxes
-    var appliedForceTextNode = new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    var springForceTextNode = new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    var displacementTextNode = new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    var maxTextWidth = _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], function( node ) {
+    const appliedForceTextNode = new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const springForceTextNode = new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const displacementTextNode = new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const maxTextWidth = _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], function( node ) {
       return node.width;
     } ).width;
 
-    var minSpacing = 10;
+    const minSpacing = 10;
 
     // vector checkboxes, with left-aligned vector icons
-    var appliedForceCheckbox = new Checkbox(
+    const appliedForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( appliedForceTextNode, {
         arrowFill: HookesLawColors.APPLIED_FORCE,
         spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
@@ -59,7 +59,7 @@ define( require => {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var springForceCheckbox = new Checkbox(
+    const springForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( springForceTextNode, {
         arrowFill: HookesLawColors.SINGLE_SPRING,
         spacing: maxTextWidth - springForceTextNode.width + minSpacing
@@ -69,7 +69,7 @@ define( require => {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var displacementCheckbox = new Checkbox(
+    const displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( displacementTextNode, {
         vectorType: 'displacement',
         arrowFill: HookesLawColors.DISPLACEMENT,
@@ -81,14 +81,14 @@ define( require => {
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
     // other checkboxes
-    var equilibriumPositionCheckbox = new Checkbox(
+    const equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
       }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
 
-    var valuesCheckbox = new Checkbox(
+    const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       _.extend( {
@@ -103,19 +103,19 @@ define( require => {
       } );
 
     // Adjust touch areas
-    var spacing = 20;
-    var checkboxes = [
+    const spacing = 20;
+    const checkboxes = [
       appliedForceCheckbox,
       springForceCheckbox,
       displacementCheckbox,
       equilibriumPositionCheckbox,
       valuesCheckbox
     ];
-    for ( var i = 0; i < checkboxes.length; i++ ) {
+    for ( let i = 0; i < checkboxes.length; i++ ) {
       checkboxes[ i ].touchArea = checkboxes[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
-    var content = new VBox( {
+    const content = new VBox( {
       children: checkboxes,
       align: 'left',
       spacing: spacing

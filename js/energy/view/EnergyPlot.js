@@ -73,7 +73,7 @@ define( require => {
       valuesVisibleProperty, displacementVectorVisibleProperty, options );
 
     // Parabola that corresponds to E = ( k * x * x ) / 2
-    var energyParabolaNode = new Path( null, {
+    const energyParabolaNode = new Path( null, {
       stroke: HookesLawColors.ENERGY,
       lineWidth: 3
     } );
@@ -83,34 +83,34 @@ define( require => {
     // Redraws the parabola when the spring constant changes.
     spring.springConstantProperty.link( function( springConstant ) {
 
-      var displacementRange = spring.displacementRange; // to improve readability
+      const displacementRange = spring.displacementRange; // to improve readability
 
       // verify that range is symmetric around zero, so we can compute point for half of the parabola
       assert && assert( Math.abs( displacementRange.min ) === displacementRange.max );
 
       // displacement values
-      var d1 = displacementRange.max;
-      var d2 = displacementRange.max / 2;
-      var d3 = 0;
+      const d1 = displacementRange.max;
+      const d2 = displacementRange.max / 2;
+      const d3 = 0;
 
       // corresponding energy values, E = ( k * x * x ) / 2
-      var e1 = ( springConstant * d1 * d1 ) / 2;
-      var e2 = ( springConstant * d2 * d2 ) / 2;
-      var e3 = ( springConstant * d3 * d3 ) / 2;
+      const e1 = ( springConstant * d1 * d1 ) / 2;
+      const e2 = ( springConstant * d2 * d2 ) / 2;
+      const e3 = ( springConstant * d3 * d3 ) / 2;
 
       // convert to view coordinates
-      var x1 = unitDisplacementLength * d1;
-      var x2 = unitDisplacementLength * d2;
-      var x3 = unitDisplacementLength * d3;
-      var y1 = -options.yUnitLength * e1;
-      var y2 = -options.yUnitLength * e2;
-      var y3 = -options.yUnitLength * e3;
+      const x1 = unitDisplacementLength * d1;
+      const x2 = unitDisplacementLength * d2;
+      const x3 = unitDisplacementLength * d3;
+      const y1 = -options.yUnitLength * e1;
+      const y2 = -options.yUnitLength * e2;
+      const y3 = -options.yUnitLength * e3;
 
       // control points - close approximation, quick to calculate, general formula:
       // cpx = 2 * anywhereOnCurveX - startX/2 - endX/2
       // cpy = 2 * anywhereOnCurveY - startY/2 - endY/2
-      var cpx = ( 2 * x2 ) - ( x1 / 2 ) - ( x3 / 2 );
-      var cpy = ( 2 * y2 ) - ( y1 / 2 ) - ( y3 / 2 );
+      const cpx = ( 2 * x2 ) - ( x1 / 2 ) - ( x3 / 2 );
+      const cpy = ( 2 * y2 ) - ( y1 / 2 ) - ( y3 / 2 );
 
       // parabola
       energyParabolaNode.shape = new Shape()

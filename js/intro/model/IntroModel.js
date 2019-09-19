@@ -20,7 +20,7 @@ define( require => {
    */
   function IntroModel( tandem ) {
 
-    var springOptions = {
+    const springOptions = {
       springConstantRange: new RangeWithValue( 100, 1000, 200 ), // units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ) // units = N
     };

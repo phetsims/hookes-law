@@ -38,7 +38,7 @@ define( require => {
    */
   function SeriesSystem( tandem ) {
 
-    var self = this;
+    const self = this;
 
     //------------------------------------------------
     // Components of the system
@@ -98,16 +98,16 @@ define( require => {
     } );
 
     // keq = 1 / ( 1/k1 + 1/k2 )
-    var updateEquivalentSpringConstant = function() {
-      var leftSpringConstant = self.leftSpring.springConstantProperty.get();
-      var rightSpringConstant = self.rightSpring.springConstantProperty.get();
+    const updateEquivalentSpringConstant = function() {
+      const leftSpringConstant = self.leftSpring.springConstantProperty.get();
+      const rightSpringConstant = self.rightSpring.springConstantProperty.get();
       self.equivalentSpring.springConstantProperty.set( 1 / ( ( 1 / leftSpringConstant ) + ( 1 / rightSpringConstant ) ) );
     };
     this.leftSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.rightSpring.springConstantProperty.link( updateEquivalentSpringConstant );
 
     // Robotic arm sets displacement of equivalent spring.
-    var ignoreUpdates = false; // Used to prevent updates until both springs have been modified.
+    let ignoreUpdates = false; // Used to prevent updates until both springs have been modified.
     this.roboticArm.leftProperty.link( function( left ) {
       if ( !ignoreUpdates ) {
         // this will affect the displacement of both springs

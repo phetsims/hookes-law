@@ -33,19 +33,19 @@ define( require => {
     } ) );
 
     // View length of 1 meter of displacement
-    var unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
+    const unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
     // Properties that are specific to the view
-    var viewProperties = new SystemsViewProperties( tandem.createTandem( 'viewProperties' ) );
+    const viewProperties = new SystemsViewProperties( tandem.createTandem( 'viewProperties' ) );
 
     // Visibility controls
-    var visibilityControls = new SystemsVisibilityControls( viewProperties, {
+    const visibilityControls = new SystemsVisibilityControls( viewProperties, {
       maxWidth: 260, // constrain width for i18n, determining empirically
       tandem: tandem.createTandem( 'visibilityControls' )
     } );
 
     // Control for switching between series and parallel systems
-    var sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty, {
+    const sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty, {
       tandem: tandem.createTandem( 'sceneControl' )
     } );
 
@@ -58,7 +58,7 @@ define( require => {
     } ) );
 
     // Series system
-    var seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {
+    const seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
@@ -68,7 +68,7 @@ define( require => {
     this.addChild( seriesSystemNode );
 
     // Parallel system
-    var parallelSystemNode = new ParallelSystemNode( model.parallelSystem, viewProperties, {
+    const parallelSystemNode = new ParallelSystemNode( model.parallelSystem, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
       left: seriesSystemNode.left,
       centerY: this.layoutBounds.centerY,
@@ -79,7 +79,7 @@ define( require => {
     this.addChild( parallelSystemNode );
 
     // Reset All button, bottom right
-    var resetAllButton = new ResetAllButton( {
+    const resetAllButton = new ResetAllButton( {
       listener: function() {
         model.reset();
         viewProperties.reset();

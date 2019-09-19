@@ -38,7 +38,7 @@ define( require => {
    */
   function ParallelSystem( tandem ) {
 
-    var self = this;
+    const self = this;
 
     //------------------------------------------------
     // Components of the system
@@ -105,16 +105,16 @@ define( require => {
     } );
 
     // keq = k1 + k2
-    var updateEquivalentSpringConstant = function() {
-      var topSpringConstant = self.topSpring.springConstantProperty.get();
-      var bottomSpringConstant = self.bottomSpring.springConstantProperty.get();
+    const updateEquivalentSpringConstant = function() {
+      const topSpringConstant = self.topSpring.springConstantProperty.get();
+      const bottomSpringConstant = self.bottomSpring.springConstantProperty.get();
       self.equivalentSpring.springConstantProperty.set( topSpringConstant + bottomSpringConstant );
     };
     this.topSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.bottomSpring.springConstantProperty.link( updateEquivalentSpringConstant );
 
     // Robotic arm sets displacement of equivalent spring.
-    var ignoreUpdates = false; // Used to prevent updates until both springs have been modified.
+    let ignoreUpdates = false; // Used to prevent updates until both springs have been modified.
     this.roboticArm.leftProperty.link( function( left ) {
       if ( !ignoreUpdates ) {
         // this will affect the displacement of both springs

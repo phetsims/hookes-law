@@ -20,7 +20,7 @@ define( require => {
    */
   function RoboticArm( options ) {
 
-    var self = this;
+    const self = this;
 
     options = _.extend( {
       left: 0,  // {number} initial x location of the left (movable) end of the arm, units = m
