@@ -1,4 +1,4 @@
-// Copyright 2018, University of Colorado Boulder
+// Copyright 2018-2019, University of Colorado Boulder
 
 /**
  * IntroAnimator is responsible for animating the transition between 1 and 2 systems in the Intro screen.

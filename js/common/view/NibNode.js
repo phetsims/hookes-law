@@ -1,4 +1,4 @@
-// Copyright 2015, University of Colorado Boulder
+// Copyright 2015-2019, University of Colorado Boulder
 
 /**
  * The "nib" is the little piece attached to the right end of a spring that is grabbed
