@@ -57,7 +57,7 @@ define( require => {
       properties.appliedForceVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const springForceCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( springForceTextNode, {
@@ -67,7 +67,7 @@ define( require => {
       properties.springForceVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( displacementTextNode, {
@@ -78,7 +78,7 @@ define( require => {
       properties.displacementVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // other checkboxes
     const equilibriumPositionCheckbox = new Checkbox(
@@ -86,14 +86,14 @@ define( require => {
       properties.equilibriumPositionVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
     Property.multilink(

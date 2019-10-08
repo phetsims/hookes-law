@@ -77,7 +77,7 @@ define( require => {
     PARALLEL_SPRINGS_LOOPS: 8,
 
     // options
-    CHECK_BOX_OPTIONS: {
+    CHECKBOX_OPTIONS: {
       boxWidth: 18,
       spacing: 8
     },

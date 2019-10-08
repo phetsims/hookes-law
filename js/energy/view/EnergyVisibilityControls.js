@@ -78,7 +78,7 @@ define( require => {
       properties.energyOnForcePlotVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'energyCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
     properties.graphProperty.link( function( graph ) {
       energyCheckbox.enabled = ( graph === 'forcePlot' );
     } );
@@ -91,7 +91,7 @@ define( require => {
       properties.appliedForceVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
@@ -101,21 +101,21 @@ define( require => {
       properties.displacementVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // Adjust touch areas
     const spacing = 20;

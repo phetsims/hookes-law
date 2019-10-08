@@ -53,14 +53,14 @@ define( require => {
       properties.appliedForceVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const springForceCheckbox = new Checkbox(
       new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const displacementCheckbox = new Checkbox(
       HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
@@ -70,7 +70,7 @@ define( require => {
       properties.displacementVectorVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // other checkboxes
     const equilibriumPositionCheckbox = new Checkbox(
@@ -78,14 +78,14 @@ define( require => {
       properties.equilibriumPositionVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       _.extend( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
-      }, HookesLawConstants.CHECK_BOX_OPTIONS ) );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // 'total' radio button
     const totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
