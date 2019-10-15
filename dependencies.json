@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.22 Mon Oct 14 2019 14:41:17 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# hookes-law 1.0.22 Tue Oct 15 2019 15:24:57 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "f5049e93a787eb29f5e9922c98d1e924d8aba3d5",
+    "sha": "0dc8b4988ffb9679dfae3e328e2e95d19732b7bc",
     "branch": "1.0"
   },
   "joist": {
@@ -33,7 +33,7 @@
     "branch": "HEAD"
   },
   "phet-core": {
-    "sha": "459c6a28b8d03c9615647da2690d7a37abe02d0c",
+    "sha": "b86b5aa663c2f2a4bfa0f31033409f2b59730364",
     "branch": "hookes-law-1.0"
   },
   "phetcommon": {
