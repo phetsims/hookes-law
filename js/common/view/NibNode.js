@@ -12,6 +12,7 @@ define( require => {
   // modules
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
 
   /**
@@ -20,7 +21,7 @@ define( require => {
    */
   function NibNode( options ) {
 
-    options = _.extend( {
+    options = merge( {
       fill: 'black',
       width: 10,
       height: 8

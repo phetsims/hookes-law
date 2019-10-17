@@ -11,6 +11,7 @@ define( require => {
   // modules
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const RoboticArm = require( 'HOOKES_LAW/common/model/RoboticArm' );
   const Spring = require( 'HOOKES_LAW/common/model/Spring' );
 
@@ -27,7 +28,7 @@ define( require => {
     // Components of the system
 
     // @public spring
-    this.spring = new Spring( _.extend( {}, springOptions, {
+    this.spring = new Spring( merge( {}, springOptions, {
       tandem: tandem.createTandem( 'spring' )
     } ) );
     assert && assert( this.spring.displacementProperty.get() === 0 ); // spring is at equilibrium

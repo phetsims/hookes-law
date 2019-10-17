@@ -18,6 +18,7 @@ define( require => {
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   const ScreenView = require( 'JOIST/ScreenView' );
 
@@ -28,7 +29,7 @@ define( require => {
    */
   function EnergyScreenView( model, tandem ) {
 
-    ScreenView.call( this, _.extend( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
+    ScreenView.call( this, merge( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
       tandem: tandem
     } ) );
 

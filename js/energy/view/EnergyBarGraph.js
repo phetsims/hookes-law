@@ -15,6 +15,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'SCENERY/nodes/Line' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
@@ -38,7 +39,7 @@ define( require => {
    */
   function EnergyBarGraph( spring, valueVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
       // phet-io
       tandem: Tandem.required
     }, options );

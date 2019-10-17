@@ -13,6 +13,7 @@ define( require => {
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
@@ -32,7 +33,7 @@ define( require => {
    */
   function ForceVectorNode( forceProperty, valueVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
       fill: 'white',
       stroke: 'black',
       decimalPlaces: 0,

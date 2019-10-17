@@ -20,6 +20,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   const Node = require( 'SCENERY/nodes/Node' );
   const NumberProperty = require( 'AXON/NumberProperty' );
@@ -37,7 +38,7 @@ define( require => {
    */
   function EnergySystemNode( system, viewProperties, options ) {
 
-    options = _.extend( {
+    options = merge( {
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
       tandem: Tandem.required
     }, options );

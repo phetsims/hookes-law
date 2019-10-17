@@ -14,6 +14,7 @@ define( require => {
   const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Tandem = require( 'TANDEM/Tandem' );
 
   /**
@@ -24,7 +25,7 @@ define( require => {
    */
   function AppliedForceVectorNode( appliedForceProperty, valueVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
       fill: HookesLawColors.APPLIED_FORCE,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       tandem: Tandem.required

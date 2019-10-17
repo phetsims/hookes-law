@@ -11,6 +11,7 @@ define( require => {
   // modules
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
 
   /**
@@ -22,7 +23,7 @@ define( require => {
 
     const self = this;
 
-    options = _.extend( {
+    options = merge( {
 
       // ParametricSpringNode options
       loops: 10, // {number} number of loops in the coil

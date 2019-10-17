@@ -17,6 +17,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
   const LinearGradient = require( 'SCENERY/util/LinearGradient' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Path = require( 'SCENERY/nodes/Path' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
@@ -49,7 +50,7 @@ define( require => {
    */
   function RoboticArmNode( roboticArm, leftRangeProperty, numberOfInteractionsInProgressProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
       cursor: 'pointer',
       unitDisplacementLength: 1,  // view length of a 1m displacement
       displacementInterval: null, // {number|null} dragging the arm will snap to multiples of this interval

@@ -15,6 +15,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'SCENERY/nodes/Line' );
+  const merge = require( 'PHET_CORE/merge' );
   const Path = require( 'SCENERY/nodes/Path' );
   const Property = require( 'AXON/Property' );
   const Shape = require( 'KITE/Shape' );
@@ -40,7 +41,7 @@ define( require => {
   function ForcePlot( spring, unitDisplacementLength,
                       valuesVisibleProperty, displacementVectorVisibleProperty, energyVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
 
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,

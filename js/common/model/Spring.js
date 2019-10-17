@@ -45,6 +45,7 @@ define( require => {
   const DerivedPropertyIO = require( 'AXON/DerivedPropertyIO' );
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const NumberIO = require( 'TANDEM/types/NumberIO' );
   const NumberProperty = require( 'AXON/NumberProperty' );
   const PhetioObject = require( 'TANDEM/PhetioObject' );
@@ -60,7 +61,7 @@ define( require => {
 
     const self = this;
 
-    options = _.extend( {
+    options = merge( {
 
       // name that appears in log messages
       logName: null,

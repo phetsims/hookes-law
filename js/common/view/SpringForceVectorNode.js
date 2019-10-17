@@ -14,6 +14,7 @@ define( require => {
   const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Tandem = require( 'TANDEM/Tandem' );
 
   /**
@@ -24,7 +25,7 @@ define( require => {
    */
   function SpringForceVectorNode( springForceProperty, valueVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
       fill: HookesLawColors.SINGLE_SPRING,
       decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
       alignZero: 'right', // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap

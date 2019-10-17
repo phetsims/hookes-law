@@ -17,6 +17,7 @@ define( require => {
   const IntroSystemNode = require( 'HOOKES_LAW/intro/view/IntroSystemNode' );
   const IntroViewProperties = require( 'HOOKES_LAW/intro/view/IntroViewProperties' );
   const IntroVisibilityControls = require( 'HOOKES_LAW/intro/view/IntroVisibilityControls' );
+  const merge = require( 'PHET_CORE/merge' );
   const ResetAllButton = require( 'SCENERY_PHET/buttons/ResetAllButton' );
   const ScreenView = require( 'JOIST/ScreenView' );
   const VBox = require( 'SCENERY/nodes/VBox' );
@@ -28,7 +29,7 @@ define( require => {
    */
   function IntroScreenView( model, tandem ) {
 
-    ScreenView.call( this, _.extend( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
+    ScreenView.call( this, merge( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
 
       // phet-io
       tandem: tandem

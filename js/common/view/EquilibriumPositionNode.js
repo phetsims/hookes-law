@@ -13,6 +13,7 @@ define( require => {
   const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'SCENERY/nodes/Line' );
+  const merge = require( 'PHET_CORE/merge' );
   const Tandem = require( 'TANDEM/Tandem' );
 
   /**
@@ -22,7 +23,7 @@ define( require => {
    */
   function EquilibriumPositionNode( length, options ) {
 
-    options = _.extend( {
+    options = merge( {
       stroke: HookesLawColors.EQUILIBRIUM_POSITION,
       lineWidth: 2,
       lineDash: [ 3, 3 ],

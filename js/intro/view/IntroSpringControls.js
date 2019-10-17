@@ -14,6 +14,7 @@ define( require => {
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Panel = require( 'SUN/Panel' );
   const SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
@@ -34,7 +35,7 @@ define( require => {
    */
   function IntroSpringControls( spring, numberOfInteractionsInProgressProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
       number: 1, // {number} used to label the controls, eg "Spring Constant 1"
 
       // HBox options
@@ -68,8 +69,8 @@ define( require => {
 
     assert && assert( !options.children, 'IntroSpringControls sets children' );
     options.children = [
-      new Panel( springConstantControl, _.extend( { tandem: springConstantPanelTandem }, SPRING_PANEL_OPTIONS ) ),
-      new Panel( appliedForceControl, _.extend( { tandem: appliedForcePanelTandem }, SPRING_PANEL_OPTIONS ) )
+      new Panel( springConstantControl, merge( { tandem: springConstantPanelTandem }, SPRING_PANEL_OPTIONS ) ),
+      new Panel( appliedForceControl, merge( { tandem: appliedForcePanelTandem }, SPRING_PANEL_OPTIONS ) )
     ];
     HBox.call( this, options );
   }

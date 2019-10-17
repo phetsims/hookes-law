@@ -25,6 +25,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'SCENERY/nodes/Line' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Property = require( 'AXON/Property' );
@@ -64,7 +65,7 @@ define( require => {
    */
   function XYPointPlot( xProperty, yProperty, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
 
       // both axes
       axisFont: new PhetFont( 12 ),
@@ -123,7 +124,7 @@ define( require => {
       fill: options.xValueFill,
       font: options.valueFont
     } );
-    const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, _.extend( TICK_OPTIONS, { centerY: 0 } ) );
+    const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, merge( TICK_OPTIONS, { centerY: 0 } ) );
     const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
     const xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
     const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
@@ -134,7 +135,7 @@ define( require => {
       fill: options.yValueFill,
       font: options.valueFont
     } );
-    const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, _.extend( TICK_OPTIONS, { centerX: 0 } ) );
+    const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, merge( TICK_OPTIONS, { centerX: 0 } ) );
     const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
     const yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
 

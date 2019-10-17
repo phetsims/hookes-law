@@ -19,6 +19,7 @@ define( require => {
   const HSeparator = require( 'SUN/HSeparator' );
   const HStrut = require( 'SCENERY/nodes/HStrut' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Panel = require( 'SUN/Panel' );
   const Path = require( 'SCENERY/nodes/Path' );
   const Shape = require( 'KITE/Shape' );
@@ -42,26 +43,26 @@ define( require => {
    */
   function EnergyVisibilityControls( properties, options ) {
 
-    options = _.extend( {
+    options = merge( {
       tandem: Tandem.required
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
     const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'barGraph',
       new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'barGraphRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, 'energyPlot',
       new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'energyPlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, 'forcePlot',
       new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'forcePlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
@@ -76,7 +77,7 @@ define( require => {
     } );
     const energyCheckbox = new Checkbox( energyIcon,
       properties.energyOnForcePlotVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'energyCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
     properties.graphProperty.link( function( graph ) {
@@ -89,7 +90,7 @@ define( require => {
         arrowFill: HookesLawColors.APPLIED_FORCE
       } ),
       properties.appliedForceVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -99,21 +100,21 @@ define( require => {
         vectorType: 'displacement'
       } ),
       properties.displacementVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -142,7 +143,7 @@ define( require => {
         forcePlotRadioButton,
         // "Energy" checkbox indented below "Force Plot" radio button
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
-        new HSeparator( maxControlWidth, _.extend( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
+        new HSeparator( maxControlWidth, merge( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
           tandem: options.tandem.createTandem( 'separator' )
         } ) ),
         appliedForceCheckbox,

@@ -15,6 +15,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Screen = require( 'JOIST/Screen' );
 
   // strings
@@ -26,7 +27,7 @@ define( require => {
    */
   function EnergyScreen( tandem ) {
 
-    const options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: energyString,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
       tandem: tandem

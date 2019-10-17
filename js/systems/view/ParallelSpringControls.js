@@ -17,6 +17,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const HSeparator = require( 'SUN/HSeparator' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Panel = require( 'SUN/Panel' );
   const SpringConstantControl = require( 'HOOKES_LAW/common/view/SpringConstantControl' );
   const Tandem = require( 'TANDEM/Tandem' );
@@ -38,7 +39,7 @@ define( require => {
    */
   function ParallelSpringControls( system, numberOfInteractionsInProgressProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
 
       // HBox options
       spacing: 10,
@@ -101,8 +102,8 @@ define( require => {
 
     assert && assert( !options.children, 'ParallelSpringControls sets children' );
     options.children = [
-      new Panel( springControls, _.extend( { tandem: springConstantsPanelTandem }, SPRING_PANEL_OPTIONS ) ),
-      new Panel( appliedForceControl, _.extend( { tandem: appliedForcePanelTandem }, SPRING_PANEL_OPTIONS ) )
+      new Panel( springControls, merge( { tandem: springConstantsPanelTandem }, SPRING_PANEL_OPTIONS ) ),
+      new Panel( appliedForceControl, merge( { tandem: appliedForcePanelTandem }, SPRING_PANEL_OPTIONS ) )
     ];
 
     HBox.call( this, options );

@@ -13,6 +13,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Screen = require( 'JOIST/Screen' );
   const SystemsModel = require( 'HOOKES_LAW/systems/model/SystemsModel' );
   const SystemsScreenView = require( 'HOOKES_LAW/systems/view/SystemsScreenView' );
@@ -26,7 +27,7 @@ define( require => {
    */
   function SystemsScreen( tandem ) {
 
-    const options = _.extend( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
       name: systemsString,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
       tandem: tandem

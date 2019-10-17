@@ -15,6 +15,7 @@ define( require => {
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Panel = require( 'SUN/Panel' );
   const Property = require( 'AXON/Property' );
   const Tandem = require( 'TANDEM/Tandem' );
@@ -34,7 +35,7 @@ define( require => {
    */
   function IntroVisibilityControls( properties, options ) {
 
-    options = _.extend( {
+    options = merge( {
       tandem: Tandem.required
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
@@ -55,7 +56,7 @@ define( require => {
         spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
       } ),
       properties.appliedForceVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -65,7 +66,7 @@ define( require => {
         spacing: maxTextWidth - springForceTextNode.width + minSpacing
       } ),
       properties.springForceVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -76,7 +77,7 @@ define( require => {
         spacing: maxTextWidth - displacementTextNode.width + minSpacing
       } ),
       properties.displacementVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -84,14 +85,14 @@ define( require => {
     const equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 

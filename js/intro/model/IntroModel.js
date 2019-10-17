@@ -11,6 +11,7 @@ define( require => {
   // modules
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const RangeWithValue = require( 'DOT/RangeWithValue' );
   const SingleSpringSystem = require( 'HOOKES_LAW/common/model/SingleSpringSystem' );
 
@@ -27,9 +28,9 @@ define( require => {
 
     // @public
     this.system1 = new SingleSpringSystem( tandem.createTandem( 'system1' ),
-      _.extend( {}, springOptions, { logName: 'spring1' } ) );
+      merge( {}, springOptions, { logName: 'spring1' } ) );
     this.system2 = new SingleSpringSystem( tandem.createTandem( 'system2' ),
-      _.extend( {}, springOptions, { logName: 'spring2' } ) );
+      merge( {}, springOptions, { logName: 'spring2' } ) );
   }
 
   hookesLaw.register( 'IntroModel', IntroModel );

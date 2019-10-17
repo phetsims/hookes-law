@@ -20,6 +20,7 @@ define( require => {
   const HookesLawSpringNode = require( 'HOOKES_LAW/common/view/HookesLawSpringNode' );
   const inherit = require( 'PHET_CORE/inherit' );
   const IntroSpringControls = require( 'HOOKES_LAW/intro/view/IntroSpringControls' );
+  const merge = require( 'PHET_CORE/merge' );
   const NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   const Node = require( 'SCENERY/nodes/Node' );
   const NumberProperty = require( 'AXON/NumberProperty' );
@@ -38,7 +39,7 @@ define( require => {
    */
   function IntroSystemNode( system, viewProperties, options ) {
 
-    options = _.extend( {
+    options = merge( {
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
       number: 1, // integer used to label the system
 

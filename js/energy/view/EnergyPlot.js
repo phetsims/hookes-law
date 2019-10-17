@@ -13,6 +13,7 @@ define( require => {
   const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Path = require( 'SCENERY/nodes/Path' );
   const Shape = require( 'KITE/Shape' );
@@ -35,7 +36,7 @@ define( require => {
    */
   function EnergyPlot( spring, unitDisplacementLength, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
 
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,

@@ -13,6 +13,7 @@ define( require => {
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const ShadedRectangle = require( 'SCENERY_PHET/ShadedRectangle' );
 
   /**
@@ -22,7 +23,7 @@ define( require => {
    */
   function WallNode( size, options ) {
 
-    options = _.extend( {
+    options = merge( {
       baseColor: HookesLawColors.WALL_FILL,
       stroke: HookesLawColors.WALL_STROKE,
       lineWidth: 0.5,

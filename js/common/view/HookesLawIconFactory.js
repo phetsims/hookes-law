@@ -18,6 +18,7 @@ define( require => {
   const HookesLawFont = require( 'HOOKES_LAW/common/HookesLawFont' );
   const Line = require( 'SCENERY/nodes/Line' );
   const LineArrowNode = require( 'SCENERY_PHET/LineArrowNode' );
+  const merge = require( 'PHET_CORE/merge' );
   const NibNode = require( 'HOOKES_LAW/common/view/NibNode' );
   const Node = require( 'SCENERY/nodes/Node' );
   const ParametricSpringNode = require( 'SCENERY_PHET/ParametricSpringNode' );
@@ -37,7 +38,7 @@ define( require => {
   };
 
   // Spring options for all icons related to scene selection
-  const SCENE_SELECTION_SPRING_OPTIONS = _.extend( {
+  const SCENE_SELECTION_SPRING_OPTIONS = merge( {
     frontColor: HookesLawColors.SCENE_SELECTION_SPRING_FRONT,
     middleColor: HookesLawColors.SCENE_SELECTION_SPRING_MIDDLE,
     backColor: HookesLawColors.SCENE_SELECTION_SPRING_BACK,
@@ -55,7 +56,7 @@ define( require => {
     createIntroScreenIcon: function() {
 
       // spring
-      const springNode = new ParametricSpringNode( _.extend( {
+      const springNode = new ParametricSpringNode( merge( {
         frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
         middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
         backColor: HookesLawColors.SINGLE_SPRING_BACK
@@ -88,12 +89,12 @@ define( require => {
     createSystemsScreenIcon: function() {
 
       // springs
-      const topSpringNode = new ParametricSpringNode( _.extend( {
+      const topSpringNode = new ParametricSpringNode( merge( {
         frontColor: HookesLawColors.TOP_SPRING_FRONT,
         middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
         backColor: HookesLawColors.TOP_SPRING_BACK
       }, COMMON_SPRING_OPTIONS ) );
-      const bottomSpringNode = new ParametricSpringNode( _.extend( {
+      const bottomSpringNode = new ParametricSpringNode( merge( {
         frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
         middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
         backColor: HookesLawColors.BOTTOM_SPRING_BACK
@@ -172,7 +173,7 @@ define( require => {
      */
     createForceVectorIcon: function( options ) {
 
-      options = _.extend( {
+      options = merge( {
         length: 30, // {number}
         fill: 'white', // {Color|string}
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
@@ -194,7 +195,7 @@ define( require => {
      */
     createVectorCheckboxContent: function( textNode, options ) {
 
-      options = _.extend( {
+      options = merge( {
         maxTextWidth: textNode.width, // width of the max text used to label a vector checkbox
         spacing: 10, // {number} space between text and vector
         arrowLength: 30, // {number}
@@ -209,7 +210,7 @@ define( require => {
 
       let arrowNode;
       if ( options.vectorType === 'force' ) {
-        arrowNode = this.createForceVectorIcon( _.extend( { fill: options.arrowFill }, options ) );
+        arrowNode = this.createForceVectorIcon( merge( { fill: options.arrowFill }, options ) );
       }
       else {
         // options.vectorType === 'displacement'
@@ -260,13 +261,13 @@ define( require => {
      * @static
      */
     createTwoSpringsIcon: function() {
-      return new VBox( _.extend( {
+      return new VBox( {
         spacing: 5,
         children: [
           new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS ),
           new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS )
         ]
-      } ) );
+      } );
     },
 
     /**

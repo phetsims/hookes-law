@@ -13,6 +13,7 @@ define( require => {
   const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const NumberControl = require( 'SCENERY_PHET/NumberControl' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const SunConstants = require( 'SUN/SunConstants' );
@@ -38,7 +39,7 @@ define( require => {
    */
   function DisplacementControl( displacementProperty, displacementRange, numberOfInteractionsInProgressProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
 
       // NumberControl options
       delta: HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL,
@@ -72,7 +73,7 @@ define( require => {
     }, options );
 
     // options passed to NumberControl's HSlider subcomponent
-    options.sliderOptions = _.extend( {
+    options.sliderOptions = merge( {
       majorTicksValues: null, // {number[]|null} values for major ticks
       minorTickSpacing: 1,
       thumbFill: HookesLawColors.DISPLACEMENT,

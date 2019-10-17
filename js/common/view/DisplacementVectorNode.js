@@ -15,6 +15,7 @@ define( require => {
   const inherit = require( 'PHET_CORE/inherit' );
   const Line = require( 'SCENERY/nodes/Line' );
   const LineArrowNode = require( 'SCENERY_PHET/LineArrowNode' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Rectangle = require( 'SCENERY/nodes/Rectangle' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
@@ -34,7 +35,7 @@ define( require => {
    */
   function DisplacementVectorNode( displacementProperty, valueVisibleProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
       verticalLineVisible: true,
       unitDisplacementLength: 1,
       tandem: Tandem.required

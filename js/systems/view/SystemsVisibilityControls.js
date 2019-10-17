@@ -21,6 +21,7 @@ define( require => {
   const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   const HStrut = require( 'SCENERY/nodes/HStrut' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Panel = require( 'SUN/Panel' );
   const Property = require( 'AXON/Property' );
   const Tandem = require( 'TANDEM/Tandem' );
@@ -42,7 +43,7 @@ define( require => {
    */
   function SystemsVisibilityControls( properties, options ) {
 
-    options = _.extend( {
+    options = merge( {
       tandem: Tandem.required
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
@@ -51,14 +52,14 @@ define( require => {
       HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const springForceCheckbox = new Checkbox(
       new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -68,7 +69,7 @@ define( require => {
         vectorType: 'displacement'
       } ),
       properties.displacementVectorVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -76,14 +77,14 @@ define( require => {
     const equilibriumPositionCheckbox = new Checkbox(
       HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
       properties.equilibriumPositionVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
       new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -96,7 +97,7 @@ define( require => {
         ],
         spacing: 10
       } ),
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'totalRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
@@ -122,7 +123,7 @@ define( require => {
         ],
         spacing: 10
       } ),
-      _.extend( {
+      merge( {
         tandem: options.tandem.createTandem( 'componentsRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 

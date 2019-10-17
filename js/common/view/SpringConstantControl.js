@@ -13,6 +13,7 @@ define( require => {
   const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
   const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const NumberControl = require( 'SCENERY_PHET/NumberControl' );
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const SunConstants = require( 'SUN/SunConstants' );
@@ -37,7 +38,7 @@ define( require => {
    */
   function SpringConstantControl( springConstantProperty, springConstantRange, options ) {
 
-    options = _.extend( {
+    options = merge( {
       title: springConstantString,
       
       // NumberControl options
@@ -68,7 +69,7 @@ define( require => {
     }, options );
 
     // sldier option defaults
-    options.sliderOptions = _.extend( {
+    options.sliderOptions = merge( {
       majorTicksValues: null, // {number[]|null} values for major ticks
       minorTickSpacing: 100,
       thumbFill: HookesLawColors.SINGLE_SPRING,

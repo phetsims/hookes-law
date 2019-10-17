@@ -13,6 +13,7 @@ define( require => {
   const ArrowNode = require( 'SCENERY_PHET/ArrowNode' );
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const PhetFont = require( 'SCENERY_PHET/PhetFont' );
   const Text = require( 'SCENERY/nodes/Text' );
@@ -32,7 +33,7 @@ define( require => {
    */
   function XYAxes( options ) {
 
-    options = _.extend( {
+    options = merge( {
       minX: -1,
       maxX: 1,
       minY: -1,

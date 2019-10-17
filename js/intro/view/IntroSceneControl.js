@@ -12,6 +12,7 @@ define( require => {
   const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
   const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
   const inherit = require( 'PHET_CORE/inherit' );
+  const merge = require( 'PHET_CORE/merge' );
   const RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
   const Tandem = require( 'TANDEM/Tandem' );
 
@@ -22,7 +23,7 @@ define( require => {
    */
   function IntroSceneControl( numberOfSystemsProperty, options ) {
 
-    options = _.extend( {
+    options = merge( {
 
       // RadioButtonGroup options
       orientation: 'horizontal',
