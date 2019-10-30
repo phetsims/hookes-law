@@ -2,9 +2,9 @@
 window.phet.phetio.phetioElementsBaseline = assert &&
   {
     "hookesLaw.energyScreen.activeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the screen is active.  For single-screen simulations, the screen is always active.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15,9 +15,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.model.system.roboticArm.leftProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -28,9 +28,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.model.system.spring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -41,9 +41,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.energyScreen.model.system.spring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -54,9 +54,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.model.system.spring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -67,9 +67,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.model.system.spring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -80,9 +80,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.energyScreen.model.system.spring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -93,9 +93,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.model.system.spring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -106,9 +106,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.energyScreen.view": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -119,9 +119,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.barGraph": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -132,9 +132,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.barGraph.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -145,9 +145,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.barGraph.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -158,9 +158,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.barGraph.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -171,9 +171,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.energyPlot": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -184,9 +184,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.energyPlot.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -197,9 +197,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.energyPlot.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -210,9 +210,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.energyPlot.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -223,9 +223,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.forcePlot": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -236,9 +236,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.forcePlot.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -249,9 +249,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.forcePlot.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -262,9 +262,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.forcePlot.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -275,9 +275,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -288,9 +288,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -301,9 +301,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.resetAllButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The orange, round button that can be used to restore the initial state",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -314,9 +314,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ResetAllButtonIO"
     },
     "hookesLaw.energyScreen.view.resetAllButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -327,9 +327,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -340,9 +340,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.isFiringProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Temporarily becomes true while the Reset All button is firing.  Commonly used to disable audio effects during reset.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -353,9 +353,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -366,9 +366,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.resetAllButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -379,9 +379,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -392,9 +392,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -405,9 +405,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -418,9 +418,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -431,9 +431,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.appliedForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -444,9 +444,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.appliedForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -457,9 +457,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.appliedForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -470,9 +470,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.appliedForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -483,9 +483,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.displacementVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -496,9 +496,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.displacementVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -509,9 +509,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.displacementVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -522,9 +522,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.displacementVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -535,9 +535,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.equilibriumPositionNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -548,9 +548,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.equilibriumPositionNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -561,9 +561,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.equilibriumPositionNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -574,9 +574,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.equilibriumPositionNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -587,9 +587,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -600,9 +600,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -613,9 +613,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -626,9 +626,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -639,9 +639,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -652,9 +652,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -665,9 +665,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.roboticArmNode.dragHandler.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -678,9 +678,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -691,9 +691,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -704,9 +704,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -717,9 +717,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -730,9 +730,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -743,9 +743,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -756,9 +756,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -769,9 +769,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -782,9 +782,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -795,9 +795,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -808,9 +808,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -821,9 +821,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -834,9 +834,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -847,9 +847,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -860,9 +860,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -873,9 +873,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -886,9 +886,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -899,9 +899,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -912,9 +912,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -925,9 +925,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -938,9 +938,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -951,9 +951,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -964,9 +964,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -977,9 +977,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -990,9 +990,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1003,9 +1003,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1016,9 +1016,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1029,9 +1029,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1042,9 +1042,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1055,9 +1055,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1068,9 +1068,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1081,9 +1081,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1094,9 +1094,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1107,9 +1107,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1120,9 +1120,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1133,9 +1133,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1146,9 +1146,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1159,9 +1159,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1172,9 +1172,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1185,9 +1185,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1198,9 +1198,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -1211,9 +1211,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1224,9 +1224,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1237,9 +1237,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1250,9 +1250,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1263,9 +1263,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -1276,9 +1276,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1289,9 +1289,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1302,9 +1302,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1315,9 +1315,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1328,9 +1328,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1341,9 +1341,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1354,9 +1354,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1367,9 +1367,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1380,9 +1380,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1393,9 +1393,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1406,9 +1406,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1419,9 +1419,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1432,9 +1432,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1445,9 +1445,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1458,9 +1458,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1471,9 +1471,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1484,9 +1484,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1497,9 +1497,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1510,9 +1510,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1523,9 +1523,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1536,9 +1536,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1549,9 +1549,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1562,9 +1562,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1575,9 +1575,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1588,9 +1588,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1601,9 +1601,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1614,9 +1614,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1627,9 +1627,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1640,9 +1640,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1653,9 +1653,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1666,9 +1666,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1679,9 +1679,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1692,9 +1692,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1705,9 +1705,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1718,9 +1718,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1731,9 +1731,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1744,9 +1744,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1757,9 +1757,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1770,9 +1770,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1783,9 +1783,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1796,9 +1796,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1809,9 +1809,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1822,9 +1822,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1835,9 +1835,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1848,9 +1848,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1861,9 +1861,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1874,9 +1874,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1887,9 +1887,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1900,9 +1900,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -1913,9 +1913,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1926,9 +1926,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1939,9 +1939,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1952,9 +1952,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1965,9 +1965,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1978,9 +1978,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -1991,9 +1991,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2004,9 +2004,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2017,9 +2017,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -2030,9 +2030,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2043,9 +2043,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2056,9 +2056,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2069,9 +2069,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2082,9 +2082,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -2095,9 +2095,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2108,9 +2108,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2121,9 +2121,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2134,9 +2134,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2147,9 +2147,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2160,9 +2160,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2173,9 +2173,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2186,9 +2186,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2199,9 +2199,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2212,9 +2212,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2225,9 +2225,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2238,9 +2238,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2251,9 +2251,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2264,9 +2264,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2277,9 +2277,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.viewProperties.appliedForceVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2290,9 +2290,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.viewProperties.displacementVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2303,9 +2303,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.viewProperties.energyOnForcePlotVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2316,9 +2316,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.viewProperties.equilibriumPositionVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2329,9 +2329,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.viewProperties.graphProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2342,9 +2342,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.energyScreen.view.viewProperties.valuesVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2355,9 +2355,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2368,9 +2368,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2381,9 +2381,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2394,9 +2394,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2407,9 +2407,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2420,9 +2420,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2433,9 +2433,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2446,9 +2446,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.appliedForceCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2459,9 +2459,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2472,9 +2472,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2485,9 +2485,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2498,9 +2498,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2511,9 +2511,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2524,9 +2524,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2537,9 +2537,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2550,9 +2550,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2563,9 +2563,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2576,9 +2576,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2589,9 +2589,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2602,9 +2602,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2615,9 +2615,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2628,9 +2628,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2641,9 +2641,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.displacementCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2654,9 +2654,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2667,9 +2667,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2680,9 +2680,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2693,9 +2693,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2706,9 +2706,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2719,9 +2719,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2732,9 +2732,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2745,9 +2745,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2758,9 +2758,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2771,9 +2771,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2784,9 +2784,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2797,9 +2797,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2810,9 +2810,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2823,9 +2823,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2836,9 +2836,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2849,9 +2849,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2862,9 +2862,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2875,9 +2875,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2888,9 +2888,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2901,9 +2901,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2914,9 +2914,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2927,9 +2927,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.equilibriumPositionCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -2940,9 +2940,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2953,9 +2953,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2966,9 +2966,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2979,9 +2979,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -2992,9 +2992,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3005,9 +3005,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3018,9 +3018,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3031,9 +3031,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3044,9 +3044,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3057,9 +3057,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3070,9 +3070,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.separator": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3083,9 +3083,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.separator.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3096,9 +3096,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.separator.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3109,9 +3109,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.separator.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3122,9 +3122,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3135,9 +3135,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -3148,9 +3148,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3161,9 +3161,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3174,9 +3174,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3187,9 +3187,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3200,9 +3200,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.valuesCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -3213,9 +3213,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3226,9 +3226,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3239,9 +3239,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.activeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Determines whether the entire simulation is running and processing user input. Setting this property to false pauses the simulation, and prevents user interaction.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -3252,9 +3252,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.barrierRectangle": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Semi-transparent barrier used to block input events when a dialog is shown, also fades out the background",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3265,9 +3265,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.barrierRectangle.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3278,9 +3278,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.barrierRectangle.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3291,9 +3291,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.barrierRectangle.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3304,9 +3304,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.barrierRectangle.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3317,9 +3317,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.barrierRectangle.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3330,9 +3330,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.barrierRectangle.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3343,9 +3343,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.browserTabVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the browser tab containing the simulation is currently visible",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3356,9 +3356,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.controller.input.mouseDownAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a mouse button is pressed The arguments are:<br/><ol><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3369,9 +3369,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.mouseMovedAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the mouse is moved The arguments are:<br/><ol><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -3382,9 +3382,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.mouseOutAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the mouse moves out of the display The arguments are:<br/><ol><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3395,9 +3395,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.mouseOverAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the mouse is moved over a Node The arguments are:<br/><ol><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3408,9 +3408,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.mouseUpAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a mouse button is released The arguments are:<br/><ol><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3421,9 +3421,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.penCancelAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a pen is canceled The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3434,9 +3434,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.penEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a pen is lifted The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3447,9 +3447,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.penMoveAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a pen is moved The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -3460,9 +3460,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.penStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a pen touches the screen The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3473,9 +3473,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.touchCancelAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a touch is canceled The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3486,9 +3486,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.touchEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a touch ends The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3499,9 +3499,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.touchMoveAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a touch moves The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -3512,9 +3512,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.touchStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when a touch begins The arguments are:<br/><ol><li>id: NumberIO</li><br/><li>point: Vector2IO</li><br/><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3525,9 +3525,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, Vector2IO, DOMEventIO>"
     },
     "hookesLaw.general.controller.input.validatePointersAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -3538,9 +3538,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<>"
     },
     "hookesLaw.general.controller.input.wheelScrollAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the mouse wheel scrolls The arguments are:<br/><ol><li>event: DOMEventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -3551,9 +3551,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<DOMEventIO>"
     },
     "hookesLaw.general.focusProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Stores the current focus for the simulation, null if there is not focus. This is not updated based on mouse or touch input, only keyboard and other alternative inputs.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3564,9 +3564,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<FocusIO>>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Button in the navigation bar that selects the 'energyScreen' screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3577,9 +3577,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -3590,9 +3590,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3603,9 +3603,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.icon": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3616,9 +3616,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.icon.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3629,9 +3629,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.icon.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3642,9 +3642,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.icon.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3655,9 +3655,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3668,9 +3668,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3681,9 +3681,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3694,9 +3694,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3707,9 +3707,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3720,9 +3720,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3733,9 +3733,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3746,9 +3746,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3759,9 +3759,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3772,9 +3772,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3785,9 +3785,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.homeButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3798,9 +3798,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.homeButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -3811,9 +3811,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.homeButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3824,9 +3824,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.homeButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3837,9 +3837,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.homeButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3850,9 +3850,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.homeButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3863,9 +3863,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.homeButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3876,9 +3876,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.homeButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3889,9 +3889,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.introScreenButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Button in the navigation bar that selects the 'introScreen' screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3902,9 +3902,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.introScreenButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -3915,9 +3915,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3928,9 +3928,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.icon": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3941,9 +3941,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.introScreenButton.icon.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3954,9 +3954,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.introScreenButton.icon.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3967,9 +3967,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.icon.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3980,9 +3980,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -3993,9 +3993,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.introScreenButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4006,9 +4006,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4019,9 +4019,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4032,9 +4032,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4045,9 +4045,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.general.navigationBar.introScreenButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4058,9 +4058,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.introScreenButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4071,9 +4071,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4084,9 +4084,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4097,9 +4097,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4110,9 +4110,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The button that appears at the right side of the navigation bar, which shows a menu when pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4123,9 +4123,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PhetButtonIO"
     },
     "hookesLaw.general.navigationBar.phetButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4136,9 +4136,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4149,9 +4149,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "This menu is displayed when the PhET button is pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4162,9 +4162,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PhetMenuIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4175,9 +4175,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PhetioCapsuleIO<DialogIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4188,9 +4188,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DialogIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4201,9 +4201,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton.enabledProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4214,9 +4214,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton.firedEmitter": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4227,9 +4227,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton.opacityProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4240,9 +4240,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton.pickableProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4253,9 +4253,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4266,9 +4266,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4279,9 +4279,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.closeButton.visibleProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4292,9 +4292,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.isShowingProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4305,9 +4305,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.opacityProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4318,9 +4318,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.pickableProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4331,9 +4331,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.prototype.visibleProperty": {
-      "isDynamicElementPrototype": true,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
-      "phetioDynamicElement": true,
+      "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": true,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4344,9 +4344,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "This menu item shows a dialog with information about the simulation.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4357,9 +4357,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4370,9 +4370,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4383,9 +4383,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4396,9 +4396,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4409,9 +4409,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4422,9 +4422,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4435,9 +4435,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "This menu item captures a screenshot from the simulation and saves it to the file system.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4448,9 +4448,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4461,9 +4461,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4474,9 +4474,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4487,9 +4487,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4500,9 +4500,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4513,9 +4513,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4526,9 +4526,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Set whether the phetButton will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4539,9 +4539,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4552,9 +4552,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4565,9 +4565,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Button in the navigation bar that selects the 'systemsScreen' screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4578,9 +4578,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4591,9 +4591,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4604,9 +4604,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.icon": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4617,9 +4617,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.icon.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4630,9 +4630,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.icon.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4643,9 +4643,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.icon.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4656,9 +4656,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4669,9 +4669,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4682,9 +4682,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4695,9 +4695,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4708,9 +4708,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4721,9 +4721,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4734,9 +4734,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4747,9 +4747,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4760,9 +4760,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4773,9 +4773,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4786,9 +4786,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.navigationBar.titleTextNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Displays the title of the simulation in the navigation bar (bottom left)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4799,9 +4799,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.general.navigationBar.titleTextNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4812,9 +4812,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.navigationBar.titleTextNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4825,9 +4825,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.titleTextNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4838,9 +4838,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.general.navigationBar.titleTextNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4851,9 +4851,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.phetioCommandProcessor": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Processes messages from the wrapper frame and returns the results. This serves as the source of PhET-iO data stream messages when commands are invoked from the wrapper.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4864,9 +4864,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PhetioCommandProcessorIO"
     },
     "hookesLaw.general.resizeAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes when the sim is resized The arguments are:<br/><ol><li>width: NumberIO</li><br/><li>height: NumberIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4877,9 +4877,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO, NumberIO>"
     },
     "hookesLaw.general.screenIndexProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates which screen is selected (0-indexed)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4890,9 +4890,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.general.showHomeScreenProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -4903,9 +4903,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.soundEnabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4916,9 +4916,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.general.stepSimulationAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>dt: NumberIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -4929,9 +4929,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NumberIO>"
     },
     "hookesLaw.homeScreen.activeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the screen is active.  For single-screen simulations, the screen is always active.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4942,9 +4942,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4955,9 +4955,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A pressable button in the simulation, in the home screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4968,9 +4968,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4981,9 +4981,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -4994,9 +4994,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5007,9 +5007,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5020,9 +5020,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5033,9 +5033,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5046,9 +5046,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5059,9 +5059,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5072,9 +5072,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5085,9 +5085,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5098,9 +5098,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5111,9 +5111,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A pressable button in the simulation, in the home screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5124,9 +5124,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5137,9 +5137,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5150,9 +5150,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5163,9 +5163,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5176,9 +5176,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5189,9 +5189,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5202,9 +5202,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5215,9 +5215,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5228,9 +5228,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5241,9 +5241,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5254,9 +5254,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5267,9 +5267,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A pressable button in the simulation, in the home screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5280,9 +5280,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5293,9 +5293,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5306,9 +5306,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5319,9 +5319,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5332,9 +5332,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5345,9 +5345,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5358,9 +5358,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5371,9 +5371,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5384,9 +5384,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5397,9 +5397,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5410,9 +5410,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5423,9 +5423,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A pressable button in the simulation, in the home screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5436,9 +5436,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5449,9 +5449,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5462,9 +5462,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5475,9 +5475,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5488,9 +5488,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5501,9 +5501,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5514,9 +5514,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5527,9 +5527,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5540,9 +5540,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5553,9 +5553,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5566,9 +5566,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5579,9 +5579,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5592,9 +5592,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5605,9 +5605,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A pressable button in the simulation, in the home screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5618,9 +5618,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5631,9 +5631,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5644,9 +5644,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5657,9 +5657,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5670,9 +5670,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5683,9 +5683,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5696,9 +5696,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5709,9 +5709,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5722,9 +5722,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5735,9 +5735,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5748,9 +5748,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5761,9 +5761,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A pressable button in the simulation, in the home screen",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5774,9 +5774,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5787,9 +5787,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5800,9 +5800,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5813,9 +5813,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5826,9 +5826,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5839,9 +5839,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.text": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5852,9 +5852,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.text.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5865,9 +5865,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.text.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5878,9 +5878,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.text.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5891,9 +5891,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.text.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5904,9 +5904,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5917,9 +5917,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.title": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5930,9 +5930,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.homeScreen.view.title.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5943,9 +5943,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.homeScreen.view.title.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5956,9 +5956,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.homeScreen.view.title.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5969,9 +5969,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.homeScreen.view.title.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5982,9 +5982,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.homeScreen.view.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -5995,9 +5995,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.activeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the screen is active.  For single-screen simulations, the screen is always active.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6008,9 +6008,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.model.system1.roboticArm.leftProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6021,9 +6021,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system1.spring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6034,9 +6034,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.model.system1.spring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6047,9 +6047,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system1.spring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6060,9 +6060,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system1.spring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6073,9 +6073,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.introScreen.model.system1.spring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6086,9 +6086,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system1.spring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6099,9 +6099,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.introScreen.model.system2.roboticArm.leftProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6112,9 +6112,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system2.spring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6125,9 +6125,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.model.system2.spring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6138,9 +6138,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system2.spring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6151,9 +6151,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system2.spring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6164,9 +6164,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.introScreen.model.system2.spring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6177,9 +6177,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.model.system2.spring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6190,9 +6190,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.introScreen.view": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6203,9 +6203,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6216,9 +6216,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6229,9 +6229,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.resetAllButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The orange, round button that can be used to restore the initial state",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6242,9 +6242,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ResetAllButtonIO"
     },
     "hookesLaw.introScreen.view.resetAllButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6255,9 +6255,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.resetAllButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6268,9 +6268,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.resetAllButton.isFiringProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Temporarily becomes true while the Reset All button is firing.  Commonly used to disable audio effects during reset.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6281,9 +6281,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.resetAllButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6294,9 +6294,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.resetAllButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6307,9 +6307,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.resetAllButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6320,9 +6320,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.resetAllButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6333,9 +6333,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.resetAllButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6346,9 +6346,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.sceneControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6359,9 +6359,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6372,9 +6372,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6385,9 +6385,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6398,9 +6398,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6411,9 +6411,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6424,9 +6424,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6437,9 +6437,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6450,9 +6450,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6463,9 +6463,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6476,9 +6476,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.sceneControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6489,9 +6489,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6502,9 +6502,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6515,9 +6515,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6528,9 +6528,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6541,9 +6541,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6554,9 +6554,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6567,9 +6567,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6580,9 +6580,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6593,9 +6593,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6606,9 +6606,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1CenterYProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6619,9 +6619,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6632,9 +6632,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.appliedForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6645,9 +6645,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.appliedForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6658,9 +6658,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.appliedForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6671,9 +6671,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.appliedForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6684,9 +6684,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.displacementVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6697,9 +6697,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.displacementVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6710,9 +6710,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.displacementVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6723,9 +6723,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.displacementVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6736,9 +6736,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.equilibriumPositionNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6749,9 +6749,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.equilibriumPositionNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6762,9 +6762,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.equilibriumPositionNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6775,9 +6775,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.equilibriumPositionNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6788,9 +6788,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6801,9 +6801,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6814,9 +6814,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6827,9 +6827,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -6840,9 +6840,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6853,9 +6853,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6866,9 +6866,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.roboticArmNode.dragHandler.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6879,9 +6879,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6892,9 +6892,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6905,9 +6905,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6918,9 +6918,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6931,9 +6931,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -6944,9 +6944,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6957,9 +6957,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6970,9 +6970,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6983,9 +6983,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -6996,9 +6996,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7009,9 +7009,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -7022,9 +7022,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7035,9 +7035,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7048,9 +7048,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7061,9 +7061,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7074,9 +7074,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7087,9 +7087,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7100,9 +7100,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7113,9 +7113,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7126,9 +7126,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7139,9 +7139,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7152,9 +7152,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7165,9 +7165,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7178,9 +7178,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -7191,9 +7191,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7204,9 +7204,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7217,9 +7217,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7230,9 +7230,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7243,9 +7243,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7256,9 +7256,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -7269,9 +7269,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7282,9 +7282,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -7295,9 +7295,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7308,9 +7308,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7321,9 +7321,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7334,9 +7334,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7347,9 +7347,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7360,9 +7360,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7373,9 +7373,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7386,9 +7386,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7399,9 +7399,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -7412,9 +7412,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7425,9 +7425,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7438,9 +7438,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7451,9 +7451,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7464,9 +7464,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -7477,9 +7477,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7490,9 +7490,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7503,9 +7503,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7516,9 +7516,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7529,9 +7529,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -7542,9 +7542,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7555,9 +7555,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7568,9 +7568,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7581,9 +7581,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7594,9 +7594,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7607,9 +7607,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7620,9 +7620,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7633,9 +7633,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7646,9 +7646,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7659,9 +7659,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7672,9 +7672,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7685,9 +7685,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7698,9 +7698,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7711,9 +7711,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7724,9 +7724,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7737,9 +7737,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7750,9 +7750,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -7763,9 +7763,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7776,9 +7776,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7789,9 +7789,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7802,9 +7802,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7815,9 +7815,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7828,9 +7828,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -7841,9 +7841,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7854,9 +7854,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7867,9 +7867,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7880,9 +7880,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7893,9 +7893,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7906,9 +7906,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7919,9 +7919,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7932,9 +7932,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7945,9 +7945,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7958,9 +7958,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7971,9 +7971,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7984,9 +7984,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -7997,9 +7997,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -8010,9 +8010,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8023,9 +8023,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8036,9 +8036,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8049,9 +8049,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8062,9 +8062,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8075,9 +8075,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -8088,9 +8088,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8101,9 +8101,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -8114,9 +8114,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8127,9 +8127,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8140,9 +8140,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8153,9 +8153,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8166,9 +8166,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8179,9 +8179,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8192,9 +8192,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8205,9 +8205,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8218,9 +8218,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -8231,9 +8231,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8244,9 +8244,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8257,9 +8257,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8270,9 +8270,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8283,9 +8283,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -8296,9 +8296,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8309,9 +8309,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8322,9 +8322,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8335,9 +8335,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8348,9 +8348,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -8361,9 +8361,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8374,9 +8374,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8387,9 +8387,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8400,9 +8400,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8413,9 +8413,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8426,9 +8426,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8439,9 +8439,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8452,9 +8452,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8465,9 +8465,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8478,9 +8478,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system1Node.springForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8491,9 +8491,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system1Node.springForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8504,9 +8504,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8517,9 +8517,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system1Node.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8530,9 +8530,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8543,9 +8543,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.appliedForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8556,9 +8556,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.appliedForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8569,9 +8569,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.appliedForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8582,9 +8582,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.appliedForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8595,9 +8595,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.displacementVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8608,9 +8608,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.displacementVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8621,9 +8621,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.displacementVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8634,9 +8634,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.displacementVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8647,9 +8647,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.equilibriumPositionNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8660,9 +8660,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.equilibriumPositionNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8673,9 +8673,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.equilibriumPositionNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8686,9 +8686,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.equilibriumPositionNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8699,9 +8699,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8712,9 +8712,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8725,9 +8725,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8738,9 +8738,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -8751,9 +8751,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8764,9 +8764,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8777,9 +8777,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.roboticArmNode.dragHandler.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8790,9 +8790,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8803,9 +8803,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8816,9 +8816,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8829,9 +8829,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8842,9 +8842,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -8855,9 +8855,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8868,9 +8868,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8881,9 +8881,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8894,9 +8894,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8907,9 +8907,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8920,9 +8920,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -8933,9 +8933,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8946,9 +8946,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8959,9 +8959,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8972,9 +8972,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8985,9 +8985,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -8998,9 +8998,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9011,9 +9011,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9024,9 +9024,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9037,9 +9037,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9050,9 +9050,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9063,9 +9063,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9076,9 +9076,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9089,9 +9089,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9102,9 +9102,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9115,9 +9115,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9128,9 +9128,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9141,9 +9141,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9154,9 +9154,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9167,9 +9167,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9180,9 +9180,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9193,9 +9193,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9206,9 +9206,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9219,9 +9219,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9232,9 +9232,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9245,9 +9245,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9258,9 +9258,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9271,9 +9271,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9284,9 +9284,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9297,9 +9297,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9310,9 +9310,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -9323,9 +9323,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9336,9 +9336,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9349,9 +9349,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9362,9 +9362,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9375,9 +9375,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -9388,9 +9388,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9401,9 +9401,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9414,9 +9414,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9427,9 +9427,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9440,9 +9440,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9453,9 +9453,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9466,9 +9466,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9479,9 +9479,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9492,9 +9492,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9505,9 +9505,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9518,9 +9518,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9531,9 +9531,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9544,9 +9544,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9557,9 +9557,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9570,9 +9570,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9583,9 +9583,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9596,9 +9596,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9609,9 +9609,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9622,9 +9622,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9635,9 +9635,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9648,9 +9648,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9661,9 +9661,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9674,9 +9674,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9687,9 +9687,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9700,9 +9700,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9713,9 +9713,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9726,9 +9726,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9739,9 +9739,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9752,9 +9752,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9765,9 +9765,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9778,9 +9778,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9791,9 +9791,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9804,9 +9804,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9817,9 +9817,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9830,9 +9830,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9843,9 +9843,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9856,9 +9856,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9869,9 +9869,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9882,9 +9882,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9895,9 +9895,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9908,9 +9908,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9921,9 +9921,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9934,9 +9934,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9947,9 +9947,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9960,9 +9960,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9973,9 +9973,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -9986,9 +9986,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -9999,9 +9999,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10012,9 +10012,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10025,9 +10025,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10038,9 +10038,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10051,9 +10051,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10064,9 +10064,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10077,9 +10077,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10090,9 +10090,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10103,9 +10103,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10116,9 +10116,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10129,9 +10129,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -10142,9 +10142,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10155,9 +10155,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10168,9 +10168,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10181,9 +10181,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10194,9 +10194,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -10207,9 +10207,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10220,9 +10220,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10233,9 +10233,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10246,9 +10246,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10259,9 +10259,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10272,9 +10272,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10285,9 +10285,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10298,9 +10298,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10311,9 +10311,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10324,9 +10324,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10337,9 +10337,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10350,9 +10350,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10363,9 +10363,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10376,9 +10376,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10389,9 +10389,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.system2Node.springForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10402,9 +10402,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.system2Node.springForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10415,9 +10415,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10428,9 +10428,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2Node.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10441,9 +10441,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.system2OpacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10454,9 +10454,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.viewProperties.appliedForceVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10467,9 +10467,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.viewProperties.displacementVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10480,9 +10480,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.viewProperties.equilibriumPositionVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10493,9 +10493,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.viewProperties.numberOfSystemsProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10506,9 +10506,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.viewProperties.springForceVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10519,9 +10519,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.viewProperties.valuesVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10532,9 +10532,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10545,9 +10545,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10558,9 +10558,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10571,9 +10571,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10584,9 +10584,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10597,9 +10597,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10610,9 +10610,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10623,9 +10623,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.appliedForceCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10636,9 +10636,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10649,9 +10649,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10662,9 +10662,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10675,9 +10675,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10688,9 +10688,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10701,9 +10701,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10714,9 +10714,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.displacementCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10727,9 +10727,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10740,9 +10740,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10753,9 +10753,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10766,9 +10766,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10779,9 +10779,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10792,9 +10792,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10805,9 +10805,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.equilibriumPositionCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10818,9 +10818,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10831,9 +10831,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10844,9 +10844,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10857,9 +10857,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10870,9 +10870,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10883,9 +10883,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10896,9 +10896,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10909,9 +10909,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10922,9 +10922,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.springForceCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10935,9 +10935,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10948,9 +10948,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -10961,9 +10961,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10974,9 +10974,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -10987,9 +10987,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11000,9 +11000,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11013,9 +11013,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.valuesCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -11026,9 +11026,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibilityControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11039,9 +11039,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.introScreen.view.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11052,9 +11052,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.activeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the screen is active.  For single-screen simulations, the screen is always active.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11065,9 +11065,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.bottomSpring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The bottom spring in the parallel system",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11078,9 +11078,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.bottomSpring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11091,9 +11091,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.bottomSpring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11104,9 +11104,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.bottomSpring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11117,9 +11117,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.bottomSpring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11130,9 +11130,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.bottomSpring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11143,9 +11143,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.equivalentSpring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The single spring that is equivalent to the 2 springs in parallel",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11156,9 +11156,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.equivalentSpring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11169,9 +11169,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.equivalentSpring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11182,9 +11182,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.equivalentSpring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11195,9 +11195,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.equivalentSpring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11208,9 +11208,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.equivalentSpring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11221,9 +11221,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.roboticArm.leftProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11234,9 +11234,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.topSpring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The top spring in the parallel system",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11247,9 +11247,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.topSpring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11260,9 +11260,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.topSpring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11273,9 +11273,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.topSpring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11286,9 +11286,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.topSpring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11299,9 +11299,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.parallelSystem.topSpring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11312,9 +11312,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.equivalentSpring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The single spring that is equivalent to the 2 springs in series",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11325,9 +11325,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.equivalentSpring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11338,9 +11338,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.equivalentSpring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11351,9 +11351,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.equivalentSpring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11364,9 +11364,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.equivalentSpring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11377,9 +11377,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.equivalentSpring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11390,9 +11390,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.leftSpring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The left spring in the series system",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11403,9 +11403,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.leftSpring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11416,9 +11416,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.leftSpring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11429,9 +11429,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.leftSpring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11442,9 +11442,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.leftSpring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11455,9 +11455,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.leftSpring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11468,9 +11468,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.rightSpring": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The right spring in the series system",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11481,9 +11481,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.rightSpring.appliedForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11494,9 +11494,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.rightSpring.displacementProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11507,9 +11507,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.rightSpring.potentialEnergyProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11520,9 +11520,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.rightSpring.springConstantProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11533,9 +11533,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.rightSpring.springForceProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11546,9 +11546,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<NumberIO>"
     },
     "hookesLaw.systemsScreen.model.seriesSystem.roboticArm.leftProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11559,9 +11559,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11572,9 +11572,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11585,9 +11585,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11598,9 +11598,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.appliedForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11611,9 +11611,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.appliedForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11624,9 +11624,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.appliedForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11637,9 +11637,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.appliedForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11650,9 +11650,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.bottomSpringForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11663,9 +11663,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.bottomSpringForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11676,9 +11676,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.bottomSpringForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11689,9 +11689,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.bottomSpringForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11702,9 +11702,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.displacementVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11715,9 +11715,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.displacementVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11728,9 +11728,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.displacementVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11741,9 +11741,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.displacementVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11754,9 +11754,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.equilibriumPositionNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11767,9 +11767,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.equilibriumPositionNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11780,9 +11780,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.equilibriumPositionNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11793,9 +11793,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.equilibriumPositionNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11806,9 +11806,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11819,9 +11819,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11832,9 +11832,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11845,9 +11845,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -11858,9 +11858,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11871,9 +11871,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11884,9 +11884,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.roboticArmNode.dragHandler.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11897,9 +11897,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11910,9 +11910,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11923,9 +11923,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11936,9 +11936,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11949,9 +11949,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -11962,9 +11962,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11975,9 +11975,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -11988,9 +11988,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12001,9 +12001,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12014,9 +12014,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12027,9 +12027,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -12040,9 +12040,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12053,9 +12053,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12066,9 +12066,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12079,9 +12079,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12092,9 +12092,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12105,9 +12105,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12118,9 +12118,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12131,9 +12131,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12144,9 +12144,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12157,9 +12157,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12170,9 +12170,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12183,9 +12183,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12196,9 +12196,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -12209,9 +12209,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12222,9 +12222,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12235,9 +12235,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12248,9 +12248,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12261,9 +12261,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12274,9 +12274,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -12287,9 +12287,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12300,9 +12300,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -12313,9 +12313,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12326,9 +12326,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12339,9 +12339,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12352,9 +12352,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12365,9 +12365,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12378,9 +12378,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12391,9 +12391,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12404,9 +12404,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12417,9 +12417,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -12430,9 +12430,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12443,9 +12443,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12456,9 +12456,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12469,9 +12469,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12482,9 +12482,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -12495,9 +12495,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12508,9 +12508,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12521,9 +12521,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12534,9 +12534,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12547,9 +12547,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -12560,9 +12560,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12573,9 +12573,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12586,9 +12586,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12599,9 +12599,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12612,9 +12612,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12625,9 +12625,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12638,9 +12638,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12651,9 +12651,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12664,9 +12664,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12677,9 +12677,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12690,9 +12690,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12703,9 +12703,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12716,9 +12716,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12729,9 +12729,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12742,9 +12742,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -12755,9 +12755,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12768,9 +12768,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12781,9 +12781,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12794,9 +12794,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12807,9 +12807,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12820,9 +12820,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -12833,9 +12833,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12846,9 +12846,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12859,9 +12859,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12872,9 +12872,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12885,9 +12885,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12898,9 +12898,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12911,9 +12911,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12924,9 +12924,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12937,9 +12937,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12950,9 +12950,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12963,9 +12963,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12976,9 +12976,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -12989,9 +12989,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13002,9 +13002,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13015,9 +13015,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13028,9 +13028,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13041,9 +13041,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13054,9 +13054,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13067,9 +13067,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13080,9 +13080,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13093,9 +13093,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13106,9 +13106,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13119,9 +13119,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13132,9 +13132,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13145,9 +13145,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13158,9 +13158,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13171,9 +13171,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13184,9 +13184,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13197,9 +13197,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13210,9 +13210,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -13223,9 +13223,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13236,9 +13236,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13249,9 +13249,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13262,9 +13262,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13275,9 +13275,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -13288,9 +13288,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13301,9 +13301,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13314,9 +13314,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13327,9 +13327,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13340,9 +13340,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13353,9 +13353,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13366,9 +13366,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13379,9 +13379,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13392,9 +13392,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13405,9 +13405,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13418,9 +13418,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13431,9 +13431,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13444,9 +13444,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13457,9 +13457,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13470,9 +13470,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13483,9 +13483,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13496,9 +13496,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13509,9 +13509,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13522,9 +13522,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13535,9 +13535,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13548,9 +13548,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13561,9 +13561,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13574,9 +13574,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13587,9 +13587,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13600,9 +13600,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13613,9 +13613,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13626,9 +13626,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13639,9 +13639,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13652,9 +13652,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13665,9 +13665,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13678,9 +13678,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13691,9 +13691,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13704,9 +13704,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13717,9 +13717,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13730,9 +13730,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13743,9 +13743,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13756,9 +13756,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13769,9 +13769,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13782,9 +13782,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13795,9 +13795,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13808,9 +13808,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13821,9 +13821,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13834,9 +13834,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -13847,9 +13847,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13860,9 +13860,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13873,9 +13873,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13886,9 +13886,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13899,9 +13899,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13912,9 +13912,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13925,9 +13925,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13938,9 +13938,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13951,9 +13951,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -13964,9 +13964,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13977,9 +13977,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -13990,9 +13990,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14003,9 +14003,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14016,9 +14016,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -14029,9 +14029,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14042,9 +14042,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14055,9 +14055,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14068,9 +14068,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14081,9 +14081,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14094,9 +14094,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14107,9 +14107,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14120,9 +14120,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14133,9 +14133,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14146,9 +14146,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14159,9 +14159,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14172,9 +14172,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14185,9 +14185,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14198,9 +14198,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14211,9 +14211,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14224,9 +14224,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14237,9 +14237,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14250,9 +14250,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.topSpringForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14263,9 +14263,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.topSpringForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14276,9 +14276,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.topSpringForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14289,9 +14289,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.topSpringForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14302,9 +14302,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.totalSpringForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14315,9 +14315,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.totalSpringForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14328,9 +14328,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.totalSpringForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14341,9 +14341,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.totalSpringForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14354,9 +14354,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14367,9 +14367,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14380,9 +14380,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "The orange, round button that can be used to restore the initial state",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14393,9 +14393,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ResetAllButtonIO"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14406,9 +14406,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14419,9 +14419,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.isFiringProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Temporarily becomes true while the Reset All button is firing.  Commonly used to disable audio effects during reset.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14432,9 +14432,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "DerivedPropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14445,9 +14445,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14458,9 +14458,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14471,9 +14471,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14484,9 +14484,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14497,9 +14497,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14510,9 +14510,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.sceneControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14523,9 +14523,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14536,9 +14536,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14549,9 +14549,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14562,9 +14562,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14575,9 +14575,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14588,9 +14588,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14601,9 +14601,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14614,9 +14614,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14627,9 +14627,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14640,9 +14640,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14653,9 +14653,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14666,9 +14666,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the radio button is pressed No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14679,9 +14679,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14692,9 +14692,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14705,9 +14705,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14718,9 +14718,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14731,9 +14731,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14744,9 +14744,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -14757,9 +14757,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14770,9 +14770,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.appliedForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14783,9 +14783,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.appliedForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14796,9 +14796,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.appliedForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14809,9 +14809,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.appliedForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14822,9 +14822,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.displacementVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14835,9 +14835,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.displacementVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14848,9 +14848,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.displacementVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14861,9 +14861,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.displacementVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14874,9 +14874,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.equilibriumPositionNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14887,9 +14887,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.equilibriumPositionNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14900,9 +14900,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.equilibriumPositionNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14913,9 +14913,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.equilibriumPositionNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14926,9 +14926,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftAppliedForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14939,9 +14939,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftAppliedForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14952,9 +14952,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftAppliedForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14965,9 +14965,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftAppliedForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14978,9 +14978,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftSpringForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -14991,9 +14991,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftSpringForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15004,9 +15004,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftSpringForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15017,9 +15017,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.leftSpringForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15030,9 +15030,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15043,9 +15043,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15056,9 +15056,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.rightSpringForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15069,9 +15069,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.rightSpringForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15082,9 +15082,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.rightSpringForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15095,9 +15095,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.rightSpringForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15108,9 +15108,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15121,9 +15121,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -15134,9 +15134,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15147,9 +15147,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15160,9 +15160,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.roboticArmNode.dragHandler.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15173,9 +15173,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15186,9 +15186,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15199,9 +15199,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15212,9 +15212,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15225,9 +15225,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -15238,9 +15238,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15251,9 +15251,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15264,9 +15264,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15277,9 +15277,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15290,9 +15290,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15303,9 +15303,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -15316,9 +15316,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15329,9 +15329,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15342,9 +15342,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15355,9 +15355,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15368,9 +15368,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15381,9 +15381,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15394,9 +15394,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15407,9 +15407,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15420,9 +15420,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15433,9 +15433,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15446,9 +15446,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15459,9 +15459,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15472,9 +15472,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -15485,9 +15485,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15498,9 +15498,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15511,9 +15511,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15524,9 +15524,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15537,9 +15537,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15550,9 +15550,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -15563,9 +15563,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15576,9 +15576,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -15589,9 +15589,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15602,9 +15602,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15615,9 +15615,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15628,9 +15628,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15641,9 +15641,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15654,9 +15654,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15667,9 +15667,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15680,9 +15680,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15693,9 +15693,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -15706,9 +15706,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15719,9 +15719,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15732,9 +15732,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15745,9 +15745,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15758,9 +15758,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -15771,9 +15771,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15784,9 +15784,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15797,9 +15797,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15810,9 +15810,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15823,9 +15823,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -15836,9 +15836,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15849,9 +15849,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15862,9 +15862,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15875,9 +15875,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15888,9 +15888,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15901,9 +15901,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15914,9 +15914,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15927,9 +15927,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15940,9 +15940,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15953,9 +15953,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15966,9 +15966,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15979,9 +15979,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -15992,9 +15992,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16005,9 +16005,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16018,9 +16018,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16031,9 +16031,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16044,9 +16044,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16057,9 +16057,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16070,9 +16070,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16083,9 +16083,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16096,9 +16096,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16109,9 +16109,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16122,9 +16122,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16135,9 +16135,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16148,9 +16148,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16161,9 +16161,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16174,9 +16174,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16187,9 +16187,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16200,9 +16200,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16213,9 +16213,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16226,9 +16226,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16239,9 +16239,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16252,9 +16252,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16265,9 +16265,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16278,9 +16278,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16291,9 +16291,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16304,9 +16304,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16317,9 +16317,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16330,9 +16330,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16343,9 +16343,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16356,9 +16356,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16369,9 +16369,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16382,9 +16382,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16395,9 +16395,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16408,9 +16408,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16421,9 +16421,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16434,9 +16434,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16447,9 +16447,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16460,9 +16460,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16473,9 +16473,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16486,9 +16486,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -16499,9 +16499,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16512,9 +16512,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16525,9 +16525,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16538,9 +16538,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16551,9 +16551,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -16564,9 +16564,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16577,9 +16577,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16590,9 +16590,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16603,9 +16603,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16616,9 +16616,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16629,9 +16629,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16642,9 +16642,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16655,9 +16655,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16668,9 +16668,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16681,9 +16681,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16694,9 +16694,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16707,9 +16707,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16720,9 +16720,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16733,9 +16733,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16746,9 +16746,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberControlIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16759,9 +16759,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16772,9 +16772,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16785,9 +16785,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16798,9 +16798,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16811,9 +16811,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16824,9 +16824,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16837,9 +16837,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -16850,9 +16850,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16863,9 +16863,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberDisplayIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16876,9 +16876,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16889,9 +16889,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16902,9 +16902,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16915,9 +16915,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16928,9 +16928,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16941,9 +16941,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.valueText.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16954,9 +16954,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.numberDisplay.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16967,9 +16967,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16980,9 +16980,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -16993,9 +16993,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17006,9 +17006,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the button is grayed out and cannot be pressed",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17019,9 +17019,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when the button is fired No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17032,9 +17032,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17045,9 +17045,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17058,9 +17058,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17071,9 +17071,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17084,9 +17084,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17097,9 +17097,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17110,9 +17110,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "SliderIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17123,9 +17123,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.enabledRangeProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17136,9 +17136,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<RangeIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17149,9 +17149,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17162,9 +17162,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumb": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17175,9 +17175,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumb.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17188,9 +17188,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumb.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17201,9 +17201,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumb.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17214,9 +17214,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17227,9 +17227,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -17240,9 +17240,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17253,9 +17253,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17266,9 +17266,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.thumbInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17279,9 +17279,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17292,9 +17292,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ObjectIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": true,
@@ -17305,9 +17305,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragEndAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag end in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17318,9 +17318,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.dragStartAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>point: Vector2IO. the position of the drag start in view coordinates</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17331,9 +17331,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<Vector2IO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.track.trackInputListener.isDraggingProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Indicates whether the object is dragging",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17344,9 +17344,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.valueProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17357,9 +17357,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.slider.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17370,9 +17370,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.titleNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17383,9 +17383,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "TextIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.titleNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17396,9 +17396,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.titleNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17409,9 +17409,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.titleNode.textProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Property for the displayed text",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17422,9 +17422,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.titleNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17435,9 +17435,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17448,9 +17448,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17461,9 +17461,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17474,9 +17474,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.totalSpringForceVectorNode": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17487,9 +17487,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.totalSpringForceVectorNode.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17500,9 +17500,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.totalSpringForceVectorNode.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17513,9 +17513,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.totalSpringForceVectorNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17526,9 +17526,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17539,9 +17539,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.viewProperties.appliedForceVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17552,9 +17552,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.viewProperties.displacementVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17565,9 +17565,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.viewProperties.equilibriumPositionVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17578,9 +17578,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.viewProperties.seriesParallelProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17591,9 +17591,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.viewProperties.springForceRepresentationProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17604,9 +17604,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<StringIO>"
     },
     "hookesLaw.systemsScreen.view.viewProperties.springForceVectorVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17617,9 +17617,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.viewProperties.valuesVisibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17630,9 +17630,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17643,9 +17643,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17656,9 +17656,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17669,9 +17669,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17682,9 +17682,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17695,9 +17695,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17708,9 +17708,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17721,9 +17721,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.appliedForceCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17734,9 +17734,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17747,9 +17747,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17760,9 +17760,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17773,9 +17773,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17786,9 +17786,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17799,9 +17799,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17812,9 +17812,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17825,9 +17825,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17838,9 +17838,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17851,9 +17851,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17864,9 +17864,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17877,9 +17877,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17890,9 +17890,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17903,9 +17903,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17916,9 +17916,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.displacementCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17929,9 +17929,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17942,9 +17942,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -17955,9 +17955,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17968,9 +17968,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17981,9 +17981,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -17994,9 +17994,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18007,9 +18007,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.equilibriumPositionCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -18020,9 +18020,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18033,9 +18033,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18046,9 +18046,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18059,9 +18059,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -18072,9 +18072,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18085,9 +18085,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18098,9 +18098,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18111,9 +18111,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18124,9 +18124,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.springForceCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -18137,9 +18137,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18150,9 +18150,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Determines whether the AquaRadioButton is enabled (pressable) or disabled (grayed-out)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18163,9 +18163,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.firedEmitter": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "A function that executes. No arguments.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18176,9 +18176,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "EmitterIO<>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.pressAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18189,9 +18189,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<EventIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.releaseAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18202,9 +18202,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18215,9 +18215,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18228,9 +18228,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18241,9 +18241,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18254,9 +18254,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.enabledProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "When disabled, the checkbox is grayed out and cannot be pressed.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -18267,9 +18267,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.opacityProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18280,9 +18280,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NumberPropertyIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.pickableProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Sets whether the node will be pickable (and hence interactive), see the NodeIO documentation for more details",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18293,9 +18293,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.property": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18306,9 +18306,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "LinkedElementIO"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.toggleAction": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Emits when user input causes the checkbox to toggle, emitting a single arg: the new boolean value of the checkbox state. The arguments are:<br/><ol><li>isChecked: BooleanIO</li></ol>",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "USER",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18319,9 +18319,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "ActionIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.valuesCheckbox.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": true,
       "phetioHighFrequency": false,
@@ -18332,9 +18332,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18345,9 +18345,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibleProperty": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
@@ -18358,9 +18358,9 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "phetioEngine": {
-      "isDynamicElementPrototype": false,
       "phetioDocumentation": "Central point for PhET-iO interoperability",
       "phetioDynamicElement": false,
+      "phetioDynamicElementPrototype": false,
       "phetioEventType": "MODEL",
       "phetioFeatured": false,
       "phetioHighFrequency": false,
