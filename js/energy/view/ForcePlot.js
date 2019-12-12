@@ -70,7 +70,7 @@ define( require => {
       yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
 
     }, options );
 

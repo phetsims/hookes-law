@@ -38,7 +38,7 @@ define( require => {
     options = merge( {
       verticalLineVisible: true,
       unitDisplacementLength: 1,
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     const arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );

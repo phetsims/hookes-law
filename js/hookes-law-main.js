@@ -32,9 +32,9 @@ define( require => {
   SimLauncher.launch( function() {
 
     const screens = [
-      new IntroScreen( Tandem.rootTandem.createTandem( 'introScreen' ) ),
-      new SystemsScreen( Tandem.rootTandem.createTandem( 'systemsScreen' ) ),
-      new EnergyScreen( Tandem.rootTandem.createTandem( 'energyScreen' ) )
+      new IntroScreen( Tandem.ROOT.createTandem( 'introScreen' ) ),
+      new SystemsScreen( Tandem.ROOT.createTandem( 'systemsScreen' ) ),
+      new EnergyScreen( Tandem.ROOT.createTandem( 'energyScreen' ) )
     ];
 
     const sim = new Sim( hookesLawTitleString, screens, options );

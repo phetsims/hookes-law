@@ -36,7 +36,7 @@ define( require => {
   function IntroVisibilityControls( properties, options ) {
 
     options = merge( {
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // text labels on the vector checkboxes

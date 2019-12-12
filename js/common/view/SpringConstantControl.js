@@ -65,7 +65,7 @@ define( require => {
       sliderOptions: null,
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     // sldier option defaults

@@ -26,7 +26,7 @@ define( require => {
     options = merge( {
       left: 0,  // {number} initial x location of the left (movable) end of the arm, units = m
       right: 1, // {number} initial x location of the right (fixed) end of the arm, units = m
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     // @public (read-only) right (fixed) end of the arm

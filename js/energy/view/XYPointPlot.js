@@ -97,7 +97,7 @@ define( require => {
       pointRadius: 5,
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
 
     }, options );
 

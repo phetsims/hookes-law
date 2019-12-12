@@ -69,7 +69,7 @@ define( require => {
       sliderOptions: null,
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     // options passed to NumberControl's HSlider subcomponent

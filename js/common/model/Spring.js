@@ -82,7 +82,7 @@ define( require => {
       displacementRange: null,
 
       // phet-io
-      tandem: Tandem.required,
+      tandem: Tandem.REQUIRED,
       phetioState: false // since this type has no inherent state to save, to avoid circular JSON error
 
     }, options );

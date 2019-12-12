@@ -39,7 +39,7 @@ define( require => {
       decimalPlaces: 0,
       unitLength: HookesLawConstants.UNIT_FORCE_X, // view length of a 1N vector
       alignZero: 'left', // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     const arrowNode = new ArrowNode( 0, 0, 50, 0, {

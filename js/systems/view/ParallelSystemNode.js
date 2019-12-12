@@ -45,7 +45,7 @@ define( require => {
 
     options = merge( {
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     // to improve readability

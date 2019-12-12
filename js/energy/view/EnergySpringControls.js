@@ -34,7 +34,7 @@ define( require => {
 
       // HBox options
       spacing: 10,
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     // Tandems for Panels that contain the controls

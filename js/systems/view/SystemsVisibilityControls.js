@@ -44,7 +44,7 @@ define( require => {
   function SystemsVisibilityControls( properties, options ) {
 
     options = merge( {
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // vector checkboxes

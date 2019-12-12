@@ -33,7 +33,7 @@ define( require => {
       selectedLineWidth: 2,
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     RadioButtonGroup.call( this, numberOfSystemsProperty, [

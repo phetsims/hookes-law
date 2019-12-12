@@ -54,7 +54,7 @@ define( require => {
       cursor: 'pointer',
       unitDisplacementLength: 1,  // view length of a 1m displacement
       displacementInterval: null, // {number|null} dragging the arm will snap to multiples of this interval
-      tandem: Tandem.optional // because this node is used to create icons
+      tandem: Tandem.OPTIONAL // because this node is used to create icons
     }, options );
 
     // red box at right end of the arm, origin is at left-center

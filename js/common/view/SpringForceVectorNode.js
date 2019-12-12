@@ -29,7 +29,7 @@ define( require => {
       fill: HookesLawColors.SINGLE_SPRING,
       decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
       alignZero: 'right', // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     ForceVectorNode.call( this, springForceProperty, valueVisibleProperty, options );

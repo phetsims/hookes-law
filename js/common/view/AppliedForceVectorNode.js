@@ -28,7 +28,7 @@ define( require => {
     options = merge( {
       fill: HookesLawColors.APPLIED_FORCE,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     ForceVectorNode.call( this, appliedForceProperty, valueVisibleProperty, options );

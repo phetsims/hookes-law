@@ -44,7 +44,7 @@ define( require => {
       number: 1, // integer used to label the system
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     // to improve readability

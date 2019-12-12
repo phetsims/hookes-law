@@ -99,7 +99,7 @@ define( require => {
       arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
 
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     NumberControl.call( this, options.title, appliedForceProperty, appliedForceRange, options );

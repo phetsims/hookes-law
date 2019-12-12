@@ -41,7 +41,7 @@ define( require => {
 
     options = merge( {
       // phet-io
-      tandem: Tandem.required
+      tandem: Tandem.REQUIRED
     }, options );
 
     const xAxisNode = new Line( 0, 0, 1.65 * BAR_WIDTH, 0, {
