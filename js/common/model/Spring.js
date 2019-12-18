@@ -137,7 +137,7 @@ define( require => {
       // error that causes reentrant behavior.  See #63.
       reentrant: true,
       range: this.appliedForceRange,
-      units: 'newtons',
+      units: 'N',
       tandem: options.tandem.createTandem( 'appliedForceProperty' )
     } );
     phet.log && this.appliedForceProperty.link(
@@ -226,7 +226,7 @@ define( require => {
       function( appliedForce ) {
         return -appliedForce;
       }, {
-        units: 'newtons',
+        units: 'N',
         phetioType: DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'springForceProperty' )
       } );
