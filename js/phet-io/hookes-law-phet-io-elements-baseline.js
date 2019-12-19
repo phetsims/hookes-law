@@ -379,7 +379,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -389,10 +389,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -402,7 +402,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.resetAllButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -782,7 +782,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -792,10 +792,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -805,7 +805,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -1029,7 +1029,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -1039,10 +1039,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -1052,7 +1052,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.displacementPanel.displacementControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -1601,7 +1601,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -1611,10 +1611,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -1624,7 +1624,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -1848,7 +1848,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -1858,10 +1858,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -1871,7 +1871,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.systemNode.springControls.springConstantPanel.springConstantControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -2485,7 +2485,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -2495,10 +2495,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -2508,10 +2508,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -2521,7 +2521,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.barGraphRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -2784,7 +2784,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -2794,10 +2794,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -2807,10 +2807,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -2820,7 +2820,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.energyPlotRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -2992,7 +2992,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3002,10 +3002,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3015,10 +3015,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3028,7 +3028,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.energyScreen.view.visibilityControls.forcePlotRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -3304,7 +3304,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.barrierRectangle.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3314,10 +3314,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.barrierRectangle.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3327,10 +3327,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.barrierRectangle.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3340,7 +3340,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.barrierRectangle.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -3720,7 +3720,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3730,10 +3730,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3743,7 +3743,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.energyScreenButton.text": {
       "phetioDocumentation": "",
@@ -3889,7 +3889,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.homeButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3899,10 +3899,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.homeButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -3912,7 +3912,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.homeButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -4045,7 +4045,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4055,10 +4055,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4068,7 +4068,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.introScreenButton.text": {
       "phetioDocumentation": "",
@@ -4292,7 +4292,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.closeButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": true,
       "phetioEventType": "USER",
@@ -4302,10 +4302,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.closeButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": true,
       "phetioEventType": "USER",
@@ -4315,7 +4315,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutDialogCapsule.archetype.closeButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -4591,7 +4591,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4601,10 +4601,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4614,10 +4614,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4627,7 +4627,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.aboutMenuItem.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -4682,7 +4682,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4692,10 +4692,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4705,10 +4705,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4718,7 +4718,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.phetMenu.screenshotMenuItem.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -4773,7 +4773,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.phetButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4783,10 +4783,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.phetButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4796,7 +4796,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton": {
       "phetioDocumentation": "Button in the navigation bar that selects the 'systemsScreen' screen",
@@ -4916,7 +4916,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4926,10 +4926,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -4939,7 +4939,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.general.navigationBar.systemsScreenButton.text": {
       "phetioDocumentation": "",
@@ -5202,7 +5202,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5212,10 +5212,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5225,10 +5225,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5238,7 +5238,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenLargeButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -5358,7 +5358,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5368,10 +5368,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5381,10 +5381,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5394,7 +5394,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.energyScreenSmallButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -5514,7 +5514,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5524,10 +5524,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5537,10 +5537,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5550,7 +5550,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenLargeButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -5670,7 +5670,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5680,10 +5680,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5693,10 +5693,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5706,7 +5706,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.introScreenSmallButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -5852,7 +5852,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5862,10 +5862,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5875,10 +5875,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -5888,7 +5888,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenLargeButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -6008,7 +6008,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "NodeIO"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6018,10 +6018,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6031,10 +6031,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6044,7 +6044,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.homeScreen.view.systemsScreenSmallButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -6541,7 +6541,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.resetAllButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6551,10 +6551,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.resetAllButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6564,7 +6564,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.resetAllButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -6658,7 +6658,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6668,10 +6668,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6681,7 +6681,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.oneSystemRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -6801,7 +6801,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6811,10 +6811,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -6824,7 +6824,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.sceneControl.twoSystemsRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -7230,7 +7230,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -7240,10 +7240,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -7253,7 +7253,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -7477,7 +7477,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -7487,10 +7487,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -7500,7 +7500,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -8049,7 +8049,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -8059,10 +8059,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -8072,7 +8072,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -8296,7 +8296,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -8306,10 +8306,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -8319,7 +8319,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system1Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -9141,7 +9141,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -9151,10 +9151,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -9164,7 +9164,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -9388,7 +9388,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -9398,10 +9398,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -9411,7 +9411,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -9960,7 +9960,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -9970,10 +9970,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -9983,7 +9983,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -10207,7 +10207,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -10217,10 +10217,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -10230,7 +10230,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.introScreen.view.system2Node.springControls.springConstantPanel.springConstantControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -12248,7 +12248,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -12258,10 +12258,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -12271,7 +12271,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -12495,7 +12495,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -12505,10 +12505,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -12518,7 +12518,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -13041,7 +13041,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -13051,10 +13051,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -13064,7 +13064,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -13288,7 +13288,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -13298,10 +13298,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -13311,7 +13311,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.bottomSpringConstantControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -13782,7 +13782,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -13792,10 +13792,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -13805,7 +13805,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -14029,7 +14029,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14039,10 +14039,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14052,7 +14052,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.parallelSystemNode.springControls.springConstantsPanel.topSpringConstantControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -14705,7 +14705,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14715,10 +14715,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14728,7 +14728,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.resetAllButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -14835,7 +14835,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14845,10 +14845,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14858,7 +14858,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.parallelRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -14965,7 +14965,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14975,10 +14975,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -14988,7 +14988,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.sceneControl.seriesRadioButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -15537,7 +15537,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -15547,10 +15547,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -15560,7 +15560,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -15784,7 +15784,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -15794,10 +15794,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -15807,7 +15807,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.appliedForcePanel.appliedForceControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -16330,7 +16330,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -16340,10 +16340,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -16353,7 +16353,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -16577,7 +16577,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -16587,10 +16587,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -16600,7 +16600,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.leftSpringConstantControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -17071,7 +17071,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -17081,10 +17081,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -17094,7 +17094,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.leftArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -17318,7 +17318,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<NullableIO<BooleanIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -17328,10 +17328,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.pressListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -17341,7 +17341,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.seriesSystemNode.springControls.springConstantsPanel.rightSpringConstantControl.rightArrowButton.visibleProperty": {
       "phetioDocumentation": "Controls whether the Node will be visible (and interactive), see the NodeIO documentation for more details.",
@@ -18020,7 +18020,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -18030,10 +18030,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -18043,10 +18043,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -18056,7 +18056,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.componentsRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
@@ -18436,7 +18436,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioTypeName": "PropertyIO<BooleanIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.firedEmitter": {
-      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "A function that executes. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -18446,10 +18446,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "EmitterIO<NullableIO<EventIO>>"
+      "phetioTypeName": "EmitterIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.pressAction": {
-      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the Event. The arguments are:<br/><ol><li>event: EventIO</li></ol>",
+      "phetioDocumentation": "Executes whenever a press occurs. The first argument when executing can be used to convey info about the SceneryEvent. The arguments are:<br/><ol><li>event: SceneryEventIO</li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -18459,10 +18459,10 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<EventIO>"
+      "phetioTypeName": "ActionIO<SceneryEventIO>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.inputListener.releaseAction": {
-      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<EventIO></li></ol>",
+      "phetioDocumentation": "Executes whenever a release occurs. The arguments are:<br/><ol><li>event: NullableIO<SceneryEventIO></li></ol>",
       "phetioDynamicElement": false,
       "phetioDynamicElementArchetype": false,
       "phetioEventType": "USER",
@@ -18472,7 +18472,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": false,
       "phetioStudioControl": true,
-      "phetioTypeName": "ActionIO<NullableIO<EventIO>>"
+      "phetioTypeName": "ActionIO<NullableIO<SceneryEventIO>>"
     },
     "hookesLaw.systemsScreen.view.visibilityControls.totalRadioButton.opacityProperty": {
       "phetioDocumentation": "Opacity of the parent NodeIO, between 0 (invisible) and 1 (fully visible)",
