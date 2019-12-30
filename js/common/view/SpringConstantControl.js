@@ -19,7 +19,7 @@ define( require => {
   const SunConstants = require( 'SUN/SunConstants' );
   const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const newtonsPerMeterString = require( 'string!HOOKES_LAW/newtonsPerMeter' );
@@ -74,7 +74,7 @@ define( require => {
       minorTickSpacing: 100,
       thumbFill: HookesLawColors.SINGLE_SPRING,
       constrainValue: function( value ) {
-        return Util.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
+        return Utils.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
       }
     }, options.sliderOptions );
 
@@ -83,7 +83,7 @@ define( require => {
       options.sliderOptions.majorTicks = [];
       for ( let i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
         const tickValue = options.sliderOptions.majorTickValues[ i ];
-        assert && assert( Util.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
+        assert && assert( Utils.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
         options.sliderOptions.majorTicks.push( {
           value: tickValue,
           label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )

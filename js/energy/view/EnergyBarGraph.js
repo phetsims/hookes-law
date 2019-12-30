@@ -21,7 +21,7 @@ define( require => {
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const joulesString = require( 'string!HOOKES_LAW/joules' );
@@ -87,7 +87,7 @@ define( require => {
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
-      valueNode.text = StringUtils.format( pattern0Value1UnitsString, Util.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
+      valueNode.text = StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
       valueNode.left = barNode.right + 5;
       if ( !barNode.visible || barNode.height < valueNode.height / 2 ) {
         valueNode.bottom = xAxisNode.bottom;

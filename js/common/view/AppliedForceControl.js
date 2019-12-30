@@ -19,7 +19,7 @@ define( require => {
   const SunConstants = require( 'SUN/SunConstants' );
   const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const appliedForceColonString = require( 'string!HOOKES_LAW/appliedForceColon' );
@@ -44,8 +44,8 @@ define( require => {
 
     // major ticks
     assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
-    assert && assert( Util.isInteger( appliedForceRange.max ) && Util.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
-    assert && assert( Util.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
+    assert && assert( Utils.isInteger( appliedForceRange.max ) && Utils.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
+    assert && assert( Utils.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
     const majorTicks = [ {
       value: appliedForceRange.min,
       label: new Text( appliedForceRange.min, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
@@ -93,7 +93,7 @@ define( require => {
         minorTickSpacing: MINOR_TICK_SPACING,
         thumbFill: HookesLawColors.APPLIED_FORCE,
         constrainValue: function( value ) {
-          return Util.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
+          return Utils.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
         }
       },
       arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,

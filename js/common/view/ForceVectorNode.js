@@ -19,7 +19,7 @@ define( require => {
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const newtonsString = require( 'string!HOOKES_LAW/newtons' );
@@ -72,7 +72,7 @@ define( require => {
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern0Value1UnitsString, Util.toFixed( Math.abs( value ), options.decimalPlaces ), newtonsString );
+      valueNode.text = StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( Math.abs( value ), options.decimalPlaces ), newtonsString );
 
       // value position
       const margin = 5;

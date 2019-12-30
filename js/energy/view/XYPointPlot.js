@@ -33,7 +33,7 @@ define( require => {
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
   const XYAxes = require( 'HOOKES_LAW/energy/view/XYAxes' );
 
   // strings
@@ -149,7 +149,7 @@ define( require => {
 
     // visibility
     displacementVectorVisibleProperty.link( function( visible ) {
-      const xFixed = Util.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
+      const xFixed = Utils.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
       xVectorNode.visible = ( visible && xFixed !== 0 );
     } );
     valuesVisibleProperty.link( function( visible ) {
@@ -169,7 +169,7 @@ define( require => {
 
     xProperty.link( function( x ) {
 
-      const xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
+      const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
       const xView = options.xUnitLength * xFixed;
 
       // x vector
@@ -183,7 +183,7 @@ define( require => {
       xTickNode.centerX = xView;
 
       // x value
-      const xText = Util.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      const xText = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       xValueNode.text = StringUtils.format( pattern0Value1UnitsString, xText, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
@@ -221,7 +221,7 @@ define( require => {
 
     yProperty.link( function( y ) {
 
-      const yFixed = Util.toFixedNumber( y, options.yDecimalPlaces );
+      const yFixed = Utils.toFixedNumber( y, options.yDecimalPlaces );
       const yView = yFixed * options.yUnitLength;
 
       // y tick mark
@@ -229,7 +229,7 @@ define( require => {
       yTickNode.centerY = -yView;
 
       // y value
-      const yText = Util.toFixed( yFixed, options.yDecimalPlaces );
+      const yText = Utils.toFixed( yFixed, options.yDecimalPlaces );
       yValueNode.text = StringUtils.format( pattern0Value1UnitsString, yText, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes
@@ -263,7 +263,7 @@ define( require => {
     Property.multilink( [ xProperty, yProperty ],
       function( x, y ) {
 
-        const xFixed = Util.toFixedNumber( x, options.xDecimalPlaces );
+        const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
         const xView = options.xUnitLength * xFixed;
         const yView = -y * options.yUnitLength;
 

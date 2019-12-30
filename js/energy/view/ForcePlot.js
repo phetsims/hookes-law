@@ -20,7 +20,7 @@ define( require => {
   const Property = require( 'AXON/Property' );
   const Shape = require( 'KITE/Shape' );
   const Tandem = require( 'TANDEM/Tandem' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
   const XYPointPlot = require( 'HOOKES_LAW/energy/view/XYPointPlot' );
 
   // strings
@@ -108,7 +108,7 @@ define( require => {
     // update energy area (triangle)
     Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
       function( displacement, appliedForce, visible ) {
-        const fixedDisplacement = Util.toFixedNumber( displacement, options.xDecimalPlaces );
+        const fixedDisplacement = Utils.toFixedNumber( displacement, options.xDecimalPlaces );
         const x = options.xUnitLength * fixedDisplacement;
         const y = -appliedForce * options.yUnitLength;
         energyPath.visible = ( fixedDisplacement !== 0 && visible );

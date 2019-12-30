@@ -24,7 +24,7 @@ define( require => {
   const Shape = require( 'KITE/Shape' );
   const SimpleDragHandler = require( 'SCENERY/input/SimpleDragHandler' );
   const Tandem = require( 'TANDEM/Tandem' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // constants
   const PINCER_RADIUS = 35;
@@ -149,9 +149,9 @@ define( require => {
 
         // constrain to multiples of a specific interval, see #54
         if ( options.displacementInterval ) {
-          left = Util.roundToInterval( left, options.displacementInterval );
+          left = Utils.roundToInterval( left, options.displacementInterval );
         }
-        left = Util.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        left = Utils.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
 
         phet.log && phet.log( '>>>>> RoboticArmNode drag' );
         roboticArm.leftProperty.set( left );

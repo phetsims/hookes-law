@@ -19,7 +19,7 @@ define( require => {
   const SunConstants = require( 'SUN/SunConstants' );
   const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const displacementColonString = require( 'string!HOOKES_LAW/displacementColon' );
@@ -79,7 +79,7 @@ define( require => {
       thumbFill: HookesLawColors.DISPLACEMENT,
       constrainValue: function( value ) {
         // constrain to multiples of a specific interval, see #54
-        return Util.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
+        return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
       }
     }, options.sliderOptions );
 
@@ -88,7 +88,7 @@ define( require => {
       options.sliderOptions.majorTicks = [];
       for ( let i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
         const tickValue = options.sliderOptions.majorTickValues[ i ];
-        assert && assert( Util.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
+        assert && assert( Utils.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
         options.sliderOptions.majorTicks.push( {
           value: tickValue,
           label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )

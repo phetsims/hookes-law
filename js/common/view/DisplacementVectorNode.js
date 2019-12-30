@@ -21,7 +21,7 @@ define( require => {
   const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
   const Tandem = require( 'TANDEM/Tandem' );
   const Text = require( 'SCENERY/nodes/Text' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
 
   // strings
   const metersString = require( 'string!HOOKES_LAW/meters' );
@@ -72,7 +72,7 @@ define( require => {
       }
 
       // update the value
-      const displacementText = Util.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
       valueNode.text = StringUtils.format( pattern0Value1UnitsString, displacementText, metersString );
 
       // center value on arrow

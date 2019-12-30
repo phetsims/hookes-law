@@ -29,7 +29,7 @@ define( require => {
   const RoboticArmNode = require( 'HOOKES_LAW/common/view/RoboticArmNode' );
   const SpringForceVectorNode = require( 'HOOKES_LAW/common/view/SpringForceVectorNode' );
   const Tandem = require( 'TANDEM/Tandem' );
-  const Util = require( 'DOT/Util' );
+  const Utils = require( 'DOT/Utils' );
   const WallNode = require( 'HOOKES_LAW/common/view/WallNode' );
 
   // constants
@@ -211,7 +211,7 @@ define( require => {
     Property.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
       function( numberOfInteractions, displacement ) {
         assert && assert( numberOfInteractions >= 0 );
-        const fixedDisplacement = Util.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        const fixedDisplacement = Utils.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 
