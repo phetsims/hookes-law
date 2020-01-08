@@ -66,7 +66,7 @@ define( require => {
       // name that appears in log messages
       logName: null,
 
-      // {number} x location of the left end of the spring, units = m
+      // {number} x position of the left end of the spring, units = m
       left: 0,
 
       // {number} length of the spring at equilibrium, units = m
@@ -166,7 +166,7 @@ define( require => {
     phet.log && this.displacementProperty.link(
       function( displacement ) { phet.log( options.logName + ' displacement=' + displacement ); } );
 
-    // @public location of the left end of the spring
+    // @public position of the left end of the spring
     this.leftProperty = new NumberProperty( options.left );
     phet.log && this.leftProperty.link(
       function( left ) { phet.log( options.logName + ' left=' + left ); } );
@@ -233,7 +233,7 @@ define( require => {
     phet.log && this.springForceProperty.link(
       function( springForce ) { phet.log( options.logName + ' springForce=' + springForce ); } );
 
-    // @public equilibrium x location
+    // @public equilibrium x position
     // This must be a Property to support systems of springs. For example, for 2 springs in series,
     // equilibriumXProperty changes for the right spring, whose left end moves.
     this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
@@ -243,7 +243,7 @@ define( require => {
     phet.log && this.equilibriumXProperty.link(
       function( equilibriumX ) { phet.log( options.logName + ' equilibriumX=' + equilibriumX ); } );
 
-    // @public x location of the right end of the spring
+    // @public x position of the right end of the spring
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
       function( equilibriumX, displacement ) {
         const left = self.leftProperty.get();

@@ -46,7 +46,7 @@ define( require => {
     // @public
     this.topSpring = new Spring( {
       logName: 'topSpring',
-      left: 0, // x location of the left end of the spring, units = m
+      left: 0, // x position of the left end of the spring, units = m
       equilibriumLength: 1.5, // length of the spring at equilibrium, units = m
       springConstantRange: new RangeWithValue( 200, 600, 200 ), // range and initial value of k1, units = N/m
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of F1, units = N
