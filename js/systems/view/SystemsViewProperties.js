@@ -5,56 +5,52 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const BooleanProperty = require( 'AXON/BooleanProperty' );
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const HookesLawQueryParameters = require( 'HOOKES_LAW/common/HookesLawQueryParameters' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const StringProperty = require( 'AXON/StringProperty' );
-  const ViewProperties = require( 'HOOKES_LAW/common/view/ViewProperties' );
+import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
+import inherit from '../../../../phet-core/js/inherit.js';
+import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
+import ViewProperties from '../../common/view/ViewProperties.js';
+import hookesLaw from '../../hookesLaw.js';
+
+/**
+ * @param {Tandem} tandem
+ * @constructor
+ */
+function SystemsViewProperties( tandem ) {
+
+  ViewProperties.call( this, tandem );
+
+  // @public which system is visible
+  this.seriesParallelProperty = new StringProperty( 'parallel', {
+    validValues: [ 'series', 'parallel' ],
+    tandem: tandem.createTandem( 'seriesParallelProperty' )
+  } );
+
+  // @public is the spring force vector visible?
+  this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+    tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
+  } );
+
+  // @public how spring force is represented
+  this.springForceRepresentationProperty = new StringProperty( 'total', {
+    validValues: [ 'total', 'components' ],
+    tandem: tandem.createTandem( 'springForceRepresentationProperty' )
+  } );
+}
+
+hookesLaw.register( 'SystemsViewProperties', SystemsViewProperties );
+
+export default inherit( ViewProperties, SystemsViewProperties, {
 
   /**
-   * @param {Tandem} tandem
-   * @constructor
+   * @public
+   * @override
    */
-  function SystemsViewProperties( tandem ) {
-
-    ViewProperties.call( this, tandem );
-
-    // @public which system is visible
-    this.seriesParallelProperty = new StringProperty( 'parallel', {
-      validValues: [ 'series', 'parallel' ],
-      tandem: tandem.createTandem( 'seriesParallelProperty' )
-    } );
-
-    // @public is the spring force vector visible?
-    this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-      tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
-    } );
-
-    // @public how spring force is represented
-    this.springForceRepresentationProperty = new StringProperty( 'total', {
-      validValues: [ 'total', 'components' ],
-      tandem: tandem.createTandem( 'springForceRepresentationProperty' )
-    } );
+  reset: function() {
+    this.seriesParallelProperty.reset();
+    this.springForceVectorVisibleProperty.reset();
+    this.springForceRepresentationProperty.reset();
+    ViewProperties.prototype.reset.call( this );
   }
-
-  hookesLaw.register( 'SystemsViewProperties', SystemsViewProperties );
-
-  return inherit( ViewProperties, SystemsViewProperties, {
-
-    /**
-     * @public
-     * @override
-     */
-    reset: function() {
-      this.seriesParallelProperty.reset();
-      this.springForceVectorVisibleProperty.reset();
-      this.springForceRepresentationProperty.reset();
-      ViewProperties.prototype.reset.call( this );
-    }
-  } );
 } );

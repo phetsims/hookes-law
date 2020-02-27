@@ -5,158 +5,153 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const Animation = require( 'TWIXT/Animation' );
-  const Easing = require( 'TWIXT/Easing' );
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const NumberProperty = require( 'AXON/NumberProperty' );
+import NumberProperty from '../../../../axon/js/NumberProperty.js';
+import inherit from '../../../../phet-core/js/inherit.js';
+import Animation from '../../../../twixt/js/Animation.js';
+import Easing from '../../../../twixt/js/Easing.js';
+import hookesLaw from '../../hookesLaw.js';
 
-  // constants
-  const STEPPER = null; // step method must be called by the client
-  const TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation, in seconds
-  const OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seconds
+// constants
+const STEPPER = null; // step method must be called by the client
+const TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation, in seconds
+const OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seconds
 
-  /**
-   * @param {NumberProperty} numberOfSystemsProperty
-   * @param {Node} system1Node
-   * @param {Node} system2Node
-   * @param {Bounds2} layoutBounds - of the associated ScreenView
-   * @param {Tandem} tandem
-   * @constructor
-   */
-  function IntroAnimator( numberOfSystemsProperty, system1Node, system2Node, layoutBounds, tandem ) {
+/**
+ * @param {NumberProperty} numberOfSystemsProperty
+ * @param {Node} system1Node
+ * @param {Node} system2Node
+ * @param {Bounds2} layoutBounds - of the associated ScreenView
+ * @param {Tandem} tandem
+ * @constructor
+ */
+function IntroAnimator( numberOfSystemsProperty, system1Node, system2Node, layoutBounds, tandem ) {
 
-    const self = this;
+  const self = this;
 
-    // @private which {Animation|null} in the chain should be stepped
-    this.activeAnimation = null;
+  // @private which {Animation|null} in the chain should be stepped
+  this.activeAnimation = null;
 
-    // Vertical position of system 1, instrumented for PhET-iO to support record/playback, see #53.
-    const system1CenterYProperty = new NumberProperty( system1Node.centerY, {
-      tandem: tandem.createTandem( 'system1CenterYProperty' )
-    } );
-    system1CenterYProperty.link( function( centerY ) {
-      system1Node.centerY = centerY;
-    } );
-
-    // Opacity of system 2, instrumented for PhET-iO to support record/playback, see #53.
-    const system2OpacityProperty = new NumberProperty( system2Node.opacity, {
-      isValidValue: function( value ) { return value >= 0 && value <= 1; },
-      tandem: tandem.createTandem( 'system2OpacityProperty' )
-    } );
-    system2OpacityProperty.link( function( opacity ) {
-      system2Node.opacity = opacity;
-    } );
-
-    let system1Animaton = null; // {Animation|null} animation for system 1 translation
-    let system2Animation = null; // {Animation|null} animation for system 2 opacity (fade)
-
-    // unlink not needed
-    numberOfSystemsProperty.link( function( numberOfSystems ) {
-
-      // Stop any animations that are in progress.
-      system1Animaton && system1Animaton.stop();
-      system2Animation && system2Animation.stop();
-
-      if ( numberOfSystems === 1 ) {
-
-        // Fade out system 2, then move system 1 to vertical center of layoutBounds.
-
-        // Fade out system 2.
-        system2Animation = new Animation( {
-          stepEmitter: STEPPER,
-          duration: OPACITY_DURATION,
-          targets: [ {
-            property: system2OpacityProperty,
-            easing: Easing.LINEAR,
-            to: 0
-          } ]
-        } );
-
-        // Translate system 1.
-        system1Animaton = new Animation( {
-          stepEmitter: STEPPER,
-          duration: TRANSLATION_DURATION,
-          targets: [ {
-            property: system1CenterYProperty,
-            easing: Easing.LINEAR,
-            to: layoutBounds.centerY // to centerY of layout bounds
-          } ]
-        } );
-
-        // When the fade of system 2 completes, switch to translation of system 1.
-        system2Animation.finishEmitter.addListener( function() {
-          system2Node.visible = false; // Make system 2 invisible, so you can't interact with it.
-          self.activeAnimation = system1Animaton;
-          system1Animaton.start();
-        } );
-
-        // When the translation of system 1 completes, notify that the animation has completed.
-        system1Animaton.finishEmitter.addListener( function() {
-          self.activeAnimation = null;
-        } );
-
-        // Start with the fade of system 2.
-        self.activeAnimation = system2Animation;
-      }
-      else {
-
-        // Move system 1 to top of layoutBounds, then fade in system 2.
-
-        // Translate system 1.
-        system1Animaton = new Animation( {
-          stepEmitter: STEPPER,
-          duration: TRANSLATION_DURATION,
-          targets: [ {
-            property: system1CenterYProperty,
-            easing: Easing.LINEAR,
-            to: layoutBounds.minY + ( 0.25 * layoutBounds.height ) // towards top of layoutBounds
-          } ]
-        } );
-
-        // Fade in system 2.
-        system2Animation = new Animation( {
-          stepEmitter: STEPPER,
-          duration: OPACITY_DURATION,
-          targets: [ {
-            property: system2OpacityProperty,
-            easing: Easing.LINEAR,
-            to: 1
-          } ]
-        } );
-
-        // When translation of system 1 completes, switch to fade of system 2.
-        system1Animaton.finishEmitter.addListener( function() {
-          system2Node.visible = true; // Make system 2 visible.
-          self.activeAnimation = system2Animation;
-          system2Animation.start();
-        } );
-
-        // When fade of system 2 completes, notify that the animation has completed.
-        system2Animation.finishEmitter.addListener( function() {
-          self.activeAnimation = null;
-        } );
-
-        // Start the translation of system 1.
-        self.activeAnimation = system1Animaton;
-      }
-
-      self.activeAnimation.start();
-    } );
-  }
-
-  hookesLaw.register( 'IntroAnimator', IntroAnimator );
-
-  return inherit( Object, IntroAnimator, {
-
-    // @public
-    step: function( dt ) {
-      this.activeAnimation && this.activeAnimation.step( dt );
-    }
+  // Vertical position of system 1, instrumented for PhET-iO to support record/playback, see #53.
+  const system1CenterYProperty = new NumberProperty( system1Node.centerY, {
+    tandem: tandem.createTandem( 'system1CenterYProperty' )
   } );
-} )
-;
+  system1CenterYProperty.link( function( centerY ) {
+    system1Node.centerY = centerY;
+  } );
+
+  // Opacity of system 2, instrumented for PhET-iO to support record/playback, see #53.
+  const system2OpacityProperty = new NumberProperty( system2Node.opacity, {
+    isValidValue: function( value ) { return value >= 0 && value <= 1; },
+    tandem: tandem.createTandem( 'system2OpacityProperty' )
+  } );
+  system2OpacityProperty.link( function( opacity ) {
+    system2Node.opacity = opacity;
+  } );
+
+  let system1Animaton = null; // {Animation|null} animation for system 1 translation
+  let system2Animation = null; // {Animation|null} animation for system 2 opacity (fade)
+
+  // unlink not needed
+  numberOfSystemsProperty.link( function( numberOfSystems ) {
+
+    // Stop any animations that are in progress.
+    system1Animaton && system1Animaton.stop();
+    system2Animation && system2Animation.stop();
+
+    if ( numberOfSystems === 1 ) {
+
+      // Fade out system 2, then move system 1 to vertical center of layoutBounds.
+
+      // Fade out system 2.
+      system2Animation = new Animation( {
+        stepEmitter: STEPPER,
+        duration: OPACITY_DURATION,
+        targets: [ {
+          property: system2OpacityProperty,
+          easing: Easing.LINEAR,
+          to: 0
+        } ]
+      } );
+
+      // Translate system 1.
+      system1Animaton = new Animation( {
+        stepEmitter: STEPPER,
+        duration: TRANSLATION_DURATION,
+        targets: [ {
+          property: system1CenterYProperty,
+          easing: Easing.LINEAR,
+          to: layoutBounds.centerY // to centerY of layout bounds
+        } ]
+      } );
+
+      // When the fade of system 2 completes, switch to translation of system 1.
+      system2Animation.finishEmitter.addListener( function() {
+        system2Node.visible = false; // Make system 2 invisible, so you can't interact with it.
+        self.activeAnimation = system1Animaton;
+        system1Animaton.start();
+      } );
+
+      // When the translation of system 1 completes, notify that the animation has completed.
+      system1Animaton.finishEmitter.addListener( function() {
+        self.activeAnimation = null;
+      } );
+
+      // Start with the fade of system 2.
+      self.activeAnimation = system2Animation;
+    }
+    else {
+
+      // Move system 1 to top of layoutBounds, then fade in system 2.
+
+      // Translate system 1.
+      system1Animaton = new Animation( {
+        stepEmitter: STEPPER,
+        duration: TRANSLATION_DURATION,
+        targets: [ {
+          property: system1CenterYProperty,
+          easing: Easing.LINEAR,
+          to: layoutBounds.minY + ( 0.25 * layoutBounds.height ) // towards top of layoutBounds
+        } ]
+      } );
+
+      // Fade in system 2.
+      system2Animation = new Animation( {
+        stepEmitter: STEPPER,
+        duration: OPACITY_DURATION,
+        targets: [ {
+          property: system2OpacityProperty,
+          easing: Easing.LINEAR,
+          to: 1
+        } ]
+      } );
+
+      // When translation of system 1 completes, switch to fade of system 2.
+      system1Animaton.finishEmitter.addListener( function() {
+        system2Node.visible = true; // Make system 2 visible.
+        self.activeAnimation = system2Animation;
+        system2Animation.start();
+      } );
+
+      // When fade of system 2 completes, notify that the animation has completed.
+      system2Animation.finishEmitter.addListener( function() {
+        self.activeAnimation = null;
+      } );
+
+      // Start the translation of system 1.
+      self.activeAnimation = system1Animaton;
+    }
+
+    self.activeAnimation.start();
+  } );
+}
+
+hookesLaw.register( 'IntroAnimator', IntroAnimator );
+
+export default inherit( Object, IntroAnimator, {
+
+  // @public
+  step: function( dt ) {
+    this.activeAnimation && this.activeAnimation.step( dt );
+  }
+} );

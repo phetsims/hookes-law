@@ -5,35 +5,32 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const Line = require( 'SCENERY/nodes/Line' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Tandem = require( 'TANDEM/Tandem' );
+import inherit from '../../../../phet-core/js/inherit.js';
+import merge from '../../../../phet-core/js/merge.js';
+import Line from '../../../../scenery/js/nodes/Line.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import hookesLaw from '../../hookesLaw.js';
+import HookesLawColors from '../HookesLawColors.js';
 
-  /**
-   * @param {number} length
-   * @param {Object} [options]
-   * @constructor
-   */
-  function EquilibriumPositionNode( length, options ) {
+/**
+ * @param {number} length
+ * @param {Object} [options]
+ * @constructor
+ */
+function EquilibriumPositionNode( length, options ) {
 
-    options = merge( {
-      stroke: HookesLawColors.EQUILIBRIUM_POSITION,
-      lineWidth: 2,
-      lineDash: [ 3, 3 ],
-      tandem: Tandem.OPTIONAL // because this node is used to create icons
-    }, options );
+  options = merge( {
+    stroke: HookesLawColors.EQUILIBRIUM_POSITION,
+    lineWidth: 2,
+    lineDash: [ 3, 3 ],
+    tandem: Tandem.OPTIONAL // because this node is used to create icons
+  }, options );
 
-    Line.call( this, 0, 0, 0, length, options );
-  }
+  Line.call( this, 0, 0, 0, length, options );
+}
 
-  hookesLaw.register( 'EquilibriumPositionNode', EquilibriumPositionNode );
+hookesLaw.register( 'EquilibriumPositionNode', EquilibriumPositionNode );
 
-  return inherit( Line, EquilibriumPositionNode );
-} );
+inherit( Line, EquilibriumPositionNode );
+export default EquilibriumPositionNode;

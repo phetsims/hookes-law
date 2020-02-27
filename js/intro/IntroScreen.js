@@ -5,42 +5,39 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const IntroModel = require( 'HOOKES_LAW/intro/model/IntroModel' );
-  const IntroScreenView = require( 'HOOKES_LAW/intro/view/IntroScreenView' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Screen = require( 'JOIST/Screen' );
+import Screen from '../../../joist/js/Screen.js';
+import inherit from '../../../phet-core/js/inherit.js';
+import merge from '../../../phet-core/js/merge.js';
+import HookesLawConstants from '../common/HookesLawConstants.js';
+import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
+import hookesLawStrings from '../hookes-law-strings.js';
+import hookesLaw from '../hookesLaw.js';
+import IntroModel from './model/IntroModel.js';
+import IntroScreenView from './view/IntroScreenView.js';
 
-  // strings
-  const introString = require( 'string!HOOKES_LAW/intro' );
+const introString = hookesLawStrings.intro;
 
-  /**
-   * @param {Tandem} tandem
-   * @constructor
-   */
-  function IntroScreen( tandem ) {
+/**
+ * @param {Tandem} tandem
+ * @constructor
+ */
+function IntroScreen( tandem ) {
 
-    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: introString,
-      homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
-      tandem: tandem
-    } );
+  const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    name: introString,
+    homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
+    tandem: tandem
+  } );
 
-    Screen.call( this,
-      function() { return new IntroModel( tandem.createTandem( 'model' ) ); },
-      function( model ) { return new IntroScreenView( model, tandem.createTandem( 'view' ) ); },
-      options
-    );
-  }
+  Screen.call( this,
+    function() { return new IntroModel( tandem.createTandem( 'model' ) ); },
+    function( model ) { return new IntroScreenView( model, tandem.createTandem( 'view' ) ); },
+    options
+  );
+}
 
-  hookesLaw.register( 'IntroScreen', IntroScreen );
+hookesLaw.register( 'IntroScreen', IntroScreen );
 
-  return inherit( Screen, IntroScreen );
-} );
+inherit( Screen, IntroScreen );
+export default IntroScreen;

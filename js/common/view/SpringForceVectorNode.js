@@ -5,37 +5,34 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const ForceVectorNode = require( 'HOOKES_LAW/common/view/ForceVectorNode' );
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Tandem = require( 'TANDEM/Tandem' );
+import inherit from '../../../../phet-core/js/inherit.js';
+import merge from '../../../../phet-core/js/merge.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import hookesLaw from '../../hookesLaw.js';
+import HookesLawColors from '../HookesLawColors.js';
+import HookesLawConstants from '../HookesLawConstants.js';
+import ForceVectorNode from './ForceVectorNode.js';
 
-  /**
-   * @param {NumberProperty} springForceProperty units = N
-   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
-   * @param {Object} [options]
-   * @constructor
-   */
-  function SpringForceVectorNode( springForceProperty, valueVisibleProperty, options ) {
+/**
+ * @param {NumberProperty} springForceProperty units = N
+ * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
+ * @param {Object} [options]
+ * @constructor
+ */
+function SpringForceVectorNode( springForceProperty, valueVisibleProperty, options ) {
 
-    options = merge( {
-      fill: HookesLawColors.SINGLE_SPRING,
-      decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
-      alignZero: 'right', // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
-      tandem: Tandem.REQUIRED
-    }, options );
+  options = merge( {
+    fill: HookesLawColors.SINGLE_SPRING,
+    decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
+    alignZero: 'right', // AppliedForceVectorNode use 'left', so we use 'right' so that '0' values won't overlap
+    tandem: Tandem.REQUIRED
+  }, options );
 
-    ForceVectorNode.call( this, springForceProperty, valueVisibleProperty, options );
-  }
+  ForceVectorNode.call( this, springForceProperty, valueVisibleProperty, options );
+}
 
-  hookesLaw.register( 'SpringForceVectorNode', SpringForceVectorNode );
+hookesLaw.register( 'SpringForceVectorNode', SpringForceVectorNode );
 
-  return inherit( ForceVectorNode, SpringForceVectorNode );
-} );
+inherit( ForceVectorNode, SpringForceVectorNode );
+export default SpringForceVectorNode;

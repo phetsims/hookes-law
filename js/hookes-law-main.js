@@ -5,39 +5,35 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const EnergyScreen = require( 'HOOKES_LAW/energy/EnergyScreen' );
-  const IntroScreen = require( 'HOOKES_LAW/intro/IntroScreen' );
-  const Sim = require( 'JOIST/Sim' );
-  const SimLauncher = require( 'JOIST/SimLauncher' );
-  const SystemsScreen = require( 'HOOKES_LAW/systems/SystemsScreen' );
-  const Tandem = require( 'TANDEM/Tandem' );
+import Sim from '../../joist/js/Sim.js';
+import SimLauncher from '../../joist/js/SimLauncher.js';
+import Tandem from '../../tandem/js/Tandem.js';
+import EnergyScreen from './energy/EnergyScreen.js';
+import hookesLawStrings from './hookes-law-strings.js';
+import IntroScreen from './intro/IntroScreen.js';
+import SystemsScreen from './systems/SystemsScreen.js';
 
-  // strings
-  const hookesLawTitleString = require( 'string!HOOKES_LAW/hookes-law.title' );
+const hookesLawTitleString = hookesLawStrings[ 'hookes-law' ].title;
 
-  const options = {
-    credits: {
-      leadDesign: 'Amy Rouinfar',
-      softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-      team: 'Michael Dubson, Bruna Shinohara de Mendon\u00e7a, Ariel Paul, Kathy Perkins, Martin Veillette',
-      qualityAssurance: 'Steele Dalton, Elise Morgan, Oliver Orejola, Bryan Yoelin',
-      graphicArts: 'Mariah Hermsmeyer'
-    }
-  };
+const options = {
+  credits: {
+    leadDesign: 'Amy Rouinfar',
+    softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
+    team: 'Michael Dubson, Bruna Shinohara de Mendon\u00e7a, Ariel Paul, Kathy Perkins, Martin Veillette',
+    qualityAssurance: 'Steele Dalton, Elise Morgan, Oliver Orejola, Bryan Yoelin',
+    graphicArts: 'Mariah Hermsmeyer'
+  }
+};
 
-  SimLauncher.launch( () => {
+SimLauncher.launch( () => {
 
-    const screens = [
-      new IntroScreen( Tandem.ROOT.createTandem( 'introScreen' ) ),
-      new SystemsScreen( Tandem.ROOT.createTandem( 'systemsScreen' ) ),
-      new EnergyScreen( Tandem.ROOT.createTandem( 'energyScreen' ) )
-    ];
+  const screens = [
+    new IntroScreen( Tandem.ROOT.createTandem( 'introScreen' ) ),
+    new SystemsScreen( Tandem.ROOT.createTandem( 'systemsScreen' ) ),
+    new EnergyScreen( Tandem.ROOT.createTandem( 'energyScreen' ) )
+  ];
 
-    const sim = new Sim( hookesLawTitleString, screens, options );
-    sim.start();
-  } );
+  const sim = new Sim( hookesLawTitleString, screens, options );
+  sim.start();
 } );

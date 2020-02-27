@@ -5,44 +5,41 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const HookesLawIconFactory = require( 'HOOKES_LAW/common/view/HookesLawIconFactory' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const merge = require( 'PHET_CORE/merge' );
-  const RadioButtonGroup = require( 'SUN/buttons/RadioButtonGroup' );
-  const Tandem = require( 'TANDEM/Tandem' );
+import inherit from '../../../../phet-core/js/inherit.js';
+import merge from '../../../../phet-core/js/merge.js';
+import RadioButtonGroup from '../../../../sun/js/buttons/RadioButtonGroup.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
+import hookesLaw from '../../hookesLaw.js';
 
-  /**
-   * @param {NumberProperty} numberOfSystemsProperty
-   * @param {Object} [options]
-   * @constructor
-   */
-  function IntroSceneControl( numberOfSystemsProperty, options ) {
+/**
+ * @param {NumberProperty} numberOfSystemsProperty
+ * @param {Object} [options]
+ * @constructor
+ */
+function IntroSceneControl( numberOfSystemsProperty, options ) {
 
-    options = merge( {
+  options = merge( {
 
-      // RadioButtonGroup options
-      orientation: 'horizontal',
-      spacing: 10,
-      buttonContentXMargin: 20,
-      buttonContentYMargin: 5,
-      selectedLineWidth: 2,
+    // RadioButtonGroup options
+    orientation: 'horizontal',
+    spacing: 10,
+    buttonContentXMargin: 20,
+    buttonContentYMargin: 5,
+    selectedLineWidth: 2,
 
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
+    // phet-io
+    tandem: Tandem.REQUIRED
+  }, options );
 
-    RadioButtonGroup.call( this, numberOfSystemsProperty, [
-      { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
-      { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
-    ], options );
-  }
+  RadioButtonGroup.call( this, numberOfSystemsProperty, [
+    { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
+    { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
+  ], options );
+}
 
-  hookesLaw.register( 'IntroSceneControl', IntroSceneControl );
+hookesLaw.register( 'IntroSceneControl', IntroSceneControl );
 
-  return inherit( RadioButtonGroup, IntroSceneControl );
-} );
+inherit( RadioButtonGroup, IntroSceneControl );
+export default IntroSceneControl;

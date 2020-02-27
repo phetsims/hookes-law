@@ -5,32 +5,28 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const ParallelSystem = require( 'HOOKES_LAW/systems/model/ParallelSystem' );
-  const SeriesSystem = require( 'HOOKES_LAW/systems/model/SeriesSystem' );
+import inherit from '../../../../phet-core/js/inherit.js';
+import hookesLaw from '../../hookesLaw.js';
+import ParallelSystem from './ParallelSystem.js';
+import SeriesSystem from './SeriesSystem.js';
 
-  /**
-   * @param {Tandem} tandem
-   * @constructor
-   */
-  function SystemsModel( tandem ) {
-    this.seriesSystem = new SeriesSystem( tandem.createTandem( 'seriesSystem' ) );
-    this.parallelSystem = new ParallelSystem( tandem.createTandem( 'parallelSystem' ) );
+/**
+ * @param {Tandem} tandem
+ * @constructor
+ */
+function SystemsModel( tandem ) {
+  this.seriesSystem = new SeriesSystem( tandem.createTandem( 'seriesSystem' ) );
+  this.parallelSystem = new ParallelSystem( tandem.createTandem( 'parallelSystem' ) );
+}
+
+hookesLaw.register( 'SystemsModel', SystemsModel );
+
+export default inherit( Object, SystemsModel, {
+
+  // @public
+  reset: function() {
+    this.seriesSystem.reset();
+    this.parallelSystem.reset();
   }
-
-  hookesLaw.register( 'SystemsModel', SystemsModel );
-
-  return inherit( Object, SystemsModel, {
-
-    // @public
-    reset: function() {
-      this.seriesSystem.reset();
-      this.parallelSystem.reset();
-    }
-  } );
 } );

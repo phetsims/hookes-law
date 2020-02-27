@@ -5,107 +5,104 @@
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const hookesLaw = require( 'HOOKES_LAW/hookesLaw' );
-  const HookesLawColors = require( 'HOOKES_LAW/common/HookesLawColors' );
-  const HookesLawConstants = require( 'HOOKES_LAW/common/HookesLawConstants' );
-  const inherit = require( 'PHET_CORE/inherit' );
-  const merge = require( 'PHET_CORE/merge' );
-  const NumberControl = require( 'SCENERY_PHET/NumberControl' );
-  const StringUtils = require( 'PHETCOMMON/util/StringUtils' );
-  const SunConstants = require( 'SUN/SunConstants' );
-  const Tandem = require( 'TANDEM/Tandem' );
-  const Text = require( 'SCENERY/nodes/Text' );
-  const Utils = require( 'DOT/Utils' );
+import Utils from '../../../../dot/js/Utils.js';
+import inherit from '../../../../phet-core/js/inherit.js';
+import merge from '../../../../phet-core/js/merge.js';
+import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
+import NumberControl from '../../../../scenery-phet/js/NumberControl.js';
+import Text from '../../../../scenery/js/nodes/Text.js';
+import SunConstants from '../../../../sun/js/SunConstants.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import hookesLawStrings from '../../hookes-law-strings.js';
+import hookesLaw from '../../hookesLaw.js';
+import HookesLawColors from '../HookesLawColors.js';
+import HookesLawConstants from '../HookesLawConstants.js';
 
-  // strings
-  const appliedForceColonString = require( 'string!HOOKES_LAW/appliedForceColon' );
-  const newtonsString = require( 'string!HOOKES_LAW/newtons' );
-  const pattern0Value1UnitsString = require( 'string!HOOKES_LAW/pattern.0value.1units' );
+const appliedForceColonString = hookesLawStrings.appliedForceColon;
+const newtonsString = hookesLawStrings.newtons;
+const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
 
-  // fill in the {1} units, but leave the {0} value alone.
-  const VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
-    SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsString );
+// fill in the {1} units, but leave the {0} value alone.
+const VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
+  SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsString );
 
-  // constants
-  const MINOR_TICK_SPACING = 10;
+// constants
+const MINOR_TICK_SPACING = 10;
 
-  /**
-   * @param {NumberProperty} appliedForceProperty units = N
-   * @param {Range} appliedForceRange
-   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
-   * @param {Object} [options]
-   * @constructor
-   */
-  function AppliedForceControl( appliedForceProperty, appliedForceRange, numberOfInteractionsInProgressProperty, options ) {
+/**
+ * @param {NumberProperty} appliedForceProperty units = N
+ * @param {Range} appliedForceRange
+ * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+ * @param {Object} [options]
+ * @constructor
+ */
+function AppliedForceControl( appliedForceProperty, appliedForceRange, numberOfInteractionsInProgressProperty, options ) {
 
-    // major ticks
-    assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
-    assert && assert( Utils.isInteger( appliedForceRange.max ) && Utils.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
-    assert && assert( Utils.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
-    const majorTicks = [ {
-      value: appliedForceRange.min,
-      label: new Text( appliedForceRange.min, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
-    }, {
-      value: appliedForceRange.min / 2,
-      label: null
-    }, {
-      value: appliedForceRange.getCenter(),
-      label: new Text( 0, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
-    }, {
-      value: appliedForceRange.max / 2,
-      label: null
-    }, {
-      value: appliedForceRange.max,
-      label: new Text( appliedForceRange.max, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
-    } ];
+  // major ticks
+  assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
+  assert && assert( Utils.isInteger( appliedForceRange.max ) && Utils.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
+  assert && assert( Utils.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
+  const majorTicks = [ {
+    value: appliedForceRange.min,
+    label: new Text( appliedForceRange.min, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+  }, {
+    value: appliedForceRange.min / 2,
+    label: null
+  }, {
+    value: appliedForceRange.getCenter(),
+    label: new Text( 0, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+  }, {
+    value: appliedForceRange.max / 2,
+    label: null
+  }, {
+    value: appliedForceRange.max,
+    label: new Text( appliedForceRange.max, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+  } ];
 
-    options = merge( {
-      title: appliedForceColonString,
+  options = merge( {
+    title: appliedForceColonString,
 
-      // NumberControl options
-      delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
-      startCallback: function() {
-        phet.log && phet.log( '>>>>> AppliedForceControl start interaction' );
-        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
-      },
-      endCallback: function() {
-        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
-        phet.log && phet.log( '>>>>> AppliedForceControl end interaction' );
-      },
+    // NumberControl options
+    delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
+    startCallback: function() {
+      phet.log && phet.log( '>>>>> AppliedForceControl start interaction' );
+      numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
+    },
+    endCallback: function() {
+      numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
+      phet.log && phet.log( '>>>>> AppliedForceControl end interaction' );
+    },
 
-      // options passed to subcomponents
-      titleNodeOptions: {
-        maxWidth: 200, // i18n, determined empirically
-        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
-      },
-      numberDisplayOptions: {
-        maxWidth: 100, // i18n, determined empirically
-        font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
-        decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-        valuePattern: VALUE_PATTERN
-      },
-      sliderOptions: {
-        majorTicks: majorTicks,
-        minorTickSpacing: MINOR_TICK_SPACING,
-        thumbFill: HookesLawColors.APPLIED_FORCE,
-        constrainValue: function( value ) {
-          return Utils.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
-        }
-      },
-      arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
+    // options passed to subcomponents
+    titleNodeOptions: {
+      maxWidth: 200, // i18n, determined empirically
+      font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
+    },
+    numberDisplayOptions: {
+      maxWidth: 100, // i18n, determined empirically
+      font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
+      decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
+      valuePattern: VALUE_PATTERN
+    },
+    sliderOptions: {
+      majorTicks: majorTicks,
+      minorTickSpacing: MINOR_TICK_SPACING,
+      thumbFill: HookesLawColors.APPLIED_FORCE,
+      constrainValue: function( value ) {
+        return Utils.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
+      }
+    },
+    arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
 
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
+    // phet-io
+    tandem: Tandem.REQUIRED
+  }, options );
 
-    NumberControl.call( this, options.title, appliedForceProperty, appliedForceRange, options );
-  }
+  NumberControl.call( this, options.title, appliedForceProperty, appliedForceRange, options );
+}
 
-  hookesLaw.register( 'AppliedForceControl', AppliedForceControl );
+hookesLaw.register( 'AppliedForceControl', AppliedForceControl );
 
-  return inherit( NumberControl, AppliedForceControl );
-} );
+inherit( NumberControl, AppliedForceControl );
+export default AppliedForceControl;
