@@ -29,7 +29,7 @@ define( require => {
     }
   };
 
-  SimLauncher.launch( function() {
+  SimLauncher.launch( () => {
 
     const screens = [
       new IntroScreen( Tandem.ROOT.createTandem( 'introScreen' ) ),
