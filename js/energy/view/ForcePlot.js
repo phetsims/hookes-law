@@ -1,4 +1,4 @@
-// Copyright 2015-2019, University of Colorado Boulder
+// Copyright 2015-2020, University of Colorado Boulder
 
 /**
  *  ForcePlot is an XY plot of displacement (x axis) vs force (y axis),
