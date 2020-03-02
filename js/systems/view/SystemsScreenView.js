@@ -88,7 +88,7 @@ class SystemsScreenView extends ScreenView {
     this.addChild( resetAllButton );
 
     // Make one of the 2 systems visible
-    viewProperties.seriesParallelProperty.lazyLink( function( seriesParallel ) {
+    viewProperties.seriesParallelProperty.lazyLink( seriesParallel => {
       seriesSystemNode.visible = ( seriesParallel === 'series' );
       parallelSystemNode.visible = ( seriesParallel === 'parallel' );
     } );

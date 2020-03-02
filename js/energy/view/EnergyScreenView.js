@@ -97,7 +97,7 @@ class EnergyScreenView extends ScreenView {
     this.addChild( resetAllButton );
 
     // Observe view properties
-    viewProperties.graphProperty.link( function( graph ) {
+    viewProperties.graphProperty.link( graph => {
 
       forcePlot.visible = ( graph === 'forcePlot' );
       energyPlot.visible = ( graph === 'energyPlot' );

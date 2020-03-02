@@ -185,7 +185,7 @@ class ParallelSystemNode extends Node {
 
     // switch between different spring force representations
     Property.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
-      function( springForceVectorVisible, springForceRepresentation ) {
+      ( springForceVectorVisible, springForceRepresentation ) => {
         // total
         totalSpringForceVectorNode.visible = springForceVectorVisible && springForceRepresentation === 'total';
         // components
@@ -194,19 +194,19 @@ class ParallelSystemNode extends Node {
       } );
 
     // position the vectors and truss
-    equivalentSpring.rightProperty.link( function( right ) {
+    equivalentSpring.rightProperty.link( right => {
       trussNode.x = nibNode.x = appliedForceVectorNode.x = totalSpringForceVectorNode.x = ( options.unitDisplacementLength * right );
     } );
-    topSpring.rightProperty.link( function( right ) {
+    topSpring.rightProperty.link( right => {
       topSpringForceVectorNode.x = options.unitDisplacementLength * right;
     } );
-    bottomSpring.rightProperty.link( function( right ) {
+    bottomSpring.rightProperty.link( right => {
       bottomSpringForceVectorNode.x = options.unitDisplacementLength * right;
     } );
 
     // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.
     Property.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
-      function( numberOfInteractions, displacement ) {
+      ( numberOfInteractions, displacement ) => {
         assert && assert( numberOfInteractions >= 0 );
         const fixedDisplacement = Utils.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
