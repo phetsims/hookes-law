@@ -7,7 +7,6 @@
  */
 
 import ScreenView from '../../../../joist/js/ScreenView.js';
-import inherit from '../../../../phet-core/js/inherit.js';
 import merge from '../../../../phet-core/js/merge.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -19,100 +18,101 @@ import EnergyViewProperties from './EnergyViewProperties.js';
 import EnergyVisibilityControls from './EnergyVisibilityControls.js';
 import ForcePlot from './ForcePlot.js';
 
-/**
- * @param {EnergyModel} model
- * @param {Tandem} tandem
- * @constructor
- */
-function EnergyScreenView( model, tandem ) {
+class EnergyScreenView extends ScreenView {
 
-  ScreenView.call( this, merge( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
-    tandem: tandem
-  } ) );
+  /**
+   * @param {EnergyModel} model
+   * @param {Tandem} tandem
+   */
+  constructor( model, tandem ) {
 
-  // View length of 1 meter of displacement
-  const unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
+    super( merge( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
+      tandem: tandem
+    } ) );
 
-  // Properties that are specific to the view
-  const viewProperties = new EnergyViewProperties( tandem.createTandem( 'viewProperties' ) );
+    // View length of 1 meter of displacement
+    const unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;
 
-  // Visibility controls
-  const visibilityControls = new EnergyVisibilityControls( viewProperties, {
-    right: this.layoutBounds.right - 10,
-    top: 10,
-    maxWidth: 235, // constrain width for i18n, determining empirically
-    tandem: tandem.createTandem( 'visibilityControls' )
-  } );
-  this.addChild( visibilityControls );
+    // Properties that are specific to the view
+    const viewProperties = new EnergyViewProperties( tandem.createTandem( 'viewProperties' ) );
 
-  // System
-  const systemNode = new EnergySystemNode( model.system, viewProperties, {
-    unitDisplacementLength: unitDisplacementLength,
-    number: 1,
-    left: this.layoutBounds.left + 35,
-    bottom: this.layoutBounds.bottom - 10,
-    tandem: tandem.createTandem( 'systemNode' )
-  } );
-  this.addChild( systemNode );
-
-  // Energy bar graph
-  const barGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
-    // x position depends on whether XY plots are visible
-    bottom: systemNode.top - 35,
-    tandem: tandem.createTandem( 'barGraph' )
-  } );
-  this.addChild( barGraph );
-
-  // Force plot
-  const forcePlot = new ForcePlot( model.system.spring, unitDisplacementLength,
-    viewProperties.valuesVisibleProperty,
-    viewProperties.displacementVectorVisibleProperty,
-    viewProperties.energyOnForcePlotVisibleProperty, {
-      // origin aligned with equilibrium position
-      x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
-      bottom: barGraph.bottom,
-      tandem: tandem.createTandem( 'forcePlot' )
+    // Visibility controls
+    const visibilityControls = new EnergyVisibilityControls( viewProperties, {
+      right: this.layoutBounds.right - 10,
+      top: 10,
+      maxWidth: 235, // constrain width for i18n, determining empirically
+      tandem: tandem.createTandem( 'visibilityControls' )
     } );
-  this.addChild( forcePlot );
+    this.addChild( visibilityControls );
 
-  // Energy plot
-  const energyPlot = new EnergyPlot( model.system.spring, unitDisplacementLength,
-    viewProperties.valuesVisibleProperty, viewProperties.displacementVectorVisibleProperty, {
-      x: forcePlot.x,
-      y: barGraph.bottom,
-      tandem: tandem.createTandem( 'energyPlot' )
+    // System
+    const systemNode = new EnergySystemNode( model.system, viewProperties, {
+      unitDisplacementLength: unitDisplacementLength,
+      number: 1,
+      left: this.layoutBounds.left + 35,
+      bottom: this.layoutBounds.bottom - 10,
+      tandem: tandem.createTandem( 'systemNode' )
     } );
-  this.addChild( energyPlot );
+    this.addChild( systemNode );
 
-  // Reset All button, bottom right
-  const resetAllButton = new ResetAllButton( {
-    listener: function() {
-      model.reset();
-      viewProperties.reset();
-    },
-    right: this.layoutBounds.maxX - 15,
-    bottom: this.layoutBounds.maxY - 15,
-    tandem: tandem.createTandem( 'resetAllButton' )
-  } );
-  this.addChild( resetAllButton );
+    // Energy bar graph
+    const barGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
+      // x position depends on whether XY plots are visible
+      bottom: systemNode.top - 35,
+      tandem: tandem.createTandem( 'barGraph' )
+    } );
+    this.addChild( barGraph );
 
-  // Observe view properties
-  viewProperties.graphProperty.link( function( graph ) {
+    // Force plot
+    const forcePlot = new ForcePlot( model.system.spring, unitDisplacementLength,
+      viewProperties.valuesVisibleProperty,
+      viewProperties.displacementVectorVisibleProperty,
+      viewProperties.energyOnForcePlotVisibleProperty, {
+        // origin aligned with equilibrium position
+        x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
+        bottom: barGraph.bottom,
+        tandem: tandem.createTandem( 'forcePlot' )
+      } );
+    this.addChild( forcePlot );
 
-    forcePlot.visible = ( graph === 'forcePlot' );
-    energyPlot.visible = ( graph === 'energyPlot' );
+    // Energy plot
+    const energyPlot = new EnergyPlot( model.system.spring, unitDisplacementLength,
+      viewProperties.valuesVisibleProperty, viewProperties.displacementVectorVisibleProperty, {
+        x: forcePlot.x,
+        y: barGraph.bottom,
+        tandem: tandem.createTandem( 'energyPlot' )
+      } );
+    this.addChild( energyPlot );
 
-    if ( graph === 'barGraph' ) {
-      // aligned with equilibrium position
-      barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
-    }
-    else {
-      barGraph.left = 15;
-    }
-  } );
+    // Reset All button, bottom right
+    const resetAllButton = new ResetAllButton( {
+      listener: () => {
+        model.reset();
+        viewProperties.reset();
+      },
+      right: this.layoutBounds.maxX - 15,
+      bottom: this.layoutBounds.maxY - 15,
+      tandem: tandem.createTandem( 'resetAllButton' )
+    } );
+    this.addChild( resetAllButton );
+
+    // Observe view properties
+    viewProperties.graphProperty.link( function( graph ) {
+
+      forcePlot.visible = ( graph === 'forcePlot' );
+      energyPlot.visible = ( graph === 'energyPlot' );
+
+      if ( graph === 'barGraph' ) {
+        // aligned with equilibrium position
+        barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
+      }
+      else {
+        barGraph.left = 15;
+      }
+    } );
+  }
 }
 
 hookesLaw.register( 'EnergyScreenView', EnergyScreenView );
 
-inherit( ScreenView, EnergyScreenView );
 export default EnergyScreenView;

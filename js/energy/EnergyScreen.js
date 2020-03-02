@@ -7,7 +7,6 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
-import inherit from '../../../phet-core/js/inherit.js';
 import merge from '../../../phet-core/js/merge.js';
 import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
@@ -16,28 +15,30 @@ import hookesLaw from '../hookesLaw.js';
 import EnergyModel from './model/EnergyModel.js';
 import EnergyScreenView from './view/EnergyScreenView.js';
 
+// strings
 const energyString = hookesLawStrings.energy;
 
-/**
- * @param {Tandem} tandem
- * @constructor
- */
-function EnergyScreen( tandem ) {
+class EnergyScreen extends Screen {
 
-  const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-    name: energyString,
-    homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
-    tandem: tandem
-  } );
+  /**
+   * @param {Tandem} tandem
+   */
+  constructor( tandem ) {
 
-  Screen.call( this,
-    function() { return new EnergyModel( tandem.createTandem( 'model' ) ); },
-    function( model ) { return new EnergyScreenView( model, tandem.createTandem( 'view' ) ); },
-    options
-  );
+    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
+      name: energyString,
+      homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
+      tandem: tandem
+    } );
+
+    super(
+      () => new EnergyModel( tandem.createTandem( 'model' ) ),
+      model => new EnergyScreenView( model, tandem.createTandem( 'view' ) ),
+      options
+    );
+  }
 }
 
 hookesLaw.register( 'EnergyScreen', EnergyScreen );
 
-inherit( Screen, EnergyScreen );
 export default EnergyScreen;

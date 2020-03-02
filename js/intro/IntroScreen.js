@@ -7,7 +7,6 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
-import inherit from '../../../phet-core/js/inherit.js';
 import merge from '../../../phet-core/js/merge.js';
 import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
@@ -16,28 +15,30 @@ import hookesLaw from '../hookesLaw.js';
 import IntroModel from './model/IntroModel.js';
 import IntroScreenView from './view/IntroScreenView.js';
 
+// strings
 const introString = hookesLawStrings.intro;
 
-/**
- * @param {Tandem} tandem
- * @constructor
- */
-function IntroScreen( tandem ) {
+class IntroScreen extends Screen {
 
-  const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-    name: introString,
-    homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
-    tandem: tandem
-  } );
+  /**
+   * @param {Tandem} tandem
+   */
+  constructor( tandem ) {
 
-  Screen.call( this,
-    function() { return new IntroModel( tandem.createTandem( 'model' ) ); },
-    function( model ) { return new IntroScreenView( model, tandem.createTandem( 'view' ) ); },
-    options
-  );
+    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
+      name: introString,
+      homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
+      tandem: tandem
+    } );
+
+    super(
+      () => new IntroModel( tandem.createTandem( 'model' ) ),
+      model => new IntroScreenView( model, tandem.createTandem( 'view' ) ),
+      options
+    );
+  }
 }
 
 hookesLaw.register( 'IntroScreen', IntroScreen );
 
-inherit( Screen, IntroScreen );
 export default IntroScreen;
