@@ -18,7 +18,6 @@
 
 import Property from '../../../../axon/js/Property.js';
 import Utils from '../../../../dot/js/Utils.js';
-import inherit from '../../../../phet-core/js/inherit.js';
 import merge from '../../../../phet-core/js/merge.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
@@ -34,6 +33,7 @@ import hookesLawStrings from '../../hookes-law-strings.js';
 import hookesLaw from '../../hookesLaw.js';
 import XYAxes from './XYAxes.js';
 
+// strings
 const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
 
 // constants
@@ -51,232 +51,233 @@ const TICK_OPTIONS = {
   lineWidth: 1
 };
 
-/**
- * @param {NumberProperty} xProperty - x coordinate value
- * @param {NumberProperty} yProperty - y coordinate value
- * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
- * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
- * @param {Object} [options]
- * @constructor
- * @abstract
- */
-function XYPointPlot( xProperty, yProperty, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
+class XYPointPlot extends Node {
 
-  options = merge( {
+  /**
+   * @param {NumberProperty} xProperty - x coordinate value
+   * @param {NumberProperty} yProperty - y coordinate value
+   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
+   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
+   * @param {Object} [options]
+   * @abstract
+   */
+  constructor( xProperty, yProperty, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
 
-    // both axes
-    axisFont: new PhetFont( 12 ),
-    valueFont: new PhetFont( 12 ),
+    options = merge( {
 
-    // x axis
-    minX: -1,
-    maxX: 1,
-    xString: 'x',
-    xDecimalPlaces: 0,
-    xUnits: '',
-    xValueFill: 'black',
-    xUnitLength: 1,
-    xLabelMaxWidth: null,
-    xValueBackgroundColor: null,
+      // both axes
+      axisFont: new PhetFont( 12 ),
+      valueFont: new PhetFont( 12 ),
 
-    // y axis
-    minY: -1,
-    maxY: 1,
-    yString: 'y',
-    yDecimalPlaces: 0,
-    yUnits: '',
-    yValueFill: 'black',
-    yUnitLength: 1,
-    yValueBackgroundColor: null,
+      // x axis
+      minX: -1,
+      maxX: 1,
+      xString: 'x',
+      xDecimalPlaces: 0,
+      xUnits: '',
+      xValueFill: 'black',
+      xUnitLength: 1,
+      xLabelMaxWidth: null,
+      xValueBackgroundColor: null,
+
+      // y axis
+      minY: -1,
+      maxY: 1,
+      yString: 'y',
+      yDecimalPlaces: 0,
+      yUnits: '',
+      yValueFill: 'black',
+      yUnitLength: 1,
+      yValueBackgroundColor: null,
+
+      // point
+      pointFill: 'black',
+      pointRadius: 5,
+
+      // phet-io
+      tandem: Tandem.REQUIRED
+
+    }, options );
+
+    // XY axes
+    const axesNode = new XYAxes( {
+      minX: options.minX,
+      maxX: options.maxX,
+      minY: options.minY,
+      maxY: options.maxY,
+      xString: options.xString,
+      yString: options.yString,
+      font: options.axisFont,
+      xLabelMaxWidth: options.xLabelMaxWidth
+    } );
 
     // point
-    pointFill: 'black',
-    pointRadius: 5,
+    const pointNode = new Circle( options.pointRadius, {
+      fill: options.pointFill
+    } );
 
-    // phet-io
-    tandem: Tandem.REQUIRED
+    // x nodes
+    const xValueNode = new Text( '', {
+      maxWidth: 150, // i18n
+      fill: options.xValueFill,
+      font: options.valueFont
+    } );
+    const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, merge( TICK_OPTIONS, { centerY: 0 } ) );
+    const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
+    const xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
+    const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
 
-  }, options );
+    // y nodes
+    const yValueNode = new Text( '', {
+      maxWidth: 150, // i18n
+      fill: options.yValueFill,
+      font: options.valueFont
+    } );
+    const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, merge( TICK_OPTIONS, { centerX: 0 } ) );
+    const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
+    const yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
 
-  // XY axes
-  const axesNode = new XYAxes( {
-    minX: options.minX,
-    maxX: options.maxX,
-    minY: options.minY,
-    maxY: options.maxY,
-    xString: options.xString,
-    yString: options.yString,
-    font: options.axisFont,
-    xLabelMaxWidth: options.xLabelMaxWidth
-  } );
+    assert && assert( !options.children, 'XYPointPlot sets children' );
+    options.children = [
+      axesNode,
+      xLeaderLine, xTickNode, xValueBackgroundNode, xValueNode, xVectorNode,
+      yLeaderLine, yTickNode, yValueBackgroundNode, yValueNode,
+      pointNode
+    ];
 
-  // point
-  const pointNode = new Circle( options.pointRadius, {
-    fill: options.pointFill
-  } );
+    // visibility
+    displacementVectorVisibleProperty.link( visible => {
+      const xFixed = Utils.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
+      xVectorNode.visible = ( visible && xFixed !== 0 );
+    } );
+    valuesVisibleProperty.link( visible => {
 
-  // x nodes
-  const xValueNode = new Text( '', {
-    maxWidth: 150, // i18n
-    fill: options.xValueFill,
-    font: options.valueFont
-  } );
-  const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, merge( TICK_OPTIONS, { centerY: 0 } ) );
-  const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
-  const xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
-  const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
+      // x-axis nodes
+      xValueNode.visible = visible;
+      xValueBackgroundNode.visible = visible;
+      xTickNode.visible = visible;
+      xLeaderLine.visible = visible;
 
-  // y nodes
-  const yValueNode = new Text( '', {
-    maxWidth: 150, // i18n
-    fill: options.yValueFill,
-    font: options.valueFont
-  } );
-  const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, merge( TICK_OPTIONS, { centerX: 0 } ) );
-  const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
-  const yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
+      // y axis nodes
+      yValueNode.visible = visible;
+      yValueBackgroundNode.visible = visible;
+      yTickNode.visible = visible;
+      yLeaderLine.visible = visible;
+    } );
 
-  assert && assert( !options.children, 'XYPointPlot sets children' );
-  options.children = [
-    axesNode,
-    xLeaderLine, xTickNode, xValueBackgroundNode, xValueNode, xVectorNode,
-    yLeaderLine, yTickNode, yValueBackgroundNode, yValueNode,
-    pointNode
-  ];
-
-  // visibility
-  displacementVectorVisibleProperty.link( function( visible ) {
-    const xFixed = Utils.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
-    xVectorNode.visible = ( visible && xFixed !== 0 );
-  } );
-  valuesVisibleProperty.link( function( visible ) {
-
-    // x-axis nodes
-    xValueNode.visible = visible;
-    xValueBackgroundNode.visible = visible;
-    xTickNode.visible = visible;
-    xLeaderLine.visible = visible;
-
-    // y axis nodes
-    yValueNode.visible = visible;
-    yValueBackgroundNode.visible = visible;
-    yTickNode.visible = visible;
-    yLeaderLine.visible = visible;
-  } );
-
-  xProperty.link( function( x ) {
-
-    const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
-    const xView = options.xUnitLength * xFixed;
-
-    // x vector
-    xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.get() ); // can't draw a zero-length arrow
-    if ( xFixed !== 0 ) {
-      xVectorNode.setLine( 0, 0, xView, 0 );
-    }
-
-    // x tick mark
-    xTickNode.visible = ( xFixed !== 0 && valuesVisibleProperty.get() );
-    xTickNode.centerX = xView;
-
-    // x value
-    const xText = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-    xValueNode.text = StringUtils.format( pattern0Value1UnitsString, xText, options.xUnits );
-
-    // placement of x value, so that it doesn't collide with y value or axes
-    if ( options.minY === 0 ) {
-      xValueNode.centerX = xView; // centered on the tick
-      xValueNode.top = 12; // below the x axis
-    }
-    else {
-      const X_SPACING = 6;
-      if ( Math.abs( xView ) > ( X_SPACING + xValueNode.width / 2 ) ) {
-        xValueNode.centerX = xView; // centered on the tick
-      }
-      else if ( xFixed >= 0 ) {
-        xValueNode.left = X_SPACING; // to the right of the y axis
-      }
-      else {
-        xValueNode.right = -X_SPACING; // to the left of the y axis
-      }
-
-      const Y_SPACING = 12;
-      if ( yProperty.get() >= 0 ) {
-        xValueNode.top = Y_SPACING; // below the x axis
-      }
-      else {
-        xValueNode.bottom = -Y_SPACING; // above the x axis
-      }
-    }
-
-    // x value background
-    xValueBackgroundNode.setRect( 0, 0,
-      xValueNode.width + ( 2 * VALUE_X_MARGIN ), xValueNode.height + ( 2 * VALUE_Y_MARGIN ),
-      VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
-    xValueBackgroundNode.center = xValueNode.center;
-  } );
-
-  yProperty.link( function( y ) {
-
-    const yFixed = Utils.toFixedNumber( y, options.yDecimalPlaces );
-    const yView = yFixed * options.yUnitLength;
-
-    // y tick mark
-    yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.get() );
-    yTickNode.centerY = -yView;
-
-    // y value
-    const yText = Utils.toFixed( yFixed, options.yDecimalPlaces );
-    yValueNode.text = StringUtils.format( pattern0Value1UnitsString, yText, options.yUnits );
-
-    // placement of y value, so that it doesn't collide with x value or axes
-    const X_SPACING = 10;
-    if ( xProperty.get() >= 0 ) {
-      yValueNode.right = -X_SPACING; // to the left of the y axis
-    }
-    else {
-      yValueNode.left = X_SPACING; // to the right of the y axis
-    }
-
-    const Y_SPACING = 4;
-    if ( Math.abs( yView ) > Y_SPACING + yValueNode.height / 2 ) {
-      yValueNode.centerY = -yView; // centered on the tick
-    }
-    else if ( yFixed >= 0 ) {
-      yValueNode.bottom = -Y_SPACING; // above the x axis
-    }
-    else {
-      yValueNode.top = Y_SPACING; // below the x axis
-    }
-
-    // y value background
-    yValueBackgroundNode.setRect( 0, 0,
-      yValueNode.width + ( 2 * VALUE_X_MARGIN ), yValueNode.height + ( 2 * VALUE_Y_MARGIN ),
-      VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
-    yValueBackgroundNode.center = yValueNode.center;
-  } );
-
-  // Move point and leader lines
-  Property.multilink( [ xProperty, yProperty ],
-    function( x, y ) {
+    xProperty.link( x => {
 
       const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
       const xView = options.xUnitLength * xFixed;
-      const yView = -y * options.yUnitLength;
 
-      // point
-      pointNode.x = xView;
-      pointNode.y = yView;
+      // x vector
+      xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.get() ); // can't draw a zero-length arrow
+      if ( xFixed !== 0 ) {
+        xVectorNode.setLine( 0, 0, xView, 0 );
+      }
 
-      // leader lines
-      xLeaderLine.setLine( xView, 0, xView, yView );
-      yLeaderLine.setLine( 0, yView, xView, yView );
+      // x tick mark
+      xTickNode.visible = ( xFixed !== 0 && valuesVisibleProperty.get() );
+      xTickNode.centerX = xView;
+
+      // x value
+      const xText = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      xValueNode.text = StringUtils.format( pattern0Value1UnitsString, xText, options.xUnits );
+
+      // placement of x value, so that it doesn't collide with y value or axes
+      if ( options.minY === 0 ) {
+        xValueNode.centerX = xView; // centered on the tick
+        xValueNode.top = 12; // below the x axis
+      }
+      else {
+        const X_SPACING = 6;
+        if ( Math.abs( xView ) > ( X_SPACING + xValueNode.width / 2 ) ) {
+          xValueNode.centerX = xView; // centered on the tick
+        }
+        else if ( xFixed >= 0 ) {
+          xValueNode.left = X_SPACING; // to the right of the y axis
+        }
+        else {
+          xValueNode.right = -X_SPACING; // to the left of the y axis
+        }
+
+        const Y_SPACING = 12;
+        if ( yProperty.get() >= 0 ) {
+          xValueNode.top = Y_SPACING; // below the x axis
+        }
+        else {
+          xValueNode.bottom = -Y_SPACING; // above the x axis
+        }
+      }
+
+      // x value background
+      xValueBackgroundNode.setRect( 0, 0,
+        xValueNode.width + ( 2 * VALUE_X_MARGIN ), xValueNode.height + ( 2 * VALUE_Y_MARGIN ),
+        VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
+      xValueBackgroundNode.center = xValueNode.center;
     } );
 
-  Node.call( this, options );
+    yProperty.link( y => {
+
+      const yFixed = Utils.toFixedNumber( y, options.yDecimalPlaces );
+      const yView = yFixed * options.yUnitLength;
+
+      // y tick mark
+      yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.get() );
+      yTickNode.centerY = -yView;
+
+      // y value
+      const yText = Utils.toFixed( yFixed, options.yDecimalPlaces );
+      yValueNode.text = StringUtils.format( pattern0Value1UnitsString, yText, options.yUnits );
+
+      // placement of y value, so that it doesn't collide with x value or axes
+      const X_SPACING = 10;
+      if ( xProperty.get() >= 0 ) {
+        yValueNode.right = -X_SPACING; // to the left of the y axis
+      }
+      else {
+        yValueNode.left = X_SPACING; // to the right of the y axis
+      }
+
+      const Y_SPACING = 4;
+      if ( Math.abs( yView ) > Y_SPACING + yValueNode.height / 2 ) {
+        yValueNode.centerY = -yView; // centered on the tick
+      }
+      else if ( yFixed >= 0 ) {
+        yValueNode.bottom = -Y_SPACING; // above the x axis
+      }
+      else {
+        yValueNode.top = Y_SPACING; // below the x axis
+      }
+
+      // y value background
+      yValueBackgroundNode.setRect( 0, 0,
+        yValueNode.width + ( 2 * VALUE_X_MARGIN ), yValueNode.height + ( 2 * VALUE_Y_MARGIN ),
+        VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
+      yValueBackgroundNode.center = yValueNode.center;
+    } );
+
+    // Move point and leader lines
+    Property.multilink( [ xProperty, yProperty ],
+      ( x, y ) => {
+
+        const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
+        const xView = options.xUnitLength * xFixed;
+        const yView = -y * options.yUnitLength;
+
+        // point
+        pointNode.x = xView;
+        pointNode.y = yView;
+
+        // leader lines
+        xLeaderLine.setLine( xView, 0, xView, yView );
+        yLeaderLine.setLine( 0, yView, xView, yView );
+      } );
+
+    super( options );
+  }
 }
 
 hookesLaw.register( 'XYPointPlot', XYPointPlot );
 
-inherit( Node, XYPointPlot );
 export default XYPointPlot;

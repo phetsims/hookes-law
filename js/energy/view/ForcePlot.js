@@ -10,7 +10,6 @@
 import Property from '../../../../axon/js/Property.js';
 import Utils from '../../../../dot/js/Utils.js';
 import Shape from '../../../../kite/js/Shape.js';
-import inherit from '../../../../phet-core/js/inherit.js';
 import merge from '../../../../phet-core/js/merge.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
@@ -21,101 +20,103 @@ import hookesLawStrings from '../../hookes-law-strings.js';
 import hookesLaw from '../../hookesLaw.js';
 import XYPointPlot from './XYPointPlot.js';
 
+// strings
 const appliedForceString = hookesLawStrings.appliedForce;
 const displacementString = hookesLawStrings.displacement;
 const metersString = hookesLawStrings.meters;
 const newtonsString = hookesLawStrings.newtons;
 
-/**
- * @param {Spring} spring
- * @param {number} unitDisplacementLength - view length of a 1m displacement vector
- * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
- * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
- * @param {BooleanProperty} energyVisibleProperty - whether the area that represents energy is filled in
- * @param {Object} [options]
- * @constructor
- */
-function ForcePlot( spring, unitDisplacementLength,
-                    valuesVisibleProperty, displacementVectorVisibleProperty, energyVisibleProperty, options ) {
+class ForcePlot extends XYPointPlot {
 
-  options = merge( {
+  /**
+   * @param {Spring} spring
+   * @param {number} unitDisplacementLength - view length of a 1m displacement vector
+   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
+   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
+   * @param {BooleanProperty} energyVisibleProperty - whether the area that represents energy is filled in
+   * @param {Object} [options]
+   */
+  constructor( spring, unitDisplacementLength,
+               valuesVisibleProperty, displacementVectorVisibleProperty, energyVisibleProperty, options ) {
 
-    // both axes
-    axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
-    valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
+    options = merge( {
 
-    // point
-    pointFill: HookesLawColors.SINGLE_SPRING,
+      // both axes
+      axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
+      valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
 
-    // x axis
-    minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
-    maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
-    xString: displacementString,
-    xUnits: metersString,
-    xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
-    xValueFill: HookesLawColors.DISPLACEMENT,
-    xUnitLength: unitDisplacementLength,
-    xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
+      // point
+      pointFill: HookesLawColors.SINGLE_SPRING,
 
-    // y axis
-    minY: -HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
-    maxY: HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
-    yString: appliedForceString,
-    yUnits: newtonsString,
-    yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-    yValueFill: HookesLawColors.APPLIED_FORCE,
-    yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
+      // x axis
+      minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
+      maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
+      xString: displacementString,
+      xUnits: metersString,
+      xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
+      xValueFill: HookesLawColors.DISPLACEMENT,
+      xUnitLength: unitDisplacementLength,
+      xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
-    // phet-io
-    tandem: Tandem.REQUIRED
+      // y axis
+      minY: -HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
+      maxY: HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
+      yString: appliedForceString,
+      yUnits: newtonsString,
+      yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
+      yValueFill: HookesLawColors.APPLIED_FORCE,
+      yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
 
-  }, options );
+      // phet-io
+      tandem: Tandem.REQUIRED
 
-  XYPointPlot.call( this, spring.displacementProperty, spring.appliedForceProperty,
-    valuesVisibleProperty, displacementVectorVisibleProperty, options );
+    }, options );
 
-  // The line that corresponds to F = kx
-  const forceLineNode = new Line( 0, 0, 1, 1, {
-    stroke: HookesLawColors.APPLIED_FORCE,
-    lineWidth: 3
-  } );
-  this.addChild( forceLineNode );
-  forceLineNode.moveToBack();
+    super( spring.displacementProperty, spring.appliedForceProperty,
+      valuesVisibleProperty, displacementVectorVisibleProperty, options );
 
-  // energy area
-  const energyPath = new Path( null, {
-    fill: HookesLawColors.ENERGY
-  } );
-  this.addChild( energyPath );
-  energyPath.moveToBack();
-
-  // update force line
-  spring.springConstantProperty.link( function( springConstant ) {
-
-    // x
-    const minDisplacement = options.xUnitLength * spring.displacementRange.min;
-    const maxDisplacement = options.xUnitLength * spring.displacementRange.max;
-
-    // F = kx
-    const minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
-    const maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;
-    forceLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
-  } );
-
-  // update energy area (triangle)
-  Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
-    function( displacement, appliedForce, visible ) {
-      const fixedDisplacement = Utils.toFixedNumber( displacement, options.xDecimalPlaces );
-      const x = options.xUnitLength * fixedDisplacement;
-      const y = -appliedForce * options.yUnitLength;
-      energyPath.visible = ( fixedDisplacement !== 0 && visible );
-      if ( energyPath.visible ) {
-        energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( x, 0 ).lineTo( x, y ).close();
-      }
+    // The line that corresponds to F = kx
+    const forceLineNode = new Line( 0, 0, 1, 1, {
+      stroke: HookesLawColors.APPLIED_FORCE,
+      lineWidth: 3
     } );
+    this.addChild( forceLineNode );
+    forceLineNode.moveToBack();
+
+    // energy area
+    const energyPath = new Path( null, {
+      fill: HookesLawColors.ENERGY
+    } );
+    this.addChild( energyPath );
+    energyPath.moveToBack();
+
+    // update force line
+    spring.springConstantProperty.link( springConstant => {
+
+      // x
+      const minDisplacement = options.xUnitLength * spring.displacementRange.min;
+      const maxDisplacement = options.xUnitLength * spring.displacementRange.max;
+
+      // F = kx
+      const minForce = -options.yUnitLength * springConstant * spring.displacementRange.min;
+      const maxForce = -options.yUnitLength * springConstant * spring.displacementRange.max;
+      forceLineNode.setLine( minDisplacement, minForce, maxDisplacement, maxForce );
+    } );
+
+    // update energy area (triangle)
+    Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
+      ( displacement, appliedForce, visible ) => {
+        const fixedDisplacement = Utils.toFixedNumber( displacement, options.xDecimalPlaces );
+        const x = options.xUnitLength * fixedDisplacement;
+        const y = -appliedForce * options.yUnitLength;
+        energyPath.visible = ( fixedDisplacement !== 0 && visible );
+        if ( energyPath.visible ) {
+          energyPath.shape = new Shape().moveTo( 0, 0 ).lineTo( x, 0 ).lineTo( x, y ).close();
+        }
+      } );
+  }
 }
 
 hookesLaw.register( 'ForcePlot', ForcePlot );
 
-inherit( XYPointPlot, ForcePlot );
 export default ForcePlot;
