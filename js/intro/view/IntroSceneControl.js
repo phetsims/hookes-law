@@ -6,40 +6,40 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import inherit from '../../../../phet-core/js/inherit.js';
 import merge from '../../../../phet-core/js/merge.js';
 import RadioButtonGroup from '../../../../sun/js/buttons/RadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 
-/**
- * @param {NumberProperty} numberOfSystemsProperty
- * @param {Object} [options]
- * @constructor
- */
-function IntroSceneControl( numberOfSystemsProperty, options ) {
+class IntroSceneControl extends RadioButtonGroup {
 
-  options = merge( {
+  /**
+   * @param {NumberProperty} numberOfSystemsProperty
+   * @param {Object} [options]
+   */
+  constructor( numberOfSystemsProperty, options ) {
 
-    // RadioButtonGroup options
-    orientation: 'horizontal',
-    spacing: 10,
-    buttonContentXMargin: 20,
-    buttonContentYMargin: 5,
-    selectedLineWidth: 2,
+    options = merge( {
 
-    // phet-io
-    tandem: Tandem.REQUIRED
-  }, options );
+      // RadioButtonGroup options
+      orientation: 'horizontal',
+      spacing: 10,
+      buttonContentXMargin: 20,
+      buttonContentYMargin: 5,
+      selectedLineWidth: 2,
 
-  RadioButtonGroup.call( this, numberOfSystemsProperty, [
-    { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
-    { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
-  ], options );
+      // phet-io
+      tandem: Tandem.REQUIRED
+    }, options );
+
+    super( numberOfSystemsProperty, [
+      { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
+      { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
+    ], options );
+  }
 }
 
 hookesLaw.register( 'IntroSceneControl', IntroSceneControl );
 
-inherit( RadioButtonGroup, IntroSceneControl );
 export default IntroSceneControl;

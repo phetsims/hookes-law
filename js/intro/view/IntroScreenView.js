@@ -19,6 +19,7 @@ import IntroViewProperties from './IntroViewProperties.js';
 import IntroVisibilityControls from './IntroVisibilityControls.js';
 
 class IntroScreenView extends ScreenView {
+
   /**
    * @param {IntroModel} model
    * @param {Tandem} tandem
