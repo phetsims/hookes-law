@@ -19,6 +19,7 @@ import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLawStrings from '../../hookes-law-strings.js';
 import hookesLaw from '../../hookesLaw.js';
 
+// strings
 const appliedForceString = hookesLawStrings.appliedForce;
 const displacementString = hookesLawStrings.displacement;
 const springForceString = hookesLawStrings.springForce;

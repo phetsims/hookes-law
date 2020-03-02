@@ -6,40 +6,40 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import inherit from '../../../../phet-core/js/inherit.js';
 import merge from '../../../../phet-core/js/merge.js';
 import RadioButtonGroup from '../../../../sun/js/buttons/RadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 
-/**
- * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
- * @param {Object} [options]
- * @constructor
- */
-function SystemsSceneControl( seriesParallelProperty, options ) {
+class SystemsSceneControl extends RadioButtonGroup {
 
-  options = merge( {
+  /**
+   * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
+   * @param {Object} [options]
+   */
+  constructor( seriesParallelProperty, options ) {
 
-    // RadioButtonGroup options
-    orientation: 'horizontal',
-    spacing: 10,
-    buttonContentXMargin: 5,
-    buttonContentYMargin: 5,
-    selectedLineWidth: 2,
+    options = merge( {
 
-    // phet-io
-    tandem: Tandem.REQUIRED
-  }, options );
+      // RadioButtonGroup options
+      orientation: 'horizontal',
+      spacing: 10,
+      buttonContentXMargin: 5,
+      buttonContentYMargin: 5,
+      selectedLineWidth: 2,
 
-  RadioButtonGroup.call( this, seriesParallelProperty, [
-    { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
-    { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
-  ], options );
+      // phet-io
+      tandem: Tandem.REQUIRED
+    }, options );
+
+    super( seriesParallelProperty, [
+      { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
+      { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
+    ], options );
+  }
 }
 
 hookesLaw.register( 'SystemsSceneControl', SystemsSceneControl );
 
-inherit( RadioButtonGroup, SystemsSceneControl );
 export default SystemsSceneControl;

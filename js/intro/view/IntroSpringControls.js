@@ -17,6 +17,7 @@ import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLawStrings from '../../hookes-law-strings.js';
 import hookesLaw from '../../hookesLaw.js';
 
+// strings
 const appliedForceNumberString = hookesLawStrings.appliedForceNumber;
 const springConstantNumberString = hookesLawStrings.springConstantNumber;
 
