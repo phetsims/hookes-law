@@ -6,52 +6,49 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import inherit from '../../../../phet-core/js/inherit.js';
 import merge from '../../../../phet-core/js/merge.js';
 import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNode.js';
 import hookesLaw from '../../hookesLaw.js';
 
-/**
- * @param {Spring} spring
- * @param {Object} [options]
- * @constructor
- */
-function HookesLawSpringNode( spring, options ) {
+class HookesLawSpringNode extends ParametricSpringNode {
+  /**
+   * @param {Spring} spring
+   * @param {Object} [options]
+   */
+  constructor( spring, options ) {
 
-  const self = this;
+    options = merge( {
 
-  options = merge( {
+      // ParametricSpringNode options
+      loops: 10, // {number} number of loops in the coil
+      pointsPerLoop: 40, // {number} number of points per loop
+      radius: 10, // {number} radius of a loop with aspect ratio of 1:1
+      aspectRatio: 4, // {number} y:x aspect ratio of the loop radius
+      unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
+      minLineWidth: 3, // {number} lineWidth used to stroke the spring for minimum spring constant
+      deltaLineWidth: 0.005, // increase in line width per 1 unit of spring constant increase
+      leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
+      rightEndLength: 25, // {number} length of the horizontal line added to the right end of the coil
+      pathBoundsMethod: 'none' // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
+    }, options );
 
-    // ParametricSpringNode options
-    loops: 10, // {number} number of loops in the coil
-    pointsPerLoop: 40, // {number} number of points per loop
-    radius: 10, // {number} radius of a loop with aspect ratio of 1:1
-    aspectRatio: 4, // {number} y:x aspect ratio of the loop radius
-    unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-    minLineWidth: 3, // {number} lineWidth used to stroke the spring for minimum spring constant
-    deltaLineWidth: 0.005, // increase in line width per 1 unit of spring constant increase
-    leftEndLength: 15, // {number} length of the horizontal line added to the left end of the coil
-    rightEndLength: 25, // {number} length of the horizontal line added to the right end of the coil
-    pathBoundsMethod: 'none' // {string} method used to compute bounds for scenery.Path components, see Path.boundsMethod
-  }, options );
+    super( options );
 
-  ParametricSpringNode.call( this, options );
+    // stretch or compress the spring
+    spring.lengthProperty.link( length => {
+      const coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
+      const xScale = coilLength / ( this.loopsProperty.get() * this.radiusProperty.get() );
+      this.xScaleProperty.set( xScale );
+    } );
 
-  // stretch or compress the spring
-  spring.lengthProperty.link( function( length ) {
-    const coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
-    const xScale = coilLength / ( self.loopsProperty.get() * self.radiusProperty.get() );
-    self.xScaleProperty.set( xScale );
-  } );
-
-  // spring constant determines lineWidth
-  spring.springConstantProperty.link( function( springConstant ) {
-    const lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
-    self.lineWidthProperty.set( lineWidth );
-  } );
+    // spring constant determines lineWidth
+    spring.springConstantProperty.link( springConstant => {
+      const lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
+      this.lineWidthProperty.set( lineWidth );
+    } );
+  }
 }
 
 hookesLaw.register( 'HookesLawSpringNode', HookesLawSpringNode );
 
-inherit( ParametricSpringNode, HookesLawSpringNode );
 export default HookesLawSpringNode;

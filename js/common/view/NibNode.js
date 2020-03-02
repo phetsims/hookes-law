@@ -7,27 +7,27 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import inherit from '../../../../phet-core/js/inherit.js';
 import merge from '../../../../phet-core/js/merge.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import hookesLaw from '../../hookesLaw.js';
 
-/**
- * @param {Object} [options]
- * @constructor
- */
-function NibNode( options ) {
+class NibNode extends Rectangle {
 
-  options = merge( {
-    fill: 'black',
-    width: 10,
-    height: 8
-  }, options );
+  /**
+   * @param {Object} [options]
+   */
+  constructor( options ) {
 
-  Rectangle.call( this, 0, 0, options.width, options.height, 2, 2, options );
+    options = merge( {
+      fill: 'black',
+      width: 10,
+      height: 8
+    }, options );
+
+    super( 0, 0, options.width, options.height, 2, 2, options );
+  }
 }
 
 hookesLaw.register( 'NibNode', NibNode );
 
-inherit( Rectangle, NibNode );
 export default NibNode;
