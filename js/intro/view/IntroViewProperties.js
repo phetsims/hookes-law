@@ -8,42 +8,42 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
-import inherit from '../../../../phet-core/js/inherit.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
 
-/**
- * @param {Tandem} tandem
- * @constructor
- */
-function IntroViewProperties( tandem ) {
+class IntroViewProperties extends ViewProperties {
 
-  ViewProperties.call( this, tandem );
+  /**
+   * @param {Tandem} tandem
+   */
+  constructor( tandem ) {
 
-  // @public number of systems visible
-  this.numberOfSystemsProperty = new NumberProperty( 1, {
-    validValues: [ 1, 2 ],
-    tandem: tandem.createTandem( 'numberOfSystemsProperty' )
-  } );
+    super( tandem );
 
-  // @public is the spring force vector visible?
-  this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-    tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
-  } );
-}
+    // @public number of systems visible
+    this.numberOfSystemsProperty = new NumberProperty( 1, {
+      validValues: [ 1, 2 ],
+      tandem: tandem.createTandem( 'numberOfSystemsProperty' )
+    } );
 
-hookesLaw.register( 'IntroViewProperties', IntroViewProperties );
-
-export default inherit( ViewProperties, IntroViewProperties, {
+    // @public is the spring force vector visible?
+    this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
+    } );
+  }
 
   /**
    * @public
    * @override
    */
-  reset: function() {
+  reset() {
     this.numberOfSystemsProperty.reset();
     this.springForceVectorVisibleProperty.reset();
-    ViewProperties.prototype.reset.call( this );
+    super.reset();
   }
-} );
+}
+
+hookesLaw.register( 'IntroViewProperties', IntroViewProperties );
+
+export default IntroViewProperties;

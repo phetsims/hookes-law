@@ -8,43 +8,43 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
-import inherit from '../../../../phet-core/js/inherit.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
 
-/**
- * @param {Tandem} tandem
- * @constructor
- */
-function EnergyViewProperties( tandem ) {
+class EnergyViewProperties extends ViewProperties {
 
-  ViewProperties.call( this, tandem );
+  /**
+   * @param {Tandem} tandem
+   */
+  constructor( tandem ) {
 
-  // @public which graph is visible
-  this.graphProperty = new StringProperty( 'barGraph', {
-    validValues: [ 'barGraph', 'energyPlot', 'forcePlot' ],
-    tandem: tandem.createTandem( 'graphProperty' )
-  } );
+    super( tandem );
 
-  // @public is energy depicted on the Force plot?
-  this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-    tandem: tandem.createTandem( 'energyOnForcePlotVisibleProperty' )
-  } );
-}
+    // @public which graph is visible
+    this.graphProperty = new StringProperty( 'barGraph', {
+      validValues: [ 'barGraph', 'energyPlot', 'forcePlot' ],
+      tandem: tandem.createTandem( 'graphProperty' )
+    } );
 
-hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );
-
-export default inherit( ViewProperties, EnergyViewProperties, {
+    // @public is energy depicted on the Force plot?
+    this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
+      tandem: tandem.createTandem( 'energyOnForcePlotVisibleProperty' )
+    } );
+  }
 
   /**
    * @public
    * @override
    */
-  reset: function() {
+  reset() {
     this.graphProperty.reset();
     this.valuesVisibleProperty.reset();
     this.energyOnForcePlotVisibleProperty.reset();
-    ViewProperties.prototype.reset.call( this );
+    super.reset();
   }
-} );
+}
+
+hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );
+
+export default EnergyViewProperties;

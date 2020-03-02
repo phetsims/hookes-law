@@ -56,8 +56,6 @@ import hookesLaw from '../../hookesLaw.js';
  */
 function Spring( options ) {
 
-  const self = this;
-
   options = merge( {
 
     // name that appears in log messages
@@ -172,17 +170,17 @@ function Spring( options ) {
   // Property observers
 
   // F: When applied force changes, maintain spring constant, change displacement.
-  this.appliedForceProperty.link( function( appliedForce ) {
-    assert && assert( self.appliedForceRange.contains( appliedForce ),
+  this.appliedForceProperty.link( appliedForce => {
+    assert && assert( this.appliedForceRange.contains( appliedForce ),
       'appliedForce is out of range: ' + appliedForce );
 
     // x = F/k
-    self.displacementProperty.set( appliedForce / self.springConstantProperty.get() );
+    this.displacementProperty.set( appliedForce / this.springConstantProperty.get() );
   } );
 
   // k: When spring constant changes, adjust either applied force or displacement.
-  this.springConstantProperty.link( function( springConstant ) {
-    assert && assert( self.springConstantRange.contains( springConstant ),
+  this.springConstantProperty.link( springConstant => {
+    assert && assert( this.springConstantRange.contains( springConstant ),
       'springConstant is out of range: ' + springConstant );
 
     if ( options.appliedForceRange ) {
@@ -190,39 +188,38 @@ function Spring( options ) {
       // If the applied force range was specified via options, then maintain the applied force, change displacement.
       // This applies to the Intro and Systems screens.
       // x = F/k
-      self.displacementProperty.set( self.appliedForceProperty.get() / springConstant );
+      this.displacementProperty.set( this.appliedForceProperty.get() / springConstant );
     }
     else {
 
       // If displacement range was specified via options, maintain the displacement, change applied force.
       // This applies to the Energy screen.
       // F = kx
-      self.appliedForceProperty.set( springConstant * self.displacementProperty.get() );
+      this.appliedForceProperty.set( springConstant * this.displacementProperty.get() );
     }
   } );
 
   // x: When displacement changes, maintain the spring constant, change applied force.
-  this.displacementProperty.link( function( displacement ) {
-    assert && assert( self.displacementRange.contains( displacement ),
+  this.displacementProperty.link( displacement => {
+    assert && assert( this.displacementRange.contains( displacement ),
       'displacement is out of range: ' + displacement );
 
     // F = kx
-    let appliedForce = self.springConstantProperty.get() * displacement;
+    let appliedForce = this.springConstantProperty.get() * displacement;
 
     // Constrain to range, needed due to floating-point error.
-    appliedForce = self.appliedForceRange.constrainValue( appliedForce );
+    appliedForce = this.appliedForceRange.constrainValue( appliedForce );
 
-    self.appliedForceProperty.set( appliedForce );
+    this.appliedForceProperty.set( appliedForce );
   } );
 
   //------------------------------------------------
   // Derived properties
 
   // @public spring force opposes the applied force (-F)
-  this.springForceProperty = new DerivedProperty( [ this.appliedForceProperty ],
-    function( appliedForce ) {
-      return -appliedForce;
-    }, {
+  this.springForceProperty = new DerivedProperty(
+    [ this.appliedForceProperty ],
+    appliedForce => -appliedForce, {
       units: 'N',
       phetioType: DerivedPropertyIO( NumberIO ),
       tandem: options.tandem.createTandem( 'springForceProperty' )
@@ -233,17 +230,17 @@ function Spring( options ) {
   // @public equilibrium x position
   // This must be a Property to support systems of springs. For example, for 2 springs in series,
   // equilibriumXProperty changes for the right spring, whose left end moves.
-  this.equilibriumXProperty = new DerivedProperty( [ this.leftProperty ],
-    function( left ) {
-      return left + self.equilibriumLength;
-    } );
+  this.equilibriumXProperty = new DerivedProperty(
+    [ this.leftProperty ],
+    left => left + this.equilibriumLength
+  );
   phet.log && this.equilibriumXProperty.link(
     function( equilibriumX ) { phet.log( options.logName + ' equilibriumX=' + equilibriumX ); } );
 
   // @public x position of the right end of the spring
   this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
-    function( equilibriumX, displacement ) {
-      const left = self.leftProperty.get();
+    ( equilibriumX, displacement ) => {
+      const left = this.leftProperty.get();
       const right = equilibriumX + displacement;
       assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
       return right;
@@ -255,42 +252,41 @@ function Spring( options ) {
   // Derivation differs depending on whether changing spring constant modifies applied force or displacement.
   this.rightRangeProperty = null;
   if ( options.appliedForceRange ) {
-    this.rightRangeProperty = new DerivedProperty( [ this.springConstantProperty, this.equilibriumXProperty ],
-      function( springConstant, equilibriumX ) {
-        const minDisplacement = self.appliedForceRange.min / springConstant;
-        const maxDisplacement = self.appliedForceRange.max / springConstant;
+    this.rightRangeProperty = new DerivedProperty(
+      [ this.springConstantProperty, this.equilibriumXProperty ],
+      ( springConstant, equilibriumX ) => {
+        const minDisplacement = this.appliedForceRange.min / springConstant;
+        const maxDisplacement = this.appliedForceRange.max / springConstant;
         return new Range( equilibriumX + minDisplacement, equilibriumX + maxDisplacement );
       } );
   }
   else {
-    this.rightRangeProperty = new DerivedProperty( [ this.equilibriumXProperty ],
-      function( equilibriumX ) {
-        return new Range( equilibriumX + self.displacementRange.min, equilibriumX + self.displacementRange.max );
-      } );
+    this.rightRangeProperty = new DerivedProperty(
+      [ this.equilibriumXProperty ],
+      equilibriumX => new Range( equilibriumX + this.displacementRange.min, equilibriumX + this.displacementRange.max )
+    );
   }
-  phet.log && this.rightRangeProperty.link(
-    function( rightRange ) { phet.log( options.logName + ' rightRange=' + rightRange ); } );
+  phet.log && this.rightRangeProperty.link( rightRange => phet.log( options.logName + ' rightRange=' + rightRange ) );
 
   // @public length of the spring
-  this.lengthProperty = new DerivedProperty( [ this.leftProperty, this.rightProperty ],
-    function( left, right ) {
-      return Math.abs( right - left );
-    } );
-  phet.log && this.lengthProperty.link(
-    function( length ) { phet.log( options.logName + ' length=' + length ); } );
+  this.lengthProperty = new DerivedProperty(
+    [ this.leftProperty, this.rightProperty ],
+    ( left, right ) => Math.abs( right - left )
+  );
+  phet.log && this.lengthProperty.link( length => phet.log( options.logName + ' length=' + length ) );
 
   // @public potential energy, E = ( k1 * x1 * x1 ) / 2
   // To avoid intermediate values, define this *after* the listeners that update its dependencies.
-  this.potentialEnergyProperty = new DerivedProperty( [ this.springConstantProperty, this.displacementProperty ],
-    function( springConstant, displacement ) {
-      return ( springConstant * displacement * displacement ) / 2;
-    }, {
+  this.potentialEnergyProperty = new DerivedProperty(
+    [ this.springConstantProperty, this.displacementProperty ],
+    ( springConstant, displacement ) => ( springConstant * displacement * displacement ) / 2, {
       units: 'joules',
       phetioType: DerivedPropertyIO( NumberIO ),
       tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
     } );
   phet.log && this.potentialEnergyProperty.link(
-    function( potentialEnergy ) { phet.log( options.logName + ' potentialEnergy=' + potentialEnergy ); } );
+    potentialEnergy => phet.log( options.logName + ' potentialEnergy=' + potentialEnergy )
+  );
 
   PhetioObject.call( this, options );
 }
