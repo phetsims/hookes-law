@@ -6,27 +6,27 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import inherit from '../../../../phet-core/js/inherit.js';
 import hookesLaw from '../../hookesLaw.js';
 import ParallelSystem from './ParallelSystem.js';
 import SeriesSystem from './SeriesSystem.js';
 
-/**
- * @param {Tandem} tandem
- * @constructor
- */
-function SystemsModel( tandem ) {
-  this.seriesSystem = new SeriesSystem( tandem.createTandem( 'seriesSystem' ) );
-  this.parallelSystem = new ParallelSystem( tandem.createTandem( 'parallelSystem' ) );
+class SystemsModel {
+
+  /**
+   * @param {Tandem} tandem
+   */
+  constructor( tandem ) {
+    this.seriesSystem = new SeriesSystem( tandem.createTandem( 'seriesSystem' ) );
+    this.parallelSystem = new ParallelSystem( tandem.createTandem( 'parallelSystem' ) );
+  }
+
+  // @public
+  reset() {
+    this.seriesSystem.reset();
+    this.parallelSystem.reset();
+  }
 }
 
 hookesLaw.register( 'SystemsModel', SystemsModel );
 
-export default inherit( Object, SystemsModel, {
-
-  // @public
-  reset: function() {
-    this.seriesSystem.reset();
-    this.parallelSystem.reset();
-  }
-} );
+export default SystemsModel;

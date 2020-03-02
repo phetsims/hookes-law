@@ -7,31 +7,32 @@
  */
 
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
-import inherit from '../../../../phet-core/js/inherit.js';
 import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import hookesLaw from '../../hookesLaw.js';
 
-/**
- * @param {Tandem} tandem
- * @constructor
- */
-function EnergyModel( tandem ) {
+class EnergyModel {
 
-  const springOptions = {
-    logName: 'spring',
-    springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = N/m
-    displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m
-  };
+  /**
+   * @param {Tandem} tandem
+   */
+  constructor( tandem ) {
 
-  this.system = new SingleSpringSystem( tandem.createTandem( 'system' ), springOptions );
+    const springOptions = {
+      logName: 'spring',
+      springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = N/m
+      displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m
+    };
+
+    // @public
+    this.system = new SingleSpringSystem( tandem.createTandem( 'system' ), springOptions );
+  }
+
+  // @public
+  reset() {
+    this.system.reset();
+  }
 }
 
 hookesLaw.register( 'EnergyModel', EnergyModel );
 
-export default inherit( Object, EnergyModel, {
-
-  // @public
-  reset: function() {
-    this.system.reset();
-  }
-} );
+export default EnergyModel;
