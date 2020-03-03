@@ -7,7 +7,7 @@
   <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1"/>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="phet-sim-level" content="development">
-  
+
   <title>hookes-law</title>
 </head>
 
@@ -19,8 +19,67 @@
 
   window.phet = window.phet || {};
   window.phet.chipper = window.phet.chipper || {};
-  window.phet.chipper.packageObject = {"name":"hookes-law","version":"1.1.0-dev.14","license":"GPL-3.0","repository":{"type":"git","url":"https://github.com/phetsims/hookes-law.git"},"devDependencies":{"grunt":"~1.0.0"},"phet":{"requirejsNamespace":"HOOKES_LAW","phetLibs":["twixt"],"runnable":true,"supportedBrands":["phet","phet-io","adapted-from-phet"],"simulation":true,"phet-io":{"wrappers":["phet-io-wrapper-hookes-law-energy"]}},"eslintConfig":{"extends":"../chipper/eslint/sim_eslintrc.js"}};
-  window.phet.chipper.stringRepos = [{"repo":"hookes-law","requirejsNamespace":"HOOKES_LAW"},{"repo":"joist","requirejsNamespace":"JOIST"},{"repo":"scenery-phet","requirejsNamespace":"SCENERY_PHET"},{"repo":"sun","requirejsNamespace":"SUN"},{"repo":"tambo","requirejsNamespace":"TAMBO"},{"repo":"twixt","requirejsNamespace":"TWIXT"}];
+  window.phet.chipper.packageObject =
+    {
+      "name": "hookes-law",
+      "version": "1.1.0-dev.14",
+      "license": "GPL-3.0",
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/phetsims/hookes-law.git"
+      },
+      "devDependencies": {
+        "grunt": "~1.0.0"
+      },
+      "phet": {
+        "requirejsNamespace": "HOOKES_LAW",
+        "phetLibs": [
+          "twixt"
+        ],
+        "runnable": true,
+        "supportedBrands": [
+          "phet",
+          "phet-io",
+          "adapted-from-phet"
+        ],
+        "simulation": true,
+        "phet-io": {
+          "wrappers": [
+            "phet-io-wrapper-hookes-law-energy"
+          ]
+        }
+      },
+      "eslintConfig": {
+        "extends": "../chipper/eslint/sim_eslintrc.js"
+      }
+    };
+  window.phet.chipper.stringRepos =
+    [
+      {
+        "repo": "hookes-law",
+        "requirejsNamespace": "HOOKES_LAW"
+      },
+      {
+        "repo": "joist",
+        "requirejsNamespace": "JOIST"
+      },
+      {
+        "repo": "scenery-phet",
+        "requirejsNamespace": "SCENERY_PHET"
+      },
+      {
+        "repo": "sun",
+        "requirejsNamespace": "SUN"
+      },
+      {
+        "repo": "tambo",
+        "requirejsNamespace": "TAMBO"
+      },
+      {
+        "repo": "twixt",
+        "requirejsNamespace": "TWIXT"
+      }
+    ];
 
   // Identify the brand (assume generated brand if not provided with query parameters)
   const brandMatch = location.search.match( /brand=([^&]+)/ );
