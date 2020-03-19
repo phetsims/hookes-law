@@ -81,7 +81,9 @@ class AppliedForceControl extends NumberControl {
       },
       numberDisplayOptions: {
         maxWidth: 100, // i18n, determined empirically
-        font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT,
+        textOptions: {
+          font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT
+        },
         decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
         valuePattern: VALUE_PATTERN
       },
