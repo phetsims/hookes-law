@@ -21,7 +21,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
-import hookesLawStrings from '../../hookes-law-strings.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
 
 // strings

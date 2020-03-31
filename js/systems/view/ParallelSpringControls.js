@@ -17,7 +17,7 @@ import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
-import hookesLawStrings from '../../hookes-law-strings.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
 
 // strings

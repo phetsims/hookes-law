@@ -13,7 +13,7 @@ import NumberControl from '../../../../scenery-phet/js/NumberControl.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLawStrings from '../../hookes-law-strings.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
