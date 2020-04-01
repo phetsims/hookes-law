@@ -5472,7 +5472,7 @@ window.phet.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<ReferenceIO>"
+      "phetioTypeName": "PropertyIO<ScreenIO>"
     },
     "hookesLaw.homeScreen.nameProperty": {
       "phetioDocumentation": "",
