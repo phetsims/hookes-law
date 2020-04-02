@@ -15,15 +15,15 @@ import HBox from '../../../../scenery/js/nodes/HBox.js';
 import HStrut from '../../../../scenery/js/nodes/HStrut.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
-import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
+import AquaRadioButtonGroup from '../../../../sun/js/AquaRadioButtonGroup.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 
 // strings
 const appliedForceString = hookesLawStrings.appliedForce;
@@ -86,66 +86,57 @@ class SystemsVisibilityControls extends Panel {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    // 'total' radio button
-    const totalRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'total',
-      new HBox( {
-        children: [
-          new Text( totalString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-          HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
-        ],
-        spacing: 10
-      } ),
-      merge( {
-        tandem: options.tandem.createTandem( 'totalRadioButton' )
-      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
-
-    // 'components' radio button
-    const component1Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
-    const component2Node = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
-    const componentsVectorIcons = new VBox( {
+    // Label for 'total' radio button
+    const totalRadioButtonLabel = new HBox( {
       children: [
-        component1Node,
-        component2Node
+        new Text( totalString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
       ],
       spacing: 10
     } );
-    const componentsRadioButton = new AquaRadioButton( properties.springForceRepresentationProperty, 'components',
-      new HBox( {
-        children: [
-          new Text( componentsString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-          new BracketNode( {
-            orientation: 'left',
-            bracketLength: componentsVectorIcons.height
-          } ),
-          componentsVectorIcons
-        ],
-        spacing: 10
-      } ),
-      merge( {
-        tandem: options.tandem.createTandem( 'componentsRadioButton' )
-      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
+
+    // Label for 'components' radio button
+    const componentsIcon1 = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
+    const componentsIcon2 = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
+    const componentsIcons = new VBox( {
+      children: [
+        componentsIcon1,
+        componentsIcon2
+      ],
+      spacing: 10
+    } );
+    const componentsRadioButtonLabel = new HBox( {
+      touchAreaXDilation: 10,
+      touchAreaYDilation: 4,
+      children: [
+        new Text( componentsString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        new BracketNode( {
+          orientation: 'left',
+          bracketLength: componentsIcons.height
+        } ),
+        componentsIcons
+      ],
+      spacing: 10
+    } );
 
     // Change the component vector colors to match the system
     properties.seriesParallelProperty.link( seriesParallel => {
-      component1Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.LEFT_SPRING : HookesLawColors.TOP_SPRING;
-      component2Node.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
+      componentsIcon1.fill = ( seriesParallel === 'series' ) ? HookesLawColors.LEFT_SPRING : HookesLawColors.TOP_SPRING;
+      componentsIcon2.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
     } );
 
-    // Radio button touch areas
-    totalRadioButton.touchArea = totalRadioButton.localBounds.dilatedXY( 10, 4 );
-    componentsRadioButton.touchArea = componentsRadioButton.localBounds.dilatedXY( 10, 4 );
+    const radioButtonItems = [
+      { value: 'total', node: totalRadioButtonLabel, tandemName: 'totalRadioButton' },
+      { value: 'components', node: componentsRadioButtonLabel, tandemName: 'componentsRadioButton' }
+    ];
 
-    const radioButtonsBox = new VBox( {
-      children: [
-        totalRadioButton,
-        componentsRadioButton
-      ],
-      align: 'left',
-      spacing: 10
+    const radioButtonGroup = new AquaRadioButtonGroup( properties.springForceRepresentationProperty, radioButtonItems, {
+      spacing: 10,
+      radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS
     } );
 
     const radioButtonsSubPanel = new HBox( {
-      children: [ new HStrut( 25 ), radioButtonsBox ],
+      children: [ new HStrut( 25 ), radioButtonGroup ],
       spacing: 5
     } );
 
@@ -158,7 +149,7 @@ class SystemsVisibilityControls extends Panel {
 
     // Radio buttons should be enabled only if 'spring force' is checked
     properties.springForceVectorVisibleProperty.link( springForceVectorVisible => {
-      totalRadioButton.enabled = componentsRadioButton.enabled = springForceVectorVisible;
+      radioButtonGroup.enabled = springForceVectorVisible;
     } );
 
     // Adjust touch areas
