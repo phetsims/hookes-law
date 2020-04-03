@@ -125,18 +125,19 @@ class SystemsVisibilityControls extends Panel {
       componentsIcon2.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
     } );
 
-    const radioButtonItems = [
+    const springForceRadioButtonItems = [
       { value: 'total', node: totalRadioButtonLabel, tandemName: 'totalRadioButton' },
       { value: 'components', node: componentsRadioButtonLabel, tandemName: 'componentsRadioButton' }
     ];
 
-    const radioButtonGroup = new AquaRadioButtonGroup( properties.springForceRepresentationProperty, radioButtonItems, {
+    const springForceRadioButtonGroup = new AquaRadioButtonGroup( properties.springForceRepresentationProperty, springForceRadioButtonItems, {
       spacing: 10,
-      radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS
+      radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS,
+      tandem: options.tandem.createTandem( 'springForceRadioButtonGroup' )
     } );
 
     const radioButtonsSubPanel = new HBox( {
-      children: [ new HStrut( 25 ), radioButtonGroup ],
+      children: [ new HStrut( 25 ), springForceRadioButtonGroup ],
       spacing: 5
     } );
 
@@ -149,7 +150,7 @@ class SystemsVisibilityControls extends Panel {
 
     // Radio buttons should be enabled only if 'spring force' is checked
     properties.springForceVectorVisibleProperty.link( springForceVectorVisible => {
-      radioButtonGroup.enabled = springForceVectorVisible;
+      springForceRadioButtonGroup.enabled = springForceVectorVisible;
     } );
 
     // Adjust touch areas
