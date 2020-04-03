@@ -23,7 +23,7 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
-import EnergyGraphs from './EnergyGraphs.js';
+import EnergyGraph from './EnergyGraph.js';
 
 // strings
 const appliedForceString = hookesLawStrings.appliedForce;
@@ -47,19 +47,19 @@ class EnergyVisibilityControls extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
-    const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraphs.BAR_GRAPH,
+    const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.BAR_GRAPH,
       new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'barGraphRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraphs.ENERGY_PLOT,
+    const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.ENERGY_PLOT,
       new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'energyPlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraphs.FORCE_PLOT,
+    const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.FORCE_PLOT,
       new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'forcePlotRadioButton' )
@@ -80,7 +80,7 @@ class EnergyVisibilityControls extends Panel {
         tandem: options.tandem.createTandem( 'energyCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
     properties.graphProperty.link( graph => {
-      energyCheckbox.enabled = ( graph === EnergyGraphs.FORCE_PLOT );
+      energyCheckbox.enabled = ( graph === EnergyGraph.FORCE_PLOT );
     } );
 
     // other checkboxes
