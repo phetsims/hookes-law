@@ -25,6 +25,7 @@ import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import SeriesSpringControls from './SeriesSpringControls.js';
+import SpringForceRepresentation from './SpringForceRepresentation.js';
 
 class SeriesSystemNode extends Node {
 
@@ -190,10 +191,12 @@ class SeriesSystemNode extends Node {
       ( springForceVectorVisible, springForceRepresentation ) => {
 
         // total
-        totalSpringForceVectorNode.visible = springForceVectorVisible && springForceRepresentation === 'total';
+        totalSpringForceVectorNode.visible =
+          springForceVectorVisible && ( springForceRepresentation === SpringForceRepresentation.TOTAL );
 
         // components
-        const componentsVisible = springForceVectorVisible && springForceRepresentation === 'components';
+        const componentsVisible =
+          springForceVectorVisible && ( springForceRepresentation === SpringForceRepresentation.COMPONENTS );
         rightSpringForceVectorNode.visible = leftSpringForceVectorNode.visible = leftAppliedForceVectorNode.visible = componentsVisible;
       } );
 

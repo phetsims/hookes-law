@@ -8,10 +8,10 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
-import StringProperty from '../../../../axon/js/StringProperty.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
+import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
 class SystemsViewProperties extends ViewProperties {
@@ -34,10 +34,10 @@ class SystemsViewProperties extends ViewProperties {
     } );
 
     // @public how spring force is represented
-    this.springForceRepresentationProperty = new StringProperty( 'total', {
-      validValues: [ 'total', 'components' ],
-      tandem: tandem.createTandem( 'springForceRepresentationProperty' )
-    } );
+    this.springForceRepresentationProperty = new EnumerationProperty(
+      SpringForceRepresentation, SpringForceRepresentation.TOTAL, {
+        tandem: tandem.createTandem( 'springForceRepresentationProperty' )
+      } );
   }
 
   /**

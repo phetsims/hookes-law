@@ -18,6 +18,7 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
+import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
 class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
@@ -72,8 +73,8 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
 
     // Descriptions of the radio buttons.
     const buttonDescriptions = [
-      { value: 'total', node: totalRadioButtonLabel, tandemName: 'totalRadioButton' },
-      { value: 'components', node: componentsRadioButtonLabel, tandemName: 'componentsRadioButton' }
+      { value: SpringForceRepresentation.TOTAL, node: totalRadioButtonLabel, tandemName: 'totalRadioButton' },
+      { value: SpringForceRepresentation.COMPONENTS, node: componentsRadioButtonLabel, tandemName: 'componentsRadioButton' }
     ];
 
     super( springForceRepresentationProperty, buttonDescriptions, options );

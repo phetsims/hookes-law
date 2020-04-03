@@ -27,6 +27,7 @@ import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import ParallelSpringControls from './ParallelSpringControls.js';
+import SpringForceRepresentation from './SpringForceRepresentation.js';
 
 // constants
 const WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
@@ -187,9 +188,11 @@ class ParallelSystemNode extends Node {
     Property.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
       ( springForceVectorVisible, springForceRepresentation ) => {
         // total
-        totalSpringForceVectorNode.visible = springForceVectorVisible && springForceRepresentation === 'total';
+        totalSpringForceVectorNode.visible =
+          springForceVectorVisible && ( springForceRepresentation === SpringForceRepresentation.TOTAL );
         // components
-        const componentsVisible = springForceVectorVisible && springForceRepresentation === 'components';
+        const componentsVisible =
+          springForceVectorVisible && ( springForceRepresentation === SpringForceRepresentation.COMPONENTS );
         bottomSpringForceVectorNode.visible = topSpringForceVectorNode.visible = componentsVisible;
       } );
 
