@@ -1,7 +1,7 @@
 // Copyright 2015-2020, University of Colorado Boulder
 
 /**
- * Scene control for the "Intro" screen, switches between 1 and 2 systems.
+ * Scene control for the "Systems" screen, switches between series and parallel systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -12,20 +12,20 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class IntroSceneControl extends RadioButtonGroup {
+class SeriesParallelRadioButtonGroup extends RadioButtonGroup {
 
   /**
-   * @param {NumberProperty} numberOfSystemsProperty
+   * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
    * @param {Object} [options]
    */
-  constructor( numberOfSystemsProperty, options ) {
+  constructor( seriesParallelProperty, options ) {
 
     options = merge( {
 
       // RadioButtonGroup options
       orientation: 'horizontal',
       spacing: 10,
-      buttonContentXMargin: 20,
+      buttonContentXMargin: 5,
       buttonContentYMargin: 5,
       selectedLineWidth: 2,
 
@@ -33,13 +33,13 @@ class IntroSceneControl extends RadioButtonGroup {
       tandem: Tandem.REQUIRED
     }, options );
 
-    super( numberOfSystemsProperty, [
-      { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
-      { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
+    super( seriesParallelProperty, [
+      { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
+      { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
     ], options );
   }
 }
 
-hookesLaw.register( 'IntroSceneControl', IntroSceneControl );
+hookesLaw.register( 'SystemsSceneControl', SeriesParallelRadioButtonGroup );
 
-export default IntroSceneControl;
+export default SeriesParallelRadioButtonGroup;

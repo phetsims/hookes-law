@@ -13,8 +13,8 @@ import VBox from '../../../../scenery/js/nodes/VBox.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import ParallelSystemNode from './ParallelSystemNode.js';
+import SeriesParallelRadioButtonGroup from './SeriesParallelRadioButtonGroup.js';
 import SeriesSystemNode from './SeriesSystemNode.js';
-import SystemsSceneControl from './SystemsSceneControl.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
 import SystemsVisibilityControls from './SystemsVisibilityControls.js';
 
@@ -41,15 +41,15 @@ class SystemsScreenView extends ScreenView {
       tandem: tandem.createTandem( 'visibilityControls' )
     } );
 
-    // Control for switching between series and parallel systems
-    const sceneControl = new SystemsSceneControl( viewProperties.seriesParallelProperty, {
-      tandem: tandem.createTandem( 'sceneControl' )
+    // Radio buttons for switching between series and parallel systems
+    const seriesParallelRadioButtonGroup = new SeriesParallelRadioButtonGroup( viewProperties.seriesParallelProperty, {
+      tandem: tandem.createTandem( 'seriesParallelRadioButtonGroup' )
     } );
 
     // horizontally center the controls
     this.addChild( new VBox( {
       spacing: 10,
-      children: [ visibilityControls, sceneControl ],
+      children: [ visibilityControls, seriesParallelRadioButtonGroup ],
       right: this.layoutBounds.right - 10,
       top: this.layoutBounds.top + 10
     } ) );

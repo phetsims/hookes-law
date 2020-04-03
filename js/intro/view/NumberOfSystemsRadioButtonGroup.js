@@ -1,7 +1,7 @@
 // Copyright 2015-2020, University of Colorado Boulder
 
 /**
- * Scene control for the "Systems" screen, switches between series and parallel systems.
+ * Scene control for the "Intro" screen, switches between 1 and 2 systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -12,20 +12,20 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class SystemsSceneControl extends RadioButtonGroup {
+class NumberOfSystemsRadioButtonGroup extends RadioButtonGroup {
 
   /**
-   * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
+   * @param {NumberProperty} numberOfSystemsProperty
    * @param {Object} [options]
    */
-  constructor( seriesParallelProperty, options ) {
+  constructor( numberOfSystemsProperty, options ) {
 
     options = merge( {
 
       // RadioButtonGroup options
       orientation: 'horizontal',
       spacing: 10,
-      buttonContentXMargin: 5,
+      buttonContentXMargin: 20,
       buttonContentYMargin: 5,
       selectedLineWidth: 2,
 
@@ -33,13 +33,13 @@ class SystemsSceneControl extends RadioButtonGroup {
       tandem: Tandem.REQUIRED
     }, options );
 
-    super( seriesParallelProperty, [
-      { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
-      { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
+    super( numberOfSystemsProperty, [
+      { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
+      { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
     ], options );
   }
 }
 
-hookesLaw.register( 'SystemsSceneControl', SystemsSceneControl );
+hookesLaw.register( 'IntroSceneControl', NumberOfSystemsRadioButtonGroup );
 
-export default SystemsSceneControl;
+export default NumberOfSystemsRadioButtonGroup;

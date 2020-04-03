@@ -13,10 +13,10 @@ import VBox from '../../../../scenery/js/nodes/VBox.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import IntroAnimator from './IntroAnimator.js';
-import IntroSceneControl from './IntroSceneControl.js';
 import IntroSystemNode from './IntroSystemNode.js';
 import IntroViewProperties from './IntroViewProperties.js';
 import IntroVisibilityControls from './IntroVisibilityControls.js';
+import NumberOfSystemsRadioButtonGroup from './NumberOfSystemsRadioButtonGroup.js';
 
 class IntroScreenView extends ScreenView {
 
@@ -44,15 +44,15 @@ class IntroScreenView extends ScreenView {
       tandem: tandem.createTandem( 'visibilityControls' )
     } );
 
-    // Control for switching between 1 and 2 systems
-    const sceneControl = new IntroSceneControl( viewProperties.numberOfSystemsProperty, {
-      tandem: tandem.createTandem( 'sceneControl' )
+    // Radio buttons for switching between 1 and 2 systems
+    const numberOfSystemsRadioButtonGroup = new NumberOfSystemsRadioButtonGroup( viewProperties.numberOfSystemsProperty, {
+      tandem: tandem.createTandem( 'numberOfSystemsRadioButtonGroup' )
     } );
 
     // horizontally center the controls
     this.addChild( new VBox( {
       spacing: 10,
-      children: [ visibilityControls, sceneControl ],
+      children: [ visibilityControls, numberOfSystemsRadioButtonGroup ],
       right: this.layoutBounds.right - 10,
       top: this.layoutBounds.top + 10
     } ) );
