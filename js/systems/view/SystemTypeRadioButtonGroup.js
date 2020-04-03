@@ -11,14 +11,15 @@ import RadioButtonGroup from '../../../../sun/js/buttons/RadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
+import SystemType from './SystemType.js';
 
-class SeriesParallelRadioButtonGroup extends RadioButtonGroup {
+class SystemTypeRadioButtonGroup extends RadioButtonGroup {
 
   /**
-   * @param {StringProperty} seriesParallelProperty - switches between 2 systems, 'series'|'parallel'
+   * @param {EnumerationProperty.<SystemType>} systemTypeProperty
    * @param {Object} [options]
    */
-  constructor( seriesParallelProperty, options ) {
+  constructor( systemTypeProperty, options ) {
 
     options = merge( {
 
@@ -33,13 +34,13 @@ class SeriesParallelRadioButtonGroup extends RadioButtonGroup {
       tandem: Tandem.REQUIRED
     }, options );
 
-    super( seriesParallelProperty, [
-      { value: 'parallel', node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
-      { value: 'series', node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
+    super( systemTypeProperty, [
+      { value: SystemType.PARALLEL, node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
+      { value: SystemType.SERIES, node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
     ], options );
   }
 }
 
-hookesLaw.register( 'SystemsSceneControl', SeriesParallelRadioButtonGroup );
+hookesLaw.register( 'SystemsSceneControl', SystemTypeRadioButtonGroup );
 
-export default SeriesParallelRadioButtonGroup;
+export default SystemTypeRadioButtonGroup;

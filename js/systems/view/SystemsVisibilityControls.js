@@ -60,7 +60,7 @@ class SystemsVisibilityControls extends Panel {
 
     // Radio buttons for spring force
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
-      properties.springForceRepresentationProperty, properties.seriesParallelProperty, {
+      properties.springForceRepresentationProperty, properties.systemTypeProperty, {
         tandem: options.tandem.createTandem( 'springForceRadioButtonGroup' )
       } );
     const radioButtonsSubPanel = new HBox( {

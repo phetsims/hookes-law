@@ -7,10 +7,12 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
+import SystemType from './SystemType.js';
 
 class SystemsViewProperties extends ViewProperties {
 
@@ -22,9 +24,8 @@ class SystemsViewProperties extends ViewProperties {
     super( tandem );
 
     // @public which system is visible
-    this.seriesParallelProperty = new StringProperty( 'parallel', {
-      validValues: [ 'series', 'parallel' ],
-      tandem: tandem.createTandem( 'seriesParallelProperty' )
+    this.systemTypeProperty = new EnumerationProperty( SystemType, SystemType.PARALLEL, {
+      tandem: tandem.createTandem( 'systemTypeProperty' )
     } );
 
     // @public is the spring force vector visible?
@@ -44,7 +45,7 @@ class SystemsViewProperties extends ViewProperties {
    * @override
    */
   reset() {
-    this.seriesParallelProperty.reset();
+    this.systemTypeProperty.reset();
     this.springForceVectorVisibleProperty.reset();
     this.springForceRepresentationProperty.reset();
     super.reset();

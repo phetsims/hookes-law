@@ -344,6 +344,14 @@ window.phet.preloads.phetio.phetioTypes = assert &&
       "supertype": "ObjectIO",
       "typeName": "EnumerationIO(BAR_GRAPH|ENERGY_PLOT|FORCE_PLOT)"
     },
+    "EnumerationIO(SERIES|PARALLEL)": {
+      "documentation": "Possible values: SERIES,PARALLEL.",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "supertype": "ObjectIO",
+      "typeName": "EnumerationIO(SERIES|PARALLEL)"
+    },
     "EventIO": {
       "documentation": "A DOM Event",
       "events": [],
@@ -404,6 +412,19 @@ window.phet.preloads.phetio.phetioTypes = assert &&
       ],
       "supertype": "ObjectIO",
       "typeName": "FunctionIO(EnumerationIO(BAR_GRAPH|ENERGY_PLOT|FORCE_PLOT),NullableIO<EnumerationIO(BAR_GRAPH|ENERGY_PLOT|FORCE_PLOT)>)=>VoidIO"
+    },
+    "FunctionIO(EnumerationIO(SERIES|PARALLEL),NullableIO<EnumerationIO(SERIES|PARALLEL)>)=>VoidIO": {
+      "documentation": "Wrapper for the built-in JS function type.<br><strong>Arguments:</strong> EnumerationIO(SERIES|PARALLEL), NullableIO<EnumerationIO(SERIES|PARALLEL)><br><strong>Return Type:</strong> VoidIO",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "EnumerationIO(SERIES|PARALLEL)",
+        "NullableIO<EnumerationIO(SERIES|PARALLEL)>",
+        "VoidIO"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "FunctionIO(EnumerationIO(SERIES|PARALLEL),NullableIO<EnumerationIO(SERIES|PARALLEL)>)=>VoidIO"
     },
     "FunctionIO(NullableIO<BooleanIO>,NullableIO<NullableIO<BooleanIO>>)=>VoidIO": {
       "documentation": "Wrapper for the built-in JS function type.<br><strong>Arguments:</strong> NullableIO<BooleanIO>, NullableIO<NullableIO<BooleanIO>><br><strong>Return Type:</strong> VoidIO",
@@ -595,6 +616,17 @@ window.phet.preloads.phetio.phetioTypes = assert &&
       ],
       "supertype": "ObjectIO",
       "typeName": "NullableIO<EnumerationIO(BAR_GRAPH|ENERGY_PLOT|FORCE_PLOT)>"
+    },
+    "NullableIO<EnumerationIO(SERIES|PARALLEL)>": {
+      "documentation": "A wrapper to wrap another IOType, adding support for null.",
+      "events": [],
+      "methodOrder": [],
+      "methods": {},
+      "parameterTypes": [
+        "EnumerationIO(SERIES|PARALLEL)"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "NullableIO<EnumerationIO(SERIES|PARALLEL)>"
     },
     "NullableIO<FocusIO>": {
       "documentation": "A wrapper to wrap another IOType, adding support for null.",
@@ -1127,6 +1159,50 @@ window.phet.preloads.phetio.phetioTypes = assert &&
       ],
       "supertype": "ObjectIO",
       "typeName": "PropertyIO<EnumerationIO(BAR_GRAPH|ENERGY_PLOT|FORCE_PLOT)>"
+    },
+    "PropertyIO<EnumerationIO(SERIES|PARALLEL)>": {
+      "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",
+      "events": [
+        "changed"
+      ],
+      "methodOrder": [
+        "link",
+        "lazyLink"
+      ],
+      "methods": {
+        "getValue": {
+          "documentation": "Gets the current value.",
+          "parameterTypes": [],
+          "returnType": "EnumerationIO(SERIES|PARALLEL)"
+        },
+        "lazyLink": {
+          "documentation": "Adds a listener which will be called when the value changes. This method is like \"link\", but without the current-value callback on registration. The listener takes two arguments, the new value and the previous value.",
+          "parameterTypes": [
+            "FunctionIO(EnumerationIO(SERIES|PARALLEL),NullableIO<EnumerationIO(SERIES|PARALLEL)>)=>VoidIO"
+          ],
+          "returnType": "VoidIO"
+        },
+        "link": {
+          "documentation": "Adds a listener which will be called when the value changes. On registration, the listener is also called with the current value. The listener takes two arguments, the new value and the previous value.",
+          "parameterTypes": [
+            "FunctionIO(EnumerationIO(SERIES|PARALLEL),NullableIO<EnumerationIO(SERIES|PARALLEL)>)=>VoidIO"
+          ],
+          "returnType": "VoidIO"
+        },
+        "setValue": {
+          "documentation": "Sets the value of the Property. If the value differs from the previous value, listeners are notified with the new value.",
+          "invocableForReadOnlyElements": false,
+          "parameterTypes": [
+            "EnumerationIO(SERIES|PARALLEL)"
+          ],
+          "returnType": "VoidIO"
+        }
+      },
+      "parameterTypes": [
+        "EnumerationIO(SERIES|PARALLEL)"
+      ],
+      "supertype": "ObjectIO",
+      "typeName": "PropertyIO<EnumerationIO(SERIES|PARALLEL)>"
     },
     "PropertyIO<NullableIO<BooleanIO>>": {
       "documentation": "Observable values that send out notifications when the value changes. This differs from the traditional listener pattern in that added listeners also receive a callback with the current value when the listeners are registered. This is a widely-used pattern in PhET-iO simulations.",

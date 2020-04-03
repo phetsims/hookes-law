@@ -13,10 +13,11 @@ import VBox from '../../../../scenery/js/nodes/VBox.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import ParallelSystemNode from './ParallelSystemNode.js';
-import SeriesParallelRadioButtonGroup from './SeriesParallelRadioButtonGroup.js';
 import SeriesSystemNode from './SeriesSystemNode.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
 import SystemsVisibilityControls from './SystemsVisibilityControls.js';
+import SystemType from './SystemType.js';
+import SystemTypeRadioButtonGroup from './SystemTypeRadioButtonGroup.js';
 
 class SystemsScreenView extends ScreenView {
   /**
@@ -42,14 +43,14 @@ class SystemsScreenView extends ScreenView {
     } );
 
     // Radio buttons for switching between series and parallel systems
-    const seriesParallelRadioButtonGroup = new SeriesParallelRadioButtonGroup( viewProperties.seriesParallelProperty, {
-      tandem: tandem.createTandem( 'seriesParallelRadioButtonGroup' )
+    const systemTypeRadioButtonGroup = new SystemTypeRadioButtonGroup( viewProperties.systemTypeProperty, {
+      tandem: tandem.createTandem( 'systemTypeRadioButtonGroup' )
     } );
 
     // horizontally center the controls
     this.addChild( new VBox( {
       spacing: 10,
-      children: [ visibilityControls, seriesParallelRadioButtonGroup ],
+      children: [ visibilityControls, systemTypeRadioButtonGroup ],
       right: this.layoutBounds.right - 10,
       top: this.layoutBounds.top + 10
     } ) );
@@ -59,7 +60,7 @@ class SystemsScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.seriesParallelProperty.get() === 'series',
+      visible: viewProperties.systemTypeProperty.get() === SystemType.SERIES,
       tandem: tandem.createTandem( 'seriesSystemNode' )
     } );
     this.addChild( seriesSystemNode );
@@ -69,7 +70,7 @@ class SystemsScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       left: seriesSystemNode.left,
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.seriesParallelProperty.get() === 'parallel',
+      visible: viewProperties.systemTypeProperty.get() === SystemType.PARALLEL,
       tandem: tandem.createTandem( 'parallelSystemNode' )
     } );
     assert && assert( parallelSystemNode.height < this.layoutBounds.height, 'parallel system is too tall' );
@@ -88,9 +89,9 @@ class SystemsScreenView extends ScreenView {
     this.addChild( resetAllButton );
 
     // Make one of the 2 systems visible
-    viewProperties.seriesParallelProperty.lazyLink( seriesParallel => {
-      seriesSystemNode.visible = ( seriesParallel === 'series' );
-      parallelSystemNode.visible = ( seriesParallel === 'parallel' );
+    viewProperties.systemTypeProperty.lazyLink( systemType => {
+      seriesSystemNode.visible = ( systemType === SystemType.SERIES );
+      parallelSystemNode.visible = ( systemType === SystemType.PARALLEL );
     } );
   }
 }

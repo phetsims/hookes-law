@@ -18,15 +18,16 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
+import SystemType from './SystemType.js';
 
 class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
 
   /**
    * @param {Property.<string>} springForceRepresentationProperty
-   * @param {Property.<string>} seriesParallelProperty
+   * @param {Property.<string>} systemTypeProperty
    * @param {Object} [options]
    */
-  constructor( springForceRepresentationProperty, seriesParallelProperty, options ) {
+  constructor( springForceRepresentationProperty, systemTypeProperty, options ) {
 
     options = merge( {
       spacing: 10,
@@ -64,9 +65,9 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
     } );
 
     // Change the component vector colors to match the spring system
-    seriesParallelProperty.link( seriesParallel => {
-      componentsIcon1.fill = ( seriesParallel === 'series' ) ? HookesLawColors.LEFT_SPRING : HookesLawColors.TOP_SPRING;
-      componentsIcon2.fill = ( seriesParallel === 'series' ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
+    systemTypeProperty.link( systemType => {
+      componentsIcon1.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.LEFT_SPRING : HookesLawColors.TOP_SPRING;
+      componentsIcon2.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
     } );
 
     // Descriptions of the radio buttons.
