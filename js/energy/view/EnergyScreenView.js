@@ -12,6 +12,7 @@ import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.j
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import EnergyBarGraph from './EnergyBarGraph.js';
+import EnergyGraphs from './EnergyGraphs.js';
 import EnergyPlot from './EnergyPlot.js';
 import EnergySystemNode from './EnergySystemNode.js';
 import EnergyViewProperties from './EnergyViewProperties.js';
@@ -99,10 +100,10 @@ class EnergyScreenView extends ScreenView {
     // Observe view properties
     viewProperties.graphProperty.link( graph => {
 
-      forcePlot.visible = ( graph === 'forcePlot' );
-      energyPlot.visible = ( graph === 'energyPlot' );
+      forcePlot.visible = ( graph === EnergyGraphs.FORCE_PLOT );
+      energyPlot.visible = ( graph === EnergyGraphs.ENERGY_PLOT );
 
-      if ( graph === 'barGraph' ) {
+      if ( graph === EnergyGraphs.BAR_GRAPH ) {
         // aligned with equilibrium position
         barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
       }

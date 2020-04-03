@@ -21,8 +21,9 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
+import EnergyGraphs from './EnergyGraphs.js';
 
 // strings
 const appliedForceString = hookesLawStrings.appliedForce;
@@ -46,19 +47,19 @@ class EnergyVisibilityControls extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
-    const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, 'barGraph',
+    const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraphs.BAR_GRAPH,
       new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'barGraphRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, 'energyPlot',
+    const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraphs.ENERGY_PLOT,
       new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'energyPlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
-    const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, 'forcePlot',
+    const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraphs.FORCE_PLOT,
       new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'forcePlotRadioButton' )
@@ -79,7 +80,7 @@ class EnergyVisibilityControls extends Panel {
         tandem: options.tandem.createTandem( 'energyCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
     properties.graphProperty.link( graph => {
-      energyCheckbox.enabled = ( graph === 'forcePlot' );
+      energyCheckbox.enabled = ( graph === EnergyGraphs.FORCE_PLOT );
     } );
 
     // other checkboxes

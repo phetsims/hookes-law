@@ -2365,7 +2365,7 @@ window.phet.preloads.phetio.phetioElementsBaseline = assert &&
       "phetioReadOnly": false,
       "phetioState": true,
       "phetioStudioControl": true,
-      "phetioTypeName": "PropertyIO<StringIO>"
+      "phetioTypeName": "PropertyIO<EnumerationIO(BAR_GRAPH|ENERGY_PLOT|FORCE_PLOT)>"
     },
     "hookesLaw.energyScreen.view.viewProperties.valuesVisibleProperty": {
       "phetioDocumentation": "",

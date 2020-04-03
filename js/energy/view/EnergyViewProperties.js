@@ -7,10 +7,11 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import StringProperty from '../../../../axon/js/StringProperty.js';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
+import EnergyGraphs from './EnergyGraphs.js';
 
 class EnergyViewProperties extends ViewProperties {
 
@@ -22,8 +23,7 @@ class EnergyViewProperties extends ViewProperties {
     super( tandem );
 
     // @public which graph is visible
-    this.graphProperty = new StringProperty( 'barGraph', {
-      validValues: [ 'barGraph', 'energyPlot', 'forcePlot' ],
+    this.graphProperty = new EnumerationProperty( EnergyGraphs, EnergyGraphs.BAR_GRAPH, {
       tandem: tandem.createTandem( 'graphProperty' )
     } );
 
