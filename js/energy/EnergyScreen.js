@@ -10,13 +10,10 @@ import Screen from '../../../joist/js/Screen.js';
 import merge from '../../../phet-core/js/merge.js';
 import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
-import hookesLawStrings from '../hookesLawStrings.js';
 import hookesLaw from '../hookesLaw.js';
+import hookesLawStrings from '../hookesLawStrings.js';
 import EnergyModel from './model/EnergyModel.js';
 import EnergyScreenView from './view/EnergyScreenView.js';
-
-// strings
-const energyString = hookesLawStrings.energy;
 
 class EnergyScreen extends Screen {
 
@@ -26,7 +23,7 @@ class EnergyScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: energyString,
+      name: hookesLawStrings.energy,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
       tandem: tandem
     } );

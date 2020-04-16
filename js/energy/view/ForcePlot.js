@@ -16,15 +16,9 @@ import Path from '../../../../scenery/js/nodes/Path.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import XYPointPlot from './XYPointPlot.js';
-
-// strings
-const appliedForceString = hookesLawStrings.appliedForce;
-const displacementString = hookesLawStrings.displacement;
-const metersString = hookesLawStrings.meters;
-const newtonsString = hookesLawStrings.newtons;
 
 class ForcePlot extends XYPointPlot {
 
@@ -51,8 +45,8 @@ class ForcePlot extends XYPointPlot {
       // x axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
       maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
-      xString: displacementString,
-      xUnits: metersString,
+      xString: hookesLawStrings.displacement,
+      xUnits: hookesLawStrings.meters,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
       xUnitLength: unitDisplacementLength,
@@ -61,8 +55,8 @@ class ForcePlot extends XYPointPlot {
       // y axis
       minY: -HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
       maxY: HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
-      yString: appliedForceString,
-      yUnits: newtonsString,
+      yString: hookesLawStrings.appliedForce,
+      yUnits: hookesLawStrings.newtons,
       yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       yValueFill: HookesLawColors.APPLIED_FORCE,
       yUnitLength: HookesLawConstants.UNIT_FORCE_Y,

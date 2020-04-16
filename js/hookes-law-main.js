@@ -14,8 +14,6 @@ import hookesLawStrings from './hookesLawStrings.js';
 import IntroScreen from './intro/IntroScreen.js';
 import SystemsScreen from './systems/SystemsScreen.js';
 
-const hookesLawTitleString = hookesLawStrings[ 'hookes-law' ].title;
-
 const options = {
   credits: {
     leadDesign: 'Amy Rouinfar',
@@ -34,6 +32,6 @@ SimLauncher.launch( () => {
     new EnergyScreen( Tandem.ROOT.createTandem( 'energyScreen' ) )
   ];
 
-  const sim = new Sim( hookesLawTitleString, screens, options );
+  const sim = new Sim( hookesLawStrings[ 'hookes-law' ].title, screens, options );
   sim.start();
 } );

@@ -17,16 +17,14 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import HookesLawFont from '../HookesLawFont.js';
 import EquilibriumPositionNode from './EquilibriumPositionNode.js';
 import NibNode from './NibNode.js';
 import RoboticArmNode from './RoboticArmNode.js';
-
-const equilibriumPositionString = hookesLawStrings.equilibriumPosition;
 
 // Spring options common to all icons
 const COMMON_SPRING_OPTIONS = {
@@ -233,7 +231,7 @@ const HookesLawIconFactory = {
    * @static
    */
   createEquilibriumPositionCheckboxContent: function() {
-    const textNode = new Text( equilibriumPositionString, { font: new HookesLawFont( 18 ) } );
+    const textNode = new Text( hookesLawStrings.equilibriumPosition, { font: new HookesLawFont( 18 ) } );
     const lineNode = new EquilibriumPositionNode( textNode.height, {
       left: textNode.right + 8,
       centerY: textNode.centerY

@@ -10,13 +10,10 @@ import Screen from '../../../joist/js/Screen.js';
 import merge from '../../../phet-core/js/merge.js';
 import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
-import hookesLawStrings from '../hookesLawStrings.js';
 import hookesLaw from '../hookesLaw.js';
+import hookesLawStrings from '../hookesLawStrings.js';
 import SystemsModel from './model/SystemsModel.js';
 import SystemsScreenView from './view/SystemsScreenView.js';
-
-// strings
-const systemsString = hookesLawStrings.systems;
 
 class SystemsScreen extends Screen {
 
@@ -26,7 +23,7 @@ class SystemsScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: systemsString,
+      name: hookesLawStrings.systems,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
       tandem: tandem
     } );

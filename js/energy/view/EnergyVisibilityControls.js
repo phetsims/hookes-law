@@ -25,15 +25,6 @@ import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
 import EnergyGraph from './EnergyGraph.js';
 
-// strings
-const appliedForceString = hookesLawStrings.appliedForce;
-const barGraphString = hookesLawStrings.barGraph;
-const displacementString = hookesLawStrings.displacement;
-const energyPlotString = hookesLawStrings.energyPlot;
-const energyString = hookesLawStrings.energy;
-const forcePlotString = hookesLawStrings.forcePlot;
-const valuesString = hookesLawStrings.values;
-
 class EnergyVisibilityControls extends Panel {
 
   /**
@@ -48,19 +39,19 @@ class EnergyVisibilityControls extends Panel {
 
     // radio buttons
     const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.BAR_GRAPH,
-      new Text( barGraphString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      new Text( hookesLawStrings.barGraph, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'barGraphRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.ENERGY_PLOT,
-      new Text( energyPlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      new Text( hookesLawStrings.energyPlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'energyPlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
 
     const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.FORCE_PLOT,
-      new Text( forcePlotString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      new Text( hookesLawStrings.forcePlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       merge( {
         tandem: options.tandem.createTandem( 'forcePlotRadioButton' )
       }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
@@ -68,7 +59,7 @@ class EnergyVisibilityControls extends Panel {
     // energy checkbox, enabled when "Force Plot" radio button is selected
     const energyIcon = new HBox( {
       children: [
-        new Text( energyString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        new Text( hookesLawStrings.energy, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         // triangle
         new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), { fill: HookesLawColors.ENERGY } )
       ],
@@ -85,7 +76,7 @@ class EnergyVisibilityControls extends Panel {
 
     // other checkboxes
     const appliedForceCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.APPLIED_FORCE
       } ),
       properties.appliedForceVectorVisibleProperty,
@@ -94,7 +85,7 @@ class EnergyVisibilityControls extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const displacementCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
       } ),
@@ -111,7 +102,7 @@ class EnergyVisibilityControls extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
-      new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       merge( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )

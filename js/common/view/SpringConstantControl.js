@@ -13,19 +13,14 @@ import NumberControl from '../../../../scenery-phet/js/NumberControl.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
-// strings
-const newtonsPerMeterString = hookesLawStrings.newtonsPerMeter;
-const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
-const springConstantString = hookesLawStrings.springConstant;
-
 // fill in the {1} units, but leave the {0} value alone.
-const VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
-  SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsPerMeterString );
+const VALUE_PATTERN = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ],
+  SunConstants.VALUE_NUMBERED_PLACEHOLDER, hookesLawStrings.newtonsPerMeter );
 
 class SpringConstantControl extends NumberControl {
 
@@ -37,7 +32,7 @@ class SpringConstantControl extends NumberControl {
   constructor( springConstantProperty, springConstantRange, options ) {
 
     options = merge( {
-      title: springConstantString,
+      title: hookesLawStrings.springConstant,
 
       // NumberControl options
       delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,

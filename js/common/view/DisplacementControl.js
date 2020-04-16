@@ -13,18 +13,14 @@ import NumberControl from '../../../../scenery-phet/js/NumberControl.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
-const displacementColonString = hookesLawStrings.displacementColon;
-const metersString = hookesLawStrings.meters;
-const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
-
 // fill in the {1} units, but leave the {0} value alone.
-const VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
-  SunConstants.VALUE_NUMBERED_PLACEHOLDER, metersString );
+const VALUE_PATTERN = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ],
+  SunConstants.VALUE_NUMBERED_PLACEHOLDER, hookesLawStrings.meters );
 
 class DisplacementControl extends NumberControl {
   /**
@@ -94,7 +90,7 @@ class DisplacementControl extends NumberControl {
       }
     }
 
-    super( displacementColonString, displacementProperty, displacementRange, options );
+    super( hookesLawStrings.displacementColon, displacementProperty, displacementRange, options );
   }
 }
 

@@ -14,13 +14,9 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
-
-// strings
-const newtonsString = hookesLawStrings.newtons;
-const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
 
 class ForceVectorNode extends Node {
 
@@ -70,7 +66,8 @@ class ForceVectorNode extends Node {
       }
 
       // update the value
-      valueNode.text = StringUtils.format( pattern0Value1UnitsString, Utils.toFixed( Math.abs( value ), options.decimalPlaces ), newtonsString );
+      valueNode.text = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ],
+        Utils.toFixed( Math.abs( value ), options.decimalPlaces ), hookesLawStrings.newtons );
 
       // value position
       const margin = 5;

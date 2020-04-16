@@ -29,12 +29,9 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import XYAxes from './XYAxes.js';
-
-// strings
-const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
 
 // constants
 const VALUE_X_MARGIN = 6;
@@ -182,7 +179,7 @@ class XYPointPlot extends Node {
 
       // x value
       const xText = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      xValueNode.text = StringUtils.format( pattern0Value1UnitsString, xText, options.xUnits );
+      xValueNode.text = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ], xText, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
       if ( options.minY === 0 ) {
@@ -228,7 +225,7 @@ class XYPointPlot extends Node {
 
       // y value
       const yText = Utils.toFixed( yFixed, options.yDecimalPlaces );
-      yValueNode.text = StringUtils.format( pattern0Value1UnitsString, yText, options.yUnits );
+      yValueNode.text = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ], yText, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes
       const X_SPACING = 10;

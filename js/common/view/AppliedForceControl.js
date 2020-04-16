@@ -13,19 +13,14 @@ import NumberControl from '../../../../scenery-phet/js/NumberControl.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
-// strings
-const appliedForceColonString = hookesLawStrings.appliedForceColon;
-const newtonsString = hookesLawStrings.newtons;
-const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
-
 // fill in the {1} units, but leave the {0} value alone.
-const VALUE_PATTERN = StringUtils.format( pattern0Value1UnitsString,
-  SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsString );
+const VALUE_PATTERN = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ],
+  SunConstants.VALUE_NUMBERED_PLACEHOLDER, hookesLawStrings.newtons );
 
 // constants
 const MINOR_TICK_SPACING = 10;
@@ -61,7 +56,7 @@ class AppliedForceControl extends NumberControl {
     } ];
 
     options = merge( {
-      title: appliedForceColonString,
+      title: hookesLawStrings.appliedForceColon,
 
       // NumberControl options
       delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,

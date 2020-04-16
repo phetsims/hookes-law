@@ -15,13 +15,10 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
-
-const metersString = hookesLawStrings.meters;
-const pattern0Value1UnitsString = hookesLawStrings.pattern[ '0value' ][ '1units' ];
 
 class DisplacementVectorNode extends Node {
 
@@ -70,7 +67,7 @@ class DisplacementVectorNode extends Node {
 
       // update the value
       const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      valueNode.text = StringUtils.format( pattern0Value1UnitsString, displacementText, metersString );
+      valueNode.text = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, hookesLawStrings.meters );
 
       // center value on arrow
       valueNode.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;

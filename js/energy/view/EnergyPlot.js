@@ -12,14 +12,9 @@ import Path from '../../../../scenery/js/nodes/Path.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
+import hookesLawStrings from '../../hookesLawStrings.js';
 import XYPointPlot from './XYPointPlot.js';
-
-const displacementString = hookesLawStrings.displacement;
-const joulesString = hookesLawStrings.joules;
-const metersString = hookesLawStrings.meters;
-const potentialEnergyString = hookesLawStrings.potentialEnergy;
 
 class EnergyPlot extends XYPointPlot {
 
@@ -44,8 +39,8 @@ class EnergyPlot extends XYPointPlot {
       // x axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
       maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
-      xString: displacementString,
-      xUnits: metersString,
+      xString: hookesLawStrings.displacement,
+      xUnits: hookesLawStrings.meters,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.DISPLACEMENT,
       xUnitLength: unitDisplacementLength,
@@ -54,8 +49,8 @@ class EnergyPlot extends XYPointPlot {
       // y axis
       minY: 0,
       maxY: HookesLawConstants.ENERGY_Y_AXIS_LENGTH,
-      yString: potentialEnergyString,
-      yUnits: joulesString,
+      yString: hookesLawStrings.potentialEnergy,
+      yUnits: hookesLawStrings.joules,
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
       yValueFill: HookesLawColors.ENERGY,
       yUnitLength: HookesLawConstants.UNIT_ENERGY_Y, // length of a 1J energy vector

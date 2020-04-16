@@ -16,14 +16,8 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
 import hookesLaw from '../../hookesLaw.js';
-
-// strings
-const appliedForceString = hookesLawStrings.appliedForce;
-const displacementString = hookesLawStrings.displacement;
-const springForceString = hookesLawStrings.springForce;
-const valuesString = hookesLawStrings.values;
+import hookesLawStrings from '../../hookesLawStrings.js';
 
 class IntroVisibilityControls extends Panel {
 
@@ -38,9 +32,9 @@ class IntroVisibilityControls extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // text labels on the vector checkboxes
-    const appliedForceTextNode = new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const springForceTextNode = new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const displacementTextNode = new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const appliedForceTextNode = new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const springForceTextNode = new Text( hookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const displacementTextNode = new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     const maxTextWidth =
       _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], node => node.width ).width;
 
@@ -87,7 +81,7 @@ class IntroVisibilityControls extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
-      new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       merge( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )

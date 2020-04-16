@@ -24,12 +24,6 @@ import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 
-// strings
-const appliedForceString = hookesLawStrings.appliedForce;
-const displacementString = hookesLawStrings.displacement;
-const springForceString = hookesLawStrings.springForce;
-const valuesString = hookesLawStrings.values;
-
 class SystemsVisibilityControls extends Panel {
 
   /**
@@ -44,7 +38,7 @@ class SystemsVisibilityControls extends Panel {
 
     // vector checkboxes
     const appliedForceCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( appliedForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
       merge( {
@@ -52,7 +46,7 @@ class SystemsVisibilityControls extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const springForceCheckbox = new Checkbox(
-      new Text( springForceString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      new Text( hookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
       merge( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
@@ -69,7 +63,7 @@ class SystemsVisibilityControls extends Panel {
     } );
 
     const displacementCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( displacementString, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
         vectorType: 'displacement'
       } ),
@@ -87,7 +81,7 @@ class SystemsVisibilityControls extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox(
-      new Text( valuesString, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+      new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.valuesVisibleProperty,
       merge( {
         tandem: options.tandem.createTandem( 'valuesCheckbox' )
