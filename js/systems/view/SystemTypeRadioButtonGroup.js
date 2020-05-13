@@ -41,6 +41,6 @@ class SystemTypeRadioButtonGroup extends RadioButtonGroup {
   }
 }
 
-hookesLaw.register( 'SystemsSceneControl', SystemTypeRadioButtonGroup );
+hookesLaw.register( 'SystemTypeRadioButtonGroup', SystemTypeRadioButtonGroup );
 
 export default SystemTypeRadioButtonGroup;

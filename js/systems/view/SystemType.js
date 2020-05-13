@@ -10,5 +10,5 @@ import hookesLaw from '../../hookesLaw.js';
  */
 const SystemType = Enumeration.byKeys( [ 'SERIES', 'PARALLEL' ] );
 
-hookesLaw.register( 'SystemTypes', SystemType );
+hookesLaw.register( 'SystemType', SystemType );
 export default SystemType;

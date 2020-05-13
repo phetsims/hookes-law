@@ -40,6 +40,6 @@ class NumberOfSystemsRadioButtonGroup extends RadioButtonGroup {
   }
 }
 
-hookesLaw.register( 'IntroSceneControl', NumberOfSystemsRadioButtonGroup );
+hookesLaw.register( 'NumberOfSystemsRadioButtonGroup', NumberOfSystemsRadioButtonGroup );
 
 export default NumberOfSystemsRadioButtonGroup;
