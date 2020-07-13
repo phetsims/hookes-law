@@ -7,7 +7,6 @@
  */
 
 import ScreenView from '../../../../joist/js/ScreenView.js';
-import merge from '../../../../phet-core/js/merge.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -26,9 +25,9 @@ class SystemsScreenView extends ScreenView {
    */
   constructor( model, tandem ) {
 
-    super( merge( {}, HookesLawConstants.SCREEN_VIEW_OPTIONS, {
+    super( {
       tandem: tandem
-    } ) );
+    } );
 
     // View length of 1 meter of displacement
     const unitDisplacementLength = HookesLawConstants.UNIT_DISPLACEMENT_X;

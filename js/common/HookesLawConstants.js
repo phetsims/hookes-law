@@ -7,7 +7,6 @@
  */
 
 import Property from '../../../axon/js/Property.js';
-import Bounds2 from '../../../dot/js/Bounds2.js';
 import Dimension2 from '../../../dot/js/Dimension2.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawColors from './HookesLawColors.js';
@@ -19,7 +18,6 @@ const APPLIED_FORCE_DECIMAL_PLACES = 1;
 const HookesLawConstants = {
 
   SCREEN_OPTIONS: { backgroundColorProperty: new Property( 'white' ) },
-  SCREEN_VIEW_OPTIONS: { layoutBounds: new Bounds2( 0, 0, 1024, 618 ) },
 
   // number of decimal places for displayed values
   APPLIED_FORCE_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES,
