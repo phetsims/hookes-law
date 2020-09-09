@@ -11,7 +11,7 @@ import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Utils from '../../../../dot/js/Utils.js';
 import Shape from '../../../../kite/js/Shape.js';
 import merge from '../../../../phet-core/js/merge.js';
-import SimpleDragHandler from '../../../../scenery/js/input/SimpleDragHandler.js';
+import DragListener from '../../../../scenery/js/listeners/DragListener.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
@@ -125,18 +125,18 @@ class RoboticArmNode extends Node {
 
     // Drag the pincers or hinge
     let startOffsetX = 0;
-    const dragHandler = new SimpleDragHandler( {
+    const dragHandler = new DragListener( {
 
       allowTouchSnag: true,
 
       start: event => {
         numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
         const length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
-        startOffsetX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - length;
+        startOffsetX = draggableNode.globalToParentPoint( event.pointer.point ).x - length;
       },
 
       drag: event => {
-        const parentX = event.currentTarget.globalToParentPoint( event.pointer.point ).x - startOffsetX;
+        const parentX = draggableNode.globalToParentPoint( event.pointer.point ).x - startOffsetX;
         const length = parentX / options.unitDisplacementLength;
         let left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
 
