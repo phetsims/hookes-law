@@ -8,9 +8,9 @@
 
 import Property from '../../../axon/js/Property.js';
 import Dimension2 from '../../../dot/js/Dimension2.js';
+import PhetFont from '../../../scenery-phet/js/PhetFont.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawColors from './HookesLawColors.js';
-import HookesLawFont from './HookesLawFont.js';
 
 // constants
 const APPLIED_FORCE_DECIMAL_PLACES = 1;
@@ -49,13 +49,13 @@ const HookesLawConstants = {
   ENERGY_UNIT_FORCE_X: 0.4, // Energy screen: view length of a 1N force vector, when drawn in the x dimension
 
   // fonts
-  CONTROL_PANEL_TITLE_FONT: new HookesLawFont( 18 ),
-  CONTROL_PANEL_VALUE_FONT: new HookesLawFont( 18 ),
-  VECTOR_VALUE_FONT: new HookesLawFont( 18 ),
-  BAR_GRAPH_VALUE_FONT: new HookesLawFont( 18 ),
-  BAR_GRAPH_AXIS_FONT: new HookesLawFont( 16 ),
-  XY_PLOT_VALUE_FONT: new HookesLawFont( 18 ),
-  XY_PLOT_AXIS_FONT: new HookesLawFont( 16 ),
+  CONTROL_PANEL_TITLE_FONT: new PhetFont( 18 ),
+  CONTROL_PANEL_VALUE_FONT: new PhetFont( 18 ),
+  VECTOR_VALUE_FONT: new PhetFont( 18 ),
+  BAR_GRAPH_VALUE_FONT: new PhetFont( 18 ),
+  BAR_GRAPH_AXIS_FONT: new PhetFont( 16 ),
+  XY_PLOT_VALUE_FONT: new PhetFont( 18 ),
+  XY_PLOT_AXIS_FONT: new PhetFont( 16 ),
 
   // sizes and lengths for UI components
   WALL_SIZE: new Dimension2( 25, 170 ),
@@ -77,7 +77,7 @@ const HookesLawConstants = {
     spacing: 8
   },
   CONTROL_TEXT_OPTIONS: {
-    font: new HookesLawFont( 18 )
+    font: new PhetFont( 18 )
   },
   DISPLACEMENT_VECTOR_OPTIONS: {
     stroke: HookesLawColors.DISPLACEMENT,
@@ -88,7 +88,7 @@ const HookesLawConstants = {
     useArrowNode: false
   },
   MAJOR_TICK_LABEL_OPTIONS: {
-    font: new HookesLawFont( 14 )
+    font: new PhetFont( 14 )
   },
   RADIO_BUTTON_OPTIONS: {
     radius: 8

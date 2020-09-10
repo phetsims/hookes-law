@@ -11,6 +11,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNode.js';
+import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import HBox from '../../../../scenery/js/nodes/HBox.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
@@ -21,7 +22,6 @@ import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
-import HookesLawFont from '../HookesLawFont.js';
 import EquilibriumPositionNode from './EquilibriumPositionNode.js';
 import NibNode from './NibNode.js';
 import RoboticArmNode from './RoboticArmNode.js';
@@ -231,7 +231,7 @@ const HookesLawIconFactory = {
    * @static
    */
   createEquilibriumPositionCheckboxContent: function() {
-    const textNode = new Text( hookesLawStrings.equilibriumPosition, { font: new HookesLawFont( 18 ) } );
+    const textNode = new Text( hookesLawStrings.equilibriumPosition, { font: new PhetFont( 18 ) } );
     const lineNode = new EquilibriumPositionNode( textNode.height, {
       left: textNode.right + 8,
       centerY: textNode.centerY
