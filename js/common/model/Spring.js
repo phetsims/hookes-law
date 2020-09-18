@@ -39,7 +39,6 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import DerivedPropertyIO from '../../../../axon/js/DerivedPropertyIO.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Range from '../../../../dot/js/Range.js';
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
@@ -218,7 +217,7 @@ class Spring extends PhetioObject {
       [ this.appliedForceProperty ],
       appliedForce => -appliedForce, {
         units: 'N',
-        phetioType: DerivedPropertyIO( NumberIO ),
+        phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'springForceProperty' )
       } );
     phet.log && this.springForceProperty.link( springForce => phet.log( `${options.logName} springForce=${springForce}` ) );
@@ -275,7 +274,7 @@ class Spring extends PhetioObject {
       [ this.springConstantProperty, this.displacementProperty ],
       ( springConstant, displacement ) => ( springConstant * displacement * displacement ) / 2, {
         units: 'joules',
-        phetioType: DerivedPropertyIO( NumberIO ),
+        phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
       } );
     phet.log && this.potentialEnergyProperty.link( potentialEnergy => phet.log( `${options.logName} potentialEnergy=${potentialEnergy}` ) );
