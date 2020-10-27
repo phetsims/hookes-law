@@ -7,12 +7,12 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import RadioButtonGroup from '../../../../sun/js/buttons/RadioButtonGroup.js';
+import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class NumberOfSystemsRadioButtonGroup extends RadioButtonGroup {
+class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
 
   /**
    * @param {NumberProperty} numberOfSystemsProperty
@@ -22,7 +22,7 @@ class NumberOfSystemsRadioButtonGroup extends RadioButtonGroup {
 
     options = merge( {
 
-      // RadioButtonGroup options
+      // RectangularRadioButtonGroup options
       orientation: 'horizontal',
       spacing: 10,
       buttonContentXMargin: 20,
