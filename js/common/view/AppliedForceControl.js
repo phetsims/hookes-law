@@ -36,8 +36,8 @@ class AppliedForceControl extends NumberControl {
 
     // major ticks
     assert && assert( appliedForceRange.min < 0 && Math.abs( appliedForceRange.min ) === Math.abs( appliedForceRange.max ) ); // range is symmetric
-    assert && assert( Utils.isInteger( appliedForceRange.max ) && Utils.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
-    assert && assert( Utils.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
+    assert && assert( Number.isInteger( appliedForceRange.max ) && Number.isInteger( appliedForceRange.max / 2 ) ); // major ticks are on integer values
+    assert && assert( Number.isInteger( appliedForceRange.max / MINOR_TICK_SPACING ) ); // minor ticks are on integer values
     const majorTicks = [ {
       value: appliedForceRange.min,
       label: new Text( appliedForceRange.min, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
