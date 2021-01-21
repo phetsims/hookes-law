@@ -14,7 +14,7 @@ import hookesLaw from '../../hookesLaw.js';
 import IntroAnimator from './IntroAnimator.js';
 import IntroSystemNode from './IntroSystemNode.js';
 import IntroViewProperties from './IntroViewProperties.js';
-import IntroVisibilityControls from './IntroVisibilityControls.js';
+import IntroVisibilityPanel from './IntroVisibilityPanel.js';
 import NumberOfSystemsRadioButtonGroup from './NumberOfSystemsRadioButtonGroup.js';
 
 class IntroScreenView extends ScreenView {
@@ -36,9 +36,9 @@ class IntroScreenView extends ScreenView {
     const viewProperties = new IntroViewProperties( tandem.createTandem( 'viewProperties' ) );
 
     // Visibility controls
-    const visibilityControls = new IntroVisibilityControls( viewProperties, {
+    const visibilityPanel = new IntroVisibilityPanel( viewProperties, {
       maxWidth: 250, // constrain width for i18n, determining empirically
-      tandem: tandem.createTandem( 'visibilityControls' )
+      tandem: tandem.createTandem( 'visibilityPanel' )
     } );
 
     // Radio buttons for switching between 1 and 2 systems
@@ -49,7 +49,7 @@ class IntroScreenView extends ScreenView {
     // horizontally center the controls
     this.addChild( new VBox( {
       spacing: 10,
-      children: [ visibilityControls, numberOfSystemsRadioButtonGroup ],
+      children: [ visibilityPanel, numberOfSystemsRadioButtonGroup ],
       right: this.layoutBounds.right - 10,
       top: this.layoutBounds.top + 10
     } ) );

@@ -1,7 +1,7 @@
 // Copyright 2015-2020, University of Colorado Boulder
 
 /**
- * Control panel for visibility of various representations in the "Energy" view.
+ * EnergyVisibilityPanel contains controls for the visibility of various representations in the "Energy" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -28,7 +28,7 @@ import EnergyGraph from './EnergyGraph.js';
 // constants
 const Y_SPACING = 20;
 
-class EnergyVisibilityControls extends Panel {
+class EnergyVisibilityPanel extends Panel {
 
   /**
    * @param {EnergyViewProperties} properties
@@ -58,10 +58,10 @@ class EnergyVisibilityControls extends Panel {
         tandemName: 'forcePlotRadioButton'
       }
     ];
-    const energyRadioButtonGroup = new AquaRadioButtonGroup( properties.graphProperty, radioButtonDescriptions, {
+    const plotRadioButtonGroup = new AquaRadioButtonGroup( properties.graphProperty, radioButtonDescriptions, {
       spacing: Y_SPACING,
       radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS,
-      tandem: options.tandem.createTandem( 'energyRadioButtonGroup' )
+      tandem: options.tandem.createTandem( 'plotRadioButtonGroup' )
     } );
 
     // energy checkbox, enabled when "Force Plot" radio button is selected
@@ -118,7 +118,7 @@ class EnergyVisibilityControls extends Panel {
 
     // Adjust touch areas
     const controls = [
-      energyRadioButtonGroup,
+      plotRadioButtonGroup,
       energyCheckbox,
       appliedForceCheckbox,
       displacementCheckbox,
@@ -133,9 +133,9 @@ class EnergyVisibilityControls extends Panel {
 
     const content = new VBox( {
       children: [
-        energyRadioButtonGroup,
+        plotRadioButtonGroup,
 
-        // "Energy" checkbox indented below energyRadioButtonGroup
+        // "Energy" checkbox indented below plotRadioButtonGroup
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
         new HSeparator( maxControlWidth, merge( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
           tandem: options.tandem.createTandem( 'separator' )
@@ -153,6 +153,6 @@ class EnergyVisibilityControls extends Panel {
   }
 }
 
-hookesLaw.register( 'EnergyVisibilityControls', EnergyVisibilityControls );
+hookesLaw.register( 'EnergyVisibilityPanel', EnergyVisibilityPanel );
 
-export default EnergyVisibilityControls;
+export default EnergyVisibilityPanel;

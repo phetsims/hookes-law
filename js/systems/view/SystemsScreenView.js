@@ -14,7 +14,7 @@ import hookesLaw from '../../hookesLaw.js';
 import ParallelSystemNode from './ParallelSystemNode.js';
 import SeriesSystemNode from './SeriesSystemNode.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
-import SystemsVisibilityControls from './SystemsVisibilityControls.js';
+import SystemsVisibilityPanel from './SystemsVisibilityPanel.js';
 import SystemType from './SystemType.js';
 import SystemTypeRadioButtonGroup from './SystemTypeRadioButtonGroup.js';
 
@@ -36,9 +36,9 @@ class SystemsScreenView extends ScreenView {
     const viewProperties = new SystemsViewProperties( tandem.createTandem( 'viewProperties' ) );
 
     // Visibility controls
-    const visibilityControls = new SystemsVisibilityControls( viewProperties, {
+    const visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
       maxWidth: 260, // constrain width for i18n, determining empirically
-      tandem: tandem.createTandem( 'visibilityControls' )
+      tandem: tandem.createTandem( 'visibilityPanel' )
     } );
 
     // Radio buttons for switching between series and parallel systems
@@ -49,7 +49,7 @@ class SystemsScreenView extends ScreenView {
     // horizontally center the controls
     this.addChild( new VBox( {
       spacing: 10,
-      children: [ visibilityControls, systemTypeRadioButtonGroup ],
+      children: [ visibilityPanel, systemTypeRadioButtonGroup ],
       right: this.layoutBounds.right - 10,
       top: this.layoutBounds.top + 10
     } ) );

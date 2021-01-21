@@ -15,7 +15,7 @@ import EnergyGraph from './EnergyGraph.js';
 import EnergyPlot from './EnergyPlot.js';
 import EnergySystemNode from './EnergySystemNode.js';
 import EnergyViewProperties from './EnergyViewProperties.js';
-import EnergyVisibilityControls from './EnergyVisibilityControls.js';
+import EnergyVisibilityPanel from './EnergyVisibilityPanel.js';
 import ForcePlot from './ForcePlot.js';
 
 class EnergyScreenView extends ScreenView {
@@ -37,13 +37,13 @@ class EnergyScreenView extends ScreenView {
     const viewProperties = new EnergyViewProperties( tandem.createTandem( 'viewProperties' ) );
 
     // Visibility controls
-    const visibilityControls = new EnergyVisibilityControls( viewProperties, {
+    const visibilityPanel = new EnergyVisibilityPanel( viewProperties, {
       right: this.layoutBounds.right - 10,
       top: 10,
       maxWidth: 235, // constrain width for i18n, determining empirically
-      tandem: tandem.createTandem( 'visibilityControls' )
+      tandem: tandem.createTandem( 'visibilityPanel' )
     } );
-    this.addChild( visibilityControls );
+    this.addChild( visibilityPanel );
 
     // System
     const systemNode = new EnergySystemNode( model.system, viewProperties, {

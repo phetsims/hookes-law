@@ -1,13 +1,16 @@
 // Copyright 2015-2020, University of Colorado Boulder
 
 /**
- * Control panel for visibility of various representations in the "Intro" view.
+ * SystemsVisibilityPanel contains controls for the visibility of various representations in the "Systems" screen.
+ * This panel is a bit similar to IntroVisibilityPanel, but it provides choices for how the spring force is represented.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
 import Property from '../../../../axon/js/Property.js';
 import merge from '../../../../phet-core/js/merge.js';
+import HBox from '../../../../scenery/js/nodes/HBox.js';
+import HStrut from '../../../../scenery/js/nodes/HStrut.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
@@ -18,11 +21,12 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
+import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 
-class IntroVisibilityControls extends Panel {
+class SystemsVisibilityPanel extends Panel {
 
   /**
-   * @param {IntroViewProperties} properties
+   * @param {SystemsViewProperties} properties
    * @param {Object} [options]
    */
   constructor( properties, options ) {
@@ -31,41 +35,36 @@ class IntroVisibilityControls extends Panel {
       tandem: Tandem.REQUIRED
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
-    // text labels on the vector checkboxes
-    const appliedForceTextNode = new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const springForceTextNode = new Text( hookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const displacementTextNode = new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const maxTextWidth =
-      _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], node => node.width ).width;
-
-    const minSpacing = 10;
-
-    // vector checkboxes, with left-aligned vector icons
+    // vector checkboxes
     const appliedForceCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( appliedForceTextNode, {
-        arrowFill: HookesLawColors.APPLIED_FORCE,
-        spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
-      } ),
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        { arrowFill: HookesLawColors.APPLIED_FORCE } ),
       properties.appliedForceVectorVisibleProperty,
       merge( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const springForceCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( springForceTextNode, {
-        arrowFill: HookesLawColors.SINGLE_SPRING,
-        spacing: maxTextWidth - springForceTextNode.width + minSpacing
-      } ),
+      new Text( hookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       properties.springForceVectorVisibleProperty,
       merge( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
+    // Radio buttons for spring force
+    const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
+      properties.springForceRepresentationProperty, properties.systemTypeProperty, {
+        tandem: options.tandem.createTandem( 'springForceRadioButtonGroup' )
+      } );
+    const radioButtonsSubPanel = new HBox( {
+      children: [ new HStrut( 25 ), springForceRadioButtonGroup ],
+      spacing: 5
+    } );
+
     const displacementCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( displacementTextNode, {
-        vectorType: 'displacement',
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
         arrowFill: HookesLawColors.DISPLACEMENT,
-        spacing: maxTextWidth - displacementTextNode.width + minSpacing
+        vectorType: 'displacement'
       } ),
       properties.displacementVectorVisibleProperty,
       merge( {
@@ -94,21 +93,33 @@ class IntroVisibilityControls extends Panel {
         valuesCheckbox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
+    // Radio buttons should be enabled only if 'spring force' is checked
+    properties.springForceVectorVisibleProperty.link( springForceVectorVisible => {
+      springForceRadioButtonGroup.enabled = springForceVectorVisible;
+    } );
+
     // Adjust touch areas
     const spacing = 20;
-    const checkboxes = [
+    const controls = [
       appliedForceCheckbox,
       springForceCheckbox,
       displacementCheckbox,
       equilibriumPositionCheckbox,
       valuesCheckbox
     ];
-    for ( let i = 0; i < checkboxes.length; i++ ) {
-      checkboxes[ i ].touchArea = checkboxes[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+    for ( let i = 0; i < controls.length; i++ ) {
+      controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
     }
 
     const content = new VBox( {
-      children: checkboxes,
+      children: [
+        appliedForceCheckbox,
+        springForceCheckbox,
+        radioButtonsSubPanel,
+        displacementCheckbox,
+        equilibriumPositionCheckbox,
+        valuesCheckbox
+      ],
       align: 'left',
       spacing: spacing
     } );
@@ -117,6 +128,6 @@ class IntroVisibilityControls extends Panel {
   }
 }
 
-hookesLaw.register( 'IntroVisibilityControls', IntroVisibilityControls );
+hookesLaw.register( 'SystemsVisibilityPanel', SystemsVisibilityPanel );
 
-export default IntroVisibilityControls;
+export default SystemsVisibilityPanel;
