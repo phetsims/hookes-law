@@ -13,7 +13,7 @@ import HStrut from '../../../../scenery/js/nodes/HStrut.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
-import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
+import AquaRadioButtonGroup from '../../../../sun/js/AquaRadioButtonGroup.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import HSeparator from '../../../../sun/js/HSeparator.js';
 import Panel from '../../../../sun/js/Panel.js';
@@ -24,6 +24,9 @@ import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import hookesLawStrings from '../../hookesLawStrings.js';
 import EnergyGraph from './EnergyGraph.js';
+
+// constants
+const Y_SPACING = 20;
 
 class EnergyVisibilityControls extends Panel {
 
@@ -38,23 +41,28 @@ class EnergyVisibilityControls extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // radio buttons
-    const barGraphRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.BAR_GRAPH,
-      new Text( hookesLawStrings.barGraph, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      merge( {
-        tandem: options.tandem.createTandem( 'barGraphRadioButton' )
-      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
-
-    const energyPlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.ENERGY_PLOT,
-      new Text( hookesLawStrings.energyPlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      merge( {
-        tandem: options.tandem.createTandem( 'energyPlotRadioButton' )
-      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
-
-    const forcePlotRadioButton = new AquaRadioButton( properties.graphProperty, EnergyGraph.FORCE_PLOT,
-      new Text( hookesLawStrings.forcePlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      merge( {
-        tandem: options.tandem.createTandem( 'forcePlotRadioButton' )
-      }, HookesLawConstants.RADIO_BUTTON_OPTIONS ) );
+    const radioButtonDescriptions = [
+      {
+        value: EnergyGraph.BAR_GRAPH,
+        node: new Text( hookesLawStrings.barGraph, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        tandemName: 'barGraphRadioButton'
+      },
+      {
+        value: EnergyGraph.ENERGY_PLOT,
+        node: new Text( hookesLawStrings.energyPlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        tandemName: 'energyPlotRadioButton'
+      },
+      {
+        value: EnergyGraph.FORCE_PLOT,
+        node: new Text( hookesLawStrings.forcePlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        tandemName: 'forcePlotRadioButton'
+      }
+    ];
+    const energyRadioButtonGroup = new AquaRadioButtonGroup( properties.graphProperty, radioButtonDescriptions, {
+      spacing: Y_SPACING,
+      radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS,
+      tandem: options.tandem.createTandem( 'energyRadioButtonGroup' )
+    } );
 
     // energy checkbox, enabled when "Force Plot" radio button is selected
     const energyIcon = new HBox( {
@@ -109,11 +117,8 @@ class EnergyVisibilityControls extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // Adjust touch areas
-    const spacing = 20;
     const controls = [
-      barGraphRadioButton,
-      energyPlotRadioButton,
-      forcePlotRadioButton,
+      energyRadioButtonGroup,
       energyCheckbox,
       appliedForceCheckbox,
       displacementCheckbox,
@@ -121,17 +126,16 @@ class EnergyVisibilityControls extends Panel {
       valuesCheckbox
     ];
     for ( let i = 0; i < controls.length; i++ ) {
-      controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+      controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
     }
 
     const maxControlWidth = _.maxBy( controls, node => node.width ).width;
 
     const content = new VBox( {
       children: [
-        barGraphRadioButton,
-        energyPlotRadioButton,
-        forcePlotRadioButton,
-        // "Energy" checkbox indented below "Force Plot" radio button
+        energyRadioButtonGroup,
+
+        // "Energy" checkbox indented below energyRadioButtonGroup
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
         new HSeparator( maxControlWidth, merge( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
           tandem: options.tandem.createTandem( 'separator' )
@@ -142,7 +146,7 @@ class EnergyVisibilityControls extends Panel {
         valuesCheckbox
       ],
       align: 'left',
-      spacing: spacing
+      spacing: Y_SPACING
     } );
 
     super( content, options );
