@@ -6,6 +6,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import logGlobal from '../../../phet-core/js/logGlobal.js';
 import hookesLaw from '../hookesLaw.js';
 
 const HookesLawQueryParameters = QueryStringMachine.getAll( {
@@ -17,7 +18,9 @@ const HookesLawQueryParameters = QueryStringMachine.getAll( {
 
 hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );
 
-// log the values of all sim-specific query parameters
-phet.log && phet.log( 'query parameters: ' + JSON.stringify( HookesLawQueryParameters, null, 2 ) );
+// Log query parameters
+logGlobal( 'phet.chipper.queryParameters' );
+logGlobal( 'phet.preloads.phetio.queryParameters' );
+logGlobal( 'phet.hookesLaw.HookesLawQueryParameters' );
 
 export default HookesLawQueryParameters;
