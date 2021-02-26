@@ -181,7 +181,7 @@ class SeriesSystemNode extends Node {
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // move the right spring
-    rightSpring.leftProperty.link(  left => {
+    rightSpring.leftProperty.link( left => {
       // use x for positioning, other translation options are inaccurate because we're using boundsMethod:'none'
       rightSpringNode.x = ( options.unitDisplacementLength * left );
     } );

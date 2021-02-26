@@ -17,7 +17,7 @@ const TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation,
 const OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seconds
 
 class IntroAnimator {
-  
+
   /**
    * @param {NumberProperty} numberOfSystemsProperty
    * @param {Node} system1Node
