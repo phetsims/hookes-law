@@ -140,7 +140,7 @@ class Spring extends PhetioObject {
     // @public spring constant (k)
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
       range: this.springConstantRange,
-      units: 'newtons/meters',
+      units: 'N/m',
       tandem: options.tandem.createTandem( 'springConstantProperty' )
     } );
     phet.log && this.springConstantProperty.link( springConstant => phet.log( `${options.logName} springConstant= ${springConstant}` ) );
@@ -153,7 +153,7 @@ class Spring extends PhetioObject {
       // error that causes reentrant behavior.  See #63.
       reentrant: true,
       range: this.displacementRange,
-      units: 'meters',
+      units: 'm',
       tandem: options.tandem.createTandem( 'displacementProperty' )
     } );
     phet.log && this.displacementProperty.link( displacement => phet.log( `${options.logName} displacement=${displacement}` ) );
@@ -273,7 +273,7 @@ class Spring extends PhetioObject {
     this.potentialEnergyProperty = new DerivedProperty(
       [ this.springConstantProperty, this.displacementProperty ],
       ( springConstant, displacement ) => ( springConstant * displacement * displacement ) / 2, {
-        units: 'joules',
+        units: 'J',
         phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
         tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
       } );
