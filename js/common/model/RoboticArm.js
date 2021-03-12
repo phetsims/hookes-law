@@ -38,7 +38,7 @@ class RoboticArm {
       tandem: options.tandem.createTandem( 'leftProperty' ),
       phetioStudioControl: false // because the range is dynamic
     } );
-    phet.log && this.leftProperty.link( left => phet.log( 'roboticArm left=' + left ) );
+    phet.log && this.leftProperty.link( left => phet.log( `roboticArm left=${left}` ) );
   }
 
   // @public

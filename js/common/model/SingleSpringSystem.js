@@ -52,11 +52,11 @@ class SingleSpringSystem {
     // Check for conditions supported by the general Spring model that aren't allowed by this system
 
     this.spring.leftProperty.lazyLink( left => {
-      throw new Error( 'Left end of spring must remain fixed, left=' + left );
+      throw new Error( `Left end of spring must remain fixed, left=${left}` );
     } );
 
     this.spring.equilibriumXProperty.lazyLink( equilibriumX => {
-      throw new Error( 'Equilibrium position must remain fixed, equilibriumX=' + equilibriumX );
+      throw new Error( `Equilibrium position must remain fixed, equilibriumX=${equilibriumX}` );
     } );
   }
 

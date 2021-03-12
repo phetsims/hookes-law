@@ -84,13 +84,13 @@ class Spring extends PhetioObject {
 
     // validate and save options
     assert && assert( options.equilibriumLength > 0,
-      'equilibriumLength must be > 0 : ' + options.equilibriumLength );
+      `equilibriumLength must be > 0 : ${options.equilibriumLength}` );
     this.equilibriumLength = options.equilibriumLength; // @public read-only
 
     assert && assert( options.springConstantRange instanceof RangeWithValue,
-      'invalid springConstantRange: ' + options.springConstantRange );
+      `invalid springConstantRange: ${options.springConstantRange}` );
     assert && assert( options.springConstantRange.min > 0,
-      'minimum spring constant must be positive : ' + options.springConstantRange.min );
+      `minimum spring constant must be positive : ${options.springConstantRange.min}` );
     this.springConstantRange = options.springConstantRange; // @public read-only
 
     // Either appliedForceRange or displacementRange must be specified, and the other is computed.
@@ -100,7 +100,7 @@ class Spring extends PhetioObject {
       'specify either appliedForceRange or displacementRange, but not both' );
     if ( options.appliedForceRange ) {
       assert && assert( options.appliedForceRange instanceof RangeWithValue,
-        'invalid appliedForceRange: ' + options.appliedForceRange );
+        `invalid appliedForceRange: ${options.appliedForceRange}` );
       this.appliedForceRange = options.appliedForceRange; // read-only
 
       // x = F/k, read-only
@@ -111,7 +111,7 @@ class Spring extends PhetioObject {
     }
     else {
       assert && assert( options.displacementRange instanceof RangeWithValue,
-        'invalid displacementRange: ' + options.displacementRange );
+        `invalid displacementRange: ${options.displacementRange}` );
       this.displacementRange = options.displacementRange; // read-only
 
       // F = kx, read-only
@@ -168,7 +168,7 @@ class Spring extends PhetioObject {
     // F: When applied force changes, maintain spring constant, change displacement.
     this.appliedForceProperty.link( appliedForce => {
       assert && assert( this.appliedForceRange.contains( appliedForce ),
-        'appliedForce is out of range: ' + appliedForce );
+        `appliedForce is out of range: ${appliedForce}` );
 
       // x = F/k
       this.displacementProperty.set( appliedForce / this.springConstantProperty.get() );
@@ -177,7 +177,7 @@ class Spring extends PhetioObject {
     // k: When spring constant changes, adjust either applied force or displacement.
     this.springConstantProperty.link( springConstant => {
       assert && assert( this.springConstantRange.contains( springConstant ),
-        'springConstant is out of range: ' + springConstant );
+        `springConstant is out of range: ${springConstant}` );
 
       if ( options.appliedForceRange ) {
 
@@ -198,7 +198,7 @@ class Spring extends PhetioObject {
     // x: When displacement changes, maintain the spring constant, change applied force.
     this.displacementProperty.link( displacement => {
       assert && assert( this.displacementRange.contains( displacement ),
-        'displacement is out of range: ' + displacement );
+        `displacement is out of range: ${displacement}` );
 
       // F = kx
       let appliedForce = this.springConstantProperty.get() * displacement;
@@ -236,7 +236,7 @@ class Spring extends PhetioObject {
       ( equilibriumX, displacement ) => {
         const left = this.leftProperty.get();
         const right = equilibriumX + displacement;
-        assert && assert( right - left > 0, 'right must be > left, right=' + right + ', left=' + left );
+        assert && assert( right - left > 0, `right must be > left, right=${right}, left=${left}` );
         return right;
       } );
     phet.log && this.rightProperty.link( right => phet.log( `${options.logName} right=${right}` ) );

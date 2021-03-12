@@ -126,15 +126,15 @@ class SeriesSystem {
     // Check for conditions supported by the general Spring model that aren't allowed by this system
 
     this.leftSpring.leftProperty.lazyLink( left => {
-      throw new Error( 'Left end of left spring must remain fixed, left=' + left );
+      throw new Error( `Left end of left spring must remain fixed, left=${left}` );
     } );
 
     this.equivalentSpring.leftProperty.lazyLink( left => {
-      throw new Error( 'Left end of equivalent spring must remain fixed, left=' + left );
+      throw new Error( `Left end of equivalent spring must remain fixed, left=${left}` );
     } );
 
     this.equivalentSpring.equilibriumXProperty.lazyLink( equilibriumX => {
-      throw new Error( 'Equilibrium position of equivalent spring must remain fixed, equilibriumX=' + equilibriumX );
+      throw new Error( `Equilibrium position of equivalent spring must remain fixed, equilibriumX=${equilibriumX}` );
     } );
   }
 

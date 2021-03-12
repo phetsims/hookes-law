@@ -128,19 +128,19 @@ class ParallelSystem {
     // Check for violations of the general Spring model
 
     this.topSpring.leftProperty.lazyLink( left => {
-      throw new Error( 'Left end of top spring must remain fixed, left=' + left );
+      throw new Error( `Left end of top spring must remain fixed, left=${left}` );
     } );
 
     this.bottomSpring.leftProperty.lazyLink( left => {
-      throw new Error( 'Left end of bottom spring must remain fixed, left=' + left );
+      throw new Error( `Left end of bottom spring must remain fixed, left=${left}` );
     } );
 
     this.equivalentSpring.leftProperty.lazyLink( left => {
-      throw new Error( 'Left end of equivalent spring must remain fixed, left=' + left );
+      throw new Error( `Left end of equivalent spring must remain fixed, left=${left}` );
     } );
 
     this.equivalentSpring.equilibriumXProperty.lazyLink( equilibriumX => {
-      throw new Error( 'Equilibrium position of equivalent spring must remain fixed, equilibriumX=' + equilibriumX );
+      throw new Error( `Equilibrium position of equivalent spring must remain fixed, equilibriumX=${equilibriumX}` );
     } );
   }
 

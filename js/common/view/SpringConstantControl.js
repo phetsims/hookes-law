@@ -78,7 +78,7 @@ class SpringConstantControl extends NumberControl {
       options.sliderOptions.majorTicks = [];
       for ( let i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
         const tickValue = options.sliderOptions.majorTickValues[ i ];
-        assert && assert( Number.isInteger( tickValue ), 'not an integer tick: ' + tickValue );
+        assert && assert( Number.isInteger( tickValue ), `not an integer tick: ${tickValue}` );
         options.sliderOptions.majorTicks.push( {
           value: tickValue,
           label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
