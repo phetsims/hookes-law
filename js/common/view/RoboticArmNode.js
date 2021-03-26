@@ -51,7 +51,9 @@ class RoboticArmNode extends Node {
       cursor: 'pointer',
       unitDisplacementLength: 1,  // view length of a 1m displacement
       displacementInterval: null, // {number|null} dragging the arm will snap to multiples of this interval
-      tandem: Tandem.OPTIONAL // because this node is used to create icons
+      tandem: Tandem.OPTIONAL, // because this node is used to create icons
+      inputEnabledPropertyPhetioInstrumented: true,
+      visiblePropertyOptions: { phetioReadOnly: true }
     }, options );
 
     // red box at right end of the arm, origin is at left-center
@@ -175,8 +177,14 @@ class RoboticArmNode extends Node {
     assert && assert( !options.children, 'RoboticArmNode sets children' );
     options.children = [ armNode, redBox, gradientBox, draggableNode ];
 
-    // Do not pass tandem to the supertype, since this Node is not part of the PhET-iO API. See #58.
-    super( _.omit( options, [ 'tandem' ] ) );
+    super( options );
+
+    // We are not PhET-iO instrumenting the subcomponents of this Node, and it is one of those subcomponents
+    // that is draggable.  So instrument this Node's inputEnabledProperty, and use it to control the interactivity
+    // of the subcomponent.
+    this.inputEnabledProperty.link( inputEnabled => {
+      draggableNode.inputEnabledProperty.value = inputEnabled;
+    } );
 
     // @private
     this.topPincerClosedNode = topPincerClosedNode;
