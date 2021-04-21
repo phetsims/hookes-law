@@ -52,7 +52,7 @@ class RoboticArmNode extends Node {
       unitDisplacementLength: 1,  // view length of a 1m displacement
       displacementInterval: null, // {number|null} dragging the arm will snap to multiples of this interval
       tandem: Tandem.OPTIONAL, // because this node is used to create icons
-      inputEnabledPropertyPhetioInstrumented: true,
+      phetioInputEnabledPropertyInstrumented: true,
       visiblePropertyOptions: { phetioReadOnly: true }
     }, options );
 
