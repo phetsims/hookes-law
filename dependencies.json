@@ -5,7 +5,7 @@
     "branch": "HEAD"
   },
   "axon": {
-    "sha": "e22373472d82b525f3de6c817010ee3ee4f74e44",
+    "sha": "4eac9c12082e9f34ddb5a55a655b178bc91c1a9a",
     "branch": "HEAD"
   },
   "brand": {
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "4a8ecfdff355aba74c7c1abc790f84bd526f5595",
+    "sha": "58ec147b8fd7129e33396a1a20dcefd505ccae45",
     "branch": "1.0"
   },
   "joist": {
