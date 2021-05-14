@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.23 Mon May 10 2021 15:27:08 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# hookes-law 1.0.24-rc.1 Fri May 14 2021 05:38:12 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "58ec147b8fd7129e33396a1a20dcefd505ccae45",
+    "sha": "2dc132db48fef7b9fd08ab46c7a3643caf7d393f",
     "branch": "1.0"
   },
   "joist": {
@@ -46,7 +46,7 @@
   },
   "scenery": {
     "sha": "25a6b0b14dd6fe669e96a79774686d13d5357475",
-    "branch": "hookes-law-1.0"
+    "branch": "HEAD"
   },
   "scenery-phet": {
     "sha": "7e595b38e621ed8f9138fc6d4f43e0a68cc4502a",
