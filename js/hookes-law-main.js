@@ -19,7 +19,7 @@ const options = {
     leadDesign: 'Amy Rouinfar',
     softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
     team: 'Michael Dubson, Bruna Shinohara de Mendon\u00e7a, Ariel Paul, Kathy Perkins, Martin Veillette',
-    qualityAssurance: 'Steele Dalton, Elise Morgan, Oliver Orejola, Bryan Yoelin',
+    qualityAssurance: 'Steele Dalton, Brooklyn Lash, Elise Morgan, Oliver Orejola, Bryan Yoelin',
     graphicArts: 'Mariah Hermsmeyer'
   }
 };
