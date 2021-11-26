@@ -1,4 +1,4 @@
-// Copyright 2015-2020, University of Colorado Boulder
+// Copyright 2015-2021, University of Colorado Boulder
 
 /**
  * EnergyPlot is an XY plot of displacement (x axis) vs energy (y axis).
