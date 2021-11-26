@@ -7,7 +7,7 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import HBox from '../../../../scenery/js/nodes/HBox.js';
+import { HBox } from '../../../../scenery/js/imports.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';

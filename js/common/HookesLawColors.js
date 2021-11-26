@@ -7,7 +7,7 @@
  */
 
 import PhetColorScheme from '../../../scenery-phet/js/PhetColorScheme.js';
-import Color from '../../../scenery/js/util/Color.js';
+import { Color } from '../../../scenery/js/imports.js';
 import hookesLaw from '../hookesLaw.js';
 
 // colors for the spring in single-spring systems

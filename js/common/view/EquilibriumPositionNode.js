@@ -7,7 +7,7 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
-import Line from '../../../../scenery/js/nodes/Line.js';
+import { Line } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';

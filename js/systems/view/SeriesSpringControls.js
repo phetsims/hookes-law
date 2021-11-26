@@ -8,7 +8,7 @@
 
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import merge from '../../../../phet-core/js/merge.js';
-import HBox from '../../../../scenery/js/nodes/HBox.js';
+import { HBox } from '../../../../scenery/js/imports.js';
 import Panel from '../../../../sun/js/Panel.js';
 import VSeparator from '../../../../sun/js/VSeparator.js';
 import Tandem from '../../../../tandem/js/Tandem.js';

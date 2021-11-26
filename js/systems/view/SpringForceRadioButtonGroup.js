@@ -9,9 +9,9 @@
 
 import merge from '../../../../phet-core/js/merge.js';
 import BracketNode from '../../../../scenery-phet/js/BracketNode.js';
-import HBox from '../../../../scenery/js/nodes/HBox.js';
-import Text from '../../../../scenery/js/nodes/Text.js';
-import VBox from '../../../../scenery/js/nodes/VBox.js';
+import { HBox } from '../../../../scenery/js/imports.js';
+import { Text } from '../../../../scenery/js/imports.js';
+import { VBox } from '../../../../scenery/js/imports.js';
 import AquaRadioButtonGroup from '../../../../sun/js/AquaRadioButtonGroup.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
