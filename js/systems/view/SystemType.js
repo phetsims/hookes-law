@@ -1,6 +1,6 @@
 // Copyright 2020, University of Colorado Boulder
 
-import Enumeration from '../../../../phet-core/js/Enumeration.js';
+import EnumerationDeprecated from '../../../../phet-core/js/EnumerationDeprecated.js';
 import hookesLaw from '../../hookesLaw.js';
 
 /**
@@ -8,7 +8,7 @@ import hookesLaw from '../../hookesLaw.js';
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
-const SystemType = Enumeration.byKeys( [ 'SERIES', 'PARALLEL' ] );
+const SystemType = EnumerationDeprecated.byKeys( [ 'SERIES', 'PARALLEL' ] );
 
 hookesLaw.register( 'SystemType', SystemType );
 export default SystemType;

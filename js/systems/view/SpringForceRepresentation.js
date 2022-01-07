@@ -1,6 +1,6 @@
 // Copyright 2020, University of Colorado Boulder
 
-import Enumeration from '../../../../phet-core/js/Enumeration.js';
+import EnumerationDeprecated from '../../../../phet-core/js/EnumerationDeprecated.js';
 import hookesLaw from '../../hookesLaw.js';
 
 /**
@@ -9,7 +9,7 @@ import hookesLaw from '../../hookesLaw.js';
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-const SpringForceRepresentation = Enumeration.byKeys( [
+const SpringForceRepresentation = EnumerationDeprecated.byKeys( [
   'TOTAL',  // as a single vector for the entire system
   'COMPONENTS' // as component vectors, one for each spring
 ] );
