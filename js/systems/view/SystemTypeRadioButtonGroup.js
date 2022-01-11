@@ -16,7 +16,7 @@ import SystemType from './SystemType.js';
 class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup {
 
   /**
-   * @param {EnumerationProperty.<SystemType>} systemTypeProperty
+   * @param {EnumerationDeprecatedProperty.<SystemType>} systemTypeProperty
    * @param {Object} [options]
    */
   constructor( systemTypeProperty, options ) {
