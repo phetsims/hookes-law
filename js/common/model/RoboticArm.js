@@ -36,7 +36,7 @@ class RoboticArm {
       reentrant: true,
       isValidValue: value => ( value < this.right ),
       tandem: options.tandem.createTandem( 'leftProperty' ),
-      phetioStudioControl: false // because the range is dynamic
+      phetioReadOnly: true // because you should adjust the appliedForceProperty instead
     } );
     phet.log && this.leftProperty.link( left => phet.log( `roboticArm left=${left}` ) );
   }
