@@ -1,4 +1,4 @@
-// Copyright 2015-2021, University of Colorado Boulder
+// Copyright 2015-2022, University of Colorado Boulder
 
 /**
  * EnergyVisibilityPanel contains controls for the visibility of various representations in the "Energy" screen.
