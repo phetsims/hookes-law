@@ -84,8 +84,7 @@ const HookesLawConstants = {
     headWidth: 20,
     headHeight: 10,
     headLineWidth: 3,
-    tailLineWidth: 3,
-    useArrowNode: false
+    tailLineWidth: 3
   },
   MAJOR_TICK_LABEL_OPTIONS: {
     font: new PhetFont( 14 )
