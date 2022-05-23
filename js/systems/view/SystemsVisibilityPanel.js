@@ -7,7 +7,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../../axon/js/Property.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 import merge from '../../../../phet-core/js/merge.js';
 import { HBox } from '../../../../scenery/js/imports.js';
 import { HStrut } from '../../../../scenery/js/imports.js';
@@ -87,7 +87,7 @@ class SystemsVisibilityPanel extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
-    Property.multilink(
+    Multilink.multilink(
       [ properties.appliedForceVectorVisibleProperty, properties.springForceVectorVisibleProperty, properties.displacementVectorVisibleProperty ],
       ( appliedForceVectorVisible, springForceVectorVisible, displacementVectorVisible ) => {
         valuesCheckbox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );

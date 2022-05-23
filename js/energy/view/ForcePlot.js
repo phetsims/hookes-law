@@ -7,7 +7,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../../axon/js/Property.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 import Utils from '../../../../dot/js/Utils.js';
 import { Shape } from '../../../../kite/js/imports.js';
 import merge from '../../../../phet-core/js/merge.js';
@@ -98,7 +98,7 @@ class ForcePlot extends XYPointPlot {
     } );
 
     // update energy area (triangle)
-    Property.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
+    Multilink.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
       ( displacement, appliedForce, visible ) => {
         const fixedDisplacement = Utils.toFixedNumber( displacement, options.xDecimalPlaces );
         const x = options.xUnitLength * fixedDisplacement;

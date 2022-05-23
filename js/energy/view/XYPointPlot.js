@@ -16,7 +16,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../../axon/js/Property.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 import Utils from '../../../../dot/js/Utils.js';
 import merge from '../../../../phet-core/js/merge.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
@@ -255,7 +255,7 @@ class XYPointPlot extends Node {
     } );
 
     // Move point and leader lines
-    Property.multilink( [ xProperty, yProperty ],
+    Multilink.multilink( [ xProperty, yProperty ],
       ( x, y ) => {
 
         const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );

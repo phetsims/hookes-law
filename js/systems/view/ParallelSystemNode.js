@@ -8,7 +8,7 @@
  */
 
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
-import Property from '../../../../axon/js/Property.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Utils from '../../../../dot/js/Utils.js';
 import merge from '../../../../phet-core/js/merge.js';
@@ -185,7 +185,7 @@ class ParallelSystemNode extends Node {
     viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // switch between different spring force representations
-    Property.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
+    Multilink.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],
       ( springForceVectorVisible, springForceRepresentation ) => {
         // total
         totalSpringForceVectorNode.visible =
@@ -208,7 +208,7 @@ class ParallelSystemNode extends Node {
     } );
 
     // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.
-    Property.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
+    Multilink.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
       ( numberOfInteractions, displacement ) => {
         assert && assert( numberOfInteractions >= 0 );
         const fixedDisplacement = Utils.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
