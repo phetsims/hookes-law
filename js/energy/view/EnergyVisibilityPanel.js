@@ -73,48 +73,34 @@ class EnergyVisibilityPanel extends Panel {
       ],
       spacing: 6
     } );
-    const energyCheckbox = new Checkbox( energyIcon,
-      properties.energyOnForcePlotVisibleProperty,
-      merge( {
-        tandem: options.tandem.createTandem( 'energyCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const energyCheckbox = new Checkbox( properties.energyOnForcePlotVisibleProperty, energyIcon, merge( {
+      tandem: options.tandem.createTandem( 'energyCheckbox' )
+    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
     properties.graphProperty.link( graph => {
       energyCheckbox.enabled = ( graph === EnergyGraph.FORCE_PLOT );
     } );
 
     // other checkboxes
-    const appliedForceCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
-        arrowFill: HookesLawColors.APPLIED_FORCE
-      } ),
-      properties.appliedForceVectorVisibleProperty,
-      merge( {
-        tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      arrowFill: HookesLawColors.APPLIED_FORCE
+    } ), merge( {
+      tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
+    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const displacementCheckbox = new Checkbox(
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
-        arrowFill: HookesLawColors.DISPLACEMENT,
-        vectorType: 'displacement'
-      } ),
-      properties.displacementVectorVisibleProperty,
-      merge( {
-        tandem: options.tandem.createTandem( 'displacementCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+      arrowFill: HookesLawColors.DISPLACEMENT,
+      vectorType: 'displacement'
+    } ), merge( {
+      tandem: options.tandem.createTandem( 'displacementCheckbox' )
+    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const equilibriumPositionCheckbox = new Checkbox(
-      HookesLawIconFactory.createEquilibriumPositionCheckboxContent(),
-      properties.equilibriumPositionVisibleProperty,
-      merge( {
-        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty, HookesLawIconFactory.createEquilibriumPositionCheckboxContent(), merge( {
+      tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const valuesCheckbox = new Checkbox(
-      new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      properties.valuesVisibleProperty,
-      merge( {
-        tandem: options.tandem.createTandem( 'valuesCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+      tandem: options.tandem.createTandem( 'valuesCheckbox' )
+    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // Adjust touch areas
     const controls = [
