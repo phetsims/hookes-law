@@ -26,9 +26,11 @@ class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup {
       // RectangularRadioButtonGroup options
       orientation: 'horizontal',
       spacing: 10,
-      buttonContentXMargin: 5,
-      buttonContentYMargin: 5,
-      selectedLineWidth: 2,
+      radioButtonOptions: {
+        xMargin: 5,
+        yMargin: 5,
+        selectedLineWidth: 2
+      },
 
       // phet-io
       tandem: Tandem.REQUIRED

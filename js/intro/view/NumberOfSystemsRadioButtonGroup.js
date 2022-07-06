@@ -25,9 +25,11 @@ class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
       // RectangularRadioButtonGroup options
       orientation: 'horizontal',
       spacing: 10,
-      buttonContentXMargin: 20,
-      buttonContentYMargin: 5,
-      selectedLineWidth: 2,
+      radioButtonOptions: {
+        xMargin: 20,
+        yMargin: 5,
+        selectedLineWidth: 2
+      },
 
       // phet-io
       tandem: Tandem.REQUIRED
