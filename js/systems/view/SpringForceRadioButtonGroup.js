@@ -1,4 +1,4 @@
-// Copyright 2020-2021, University of Colorado Boulder
+// Copyright 2020-2022, University of Colorado Boulder
 
 /**
  * SpringForceRadioButtonGroup is the radio button group used to select which vector representation of spring force
