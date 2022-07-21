@@ -28,7 +28,9 @@ class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
       radioButtonOptions: {
         xMargin: 20,
         yMargin: 5,
-        selectedLineWidth: 2
+        buttonAppearanceStrategyOptions: {
+          selectedLineWidth: 2
+        }
       },
 
       // phet-io
