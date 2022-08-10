@@ -217,7 +217,7 @@ class Spring extends PhetioObject {
       [ this.appliedForceProperty ],
       appliedForce => -appliedForce, {
         units: 'N',
-        phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
+        phetioValueType: NumberIO,
         tandem: options.tandem.createTandem( 'springForceProperty' )
       } );
     phet.log && this.springForceProperty.link( springForce => phet.log( `${options.logName} springForce=${springForce}` ) );
@@ -274,7 +274,7 @@ class Spring extends PhetioObject {
       [ this.springConstantProperty, this.displacementProperty ],
       ( springConstant, displacement ) => ( springConstant * displacement * displacement ) / 2, {
         units: 'J',
-        phetioType: DerivedProperty.DerivedPropertyIO( NumberIO ),
+        phetioValueType: NumberIO,
         tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
       } );
     phet.log && this.potentialEnergyProperty.link( potentialEnergy => phet.log( `${options.logName} potentialEnergy=${potentialEnergy}` ) );
