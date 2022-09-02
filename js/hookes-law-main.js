@@ -32,6 +32,6 @@ simLauncher.launch( () => {
     new EnergyScreen( Tandem.ROOT.createTandem( 'energyScreen' ) )
   ];
 
-  const sim = new Sim( hookesLawStrings[ 'hookes-law' ].title, screens, options );
+  const sim = new Sim( hookesLawStrings[ 'hookes-law' ].titleStringProperty, screens, options );
   sim.start();
 } );
