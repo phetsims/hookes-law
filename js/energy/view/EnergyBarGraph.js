@@ -15,7 +15,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 
 // constants
 const BAR_WIDTH = 20;
@@ -47,7 +47,7 @@ class EnergyBarGraph extends Node {
       stroke: null
     } );
 
-    const yAxisLabel = new Text( hookesLawStrings.potentialEnergy, {
+    const yAxisLabel = new Text( HookesLawStrings.potentialEnergy, {
       rotation: -Math.PI / 2,
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
       right: yAxisNode.left - 1,
@@ -77,8 +77,8 @@ class EnergyBarGraph extends Node {
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
-      valueNode.text = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ],
-        Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), hookesLawStrings.joules );
+      valueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+        Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), HookesLawStrings.joules );
       valueNode.left = barNode.right + 5;
       if ( !barNode.visible || barNode.height < valueNode.height / 2 ) {
         valueNode.bottom = xAxisNode.bottom;

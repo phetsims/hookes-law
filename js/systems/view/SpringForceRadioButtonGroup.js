@@ -15,7 +15,7 @@ import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
@@ -36,7 +36,7 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
     // Label for 'Total' radio button
     const totalRadioButtonLabel = new HBox( {
       children: [
-        new Text( hookesLawStrings.total, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        new Text( HookesLawStrings.total, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
       ],
       spacing: 10
@@ -53,7 +53,7 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
       touchAreaXDilation: 10,
       touchAreaYDilation: 4,
       children: [
-        new Text( hookesLawStrings.components, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        new Text( HookesLawStrings.components, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         new BracketNode( {
           orientation: 'left',
           bracketLength: componentsIcons.height

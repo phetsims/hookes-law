@@ -15,7 +15,7 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 
 // constants
 const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
@@ -44,7 +44,7 @@ class IntroSpringControls extends HBox {
     const appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
 
     const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
-      title: StringUtils.format( hookesLawStrings.springConstantNumber, options.number ),
+      title: StringUtils.format( HookesLawStrings.springConstantNumber, options.number ),
       sliderOptions: {
         majorTickValues: [
           spring.springConstantRange.min,
@@ -57,7 +57,7 @@ class IntroSpringControls extends HBox {
 
     const appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
       numberOfInteractionsInProgressProperty, {
-        title: StringUtils.format( hookesLawStrings.appliedForceNumber, options.number ),
+        title: StringUtils.format( HookesLawStrings.appliedForceNumber, options.number ),
         tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
       } );
 

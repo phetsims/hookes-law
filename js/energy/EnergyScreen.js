@@ -11,7 +11,7 @@ import merge from '../../../phet-core/js/merge.js';
 import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../hookesLaw.js';
-import hookesLawStrings from '../hookesLawStrings.js';
+import HookesLawStrings from '../HookesLawStrings.js';
 import EnergyModel from './model/EnergyModel.js';
 import EnergyScreenView from './view/EnergyScreenView.js';
 
@@ -23,7 +23,7 @@ class EnergyScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: hookesLawStrings.energy,
+      name: HookesLawStrings.energy,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
       tandem: tandem
     } );

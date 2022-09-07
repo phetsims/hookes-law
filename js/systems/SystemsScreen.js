@@ -11,7 +11,7 @@ import merge from '../../../phet-core/js/merge.js';
 import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../hookesLaw.js';
-import hookesLawStrings from '../hookesLawStrings.js';
+import HookesLawStrings from '../HookesLawStrings.js';
 import SystemsModel from './model/SystemsModel.js';
 import SystemsScreenView from './view/SystemsScreenView.js';
 
@@ -23,7 +23,7 @@ class SystemsScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: hookesLawStrings.systems,
+      name: HookesLawStrings.systems,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
       tandem: tandem
     } );

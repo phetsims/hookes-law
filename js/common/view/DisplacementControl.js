@@ -14,13 +14,13 @@ import { Text } from '../../../../scenery/js/imports.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
 // fill in the {1} units, but leave the {0} value alone.
-const VALUE_PATTERN = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ],
-  SunConstants.VALUE_NUMBERED_PLACEHOLDER, hookesLawStrings.meters );
+const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+  SunConstants.VALUE_NUMBERED_PLACEHOLDER, HookesLawStrings.meters );
 
 class DisplacementControl extends NumberControl {
   /**
@@ -90,7 +90,7 @@ class DisplacementControl extends NumberControl {
       }
     }
 
-    super( hookesLawStrings.displacementColon, displacementProperty, displacementRange, options );
+    super( HookesLawStrings.displacementColon, displacementProperty, displacementRange, options );
   }
 }
 

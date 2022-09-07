@@ -13,7 +13,7 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import { Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
 class ForceVectorNode extends Node {
@@ -64,8 +64,8 @@ class ForceVectorNode extends Node {
       }
 
       // update the value
-      valueNode.text = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ],
-        Utils.toFixed( Math.abs( value ), options.decimalPlaces ), hookesLawStrings.newtons );
+      valueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+        Utils.toFixed( Math.abs( value ), options.decimalPlaces ), HookesLawStrings.newtons );
 
       // value position
       const margin = 5;

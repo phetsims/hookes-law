@@ -14,7 +14,7 @@ import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNo
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { HBox, Line, Node, Rectangle, Text, VBox } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import EquilibriumPositionNode from './EquilibriumPositionNode.js';
@@ -226,7 +226,7 @@ const HookesLawIconFactory = {
    * @static
    */
   createEquilibriumPositionCheckboxContent: function() {
-    const textNode = new Text( hookesLawStrings.equilibriumPosition, { font: new PhetFont( 18 ) } );
+    const textNode = new Text( HookesLawStrings.equilibriumPosition, { font: new PhetFont( 18 ) } );
     const lineNode = new EquilibriumPositionNode( textNode.height, {
       left: textNode.right + 8,
       centerY: textNode.centerY

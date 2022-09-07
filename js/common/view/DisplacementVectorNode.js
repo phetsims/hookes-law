@@ -13,7 +13,7 @@ import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import { Line, Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
@@ -64,7 +64,7 @@ class DisplacementVectorNode extends Node {
 
       // update the value
       const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      valueNode.text = StringUtils.format( hookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, hookesLawStrings.meters );
+      valueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
 
       // center value on arrow
       valueNode.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;

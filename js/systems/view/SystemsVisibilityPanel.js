@@ -17,7 +17,7 @@ import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 
 class SystemsVisibilityPanel extends Panel {
@@ -33,12 +33,12 @@ class SystemsVisibilityPanel extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // vector checkboxes
-    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
       { arrowFill: HookesLawColors.APPLIED_FORCE } ), merge( {
       tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty, new Text( hookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty, new Text( HookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
       tandem: options.tandem.createTandem( 'springForceCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -52,7 +52,7 @@ class SystemsVisibilityPanel extends Panel {
       spacing: 5
     } );
 
-    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
       arrowFill: HookesLawColors.DISPLACEMENT,
       vectorType: 'displacement'
     } ), merge( {
@@ -64,7 +64,7 @@ class SystemsVisibilityPanel extends Panel {
       tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( HookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
       tandem: options.tandem.createTandem( 'valuesCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 

@@ -17,7 +17,7 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 
 // constants
 const SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
@@ -47,7 +47,7 @@ class ParallelSpringControls extends HBox {
 
     const topSpring = system.topSpring;
     const topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
-      title: hookesLawStrings.topSpring,
+      title: HookesLawStrings.topSpring,
       sliderOptions: {
         thumbFill: HookesLawColors.TOP_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
@@ -63,7 +63,7 @@ class ParallelSpringControls extends HBox {
     const bottomSpring = system.bottomSpring;
     const bottomSpringConstantControl = new SpringConstantControl(
       bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
-        title: hookesLawStrings.bottomSpring,
+        title: HookesLawStrings.bottomSpring,
         sliderOptions: {
           thumbFill: HookesLawColors.BOTTOM_SPRING,
           trackSize: SPRING_CONSTANT_TRACK_SIZE,

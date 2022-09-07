@@ -16,7 +16,7 @@ import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 
 class IntroVisibilityPanel extends Panel {
 
@@ -31,9 +31,9 @@ class IntroVisibilityPanel extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // text labels on the vector checkboxes
-    const appliedForceTextNode = new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const springForceTextNode = new Text( hookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const displacementTextNode = new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const appliedForceTextNode = new Text( HookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const springForceTextNode = new Text( HookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const displacementTextNode = new Text( HookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     const maxTextWidth =
       _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], node => node.width ).width;
 
@@ -67,7 +67,7 @@ class IntroVisibilityPanel extends Panel {
       tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( HookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
       tandem: options.tandem.createTandem( 'valuesCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 

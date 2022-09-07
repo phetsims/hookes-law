@@ -10,7 +10,7 @@ import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import EnergyScreen from './energy/EnergyScreen.js';
-import hookesLawStrings from './hookesLawStrings.js';
+import HookesLawStrings from './HookesLawStrings.js';
 import IntroScreen from './intro/IntroScreen.js';
 import SystemsScreen from './systems/SystemsScreen.js';
 
@@ -32,6 +32,6 @@ simLauncher.launch( () => {
     new EnergyScreen( Tandem.ROOT.createTandem( 'energyScreen' ) )
   ];
 
-  const sim = new Sim( hookesLawStrings[ 'hookes-law' ].titleStringProperty, screens, options );
+  const sim = new Sim( HookesLawStrings[ 'hookes-law' ].titleStringProperty, screens, options );
   sim.start();
 } );

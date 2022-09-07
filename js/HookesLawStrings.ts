@@ -75,8 +75,8 @@ type StringsType = {
   'valuesStringProperty': TReadOnlyProperty<string>;
 };
 
-const hookesLawStrings = getStringModule( 'HOOKES_LAW' ) as StringsType;
+const HookesLawStrings = getStringModule( 'HOOKES_LAW' ) as StringsType;
 
-hookesLaw.register( 'hookesLawStrings', hookesLawStrings );
+hookesLaw.register( 'HookesLawStrings', HookesLawStrings );
 
-export default hookesLawStrings;
+export default HookesLawStrings;

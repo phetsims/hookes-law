@@ -11,7 +11,7 @@ import merge from '../../../phet-core/js/merge.js';
 import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../hookesLaw.js';
-import hookesLawStrings from '../hookesLawStrings.js';
+import HookesLawStrings from '../HookesLawStrings.js';
 import IntroModel from './model/IntroModel.js';
 import IntroScreenView from './view/IntroScreenView.js';
 
@@ -23,7 +23,7 @@ class IntroScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: hookesLawStrings.intro,
+      name: HookesLawStrings.intro,
       homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
       tandem: tandem
     } );

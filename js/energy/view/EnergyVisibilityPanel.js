@@ -18,7 +18,7 @@ import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
-import hookesLawStrings from '../../hookesLawStrings.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 import EnergyGraph from './EnergyGraph.js';
 
 // constants
@@ -40,17 +40,17 @@ class EnergyVisibilityPanel extends Panel {
     const radioButtonDescriptions = [
       {
         value: EnergyGraph.BAR_GRAPH,
-        node: new Text( hookesLawStrings.barGraph, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        node: new Text( HookesLawStrings.barGraph, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'barGraphRadioButton'
       },
       {
         value: EnergyGraph.ENERGY_PLOT,
-        node: new Text( hookesLawStrings.energyPlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        node: new Text( HookesLawStrings.energyPlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'energyPlotRadioButton'
       },
       {
         value: EnergyGraph.FORCE_PLOT,
-        node: new Text( hookesLawStrings.forcePlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        node: new Text( HookesLawStrings.forcePlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'forcePlotRadioButton'
       }
     ];
@@ -63,7 +63,7 @@ class EnergyVisibilityPanel extends Panel {
     // energy checkbox, enabled when "Force Plot" radio button is selected
     const energyIcon = new HBox( {
       children: [
-        new Text( hookesLawStrings.energy, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        new Text( HookesLawStrings.energy, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         // triangle
         new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), { fill: HookesLawColors.ENERGY } )
       ],
@@ -77,13 +77,13 @@ class EnergyVisibilityPanel extends Panel {
     } );
 
     // other checkboxes
-    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
       arrowFill: HookesLawColors.APPLIED_FORCE
     } ), merge( {
       tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( hookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
       arrowFill: HookesLawColors.DISPLACEMENT,
       vectorType: 'displacement'
     } ), merge( {
@@ -94,7 +94,7 @@ class EnergyVisibilityPanel extends Panel {
       tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( hookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( HookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
       tandem: options.tandem.createTandem( 'valuesCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
