@@ -10,7 +10,7 @@ import Dimension2 from '../../../../dot/js/Dimension2.js';
 import merge from '../../../../phet-core/js/merge.js';
 import { HBox } from '../../../../scenery/js/imports.js';
 import Panel from '../../../../sun/js/Panel.js';
-import VSeparator from '../../../../sun/js/VSeparator.js';
+import VSeparatorDeprecated from '../../../../sun/js/VSeparatorDeprecated.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -84,7 +84,7 @@ class SeriesSpringControls extends HBox {
       spacing: 20,
       children: [
         leftSpringConstantControl,
-        new VSeparator( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ) ),
+        new VSeparatorDeprecated( Math.max( leftSpringConstantControl.height, rightSpringConstantControl.height ) ),
         rightSpringConstantControl
       ]
     } );

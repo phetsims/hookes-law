@@ -11,7 +11,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import { HBox, HStrut, Path, Text, VBox } from '../../../../scenery/js/imports.js';
 import AquaRadioButtonGroup from '../../../../sun/js/AquaRadioButtonGroup.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
-import HSeparator from '../../../../sun/js/HSeparator.js';
+import HSeparatorDeprecated from '../../../../sun/js/HSeparatorDeprecated.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
@@ -119,7 +119,7 @@ class EnergyVisibilityPanel extends Panel {
 
         // "Energy" checkbox indented below plotRadioButtonGroup
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
-        new HSeparator( maxControlWidth, merge( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
+        new HSeparatorDeprecated( maxControlWidth, merge( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
           tandem: options.tandem.createTandem( 'separator' )
         } ) ),
         appliedForceCheckbox,
