@@ -23,7 +23,7 @@ class EnergyScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: HookesLawStrings.energy,
+      name: HookesLawStrings.energyStringProperty,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
       tandem: tandem
     } );

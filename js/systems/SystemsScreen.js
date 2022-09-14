@@ -23,7 +23,7 @@ class SystemsScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: HookesLawStrings.systems,
+      name: HookesLawStrings.systemsStringProperty,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
       tandem: tandem
     } );

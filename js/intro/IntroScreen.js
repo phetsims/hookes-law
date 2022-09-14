@@ -23,7 +23,7 @@ class IntroScreen extends Screen {
   constructor( tandem ) {
 
     const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
-      name: HookesLawStrings.intro,
+      name: HookesLawStrings.introStringProperty,
       homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
       tandem: tandem
     } );
