@@ -5,74 +5,74 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
-import TReadOnlyProperty from '../../axon/js/TReadOnlyProperty.js';
+import LinkableProperty from '../../axon/js/LinkableProperty.js';
 import hookesLaw from './hookesLaw.js';
 
 type StringsType = {
   'appliedForce': string;
-  'appliedForceStringProperty': TReadOnlyProperty<string>;
+  'appliedForceStringProperty': LinkableProperty<string>;
   'appliedForceColon': string;
-  'appliedForceColonStringProperty': TReadOnlyProperty<string>;
+  'appliedForceColonStringProperty': LinkableProperty<string>;
   'appliedForceNumber': string;
-  'appliedForceNumberStringProperty': TReadOnlyProperty<string>;
+  'appliedForceNumberStringProperty': LinkableProperty<string>;
   'barGraph': string;
-  'barGraphStringProperty': TReadOnlyProperty<string>;
+  'barGraphStringProperty': LinkableProperty<string>;
   'bottomSpring': string;
-  'bottomSpringStringProperty': TReadOnlyProperty<string>;
+  'bottomSpringStringProperty': LinkableProperty<string>;
   'components': string;
-  'componentsStringProperty': TReadOnlyProperty<string>;
+  'componentsStringProperty': LinkableProperty<string>;
   'displacement': string;
-  'displacementStringProperty': TReadOnlyProperty<string>;
+  'displacementStringProperty': LinkableProperty<string>;
   'displacementColon': string;
-  'displacementColonStringProperty': TReadOnlyProperty<string>;
+  'displacementColonStringProperty': LinkableProperty<string>;
   'energy': string;
-  'energyStringProperty': TReadOnlyProperty<string>;
+  'energyStringProperty': LinkableProperty<string>;
   'energyPlot': string;
-  'energyPlotStringProperty': TReadOnlyProperty<string>;
+  'energyPlotStringProperty': LinkableProperty<string>;
   'equilibriumPosition': string;
-  'equilibriumPositionStringProperty': TReadOnlyProperty<string>;
+  'equilibriumPositionStringProperty': LinkableProperty<string>;
   'forcePlot': string;
-  'forcePlotStringProperty': TReadOnlyProperty<string>;
+  'forcePlotStringProperty': LinkableProperty<string>;
   'hookes-law': {
     'title': string;
-    'titleStringProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': LinkableProperty<string>;
   };
   'intro': string;
-  'introStringProperty': TReadOnlyProperty<string>;
+  'introStringProperty': LinkableProperty<string>;
   'joules': string;
-  'joulesStringProperty': TReadOnlyProperty<string>;
+  'joulesStringProperty': LinkableProperty<string>;
   'leftSpring': string;
-  'leftSpringStringProperty': TReadOnlyProperty<string>;
+  'leftSpringStringProperty': LinkableProperty<string>;
   'meters': string;
-  'metersStringProperty': TReadOnlyProperty<string>;
+  'metersStringProperty': LinkableProperty<string>;
   'newtons': string;
-  'newtonsStringProperty': TReadOnlyProperty<string>;
+  'newtonsStringProperty': LinkableProperty<string>;
   'newtonsPerMeter': string;
-  'newtonsPerMeterStringProperty': TReadOnlyProperty<string>;
+  'newtonsPerMeterStringProperty': LinkableProperty<string>;
   'pattern': {
     '0value': {
       '1units': string;
-      '1unitsStringProperty': TReadOnlyProperty<string>;
+      '1unitsStringProperty': LinkableProperty<string>;
     }
   };
   'potentialEnergy': string;
-  'potentialEnergyStringProperty': TReadOnlyProperty<string>;
+  'potentialEnergyStringProperty': LinkableProperty<string>;
   'rightSpring': string;
-  'rightSpringStringProperty': TReadOnlyProperty<string>;
+  'rightSpringStringProperty': LinkableProperty<string>;
   'springConstant': string;
-  'springConstantStringProperty': TReadOnlyProperty<string>;
+  'springConstantStringProperty': LinkableProperty<string>;
   'springConstantNumber': string;
-  'springConstantNumberStringProperty': TReadOnlyProperty<string>;
+  'springConstantNumberStringProperty': LinkableProperty<string>;
   'springForce': string;
-  'springForceStringProperty': TReadOnlyProperty<string>;
+  'springForceStringProperty': LinkableProperty<string>;
   'systems': string;
-  'systemsStringProperty': TReadOnlyProperty<string>;
+  'systemsStringProperty': LinkableProperty<string>;
   'topSpring': string;
-  'topSpringStringProperty': TReadOnlyProperty<string>;
+  'topSpringStringProperty': LinkableProperty<string>;
   'total': string;
-  'totalStringProperty': TReadOnlyProperty<string>;
+  'totalStringProperty': LinkableProperty<string>;
   'values': string;
-  'valuesStringProperty': TReadOnlyProperty<string>;
+  'valuesStringProperty': LinkableProperty<string>;
 };
 
 const HookesLawStrings = getStringModule( 'HOOKES_LAW' ) as StringsType;
