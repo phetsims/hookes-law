@@ -40,17 +40,17 @@ class EnergyVisibilityPanel extends Panel {
     const radioButtonDescriptions = [
       {
         value: EnergyGraph.BAR_GRAPH,
-        node: new Text( HookesLawStrings.barGraph, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        createNode: tandem => new Text( HookesLawStrings.barGraph, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'barGraphRadioButton'
       },
       {
         value: EnergyGraph.ENERGY_PLOT,
-        node: new Text( HookesLawStrings.energyPlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        createNode: tandem => new Text( HookesLawStrings.energyPlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'energyPlotRadioButton'
       },
       {
         value: EnergyGraph.FORCE_PLOT,
-        node: new Text( HookesLawStrings.forcePlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        createNode: tandem => new Text( HookesLawStrings.forcePlot, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'forcePlotRadioButton'
       }
     ];

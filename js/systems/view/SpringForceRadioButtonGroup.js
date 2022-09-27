@@ -33,33 +33,11 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
       radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS
     }, options );
 
-    // Label for 'Total' radio button
-    const totalRadioButtonLabel = new HBox( {
-      children: [
-        new Text( HookesLawStrings.total, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-        HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
-      ],
-      spacing: 10
-    } );
-
     // Label for 'Components' radio button
     const componentsIcon1 = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
     const componentsIcon2 = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
     const componentsIcons = new VBox( {
       children: [ componentsIcon1, componentsIcon2 ],
-      spacing: 10
-    } );
-    const componentsRadioButtonLabel = new HBox( {
-      touchAreaXDilation: 10,
-      touchAreaYDilation: 4,
-      children: [
-        new Text( HookesLawStrings.components, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-        new BracketNode( {
-          orientation: 'left',
-          bracketLength: componentsIcons.height
-        } ),
-        componentsIcons
-      ],
       spacing: 10
     } );
 
@@ -71,8 +49,30 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
 
     // Descriptions of the radio buttons.
     const buttonDescriptions = [
-      { value: SpringForceRepresentation.TOTAL, node: totalRadioButtonLabel, tandemName: 'totalRadioButton' },
-      { value: SpringForceRepresentation.COMPONENTS, node: componentsRadioButtonLabel, tandemName: 'componentsRadioButton' }
+      {
+        value: SpringForceRepresentation.TOTAL, createNode: tandem => new HBox( {
+          children: [
+            new Text( HookesLawStrings.total, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+            HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
+          ],
+          spacing: 10
+        } ), tandemName: 'totalRadioButton'
+      },
+      {
+        value: SpringForceRepresentation.COMPONENTS, createNode: tandem => new HBox( {
+          touchAreaXDilation: 10,
+          touchAreaYDilation: 4,
+          children: [
+            new Text( HookesLawStrings.components, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+            new BracketNode( {
+              orientation: 'left',
+              bracketLength: componentsIcons.height
+            } ),
+            componentsIcons
+          ],
+          spacing: 10
+        } ), tandemName: 'componentsRadioButton'
+      }
     ];
 
     super( springForceRepresentationProperty, buttonDescriptions, options );
