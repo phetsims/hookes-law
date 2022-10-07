@@ -39,8 +39,8 @@ class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup {
     }, options );
 
     super( systemTypeProperty, [
-      { value: SystemType.PARALLEL, node: HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
-      { value: SystemType.SERIES, node: HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
+      { value: SystemType.PARALLEL, createNode: tandem => HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
+      { value: SystemType.SERIES, createNode: tandem => HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
     ], options );
   }
 }

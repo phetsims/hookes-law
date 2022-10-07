@@ -38,8 +38,8 @@ class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
     }, options );
 
     super( numberOfSystemsProperty, [
-      { value: 1, node: HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
-      { value: 2, node: HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
+      { value: 1, createNode: tandem => HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
+      { value: 2, createNode: tandem => HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
     ], options );
   }
 }
