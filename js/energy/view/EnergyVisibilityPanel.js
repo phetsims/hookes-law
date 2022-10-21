@@ -8,10 +8,9 @@
 
 import { Shape } from '../../../../kite/js/imports.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { HBox, HStrut, Path, Text, VBox } from '../../../../scenery/js/imports.js';
+import { HBox, HSeparator, HStrut, Path, Text, VBox } from '../../../../scenery/js/imports.js';
 import AquaRadioButtonGroup from '../../../../sun/js/AquaRadioButtonGroup.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
-import HSeparatorDeprecated from '../../../../sun/js/HSeparatorDeprecated.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
@@ -111,17 +110,13 @@ class EnergyVisibilityPanel extends Panel {
       controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
     }
 
-    const maxControlWidth = _.maxBy( controls, node => node.width ).width;
-
     const content = new VBox( {
       children: [
         plotRadioButtonGroup,
 
         // "Energy" checkbox indented below plotRadioButtonGroup
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
-        new HSeparatorDeprecated( maxControlWidth, merge( {}, HookesLawConstants.SEPARATOR_OPTIONS, {
-          tandem: options.tandem.createTandem( 'separator' )
-        } ) ),
+        new HSeparator( HookesLawConstants.SEPARATOR_OPTIONS ),
         appliedForceCheckbox,
         displacementCheckbox,
         equilibriumPositionCheckbox,

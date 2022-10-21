@@ -8,8 +8,7 @@
 
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { HBox, VBox } from '../../../../scenery/js/imports.js';
-import HSeparatorDeprecated from '../../../../sun/js/HSeparatorDeprecated.js';
+import { HBox, HSeparator, VBox } from '../../../../scenery/js/imports.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
@@ -82,7 +81,7 @@ class ParallelSpringControls extends HBox {
       resize: false,
       children: [
         topSpringConstantControl,
-        new HSeparatorDeprecated( Math.max( topSpringConstantControl.width, bottomSpringConstantControl.width ), HookesLawConstants.SEPARATOR_OPTIONS ),
+        new HSeparator( HookesLawConstants.SEPARATOR_OPTIONS ),
         bottomSpringConstantControl
       ],
       tandem: options.tandem.createTandem( 'springControls' )
