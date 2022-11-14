@@ -63,7 +63,7 @@ class SpringConstantControl extends NumberControl {
       tandem: Tandem.REQUIRED
     }, options );
 
-    // sldier option defaults
+    // slider option defaults
     options.sliderOptions = merge( {
       majorTicksValues: null, // {number[]|null} values for major ticks
       minorTickSpacing: 100,
