@@ -6,7 +6,6 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
 import Dimension2 from '../../../dot/js/Dimension2.js';
 import PhetFont from '../../../scenery-phet/js/PhetFont.js';
 import { HSeparatorOptions, TextOptions } from '../../../scenery/js/imports.js';
@@ -61,8 +60,6 @@ const VISIBILITY_PANEL_OPTIONS: PanelOptions = {
 };
 
 const HookesLawConstants = {
-
-  SCREEN_OPTIONS: { backgroundColorProperty: new Property( 'white' ) },
 
   // number of decimal places for displayed values
   APPLIED_FORCE_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES,

@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * The "Systems" screen.
  *
@@ -8,26 +7,24 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
-import merge from '../../../phet-core/js/merge.js';
-import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import SystemsModel from './model/SystemsModel.js';
 import SystemsScreenView from './view/SystemsScreenView.js';
+import HookesLawColors from '../common/HookesLawColors.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
-class SystemsScreen extends Screen {
+export default class SystemsScreen extends Screen {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  public constructor( tandem: Tandem ) {
 
-    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = {
       name: HookesLawStrings.systemsStringProperty,
+      backgroundColorProperty: HookesLawColors.SCREEN_VIEW_BACKGROUND,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
       tandem: tandem
-    } );
+    };
 
     super(
       () => new SystemsModel( tandem.createTandem( 'model' ) ),
@@ -38,5 +35,3 @@ class SystemsScreen extends Screen {
 }
 
 hookesLaw.register( 'SystemsScreen', SystemsScreen );
-
-export default SystemsScreen;

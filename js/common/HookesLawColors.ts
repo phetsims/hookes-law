@@ -6,6 +6,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import Property from '../../../axon/js/Property.js';
 import PhetColorScheme from '../../../scenery-phet/js/PhetColorScheme.js';
 import { Color } from '../../../scenery/js/imports.js';
 import hookesLaw from '../hookesLaw.js';
@@ -26,6 +27,8 @@ const SPRING2_MIDDLE = new Color( 255, 191, 0 ); // the dominant color
 const SPRING2_BACK = new Color( 217, 163, 0 );
 
 const HookesLawColors = {
+
+  SCREEN_VIEW_BACKGROUND: new Property( 'white' ),
 
   // UI components
   CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),

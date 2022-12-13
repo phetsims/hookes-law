@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * The "Intro" screen.
  *
@@ -8,26 +7,24 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
-import merge from '../../../phet-core/js/merge.js';
-import HookesLawConstants from '../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import IntroModel from './model/IntroModel.js';
 import IntroScreenView from './view/IntroScreenView.js';
+import HookesLawColors from '../common/HookesLawColors.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 
-class IntroScreen extends Screen {
+export default class IntroScreen extends Screen {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  public constructor( tandem: Tandem ) {
 
-    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = {
       name: HookesLawStrings.introStringProperty,
+      backgroundColorProperty: HookesLawColors.SCREEN_VIEW_BACKGROUND,
       homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
       tandem: tandem
-    } );
+    };
 
     super(
       () => new IntroModel( tandem.createTandem( 'model' ) ),
@@ -38,5 +35,3 @@ class IntroScreen extends Screen {
 }
 
 hookesLaw.register( 'IntroScreen', IntroScreen );
-
-export default IntroScreen;

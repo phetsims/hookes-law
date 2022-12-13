@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * The "Energy" screen.
  *
@@ -8,26 +7,24 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
-import merge from '../../../phet-core/js/merge.js';
-import HookesLawConstants from '../common/HookesLawConstants.js';
+import Tandem from '../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import EnergyModel from './model/EnergyModel.js';
 import EnergyScreenView from './view/EnergyScreenView.js';
+import HookesLawColors from '../common/HookesLawColors.js';
 
-class EnergyScreen extends Screen {
+export default class EnergyScreen extends Screen<EnergyModel, EnergyScreenView> {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  public constructor( tandem: Tandem ) {
 
-    const options = merge( {}, HookesLawConstants.SCREEN_OPTIONS, {
+    const options = {
       name: HookesLawStrings.energyStringProperty,
+      backgroundColorProperty: HookesLawColors.SCREEN_VIEW_BACKGROUND,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
       tandem: tandem
-    } );
+    };
 
     super(
       () => new EnergyModel( tandem.createTandem( 'model' ) ),
@@ -38,5 +35,3 @@ class EnergyScreen extends Screen {
 }
 
 hookesLaw.register( 'EnergyScreen', EnergyScreen );
-
-export default EnergyScreen;
