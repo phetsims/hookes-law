@@ -55,7 +55,7 @@ class EnergyVisibilityPanel extends Panel {
     ];
     const plotRadioButtonGroup = new AquaRadioButtonGroup( properties.graphProperty, radioButtonDescriptions, {
       spacing: Y_SPACING,
-      radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS,
+      radioButtonOptions: HookesLawConstants.AQUA_RADIO_BUTTON_OPTIONS,
       tandem: options.tandem.createTandem( 'plotRadioButtonGroup' )
     } );
 
@@ -116,7 +116,7 @@ class EnergyVisibilityPanel extends Panel {
 
         // "Energy" checkbox indented below plotRadioButtonGroup
         new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
-        new HSeparator( HookesLawConstants.SEPARATOR_OPTIONS ),
+        new HSeparator( HookesLawConstants.HSEPARATOR_OPTIONS ),
         appliedForceCheckbox,
         displacementCheckbox,
         equilibriumPositionCheckbox,

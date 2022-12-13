@@ -32,7 +32,13 @@ class DisplacementVectorNode extends Node {
       tandem: Tandem.REQUIRED
     }, options );
 
-    const arrowNode = new LineArrowNode( 0, 0, 1, 0, HookesLawConstants.DISPLACEMENT_VECTOR_OPTIONS );
+    const arrowNode = new LineArrowNode( 0, 0, 1, 0, {
+      stroke: HookesLawColors.DISPLACEMENT,
+      headWidth: 20,
+      headHeight: 10,
+      headLineWidth: 3,
+      tailLineWidth: 3
+    } );
 
     const valueNode = new Text( '', {
       maxWidth: 150, // i18n

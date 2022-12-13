@@ -9,11 +9,56 @@
 import Property from '../../../axon/js/Property.js';
 import Dimension2 from '../../../dot/js/Dimension2.js';
 import PhetFont from '../../../scenery-phet/js/PhetFont.js';
+import { HSeparatorOptions, TextOptions } from '../../../scenery/js/imports.js';
+import { AquaRadioButtonOptions } from '../../../sun/js/AquaRadioButton.js';
+import { ArrowButtonOptions } from '../../../sun/js/buttons/ArrowButton.js';
+import { CheckboxOptions } from '../../../sun/js/Checkbox.js';
+import { PanelOptions } from '../../../sun/js/Panel.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawColors from './HookesLawColors.js';
 
 // constants
 const APPLIED_FORCE_DECIMAL_PLACES = 1;
+
+const AQUA_RADIO_BUTTON_OPTIONS: AquaRadioButtonOptions = {
+  radius: 8
+};
+
+const ARROW_BUTTON_OPTIONS: ArrowButtonOptions = {
+  touchAreaXDilation: 10,
+  touchAreaYDilation: 10
+};
+
+const CHECKBOX_OPTIONS: CheckboxOptions = {
+  boxWidth: 18,
+  spacing: 8
+};
+
+const CONTROL_TEXT_OPTIONS: TextOptions = {
+  font: new PhetFont( 18 )
+};
+
+const HSEPARATOR_OPTIONS: HSeparatorOptions = {
+  stroke: HookesLawColors.SEPARATOR_STROKE
+};
+
+const MAJOR_TICK_LABEL_OPTIONS: TextOptions = {
+  font: new PhetFont( 14 )
+};
+
+const SPRING_PANEL_OPTIONS: PanelOptions = {
+  fill: HookesLawColors.CONTROL_PANEL_FILL,
+  stroke: HookesLawColors.CONTROL_PANEL_STROKE,
+  xMargin: 20,
+  yMargin: 5
+};
+
+const VISIBILITY_PANEL_OPTIONS: PanelOptions = {
+  fill: HookesLawColors.CONTROL_PANEL_FILL,
+  stroke: HookesLawColors.CONTROL_PANEL_STROKE,
+  xMargin: 15,
+  yMargin: 15
+};
 
 const HookesLawConstants = {
 
@@ -72,45 +117,14 @@ const HookesLawConstants = {
   PARALLEL_SPRINGS_LOOPS: 8,
 
   // options
-  CHECKBOX_OPTIONS: {
-    boxWidth: 18,
-    spacing: 8
-  },
-  CONTROL_TEXT_OPTIONS: {
-    font: new PhetFont( 18 )
-  },
-  DISPLACEMENT_VECTOR_OPTIONS: {
-    stroke: HookesLawColors.DISPLACEMENT,
-    headWidth: 20,
-    headHeight: 10,
-    headLineWidth: 3,
-    tailLineWidth: 3
-  },
-  MAJOR_TICK_LABEL_OPTIONS: {
-    font: new PhetFont( 14 )
-  },
-  RADIO_BUTTON_OPTIONS: {
-    radius: 8
-  },
-  SEPARATOR_OPTIONS: {
-    stroke: HookesLawColors.SEPARATOR_STROKE
-  },
-  SPRING_PANEL_OPTIONS: {
-    fill: HookesLawColors.CONTROL_PANEL_FILL,
-    stroke: HookesLawColors.CONTROL_PANEL_STROKE,
-    xMargin: 20,
-    yMargin: 5
-  },
-  VISIBILITY_PANEL_OPTIONS: {
-    fill: HookesLawColors.CONTROL_PANEL_FILL,
-    stroke: HookesLawColors.CONTROL_PANEL_STROKE,
-    xMargin: 15,
-    yMargin: 15
-  },
-  ARROW_BUTTON_OPTIONS: {
-    touchAreaXDilation: 10,
-    touchAreaYDilation: 10
-  }
+  AQUA_RADIO_BUTTON_OPTIONS: AQUA_RADIO_BUTTON_OPTIONS,
+  ARROW_BUTTON_OPTIONS: ARROW_BUTTON_OPTIONS,
+  CHECKBOX_OPTIONS: CHECKBOX_OPTIONS,
+  CONTROL_TEXT_OPTIONS: CONTROL_TEXT_OPTIONS,
+  HSEPARATOR_OPTIONS: HSEPARATOR_OPTIONS,
+  MAJOR_TICK_LABEL_OPTIONS: MAJOR_TICK_LABEL_OPTIONS,
+  SPRING_PANEL_OPTIONS: SPRING_PANEL_OPTIONS,
+  VISIBILITY_PANEL_OPTIONS: VISIBILITY_PANEL_OPTIONS
 };
 
 hookesLaw.register( 'HookesLawConstants', HookesLawConstants );

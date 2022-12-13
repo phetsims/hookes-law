@@ -81,7 +81,7 @@ class ParallelSpringControls extends HBox {
       resize: false,
       children: [
         topSpringConstantControl,
-        new HSeparator( HookesLawConstants.SEPARATOR_OPTIONS ),
+        new HSeparator( HookesLawConstants.HSEPARATOR_OPTIONS ),
         bottomSpringConstantControl
       ],
       tandem: options.tandem.createTandem( 'springControls' )

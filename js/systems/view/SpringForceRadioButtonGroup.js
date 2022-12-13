@@ -30,7 +30,7 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
 
     options = merge( {
       spacing: 10,
-      radioButtonOptions: HookesLawConstants.RADIO_BUTTON_OPTIONS
+      radioButtonOptions: HookesLawConstants.AQUA_RADIO_BUTTON_OPTIONS
     }, options );
 
     // Label for 'Components' radio button
