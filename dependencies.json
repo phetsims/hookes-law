@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.0.27-rc.1 Sat Nov 26 2022 11:30:43 GMT-0700 (Mountain Standard Time)",
+  "comment": "# hookes-law 1.0.27-rc.2 Tue Dec 13 2022 15:50:56 GMT-0700 (Mountain Standard Time)",
   "assert": {
     "sha": "11bc6a6d0344ba1a8b95982bad3552bffbdfdfd6",
     "branch": "HEAD"
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "8bf8eba26286098bd656804a100654dc531131cb",
+    "sha": "a560839865234fac654f620dbc38240bff327f2a",
     "branch": "1.0"
   },
   "joist": {
