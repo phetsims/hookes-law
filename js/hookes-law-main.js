@@ -14,16 +14,6 @@ import HookesLawStrings from './HookesLawStrings.js';
 import IntroScreen from './intro/IntroScreen.js';
 import SystemsScreen from './systems/SystemsScreen.js';
 
-const options = {
-  credits: {
-    leadDesign: 'Amy Rouinfar',
-    softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
-    team: 'Michael Dubson, Bruna Shinohara de Mendon\u00e7a, Ariel Paul, Kathy Perkins, Martin Veillette',
-    qualityAssurance: 'Steele Dalton, Brooklyn Lash, Elise Morgan, Oliver Orejola, Bryan Yoelin',
-    graphicArts: 'Mariah Hermsmeyer'
-  }
-};
-
 simLauncher.launch( () => {
 
   const screens = [
@@ -32,6 +22,15 @@ simLauncher.launch( () => {
     new EnergyScreen( Tandem.ROOT.createTandem( 'energyScreen' ) )
   ];
 
-  const sim = new Sim( HookesLawStrings[ 'hookes-law' ].titleStringProperty, screens, options );
+  const sim = new Sim( HookesLawStrings[ 'hookes-law' ].titleStringProperty, screens, {
+    credits: {
+      leadDesign: 'Amy Rouinfar',
+      softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
+      team: 'Michael Dubson, Bruna Shinohara de Mendon\u00e7a, Ariel Paul, Kathy Perkins, Martin Veillette',
+      qualityAssurance: 'Steele Dalton, Brooklyn Lash, Elise Morgan, Oliver Orejola, Bryan Yoelin',
+      graphicArts: 'Mariah Hermsmeyer'
+    }
+  } );
+
   sim.start();
 } );
