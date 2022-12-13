@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Model of a spring, contains purely model Properties.
  * The left end is attached to something like a wall or another spring.
