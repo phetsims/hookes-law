@@ -11,7 +11,7 @@ import hookesLaw from '../hookesLaw.js';
 
 const HookesLawQueryParameters = QueryStringMachine.getAll( {
 
-  // Checks all Check Boxes, to make development easier.
+  // Checks all Checkboxes, to make development easier.
   // For internal use only.
   checkAll: { type: 'flag' }
 } );
