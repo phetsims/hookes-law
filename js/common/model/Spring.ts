@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Model of a spring, contains purely model Properties.
  * The left end is attached to something like a wall or another spring.
@@ -41,58 +40,69 @@
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
-import merge from '../../../../phet-core/js/merge.js';
-import PhetioObject from '../../../../tandem/js/PhetioObject.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import PhetioObject, { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import hookesLaw from '../../hookesLaw.js';
 
+type SelfOptions = {
+  logName?: string | null; // name that appears in log messages
+  left?: number; // x position of the left end of the spring, units = m
+  equilibriumLength?: number; // length of the spring at equilibrium, units = m
+  springConstantRange?: RangeWithValue; // {spring constant range and initial value, units = N/m
+  appliedForceRange?: RangeWithValue | null; // applied force range and initial value, units = N
+  displacementRange?: RangeWithValue | null;  // displacement range and initial value, units = m
+};
+
+type SpringOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
+
 export default class Spring extends PhetioObject {
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
 
-    options = merge( {
+  public readonly equilibriumLength: number;
 
-      // name that appears in log messages
+  public readonly springConstantRange: RangeWithValue;
+  public readonly appliedForceRange: RangeWithValue;
+  public readonly displacementRange: RangeWithValue;
+
+  public readonly appliedForceProperty: NumberProperty; // applied force (F)
+  public readonly springConstantProperty: NumberProperty; // spring constant (k)
+  public readonly displacementProperty: NumberProperty; // displacement from equilibrium position (x)
+  public readonly leftProperty: NumberProperty; // position of the left end of the spring
+
+  public readonly springForceProperty: TReadOnlyProperty<number>; // spring force opposes the applied force (-F)
+  public readonly equilibriumXProperty: TReadOnlyProperty<number>; // equilibrium x position
+  public readonly rightProperty: TReadOnlyProperty<number>; // x position of the right end of the spring
+  public readonly rightRangeProperty: TReadOnlyProperty<Range>; // Range of the right end of the spring
+  public readonly lengthProperty: TReadOnlyProperty<number>; // length of the spring
+  public readonly potentialEnergyProperty: TReadOnlyProperty<number>; // potential energy, E
+
+  public constructor( providedOptions: SpringOptions ) {
+
+    const options = optionize<SpringOptions, SelfOptions, PhetioObjectOptions>()( {
+
+      // SelfOptions
       logName: null,
-
-      // {number} x position of the left end of the spring, units = m
       left: 0,
-
-      // {number} length of the spring at equilibrium, units = m
       equilibriumLength: 1.5,
-
-      // {RangeWithValue} spring constant range and initial value, units = N/m
       springConstantRange: new RangeWithValue( 100, 1000, 200 ),
-
-      // {RangeWithValue|null} applied force range and initial value, units = N
       appliedForceRange: null,
-
-      // {RangeWithValue|null} displacement range and initial value, units = m
       displacementRange: null,
-
-      // phet-io
-      tandem: Tandem.REQUIRED,
       phetioState: false // since this type has no inherent state to save, to avoid circular JSON error
-
-    }, options );
+    }, providedOptions );
 
     super( options );
 
     // validate and save options
-    assert && assert( options.equilibriumLength > 0,
-      `equilibriumLength must be > 0 : ${options.equilibriumLength}` );
-    this.equilibriumLength = options.equilibriumLength; // @public read-only
+    assert && assert( options.equilibriumLength > 0, `equilibriumLength must be > 0 : ${options.equilibriumLength}` );
+    this.equilibriumLength = options.equilibriumLength;
 
-    assert && assert( options.springConstantRange instanceof RangeWithValue,
-      `invalid springConstantRange: ${options.springConstantRange}` );
     assert && assert( options.springConstantRange.min > 0,
       `minimum spring constant must be positive : ${options.springConstantRange.min}` );
-    this.springConstantRange = options.springConstantRange; // @public read-only
+    this.springConstantRange = options.springConstantRange;
 
     // Either appliedForceRange or displacementRange must be specified, and the other is computed.
     // Intro and Systems screens specify appliedForceRange. Energy screen specifies displacementRange.
@@ -100,9 +110,7 @@ export default class Spring extends PhetioObject {
                       ( !options.appliedForceRange && options.displacementRange ),
       'specify either appliedForceRange or displacementRange, but not both' );
     if ( options.appliedForceRange ) {
-      assert && assert( options.appliedForceRange instanceof RangeWithValue,
-        `invalid appliedForceRange: ${options.appliedForceRange}` );
-      this.appliedForceRange = options.appliedForceRange; // read-only
+      this.appliedForceRange = options.appliedForceRange;
 
       // x = F/k, read-only
       this.displacementRange = new RangeWithValue(
@@ -111,9 +119,8 @@ export default class Spring extends PhetioObject {
         this.appliedForceRange.defaultValue / this.springConstantRange.defaultValue );
     }
     else {
-      assert && assert( options.displacementRange instanceof RangeWithValue,
-        `invalid displacementRange: ${options.displacementRange}` );
-      this.displacementRange = options.displacementRange; // read-only
+      this.displacementRange = options.displacementRange!;
+      assert && assert( this.displacementRange );
 
       // F = kx, read-only
       this.appliedForceRange = new RangeWithValue(
@@ -125,7 +132,6 @@ export default class Spring extends PhetioObject {
     //------------------------------------------------
     // Properties
 
-    // @public applied force (F)
     this.appliedForceProperty = new NumberProperty( this.appliedForceRange.defaultValue, {
 
       // Applied force (F) and displacement (x) participate in a 2-way relationship, where changing
@@ -138,7 +144,6 @@ export default class Spring extends PhetioObject {
     } );
     phet.log && this.appliedForceProperty.link( appliedForce => phet.log( `${options.logName} appliedForce=${appliedForce}` ) );
 
-    // @public spring constant (k)
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
       range: this.springConstantRange,
       units: 'N/m',
@@ -146,7 +151,6 @@ export default class Spring extends PhetioObject {
     } );
     phet.log && this.springConstantProperty.link( springConstant => phet.log( `${options.logName} springConstant= ${springConstant}` ) );
 
-    // @public displacement from equilibrium position (x)
     this.displacementProperty = new NumberProperty( this.displacementRange.defaultValue, {
 
       // Applied force (F) and displacement (x) participate in a 2-way relationship, where changing
@@ -159,7 +163,6 @@ export default class Spring extends PhetioObject {
     } );
     phet.log && this.displacementProperty.link( displacement => phet.log( `${options.logName} displacement=${displacement}` ) );
 
-    // @public position of the left end of the spring
     this.leftProperty = new NumberProperty( options.left );
     phet.log && this.leftProperty.link( left => phet.log( `${options.logName} left=${left}` ) );
 
@@ -213,7 +216,7 @@ export default class Spring extends PhetioObject {
     //------------------------------------------------
     // Derived properties
 
-    // @public spring force opposes the applied force (-F)
+    // spring force opposes the applied force (-F)
     this.springForceProperty = new DerivedProperty(
       [ this.appliedForceProperty ],
       appliedForce => -appliedForce, {
@@ -223,7 +226,6 @@ export default class Spring extends PhetioObject {
       } );
     phet.log && this.springForceProperty.link( springForce => phet.log( `${options.logName} springForce=${springForce}` ) );
 
-    // @public equilibrium x position
     // This must be a Property to support systems of springs. For example, for 2 springs in series,
     // equilibriumXProperty changes for the right spring, whose left end moves.
     this.equilibriumXProperty = new DerivedProperty(
@@ -232,7 +234,6 @@ export default class Spring extends PhetioObject {
     );
     phet.log && this.equilibriumXProperty.link( equilibriumX => phet.log( `${options.logName} equilibriumX=${equilibriumX}` ) );
 
-    // @public x position of the right end of the spring
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
       ( equilibriumX, displacement ) => {
         const left = this.leftProperty.get();
@@ -242,9 +243,7 @@ export default class Spring extends PhetioObject {
       } );
     phet.log && this.rightProperty.link( right => phet.log( `${options.logName} right=${right}` ) );
 
-    // @public Range of the right end of the spring
     // Derivation differs depending on whether changing spring constant modifies applied force or displacement.
-    this.rightRangeProperty = null;
     if ( options.appliedForceRange ) {
       this.rightRangeProperty = new DerivedProperty(
         [ this.springConstantProperty, this.equilibriumXProperty ],
@@ -262,14 +261,13 @@ export default class Spring extends PhetioObject {
     }
     phet.log && this.rightRangeProperty.link( rightRange => phet.log( `${options.logName} rightRange=${rightRange}` ) );
 
-    // @public length of the spring
     this.lengthProperty = new DerivedProperty(
       [ this.leftProperty, this.rightProperty ],
       ( left, right ) => Math.abs( right - left )
     );
     phet.log && this.lengthProperty.link( length => phet.log( `${options.logName} length=${length}` ) );
 
-    // @public potential energy, E = ( k1 * x1 * x1 ) / 2
+    // potential energy, E = ( k1 * x1 * x1 ) / 2
     // To avoid intermediate values, define this *after* the listeners that update its dependencies.
     this.potentialEnergyProperty = new DerivedProperty(
       [ this.springConstantProperty, this.displacementProperty ],
@@ -281,8 +279,12 @@ export default class Spring extends PhetioObject {
     phet.log && this.potentialEnergyProperty.link( potentialEnergy => phet.log( `${options.logName} potentialEnergy=${potentialEnergy}` ) );
   }
 
-  // @public
-  reset() {
+  public override dispose(): void {
+    assert && assert( false, 'dispose is not supported, exists for the lifetime of the sim' );
+    super.dispose();
+  }
+
+  public reset(): void {
     this.appliedForceProperty.reset();
     this.springConstantProperty.reset();
     this.displacementProperty.reset();
