@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * The robotic arm. The left end is movable, the right end is fixed.
  *
@@ -8,27 +7,38 @@
  */
 
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
-import merge from '../../../../phet-core/js/merge.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import Property from '../../../../axon/js/Property.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import hookesLaw from '../../hookesLaw.js';
+
+type SelfOptions = {
+  left: number;  // {number} initial x position of the left (movable) end of the arm, units = m
+  right: number; // {number} initial x position of the right (fixed) end of the arm, units = m
+};
+
+type RoboticArmOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 export default class RoboticArm {
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
+  // right (fixed) end of the arm
+  public readonly right: number;
 
-    options = merge( {
-      left: 0,  // {number} initial x position of the left (movable) end of the arm, units = m
-      right: 1, // {number} initial x position of the right (fixed) end of the arm, units = m
-      tandem: Tandem.REQUIRED
-    }, options );
+  // left (movable) end of the arm
+  public readonly leftProperty: Property<number>;
 
-    // @public (read-only) right (fixed) end of the arm
+  public constructor( providedOptions: RoboticArmOptions ) {
+
+    const options = optionize<RoboticArmOptions, SelfOptions>()( {
+
+      // SelfOptions
+      left: 0,
+      right: 1
+    }, providedOptions );
+
     this.right = options.right;
 
-    // @public left (movable) end of the arm
     this.leftProperty = new NumberProperty( options.left, {
 
       // The left end of the robotic arm and the spring's displacement (x) participate in a 2-way relationship,
@@ -42,8 +52,11 @@ export default class RoboticArm {
     phet.log && this.leftProperty.link( left => phet.log( `roboticArm left=${left}` ) );
   }
 
-  // @public
-  reset() {
+  public dispose(): void {
+    assert && assert( false, 'dispose is not supported, exists for the lifetime of the sim' );
+  }
+
+  public reset(): void {
     this.leftProperty.reset();
   }
 }
