@@ -25,7 +25,7 @@ const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ 
 // constants
 const MINOR_TICK_SPACING = 10;
 
-class AppliedForceControl extends NumberControl {
+export default class AppliedForceControl extends NumberControl {
   /**
    * @param {NumberProperty} appliedForceProperty units = N
    * @param {Range} appliedForceRange
@@ -101,5 +101,3 @@ class AppliedForceControl extends NumberControl {
 }
 
 hookesLaw.register( 'AppliedForceControl', AppliedForceControl );
-
-export default AppliedForceControl;

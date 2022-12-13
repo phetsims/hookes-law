@@ -27,7 +27,7 @@ import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import IntroSpringControls from './IntroSpringControls.js';
 
-class IntroSystemNode extends Node {
+export default class IntroSystemNode extends Node {
   /**
    * @param {SingleSpringSystem} system
    * @param {IntroViewProperties} viewProperties
@@ -163,5 +163,3 @@ class IntroSystemNode extends Node {
 }
 
 hookesLaw.register( 'IntroSystemNode', IntroSystemNode );
-
-export default IntroSystemNode;

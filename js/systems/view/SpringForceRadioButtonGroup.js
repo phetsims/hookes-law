@@ -19,7 +19,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
-class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
+export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
 
   /**
    * @param {Property.<string>} springForceRepresentationProperty
@@ -80,4 +80,3 @@ class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
 }
 
 hookesLaw.register( 'SpringForceRadioButtonGroup', SpringForceRadioButtonGroup );
-export default SpringForceRadioButtonGroup;

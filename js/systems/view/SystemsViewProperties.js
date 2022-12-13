@@ -14,7 +14,7 @@ import hookesLaw from '../../hookesLaw.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
-class SystemsViewProperties extends ViewProperties {
+export default class SystemsViewProperties extends ViewProperties {
 
   /**
    * @param {Tandem} tandem
@@ -53,5 +53,3 @@ class SystemsViewProperties extends ViewProperties {
 }
 
 hookesLaw.register( 'SystemsViewProperties', SystemsViewProperties );
-
-export default SystemsViewProperties;

@@ -22,7 +22,7 @@ import HookesLawConstants from '../HookesLawConstants.js';
 const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
   SunConstants.VALUE_NUMBERED_PLACEHOLDER, HookesLawStrings.meters );
 
-class DisplacementControl extends NumberControl {
+export default class DisplacementControl extends NumberControl {
   /**
    * @param {BooleanProperty} displacementProperty units = m
    * @param {Range} displacementRange units = m
@@ -95,5 +95,3 @@ class DisplacementControl extends NumberControl {
 }
 
 hookesLaw.register( 'DisplacementControl', DisplacementControl );
-
-export default DisplacementControl;

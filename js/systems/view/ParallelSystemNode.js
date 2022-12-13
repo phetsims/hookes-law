@@ -31,7 +31,7 @@ import SpringForceRepresentation from './SpringForceRepresentation.js';
 // constants
 const WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
 
-class ParallelSystemNode extends Node {
+export default class ParallelSystemNode extends Node {
 
   /**
    * @param {ParallelSystem} system
@@ -219,5 +219,3 @@ class ParallelSystemNode extends Node {
 }
 
 hookesLaw.register( 'ParallelSystemNode', ParallelSystemNode );
-
-export default ParallelSystemNode;

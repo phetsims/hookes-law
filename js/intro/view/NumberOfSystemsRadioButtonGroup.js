@@ -12,7 +12,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
+export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
 
   /**
    * @param {NumberProperty} numberOfSystemsProperty
@@ -45,5 +45,3 @@ class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
 }
 
 hookesLaw.register( 'NumberOfSystemsRadioButtonGroup', NumberOfSystemsRadioButtonGroup );
-
-export default NumberOfSystemsRadioButtonGroup;

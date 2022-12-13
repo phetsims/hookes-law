@@ -16,7 +16,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYPointPlot from './XYPointPlot.js';
 
-class EnergyPlot extends XYPointPlot {
+export default class EnergyPlot extends XYPointPlot {
 
   /**
    * @param {Spring} spring
@@ -114,5 +114,3 @@ class EnergyPlot extends XYPointPlot {
 }
 
 hookesLaw.register( 'EnergyPlot', EnergyPlot );
-
-export default EnergyPlot;

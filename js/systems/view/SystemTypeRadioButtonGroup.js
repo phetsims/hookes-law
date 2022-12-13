@@ -13,7 +13,7 @@ import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import SystemType from './SystemType.js';
 
-class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup {
+export default class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup {
 
   /**
    * @param {EnumerationDeprecatedProperty.<SystemType>} systemTypeProperty
@@ -46,5 +46,3 @@ class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup {
 }
 
 hookesLaw.register( 'SystemTypeRadioButtonGroup', SystemTypeRadioButtonGroup );
-
-export default SystemTypeRadioButtonGroup;

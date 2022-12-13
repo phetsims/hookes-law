@@ -11,7 +11,7 @@ import hookesLaw from '../../hookesLaw.js';
 import RoboticArm from './RoboticArm.js';
 import Spring from './Spring.js';
 
-class SingleSpringSystem {
+export default class SingleSpringSystem {
 
   /**
    * @param {Tandem} tandem
@@ -68,5 +68,3 @@ class SingleSpringSystem {
 }
 
 hookesLaw.register( 'SingleSpringSystem', SingleSpringSystem );
-
-export default SingleSpringSystem;

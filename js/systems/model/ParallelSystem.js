@@ -28,7 +28,7 @@ import RoboticArm from '../../common/model/RoboticArm.js';
 import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class ParallelSystem {
+export default class ParallelSystem {
 
   /**
    * @param {Tandem} tandem
@@ -154,5 +154,3 @@ class ParallelSystem {
 }
 
 hookesLaw.register( 'ParallelSystem', ParallelSystem );
-
-export default ParallelSystem;

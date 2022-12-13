@@ -18,7 +18,7 @@ import hookesLaw from '../../hookesLaw.js';
 // constants
 const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
-class EnergySpringControls extends HBox {
+export default class EnergySpringControls extends HBox {
   /**
    * @param {Spring} spring
    * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
@@ -74,5 +74,3 @@ class EnergySpringControls extends HBox {
 }
 
 hookesLaw.register( 'EnergySpringControls', EnergySpringControls );
-
-export default EnergySpringControls;

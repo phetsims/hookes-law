@@ -10,7 +10,7 @@ import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawQueryParameters from '../HookesLawQueryParameters.js';
 
-class ViewProperties {
+export default class ViewProperties {
 
   /**
    * @param {Tandem} tandem
@@ -48,5 +48,3 @@ class ViewProperties {
 }
 
 hookesLaw.register( 'ViewProperties', ViewProperties );
-
-export default ViewProperties;

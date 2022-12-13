@@ -28,7 +28,7 @@ import RoboticArm from '../../common/model/RoboticArm.js';
 import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class SeriesSystem {
+export default class SeriesSystem {
 
   /**
    * @param {Tandem} tandem
@@ -148,5 +148,3 @@ class SeriesSystem {
 }
 
 hookesLaw.register( 'SeriesSystem', SeriesSystem );
-
-export default SeriesSystem;

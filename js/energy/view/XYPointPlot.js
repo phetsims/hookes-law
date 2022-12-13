@@ -44,7 +44,7 @@ const TICK_OPTIONS = {
   lineWidth: 1
 };
 
-class XYPointPlot extends Node {
+export default class XYPointPlot extends Node {
 
   /**
    * @param {NumberProperty} xProperty - x coordinate value
@@ -272,5 +272,3 @@ class XYPointPlot extends Node {
 }
 
 hookesLaw.register( 'XYPointPlot', XYPointPlot );
-
-export default XYPointPlot;

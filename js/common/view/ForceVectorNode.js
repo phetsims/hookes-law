@@ -16,7 +16,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
-class ForceVectorNode extends Node {
+export default class ForceVectorNode extends Node {
 
   /**
    * @param {NumberProperty} forceProperty units = N
@@ -101,5 +101,3 @@ class ForceVectorNode extends Node {
 }
 
 hookesLaw.register( 'ForceVectorNode', ForceVectorNode );
-
-export default ForceVectorNode;

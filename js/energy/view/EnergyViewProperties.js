@@ -13,7 +13,7 @@ import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
 import EnergyGraph from './EnergyGraph.js';
 
-class EnergyViewProperties extends ViewProperties {
+export default class EnergyViewProperties extends ViewProperties {
 
   /**
    * @param {Tandem} tandem
@@ -46,5 +46,3 @@ class EnergyViewProperties extends ViewProperties {
 }
 
 hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );
-
-export default EnergyViewProperties;

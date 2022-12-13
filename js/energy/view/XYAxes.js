@@ -22,7 +22,7 @@ const AXIS_OPTIONS = {
   stroke: null
 };
 
-class XYAxes extends Node {
+export default class XYAxes extends Node {
 
   /**
    * @param {Object} [options]
@@ -66,5 +66,3 @@ class XYAxes extends Node {
 }
 
 hookesLaw.register( 'XYAxes', XYAxes );
-
-export default XYAxes;

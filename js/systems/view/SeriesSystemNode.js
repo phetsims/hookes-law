@@ -27,7 +27,7 @@ import hookesLaw from '../../hookesLaw.js';
 import SeriesSpringControls from './SeriesSpringControls.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 
-class SeriesSystemNode extends Node {
+export default class SeriesSystemNode extends Node {
 
   /**
    * @param {SeriesSystem} system
@@ -224,5 +224,3 @@ class SeriesSystemNode extends Node {
 }
 
 hookesLaw.register( 'SeriesSystemNode', SeriesSystemNode );
-
-export default SeriesSystemNode;

@@ -12,7 +12,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 
-class EquilibriumPositionNode extends Line {
+export default class EquilibriumPositionNode extends Line {
 
   /**
    * @param {number} length
@@ -32,5 +32,3 @@ class EquilibriumPositionNode extends Line {
 }
 
 hookesLaw.register( 'EquilibriumPositionNode', EquilibriumPositionNode );
-
-export default EquilibriumPositionNode;

@@ -11,7 +11,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import { Rectangle } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class NibNode extends Rectangle {
+export default class NibNode extends Rectangle {
 
   /**
    * @param {Object} [options]
@@ -29,5 +29,3 @@ class NibNode extends Rectangle {
 }
 
 hookesLaw.register( 'NibNode', NibNode );
-
-export default NibNode;

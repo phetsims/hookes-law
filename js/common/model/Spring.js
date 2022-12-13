@@ -48,7 +48,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class Spring extends PhetioObject {
+export default class Spring extends PhetioObject {
   /**
    * @param {Object} [options]
    */
@@ -290,5 +290,3 @@ class Spring extends PhetioObject {
 }
 
 hookesLaw.register( 'Spring', Spring );
-
-export default Spring;

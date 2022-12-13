@@ -20,7 +20,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 // constants
 const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
-class IntroSpringControls extends HBox {
+export default class IntroSpringControls extends HBox {
 
   /**
    * @param {Spring} spring
@@ -72,5 +72,3 @@ class IntroSpringControls extends HBox {
 }
 
 hookesLaw.register( 'IntroSpringControls', IntroSpringControls );
-
-export default IntroSpringControls;

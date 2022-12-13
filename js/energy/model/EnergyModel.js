@@ -10,7 +10,7 @@ import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
 import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class EnergyModel {
+export default class EnergyModel {
 
   /**
    * @param {Tandem} tandem
@@ -34,5 +34,3 @@ class EnergyModel {
 }
 
 hookesLaw.register( 'EnergyModel', EnergyModel );
-
-export default EnergyModel;

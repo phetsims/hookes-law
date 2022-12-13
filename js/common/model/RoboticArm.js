@@ -11,7 +11,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class RoboticArm {
+export default class RoboticArm {
 
   /**
    * @param {Object} [options]
@@ -48,5 +48,3 @@ class RoboticArm {
 }
 
 hookesLaw.register( 'RoboticArm', RoboticArm );
-
-export default RoboticArm;

@@ -10,7 +10,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNode.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class HookesLawSpringNode extends ParametricSpringNode {
+export default class HookesLawSpringNode extends ParametricSpringNode {
   /**
    * @param {Spring} spring
    * @param {Object} [options]
@@ -50,5 +50,3 @@ class HookesLawSpringNode extends ParametricSpringNode {
 }
 
 hookesLaw.register( 'HookesLawSpringNode', HookesLawSpringNode );
-
-export default HookesLawSpringNode;

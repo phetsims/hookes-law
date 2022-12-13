@@ -33,7 +33,7 @@ const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
   .addColorStop( 0.5, 'white' )
   .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
 
-class RoboticArmNode extends Node {
+export default class RoboticArmNode extends Node {
 
   /**
    * @param {RoboticArm} roboticArm
@@ -257,5 +257,3 @@ function createBottomPincerClosed( options ) {
 }
 
 hookesLaw.register( 'RoboticArmNode', RoboticArmNode );
-
-export default RoboticArmNode;

@@ -12,7 +12,7 @@ import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class IntroViewProperties extends ViewProperties {
+export default class IntroViewProperties extends ViewProperties {
 
   /**
    * @param {Tandem} tandem
@@ -45,5 +45,3 @@ class IntroViewProperties extends ViewProperties {
 }
 
 hookesLaw.register( 'IntroViewProperties', IntroViewProperties );
-
-export default IntroViewProperties;

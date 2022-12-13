@@ -22,7 +22,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 const SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
 const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
-class SeriesSpringControls extends HBox {
+export default class SeriesSpringControls extends HBox {
 
   /**
    * @param {SeriesSystem} system
@@ -104,5 +104,3 @@ class SeriesSpringControls extends HBox {
 }
 
 hookesLaw.register( 'SeriesSpringControls', SeriesSpringControls );
-
-export default SeriesSpringControls;

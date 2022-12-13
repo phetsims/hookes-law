@@ -23,7 +23,7 @@ import EnergyGraph from './EnergyGraph.js';
 // constants
 const Y_SPACING = 20;
 
-class EnergyVisibilityPanel extends Panel {
+export default class EnergyVisibilityPanel extends Panel {
 
   /**
    * @param {EnergyViewProperties} properties
@@ -131,5 +131,3 @@ class EnergyVisibilityPanel extends Panel {
 }
 
 hookesLaw.register( 'EnergyVisibilityPanel', EnergyVisibilityPanel );
-
-export default EnergyVisibilityPanel;

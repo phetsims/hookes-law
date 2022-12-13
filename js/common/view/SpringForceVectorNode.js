@@ -13,7 +13,7 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import ForceVectorNode from './ForceVectorNode.js';
 
-class SpringForceVectorNode extends ForceVectorNode {
+export default class SpringForceVectorNode extends ForceVectorNode {
 
   /**
    * @param {NumberProperty} springForceProperty units = N
@@ -34,5 +34,3 @@ class SpringForceVectorNode extends ForceVectorNode {
 }
 
 hookesLaw.register( 'SpringForceVectorNode', SpringForceVectorNode );
-
-export default SpringForceVectorNode;

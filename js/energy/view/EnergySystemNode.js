@@ -26,7 +26,7 @@ import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import EnergySpringControls from './EnergySpringControls.js';
 
-class EnergySystemNode extends Node {
+export default class EnergySystemNode extends Node {
   /**
    * @param {SingleSpringSystem} system
    * @param {EnergyViewProperties} viewProperties
@@ -153,5 +153,3 @@ class EnergySystemNode extends Node {
 }
 
 hookesLaw.register( 'EnergySystemNode', EnergySystemNode );
-
-export default EnergySystemNode;

@@ -17,7 +17,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
-class DisplacementVectorNode extends Node {
+export default class DisplacementVectorNode extends Node {
 
   /**
    * @param {NumberProperty} displacementProperty units = m
@@ -89,5 +89,3 @@ class DisplacementVectorNode extends Node {
 }
 
 hookesLaw.register( 'DisplacementVectorNode', DisplacementVectorNode );
-
-export default DisplacementVectorNode;

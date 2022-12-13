@@ -13,7 +13,7 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import ForceVectorNode from './ForceVectorNode.js';
 
-class AppliedForceVectorNode extends ForceVectorNode {
+export default class AppliedForceVectorNode extends ForceVectorNode {
 
   /**
    * @param {NumberProperty} appliedForceProperty units = N
@@ -33,5 +33,3 @@ class AppliedForceVectorNode extends ForceVectorNode {
 }
 
 hookesLaw.register( 'AppliedForceVectorNode', AppliedForceVectorNode );
-
-export default AppliedForceVectorNode;

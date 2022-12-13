@@ -12,7 +12,7 @@ import ShadedRectangle from '../../../../scenery-phet/js/ShadedRectangle.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 
-class WallNode extends ShadedRectangle {
+export default class WallNode extends ShadedRectangle {
 
   /**
    * @param {Dimension2} size
@@ -32,5 +32,3 @@ class WallNode extends ShadedRectangle {
 }
 
 hookesLaw.register( 'WallNode', WallNode );
-
-export default WallNode;

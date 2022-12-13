@@ -20,7 +20,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 // constants
 const BAR_WIDTH = 20;
 
-class EnergyBarGraph extends Node {
+export default class EnergyBarGraph extends Node {
 
   /**
    * @param {Spring} spring
@@ -95,5 +95,3 @@ class EnergyBarGraph extends Node {
 }
 
 hookesLaw.register( 'EnergyBarGraph', EnergyBarGraph );
-
-export default EnergyBarGraph;

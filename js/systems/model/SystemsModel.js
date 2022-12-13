@@ -10,7 +10,7 @@ import hookesLaw from '../../hookesLaw.js';
 import ParallelSystem from './ParallelSystem.js';
 import SeriesSystem from './SeriesSystem.js';
 
-class SystemsModel {
+export default class SystemsModel {
 
   /**
    * @param {Tandem} tandem
@@ -28,5 +28,3 @@ class SystemsModel {
 }
 
 hookesLaw.register( 'SystemsModel', SystemsModel );
-
-export default SystemsModel;

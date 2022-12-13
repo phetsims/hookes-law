@@ -18,7 +18,7 @@ import EnergyViewProperties from './EnergyViewProperties.js';
 import EnergyVisibilityPanel from './EnergyVisibilityPanel.js';
 import ForcePlot from './ForcePlot.js';
 
-class EnergyScreenView extends ScreenView {
+export default class EnergyScreenView extends ScreenView {
 
   /**
    * @param {EnergyModel} model
@@ -114,5 +114,3 @@ class EnergyScreenView extends ScreenView {
 }
 
 hookesLaw.register( 'EnergyScreenView', EnergyScreenView );
-
-export default EnergyScreenView;

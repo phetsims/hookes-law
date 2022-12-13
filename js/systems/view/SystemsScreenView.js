@@ -18,7 +18,7 @@ import SystemsVisibilityPanel from './SystemsVisibilityPanel.js';
 import SystemType from './SystemType.js';
 import SystemTypeRadioButtonGroup from './SystemTypeRadioButtonGroup.js';
 
-class SystemsScreenView extends ScreenView {
+export default class SystemsScreenView extends ScreenView {
   /**
    * @param {SystemsModel} model
    * @param {Tandem} tandem
@@ -96,5 +96,3 @@ class SystemsScreenView extends ScreenView {
 }
 
 hookesLaw.register( 'SystemsScreenView', SystemsScreenView );
-
-export default SystemsScreenView;

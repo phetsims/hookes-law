@@ -17,7 +17,7 @@ import IntroViewProperties from './IntroViewProperties.js';
 import IntroVisibilityPanel from './IntroVisibilityPanel.js';
 import NumberOfSystemsRadioButtonGroup from './NumberOfSystemsRadioButtonGroup.js';
 
-class IntroScreenView extends ScreenView {
+export default class IntroScreenView extends ScreenView {
 
   /**
    * @param {IntroModel} model
@@ -105,5 +105,3 @@ class IntroScreenView extends ScreenView {
 }
 
 hookesLaw.register( 'IntroScreenView', IntroScreenView );
-
-export default IntroScreenView;

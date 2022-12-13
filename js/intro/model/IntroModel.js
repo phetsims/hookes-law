@@ -11,7 +11,7 @@ import merge from '../../../../phet-core/js/merge.js';
 import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import hookesLaw from '../../hookesLaw.js';
 
-class IntroModel {
+export default class IntroModel {
 
   /**
    * @param {Tandem} tandem
@@ -38,5 +38,3 @@ class IntroModel {
 }
 
 hookesLaw.register( 'IntroModel', IntroModel );
-
-export default IntroModel;

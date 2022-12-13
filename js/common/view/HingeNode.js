@@ -17,7 +17,7 @@ const BODY_SIZE = new Dimension2( 9, 40 );
 const PIVOT_SIZE = new Dimension2( 26, 25 );
 const SCREW_RADIUS = 3;
 
-class HingeNode extends Node {
+export default class HingeNode extends Node {
 
   /**
    * @param {Object} [options]
@@ -82,5 +82,3 @@ class HingeNode extends Node {
 }
 
 hookesLaw.register( 'HingeNode', HingeNode );
-
-export default HingeNode;

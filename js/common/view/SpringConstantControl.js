@@ -22,7 +22,7 @@ import HookesLawConstants from '../HookesLawConstants.js';
 const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
   SunConstants.VALUE_NUMBERED_PLACEHOLDER, HookesLawStrings.newtonsPerMeter );
 
-class SpringConstantControl extends NumberControl {
+export default class SpringConstantControl extends NumberControl {
 
   /**
    * @param {BooleanProperty} springConstantProperty units = N/m
@@ -91,5 +91,3 @@ class SpringConstantControl extends NumberControl {
 }
 
 hookesLaw.register( 'SpringConstantControl', SpringConstantControl );
-
-export default SpringConstantControl;

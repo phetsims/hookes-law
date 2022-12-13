@@ -20,7 +20,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 
-class SystemsVisibilityPanel extends Panel {
+export default class SystemsVisibilityPanel extends Panel {
 
   /**
    * @param {SystemsViewProperties} properties
@@ -111,5 +111,3 @@ class SystemsVisibilityPanel extends Panel {
 }
 
 hookesLaw.register( 'SystemsVisibilityPanel', SystemsVisibilityPanel );
-
-export default SystemsVisibilityPanel;

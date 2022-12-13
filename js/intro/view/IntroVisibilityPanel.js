@@ -18,7 +18,7 @@ import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 
-class IntroVisibilityPanel extends Panel {
+export default class IntroVisibilityPanel extends Panel {
 
   /**
    * @param {IntroViewProperties} properties
@@ -102,5 +102,3 @@ class IntroVisibilityPanel extends Panel {
 }
 
 hookesLaw.register( 'IntroVisibilityPanel', IntroVisibilityPanel );
-
-export default IntroVisibilityPanel;
