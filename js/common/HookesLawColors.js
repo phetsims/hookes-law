@@ -11,16 +11,16 @@ import { Color } from '../../../scenery/js/imports.js';
 import hookesLaw from '../hookesLaw.js';
 
 // colors for the spring in single-spring systems
-const SPRING0_FRONT = new Color( 150, 150, 255 );
-const SPRING0_MIDDLE = new Color( 0, 0, 255 ); // the dominant color
-const SPRING0_BACK = new Color( 0, 0, 200 );
+const SINGLE_SPRING_FRONT = new Color( 150, 150, 255 );
+const SINGLE_SPRING_MIDDLE = new Color( 0, 0, 255 ); // the dominant color
+const SINGLE_SPRING_BACK = new Color( 0, 0, 200 );
 
-// colors for the first spring (top, left) in 2-spring systems
+// colors for the first spring (top or left) in 2-spring systems
 const SPRING1_FRONT = new Color( 221, 191, 255 );
 const SPRING1_MIDDLE = new Color( 146, 64, 255 ); // the dominant color
 const SPRING1_BACK = new Color( 124, 54, 217 );
 
-// colors for the second spring (bottom, right) in 2-spring systems
+// colors for the second spring (bottom or right) in 2-spring systems
 const SPRING2_FRONT = new Color( 255, 223, 127 );
 const SPRING2_MIDDLE = new Color( 255, 191, 0 ); // the dominant color
 const SPRING2_BACK = new Color( 217, 163, 0 );
@@ -33,10 +33,10 @@ const HookesLawColors = {
   SEPARATOR_STROKE: new Color( 125, 125, 125 ),
 
   // colors for single spring
-  SINGLE_SPRING: SPRING0_MIDDLE,
-  SINGLE_SPRING_FRONT: SPRING0_FRONT,
-  SINGLE_SPRING_MIDDLE: SPRING0_MIDDLE,
-  SINGLE_SPRING_BACK: SPRING0_BACK,
+  SINGLE_SPRING: SINGLE_SPRING_MIDDLE,
+  SINGLE_SPRING_FRONT: SINGLE_SPRING_FRONT,
+  SINGLE_SPRING_MIDDLE: SINGLE_SPRING_MIDDLE,
+  SINGLE_SPRING_BACK: SINGLE_SPRING_BACK,
 
   // colors for series springs
   LEFT_SPRING: SPRING1_MIDDLE,
