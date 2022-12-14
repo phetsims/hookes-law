@@ -62,10 +62,10 @@ export default class AppliedForceControl extends NumberControl {
       delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
       startCallback: () => {
         phet.log && phet.log( '>>>>> AppliedForceControl start interaction' );
-        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
+        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value + 1 );
       },
       endCallback: () => {
-        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
+        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value - 1 );
         phet.log && phet.log( '>>>>> AppliedForceControl end interaction' );
       },
 

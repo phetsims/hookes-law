@@ -59,7 +59,7 @@ export default class SystemsScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.systemTypeProperty.get() === SystemType.SERIES,
+      visible: viewProperties.systemTypeProperty.value === SystemType.SERIES,
       tandem: tandem.createTandem( 'seriesSystemNode' )
     } );
     this.addChild( seriesSystemNode );
@@ -69,7 +69,7 @@ export default class SystemsScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       left: seriesSystemNode.left,
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.systemTypeProperty.get() === SystemType.PARALLEL,
+      visible: viewProperties.systemTypeProperty.value === SystemType.PARALLEL,
       tandem: tandem.createTandem( 'parallelSystemNode' )
     } );
     assert && assert( parallelSystemNode.height < this.layoutBounds.height, 'parallel system is too tall' );

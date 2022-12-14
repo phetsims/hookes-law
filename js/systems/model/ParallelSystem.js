@@ -52,7 +52,7 @@ export default class ParallelSystem {
     // @public bottom spring, in parallel with top spring, with identical configuration
     this.bottomSpring = new Spring( {
       logName: 'bottomSpring',
-      left: this.topSpring.leftProperty.get(),
+      left: this.topSpring.leftProperty.value,
       equilibriumLength: this.topSpring.equilibriumLength,
       springConstantRange: this.topSpring.springConstantRange,
       appliedForceRange: this.topSpring.appliedForceRange,
@@ -61,15 +61,15 @@ export default class ParallelSystem {
     } );
 
     // verify that springs are indeed parallel
-    assert && assert( this.topSpring.leftProperty.get() === this.bottomSpring.leftProperty.get(), 'top and bottom springs must have same left' );
-    assert && assert( this.topSpring.rightProperty.get() === this.bottomSpring.rightProperty.get(), 'top and bottom springs must have same right' );
-    assert && assert( this.topSpring.equilibriumXProperty.get() === this.bottomSpring.equilibriumXProperty.get(),
+    assert && assert( this.topSpring.leftProperty.value === this.bottomSpring.leftProperty.value, 'top and bottom springs must have same left' );
+    assert && assert( this.topSpring.rightProperty.value === this.bottomSpring.rightProperty.value, 'top and bottom springs must have same right' );
+    assert && assert( this.topSpring.equilibriumXProperty.value === this.bottomSpring.equilibriumXProperty.value,
       'top and bottom springs must have same equilibrium position' );
 
     // @public the single spring that is equivalent to the 2 springs in parallel
     this.equivalentSpring = new Spring( {
       logName: 'equivalentSpring',
-      left: this.topSpring.leftProperty.get(),
+      left: this.topSpring.leftProperty.value,
       equilibriumLength: this.topSpring.equilibriumLength,
       // keq = k1 + k2
       springConstantRange: new RangeWithValue(
@@ -81,12 +81,12 @@ export default class ParallelSystem {
       tandem: tandem.createTandem( 'equivalentSpring' ),
       phetioDocumentation: 'The single spring that is equivalent to the 2 springs in parallel'
     } );
-    assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
+    assert && assert( this.equivalentSpring.displacementProperty.value === 0 ); // equivalent spring is at equilibrium
 
     // @public robotic arm, connected to the right end of the equivalent spring
     this.roboticArm = new RoboticArm( {
-      left: this.equivalentSpring.rightProperty.get(),
-      right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get(),
+      left: this.equivalentSpring.rightProperty.value,
+      right: this.equivalentSpring.rightProperty.value + this.equivalentSpring.lengthProperty.value,
       tandem: tandem.createTandem( 'roboticArm' )
     } );
 
@@ -95,15 +95,15 @@ export default class ParallelSystem {
 
     // xeq = x1 = x2
     this.equivalentSpring.displacementProperty.link( displacement => {
-      this.topSpring.displacementProperty.set( displacement ); // x1 = xeq
-      this.bottomSpring.displacementProperty.set( displacement ); // x2 = xeq
+      this.topSpring.displacementProperty.value = displacement; // x1 = xeq
+      this.bottomSpring.displacementProperty.value = displacement; // x2 = xeq
     } );
 
     // keq = k1 + k2
     const updateEquivalentSpringConstant = () => {
-      const topSpringConstant = this.topSpring.springConstantProperty.get();
-      const bottomSpringConstant = this.bottomSpring.springConstantProperty.get();
-      this.equivalentSpring.springConstantProperty.set( topSpringConstant + bottomSpringConstant );
+      const topSpringConstant = this.topSpring.springConstantProperty.value;
+      const bottomSpringConstant = this.bottomSpring.springConstantProperty.value;
+      this.equivalentSpring.springConstantProperty.value = ( topSpringConstant + bottomSpringConstant );
     };
     this.topSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.bottomSpring.springConstantProperty.link( updateEquivalentSpringConstant );
@@ -114,14 +114,14 @@ export default class ParallelSystem {
       if ( !ignoreUpdates ) {
         // this will affect the displacement of both springs
         ignoreUpdates = true;
-        this.equivalentSpring.displacementProperty.set( left - this.equivalentSpring.equilibriumXProperty.get() );
+        this.equivalentSpring.displacementProperty.value = ( left - this.equivalentSpring.equilibriumXProperty.value );
         ignoreUpdates = false;
       }
     } );
 
     // Connect robotic arm to equivalent spring.
     this.equivalentSpring.rightProperty.link( right => {
-      this.roboticArm.leftProperty.set( right );
+      this.roboticArm.leftProperty.value = right;
     } );
 
     //------------------------------------------------

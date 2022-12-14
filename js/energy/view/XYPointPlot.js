@@ -140,7 +140,7 @@ export default class XYPointPlot extends Node {
 
     // visibility
     displacementVectorVisibleProperty.link( visible => {
-      const xFixed = Utils.toFixedNumber( xProperty.get(), options.xDecimalPlaces ); // the displayed value
+      const xFixed = Utils.toFixedNumber( xProperty.value, options.xDecimalPlaces ); // the displayed value
       xVectorNode.visible = ( visible && xFixed !== 0 );
     } );
     valuesVisibleProperty.link( visible => {
@@ -164,13 +164,13 @@ export default class XYPointPlot extends Node {
       const xView = options.xUnitLength * xFixed;
 
       // x vector
-      xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.get() ); // can't draw a zero-length arrow
+      xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.value ); // can't draw a zero-length arrow
       if ( xFixed !== 0 ) {
         xVectorNode.setLine( 0, 0, xView, 0 );
       }
 
       // x tick mark
-      xTickNode.visible = ( xFixed !== 0 && valuesVisibleProperty.get() );
+      xTickNode.visible = ( xFixed !== 0 && valuesVisibleProperty.value );
       xTickNode.centerX = xView;
 
       // x value
@@ -195,7 +195,7 @@ export default class XYPointPlot extends Node {
         }
 
         const Y_SPACING = 12;
-        if ( yProperty.get() >= 0 ) {
+        if ( yProperty.value >= 0 ) {
           xValueNode.top = Y_SPACING; // below the x axis
         }
         else {
@@ -216,7 +216,7 @@ export default class XYPointPlot extends Node {
       const yView = yFixed * options.yUnitLength;
 
       // y tick mark
-      yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.get() );
+      yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.value );
       yTickNode.centerY = -yView;
 
       // y value
@@ -225,7 +225,7 @@ export default class XYPointPlot extends Node {
 
       // placement of y value, so that it doesn't collide with x value or axes
       const X_SPACING = 10;
-      if ( xProperty.get() >= 0 ) {
+      if ( xProperty.value >= 0 ) {
         yValueNode.right = -X_SPACING; // to the left of the y axis
       }
       else {

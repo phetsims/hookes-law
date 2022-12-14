@@ -175,7 +175,7 @@ export default class Spring extends PhetioObject {
         `appliedForce is out of range: ${appliedForce}` );
 
       // x = F/k
-      this.displacementProperty.set( appliedForce / this.springConstantProperty.get() );
+      this.displacementProperty.value = ( appliedForce / this.springConstantProperty.value );
     } );
 
     // k: When spring constant changes, adjust either applied force or displacement.
@@ -188,14 +188,14 @@ export default class Spring extends PhetioObject {
         // If the applied force range was specified via options, then maintain the applied force, change displacement.
         // This applies to the Intro and Systems screens.
         // x = F/k
-        this.displacementProperty.set( this.appliedForceProperty.get() / springConstant );
+        this.displacementProperty.value = ( this.appliedForceProperty.value / springConstant );
       }
       else {
 
         // If displacement range was specified via options, maintain the displacement, change applied force.
         // This applies to the Energy screen.
         // F = kx
-        this.appliedForceProperty.set( springConstant * this.displacementProperty.get() );
+        this.appliedForceProperty.value = ( springConstant * this.displacementProperty.value );
       }
     } );
 
@@ -205,12 +205,12 @@ export default class Spring extends PhetioObject {
         `displacement is out of range: ${displacement}` );
 
       // F = kx
-      let appliedForce = this.springConstantProperty.get() * displacement;
+      let appliedForce = this.springConstantProperty.value * displacement;
 
       // Constrain to range, needed due to floating-point error.
       appliedForce = this.appliedForceRange.constrainValue( appliedForce );
 
-      this.appliedForceProperty.set( appliedForce );
+      this.appliedForceProperty.value = appliedForce;
     } );
 
     //------------------------------------------------
@@ -236,7 +236,7 @@ export default class Spring extends PhetioObject {
 
     this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
       ( equilibriumX, displacement ) => {
-        const left = this.leftProperty.get();
+        const left = this.leftProperty.value;
         const right = equilibriumX + displacement;
         assert && assert( right - left > 0, `right must be > left, right=${right}, left=${left}` );
         return right;

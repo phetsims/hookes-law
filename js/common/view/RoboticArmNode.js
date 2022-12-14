@@ -128,15 +128,15 @@ export default class RoboticArmNode extends Node {
       allowTouchSnag: true,
 
       start: event => {
-        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() + 1 );
-        const length = options.unitDisplacementLength * ( roboticArm.leftProperty.get() - roboticArm.right );
+        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value + 1 );
+        const length = options.unitDisplacementLength * ( roboticArm.leftProperty.value - roboticArm.right );
         startOffsetX = draggableNode.globalToParentPoint( event.pointer.point ).x - length;
       },
 
       drag: event => {
         const parentX = draggableNode.globalToParentPoint( event.pointer.point ).x - startOffsetX;
         const length = parentX / options.unitDisplacementLength;
-        let left = leftRangeProperty.get().constrainValue( roboticArm.right + length );
+        let left = leftRangeProperty.value.constrainValue( roboticArm.right + length );
 
         // constrain to multiples of a specific interval, see #54
         if ( options.displacementInterval ) {
@@ -145,11 +145,11 @@ export default class RoboticArmNode extends Node {
         left = Utils.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
 
         phet.log && phet.log( '>>>>> RoboticArmNode drag' );
-        roboticArm.leftProperty.set( left );
+        roboticArm.leftProperty.value = left;
       },
 
       end: () => {
-        numberOfInteractionsInProgressProperty.set( numberOfInteractionsInProgressProperty.get() - 1 );
+        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value - 1 );
       },
 
       // phet-io

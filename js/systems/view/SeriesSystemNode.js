@@ -61,7 +61,7 @@ export default class SeriesSystemNode extends Node {
 
     // origin is at right-center of wall
     const wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
-      right: options.unitDisplacementLength * leftSpring.leftProperty.get(),
+      right: options.unitDisplacementLength * leftSpring.leftProperty.value,
       centerY: yOrigin
     } );
 
@@ -72,7 +72,7 @@ export default class SeriesSystemNode extends Node {
       middleColor: HookesLawColors.LEFT_SPRING_MIDDLE,
       backColor: HookesLawColors.LEFT_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
-      x: options.unitDisplacementLength * leftSpring.leftProperty.get(),
+      x: options.unitDisplacementLength * leftSpring.leftProperty.value,
       y: yOrigin
     } );
 
@@ -102,7 +102,7 @@ export default class SeriesSystemNode extends Node {
     } );
 
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
-      centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.get(),
+      centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.value,
       centerY: yOrigin,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );

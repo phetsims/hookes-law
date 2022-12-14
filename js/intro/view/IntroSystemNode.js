@@ -48,7 +48,7 @@ export default class IntroSystemNode extends Node {
     const roboticArm = system.roboticArm;
 
     // This sim operates in 1 dimension (x), so center everything on y = 0.
-    const xOrigin = options.unitDisplacementLength * spring.leftProperty.get();
+    const xOrigin = options.unitDisplacementLength * spring.leftProperty.value;
     const yOrigin = 0;
 
     // number of interactions in progress that affect displacement
@@ -92,7 +92,7 @@ export default class IntroSystemNode extends Node {
     } );
 
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
-      centerX: options.unitDisplacementLength * spring.equilibriumXProperty.get(),
+      centerX: options.unitDisplacementLength * spring.equilibriumXProperty.value,
       centerY: yOrigin,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );

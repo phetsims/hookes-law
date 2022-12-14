@@ -65,7 +65,7 @@ export default class ParallelSystemNode extends Node {
 
     // origin is at right-center of wall
     const wallNode = new WallNode( WALL_SIZE, {
-      right: options.unitDisplacementLength * equivalentSpring.leftProperty.get(),
+      right: options.unitDisplacementLength * equivalentSpring.leftProperty.value,
       centerY: yOrigin
     } );
 
@@ -76,7 +76,7 @@ export default class ParallelSystemNode extends Node {
       middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
       backColor: HookesLawColors.TOP_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
-      x: options.unitDisplacementLength * topSpring.leftProperty.get(),
+      x: options.unitDisplacementLength * topSpring.leftProperty.value,
       y: wallNode.top + ( 0.25 * wallNode.height )
     } );
 
@@ -87,7 +87,7 @@ export default class ParallelSystemNode extends Node {
       middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
       backColor: HookesLawColors.BOTTOM_SPRING_BACK,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
-      x: options.unitDisplacementLength * bottomSpring.leftProperty.get(),
+      x: options.unitDisplacementLength * bottomSpring.leftProperty.value,
       y: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
 
@@ -113,7 +113,7 @@ export default class ParallelSystemNode extends Node {
     } );
 
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
-      centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.get(),
+      centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.value,
       centerY: yOrigin,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );

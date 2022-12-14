@@ -57,7 +57,7 @@ export default class EnergySystemNode extends Node {
 
     // origin is at right-center of wall
     const wallNode = new WallNode( HookesLawConstants.WALL_SIZE, {
-      right: options.unitDisplacementLength * spring.leftProperty.get(),
+      right: options.unitDisplacementLength * spring.leftProperty.value,
       centerY: yOrigin
     } );
 
@@ -68,7 +68,7 @@ export default class EnergySystemNode extends Node {
       loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
-      x: options.unitDisplacementLength * spring.leftProperty.get(),
+      x: options.unitDisplacementLength * spring.leftProperty.value,
       y: yOrigin
     } );
 
@@ -90,7 +90,7 @@ export default class EnergySystemNode extends Node {
     } );
 
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
-      centerX: options.unitDisplacementLength * spring.equilibriumXProperty.get(),
+      centerX: options.unitDisplacementLength * spring.equilibriumXProperty.value,
       centerY: yOrigin,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );

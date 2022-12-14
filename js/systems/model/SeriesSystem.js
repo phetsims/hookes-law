@@ -52,7 +52,7 @@ export default class SeriesSystem {
     // @public right spring, in series with the left spring, with identical configuration
     this.rightSpring = new Spring( {
       logName: 'rightSpring',
-      left: this.leftSpring.rightProperty.get(), // attached to the right end of the left spring
+      left: this.leftSpring.rightProperty.value, // attached to the right end of the left spring
       equilibriumLength: this.leftSpring.equilibriumLength,
       springConstantRange: this.leftSpring.springConstantRange,
       appliedForceRange: this.leftSpring.appliedForceRange,
@@ -63,7 +63,7 @@ export default class SeriesSystem {
     // @public the single spring that is equivalent to the 2 springs in series
     this.equivalentSpring = new Spring( {
       logName: 'equivalentSpring',
-      left: this.leftSpring.leftProperty.get(),
+      left: this.leftSpring.leftProperty.value,
       equilibriumLength: this.leftSpring.equilibriumLength + this.rightSpring.equilibriumLength,
       // keq = 1 / ( 1/k1 + 1/k2 )
       springConstantRange: new RangeWithValue(
@@ -74,12 +74,12 @@ export default class SeriesSystem {
       tandem: tandem.createTandem( 'equivalentSpring' ),
       phetioDocumentation: 'The single spring that is equivalent to the 2 springs in series'
     } );
-    assert && assert( this.equivalentSpring.displacementProperty.get() === 0 ); // equivalent spring is at equilibrium
+    assert && assert( this.equivalentSpring.displacementProperty.value === 0 ); // equivalent spring is at equilibrium
 
     // @public robotic arm, attached to right end of equivalent spring
     this.roboticArm = new RoboticArm( {
-      left: this.equivalentSpring.rightProperty.get(),
-      right: this.equivalentSpring.rightProperty.get() + this.equivalentSpring.lengthProperty.get(),
+      left: this.equivalentSpring.rightProperty.value,
+      right: this.equivalentSpring.rightProperty.value + this.equivalentSpring.lengthProperty.value,
       tandem: tandem.createTandem( 'roboticArm' )
     } );
 
@@ -88,15 +88,15 @@ export default class SeriesSystem {
 
     // Feq = F1 = F2
     this.equivalentSpring.appliedForceProperty.link( appliedForce => {
-      this.leftSpring.appliedForceProperty.set( appliedForce ); // F1 = Feq
-      this.rightSpring.appliedForceProperty.set( appliedForce ); // F2 = Feq
+      this.leftSpring.appliedForceProperty.value = appliedForce; // F1 = Feq
+      this.rightSpring.appliedForceProperty.value = appliedForce; // F2 = Feq
     } );
 
     // keq = 1 / ( 1/k1 + 1/k2 )
     const updateEquivalentSpringConstant = () => {
-      const leftSpringConstant = this.leftSpring.springConstantProperty.get();
-      const rightSpringConstant = this.rightSpring.springConstantProperty.get();
-      this.equivalentSpring.springConstantProperty.set( 1 / ( ( 1 / leftSpringConstant ) + ( 1 / rightSpringConstant ) ) );
+      const leftSpringConstant = this.leftSpring.springConstantProperty.value;
+      const rightSpringConstant = this.rightSpring.springConstantProperty.value;
+      this.equivalentSpring.springConstantProperty.value = ( 1 / ( ( 1 / leftSpringConstant ) + ( 1 / rightSpringConstant ) ) );
     };
     this.leftSpring.springConstantProperty.link( updateEquivalentSpringConstant );
     this.rightSpring.springConstantProperty.link( updateEquivalentSpringConstant );
@@ -107,19 +107,19 @@ export default class SeriesSystem {
       if ( !ignoreUpdates ) {
         // this will affect the displacement of both springs
         ignoreUpdates = true;
-        this.equivalentSpring.displacementProperty.set( left - this.equivalentSpring.equilibriumXProperty.get() );
+        this.equivalentSpring.displacementProperty.value = ( left - this.equivalentSpring.equilibriumXProperty.value );
         ignoreUpdates = false;
       }
     } );
 
     // Connect right spring to left spring.
     this.leftSpring.rightProperty.link( right => {
-      this.rightSpring.leftProperty.set( right );
+      this.rightSpring.leftProperty.value = right;
     } );
 
     // Connect robotic arm to equivalent spring.
     this.equivalentSpring.rightProperty.link( right => {
-      this.roboticArm.leftProperty.set( right );
+      this.roboticArm.leftProperty.value = right;
     } );
 
     //------------------------------------------------

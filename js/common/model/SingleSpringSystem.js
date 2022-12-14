@@ -26,12 +26,12 @@ export default class SingleSpringSystem {
     this.spring = new Spring( merge( {}, springOptions, {
       tandem: tandem.createTandem( 'spring' )
     } ) );
-    assert && assert( this.spring.displacementProperty.get() === 0 ); // spring is at equilibrium
+    assert && assert( this.spring.displacementProperty.value === 0 ); // spring is at equilibrium
 
     // @public arm, left end attached to spring
     this.roboticArm = new RoboticArm( {
-      left: this.spring.rightProperty.get(),
-      right: this.spring.rightProperty.get() + this.spring.lengthProperty.get(),
+      left: this.spring.rightProperty.value,
+      right: this.spring.rightProperty.value + this.spring.lengthProperty.value,
       tandem: tandem.createTandem( 'roboticArm' )
     } );
 
@@ -40,12 +40,12 @@ export default class SingleSpringSystem {
 
     // Connect arm to spring.
     this.spring.rightProperty.link( right => {
-      this.roboticArm.leftProperty.set( right );
+      this.roboticArm.leftProperty.value = right;
     } );
 
     // Robotic arm sets displacement of spring.
     this.roboticArm.leftProperty.link( left => {
-      this.spring.displacementProperty.set( left - this.spring.equilibriumXProperty.get() );
+      this.spring.displacementProperty.value = ( left - this.spring.equilibriumXProperty.value );
     } );
 
     //------------------------------------------------

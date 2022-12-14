@@ -69,7 +69,7 @@ export default class EnergyScreenView extends ScreenView {
       viewProperties.displacementVectorVisibleProperty,
       viewProperties.energyOnForcePlotVisibleProperty, {
         // origin aligned with equilibrium position
-        x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() ),
+        x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.value ),
         bottom: barGraph.bottom,
         tandem: tandem.createTandem( 'forcePlot' )
       } );
@@ -104,7 +104,7 @@ export default class EnergyScreenView extends ScreenView {
 
       if ( graph === EnergyGraph.BAR_GRAPH ) {
         // aligned with equilibrium position
-        barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.get() );
+        barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.value );
       }
       else {
         barGraph.left = 15;

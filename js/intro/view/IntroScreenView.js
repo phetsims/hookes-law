@@ -59,7 +59,7 @@ export default class IntroScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       number: 1,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
-      centerY: ( viewProperties.numberOfSystemsProperty.get() === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height ),
+      centerY: ( viewProperties.numberOfSystemsProperty.value === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height ),
       tandem: tandem.createTandem( 'system1Node' )
     } );
     this.addChild( system1Node );
@@ -71,7 +71,7 @@ export default class IntroScreenView extends ScreenView {
       number: 2,
       left: system1Node.left,
       centerY: 0.75 * this.layoutBounds.height,
-      visible: ( viewProperties.numberOfSystemsProperty.get() === 2 ),
+      visible: ( viewProperties.numberOfSystemsProperty.value === 2 ),
       tandem: tandem.createTandem( 'system2Node' )
     } );
     this.addChild( system2Node );

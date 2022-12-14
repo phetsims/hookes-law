@@ -37,14 +37,14 @@ export default class HookesLawSpringNode extends ParametricSpringNode {
     // stretch or compress the spring
     spring.lengthProperty.link( length => {
       const coilLength = ( length * options.unitDisplacementLength ) - ( options.leftEndLength + options.rightEndLength );
-      const xScale = coilLength / ( this.loopsProperty.get() * this.radiusProperty.get() );
-      this.xScaleProperty.set( xScale );
+      const xScale = coilLength / ( this.loopsProperty.value * this.radiusProperty.value );
+      this.xScaleProperty.value = xScale;
     } );
 
     // spring constant determines lineWidth
     spring.springConstantProperty.link( springConstant => {
       const lineWidth = options.minLineWidth + options.deltaLineWidth * ( springConstant - spring.springConstantRange.min );
-      this.lineWidthProperty.set( lineWidth );
+      this.lineWidthProperty.value = lineWidth;
     } );
   }
 }
