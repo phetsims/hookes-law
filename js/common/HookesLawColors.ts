@@ -74,7 +74,6 @@ const HookesLawColors = {
 
   // walls that spring and robotic arm are connected to
   WALL_FILL: new Color( 180, 180, 180 ),
-  WALL_STROKE: 'black',
 
   // various quantities
   APPLIED_FORCE: PhetColorScheme.RED_COLORBLIND,

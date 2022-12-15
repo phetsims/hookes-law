@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Hinge for the robotic arm. This is the red piece that the pincers are connected to.
  *
@@ -9,7 +8,8 @@
 
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import { Shape } from '../../../../kite/js/imports.js';
-import { Circle, Node, Path } from '../../../../scenery/js/imports.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import { Circle, Node, NodeOptions, NodeTranslationOptions, Path } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 
@@ -18,12 +18,17 @@ const BODY_SIZE = new Dimension2( 9, 40 );
 const PIVOT_SIZE = new Dimension2( 26, 25 );
 const SCREW_RADIUS = 3;
 
+type SelfOptions = EmptySelfOptions;
+
+type HingeNodeOptions = SelfOptions & NodeTranslationOptions;
+
 export default class HingeNode extends Node {
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
+  public constructor( providedOptions?: HingeNodeOptions ) {
+
+    const options = optionize<HingeNodeOptions, SelfOptions, NodeOptions>()( {
+      // because we're setting options.children below
+    }, providedOptions );
 
     // piece that the pincers pivot in, shape described clockwise from upper-left
     const pivotNode = new Path( new Shape()
@@ -75,7 +80,6 @@ export default class HingeNode extends Node {
       scale: 0.85
     } );
 
-    assert && assert( !options.children, 'HingeNode sets children' );
     options.children = [ pivotNode, pinNode, pinCenterNode, bodyNode, highlightNode ];
 
     super( options );

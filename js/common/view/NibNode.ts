@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * The "nib" is the little piece attached to the right end of a spring that is grabbed
  * by the robotic arm's pincers.
@@ -8,24 +7,25 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
-import { Rectangle } from '../../../../scenery/js/imports.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import { NodeTranslationOptions, Rectangle, RectangleOptions } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
+
+type SelfOptions = EmptySelfOptions;
+
+type NibNodeOptions = SelfOptions & NodeTranslationOptions & PickOptional<RectangleOptions, 'fill'>;
 
 export default class NibNode extends Rectangle {
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
+  public constructor( providedOptions?: NibNodeOptions ) {
 
-    options = merge( {
+    const options = optionize<NibNodeOptions, SelfOptions, RectangleOptions>()( {
       fill: 'black',
-      width: 10,
-      height: 8
-    }, options );
+      cornerRadius: 2
+    }, providedOptions );
 
-    super( 0, 0, options.width, options.height, 2, 2, options );
+    super( 0, 0, 10, 8, options );
   }
 }
 

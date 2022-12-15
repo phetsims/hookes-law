@@ -1,46 +1,51 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
- * Base type for view-specific Properties. These are the Properties that are common to all screens.
+ * Base class for view-specific Properties. These are the Properties that are common to all screens.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
+import Property from '../../../../axon/js/Property.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawQueryParameters from '../HookesLawQueryParameters.js';
 
 export default class ViewProperties {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  // is the applied force vector visible?
+  public readonly appliedForceVectorVisibleProperty: Property<boolean>;
 
-    // @public is the applied force vector visible?
+  // is the displacement vector visible?
+  public readonly displacementVectorVisibleProperty: Property<boolean>;
+
+  // is the equilibrium position visible?
+  public readonly equilibriumPositionVisibleProperty: Property<boolean>;
+
+  // are numeric values visible?
+  public readonly valuesVisibleProperty: Property<boolean>;
+
+  protected constructor( tandem: Tandem ) {
+
     this.appliedForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
       tandem: tandem.createTandem( 'appliedForceVectorVisibleProperty' )
     } );
 
-    // @public is the displacement vector visible?
     this.displacementVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
       tandem: tandem.createTandem( 'displacementVectorVisibleProperty' )
     } );
 
-    // @public is the equilibrium position visible?
     this.equilibriumPositionVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
       tandem: tandem.createTandem( 'equilibriumPositionVisibleProperty' )
     } );
 
-    // @public are numeric values visible?
     this.valuesVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
       tandem: tandem.createTandem( 'valuesVisibleProperty' )
     } );
   }
 
-  // @public
-  reset() {
+  public reset(): void {
     this.appliedForceVectorVisibleProperty.reset();
     this.displacementVectorVisibleProperty.reset();
     this.equilibriumPositionVisibleProperty.reset();
