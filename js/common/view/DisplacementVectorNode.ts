@@ -1,37 +1,42 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
- * Vector representation of displacement (x).
+ * DisplacementVectorNode is the vector representation of displacement (x).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
-import { Line, Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { Line, Node, NodeOptions, Rectangle, Text } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
+type SelfOptions = {
+  verticalLineVisible?: boolean;
+  unitDisplacementLength?: number;
+};
+
+type DisplacementVectorNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
+
 export default class DisplacementVectorNode extends Node {
 
-  /**
-   * @param {NumberProperty} displacementProperty units = m
-   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
-   * @param {Object} [options]
-   */
-  constructor( displacementProperty, valueVisibleProperty, options ) {
+  public constructor( displacementProperty: TReadOnlyProperty<number>,
+                      valueVisibleProperty: TReadOnlyProperty<boolean>,
+                      providedOptions: DisplacementVectorNodeOptions ) {
 
-    options = merge( {
+    const options = optionize<DisplacementVectorNodeOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
       verticalLineVisible: true,
-      unitDisplacementLength: 1,
-      tandem: Tandem.REQUIRED
-    }, options );
+      unitDisplacementLength: 1
+    }, providedOptions );
 
     const arrowNode = new LineArrowNode( 0, 0, 1, 0, {
       stroke: HookesLawColors.DISPLACEMENT,
@@ -42,6 +47,7 @@ export default class DisplacementVectorNode extends Node {
     } );
 
     const valueNode = new Text( '', {
+      visibleProperty: valueVisibleProperty,
       maxWidth: 150, // i18n
       fill: HookesLawColors.DISPLACEMENT,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
@@ -49,7 +55,11 @@ export default class DisplacementVectorNode extends Node {
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
-    const backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
+    const backgroundNode = new Rectangle( 0, 0, 1, 1, {
+      visibleProperty: valueVisibleProperty,
+      fill: 'rgba( 255, 255, 255, 0.8 )',
+      cornerRadius: 5
+    } );
 
     const verticalLine = new Line( 0, 0, 0, 20, {
       stroke: 'black',
@@ -58,7 +68,6 @@ export default class DisplacementVectorNode extends Node {
       visible: options.verticalLineVisible
     } );
 
-    assert && assert( !options.children, 'DisplacementVectorNode sets children' );
     options.children = [ verticalLine, arrowNode, backgroundNode, valueNode ];
 
     displacementProperty.link( displacement => {
@@ -79,10 +88,6 @@ export default class DisplacementVectorNode extends Node {
       // resize the background behind the value
       backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
       backgroundNode.center = valueNode.center;
-    } );
-
-    valueVisibleProperty.link( visible => {
-      valueNode.visible = backgroundNode.visible = visible;
     } );
 
     super( options );
