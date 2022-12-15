@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Base type for view-specific Properties. These are the Properties that are common to all screens.
  *

@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * The "nib" is the little piece attached to the right end of a spring that is grabbed
  * by the robotic arm's pincers.
