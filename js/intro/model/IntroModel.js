@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Model for the "Intro" screen, two unrelated single-spring systems.
  *
