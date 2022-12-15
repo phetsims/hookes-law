@@ -1,39 +1,52 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
- * Base type for force vectors.
+ * ForceVectorNode is the base class for force vectors.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
-import { Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { Node, NodeOptions, Rectangle, TColor, Text } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
+type SelfOptions = {
+  fill?: TColor;
+  stroke?: TColor;
+  decimalPlaces?: number;
+  unitLength?: number; // view length of a 1N vector
+  alignZero?: 'left' | 'right'; // how to align zero ('0 N') values, relative to the arrow tail
+};
+
+export type ForceVectorNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
+
 export default class ForceVectorNode extends Node {
 
   /**
-   * @param {NumberProperty} forceProperty units = N
-   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
-   * @param {Object} [options]
+   * @param forceProperty - units = N
+   * @param valueVisibleProperty - whether a value is visible on the vector
+   * @param providedOptions
    */
-  constructor( forceProperty, valueVisibleProperty, options ) {
+  protected constructor( forceProperty: TReadOnlyProperty<number>,
+                         valueVisibleProperty: TReadOnlyProperty<boolean>,
+                         providedOptions: ForceVectorNodeOptions ) {
 
-    options = merge( {
+    const options = optionize<ForceVectorNodeOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
       fill: 'white',
       stroke: 'black',
       decimalPlaces: 0,
-      unitLength: HookesLawConstants.UNIT_FORCE_X, // view length of a 1N vector
-      alignZero: 'left', // how to align zero ('0 N') values, relative to the arrow tail, 'left'|'right'
-      tandem: Tandem.REQUIRED
-    }, options );
+      unitLength: HookesLawConstants.UNIT_FORCE_X,
+      alignZero: 'left'
+    }, providedOptions );
 
     const arrowNode = new ArrowNode( 0, 0, 50, 0, {
       fill: options.fill,
@@ -44,16 +57,20 @@ export default class ForceVectorNode extends Node {
     } );
 
     const valueNode = new Text( '', {
-      maxWidth: 150, // i18n
+      visibleProperty: valueVisibleProperty,
+      maxWidth: 150,
       fill: options.fill,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
       bottom: arrowNode.top - 2 // above the arrow
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
-    const backgroundNode = new Rectangle( 0, 0, 1, 1, 5, 5, { fill: 'rgba( 255, 255, 255, 0.8 )' } );
+    const backgroundNode = new Rectangle( 0, 0, 1, 1, {
+      fill: 'rgba( 255, 255, 255, 0.8 )',
+      cornerRadius: 5,
+      visibleProperty: valueVisibleProperty
+    } );
 
-    assert && assert( !options.children, 'ForceVectorNode sets children' );
     options.children = [ arrowNode, backgroundNode, valueNode ];
 
     forceProperty.link( value => {
@@ -91,10 +108,6 @@ export default class ForceVectorNode extends Node {
       // resize the background behind the value
       backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
       backgroundNode.center = valueNode.center;
-    } );
-
-    valueVisibleProperty.link( visible => {
-      valueNode.visible = backgroundNode.visible = visible;
     } );
 
     super( options );
