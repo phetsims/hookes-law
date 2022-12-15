@@ -1,9 +1,9 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
 /**
- * Single-spring system for the "Energy" screen.
- * One spring, a robotic arm, and all of the visual representations & controls that go with them.
- * Origin is at the point where the spring attaches to the wall.
+ * EnergySystemNode is a single-spring system for the "Energy" screen.
+ * It includes one spring, a robotic arm, and all representations & controls that go with them.
+ * The origin is at the point where the spring attaches to the wall.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

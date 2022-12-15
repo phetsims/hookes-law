@@ -1,9 +1,9 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
 /**
- * Single-spring system for the "Intro" screen.
- * One spring, a robotic arm, and all of the visual representations that go with them.
- * Origin is at the point where the spring attaches to the wall.
+ * IntroSystemNode is the single-spring system for the "Intro" screen.
+ * It includes one spring, a robotic arm, and all visual representations that go with them.
+ * The origin is at the point where the spring attaches to the wall.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
