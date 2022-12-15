@@ -1,7 +1,7 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
 /**
- * Vector representation of applied force (F).
+ * AppliedForceVectorNode is the vector representation of applied force (F).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */

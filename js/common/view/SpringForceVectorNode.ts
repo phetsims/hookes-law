@@ -1,7 +1,7 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
 /**
- * Vector representation of spring force (-F).
+ * SpringForceVectorNode is the vector representation of spring force (-F).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
