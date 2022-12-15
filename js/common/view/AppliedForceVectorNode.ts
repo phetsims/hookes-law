@@ -1,33 +1,34 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Vector representation of applied force (F).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
-import ForceVectorNode from './ForceVectorNode.js';
+import ForceVectorNode, { ForceVectorNodeOptions } from './ForceVectorNode.js';
+
+type SelfOptions = EmptySelfOptions;
+
+type AppliedForceVectorNodeOptions = SelfOptions & ForceVectorNodeOptions;
 
 export default class AppliedForceVectorNode extends ForceVectorNode {
 
-  /**
-   * @param {NumberProperty} appliedForceProperty units = N
-   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the vector
-   * @param {Object} [options]
-   */
-  constructor( appliedForceProperty, valueVisibleProperty, options ) {
+  public constructor( appliedForceProperty: TReadOnlyProperty<number>,
+                      valueVisibleProperty: TReadOnlyProperty<boolean>,
+                      providedOptions: AppliedForceVectorNodeOptions ) {
 
-    options = merge( {
+    const options = optionize<AppliedForceVectorNodeOptions, SelfOptions, ForceVectorNodeOptions>()( {
+
+      // ForceVectorNodeOptions
       fill: HookesLawColors.APPLIED_FORCE,
-      decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-      tandem: Tandem.REQUIRED
-    }, options );
+      decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES
+    }, providedOptions );
 
     super( appliedForceProperty, valueVisibleProperty, options );
   }

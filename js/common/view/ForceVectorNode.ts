@@ -12,7 +12,7 @@ import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
-import { Node, NodeOptions, Rectangle, TColor, Text } from '../../../../scenery/js/imports.js';
+import { Node, NodeOptions, NodeTranslationOptions, Rectangle, TColor, Text } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
@@ -25,7 +25,7 @@ type SelfOptions = {
   alignZero?: 'left' | 'right'; // how to align zero ('0 N') values, relative to the arrow tail
 };
 
-export type ForceVectorNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
+export type ForceVectorNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
 
 export default class ForceVectorNode extends Node {
 
