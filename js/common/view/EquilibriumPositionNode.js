@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Vertical dashed line that denotes the equilibrium position of a spring or system of springs.
  *
