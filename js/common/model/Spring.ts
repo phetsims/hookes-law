@@ -44,6 +44,7 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
 import optionize from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import PhetioObject, { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
@@ -58,7 +59,9 @@ type SelfOptions = {
   displacementRange?: RangeWithValue | null;  // displacement range and initial value, units = m
 };
 
-export type SpringOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
+export type SpringOptions = SelfOptions &
+  PickOptional<PhetioObjectOptions, 'phetioDocumentation'> &
+  PickRequired<PhetioObjectOptions, 'tandem'>;
 
 export default class Spring extends PhetioObject {
 

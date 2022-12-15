@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Model of 2 springs in series, pulled by a robotic arm.
  *
@@ -25,21 +24,23 @@
  */
 
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import RoboticArm from '../../common/model/RoboticArm.js';
 import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 
 export default class SeriesSystem {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  public readonly leftSpring: Spring; // left spring
+  public readonly rightSpring: Spring; // right spring, in series with the left spring, with identical configuration
+  public readonly equivalentSpring: Spring; // the single spring that is equivalent to the 2 springs in series
+  public readonly roboticArm: RoboticArm; // robotic arm, attached to right end of equivalent spring
+
+  public constructor( tandem: Tandem ) {
 
     //------------------------------------------------
     // Components of the system
 
-    // @public left spring
     this.leftSpring = new Spring( {
       logName: 'leftSpring',
       left: 0, // x position of the left end of the spring, units = m
@@ -50,7 +51,6 @@ export default class SeriesSystem {
       phetioDocumentation: 'The left spring in the series system'
     } );
 
-    // @public right spring, in series with the left spring, with identical configuration
     this.rightSpring = new Spring( {
       logName: 'rightSpring',
       left: this.leftSpring.rightProperty.value, // attached to the right end of the left spring
@@ -61,7 +61,6 @@ export default class SeriesSystem {
       phetioDocumentation: 'The right spring in the series system'
     } );
 
-    // @public the single spring that is equivalent to the 2 springs in series
     this.equivalentSpring = new Spring( {
       logName: 'equivalentSpring',
       left: this.leftSpring.leftProperty.value,
@@ -77,7 +76,6 @@ export default class SeriesSystem {
     } );
     assert && assert( this.equivalentSpring.displacementProperty.value === 0 ); // equivalent spring is at equilibrium
 
-    // @public robotic arm, attached to right end of equivalent spring
     this.roboticArm = new RoboticArm( {
       left: this.equivalentSpring.rightProperty.value,
       right: this.equivalentSpring.rightProperty.value + this.equivalentSpring.lengthProperty.value,
@@ -139,8 +137,7 @@ export default class SeriesSystem {
     } );
   }
 
-  // @public
-  reset() {
+  public reset(): void {
     this.leftSpring.reset();
     this.rightSpring.reset();
     this.roboticArm.reset();

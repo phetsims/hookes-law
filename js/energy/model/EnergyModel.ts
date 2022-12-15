@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Model for the "Energy" screen.
  *
@@ -8,28 +7,27 @@
  */
 
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import hookesLaw from '../../hookesLaw.js';
 
 export default class EnergyModel {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  public readonly system: SingleSpringSystem;
 
-    const springOptions = {
-      logName: 'spring',
-      springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = N/m
-      displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m
-    };
+  public constructor( tandem: Tandem ) {
 
-    // @public
-    this.system = new SingleSpringSystem( tandem.createTandem( 'system' ), springOptions );
+    this.system = new SingleSpringSystem( {
+      springOptions: {
+        logName: 'spring',
+        springConstantRange: new RangeWithValue( 100, 400, 100 ), // units = N/m
+        displacementRange: new RangeWithValue( -1, 1, 0 ) // units = m
+      },
+      tandem: tandem.createTandem( 'system' )
+    } );
   }
 
-  // @public
-  reset() {
+  public reset(): void {
     this.system.reset();
   }
 }

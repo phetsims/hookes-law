@@ -6,31 +6,41 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
+import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import hookesLaw from '../../hookesLaw.js';
 import RoboticArm from './RoboticArm.js';
 import Spring, { SpringOptions } from './Spring.js';
+
+type SelfOptions = {
+  springOptions?: StrictOmit<SpringOptions, 'tandem'>; // options for the Spring in this system
+};
+
+export type SingleSpringSystemOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 export default class SingleSpringSystem {
 
   public readonly spring: Spring;
   public readonly roboticArm: RoboticArm; // arm, left end attached to spring
 
-  public constructor( tandem: Tandem, springOptions: SpringOptions ) {
+  public constructor( providedOptions: SingleSpringSystemOptions ) {
+
+    const options = providedOptions;
 
     //------------------------------------------------
     // Components of the system
 
-    this.spring = new Spring( merge( {}, springOptions, {
-      tandem: tandem.createTandem( 'spring' )
-    } ) );
+    this.spring = new Spring( combineOptions<SpringOptions>( {
+      tandem: options.tandem.createTandem( 'spring' )
+    }, options.springOptions ) );
     assert && assert( this.spring.displacementProperty.value === 0 ); // spring is at equilibrium
 
     this.roboticArm = new RoboticArm( {
       left: this.spring.rightProperty.value,
       right: this.spring.rightProperty.value + this.spring.lengthProperty.value,
-      tandem: tandem.createTandem( 'roboticArm' )
+      tandem: options.tandem.createTandem( 'roboticArm' )
     } );
 
     //------------------------------------------------

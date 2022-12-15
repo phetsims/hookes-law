@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Model of 2 springs in parallel, pulled by a robotic arm.
  *
@@ -25,21 +24,23 @@
  */
 
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import RoboticArm from '../../common/model/RoboticArm.js';
 import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 
 export default class ParallelSystem {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  public readonly topSpring: Spring;
+  public readonly bottomSpring: Spring; // bottom spring, in parallel with top spring, with identical configuration
+  public readonly equivalentSpring: Spring; // the single spring that is equivalent to the 2 springs in parallel
+  public readonly roboticArm: RoboticArm; // robotic arm, connected to the right end of the equivalent spring
+
+  public constructor( tandem: Tandem ) {
 
     //------------------------------------------------
     // Components of the system
 
-    // @public
     this.topSpring = new Spring( {
       logName: 'topSpring',
       left: 0, // x position of the left end of the spring, units = m
@@ -50,7 +51,6 @@ export default class ParallelSystem {
       phetioDocumentation: 'The top spring in the parallel system'
     } );
 
-    // @public bottom spring, in parallel with top spring, with identical configuration
     this.bottomSpring = new Spring( {
       logName: 'bottomSpring',
       left: this.topSpring.leftProperty.value,
@@ -67,7 +67,6 @@ export default class ParallelSystem {
     assert && assert( this.topSpring.equilibriumXProperty.value === this.bottomSpring.equilibriumXProperty.value,
       'top and bottom springs must have same equilibrium position' );
 
-    // @public the single spring that is equivalent to the 2 springs in parallel
     this.equivalentSpring = new Spring( {
       logName: 'equivalentSpring',
       left: this.topSpring.leftProperty.value,
@@ -84,7 +83,6 @@ export default class ParallelSystem {
     } );
     assert && assert( this.equivalentSpring.displacementProperty.value === 0 ); // equivalent spring is at equilibrium
 
-    // @public robotic arm, connected to the right end of the equivalent spring
     this.roboticArm = new RoboticArm( {
       left: this.equivalentSpring.rightProperty.value,
       right: this.equivalentSpring.rightProperty.value + this.equivalentSpring.lengthProperty.value,
@@ -145,8 +143,7 @@ export default class ParallelSystem {
     } );
   }
 
-  // @public
-  reset() {
+  public reset(): void {
     this.topSpring.reset();
     this.bottomSpring.reset();
     this.roboticArm.reset();
