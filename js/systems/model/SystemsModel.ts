@@ -8,8 +8,8 @@
  */
 
 import hookesLaw from '../../hookesLaw.js';
-import ParallelSystem from './ParallelSystem.js';
-import SeriesSystem from './SeriesSystem.js';
+import ParallelSystem from './ParallelSystem.ts';
+import SeriesSystem from './SeriesSystem.ts';
 
 export default class SystemsModel {
 
