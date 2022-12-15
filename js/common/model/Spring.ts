@@ -58,7 +58,7 @@ type SelfOptions = {
   displacementRange?: RangeWithValue | null;  // displacement range and initial value, units = m
 };
 
-type SpringOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
+export type SpringOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
 
 export default class Spring extends PhetioObject {
 

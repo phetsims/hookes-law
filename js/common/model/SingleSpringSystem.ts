@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Model of a system with 1 spring, pulled by a robotic arm.
  *
@@ -8,28 +7,26 @@
  */
 
 import merge from '../../../../phet-core/js/merge.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import RoboticArm from './RoboticArm.js';
-import Spring from './Spring.js';
+import Spring, { SpringOptions } from './Spring.js';
 
 export default class SingleSpringSystem {
 
-  /**
-   * @param {Tandem} tandem
-   * @param {Object} [springOptions] - options that are passed to Spring
-   */
-  constructor( tandem, springOptions ) {
+  public readonly spring: Spring;
+  public readonly roboticArm: RoboticArm; // arm, left end attached to spring
+
+  public constructor( tandem: Tandem, springOptions: SpringOptions ) {
 
     //------------------------------------------------
     // Components of the system
 
-    // @public spring
     this.spring = new Spring( merge( {}, springOptions, {
       tandem: tandem.createTandem( 'spring' )
     } ) );
     assert && assert( this.spring.displacementProperty.value === 0 ); // spring is at equilibrium
 
-    // @public arm, left end attached to spring
     this.roboticArm = new RoboticArm( {
       left: this.spring.rightProperty.value,
       right: this.spring.rightProperty.value + this.spring.lengthProperty.value,
@@ -61,8 +58,7 @@ export default class SingleSpringSystem {
     } );
   }
 
-  // @public
-  reset() {
+  public reset(): void {
     this.spring.reset();
     this.roboticArm.reset();
   }
