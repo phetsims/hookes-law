@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Factory for creating various icons that appear in the sim.
  *
@@ -9,11 +8,12 @@
 
 import ScreenIcon from '../../../../joist/js/ScreenIcon.js';
 import merge from '../../../../phet-core/js/merge.js';
-import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import ArrowNode, { ArrowNodeOptions } from '../../../../scenery-phet/js/ArrowNode.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNode.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { HBox, Line, Node, Rectangle, Text, VBox } from '../../../../scenery/js/imports.js';
+import { HBox, Line, Node, Rectangle, TColor, Text, VBox } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
@@ -37,15 +37,26 @@ const SCENE_SELECTION_SPRING_OPTIONS = merge( {
   scale: 0.3
 }, COMMON_SPRING_OPTIONS );
 
+type ForceVectorIconSelfOptions = {
+  length?: number;
+};
+
+type ForceVectorIconOptions = ForceVectorIconSelfOptions & ArrowNodeOptions;
+
+type VectorCheckboxContentSelfOptions = {
+  vectorType: 'force' | 'displacement';
+  arrowFill: TColor;
+  spacing?: number; // space between text and vector
+};
+
+type VectorCheckboxContentOptions = VectorCheckboxContentSelfOptions;
+
 const HookesLawIconFactory = {
 
   /**
    * Creates the icon for the "Intro" screen, a single spring pulled by a robotic arm.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createIntroScreenIcon: function() {
+  createIntroScreenIcon(): ScreenIcon {
 
     // spring
     const springNode = new ParametricSpringNode( merge( {
@@ -74,11 +85,8 @@ const HookesLawIconFactory = {
 
   /**
    * Creates the icon for the "Systems" screen, parallel springs pulled by a robotic arm.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createSystemsScreenIcon: function() {
+  createSystemsScreenIcon(): ScreenIcon {
 
     // springs
     const topSpringNode = new ParametricSpringNode( merge( {
@@ -132,11 +140,8 @@ const HookesLawIconFactory = {
 
   /**
    * Creates the icon for the "Energy" screen, a cartoonish bar graph.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createEnergyScreenIcon: function() {
+  createEnergyScreenIcon(): ScreenIcon {
 
     const yAxisNode = new ArrowNode( 0, 0, 0, -100, {
       headHeight: 25,
@@ -157,56 +162,41 @@ const HookesLawIconFactory = {
 
   /**
    * Creates a force vector icon.
-   *
-   * @param {Object} [options]
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createForceVectorIcon: function( options ) {
+  createForceVectorIcon( providedOptions?: ForceVectorIconOptions ): Node {
 
-    options = merge( {
-      length: 30, // {number}
-      fill: 'white', // {Color|string}
+    const options = optionize<ForceVectorIconOptions, ForceVectorIconSelfOptions, ArrowNodeOptions>()( {
+
+      // ForceVectorIconSelfOptions
+      length: 30,
+
+      // ArrowNodeOptions
+      fill: 'white',
       headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
       headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
       tailWidth: 10
-    }, options );
+    }, providedOptions );
 
     return new ArrowNode( 0, 0, options.length, 0, options );
   },
 
   /**
    * Creates the content for a vector checkbox, consisting of text and an arrow.
-   *
-   * @param {Node} textNode - text, positioned to the left of the vector
-   * @param {Object} [options]
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createVectorCheckboxContent: function( textNode, options ) {
+  createVectorCheckboxContent( textNode: Node, providedOptions?: VectorCheckboxContentOptions ): Node {
 
-    options = merge( {
-      maxTextWidth: textNode.width, // width of the max text used to label a vector checkbox
-      spacing: 10, // {number} space between text and vector
-      arrowLength: 30, // {number}
-      arrowDirection: 'right', // {string} direction that the vector points, 'left' or 'right',
-      vectorType: 'force', // 'force' (ArrowNode) or 'displacement' (LineArrowNode)
-      arrowFill: 'white' // {string|Color}
-    }, options );
-
-    // validate options
-    assert && assert( options.arrowDirection === 'left' || options.arrowDirection === 'right' );
-    assert && assert( options.vectorType === 'force' || options.vectorType === 'displacement' );
+    const options = optionize<VectorCheckboxContentOptions, VectorCheckboxContentSelfOptions>()( {
+      spacing: 10
+    }, providedOptions );
 
     let arrowNode;
     if ( options.vectorType === 'force' ) {
-      arrowNode = this.createForceVectorIcon( merge( { fill: options.arrowFill }, options ) );
+      arrowNode = this.createForceVectorIcon( {
+        fill: options.arrowFill
+      } );
     }
-    else {
-      // options.vectorType === 'displacement'
-      arrowNode = new LineArrowNode( 0, 0, ( options.arrowDirection === 'left' ? -options.arrowLength : options.arrowLength ), 0, {
+    else { /* options.vectorType === 'displacement' */
+      arrowNode = new LineArrowNode( 0, 0, 30, 0, {
         stroke: options.arrowFill,
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
         headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
@@ -223,11 +213,8 @@ const HookesLawIconFactory = {
 
   /**
    * Creates the icon for the equilibrium position checkbox, consisting of text and a vertical dashed line.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createEquilibriumPositionCheckboxContent: function() {
+  createEquilibriumPositionCheckboxContent(): Node {
     const textNode = new Text( HookesLawStrings.equilibriumPositionStringProperty, {
       font: new PhetFont( 18 )
     } );
@@ -241,21 +228,15 @@ const HookesLawIconFactory = {
 
   /**
    * Creates the icon for selecting the single-spring scene on the "Intro" screen.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createSingleSpringIcon: function() {
+  createSingleSpringIcon(): Node {
     return new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
   },
 
   /**
    * Creates the icon for selecting the 2-spring scene on the "Intro" screen.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createTwoSpringsIcon: function() {
+  createTwoSpringsIcon(): Node {
     return new VBox( {
       spacing: 5,
       children: [
@@ -267,11 +248,8 @@ const HookesLawIconFactory = {
 
   /**
    * Creates the icon for selecting the series system on the "Systems" screen.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createSeriesSystemIcon: function() {
+  createSeriesSystemIcon(): Node {
     const leftSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
     const rightSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
     rightSpringNode.left = leftSpringNode.right;
@@ -287,11 +265,8 @@ const HookesLawIconFactory = {
 
   /**
    * Creates the icon for selecting the parallel system on the "Systems" screen.
-   * @returns {Node}
-   * @public
-   * @static
    */
-  createParallelSystemIcon: function() {
+  createParallelSystemIcon(): Node {
     const topSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
     const bottomSpringNode = new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS );
     const springsBox = new VBox( {

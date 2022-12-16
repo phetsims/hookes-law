@@ -41,6 +41,7 @@ export default class IntroVisibilityPanel extends Panel {
 
     // vector checkboxes, with left-aligned vector icons
     const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( appliedForceTextNode, {
+      vectorType: 'force',
       arrowFill: HookesLawColors.APPLIED_FORCE,
       spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
     } ), merge( {
@@ -48,6 +49,7 @@ export default class IntroVisibilityPanel extends Panel {
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( springForceTextNode, {
+      vectorType: 'force',
       arrowFill: HookesLawColors.SINGLE_SPRING,
       spacing: maxTextWidth - springForceTextNode.width + minSpacing
     } ), merge( {

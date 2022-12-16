@@ -34,8 +34,10 @@ export default class SystemsVisibilityPanel extends Panel {
 
     // vector checkboxes
     const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty,
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-        { arrowFill: HookesLawColors.APPLIED_FORCE } ), merge( {
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+        vectorType: 'force',
+        arrowFill: HookesLawColors.APPLIED_FORCE
+      } ), merge( {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
@@ -56,8 +58,8 @@ export default class SystemsVisibilityPanel extends Panel {
 
     const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty,
       HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacementStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
-        arrowFill: HookesLawColors.DISPLACEMENT,
-        vectorType: 'displacement'
+        vectorType: 'displacement',
+        arrowFill: HookesLawColors.DISPLACEMENT
       } ), merge( {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
