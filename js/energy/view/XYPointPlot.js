@@ -62,7 +62,7 @@ export default class XYPointPlot extends Node {
       axisFont: new PhetFont( 12 ),
       valueFont: new PhetFont( 12 ),
 
-      // x axis
+      // x-axis
       minX: -1,
       maxX: 1,
       xString: 'x',
@@ -73,7 +73,7 @@ export default class XYPointPlot extends Node {
       xLabelMaxWidth: null,
       xValueBackgroundColor: null,
 
-      // y axis
+      // y-axis
       minY: -1,
       maxY: 1,
       yString: 'y',
@@ -151,7 +151,7 @@ export default class XYPointPlot extends Node {
       xTickNode.visible = visible;
       xLeaderLine.visible = visible;
 
-      // y axis nodes
+      // y-axis nodes
       yValueNode.visible = visible;
       yValueBackgroundNode.visible = visible;
       yTickNode.visible = visible;
@@ -174,13 +174,13 @@ export default class XYPointPlot extends Node {
       xTickNode.centerX = xView;
 
       // x value
-      const xText = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      xValueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xText, options.xUnits );
+      const xString = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      xValueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xString, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
       if ( options.minY === 0 ) {
         xValueNode.centerX = xView; // centered on the tick
-        xValueNode.top = 12; // below the x axis
+        xValueNode.top = 12; // below the x
       }
       else {
         const X_SPACING = 6;
@@ -188,18 +188,18 @@ export default class XYPointPlot extends Node {
           xValueNode.centerX = xView; // centered on the tick
         }
         else if ( xFixed >= 0 ) {
-          xValueNode.left = X_SPACING; // to the right of the y axis
+          xValueNode.left = X_SPACING; // to the right of the y-axis
         }
         else {
-          xValueNode.right = -X_SPACING; // to the left of the y axis
+          xValueNode.right = -X_SPACING; // to the left of the y-axis
         }
 
         const Y_SPACING = 12;
         if ( yProperty.value >= 0 ) {
-          xValueNode.top = Y_SPACING; // below the x axis
+          xValueNode.top = Y_SPACING; // below the x-axis
         }
         else {
-          xValueNode.bottom = -Y_SPACING; // above the x axis
+          xValueNode.bottom = -Y_SPACING; // above the x-axis
         }
       }
 
@@ -220,16 +220,16 @@ export default class XYPointPlot extends Node {
       yTickNode.centerY = -yView;
 
       // y value
-      const yText = Utils.toFixed( yFixed, options.yDecimalPlaces );
-      yValueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yText, options.yUnits );
+      const yString = Utils.toFixed( yFixed, options.yDecimalPlaces );
+      yValueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yString, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes
       const X_SPACING = 10;
       if ( xProperty.value >= 0 ) {
-        yValueNode.right = -X_SPACING; // to the left of the y axis
+        yValueNode.right = -X_SPACING; // to the left of the y-axis
       }
       else {
-        yValueNode.left = X_SPACING; // to the right of the y axis
+        yValueNode.left = X_SPACING; // to the right of the y-axis
       }
 
       const Y_SPACING = 4;
@@ -237,10 +237,10 @@ export default class XYPointPlot extends Node {
         yValueNode.centerY = -yView; // centered on the tick
       }
       else if ( yFixed >= 0 ) {
-        yValueNode.bottom = -Y_SPACING; // above the x axis
+        yValueNode.bottom = -Y_SPACING; // above the x-axis
       }
       else {
-        yValueNode.top = Y_SPACING; // below the x axis
+        yValueNode.top = Y_SPACING; // below the x-axis
       }
 
       // y value background
