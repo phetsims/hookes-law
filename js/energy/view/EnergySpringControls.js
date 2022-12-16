@@ -43,10 +43,8 @@ export default class EnergySpringControls extends HBox {
     }
 
     const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
-      sliderOptions: {
-        minorTickSpacing: 50,
-        majorTickValues: springConstantMajorTickValues
-      },
+      majorTickValues: springConstantMajorTickValues,
+      minorTickSpacing: 50,
       tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
     } );
 

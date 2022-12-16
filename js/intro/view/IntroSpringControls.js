@@ -45,14 +45,16 @@ export default class IntroSpringControls extends HBox {
     const appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
 
     const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
-      title: StringUtils.format( HookesLawStrings.springConstantNumber, options.number ),
-      sliderOptions: {
-        majorTickValues: [
-          spring.springConstantRange.min,
-          spring.springConstantRange.max / 2,
-          spring.springConstantRange.max
-        ]
-      },
+      titleStringProperty: new DerivedProperty(
+        [ HookesLawStrings.springConstantNumberStringProperty ],
+        pattern => StringUtils.format( pattern, options.number )
+      ),
+      majorTickValues: [
+        spring.springConstantRange.min,
+        spring.springConstantRange.max / 2,
+        spring.springConstantRange.max
+      ],
+      minorTickSpacing: 100,
       tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
     } );
 

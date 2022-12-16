@@ -46,34 +46,32 @@ export default class SeriesSpringControls extends HBox {
 
     const leftSpring = system.leftSpring;
     const leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
-      title: HookesLawStrings.leftSpringStringProperty,
-
-      // NumberControl options
+      titleStringProperty: HookesLawStrings.leftSpringStringProperty,
+      majorTickValues: [
+        leftSpring.springConstantRange.min,
+        leftSpring.springConstantRange.getCenter(),
+        leftSpring.springConstantRange.max
+      ],
+      minorTickSpacing: 100,
       sliderOptions: {
         thumbFill: HookesLawColors.LEFT_SPRING,
-        trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTickValues: [
-          leftSpring.springConstantRange.min,
-          leftSpring.springConstantRange.getCenter(),
-          leftSpring.springConstantRange.max
-        ]
+        trackSize: SPRING_CONSTANT_TRACK_SIZE
       },
       tandem: springConstantsPanelTandem.createTandem( 'leftSpringConstantControl' )
     } );
 
     const rightSpring = system.rightSpring;
     const rightSpringConstantControl = new SpringConstantControl( system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
-      title: HookesLawStrings.rightSpringStringProperty,
-
-      // NumberControl options
+      titleStringProperty: HookesLawStrings.rightSpringStringProperty,
+      majorTickValues: [
+        rightSpring.springConstantRange.min,
+        rightSpring.springConstantRange.getCenter(),
+        rightSpring.springConstantRange.max
+      ],
+      minorTickSpacing: 100,
       sliderOptions: {
         thumbFill: HookesLawColors.RIGHT_SPRING,
-        trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTickValues: [
-          rightSpring.springConstantRange.min,
-          rightSpring.springConstantRange.getCenter(),
-          rightSpring.springConstantRange.max
-        ]
+        trackSize: SPRING_CONSTANT_TRACK_SIZE
       },
       tandem: springConstantsPanelTandem.createTandem( 'rightSpringConstantControl' )
     } );

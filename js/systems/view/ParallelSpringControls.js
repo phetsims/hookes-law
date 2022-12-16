@@ -46,15 +46,16 @@ export default class ParallelSpringControls extends HBox {
 
     const topSpring = system.topSpring;
     const topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
-      title: HookesLawStrings.topSpringStringProperty,
+      titleStringProperty: HookesLawStrings.topSpringStringProperty,
+      majorTickValues: [
+        topSpring.springConstantRange.min,
+        topSpring.springConstantRange.getCenter(),
+        topSpring.springConstantRange.max
+      ],
+      minorTickSpacing: 100,
       sliderOptions: {
         thumbFill: HookesLawColors.TOP_SPRING,
-        trackSize: SPRING_CONSTANT_TRACK_SIZE,
-        majorTickValues: [
-          topSpring.springConstantRange.min,
-          topSpring.springConstantRange.getCenter(),
-          topSpring.springConstantRange.max
-        ]
+        trackSize: SPRING_CONSTANT_TRACK_SIZE
       },
       tandem: springConstantsPanelTandem.createTandem( 'topSpringConstantControl' )
     } );
@@ -62,15 +63,16 @@ export default class ParallelSpringControls extends HBox {
     const bottomSpring = system.bottomSpring;
     const bottomSpringConstantControl = new SpringConstantControl(
       bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
-        title: HookesLawStrings.bottomSpringStringProperty,
+        titleStringProperty: HookesLawStrings.bottomSpringStringProperty,
+        majorTickValues: [
+          bottomSpring.springConstantRange.min,
+          bottomSpring.springConstantRange.getCenter(),
+          bottomSpring.springConstantRange.max
+        ],
+        minorTickSpacing: 100,
         sliderOptions: {
           thumbFill: HookesLawColors.BOTTOM_SPRING,
-          trackSize: SPRING_CONSTANT_TRACK_SIZE,
-          majorTickValues: [
-            bottomSpring.springConstantRange.min,
-            bottomSpring.springConstantRange.getCenter(),
-            bottomSpring.springConstantRange.max
-          ]
+          trackSize: SPRING_CONSTANT_TRACK_SIZE
         },
         tandem: springConstantsPanelTandem.createTandem( 'bottomSpringConstantControl' )
       } );

@@ -1,41 +1,63 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Control for spring constant (k).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import Property from '../../../../axon/js/Property.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import Range from '../../../../dot/js/Range.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
-import NumberControl from '../../../../scenery-phet/js/NumberControl.js';
+import NumberControl, { NumberControlOptions } from '../../../../scenery-phet/js/NumberControl.js';
 import { Text } from '../../../../scenery/js/imports.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 
-// fill in the {1} units, but leave the {0} value alone.
-const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
-  SunConstants.VALUE_NUMBERED_PLACEHOLDER, HookesLawStrings.newtonsPerMeter );
+type SelfOptions = {
+  titleStringProperty?: TReadOnlyProperty<string>;
+  majorTickValues: number[];
+  minorTickSpacing: number;
+};
+
+type SpringConstantControlOptions = SelfOptions & PickRequired<NumberControlOptions, 'tandem'>;
 
 export default class SpringConstantControl extends NumberControl {
 
-  /**
-   * @param {BooleanProperty} springConstantProperty units = N/m
-   * @param {Range} springConstantRange units = N/m
-   * @param {Object} [options]
-   */
-  constructor( springConstantProperty, springConstantRange, options ) {
+  public constructor( springConstantProperty: Property<number>,
+                      springConstantRange: Range,
+                      provideOptions: SpringConstantControlOptions ) {
 
-    options = merge( {
-      title: HookesLawStrings.springConstantStringProperty,
+    // major ticks
+    const majorTicks = [];
+    for ( let i = 0; i < provideOptions.majorTickValues.length; i++ ) {
+      const tickValue = provideOptions.majorTickValues[ i ];
+      assert && assert( Number.isInteger( tickValue ), `not an integer tick: ${tickValue}` );
+      majorTicks.push( {
+        value: tickValue,
+        label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+      } );
+    }
 
-      // NumberControl options
+    const valuePatternProperty = new DerivedProperty(
+      [ HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.newtonsPerMeterStringProperty ],
+      ( pattern, newtonsPerMeterString ) => StringUtils.format( pattern, SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsPerMeterString )
+    );
+
+    const options = optionize<SpringConstantControlOptions, SelfOptions, NumberControlOptions>()( {
+
+      // SelfOptions
+      titleStringProperty: HookesLawStrings.springConstantStringProperty,
+
+      // NumberControlOptions
       delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
       startCallback: () => {
         phet.log && phet.log( '>>>>> SpringConstantControl start interaction' );
@@ -53,41 +75,20 @@ export default class SpringConstantControl extends NumberControl {
           font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT
         },
         decimalPlaces: HookesLawConstants.SPRING_CONSTANT_DECIMAL_PLACES,
-        valuePattern: VALUE_PATTERN
+        valuePattern: valuePatternProperty
       },
       arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
-
-      // slider options passed when control is initialized
-      sliderOptions: null,
-
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
-
-    // slider option defaults
-    options.sliderOptions = merge( {
-      majorTicksValues: null, // {number[]|null} values for major ticks
-      minorTickSpacing: 100,
-      thumbFill: HookesLawColors.SINGLE_SPRING,
-      constrainValue: value => {
-        return Utils.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
+      sliderOptions: {
+        majorTicks: majorTicks,
+        minorTickSpacing: provideOptions.minorTickSpacing,
+        thumbFill: HookesLawColors.SINGLE_SPRING,
+        constrainValue: value => {
+          return Utils.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
+        }
       }
-    }, options.sliderOptions );
+    }, provideOptions );
 
-    // major ticks
-    if ( options.sliderOptions.majorTickValues ) {
-      options.sliderOptions.majorTicks = [];
-      for ( let i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
-        const tickValue = options.sliderOptions.majorTickValues[ i ];
-        assert && assert( Number.isInteger( tickValue ), `not an integer tick: ${tickValue}` );
-        options.sliderOptions.majorTicks.push( {
-          value: tickValue,
-          label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
-        } );
-      }
-    }
-
-    super( options.title, springConstantProperty, springConstantRange, options );
+    super( options.titleStringProperty, springConstantProperty, springConstantRange, options );
   }
 }
 
