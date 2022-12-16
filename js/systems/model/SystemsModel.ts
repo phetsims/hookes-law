@@ -6,12 +6,13 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import TModel from '../../../../joist/js/TModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import ParallelSystem from './ParallelSystem.js';
 import SeriesSystem from './SeriesSystem.js';
 
-export default class SystemsModel {
+export default class SystemsModel implements TModel {
 
   public readonly seriesSystem: SeriesSystem;
   public readonly parallelSystem: ParallelSystem;

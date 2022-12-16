@@ -7,11 +7,12 @@
  */
 
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
+import TModel from '../../../../joist/js/TModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import hookesLaw from '../../hookesLaw.js';
 
-export default class EnergyModel {
+export default class EnergyModel implements TModel {
 
   public readonly system: SingleSpringSystem;
 

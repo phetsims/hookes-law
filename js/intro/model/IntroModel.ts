@@ -12,8 +12,9 @@ import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import hookesLaw from '../../hookesLaw.js';
 import { SpringOptions } from '../../common/model/Spring.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
+import TModel from '../../../../joist/js/TModel.js';
 
-export default class IntroModel {
+export default class IntroModel implements TModel {
 
   public readonly system1: SingleSpringSystem;
   public readonly system2: SingleSpringSystem;
