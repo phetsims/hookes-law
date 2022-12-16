@@ -40,7 +40,7 @@ export default class XYAxes extends Node {
       xLabelMaxWidth: null
     }, options );
 
-    // x axis, arrow in positive direction only
+    // x-axis, arrow in positive direction only
     const xAxisNode = new ArrowNode( options.minX, 0, options.maxX, 0, AXIS_OPTIONS );
     const xAxisLabel = new Text( options.xString, {
       font: options.font,
@@ -49,7 +49,7 @@ export default class XYAxes extends Node {
       maxWidth: options.xLabelMaxWidth // constrain for i18n
     } );
 
-    // y axis, arrow in positive direction only
+    // y-axis, arrow in positive direction only
     const yAxisNode = new ArrowNode( 0, -options.minY, 0, -options.maxY, AXIS_OPTIONS );
     const yAxisLabel = new Text( options.yString, {
       font: options.font,

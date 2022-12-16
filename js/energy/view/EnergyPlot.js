@@ -1,7 +1,7 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
 /**
- * EnergyPlot is an XY plot of displacement (x axis) vs energy (y axis).
+ * EnergyPlot is an XY plot of displacement (x-axis) vs energy (y-axis).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -36,7 +36,7 @@ export default class EnergyPlot extends XYPointPlot {
       // point
       pointFill: HookesLawColors.SINGLE_SPRING,
 
-      // x axis
+      // x-axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
       maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
       xString: HookesLawStrings.displacement,
@@ -46,7 +46,7 @@ export default class EnergyPlot extends XYPointPlot {
       xUnitLength: unitDisplacementLength,
       xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
-      // y axis
+      // y-axis
       minY: 0,
       maxY: HookesLawConstants.ENERGY_Y_AXIS_LENGTH,
       yString: HookesLawStrings.potentialEnergy,
