@@ -46,7 +46,7 @@ export default class ParallelSpringControls extends HBox {
 
     const topSpring = system.topSpring;
     const topSpringConstantControl = new SpringConstantControl( topSpring.springConstantProperty, topSpring.springConstantRange, {
-      title: HookesLawStrings.topSpring,
+      title: HookesLawStrings.topSpringStringProperty,
       sliderOptions: {
         thumbFill: HookesLawColors.TOP_SPRING,
         trackSize: SPRING_CONSTANT_TRACK_SIZE,
@@ -62,7 +62,7 @@ export default class ParallelSpringControls extends HBox {
     const bottomSpring = system.bottomSpring;
     const bottomSpringConstantControl = new SpringConstantControl(
       bottomSpring.springConstantProperty, bottomSpring.springConstantRange, {
-        title: HookesLawStrings.bottomSpring,
+        title: HookesLawStrings.bottomSpringStringProperty,
         sliderOptions: {
           thumbFill: HookesLawColors.BOTTOM_SPRING,
           trackSize: SPRING_CONSTANT_TRACK_SIZE,

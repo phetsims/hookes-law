@@ -31,9 +31,9 @@ export default class IntroVisibilityPanel extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // text labels on the vector checkboxes
-    const appliedForceTextNode = new Text( HookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const springForceTextNode = new Text( HookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const displacementTextNode = new Text( HookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const appliedForceTextNode = new Text( HookesLawStrings.appliedForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const springForceTextNode = new Text( HookesLawStrings.springForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const displacementTextNode = new Text( HookesLawStrings.displacementStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
     const maxTextWidth =
       _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], node => node.width ).width;
 
@@ -67,9 +67,10 @@ export default class IntroVisibilityPanel extends Panel {
       tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( HookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
-      tandem: options.tandem.createTandem( 'valuesCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty,
+      new Text( HookesLawStrings.valuesStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+        tandem: options.tandem.createTandem( 'valuesCheckbox' )
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
     Multilink.multilink(

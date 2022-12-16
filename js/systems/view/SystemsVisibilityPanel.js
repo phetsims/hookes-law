@@ -33,14 +33,16 @@ export default class SystemsVisibilityPanel extends Panel {
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
     // vector checkboxes
-    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-      { arrowFill: HookesLawColors.APPLIED_FORCE } ), merge( {
-      tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty,
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        { arrowFill: HookesLawColors.APPLIED_FORCE } ), merge( {
+        tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty, new Text( HookesLawStrings.springForce, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
-      tandem: options.tandem.createTandem( 'springForceCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty,
+      new Text( HookesLawStrings.springForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+        tandem: options.tandem.createTandem( 'springForceCheckbox' )
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // Radio buttons for spring force
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
@@ -52,21 +54,24 @@ export default class SystemsVisibilityPanel extends Panel {
       spacing: 5
     } );
 
-    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacement, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
-      arrowFill: HookesLawColors.DISPLACEMENT,
-      vectorType: 'displacement'
-    } ), merge( {
-      tandem: options.tandem.createTandem( 'displacementCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty,
+      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacementStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+        arrowFill: HookesLawColors.DISPLACEMENT,
+        vectorType: 'displacement'
+      } ), merge( {
+        tandem: options.tandem.createTandem( 'displacementCheckbox' )
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // other checkboxes
-    const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty, HookesLawIconFactory.createEquilibriumPositionCheckboxContent(), merge( {
-      tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty,
+      HookesLawIconFactory.createEquilibriumPositionCheckboxContent(), merge( {
+        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, new Text( HookesLawStrings.values, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
-      tandem: options.tandem.createTandem( 'valuesCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty,
+      new Text( HookesLawStrings.valuesStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
+        tandem: options.tandem.createTandem( 'valuesCheckbox' )
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
     Multilink.multilink(

@@ -46,7 +46,7 @@ export default class SeriesSpringControls extends HBox {
 
     const leftSpring = system.leftSpring;
     const leftSpringConstantControl = new SpringConstantControl( leftSpring.springConstantProperty, leftSpring.springConstantRange, {
-      title: HookesLawStrings.leftSpring,
+      title: HookesLawStrings.leftSpringStringProperty,
 
       // NumberControl options
       sliderOptions: {
@@ -63,7 +63,7 @@ export default class SeriesSpringControls extends HBox {
 
     const rightSpring = system.rightSpring;
     const rightSpringConstantControl = new SpringConstantControl( system.rightSpring.springConstantProperty, system.rightSpring.springConstantRange, {
-      title: HookesLawStrings.rightSpring,
+      title: HookesLawStrings.rightSpringStringProperty,
 
       // NumberControl options
       sliderOptions: {

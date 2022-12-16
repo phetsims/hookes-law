@@ -227,7 +227,9 @@ const HookesLawIconFactory = {
    * @static
    */
   createEquilibriumPositionCheckboxContent: function() {
-    const textNode = new Text( HookesLawStrings.equilibriumPosition, { font: new PhetFont( 18 ) } );
+    const textNode = new Text( HookesLawStrings.equilibriumPositionStringProperty, {
+      font: new PhetFont( 18 )
+    } );
     const lineNode = new EquilibriumPositionNode( textNode.height, {
       left: textNode.right + 8,
       centerY: textNode.centerY,

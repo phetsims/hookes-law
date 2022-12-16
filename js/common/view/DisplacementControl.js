@@ -90,7 +90,7 @@ export default class DisplacementControl extends NumberControl {
       }
     }
 
-    super( HookesLawStrings.displacementColon, displacementProperty, displacementRange, options );
+    super( HookesLawStrings.displacementColonStringProperty, displacementProperty, displacementRange, options );
   }
 }
 

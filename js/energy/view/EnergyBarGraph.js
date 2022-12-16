@@ -47,7 +47,7 @@ export default class EnergyBarGraph extends Node {
       stroke: null
     } );
 
-    const yAxisLabel = new Text( HookesLawStrings.potentialEnergy, {
+    const yAxisLabel = new Text( HookesLawStrings.potentialEnergyStringProperty, {
       rotation: -Math.PI / 2,
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
       right: yAxisNode.left - 1,

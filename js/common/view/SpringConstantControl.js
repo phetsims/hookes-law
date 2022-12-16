@@ -32,7 +32,7 @@ export default class SpringConstantControl extends NumberControl {
   constructor( springConstantProperty, springConstantRange, options ) {
 
     options = merge( {
-      title: HookesLawStrings.springConstant,
+      title: HookesLawStrings.springConstantStringProperty,
 
       // NumberControl options
       delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
