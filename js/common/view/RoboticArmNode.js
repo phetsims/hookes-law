@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * The robotic arm used to pull the spring(s).
  * Origin is at the left-center of the red box.
