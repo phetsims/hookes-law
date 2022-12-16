@@ -51,14 +51,6 @@ export default class EnergySpringControls extends HBox {
     } );
 
     const displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
-      sliderOptions: {
-        minorTickSpacing: spring.displacementRange.getLength() / 10,
-        majorTickValues: [
-          spring.displacementRange.min,
-          spring.displacementRange.getCenter(),
-          spring.displacementRange.max
-        ]
-      },
       tandem: displacementPanelTandem.createTandem( 'displacementControl' )
     } );
 

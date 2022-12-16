@@ -1,40 +1,54 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Control for spring displacement (x).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
+import Range from '../../../../dot/js/Range.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
-import NumberControl from '../../../../scenery-phet/js/NumberControl.js';
+import NumberControl, { NumberControlOptions } from '../../../../scenery-phet/js/NumberControl.js';
 import { Text } from '../../../../scenery/js/imports.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 
 // fill in the {1} units, but leave the {0} value alone.
 const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
   SunConstants.VALUE_NUMBERED_PLACEHOLDER, HookesLawStrings.meters );
 
+type SelfOptions = EmptySelfOptions;
+
+type DisplacementControlOptions = SelfOptions & PickRequired<NumberControlOptions, 'tandem'>;
+
 export default class DisplacementControl extends NumberControl {
-  /**
-   * @param {BooleanProperty} displacementProperty units = m
-   * @param {Range} displacementRange units = m
-   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
-   * @param {Object} [options]
-   */
-  constructor( displacementProperty, displacementRange, numberOfInteractionsInProgressProperty, options ) {
 
-    options = merge( {
+  public constructor( displacementProperty: Property<number>,
+                      displacementRange: Range,
+                      numberOfInteractionsInProgressProperty: Property<number>, // number of interactions in progress that affect displacement
+                      providedOptions: DisplacementControlOptions ) {
 
-      // NumberControl options
+    const majorTickValues = [ displacementRange.min, displacementRange.getCenter(), displacementRange.max ];
+    const majorTicks = [];
+    for ( let i = 0; i < majorTickValues.length; i++ ) {
+      const tickValue = majorTickValues[ i ];
+      assert && assert( Number.isInteger( tickValue ), `not an integer tick: ${tickValue}` );
+      majorTicks.push( {
+        value: tickValue,
+        label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
+      } );
+    }
+
+    const options = optionize<DisplacementControlOptions, SelfOptions, NumberControlOptions>()( {
+
+      // NumberControlOptions
       delta: HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL,
       startCallback: () => {
         phet.log && phet.log( '>>>>> DisplacementControl start interaction' );
@@ -44,8 +58,6 @@ export default class DisplacementControl extends NumberControl {
         numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value - 1 );
         phet.log && phet.log( '>>>>> DisplacementControl end interaction' );
       },
-
-      // options passed to subcomponents
       titleNodeOptions: {
         maxWidth: 200, // i18n, determined empirically
         font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
@@ -59,37 +71,16 @@ export default class DisplacementControl extends NumberControl {
         valuePattern: VALUE_PATTERN
       },
       arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
-
-      // slider options passed in when DisplacementControl is instantiated
-      sliderOptions: null,
-
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
-
-    // options passed to NumberControl's HSlider subcomponent
-    options.sliderOptions = merge( {
-      majorTicksValues: null, // {number[]|null} values for major ticks
-      minorTickSpacing: 1,
-      thumbFill: HookesLawColors.DISPLACEMENT,
-      constrainValue: value => {
-        // constrain to multiples of a specific interval, see #54
-        return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
+      sliderOptions: {
+        majorTicks: majorTicks,
+        minorTickSpacing: displacementRange.getLength() / 10,
+        thumbFill: HookesLawColors.DISPLACEMENT,
+        constrainValue: value => {
+          // constrain to multiples of a specific interval, see #54
+          return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
+        }
       }
-    }, options.sliderOptions );
-
-    // major ticks
-    if ( options.sliderOptions.majorTickValues ) {
-      options.sliderOptions.majorTicks = [];
-      for ( let i = 0; i < options.sliderOptions.majorTickValues.length; i++ ) {
-        const tickValue = options.sliderOptions.majorTickValues[ i ];
-        assert && assert( Number.isInteger( tickValue ), `not an integer tick: ${tickValue}` );
-        options.sliderOptions.majorTicks.push( {
-          value: tickValue,
-          label: new Text( tickValue, HookesLawConstants.MAJOR_TICK_LABEL_OPTIONS )
-        } );
-      }
-    }
+    }, providedOptions );
 
     super( HookesLawStrings.displacementColonStringProperty, displacementProperty, displacementRange, options );
   }
