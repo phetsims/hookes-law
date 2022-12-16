@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * The robotic arm used to pull the spring(s).
  * Origin is at the left-center of the red box.
@@ -9,15 +8,18 @@
  */
 
 import Dimension2 from '../../../../dot/js/Dimension2.js';
+import Range from '../../../../dot/js/Range.js';
 import Utils from '../../../../dot/js/Utils.js';
 import { Shape } from '../../../../kite/js/imports.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { DragListener, LinearGradient, Node, Path, Rectangle } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { DragListener, LinearGradient, Node, NodeOptions, NodeTranslationOptions, Path, PathOptions, Rectangle } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import HingeNode from './HingeNode.js';
+import RoboticArm from '../model/RoboticArm.js';
+import Property from '../../../../axon/js/Property.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 // constants
 const PINCER_RADIUS = 35;
@@ -34,24 +36,36 @@ const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
   .addColorStop( 0.5, 'white' )
   .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
 
+type SelfOptions = {
+  unitDisplacementLength?: number; // view length of a 1m displacement
+  displacementInterval?: number | null; // dragging the arm will snap to multiples of this interval, null if no snapping
+};
+
+type RoboticArmNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
+
 export default class RoboticArmNode extends Node {
 
-  /**
-   * @param {RoboticArm} roboticArm
-   * @param {Property.<Range>} leftRangeProperty - dynamic range of the left (movable) end of the arm, units = m
-   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
-   * @param {Object} [options]
-   */
-  constructor( roboticArm, leftRangeProperty, numberOfInteractionsInProgressProperty, options ) {
+  private readonly topPincerClosedNode: Node;
+  private readonly topPincerOpenNode: Node;
+  private readonly bottomPincerClosedNode: Node;
+  private readonly bottomPincerOpenNode: Node;
 
-    options = merge( {
+  public constructor( roboticArm: RoboticArm,
+                      leftRangeProperty: Property<Range>, // dynamic range of the left (movable) end of the arm, units = m
+                      numberOfInteractionsInProgressProperty: Property<number>, // number of interactions in progress that affect displacement
+                      providedOptions: RoboticArmNodeOptions ) {
+
+    const options = optionize<RoboticArmNodeOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
+      unitDisplacementLength: 1,
+      displacementInterval: null,
+
+      // NodeOptions
       cursor: 'pointer',
-      unitDisplacementLength: 1,  // view length of a 1m displacement
-      displacementInterval: null, // {number|null} dragging the arm will snap to multiples of this interval
-      tandem: Tandem.OPTIONAL, // because this node is used to create icons
       phetioInputEnabledPropertyInstrumented: true,
       visiblePropertyOptions: { phetioReadOnly: true }
-    }, options );
+    }, providedOptions );
 
     // red box at right end of the arm, origin is at left-center
     const redBox = new Rectangle( 0, 0, 7, 30, {
@@ -171,7 +185,6 @@ export default class RoboticArmNode extends Node {
       armNode.centerY = 0;
     } );
 
-    assert && assert( !options.children, 'RoboticArmNode sets children' );
     options.children = [ armNode, redBox, gradientBox, draggableNode ];
 
     super( options );
@@ -183,31 +196,21 @@ export default class RoboticArmNode extends Node {
       draggableNode.inputEnabledProperty.value = inputEnabled;
     } );
 
-    // @private
     this.topPincerClosedNode = topPincerClosedNode;
     this.topPincerOpenNode = topPincerOpenNode;
     this.bottomPincerClosedNode = bottomPincerClosedNode;
     this.bottomPincerOpenNode = bottomPincerOpenNode;
   }
 
-  /**
-   * Open and close the pincers
-   * @param {boolean} pincersOpen
-   * @public
-   */
-  setPincersOpen( pincersOpen ) {
+  public setPincersOpen( pincersOpen: boolean ): void {
     this.topPincerOpenNode.visible = this.bottomPincerOpenNode.visible = pincersOpen;
     this.topPincerClosedNode.visible = this.bottomPincerClosedNode.visible = !pincersOpen;
   }
 
   /**
    * Creates an icon that represents this node.
-   * @param {Object} [options]
-   * @returns {Node}
-   * @public
-   * @static
    */
-  static createIcon( options ) {
+  public static createIcon( options: NodeOptions ): Node {
 
     const topPincerNode = createTopPincerClosed( {
       stroke: HookesLawColors.PINCERS_STROKE,
@@ -241,19 +244,15 @@ export default class RoboticArmNode extends Node {
 
 /**
  * Creates the top pincer in closed position.
- * @param {Object} [options]
- * @returns {Node}
  */
-function createTopPincerClosed( options ) {
+function createTopPincerClosed( options: PathOptions ): Node {
   return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), options );
 }
 
 /**
  * Creates the bottom pincer in closed position.
- * @param {Object} [options]
- * @returns {Node}
  */
-function createBottomPincerClosed( options ) {
+function createBottomPincerClosed( options: PathOptions ): Node {
   return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), options );
 }
 
