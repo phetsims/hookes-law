@@ -20,10 +20,7 @@ import HookesLawConstants from '../HookesLawConstants.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-
-// fill in the {1} units, but leave the {0} value alone.
-const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
-  SunConstants.VALUE_NUMBERED_PLACEHOLDER, HookesLawStrings.newtons );
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 
 // constants
 const MINOR_TICK_SPACING = 10;
@@ -68,6 +65,11 @@ export default class AppliedForceControl extends NumberControl {
       }
     ];
 
+    const valuePatternProperty = new DerivedProperty(
+      [ HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.newtonsStringProperty ],
+      ( pattern, newtonString ) => StringUtils.format( pattern, SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonString )
+    );
+
     const options = optionize<AppliedForceControlOptions, SelfOptions, NumberControlOptions>()( {
 
       // SelfOptions
@@ -93,7 +95,7 @@ export default class AppliedForceControl extends NumberControl {
           font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT
         },
         decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-        valuePattern: VALUE_PATTERN
+        valuePattern: valuePatternProperty
       },
       sliderOptions: {
         majorTicks: majorTicks,
