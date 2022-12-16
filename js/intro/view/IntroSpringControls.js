@@ -6,6 +6,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import { HBox } from '../../../../scenery/js/imports.js';
@@ -57,7 +58,10 @@ export default class IntroSpringControls extends HBox {
 
     const appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
       numberOfInteractionsInProgressProperty, {
-        title: StringUtils.format( HookesLawStrings.appliedForceNumber, options.number ),
+        titleStringProperty: new DerivedProperty(
+          [ HookesLawStrings.appliedForceNumberStringProperty ],
+          pattern => StringUtils.format( pattern, options.number )
+        ),
         tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
       } );
 

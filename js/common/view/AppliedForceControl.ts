@@ -26,7 +26,7 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 const MINOR_TICK_SPACING = 10;
 
 type SelfOptions = {
-  title?: string | TReadOnlyProperty<string>;
+  titleStringProperty?: TReadOnlyProperty<string>;
 };
 
 type AppliedForceControlOptions = SelfOptions & PickRequired<NumberControlOptions, 'tandem'>;
@@ -73,7 +73,7 @@ export default class AppliedForceControl extends NumberControl {
     const options = optionize<AppliedForceControlOptions, SelfOptions, NumberControlOptions>()( {
 
       // SelfOptions
-      title: HookesLawStrings.appliedForceColonStringProperty,
+      titleStringProperty: HookesLawStrings.appliedForceColonStringProperty,
 
       // NumberControlOptions
       delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
@@ -108,7 +108,7 @@ export default class AppliedForceControl extends NumberControl {
       arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS
     }, providedOptions );
 
-    super( options.title, appliedForceProperty, appliedForceRange, options );
+    super( options.titleStringProperty, appliedForceProperty, appliedForceRange, options );
   }
 }
 
