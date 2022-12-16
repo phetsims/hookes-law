@@ -19,10 +19,7 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-
-// fill in the {1} units, but leave the {0} value alone.
-const VALUE_PATTERN = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
-  SunConstants.VALUE_NUMBERED_PLACEHOLDER, HookesLawStrings.meters );
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 
 type SelfOptions = EmptySelfOptions;
 
@@ -46,6 +43,12 @@ export default class DisplacementControl extends NumberControl {
       } );
     }
 
+    // fill in the {1} units, but leave the {0} value alone.
+    const valuePatternProperty = new DerivedProperty(
+      [ HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.metersStringProperty ],
+      ( pattern, metersString ) => StringUtils.format( pattern, SunConstants.VALUE_NUMBERED_PLACEHOLDER, metersString )
+    );
+
     const options = optionize<DisplacementControlOptions, SelfOptions, NumberControlOptions>()( {
 
       // NumberControlOptions
@@ -68,7 +71,7 @@ export default class DisplacementControl extends NumberControl {
           font: HookesLawConstants.CONTROL_PANEL_VALUE_FONT
         },
         decimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
-        valuePattern: VALUE_PATTERN
+        valuePattern: valuePatternProperty
       },
       arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
       sliderOptions: {
