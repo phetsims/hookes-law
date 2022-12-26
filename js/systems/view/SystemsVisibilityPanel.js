@@ -9,14 +9,14 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { Text, VBox } from '../../../../scenery/js/imports.js';
+import { AlignGroup, Text, VBox } from '../../../../scenery/js/imports.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
-import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
+import VectorCheckbox from '../../common/view/VectorCheckbox.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
@@ -33,21 +33,27 @@ export default class SystemsVisibilityPanel extends Panel {
       tandem: Tandem.REQUIRED
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
-    // vector checkboxes
-    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty,
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    // So that text labels on the vector checkboxes all have the same effective size
+    const textAlignBoxOptions = {
+      group: new AlignGroup(),
+      xAlign: 'left'
+    };
+
+    const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
+      HookesLawStrings.appliedForceStringProperty, {
         vectorType: 'force',
-        arrowFill: HookesLawColors.APPLIED_FORCE
-      } ), merge( {
+        arrowFill: HookesLawColors.APPLIED_FORCE,
+        textAlignBoxOptions: textAlignBoxOptions,
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+      } );
 
-    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty,
-      new Text( HookesLawStrings.springForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
-        tandem: options.tandem.createTandem( 'springForceCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const springForceCheckbox = new VectorCheckbox( properties.springForceVectorVisibleProperty, HookesLawStrings.springForceStringProperty, {
+      vectorType: 'force',
+      arrowFill: HookesLawColors.SINGLE_SPRING,
+      textAlignBoxOptions: textAlignBoxOptions,
+      tandem: options.tandem.createTandem( 'springForceCheckbox' )
+    } );
 
-    // Radio buttons for spring force
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
       properties.springForceRepresentationProperty, properties.systemTypeProperty, {
         layoutOptions: {
@@ -56,15 +62,13 @@ export default class SystemsVisibilityPanel extends Panel {
         tandem: options.tandem.createTandem( 'springForceRadioButtonGroup' )
       } );
 
-    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty,
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacementStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
-        vectorType: 'displacement',
-        arrowFill: HookesLawColors.DISPLACEMENT
-      } ), merge( {
-        tandem: options.tandem.createTandem( 'displacementCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
+      vectorType: 'displacement',
+      arrowFill: HookesLawColors.DISPLACEMENT,
+      textAlignBoxOptions: textAlignBoxOptions,
+      tandem: options.tandem.createTandem( 'displacementCheckbox' )
+    } );
 
-    // other checkboxes
     const equilibriumPositionCheckbox = new EquilibriumPositionCheckbox( properties.equilibriumPositionVisibleProperty,
       options.tandem.createTandem( 'equilibriumPositionCheckbox' ) );
 

@@ -8,14 +8,14 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { AlignBox, AlignGroup, Text, VBox } from '../../../../scenery/js/imports.js';
+import { AlignGroup, Text, VBox } from '../../../../scenery/js/imports.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
-import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
+import VectorCheckbox from '../../common/view/VectorCheckbox.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 
@@ -31,48 +31,33 @@ export default class IntroVisibilityPanel extends Panel {
       tandem: Tandem.REQUIRED
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
-    const appliedForceCheckboxTandem = options.tandem.createTandem( 'appliedForceCheckbox' );
-    const springForceCheckboxTandem = options.tandem.createTandem( 'springForceCheckbox' );
-    const displacementCheckboxTandem = options.tandem.createTandem( 'displacementCheckbox' );
-
-    // text labels on the vector checkboxes, all with the same effective size
-    const alignBoxOptions = {
+    // So that text labels on the vector checkboxes all have the same effective size
+    const textAlignBoxOptions = {
       group: new AlignGroup(),
       xAlign: 'left'
     };
-    const appliedForceText = new AlignBox( new Text( HookesLawStrings.appliedForceStringProperty,
-        merge( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, { tandem: appliedForceCheckboxTandem.createTandem( 'text' ) } ) ),
-      alignBoxOptions );
-    const springForceText = new AlignBox( new Text( HookesLawStrings.springForceStringProperty,
-        merge( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, { tandem: springForceCheckboxTandem.createTandem( 'text' ) } ) ),
-      alignBoxOptions );
-    const displacementText = new AlignBox( new Text( HookesLawStrings.displacementStringProperty,
-        merge( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, { tandem: displacementCheckboxTandem.createTandem( 'text' ) } ) ),
-      alignBoxOptions );
 
-    // vector checkboxes, with left-aligned vector icons
-    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( appliedForceText, {
+    const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty, HookesLawStrings.appliedForceStringProperty, {
       vectorType: 'force',
-      arrowFill: HookesLawColors.APPLIED_FORCE
-    } ), merge( {
-      tandem: appliedForceCheckboxTandem
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+      arrowFill: HookesLawColors.APPLIED_FORCE,
+      textAlignBoxOptions: textAlignBoxOptions,
+      tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
+    } );
 
-    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( springForceText, {
+    const springForceCheckbox = new VectorCheckbox( properties.springForceVectorVisibleProperty, HookesLawStrings.springForceStringProperty, {
       vectorType: 'force',
-      arrowFill: HookesLawColors.SINGLE_SPRING
-    } ), merge( {
-      tandem: springForceCheckboxTandem
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+      arrowFill: HookesLawColors.SINGLE_SPRING,
+      textAlignBoxOptions: textAlignBoxOptions,
+      tandem: options.tandem.createTandem( 'springForceCheckbox' )
+    } );
 
-    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( displacementText, {
+    const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
       vectorType: 'displacement',
-      arrowFill: HookesLawColors.DISPLACEMENT
-    } ), merge( {
+      arrowFill: HookesLawColors.DISPLACEMENT,
+      textAlignBoxOptions: textAlignBoxOptions,
       tandem: options.tandem.createTandem( 'displacementCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    } );
 
-    // other checkboxes
     const equilibriumPositionCheckbox = new EquilibriumPositionCheckbox( properties.equilibriumPositionVisibleProperty,
       options.tandem.createTandem( 'equilibriumPositionCheckbox' ) );
 

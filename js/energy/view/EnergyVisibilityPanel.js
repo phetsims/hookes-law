@@ -16,7 +16,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
-import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
+import VectorCheckbox from '../../common/view/VectorCheckbox.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import EnergyGraph from './EnergyGraph.js';
@@ -76,22 +76,18 @@ export default class EnergyVisibilityPanel extends Panel {
       energyCheckbox.enabled = ( graph === EnergyGraph.FORCE_PLOT );
     } );
 
-    // other checkboxes
-    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty,
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.appliedForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
+    const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
+      HookesLawStrings.appliedForceStringProperty, {
         vectorType: 'force',
-        arrowFill: HookesLawColors.APPLIED_FORCE
-      } ), merge( {
+        arrowFill: HookesLawColors.APPLIED_FORCE,
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+      } );
 
-    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty,
-      HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacementStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
-        vectorType: 'displacement',
-        arrowFill: HookesLawColors.DISPLACEMENT
-      } ), merge( {
-        tandem: options.tandem.createTandem( 'displacementCheckbox' )
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
+      vectorType: 'displacement',
+      arrowFill: HookesLawColors.DISPLACEMENT,
+      tandem: options.tandem.createTandem( 'displacementCheckbox' )
+    } );
 
     const equilibriumPositionCheckbox = new EquilibriumPositionCheckbox( properties.equilibriumPositionVisibleProperty,
       options.tandem.createTandem( 'equilibriumPositionCheckbox' ) );
