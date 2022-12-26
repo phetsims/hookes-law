@@ -8,12 +8,13 @@
  */
 
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
-import { combineOptions } from '../../../../phet-core/js/optionize.js';
+import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import BracketNode from '../../../../scenery-phet/js/BracketNode.js';
 import { HBox, Text, TextOptions, VBox } from '../../../../scenery/js/imports.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
-import AquaRadioButtonGroup, { AquaRadioButtonGroupItem } from '../../../../sun/js/AquaRadioButtonGroup.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOptions } from '../../../../sun/js/AquaRadioButtonGroup.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
@@ -22,11 +23,24 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
+type SelfOptions = EmptySelfOptions;
+
+type SpringForceRadioButtonGroupOptions = SelfOptions &
+  PickOptional<AquaRadioButtonGroupOptions, 'layoutOptions'> &
+  PickRequired<AquaRadioButtonGroupOptions, 'tandem'>;
+
 export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<SpringForceRepresentation> {
 
   public constructor( springForceRepresentationProperty: EnumerationProperty<SpringForceRepresentation>,
                       systemTypeProperty: EnumerationProperty<SystemType>,
-                      tandem: Tandem ) {
+                      providedOptions: SpringForceRadioButtonGroupOptions ) {
+
+    const options = optionize<SpringForceRadioButtonGroupOptions, SelfOptions, AquaRadioButtonGroupOptions>()( {
+
+      // AquaRadioButtonGroupOptions
+      spacing: 10,
+      radioButtonOptions: HookesLawConstants.AQUA_RADIO_BUTTON_OPTIONS
+    }, providedOptions );
 
     // Label for 'Components' radio button
     const componentsIcon1 = HookesLawIconFactory.createForceVectorIcon();
@@ -77,11 +91,7 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
       }
     ];
 
-    super( springForceRepresentationProperty, items, {
-      spacing: 10,
-      radioButtonOptions: HookesLawConstants.AQUA_RADIO_BUTTON_OPTIONS,
-      tandem: tandem
-    } );
+    super( springForceRepresentationProperty, items, options );
   }
 }
 

@@ -9,7 +9,7 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { HBox, HStrut, Text, VBox } from '../../../../scenery/js/imports.js';
+import { Text, VBox } from '../../../../scenery/js/imports.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
@@ -49,12 +49,12 @@ export default class SystemsVisibilityPanel extends Panel {
 
     // Radio buttons for spring force
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
-      properties.springForceRepresentationProperty, properties.systemTypeProperty,
-      options.tandem.createTandem( 'springForceRadioButtonGroup' ) );
-    const radioButtonsSubPanel = new HBox( {
-      children: [ new HStrut( 25 ), springForceRadioButtonGroup ],
-      spacing: 5
-    } );
+      properties.springForceRepresentationProperty, properties.systemTypeProperty, {
+        layoutOptions: {
+          leftMargin: 25
+        },
+        tandem: options.tandem.createTandem( 'springForceRadioButtonGroup' )
+      } );
 
     const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty,
       HookesLawIconFactory.createVectorCheckboxContent( new Text( HookesLawStrings.displacementStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), {
@@ -102,7 +102,7 @@ export default class SystemsVisibilityPanel extends Panel {
       children: [
         appliedForceCheckbox,
         springForceCheckbox,
-        radioButtonsSubPanel,
+        springForceRadioButtonGroup,
         displacementCheckbox,
         equilibriumPositionCheckbox,
         valuesCheckbox
