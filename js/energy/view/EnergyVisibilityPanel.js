@@ -7,10 +7,8 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import { Shape } from '../../../../kite/js/imports.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { HBox, HSeparator, HStrut, Path, Text, VBox } from '../../../../scenery/js/imports.js';
-import Checkbox from '../../../../sun/js/Checkbox.js';
+import { HBox, HSeparator, HStrut, VBox } from '../../../../scenery/js/imports.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
@@ -20,6 +18,7 @@ import ValuesCheckbox from '../../common/view/ValuesCheckbox.js';
 import VectorCheckbox from '../../common/view/VectorCheckbox.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
+import EnergyCheckbox from './EnergyCheckbox.js';
 import EnergyGraph from './EnergyGraph.js';
 import EnergyGraphRadioButtonGroup from './EnergyGraphRadioButtonGroup.js';
 
@@ -43,19 +42,10 @@ export default class EnergyVisibilityPanel extends Panel {
       tandem: options.tandem.createTandem( 'energyGraphRadioButtonGroup' )
     } );
 
-    // energy checkbox, enabled when "Force Plot" radio button is selected
-    const energyIcon = new HBox( {
-      children: [
-        new Text( HookesLawStrings.energyStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-        // triangle
-        new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), { fill: HookesLawColors.ENERGY } )
-      ],
-      spacing: 6
-    } );
-    const energyCheckbox = new Checkbox( properties.energyOnForcePlotVisibleProperty, energyIcon, merge( {
+    const energyCheckbox = new EnergyCheckbox( properties.energyOnForcePlotVisibleProperty, {
       enabledProperty: new DerivedProperty( [ properties.graphProperty ], graph => ( graph === EnergyGraph.FORCE_PLOT ) ),
       tandem: options.tandem.createTandem( 'energyCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    } );
 
     const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
       HookesLawStrings.appliedForceStringProperty, {
