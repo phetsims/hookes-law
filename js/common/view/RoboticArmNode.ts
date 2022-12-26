@@ -20,6 +20,7 @@ import RoboticArm from '../model/RoboticArm.js';
 import Property from '../../../../axon/js/Property.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import optionize from '../../../../phet-core/js/optionize.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 // constants
 const PINCER_RADIUS = 35;
@@ -51,7 +52,7 @@ export default class RoboticArmNode extends Node {
   private readonly bottomPincerOpenNode: Node;
 
   public constructor( roboticArm: RoboticArm,
-                      leftRangeProperty: Property<Range>, // dynamic range of the left (movable) end of the arm, units = m
+                      leftRangeProperty: TReadOnlyProperty<Range>, // dynamic range of the left (movable) end of the arm, units = m
                       numberOfInteractionsInProgressProperty: Property<number>, // number of interactions in progress that affect displacement
                       providedOptions: RoboticArmNodeOptions ) {
 

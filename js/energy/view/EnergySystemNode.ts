@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * EnergySystemNode is a single-spring system for the "Energy" screen.
  * It includes one spring, a robotic arm, and all representations & controls that go with them.
@@ -12,11 +11,12 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { Node, NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
+import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import AppliedForceVectorNode from '../../common/view/AppliedForceVectorNode.js';
 import DisplacementVectorNode from '../../common/view/DisplacementVectorNode.js';
 import EquilibriumPositionNode from '../../common/view/EquilibriumPositionNode.js';
@@ -26,19 +26,25 @@ import RoboticArmNode from '../../common/view/RoboticArmNode.js';
 import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import EnergySpringControls from './EnergySpringControls.js';
+import EnergyViewProperties from './EnergyViewProperties.js';
+
+type SelfOptions = {
+  unitDisplacementLength?: number; // view length of 1 meter of displacement
+};
+
+type EnergySystemNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
 
 export default class EnergySystemNode extends Node {
-  /**
-   * @param {SingleSpringSystem} system
-   * @param {EnergyViewProperties} viewProperties
-   * @param {Object} [options]
-   */
-  constructor( system, viewProperties, options ) {
 
-    options = merge( {
-      unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      tandem: Tandem.REQUIRED
-    }, options );
+  public constructor( system: SingleSpringSystem, viewProperties: EnergyViewProperties, providedOptions: EnergySystemNodeOptions ) {
+
+    const options = optionize<EnergySystemNodeOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
+      unitDisplacementLength: 1
+    }, providedOptions );
+
+    assert && assert( options.unitDisplacementLength > 0 );
 
     // to improve readability
     const spring = system.spring;
@@ -83,7 +89,7 @@ export default class EnergySystemNode extends Node {
     const roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
 
-      // constrain dragging to multiples of this interval, see #54
+      // constrain dragging to multiples of this interval, see https://github.com/phetsims/hookes-law/issues/54
       displacementInterval: HookesLawConstants.ROBOTIC_ARM_DISPLACEMENT_INTERVAL,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin,
@@ -121,7 +127,6 @@ export default class EnergySystemNode extends Node {
       tandem: options.tandem.createTandem( 'springControls' )
     } );
 
-    assert && assert( !options.children, 'EnergySystemNode sets children' );
     options.children = [
       equilibriumPositionNode, roboticArmNode, springNode, wallNode, nibNode,
       appliedForceVectorNode, displacementVectorNode,

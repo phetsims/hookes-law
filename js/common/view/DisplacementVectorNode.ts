@@ -12,7 +12,7 @@ import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
-import { Line, Node, NodeOptions, Rectangle, Text } from '../../../../scenery/js/imports.js';
+import { Line, Node, NodeOptions, NodeTranslationOptions, Rectangle, Text } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
@@ -23,7 +23,7 @@ type SelfOptions = {
   unitDisplacementLength?: number;
 };
 
-type DisplacementVectorNodeOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
+type DisplacementVectorNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
 
 export default class DisplacementVectorNode extends Node {
 
