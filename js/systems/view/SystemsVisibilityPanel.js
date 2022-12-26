@@ -56,11 +56,16 @@ export default class SystemsVisibilityPanel extends Panel {
 
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
       properties.springForceRepresentationProperty, properties.systemTypeProperty, {
-        layoutOptions: {
-          leftMargin: 25
-        },
+        enabledProperty: properties.springForceVectorVisibleProperty, // enabled only if 'spring force' is checked
         tandem: options.tandem.createTandem( 'springForceRadioButtonGroup' )
       } );
+
+    // If the springForceCheckbox is hidden, hide springForceRadioButtonGroup.
+    const springForceRadioButtonGroupWrapper = new VBox( {
+      children: [ springForceRadioButtonGroup ],
+      layoutOptions: { leftMargin: 25 }, // indented from check boxes
+      visibleProperty: springForceCheckbox.visibleProperty
+    } );
 
     const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
       vectorType: 'displacement',
@@ -81,11 +86,6 @@ export default class SystemsVisibilityPanel extends Panel {
         valuesCheckbox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
-    // Radio buttons should be enabled only if 'spring force' is checked
-    properties.springForceVectorVisibleProperty.link( springForceVectorVisible => {
-      springForceRadioButtonGroup.enabled = springForceVectorVisible;
-    } );
-
     // Adjust touch areas
     const spacing = 20;
     const controls = [
@@ -103,7 +103,7 @@ export default class SystemsVisibilityPanel extends Panel {
       children: [
         appliedForceCheckbox,
         springForceCheckbox,
-        springForceRadioButtonGroup,
+        springForceRadioButtonGroupWrapper,
         displacementCheckbox,
         equilibriumPositionCheckbox,
         valuesCheckbox

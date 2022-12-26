@@ -9,7 +9,6 @@
 
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
-import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import BracketNode from '../../../../scenery-phet/js/BracketNode.js';
 import { HBox, Text, TextOptions, VBox } from '../../../../scenery/js/imports.js';
@@ -26,8 +25,7 @@ import SystemType from './SystemType.js';
 type SelfOptions = EmptySelfOptions;
 
 type SpringForceRadioButtonGroupOptions = SelfOptions &
-  PickOptional<AquaRadioButtonGroupOptions, 'layoutOptions'> &
-  PickRequired<AquaRadioButtonGroupOptions, 'tandem'>;
+  PickRequired<AquaRadioButtonGroupOptions, 'tandem' | 'enabledProperty'>;
 
 export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<SpringForceRepresentation> {
 
