@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * EnergyVisibilityPanel contains controls for the visibility of various representations in the "Energy" screen.
  *

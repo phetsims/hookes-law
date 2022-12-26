@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * SystemsVisibilityPanel contains controls for the visibility of various representations in the "Systems" screen.
  * This panel is a bit similar to IntroVisibilityPanel, but it provides choices for how the spring force is represented.
