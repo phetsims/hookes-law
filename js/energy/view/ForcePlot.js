@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  *  ForcePlot is an XY plot of displacement (x-axis) vs force (y-axis),
  *  with energy (E) being the area under the curve.

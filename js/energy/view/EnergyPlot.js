@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * EnergyPlot is an XY plot of displacement (x-axis) vs energy (y-axis).
  *
