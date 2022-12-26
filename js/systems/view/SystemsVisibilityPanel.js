@@ -64,9 +64,10 @@ export default class SystemsVisibilityPanel extends Panel {
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // other checkboxes
+    const equilibriumPositionCheckboxTandem = options.tandem.createTandem( 'equilibriumPositionCheckbox' );
     const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty,
-      HookesLawIconFactory.createEquilibriumPositionCheckboxContent(), merge( {
-        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+      HookesLawIconFactory.createEquilibriumPositionCheckboxContent( equilibriumPositionCheckboxTandem ), merge( {
+        tandem: equilibriumPositionCheckboxTandem
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty,

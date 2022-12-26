@@ -214,9 +214,10 @@ const HookesLawIconFactory = {
   /**
    * Creates the icon for the equilibrium position checkbox, consisting of text and a vertical dashed line.
    */
-  createEquilibriumPositionCheckboxContent(): Node {
+  createEquilibriumPositionCheckboxContent( tandem: Tandem ): Node {
     const textNode = new Text( HookesLawStrings.equilibriumPositionStringProperty, {
-      font: new PhetFont( 18 )
+      font: new PhetFont( 18 ),
+      tandem: tandem.createTandem( 'text' )
     } );
     const lineNode = new EquilibriumPositionNode( textNode.height, {
       left: textNode.right + 8,

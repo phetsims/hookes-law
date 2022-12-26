@@ -92,9 +92,10 @@ export default class EnergyVisibilityPanel extends Panel {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
+    const equilibriumPositionCheckboxTandem = options.tandem.createTandem( 'equilibriumPositionCheckbox' );
     const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty,
-      HookesLawIconFactory.createEquilibriumPositionCheckboxContent(), merge( {
-        tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
+      HookesLawIconFactory.createEquilibriumPositionCheckboxContent( equilibriumPositionCheckboxTandem ), merge( {
+        tandem: equilibriumPositionCheckboxTandem
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty,

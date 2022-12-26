@@ -8,7 +8,7 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { Text, VBox } from '../../../../scenery/js/imports.js';
+import { AlignBox, AlignGroup, Text, VBox } from '../../../../scenery/js/imports.js';
 import Checkbox from '../../../../sun/js/Checkbox.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
@@ -30,49 +30,61 @@ export default class IntroVisibilityPanel extends Panel {
       tandem: Tandem.REQUIRED
     }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
 
-    // text labels on the vector checkboxes
-    const appliedForceTextNode = new Text( HookesLawStrings.appliedForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const springForceTextNode = new Text( HookesLawStrings.springForceStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const displacementTextNode = new Text( HookesLawStrings.displacementStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
-    const maxTextWidth =
-      _.maxBy( [ appliedForceTextNode, springForceTextNode, displacementTextNode ], node => node.width ).width;
+    const appliedForceCheckboxTandem = options.tandem.createTandem( 'appliedForceCheckbox' );
+    const springForceCheckboxTandem = options.tandem.createTandem( 'springForceCheckbox' );
+    const displacementCheckboxTandem = options.tandem.createTandem( 'displacementCheckbox' );
 
-    const minSpacing = 10;
+    // text labels on the vector checkboxes, all with the same effective size
+    const alignBoxOptions = {
+      group: new AlignGroup(),
+      xAlign: 'left'
+    };
+    const appliedForceText = new AlignBox( new Text( HookesLawStrings.appliedForceStringProperty,
+        merge( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, { tandem: appliedForceCheckboxTandem.createTandem( 'text' ) } ) ),
+      alignBoxOptions );
+    const springForceText = new AlignBox( new Text( HookesLawStrings.springForceStringProperty,
+        merge( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, { tandem: springForceCheckboxTandem.createTandem( 'text' ) } ) ),
+      alignBoxOptions );
+    const displacementText = new AlignBox( new Text( HookesLawStrings.displacementStringProperty,
+        merge( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, { tandem: displacementCheckboxTandem.createTandem( 'text' ) } ) ),
+      alignBoxOptions );
 
     // vector checkboxes, with left-aligned vector icons
-    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( appliedForceTextNode, {
+    const appliedForceCheckbox = new Checkbox( properties.appliedForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( appliedForceText, {
       vectorType: 'force',
-      arrowFill: HookesLawColors.APPLIED_FORCE,
-      spacing: maxTextWidth - appliedForceTextNode.width + minSpacing
+      arrowFill: HookesLawColors.APPLIED_FORCE
     } ), merge( {
-      tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
+      tandem: appliedForceCheckboxTandem
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( springForceTextNode, {
+    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( springForceText, {
       vectorType: 'force',
-      arrowFill: HookesLawColors.SINGLE_SPRING,
-      spacing: maxTextWidth - springForceTextNode.width + minSpacing
+      arrowFill: HookesLawColors.SINGLE_SPRING
     } ), merge( {
-      tandem: options.tandem.createTandem( 'springForceCheckbox' )
+      tandem: springForceCheckboxTandem
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( displacementTextNode, {
+    const displacementCheckbox = new Checkbox( properties.displacementVectorVisibleProperty, HookesLawIconFactory.createVectorCheckboxContent( displacementText, {
       vectorType: 'displacement',
-      arrowFill: HookesLawColors.DISPLACEMENT,
-      spacing: maxTextWidth - displacementTextNode.width + minSpacing
+      arrowFill: HookesLawColors.DISPLACEMENT
     } ), merge( {
       tandem: options.tandem.createTandem( 'displacementCheckbox' )
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // other checkboxes
-    const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty, HookesLawIconFactory.createEquilibriumPositionCheckboxContent(), merge( {
-      tandem: options.tandem.createTandem( 'equilibriumPositionCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
-
-    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty,
-      new Text( HookesLawStrings.valuesStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
-        tandem: options.tandem.createTandem( 'valuesCheckbox' )
+    const equilibriumPositionCheckboxTandem = options.tandem.createTandem( 'equilibriumPositionCheckbox' );
+    const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty,
+      HookesLawIconFactory.createEquilibriumPositionCheckboxContent( equilibriumPositionCheckboxTandem ), merge( {
+        tandem: equilibriumPositionCheckboxTandem
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+
+    const valuesCheckboxTandem = options.tandem.createTandem( 'valuesCheckbox' );
+    const valuesText = new Text( HookesLawStrings.valuesStringProperty, merge( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
+      tandem: valuesCheckboxTandem.createTandem( 'text' )
+    } ) );
+    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty, valuesText, merge( {
+      tandem: valuesCheckboxTandem
+    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     // 'Values' checkbox pertains to vectors, so enable that checkbox only if one or more of the vectors is selected.
     Multilink.multilink(
