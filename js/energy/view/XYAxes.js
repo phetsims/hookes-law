@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Axes for XY plots.
  * Draws x and y axes with arrows pointing in the positive directions, and labels at the positive ends.
