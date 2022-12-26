@@ -16,6 +16,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
+import ValuesCheckbox from '../../common/view/ValuesCheckbox.js';
 import VectorCheckbox from '../../common/view/VectorCheckbox.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
@@ -92,10 +93,7 @@ export default class EnergyVisibilityPanel extends Panel {
     const equilibriumPositionCheckbox = new EquilibriumPositionCheckbox( properties.equilibriumPositionVisibleProperty,
       options.tandem.createTandem( 'equilibriumPositionCheckbox' ) );
 
-    const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty,
-      new Text( HookesLawStrings.valuesStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {
-      tandem: options.tandem.createTandem( 'valuesCheckbox' )
-    }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const valuesCheckbox = new ValuesCheckbox( properties.valuesVisibleProperty, options.tandem.createTandem( 'valuesCheckbox' ) );
 
     // Adjust touch areas
     const controls = [
