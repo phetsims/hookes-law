@@ -1,39 +1,36 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Bar graph representation of Energy.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
-import { Line, Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { Line, Node, NodeOptions, NodeTranslationOptions, Rectangle, Text } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
+import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 
 // constants
 const BAR_WIDTH = 20;
 
+type SelfOptions = EmptySelfOptions;
+
+type EnergyBarGraphOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
+
 export default class EnergyBarGraph extends Node {
 
-  /**
-   * @param {Spring} spring
-   * @param {BooleanProperty} valueVisibleProperty - whether value is visible on the graph
-   * @param {Object} [options]
-   */
-  constructor( spring, valueVisibleProperty, options ) {
+  public constructor( spring: Spring, valueVisibleProperty: TReadOnlyProperty<boolean>, providedOptions: EnergyBarGraphOptions ) {
 
-    options = merge( {
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
+    const options = optionize<EnergyBarGraphOptions, SelfOptions, NodeOptions>()( {}, providedOptions );
 
     const xAxisNode = new Line( 0, 0, 1.65 * BAR_WIDTH, 0, {
       stroke: 'black',
@@ -63,13 +60,13 @@ export default class EnergyBarGraph extends Node {
     } );
 
     const valueText = new Text( '', {
+      visibleProperty: valueVisibleProperty,
       maxWidth: 100, // i18n
       fill: HookesLawColors.ENERGY,
       font: HookesLawConstants.BAR_GRAPH_VALUE_FONT,
       tandem: options.tandem.createTandem( 'valueText' )
     } );
 
-    assert && assert( !options.children, 'EnergyBarGraph sets children' );
     options.children = [ barNode, valueText, xAxisNode, yAxisNode, yAxisText ];
 
     spring.potentialEnergyProperty.link( energy => {
@@ -90,8 +87,6 @@ export default class EnergyBarGraph extends Node {
         valueText.centerY = barNode.top;
       }
     } );
-
-    valueVisibleProperty.linkAttribute( valueText, 'visible' );
 
     super( options );
   }
