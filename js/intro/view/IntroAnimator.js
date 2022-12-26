@@ -32,7 +32,8 @@ export default class IntroAnimator {
 
     // Vertical position of system 1, instrumented for PhET-iO to support record/playback, see #53.
     const system1CenterYProperty = new NumberProperty( system1Node.centerY, {
-      tandem: tandem.createTandem( 'system1CenterYProperty' )
+      tandem: tandem.createTandem( 'system1CenterYProperty' ),
+      phetioReadOnly: true
     } );
     system1CenterYProperty.link( centerY => {
       system1Node.centerY = centerY;
@@ -41,7 +42,8 @@ export default class IntroAnimator {
     // Opacity of system 2, instrumented for PhET-iO to support record/playback, see #53.
     const system2OpacityProperty = new NumberProperty( system2Node.opacity, {
       isValidValue: value => ( value >= 0 && value <= 1 ),
-      tandem: tandem.createTandem( 'system2OpacityProperty' )
+      tandem: tandem.createTandem( 'system2OpacityProperty' ),
+      phetioReadOnly: true
     } );
     system2OpacityProperty.link( opacity => {
       system2Node.opacity = opacity;

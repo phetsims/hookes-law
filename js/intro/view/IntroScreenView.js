@@ -90,7 +90,7 @@ export default class IntroScreenView extends ScreenView {
 
     // @private Animates the transitions between 1 and 2 systems
     this.animator = new IntroAnimator( viewProperties.numberOfSystemsProperty, system1Node, system2Node,
-      this.layoutBounds, tandem );
+      this.layoutBounds, tandem.createTandem( 'animator' ) );
   }
 
   /**
