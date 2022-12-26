@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * View-specific Properties and properties for the "Energy" screen.
  *
@@ -9,6 +8,8 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
+import Property from '../../../../axon/js/Property.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -16,29 +17,26 @@ import EnergyGraph from './EnergyGraph.js';
 
 export default class EnergyViewProperties extends ViewProperties {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  // which energy graph is visible
+  public readonly graphProperty: EnumerationProperty<EnergyGraph>;
+
+  // is energy depicted on the Force plot?
+  public readonly energyOnForcePlotVisibleProperty: Property<boolean>;
+
+  public constructor( tandem: Tandem ) {
 
     super( tandem );
 
-    // @public which graph is visible
     this.graphProperty = new EnumerationProperty( EnergyGraph.BAR_GRAPH, {
       tandem: tandem.createTandem( 'graphProperty' )
     } );
 
-    // @public is energy depicted on the Force plot?
     this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
       tandem: tandem.createTandem( 'energyOnForcePlotVisibleProperty' )
     } );
   }
 
-  /**
-   * @public
-   * @override
-   */
-  reset() {
+  public override reset(): void {
     this.graphProperty.reset();
     this.valuesVisibleProperty.reset();
     this.energyOnForcePlotVisibleProperty.reset();

@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * View-specific properties for the "Systems" screen.
  *
@@ -9,6 +8,8 @@
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
+import Property from '../../../../axon/js/Property.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -17,34 +18,33 @@ import SystemType from './SystemType.js';
 
 export default class SystemsViewProperties extends ViewProperties {
 
-  /**
-   * @param {Tandem} tandem
-   */
-  constructor( tandem ) {
+  // which system is visible
+  public readonly systemTypeProperty: EnumerationProperty<SystemType>;
+
+  // is the spring force vector visible?
+  public readonly springForceVectorVisibleProperty: Property<boolean>;
+
+  // how spring force is represented
+  public readonly springForceRepresentationProperty: EnumerationProperty<SpringForceRepresentation>;
+
+  public constructor( tandem: Tandem ) {
 
     super( tandem );
 
-    // @public which system is visible
     this.systemTypeProperty = new EnumerationProperty( SystemType.PARALLEL, {
       tandem: tandem.createTandem( 'systemTypeProperty' )
     } );
 
-    // @public is the spring force vector visible?
     this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
       tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
     } );
 
-    // @public how spring force is represented
     this.springForceRepresentationProperty = new EnumerationProperty( SpringForceRepresentation.TOTAL, {
       tandem: tandem.createTandem( 'springForceRepresentationProperty' )
     } );
   }
 
-  /**
-   * @public
-   * @override
-   */
-  reset() {
+  public override reset(): void {
     this.systemTypeProperty.reset();
     this.springForceVectorVisibleProperty.reset();
     this.springForceRepresentationProperty.reset();
