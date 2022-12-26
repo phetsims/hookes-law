@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Axes for XY plots.
  * Draws x and y axes with arrows pointing in the positive directions, and labels at the positive ends.
@@ -8,10 +7,11 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { Node, Text } from '../../../../scenery/js/imports.js';
+import { Font, Node, NodeOptions, Text } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 
 // constants
@@ -22,24 +22,31 @@ const AXIS_OPTIONS = {
   fill: 'black',
   stroke: null
 };
+const DEFAULT_FONT = new PhetFont( 14 );
+
+type SelfOptions = {
+  minX: number;
+  maxX: number;
+  minY: number;
+  maxY: number;
+  xString: string;
+  yString: string;
+  font?: Font;
+  xLabelMaxWidth?: number | null;
+};
+
+type XYAxesOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
 
 export default class XYAxes extends Node {
 
-  /**
-   * @param {Object} [options]
-   */
-  constructor( options ) {
+  public constructor( providedOptions: XYAxesOptions ) {
 
-    options = merge( {
-      minX: -1,
-      maxX: 1,
-      minY: -1,
-      maxY: 1,
-      xString: 'x',
-      yString: 'y',
-      font: new PhetFont( 14 ),
+    const options = optionize<XYAxesOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
+      font: DEFAULT_FONT,
       xLabelMaxWidth: null
-    }, options );
+    }, providedOptions );
 
     // x-axis, arrow in positive direction only
     const xAxisNode = new ArrowNode( options.minX, 0, options.maxX, 0, AXIS_OPTIONS );
@@ -61,7 +68,6 @@ export default class XYAxes extends Node {
       tandem: options.tandem.createTandem( 'yAxisText' )
     } );
 
-    assert && assert( !options.children, 'XYAxes sets children' );
     options.children = [ xAxisNode, xAxisText, yAxisNode, yAxisText ];
 
     super( options );
