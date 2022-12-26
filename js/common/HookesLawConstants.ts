@@ -7,6 +7,7 @@
  */
 
 import Dimension2 from '../../../dot/js/Dimension2.js';
+import StrictOmit from '../../../phet-core/js/types/StrictOmit.js';
 import PhetFont from '../../../scenery-phet/js/PhetFont.js';
 import { HSeparatorOptions, TextOptions } from '../../../scenery/js/imports.js';
 import { AquaRadioButtonOptions } from '../../../sun/js/AquaRadioButton.js';
@@ -19,21 +20,21 @@ import HookesLawColors from './HookesLawColors.js';
 // constants
 const APPLIED_FORCE_DECIMAL_PLACES = 1;
 
-const AQUA_RADIO_BUTTON_OPTIONS: AquaRadioButtonOptions = {
+const AQUA_RADIO_BUTTON_OPTIONS: StrictOmit<AquaRadioButtonOptions, 'tandem'> = {
   radius: 8
 };
 
-const ARROW_BUTTON_OPTIONS: ArrowButtonOptions = {
+const ARROW_BUTTON_OPTIONS: StrictOmit<ArrowButtonOptions, 'tandem'> = {
   touchAreaXDilation: 10,
   touchAreaYDilation: 10
 };
 
-const CHECKBOX_OPTIONS: CheckboxOptions = {
+const CHECKBOX_OPTIONS: StrictOmit<CheckboxOptions, 'tandem'> = {
   boxWidth: 18,
   spacing: 8
 };
 
-const CONTROL_TEXT_OPTIONS: TextOptions = {
+const CONTROL_TEXT_OPTIONS: StrictOmit<TextOptions, 'tandem'> = {
   font: new PhetFont( 18 )
 };
 
@@ -41,18 +42,18 @@ const HSEPARATOR_OPTIONS: HSeparatorOptions = {
   stroke: HookesLawColors.SEPARATOR_STROKE
 };
 
-const MAJOR_TICK_LABEL_OPTIONS: TextOptions = {
+const MAJOR_TICK_LABEL_OPTIONS: StrictOmit<TextOptions, 'tandem'> = {
   font: new PhetFont( 14 )
 };
 
-const SPRING_PANEL_OPTIONS: PanelOptions = {
+const SPRING_PANEL_OPTIONS: StrictOmit<PanelOptions, 'tandem'> = {
   fill: HookesLawColors.CONTROL_PANEL_FILL,
   stroke: HookesLawColors.CONTROL_PANEL_STROKE,
   xMargin: 20,
   yMargin: 5
 };
 
-const VISIBILITY_PANEL_OPTIONS: PanelOptions = {
+const VISIBILITY_PANEL_OPTIONS: StrictOmit<PanelOptions, 'tandem'> = {
   fill: HookesLawColors.CONTROL_PANEL_FILL,
   stroke: HookesLawColors.CONTROL_PANEL_STROKE,
   xMargin: 15,

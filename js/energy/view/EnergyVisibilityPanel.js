@@ -15,6 +15,7 @@ import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
+import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
@@ -92,11 +93,8 @@ export default class EnergyVisibilityPanel extends Panel {
         tandem: options.tandem.createTandem( 'displacementCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
-    const equilibriumPositionCheckboxTandem = options.tandem.createTandem( 'equilibriumPositionCheckbox' );
-    const equilibriumPositionCheckbox = new Checkbox( properties.equilibriumPositionVisibleProperty,
-      HookesLawIconFactory.createEquilibriumPositionCheckboxContent( equilibriumPositionCheckboxTandem ), merge( {
-        tandem: equilibriumPositionCheckboxTandem
-      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
+    const equilibriumPositionCheckbox = new EquilibriumPositionCheckbox( properties.equilibriumPositionVisibleProperty,
+      options.tandem.createTandem( 'equilibriumPositionCheckbox' ) );
 
     const valuesCheckbox = new Checkbox( properties.valuesVisibleProperty,
       new Text( HookesLawStrings.valuesStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ), merge( {

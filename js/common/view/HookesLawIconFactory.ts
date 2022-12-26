@@ -12,14 +12,10 @@ import optionize from '../../../../phet-core/js/optionize.js';
 import ArrowNode, { ArrowNodeOptions } from '../../../../scenery-phet/js/ArrowNode.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNode.js';
-import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { HBox, Line, Node, Path, Rectangle, TColor, Text, VBox } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { HBox, Line, Node, Path, Rectangle, TColor, VBox } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
-import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
-import EquilibriumPositionNode from './EquilibriumPositionNode.js';
 import NibNode from './NibNode.js';
 import RoboticArmNode from './RoboticArmNode.js';
 
@@ -209,22 +205,6 @@ const HookesLawIconFactory = {
       children: [ textNode, arrowNode ],
       spacing: options.spacing
     } );
-  },
-
-  /**
-   * Creates the icon for the equilibrium position checkbox, consisting of text and a vertical dashed line.
-   */
-  createEquilibriumPositionCheckboxContent( tandem: Tandem ): Node {
-    const textNode = new Text( HookesLawStrings.equilibriumPositionStringProperty, {
-      font: new PhetFont( 18 ),
-      tandem: tandem.createTandem( 'text' )
-    } );
-    const lineNode = new EquilibriumPositionNode( textNode.height, {
-      left: textNode.right + 8,
-      centerY: textNode.centerY,
-      tandem: Tandem.OPT_OUT
-    } );
-    return new Node( { children: [ textNode, lineNode ] } );
   },
 
   /**
