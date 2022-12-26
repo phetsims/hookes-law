@@ -1,5 +1,6 @@
 // Copyright 2020-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * SpringForceRadioButtonGroup is the radio button group used to select which vector representation of spring force
  * is display. The choices are 'Total' or 'Components'.

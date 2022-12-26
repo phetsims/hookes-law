@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Scene control for the "Systems" screen, switches between series and parallel systems.
  *
