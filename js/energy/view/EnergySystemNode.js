@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * EnergySystemNode is a single-spring system for the "Energy" screen.
  * It includes one spring, a robotic arm, and all representations & controls that go with them.
