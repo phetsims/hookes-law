@@ -13,7 +13,7 @@ import ArrowNode, { ArrowNodeOptions } from '../../../../scenery-phet/js/ArrowNo
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNode.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { HBox, Line, Node, Rectangle, TColor, Text, VBox } from '../../../../scenery/js/imports.js';
+import { HBox, Line, Node, Path, Rectangle, TColor, Text, VBox } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
@@ -163,7 +163,7 @@ const HookesLawIconFactory = {
   /**
    * Creates a force vector icon.
    */
-  createForceVectorIcon( providedOptions?: ForceVectorIconOptions ): Node {
+  createForceVectorIcon( providedOptions?: ForceVectorIconOptions ): Path {
 
     const options = optionize<ForceVectorIconOptions, ForceVectorIconSelfOptions, ArrowNodeOptions>()( {
 

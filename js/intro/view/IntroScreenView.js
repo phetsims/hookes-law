@@ -42,9 +42,8 @@ export default class IntroScreenView extends ScreenView {
     } );
 
     // Radio buttons for switching between 1 and 2 systems
-    const numberOfSystemsRadioButtonGroup = new NumberOfSystemsRadioButtonGroup( viewProperties.numberOfSystemsProperty, {
-      tandem: tandem.createTandem( 'numberOfSystemsRadioButtonGroup' )
-    } );
+    const numberOfSystemsRadioButtonGroup = new NumberOfSystemsRadioButtonGroup( viewProperties.numberOfSystemsProperty,
+      tandem.createTandem( 'numberOfSystemsRadioButtonGroup' ) );
 
     // horizontally center the controls
     this.addChild( new VBox( {

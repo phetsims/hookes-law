@@ -1,29 +1,36 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Scene control for the "Intro" screen, switches between 1 and 2 systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
-import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
+import Property from '../../../../axon/js/Property.js';
+import RectangularRadioButton from '../../../../sun/js/buttons/RectangularRadioButton.js';
+import RectangularRadioButtonGroup, { RectangularRadioButtonGroupItem } from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 
-export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup {
+export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup<number> {
 
-  /**
-   * @param {NumberProperty} numberOfSystemsProperty
-   * @param {Object} [options]
-   */
-  constructor( numberOfSystemsProperty, options ) {
+  public constructor( numberOfSystemsProperty: Property<number>, tandem: Tandem ) {
 
-    options = merge( {
+    const items: RectangularRadioButtonGroupItem<number>[] = [
+      {
+        value: 1,
+        createNode: tandem => HookesLawIconFactory.createSingleSpringIcon(),
+        tandemName: `oneSystem${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+      },
+      {
+        value: 2,
+        createNode: tandem => HookesLawIconFactory.createTwoSpringsIcon(),
+        tandemName: `twoSystems${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+      }
+    ];
 
-      // RectangularRadioButtonGroup options
+    super( numberOfSystemsProperty, items, {
       orientation: 'horizontal',
       spacing: 10,
       radioButtonOptions: {
@@ -33,15 +40,8 @@ export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioBut
           selectedLineWidth: 2
         }
       },
-
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
-
-    super( numberOfSystemsProperty, [
-      { value: 1, createNode: tandem => HookesLawIconFactory.createSingleSpringIcon(), tandemName: 'oneSystemRadioButton' },
-      { value: 2, createNode: tandem => HookesLawIconFactory.createTwoSpringsIcon(), tandemName: 'twoSystemsRadioButton' }
-    ], options );
+      tandem: tandem
+    } );
   }
 }
 

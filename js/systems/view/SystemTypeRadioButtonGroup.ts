@@ -1,30 +1,37 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Scene control for the "Systems" screen, switches between series and parallel systems.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
-import RectangularRadioButtonGroup from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
+import RectangularRadioButton from '../../../../sun/js/buttons/RectangularRadioButton.js';
+import RectangularRadioButtonGroup, { RectangularRadioButtonGroupItem } from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../../hookesLaw.js';
 import SystemType from './SystemType.js';
 
-export default class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup {
+export default class SystemTypeRadioButtonGroup extends RectangularRadioButtonGroup<SystemType> {
 
-  /**
-   * @param {EnumerationDeprecatedProperty.<SystemType>} systemTypeProperty
-   * @param {Object} [options]
-   */
-  constructor( systemTypeProperty, options ) {
+  public constructor( systemTypeProperty: EnumerationProperty<SystemType>, tandem: Tandem ) {
 
-    options = merge( {
+    const items: RectangularRadioButtonGroupItem<SystemType>[] = [
+      {
+        value: SystemType.PARALLEL,
+        createNode: tandem => HookesLawIconFactory.createParallelSystemIcon(),
+        tandemName: `parallel${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+      },
+      {
+        value: SystemType.SERIES,
+        createNode: tandem => HookesLawIconFactory.createSeriesSystemIcon(),
+        tandemName: `series${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+      }
+    ];
 
-      // RectangularRadioButtonGroup options
+    super( systemTypeProperty, items, {
       orientation: 'horizontal',
       spacing: 10,
       radioButtonOptions: {
@@ -34,15 +41,8 @@ export default class SystemTypeRadioButtonGroup extends RectangularRadioButtonGr
           selectedLineWidth: 2
         }
       },
-
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
-
-    super( systemTypeProperty, [
-      { value: SystemType.PARALLEL, createNode: tandem => HookesLawIconFactory.createParallelSystemIcon(), tandemName: 'parallelRadioButton' },
-      { value: SystemType.SERIES, createNode: tandem => HookesLawIconFactory.createSeriesSystemIcon(), tandemName: 'seriesRadioButton' }
-    ], options );
+      tandem: tandem
+    } );
   }
 }
 

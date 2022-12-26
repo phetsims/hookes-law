@@ -42,9 +42,8 @@ export default class SystemsScreenView extends ScreenView {
     } );
 
     // Radio buttons for switching between series and parallel systems
-    const systemTypeRadioButtonGroup = new SystemTypeRadioButtonGroup( viewProperties.systemTypeProperty, {
-      tandem: tandem.createTandem( 'systemTypeRadioButtonGroup' )
-    } );
+    const systemTypeRadioButtonGroup = new SystemTypeRadioButtonGroup( viewProperties.systemTypeProperty,
+      tandem.createTandem( 'systemTypeRadioButtonGroup' ) );
 
     // horizontally center the controls
     this.addChild( new VBox( {

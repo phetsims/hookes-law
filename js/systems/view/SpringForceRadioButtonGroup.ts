@@ -1,6 +1,5 @@
 // Copyright 2020-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * SpringForceRadioButtonGroup is the radio button group used to select which vector representation of spring force
  * is display. The choices are 'Total' or 'Components'.
@@ -8,10 +7,13 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import BracketNode from '../../../../scenery-phet/js/BracketNode.js';
-import { HBox, Text, VBox } from '../../../../scenery/js/imports.js';
-import AquaRadioButtonGroup from '../../../../sun/js/AquaRadioButtonGroup.js';
+import { HBox, Text, TextOptions, VBox } from '../../../../scenery/js/imports.js';
+import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
+import AquaRadioButtonGroup, { AquaRadioButtonGroupItem } from '../../../../sun/js/AquaRadioButtonGroup.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
@@ -20,51 +22,49 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
-export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
+export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<SpringForceRepresentation> {
 
-  /**
-   * @param {Property.<string>} springForceRepresentationProperty
-   * @param {Property.<string>} systemTypeProperty
-   * @param {Object} [options]
-   */
-  constructor( springForceRepresentationProperty, systemTypeProperty, options ) {
-
-    options = merge( {
-      spacing: 10,
-      radioButtonOptions: HookesLawConstants.AQUA_RADIO_BUTTON_OPTIONS
-    }, options );
+  public constructor( springForceRepresentationProperty: EnumerationProperty<SpringForceRepresentation>,
+                      systemTypeProperty: EnumerationProperty<SystemType>,
+                      tandem: Tandem ) {
 
     // Label for 'Components' radio button
-    const componentsIcon1 = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.TOP_SPRING } );
-    const componentsIcon2 = HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.BOTTOM_SPRING } );
+    const componentsIcon1 = HookesLawIconFactory.createForceVectorIcon();
+    const componentsIcon2 = HookesLawIconFactory.createForceVectorIcon();
     const componentsIcons = new VBox( {
       children: [ componentsIcon1, componentsIcon2 ],
       spacing: 10
     } );
 
-    // Change the component vector colors to match the spring system
+    // Set the component vector colors to match the spring system
     systemTypeProperty.link( systemType => {
       componentsIcon1.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.LEFT_SPRING : HookesLawColors.TOP_SPRING;
       componentsIcon2.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
     } );
 
-    // Descriptions of the radio buttons.
-    const buttonDescriptions = [
+    const items: AquaRadioButtonGroupItem<SpringForceRepresentation>[] = [
       {
-        value: SpringForceRepresentation.TOTAL, createNode: tandem => new HBox( {
+        value: SpringForceRepresentation.TOTAL,
+        createNode: tandem => new HBox( {
           children: [
-            new Text( HookesLawStrings.totalStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+            new Text( HookesLawStrings.totalStringProperty,
+              combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
+                tandem: tandem.createTandem( 'text' )
+              } ) ),
             HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
           ],
           spacing: 10
-        } ), tandemName: 'totalRadioButton'
+        } ),
+        tandemName: `total${AquaRadioButton.TANDEM_NAME_SUFFIX}`
       },
       {
-        value: SpringForceRepresentation.COMPONENTS, createNode: tandem => new HBox( {
-          touchAreaXDilation: 10,
-          touchAreaYDilation: 4,
+        value: SpringForceRepresentation.COMPONENTS,
+        createNode: tandem => new HBox( {
           children: [
-            new Text( HookesLawStrings.componentsStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+            new Text( HookesLawStrings.componentsStringProperty,
+              combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
+                tandem: tandem.createTandem( 'text' )
+              } ) ),
             new BracketNode( {
               orientation: 'left',
               bracketLength: componentsIcons.height
@@ -72,11 +72,16 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup {
             componentsIcons
           ],
           spacing: 10
-        } ), tandemName: 'componentsRadioButton'
+        } ),
+        tandemName: `components${AquaRadioButton.TANDEM_NAME_SUFFIX}`
       }
     ];
 
-    super( springForceRepresentationProperty, buttonDescriptions, options );
+    super( springForceRepresentationProperty, items, {
+      spacing: 10,
+      radioButtonOptions: HookesLawConstants.AQUA_RADIO_BUTTON_OPTIONS,
+      tandem: tandem
+    } );
   }
 }
 

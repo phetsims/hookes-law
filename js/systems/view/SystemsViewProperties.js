@@ -7,7 +7,7 @@
  */
 
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
-import EnumerationDeprecatedProperty from '../../../../axon/js/EnumerationDeprecatedProperty.js';
+import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -24,7 +24,7 @@ export default class SystemsViewProperties extends ViewProperties {
     super( tandem );
 
     // @public which system is visible
-    this.systemTypeProperty = new EnumerationDeprecatedProperty( SystemType, SystemType.PARALLEL, {
+    this.systemTypeProperty = new EnumerationProperty( SystemType.PARALLEL, {
       tandem: tandem.createTandem( 'systemTypeProperty' )
     } );
 
@@ -34,10 +34,9 @@ export default class SystemsViewProperties extends ViewProperties {
     } );
 
     // @public how spring force is represented
-    this.springForceRepresentationProperty = new EnumerationDeprecatedProperty(
-      SpringForceRepresentation, SpringForceRepresentation.TOTAL, {
-        tandem: tandem.createTandem( 'springForceRepresentationProperty' )
-      } );
+    this.springForceRepresentationProperty = new EnumerationProperty( SpringForceRepresentation.TOTAL, {
+      tandem: tandem.createTandem( 'springForceRepresentationProperty' )
+    } );
   }
 
   /**
