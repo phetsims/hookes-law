@@ -101,7 +101,8 @@ export default class XYPointPlot extends Node {
       xString: options.xString,
       yString: options.yString,
       font: options.axisFont,
-      xLabelMaxWidth: options.xLabelMaxWidth
+      xLabelMaxWidth: options.xLabelMaxWidth,
+      tandem: options.tandem.createTandem( 'axesNode' )
     } );
 
     // point
@@ -110,10 +111,11 @@ export default class XYPointPlot extends Node {
     } );
 
     // x nodes
-    const xValueNode = new Text( '', {
+    const xValueText = new Text( '', {
       maxWidth: 150, // i18n
       fill: options.xValueFill,
-      font: options.valueFont
+      font: options.valueFont,
+      tandem: options.tandem.createTandem( 'xValueText' )
     } );
     const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, merge( TICK_OPTIONS, { centerY: 0 } ) );
     const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
@@ -121,10 +123,11 @@ export default class XYPointPlot extends Node {
     const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
 
     // y nodes
-    const yValueNode = new Text( '', {
+    const yValueText = new Text( '', {
       maxWidth: 150, // i18n
       fill: options.yValueFill,
-      font: options.valueFont
+      font: options.valueFont,
+      tandem: options.tandem.createTandem( 'yValueText' )
     } );
     const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, merge( TICK_OPTIONS, { centerX: 0 } ) );
     const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
@@ -133,8 +136,8 @@ export default class XYPointPlot extends Node {
     assert && assert( !options.children, 'XYPointPlot sets children' );
     options.children = [
       axesNode,
-      xLeaderLine, xTickNode, xValueBackgroundNode, xValueNode, xVectorNode,
-      yLeaderLine, yTickNode, yValueBackgroundNode, yValueNode,
+      xLeaderLine, xTickNode, xValueBackgroundNode, xValueText, xVectorNode,
+      yLeaderLine, yTickNode, yValueBackgroundNode, yValueText,
       pointNode
     ];
 
@@ -146,13 +149,13 @@ export default class XYPointPlot extends Node {
     valuesVisibleProperty.link( visible => {
 
       // x-axis nodes
-      xValueNode.visible = visible;
+      xValueText.visible = visible;
       xValueBackgroundNode.visible = visible;
       xTickNode.visible = visible;
       xLeaderLine.visible = visible;
 
       // y-axis nodes
-      yValueNode.visible = visible;
+      yValueText.visible = visible;
       yValueBackgroundNode.visible = visible;
       yTickNode.visible = visible;
       yLeaderLine.visible = visible;
@@ -175,39 +178,39 @@ export default class XYPointPlot extends Node {
 
       // x value
       const xString = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      xValueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xString, options.xUnits );
+      xValueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xString, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
       if ( options.minY === 0 ) {
-        xValueNode.centerX = xView; // centered on the tick
-        xValueNode.top = 12; // below the x
+        xValueText.centerX = xView; // centered on the tick
+        xValueText.top = 12; // below the x
       }
       else {
         const X_SPACING = 6;
-        if ( Math.abs( xView ) > ( X_SPACING + xValueNode.width / 2 ) ) {
-          xValueNode.centerX = xView; // centered on the tick
+        if ( Math.abs( xView ) > ( X_SPACING + xValueText.width / 2 ) ) {
+          xValueText.centerX = xView; // centered on the tick
         }
         else if ( xFixed >= 0 ) {
-          xValueNode.left = X_SPACING; // to the right of the y-axis
+          xValueText.left = X_SPACING; // to the right of the y-axis
         }
         else {
-          xValueNode.right = -X_SPACING; // to the left of the y-axis
+          xValueText.right = -X_SPACING; // to the left of the y-axis
         }
 
         const Y_SPACING = 12;
         if ( yProperty.value >= 0 ) {
-          xValueNode.top = Y_SPACING; // below the x-axis
+          xValueText.top = Y_SPACING; // below the x-axis
         }
         else {
-          xValueNode.bottom = -Y_SPACING; // above the x-axis
+          xValueText.bottom = -Y_SPACING; // above the x-axis
         }
       }
 
       // x value background
       xValueBackgroundNode.setRect( 0, 0,
-        xValueNode.width + ( 2 * VALUE_X_MARGIN ), xValueNode.height + ( 2 * VALUE_Y_MARGIN ),
+        xValueText.width + ( 2 * VALUE_X_MARGIN ), xValueText.height + ( 2 * VALUE_Y_MARGIN ),
         VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
-      xValueBackgroundNode.center = xValueNode.center;
+      xValueBackgroundNode.center = xValueText.center;
     } );
 
     yProperty.link( y => {
@@ -221,33 +224,33 @@ export default class XYPointPlot extends Node {
 
       // y value
       const yString = Utils.toFixed( yFixed, options.yDecimalPlaces );
-      yValueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yString, options.yUnits );
+      yValueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yString, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes
       const X_SPACING = 10;
       if ( xProperty.value >= 0 ) {
-        yValueNode.right = -X_SPACING; // to the left of the y-axis
+        yValueText.right = -X_SPACING; // to the left of the y-axis
       }
       else {
-        yValueNode.left = X_SPACING; // to the right of the y-axis
+        yValueText.left = X_SPACING; // to the right of the y-axis
       }
 
       const Y_SPACING = 4;
-      if ( Math.abs( yView ) > Y_SPACING + yValueNode.height / 2 ) {
-        yValueNode.centerY = -yView; // centered on the tick
+      if ( Math.abs( yView ) > Y_SPACING + yValueText.height / 2 ) {
+        yValueText.centerY = -yView; // centered on the tick
       }
       else if ( yFixed >= 0 ) {
-        yValueNode.bottom = -Y_SPACING; // above the x-axis
+        yValueText.bottom = -Y_SPACING; // above the x-axis
       }
       else {
-        yValueNode.top = Y_SPACING; // below the x-axis
+        yValueText.top = Y_SPACING; // below the x-axis
       }
 
       // y value background
       yValueBackgroundNode.setRect( 0, 0,
-        yValueNode.width + ( 2 * VALUE_X_MARGIN ), yValueNode.height + ( 2 * VALUE_Y_MARGIN ),
+        yValueText.width + ( 2 * VALUE_X_MARGIN ), yValueText.height + ( 2 * VALUE_Y_MARGIN ),
         VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
-      yValueBackgroundNode.center = yValueNode.center;
+      yValueBackgroundNode.center = yValueText.center;
     } );
 
     // Move point and leader lines

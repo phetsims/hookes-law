@@ -46,12 +46,13 @@ export default class DisplacementVectorNode extends Node {
       tailLineWidth: 3
     } );
 
-    const valueNode = new Text( '', {
+    const valueText = new Text( '', {
       visibleProperty: valueVisibleProperty,
       maxWidth: 150, // i18n
       fill: HookesLawColors.DISPLACEMENT,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
-      top: arrowNode.bottom + 2 // below the arrow
+      top: arrowNode.bottom + 2, // below the arrow,
+      tandem: options.tandem.createTandem( 'valueText' )
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
@@ -68,7 +69,7 @@ export default class DisplacementVectorNode extends Node {
       visible: options.verticalLineVisible
     } );
 
-    options.children = [ verticalLine, arrowNode, backgroundNode, valueNode ];
+    options.children = [ verticalLine, arrowNode, backgroundNode, valueText ];
 
     displacementProperty.link( displacement => {
 
@@ -80,14 +81,14 @@ export default class DisplacementVectorNode extends Node {
 
       // update the value
       const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      valueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
+      valueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
 
       // center value on arrow
-      valueNode.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
+      valueText.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
 
       // resize the background behind the value
-      backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
-      backgroundNode.center = valueNode.center;
+      backgroundNode.setRect( 0, 0, 1.1 * valueText.width, 1.1 * valueText.height, 5, 5 );
+      backgroundNode.center = valueText.center;
     } );
 
     super( options );

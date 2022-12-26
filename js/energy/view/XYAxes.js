@@ -42,24 +42,26 @@ export default class XYAxes extends Node {
 
     // x-axis, arrow in positive direction only
     const xAxisNode = new ArrowNode( options.minX, 0, options.maxX, 0, AXIS_OPTIONS );
-    const xAxisLabel = new Text( options.xString, {
+    const xAxisText = new Text( options.xString, {
       font: options.font,
       left: xAxisNode.right + 4,
       centerY: xAxisNode.centerY,
-      maxWidth: options.xLabelMaxWidth // constrain for i18n
+      maxWidth: options.xLabelMaxWidth, // constrain for i18n
+      tandem: options.tandem.createTandem( 'xAxisText' )
     } );
 
     // y-axis, arrow in positive direction only
     const yAxisNode = new ArrowNode( 0, -options.minY, 0, -options.maxY, AXIS_OPTIONS );
-    const yAxisLabel = new Text( options.yString, {
+    const yAxisText = new Text( options.yString, {
       font: options.font,
       centerX: yAxisNode.centerX,
       bottom: yAxisNode.top - 2,
-      maxWidth: 0.85 * xAxisNode.width // constrain for i18n
+      maxWidth: 0.85 * xAxisNode.width, // constrain for i18n
+      tandem: options.tandem.createTandem( 'yAxisText' )
     } );
 
     assert && assert( !options.children, 'XYAxes sets children' );
-    options.children = [ xAxisNode, xAxisLabel, yAxisNode, yAxisLabel ];
+    options.children = [ xAxisNode, xAxisText, yAxisNode, yAxisText ];
 
     super( options );
   }

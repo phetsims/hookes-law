@@ -56,12 +56,13 @@ export default class ForceVectorNode extends Node {
       headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height
     } );
 
-    const valueNode = new Text( '', {
+    const valueText = new Text( '', {
       visibleProperty: valueVisibleProperty,
       maxWidth: 150,
       fill: options.fill,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
-      bottom: arrowNode.top - 2 // above the arrow
+      bottom: arrowNode.top - 2, // above the arrow
+      tandem: options.tandem.createTandem( 'valueText' )
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
@@ -71,7 +72,7 @@ export default class ForceVectorNode extends Node {
       visibleProperty: valueVisibleProperty
     } );
 
-    options.children = [ arrowNode, backgroundNode, valueNode ];
+    options.children = [ arrowNode, backgroundNode, valueText ];
 
     forceProperty.link( value => {
 
@@ -82,32 +83,32 @@ export default class ForceVectorNode extends Node {
       }
 
       // update the value
-      valueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+      valueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( Math.abs( value ), options.decimalPlaces ), HookesLawStrings.newtons );
 
       // value position
       const margin = 5;
       if ( value === 0 ) {
         if ( options.alignZero === 'left' ) {
-          valueNode.left = margin;
+          valueText.left = margin;
         }
         else {
-          valueNode.right = -margin;
+          valueText.right = -margin;
         }
       }
-      else if ( valueNode.width + ( 2 * margin ) < arrowNode.width ) {
-        valueNode.centerX = arrowNode.centerX;
+      else if ( valueText.width + ( 2 * margin ) < arrowNode.width ) {
+        valueText.centerX = arrowNode.centerX;
       }
       else if ( value > 0 ) {
-        valueNode.left = margin;
+        valueText.left = margin;
       }
       else {
-        valueNode.right = -margin;
+        valueText.right = -margin;
       }
 
       // resize the background behind the value
-      backgroundNode.setRect( 0, 0, 1.1 * valueNode.width, 1.1 * valueNode.height, 5, 5 );
-      backgroundNode.center = valueNode.center;
+      backgroundNode.setRect( 0, 0, 1.1 * valueText.width, 1.1 * valueText.height, 5, 5 );
+      backgroundNode.center = valueText.center;
     } );
 
     super( options );

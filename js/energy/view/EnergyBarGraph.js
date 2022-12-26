@@ -47,12 +47,13 @@ export default class EnergyBarGraph extends Node {
       stroke: null
     } );
 
-    const yAxisLabel = new Text( HookesLawStrings.potentialEnergyStringProperty, {
+    const yAxisText = new Text( HookesLawStrings.potentialEnergyStringProperty, {
       rotation: -Math.PI / 2,
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
       right: yAxisNode.left - 1,
       centerY: yAxisNode.centerY,
-      maxWidth: 0.85 * yAxisNode.height // constrain for i18n
+      maxWidth: 0.85 * yAxisNode.height, // constrain for i18n
+      tandem: options.tandem.createTandem( 'yAxisText' )
     } );
 
     const barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
@@ -60,14 +61,15 @@ export default class EnergyBarGraph extends Node {
       centerX: xAxisNode.centerX
     } );
 
-    const valueNode = new Text( '', {
+    const valueText = new Text( '', {
       maxWidth: 100, // i18n
       fill: HookesLawColors.ENERGY,
-      font: HookesLawConstants.BAR_GRAPH_VALUE_FONT
+      font: HookesLawConstants.BAR_GRAPH_VALUE_FONT,
+      tandem: options.tandem.createTandem( 'valueText' )
     } );
 
     assert && assert( !options.children, 'EnergyBarGraph sets children' );
-    options.children = [ barNode, valueNode, xAxisNode, yAxisNode, yAxisLabel ];
+    options.children = [ barNode, valueText, xAxisNode, yAxisNode, yAxisText ];
 
     spring.potentialEnergyProperty.link( energy => {
 
@@ -77,18 +79,18 @@ export default class EnergyBarGraph extends Node {
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
-      valueNode.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+      valueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), HookesLawStrings.joules );
-      valueNode.left = barNode.right + 5;
-      if ( !barNode.visible || barNode.height < valueNode.height / 2 ) {
-        valueNode.bottom = xAxisNode.bottom;
+      valueText.left = barNode.right + 5;
+      if ( !barNode.visible || barNode.height < valueText.height / 2 ) {
+        valueText.bottom = xAxisNode.bottom;
       }
       else {
-        valueNode.centerY = barNode.top;
+        valueText.centerY = barNode.top;
       }
     } );
 
-    valueVisibleProperty.linkAttribute( valueNode, 'visible' );
+    valueVisibleProperty.linkAttribute( valueText, 'visible' );
 
     super( options );
   }
