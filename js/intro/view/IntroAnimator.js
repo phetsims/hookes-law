@@ -1,5 +1,6 @@
 // Copyright 2018-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * IntroAnimator is responsible for animating the transition between 1 and 2 systems in the Intro screen.
  *
