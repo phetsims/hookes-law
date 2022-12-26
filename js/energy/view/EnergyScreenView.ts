@@ -1,16 +1,18 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
- * View for the "Energy" screen.
+ * EnergyScreenView is the top-level view for the "Energy" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
+import EnergyModel from '../model/EnergyModel.js';
 import EnergyBarGraph from './EnergyBarGraph.js';
 import EnergyGraph from './EnergyGraph.js';
 import EnergyPlot from './EnergyPlot.js';
@@ -21,11 +23,7 @@ import ForcePlot from './ForcePlot.js';
 
 export default class EnergyScreenView extends ScreenView {
 
-  /**
-   * @param {EnergyModel} model
-   * @param {Tandem} tandem
-   */
-  constructor( model, tandem ) {
+  public constructor( model: EnergyModel, tandem: Tandem ) {
 
     super( {
       tandem: tandem
@@ -49,7 +47,6 @@ export default class EnergyScreenView extends ScreenView {
     // System
     const systemNode = new EnergySystemNode( model.system, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
-      number: 1,
       left: this.layoutBounds.left + 35,
       bottom: this.layoutBounds.bottom - 10,
       tandem: tandem.createTandem( 'systemNode' )
@@ -60,7 +57,7 @@ export default class EnergyScreenView extends ScreenView {
 
     // Energy bar graph
     const barGraph = new EnergyBarGraph( model.system.spring, viewProperties.valuesVisibleProperty, {
-      // x position depends on whether XY plots are visible
+      // x position depends on whether the other plots are visible
       bottom: systemNode.top - 35,
       tandem: graphsTandem.createTandem( 'barGraph' )
     } );
@@ -74,6 +71,7 @@ export default class EnergyScreenView extends ScreenView {
         // origin aligned with equilibrium position
         x: systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.value ),
         bottom: barGraph.bottom,
+        visibleProperty: new DerivedProperty( [ viewProperties.graphProperty ], graph => ( graph === EnergyGraph.FORCE_PLOT ) ),
         tandem: graphsTandem.createTandem( 'forcePlot' )
       } );
     this.addChild( forcePlot );
@@ -83,6 +81,7 @@ export default class EnergyScreenView extends ScreenView {
       viewProperties.valuesVisibleProperty, viewProperties.displacementVectorVisibleProperty, {
         x: forcePlot.x,
         y: barGraph.bottom,
+        visibleProperty: new DerivedProperty( [ viewProperties.graphProperty ], graph => ( graph === EnergyGraph.ENERGY_PLOT ) ),
         tandem: graphsTandem.createTandem( 'energyPlot' )
       } );
     this.addChild( energyPlot );
@@ -99,18 +98,15 @@ export default class EnergyScreenView extends ScreenView {
     } );
     this.addChild( resetAllButton );
 
-    // Observe view properties
+    // Position the Bar Graph
     viewProperties.graphProperty.link( graph => {
-
-      forcePlot.visible = ( graph === EnergyGraph.FORCE_PLOT );
-      energyPlot.visible = ( graph === EnergyGraph.ENERGY_PLOT );
-
       if ( graph === EnergyGraph.BAR_GRAPH ) {
         // aligned with equilibrium position
         barGraph.x = systemNode.x + ( unitDisplacementLength * model.system.spring.equilibriumXProperty.value );
       }
       else {
-        barGraph.left = 15;
+        // at the left edge of the ScreenView
+        barGraph.left = this.layoutBounds.left + 15;
       }
     } );
   }

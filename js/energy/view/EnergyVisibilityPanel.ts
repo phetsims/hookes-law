@@ -10,7 +10,7 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { HSeparator, VBox } from '../../../../scenery/js/imports.js';
+import { HSeparator, NodeTranslationOptions, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -29,7 +29,7 @@ const Y_SPACING = 20;
 
 type SelfOptions = EmptySelfOptions;
 
-type EnergyVisibilityPanelOptions = SelfOptions &
+type EnergyVisibilityPanelOptions = SelfOptions & NodeTranslationOptions &
   PickOptional<PanelOptions, 'maxWidth'> &
   PickRequired<PanelOptions, 'tandem'>;
 

@@ -20,7 +20,7 @@ import XYPointPlot, { XYPointPlotOptions } from './XYPointPlot.js';
 
 type SelfOptions = EmptySelfOptions;
 
-type EnergyPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<XYPointPlotOptions, 'tandem'>;
+type EnergyPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<XYPointPlotOptions, 'tandem' | 'visibleProperty'>;
 
 export default class EnergyPlot extends XYPointPlot {
 

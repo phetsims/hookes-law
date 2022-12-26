@@ -80,7 +80,7 @@ type SelfOptions = {
   pointRadius?: number;
 };
 
-export type XYPointPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
+export type XYPointPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem' | 'visibleProperty'>;
 
 export default class XYPointPlot extends Node {
 
