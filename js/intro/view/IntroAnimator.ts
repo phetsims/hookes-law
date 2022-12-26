@@ -1,6 +1,5 @@
 // Copyright 2018-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * IntroAnimator is responsible for animating the transition between 1 and 2 systems in the Intro screen.
  *
@@ -8,6 +7,10 @@
  */
 
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import Bounds2 from '../../../../dot/js/Bounds2.js';
+import { Node } from '../../../../scenery/js/imports.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import Animation from '../../../../twixt/js/Animation.js';
 import Easing from '../../../../twixt/js/Easing.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -19,16 +22,12 @@ const OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seco
 
 export default class IntroAnimator {
 
-  /**
-   * @param {NumberProperty} numberOfSystemsProperty
-   * @param {Node} system1Node
-   * @param {Node} system2Node
-   * @param {Bounds2} layoutBounds - of the associated ScreenView
-   * @param {Tandem} tandem
-   */
-  constructor( numberOfSystemsProperty, system1Node, system2Node, layoutBounds, tandem ) {
+  // which Animation in the chain should be stepped
+  private activeAnimation: Animation | null;
 
-    // @private which {Animation|null} in the chain should be stepped
+  public constructor( numberOfSystemsProperty: TReadOnlyProperty<number>, system1Node: Node, system2Node: Node,
+                      layoutBounds: Bounds2, tandem: Tandem ) {
+
     this.activeAnimation = null;
 
     // Vertical position of system 1, instrumented for PhET-iO to support record/playback, see #53.
@@ -50,14 +49,14 @@ export default class IntroAnimator {
       system2Node.opacity = opacity;
     } );
 
-    let system1Animaton = null; // {Animation|null} animation for system 1 translation
-    let system2Animation = null; // {Animation|null} animation for system 2 opacity (fade)
+    let system1Animation: Animation | null = null; // animation for system 1 translation
+    let system2Animation: Animation | null = null; // animation for system 2 opacity (fade)
 
     // unlink not needed
     numberOfSystemsProperty.link( numberOfSystems => {
 
       // Stop any animations that are in progress.
-      system1Animaton && system1Animaton.stop();
+      system1Animation && system1Animation.stop();
       system2Animation && system2Animation.stop();
 
       if ( numberOfSystems === 1 ) {
@@ -76,7 +75,7 @@ export default class IntroAnimator {
         } );
 
         // Translate system 1.
-        system1Animaton = new Animation( {
+        system1Animation = new Animation( {
           stepEmitter: STEPPER,
           duration: TRANSLATION_DURATION,
           targets: [ {
@@ -89,12 +88,13 @@ export default class IntroAnimator {
         // When the fade of system 2 completes, switch to translation of system 1.
         system2Animation.finishEmitter.addListener( () => {
           system2Node.visible = false; // Make system 2 invisible, so you can't interact with it.
-          this.activeAnimation = system1Animaton;
-          system1Animaton.start();
+          this.activeAnimation = system1Animation;
+          assert && assert( system1Animation );
+          system1Animation!.start();
         } );
 
         // When the translation of system 1 completes, notify that the animation has completed.
-        system1Animaton.finishEmitter.addListener( () => {
+        system1Animation.finishEmitter.addListener( () => {
           this.activeAnimation = null;
         } );
 
@@ -106,7 +106,7 @@ export default class IntroAnimator {
         // Move system 1 to top of layoutBounds, then fade in system 2.
 
         // Translate system 1.
-        system1Animaton = new Animation( {
+        system1Animation = new Animation( {
           stepEmitter: STEPPER,
           duration: TRANSLATION_DURATION,
           targets: [ {
@@ -128,10 +128,11 @@ export default class IntroAnimator {
         } );
 
         // When translation of system 1 completes, switch to fade of system 2.
-        system1Animaton.finishEmitter.addListener( () => {
+        system1Animation.finishEmitter.addListener( () => {
           system2Node.visible = true; // Make system 2 visible.
           this.activeAnimation = system2Animation;
-          system2Animation.start();
+          assert && assert( system2Animation );
+          system2Animation!.start();
         } );
 
         // When fade of system 2 completes, notify that the animation has completed.
@@ -140,15 +141,14 @@ export default class IntroAnimator {
         } );
 
         // Start the translation of system 1.
-        this.activeAnimation = system1Animaton;
+        this.activeAnimation = system1Animation;
       }
 
       this.activeAnimation.start();
     } );
   }
 
-  // @public
-  step( dt ) {
+  public step( dt: number ): void {
     this.activeAnimation && this.activeAnimation.step( dt );
   }
 }
