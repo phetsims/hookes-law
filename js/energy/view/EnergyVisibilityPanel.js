@@ -8,7 +8,7 @@
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { HBox, HSeparator, HStrut, VBox } from '../../../../scenery/js/imports.js';
+import { HSeparator, VBox } from '../../../../scenery/js/imports.js';
 import Panel from '../../../../sun/js/Panel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
@@ -47,6 +47,12 @@ export default class EnergyVisibilityPanel extends Panel {
       tandem: options.tandem.createTandem( 'energyCheckbox' )
     } );
 
+    const energyCheckboxWrapper = new VBox( {
+      children: [ energyCheckbox ],
+      layoutOptions: { leftMargin: 25 }, // indented from check boxes
+      visibleProperty: energyGraphRadioButtonGroup.getButton( EnergyGraph.FORCE_PLOT ).visibleProperty
+    } );
+
     const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
       HookesLawStrings.appliedForceStringProperty, {
         vectorType: 'force',
@@ -81,9 +87,7 @@ export default class EnergyVisibilityPanel extends Panel {
     const content = new VBox( {
       children: [
         energyGraphRadioButtonGroup,
-
-        // "Energy" checkbox indented below energyGraphRadioButtonGroup
-        new HBox( { children: [ new HStrut( 25 ), energyCheckbox ] } ),
+        energyCheckboxWrapper,
         new HSeparator( HookesLawConstants.HSEPARATOR_OPTIONS ),
         appliedForceCheckbox,
         displacementCheckbox,
