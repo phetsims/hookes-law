@@ -1,5 +1,6 @@
 // Copyright 2020-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * EnergyGraph enumerates the graph choices in the Energy screen.
  *
