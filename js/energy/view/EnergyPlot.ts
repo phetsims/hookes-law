@@ -1,41 +1,48 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * EnergyPlot is an XY plot of displacement (x-axis) vs energy (y-axis).
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { Shape } from '../../../../kite/js/imports.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { Path } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { NodeTranslationOptions, Path } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
+import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
-import XYPointPlot from './XYPointPlot.js';
+import XYPointPlot, { XYPointPlotOptions } from './XYPointPlot.js';
+
+type SelfOptions = EmptySelfOptions;
+
+type EnergyPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<XYPointPlotOptions, 'tandem'>;
 
 export default class EnergyPlot extends XYPointPlot {
 
   /**
-   * @param {Spring} spring
-   * @param {number} unitDisplacementLength - view length of a 1m displacement vector
-   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
-   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
-   * @param {Object} [options]
+   * @param spring
+   * @param unitDisplacementLength - view length of a 1m displacement vector
+   * @param valuesVisibleProperty - whether values are visible on the plot
+   * @param displacementVectorVisibleProperty - whether the horizontal displacement is displayed
+   * @param providedOptions
    */
-  constructor( spring, unitDisplacementLength, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
+  public constructor( spring: Spring,
+                      unitDisplacementLength: number,
+                      valuesVisibleProperty: TReadOnlyProperty<boolean>,
+                      displacementVectorVisibleProperty: TReadOnlyProperty<boolean>,
+                      providedOptions: EnergyPlotOptions ) {
 
-    options = merge( {
+    const options = optionize<EnergyPlotOptions, SelfOptions, XYPointPlotOptions>()( {
 
+      // XYPointPlotOptions
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
       valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
-
-      // point
-      pointFill: HookesLawColors.SINGLE_SPRING,
 
       // x-axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
@@ -57,10 +64,9 @@ export default class EnergyPlot extends XYPointPlot {
       yUnitLength: HookesLawConstants.UNIT_ENERGY_Y, // length of a 1J energy vector
       yValueBackgroundColor: 'rgba( 255, 255, 255, 0.7)', // translucent background, because value sometimes overlaps the curve
 
-      // phet-io
-      tandem: Tandem.REQUIRED
-
-    }, options );
+      // point
+      pointFill: HookesLawColors.SINGLE_SPRING
+    }, providedOptions );
 
     super( spring.displacementProperty, spring.potentialEnergyProperty,
       valuesVisibleProperty, displacementVectorVisibleProperty, options );

@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  *  ForcePlot is an XY plot of displacement (x-axis) vs force (y-axis),
  *  with energy (E) being the area under the curve.
@@ -11,36 +10,44 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import Utils from '../../../../dot/js/Utils.js';
 import { Shape } from '../../../../kite/js/imports.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { Line, Path } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { Line, NodeTranslationOptions, Path } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
-import XYPointPlot from './XYPointPlot.js';
+import XYPointPlot, { XYPointPlotOptions } from './XYPointPlot.js';
+import Spring from '../../common/model/Spring.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+
+type SelfOptions = EmptySelfOptions;
+
+type ForcePlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<XYPointPlotOptions, 'tandem'>;
 
 export default class ForcePlot extends XYPointPlot {
 
   /**
-   * @param {Spring} spring
-   * @param {number} unitDisplacementLength - view length of a 1m displacement vector
-   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
-   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
-   * @param {BooleanProperty} energyVisibleProperty - whether the area that represents energy is filled in
-   * @param {Object} [options]
+   * @param spring
+   * @param unitDisplacementLength - view length of a 1m displacement vector
+   * @param valuesVisibleProperty - whether values are visible on the plot
+   * @param displacementVectorVisibleProperty - whether the horizontal displacement is displayed
+   * @param energyVisibleProperty - whether the area that represents energy is filled in
+   * @param providedOptions
    */
-  constructor( spring, unitDisplacementLength,
-               valuesVisibleProperty, displacementVectorVisibleProperty, energyVisibleProperty, options ) {
+  public constructor( spring: Spring,
+                      unitDisplacementLength: number,
+                      valuesVisibleProperty: TReadOnlyProperty<boolean>,
+                      displacementVectorVisibleProperty: TReadOnlyProperty<boolean>,
+                      energyVisibleProperty: TReadOnlyProperty<boolean>,
+                      providedOptions: ForcePlotOptions ) {
 
-    options = merge( {
+    const options = optionize<ForcePlotOptions, SelfOptions, XYPointPlotOptions>()( {
 
+      // XYPointPlotOptions
       // both axes
       axisFont: HookesLawConstants.XY_PLOT_AXIS_FONT,
       valueFont: HookesLawConstants.XY_PLOT_VALUE_FONT,
-
-      // point
-      pointFill: HookesLawColors.SINGLE_SPRING,
 
       // x-axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
@@ -61,10 +68,9 @@ export default class ForcePlot extends XYPointPlot {
       yValueFill: HookesLawColors.APPLIED_FORCE,
       yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
 
-      // phet-io
-      tandem: Tandem.REQUIRED
-
-    }, options );
+      // point
+      pointFill: HookesLawColors.SINGLE_SPRING
+    }, providedOptions );
 
     super( spring.displacementProperty, spring.appliedForceProperty,
       valuesVisibleProperty, displacementVectorVisibleProperty, options );

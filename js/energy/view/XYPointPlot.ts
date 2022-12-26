@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Abstract base type for the Force and Energy XY plots.
  *
@@ -18,12 +17,14 @@
  */
 
 import Multilink from '../../../../axon/js/Multilink.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import merge from '../../../../phet-core/js/merge.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { Circle, Line, Node, Rectangle, Text } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { Circle, Font, Line, Node, NodeOptions, NodeTranslationOptions, Rectangle, TColor, Text } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -44,24 +45,64 @@ const TICK_OPTIONS = {
   stroke: 'black',
   lineWidth: 1
 };
+const DEFAULT_AXIS_FONT = new PhetFont( 12 );
+const DEFAULT_VALUE_FONT = new PhetFont( 12 );
+
+type SelfOptions = {
+
+  // both axes
+  axisFont?: Font;
+  valueFont?: Font;
+
+  // x-axis
+  minX?: number;
+  maxX?: number;
+  xString?: string;
+  xDecimalPlaces?: number;
+  xUnits?: string;
+  xValueFill?: TColor;
+  xUnitLength?: number;
+  xLabelMaxWidth?: number | null;
+  xValueBackgroundColor?: TColor;
+
+  // y-axis
+  minY?: number;
+  maxY?: number;
+  yString?: string;
+  yDecimalPlaces?: number;
+  yUnits?: string;
+  yValueFill?: TColor;
+  yUnitLength?: number;
+  yValueBackgroundColor?: TColor;
+
+  // point
+  pointFill?: TColor;
+  pointRadius?: number;
+};
+
+export type XYPointPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
 
 export default class XYPointPlot extends Node {
 
   /**
-   * @param {NumberProperty} xProperty - x coordinate value
-   * @param {NumberProperty} yProperty - y coordinate value
-   * @param {BooleanProperty} valuesVisibleProperty - whether values are visible on the plot
-   * @param {BooleanProperty} displacementVectorVisibleProperty - whether the horizontal displacement is displayed
-   * @param {Object} [options]
-   * @abstract
+   * @param xProperty - x coordinate value
+   * @param yProperty - y coordinate value
+   * @param valuesVisibleProperty - whether values are visible on the plot
+   * @param displacementVectorVisibleProperty - whether the horizontal displacement is displayed
+   * @param providedOptions
    */
-  constructor( xProperty, yProperty, valuesVisibleProperty, displacementVectorVisibleProperty, options ) {
+  protected constructor( xProperty: TReadOnlyProperty<number>,
+               yProperty: TReadOnlyProperty<number>,
+               valuesVisibleProperty: TReadOnlyProperty<boolean>,
+               displacementVectorVisibleProperty: TReadOnlyProperty<boolean>,
+               providedOptions: XYPointPlotOptions ) {
 
-    options = merge( {
+    const options = optionize<XYPointPlotOptions, SelfOptions, NodeOptions>()( {
 
+      // SelfOptions
       // both axes
-      axisFont: new PhetFont( 12 ),
-      valueFont: new PhetFont( 12 ),
+      axisFont: DEFAULT_AXIS_FONT,
+      valueFont: DEFAULT_VALUE_FONT,
 
       // x-axis
       minX: -1,
@@ -86,12 +127,14 @@ export default class XYPointPlot extends Node {
 
       // point
       pointFill: 'black',
-      pointRadius: 5,
+      pointRadius: 5
+    }, providedOptions );
 
-      // phet-io
-      tandem: Tandem.REQUIRED
-
-    }, options );
+    assert && assert( options.xDecimalPlaces >= 0 );
+    assert && assert( options.yDecimalPlaces >= 0 );
+    assert && assert( options.xUnitLength > 0 );
+    assert && assert( options.yUnitLength > 0 );
+    assert && assert( options.pointRadius > 0 );
 
     // XY axes
     const axesNode = new XYAxes( {
@@ -134,7 +177,6 @@ export default class XYPointPlot extends Node {
     const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
     const yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
 
-    assert && assert( !options.children, 'XYPointPlot sets children' );
     options.children = [
       axesNode,
       xLeaderLine, xTickNode, xValueBackgroundNode, xValueText, xVectorNode,
