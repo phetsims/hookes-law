@@ -1,17 +1,19 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Spring controls for the "Energy" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import merge from '../../../../phet-core/js/merge.js';
-import { HBox } from '../../../../scenery/js/imports.js';
-import Panel from '../../../../sun/js/Panel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import Property from '../../../../axon/js/Property.js';
+import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { HBox, HBoxOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
+import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
+import Spring from '../../common/model/Spring.js';
 import DisplacementControl from '../../common/view/DisplacementControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -19,20 +21,25 @@ import hookesLaw from '../../hookesLaw.js';
 // constants
 const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
+type SelfOptions = EmptySelfOptions;
+
+type EnergySpringControlsOptions = SelfOptions & NodeTranslationOptions &
+  PickOptional<HBoxOptions, 'maxWidth'> & PickRequired<HBoxOptions, 'tandem'>;
+
 export default class EnergySpringControls extends HBox {
   /**
-   * @param {Spring} spring
-   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
-   * @param {Object} [options]
+   * @param spring
+   * @param numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+   * @param providedOptions
    */
-  constructor( spring, numberOfInteractionsInProgressProperty, options ) {
+  public constructor( spring: Spring, numberOfInteractionsInProgressProperty: Property<number>,
+                      providedOptions: EnergySpringControlsOptions ) {
 
-    options = merge( {
+    const options = optionize<EnergySpringControlsOptions, SelfOptions, HBoxOptions>()( {
 
-      // HBox options
-      spacing: 10,
-      tandem: Tandem.REQUIRED
-    }, options );
+      // HBoxOptions
+      spacing: 10
+    }, providedOptions );
 
     // Tandems for Panels that contain the controls
     const springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
@@ -53,11 +60,9 @@ export default class EnergySpringControls extends HBox {
       tandem: displacementPanelTandem.createTandem( 'displacementControl' )
     } );
 
-    assert && assert( !options.children, 'EnergySpringControls sets children' );
-
     options.children = [
-      new Panel( springConstantControl, merge( { tandem: springConstantPanelTandem }, SPRING_PANEL_OPTIONS ) ),
-      new Panel( displacementControl, merge( { tandem: displacementPanelTandem }, SPRING_PANEL_OPTIONS ) )
+      new Panel( springConstantControl, combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: springConstantPanelTandem } ) ),
+      new Panel( displacementControl, combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: displacementPanelTandem } ) )
     ];
 
     super( options );
