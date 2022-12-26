@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * IntroVisibilityPanel contains controls for the visibility of various representations in the "Intro" screen.
  *
@@ -8,10 +7,11 @@
  */
 
 import Multilink from '../../../../axon/js/Multilink.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { AlignGroup, VBox } from '../../../../scenery/js/imports.js';
-import Panel from '../../../../sun/js/Panel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { AlignBoxOptions, AlignGroup, VBox } from '../../../../scenery/js/imports.js';
+import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
@@ -19,21 +19,23 @@ import ValuesCheckbox from '../../common/view/ValuesCheckbox.js';
 import VectorCheckbox from '../../common/view/VectorCheckbox.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
+import IntroViewProperties from './IntroViewProperties.js';
+
+type SelfOptions = EmptySelfOptions;
+
+type IntroVisibilityPanelOptions = SelfOptions &
+  PickOptional<PanelOptions, 'maxWidth'> &
+  PickRequired<PanelOptions, 'tandem'>;
 
 export default class IntroVisibilityPanel extends Panel {
 
-  /**
-   * @param {IntroViewProperties} properties
-   * @param {Object} [options]
-   */
-  constructor( properties, options ) {
+  public constructor( properties: IntroViewProperties, providedOptions: IntroVisibilityPanelOptions ) {
 
-    options = merge( {
-      tandem: Tandem.REQUIRED
-    }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
+    const options = optionize3<IntroVisibilityPanelOptions, SelfOptions, PanelOptions>()(
+      {}, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, providedOptions );
 
     // So that text labels on the vector checkboxes all have the same effective size
-    const textAlignBoxOptions = {
+    const textAlignBoxOptions: AlignBoxOptions = {
       group: new AlignGroup(),
       xAlign: 'left'
     };

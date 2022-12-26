@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * EnergyVisibilityPanel contains controls for the visibility of various representations in the "Energy" screen.
  *
@@ -8,10 +7,11 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
-import merge from '../../../../phet-core/js/merge.js';
+import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { HSeparator, VBox } from '../../../../scenery/js/imports.js';
-import Panel from '../../../../sun/js/Panel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
@@ -22,21 +22,23 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import EnergyCheckbox from './EnergyCheckbox.js';
 import EnergyGraph from './EnergyGraph.js';
 import EnergyGraphRadioButtonGroup from './EnergyGraphRadioButtonGroup.js';
+import EnergyViewProperties from './EnergyViewProperties.js';
 
 // constants
 const Y_SPACING = 20;
 
+type SelfOptions = EmptySelfOptions;
+
+type EnergyVisibilityPanelOptions = SelfOptions &
+  PickOptional<PanelOptions, 'maxWidth'> &
+  PickRequired<PanelOptions, 'tandem'>;
+
 export default class EnergyVisibilityPanel extends Panel {
 
-  /**
-   * @param {EnergyViewProperties} properties
-   * @param {Object} [options]
-   */
-  constructor( properties, options ) {
+  public constructor( properties: EnergyViewProperties, providedOptions: EnergyVisibilityPanelOptions ) {
 
-    options = merge( {
-      tandem: Tandem.REQUIRED
-    }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
+    const options = optionize3<EnergyVisibilityPanelOptions, SelfOptions, PanelOptions>()(
+      {}, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, providedOptions );
 
     const energyGraphRadioButtonGroup = new EnergyGraphRadioButtonGroup( properties.graphProperty, {
       spacing: Y_SPACING,

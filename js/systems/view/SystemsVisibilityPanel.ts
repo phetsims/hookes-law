@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * SystemsVisibilityPanel contains controls for the visibility of various representations in the "Systems" screen.
  * This panel is a bit similar to IntroVisibilityPanel, but it provides choices for how the spring force is represented.
@@ -9,10 +8,11 @@
  */
 
 import Multilink from '../../../../axon/js/Multilink.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { AlignGroup, VBox } from '../../../../scenery/js/imports.js';
-import Panel from '../../../../sun/js/Panel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { AlignBoxOptions, AlignGroup, VBox } from '../../../../scenery/js/imports.js';
+import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
@@ -21,21 +21,23 @@ import VectorCheckbox from '../../common/view/VectorCheckbox.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
+import SystemsViewProperties from './SystemsViewProperties.js';
+
+type SelfOptions = EmptySelfOptions;
+
+type SystemsVisibilityPanelOptions = SelfOptions &
+  PickOptional<PanelOptions, 'maxWidth'> &
+  PickRequired<PanelOptions, 'tandem'>;
 
 export default class SystemsVisibilityPanel extends Panel {
 
-  /**
-   * @param {SystemsViewProperties} properties
-   * @param {Object} [options]
-   */
-  constructor( properties, options ) {
+  public constructor( properties: SystemsViewProperties, providedOptions: SystemsVisibilityPanelOptions ) {
 
-    options = merge( {
-      tandem: Tandem.REQUIRED
-    }, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, options );
+    const options = optionize3<SystemsVisibilityPanelOptions, SelfOptions, PanelOptions>()(
+      {}, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, providedOptions );
 
     // So that text labels on the vector checkboxes all have the same effective size
-    const textAlignBoxOptions = {
+    const textAlignBoxOptions: AlignBoxOptions = {
       group: new AlignGroup(),
       xAlign: 'left'
     };
