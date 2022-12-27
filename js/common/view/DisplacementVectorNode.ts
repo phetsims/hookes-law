@@ -9,6 +9,7 @@
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
@@ -23,7 +24,8 @@ type SelfOptions = {
   unitDisplacementLength?: number;
 };
 
-type DisplacementVectorNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
+type DisplacementVectorNodeOptions = SelfOptions & NodeTranslationOptions &
+  PickOptional<NodeOptions, 'visibleProperty'> & PickRequired<NodeOptions, 'tandem'>;
 
 export default class DisplacementVectorNode extends Node {
 

@@ -25,10 +25,22 @@ export default class IntroAnimator {
   // which Animation in the chain should be stepped
   private activeAnimation: Animation | null;
 
-  public constructor( numberOfSystemsProperty: TReadOnlyProperty<number>, system1Node: Node, system2Node: Node,
+  public constructor( numberOfSystemsProperty: TReadOnlyProperty<number>,
+                      system1Node: Node, system2Node: Node,
                       layoutBounds: Bounds2, tandem: Tandem ) {
 
     this.activeAnimation = null;
+
+    // Initial state
+    if ( numberOfSystemsProperty.value === 1 ) {
+      system1Node.centerY = layoutBounds.centerY;
+      system2Node.visible = false;
+    }
+    else {
+      system1Node.centerY = ( 0.25 * layoutBounds.height );
+      system2Node.visible = true;
+    }
+    system2Node.centerY = 0.75 * layoutBounds.height;
 
     // Vertical position of system 1, instrumented for PhET-iO to support record/playback, see #53.
     const system1CenterYProperty = new NumberProperty( system1Node.centerY, {

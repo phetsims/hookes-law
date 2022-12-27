@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * View for the "Intro" screen.
  *
@@ -10,8 +9,10 @@
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import { VBox } from '../../../../scenery/js/imports.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
+import IntroModel from '../model/IntroModel.js';
 import IntroAnimator from './IntroAnimator.js';
 import IntroSystemNode from './IntroSystemNode.js';
 import IntroViewProperties from './IntroViewProperties.js';
@@ -20,11 +21,10 @@ import NumberOfSystemsRadioButtonGroup from './NumberOfSystemsRadioButtonGroup.j
 
 export default class IntroScreenView extends ScreenView {
 
-  /**
-   * @param {IntroModel} model
-   * @param {Tandem} tandem
-   */
-  constructor( model, tandem ) {
+  // Animates the transitions between 1 and 2 systems
+  private readonly animator: IntroAnimator;
+
+  public constructor( model: IntroModel, tandem: Tandem ) {
 
     super( {
       tandem: tandem
@@ -59,7 +59,7 @@ export default class IntroScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       systemNumber: 1,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
-      centerY: ( viewProperties.numberOfSystemsProperty.value === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height ),
+      // y position is handled by this.animator
       tandem: tandem.createTandem( 'system1Node' )
     } );
     this.addChild( system1Node );
@@ -70,8 +70,7 @@ export default class IntroScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       systemNumber: 2,
       left: system1Node.left,
-      centerY: 0.75 * this.layoutBounds.height,
-      visible: ( viewProperties.numberOfSystemsProperty.value === 2 ),
+      // y position is handled by this.animator
       tandem: tandem.createTandem( 'system2Node' )
     } );
     this.addChild( system2Node );
@@ -89,18 +88,17 @@ export default class IntroScreenView extends ScreenView {
     } );
     this.addChild( resetAllButton );
 
-    // @private Animates the transitions between 1 and 2 systems
     this.animator = new IntroAnimator( viewProperties.numberOfSystemsProperty, system1Node, system2Node,
       this.layoutBounds, tandem.createTandem( 'animator' ) );
   }
 
   /**
    * Advances animation.
-   * @param {number} dt - time step, in seconds
-   * @public
+   * @param dt - time step, in seconds
    */
-  step( dt ) {
+  public override step( dt: number ): void {
     this.animator.step( dt );
+    super.step( dt );
   }
 }
 

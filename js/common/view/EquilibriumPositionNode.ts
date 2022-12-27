@@ -7,6 +7,7 @@
  */
 
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { Line, LineOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -14,7 +15,8 @@ import HookesLawColors from '../HookesLawColors.js';
 
 type SelfOptions = EmptySelfOptions;
 
-type EquilibriumPositionNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<LineOptions, 'tandem'>;
+type EquilibriumPositionNodeOptions = SelfOptions & NodeTranslationOptions &
+  PickOptional<LineOptions, 'visibleProperty'> & PickRequired<LineOptions, 'tandem'>;
 
 export default class EquilibriumPositionNode extends Line {
 

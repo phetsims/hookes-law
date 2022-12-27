@@ -9,6 +9,7 @@
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
@@ -25,7 +26,9 @@ type SelfOptions = {
   alignZero?: 'left' | 'right'; // how to align zero ('0 N') values, relative to the arrow tail
 };
 
-export type ForceVectorNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
+export type ForceVectorNodeOptions = SelfOptions & NodeTranslationOptions &
+  PickOptional<NodeOptions, 'visibleProperty'> &
+  PickRequired<NodeOptions, 'tandem'>;
 
 export default class ForceVectorNode extends Node {
 

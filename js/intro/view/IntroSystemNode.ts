@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * IntroSystemNode is the single-spring system for the "Intro" screen.
  * It includes one spring, a robotic arm, and all visual representations that go with them.
@@ -12,11 +11,12 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { Node, NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
+import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import AppliedForceVectorNode from '../../common/view/AppliedForceVectorNode.js';
 import DisplacementVectorNode from '../../common/view/DisplacementVectorNode.js';
 import EquilibriumPositionNode from '../../common/view/EquilibriumPositionNode.js';
@@ -27,22 +27,24 @@ import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import IntroSpringControls from './IntroSpringControls.js';
+import IntroViewProperties from './IntroViewProperties.js';
+
+type SelfOptions = {
+  systemNumber: number; // integer used to label the system
+  unitDisplacementLength?: number; // view length of 1 meter of displacement
+};
+
+type IntroSystemNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
 
 export default class IntroSystemNode extends Node {
-  /**
-   * @param {SingleSpringSystem} system
-   * @param {IntroViewProperties} viewProperties
-   * @param {Object} [options]
-   */
-  constructor( system, viewProperties, options ) {
 
-    options = merge( {
-      unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      systemNumber: 1, // integer used to label the system
+  public constructor( system: SingleSpringSystem, viewProperties: IntroViewProperties, providedOptions: IntroSystemNodeOptions ) {
 
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
+    const options = optionize<IntroSystemNodeOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
+      unitDisplacementLength: 1
+    }, providedOptions );
 
     // to improve readability
     const spring = system.spring;
@@ -95,6 +97,7 @@ export default class IntroSystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * spring.equilibriumXProperty.value,
       centerY: yOrigin,
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
@@ -103,6 +106,7 @@ export default class IntroSystemNode extends Node {
         // x is determined by spring.rightProperty
         // bottom determined empirically, springNode.top is not accurate because we're using boundsMethod:'none'
         bottom: springNode.y - 50,
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
@@ -110,6 +114,7 @@ export default class IntroSystemNode extends Node {
       spring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
         y: appliedForceVectorNode.y,
+        visibleProperty: viewProperties.springForceVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'springForceVectorNode' )
       } );
 
@@ -119,6 +124,7 @@ export default class IntroSystemNode extends Node {
         x: equilibriumPositionNode.centerX,
         // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
         top: springNode.y + 50,
+        visibleProperty: viewProperties.displacementVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
@@ -130,7 +136,6 @@ export default class IntroSystemNode extends Node {
       tandem: options.tandem.createTandem( 'springControls' )
     } );
 
-    assert && assert( !options.children, 'IntroSystemNode sets children' );
     options.children = [
       equilibriumPositionNode, roboticArmNode, springNode, wallNode, nibNode,
       appliedForceVectorNode, springForceVectorNode, displacementVectorNode,
@@ -139,12 +144,6 @@ export default class IntroSystemNode extends Node {
 
     //------------------------------------------------
     // Property observers
-
-    // Attach visibility properties to their respective nodes.
-    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
-    viewProperties.springForceVectorVisibleProperty.linkAttribute( springForceVectorNode, 'visible' );
-    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
-    viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // Position the force vectors at the right end of the spring.
     spring.rightProperty.link( right => {
