@@ -9,7 +9,7 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
-import { VBox } from '../../../../scenery/js/imports.js';
+import { Node, VBox } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -46,12 +46,12 @@ export default class SystemsScreenView extends ScreenView {
       tandem.createTandem( 'systemTypeRadioButtonGroup' ) );
 
     // horizontally center the controls
-    this.addChild( new VBox( {
+    const controls = new VBox( {
       spacing: 10,
       children: [ visibilityPanel, systemTypeRadioButtonGroup ],
       right: this.layoutBounds.right - 10,
       top: this.layoutBounds.top + 10
-    } ) );
+    } );
 
     // Series system
     const seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {
@@ -61,7 +61,6 @@ export default class SystemsScreenView extends ScreenView {
       visibleProperty: new DerivedProperty( [ viewProperties.systemTypeProperty ], systemType => ( systemType === SystemType.SERIES ) ),
       tandem: tandem.createTandem( 'seriesSystemNode' )
     } );
-    this.addChild( seriesSystemNode );
 
     // Parallel system
     const parallelSystemNode = new ParallelSystemNode( model.parallelSystem, viewProperties, {
@@ -72,7 +71,6 @@ export default class SystemsScreenView extends ScreenView {
       tandem: tandem.createTandem( 'parallelSystemNode' )
     } );
     assert && assert( parallelSystemNode.height < this.layoutBounds.height, 'parallel system is too tall' );
-    this.addChild( parallelSystemNode );
 
     // Reset All button, bottom right
     const resetAllButton = new ResetAllButton( {
@@ -84,7 +82,16 @@ export default class SystemsScreenView extends ScreenView {
       bottom: this.layoutBounds.maxY - 15,
       tandem: tandem.createTandem( 'resetAllButton' )
     } );
-    this.addChild( resetAllButton );
+
+    const screenViewRootNode = new Node( {
+      children: [
+        controls,
+        seriesSystemNode,
+        parallelSystemNode,
+        resetAllButton
+      ]
+    } );
+    this.addChild( screenViewRootNode );
   }
 }
 

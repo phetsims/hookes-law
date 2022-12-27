@@ -8,7 +8,7 @@
 
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
-import { VBox } from '../../../../scenery/js/imports.js';
+import { Node, VBox } from '../../../../scenery/js/imports.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -47,12 +47,12 @@ export default class IntroScreenView extends ScreenView {
       tandem.createTandem( 'numberOfSystemsRadioButtonGroup' ) );
 
     // horizontally center the controls
-    this.addChild( new VBox( {
+    const controls = new VBox( {
       spacing: 10,
       children: [ visibilityPanel, numberOfSystemsRadioButtonGroup ],
       right: this.layoutBounds.right - 10,
       top: this.layoutBounds.top + 10
-    } ) );
+    } );
 
     // System 1
     const system1Node = new IntroSystemNode( model.system1, viewProperties, {
@@ -62,7 +62,6 @@ export default class IntroScreenView extends ScreenView {
       // y position is handled by this.animator
       tandem: tandem.createTandem( 'system1Node' )
     } );
-    this.addChild( system1Node );
     assert && assert( system1Node.height <= this.layoutBounds.height / 2, 'system1Node is taller than the space available for it' );
 
     // System 2
@@ -73,7 +72,6 @@ export default class IntroScreenView extends ScreenView {
       // y position is handled by this.animator
       tandem: tandem.createTandem( 'system2Node' )
     } );
-    this.addChild( system2Node );
     assert && assert( system2Node.height <= this.layoutBounds.height / 2, 'system2Node is taller than the space available for it' );
 
     // Reset All button, bottom right
@@ -86,7 +84,16 @@ export default class IntroScreenView extends ScreenView {
       bottom: this.layoutBounds.maxY - 15,
       tandem: tandem.createTandem( 'resetAllButton' )
     } );
-    this.addChild( resetAllButton );
+
+    const screenViewRootNode = new Node( {
+      children: [
+        controls,
+        system1Node,
+        system2Node,
+        resetAllButton
+      ]
+    } );
+    this.addChild( screenViewRootNode );
 
     this.animator = new IntroAnimator( viewProperties.numberOfSystemsProperty, system1Node, system2Node,
       this.layoutBounds, tandem.createTandem( 'animator' ) );

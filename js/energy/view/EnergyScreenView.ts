@@ -10,6 +10,7 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import { Node } from '../../../../scenery/js/imports.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import EnergyModel from '../model/EnergyModel.js';
@@ -42,7 +43,6 @@ export default class EnergyScreenView extends ScreenView {
       maxWidth: 235, // constrain width for i18n, determining empirically
       tandem: tandem.createTandem( 'visibilityPanel' )
     } );
-    this.addChild( visibilityPanel );
 
     // System
     const systemNode = new EnergySystemNode( model.system, viewProperties, {
@@ -51,7 +51,6 @@ export default class EnergyScreenView extends ScreenView {
       bottom: this.layoutBounds.bottom - 10,
       tandem: tandem.createTandem( 'systemNode' )
     } );
-    this.addChild( systemNode );
 
     const graphsTandem = tandem.createTandem( 'graphs' );
 
@@ -61,7 +60,6 @@ export default class EnergyScreenView extends ScreenView {
       bottom: systemNode.top - 35,
       tandem: graphsTandem.createTandem( 'barGraph' )
     } );
-    this.addChild( barGraph );
 
     // Force plot
     const forcePlot = new ForcePlot( model.system.spring, unitDisplacementLength,
@@ -74,7 +72,6 @@ export default class EnergyScreenView extends ScreenView {
         visibleProperty: new DerivedProperty( [ viewProperties.graphProperty ], graph => ( graph === EnergyGraph.FORCE_PLOT ) ),
         tandem: graphsTandem.createTandem( 'forcePlot' )
       } );
-    this.addChild( forcePlot );
 
     // Energy plot
     const energyPlot = new EnergyPlot( model.system.spring, unitDisplacementLength,
@@ -84,7 +81,6 @@ export default class EnergyScreenView extends ScreenView {
         visibleProperty: new DerivedProperty( [ viewProperties.graphProperty ], graph => ( graph === EnergyGraph.ENERGY_PLOT ) ),
         tandem: graphsTandem.createTandem( 'energyPlot' )
       } );
-    this.addChild( energyPlot );
 
     // Reset All button, bottom right
     const resetAllButton = new ResetAllButton( {
@@ -96,7 +92,18 @@ export default class EnergyScreenView extends ScreenView {
       bottom: this.layoutBounds.maxY - 15,
       tandem: tandem.createTandem( 'resetAllButton' )
     } );
-    this.addChild( resetAllButton );
+
+    const screenViewRootNode = new Node( {
+      children: [
+        visibilityPanel,
+        systemNode,
+        barGraph,
+        forcePlot,
+        energyPlot,
+        resetAllButton
+      ]
+    } );
+    this.addChild( screenViewRootNode );
 
     // Position the Bar Graph
     viewProperties.graphProperty.link( graph => {
