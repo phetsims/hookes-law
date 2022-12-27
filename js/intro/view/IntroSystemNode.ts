@@ -46,6 +46,9 @@ export default class IntroSystemNode extends Node {
       unitDisplacementLength: 1
     }, providedOptions );
 
+    assert && assert( Number.isInteger( options.systemNumber ) && options.systemNumber >= 1 );
+    assert && assert( options.unitDisplacementLength > 0 );
+
     // to improve readability
     const spring = system.spring;
     const roboticArm = system.roboticArm;

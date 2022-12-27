@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * SeriesSystemNode is two springs in series, a robotic arm, and all visual representations that go with them.
  * The origin is at the point where the spring attaches to the wall.
@@ -11,9 +10,9 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { Node, NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceVectorNode from '../../common/view/AppliedForceVectorNode.js';
@@ -25,22 +24,26 @@ import RoboticArmNode from '../../common/view/RoboticArmNode.js';
 import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
+import SeriesSystem from '../model/SeriesSystem.js';
 import SeriesSpringControls from './SeriesSpringControls.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
+import SystemsViewProperties from './SystemsViewProperties.js';
+
+type SelfOptions = {
+  unitDisplacementLength?: number; // view length of 1 meter of displacement
+};
+
+type SeriesSystemNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem' | 'visibleProperty'>;
 
 export default class SeriesSystemNode extends Node {
 
-  /**
-   * @param {SeriesSystem} system
-   * @param {SystemsViewProperties} viewProperties
-   * @param {Object} [options]
-   */
-  constructor( system, viewProperties, options ) {
+  public constructor( system: SeriesSystem, viewProperties: SystemsViewProperties, providedOptions: SeriesSystemNodeOptions ) {
 
-    options = merge( {
-      unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      tandem: Tandem.REQUIRED
-    }, options );
+    const options = optionize<SeriesSystemNodeOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
+      unitDisplacementLength: 1
+    }, providedOptions );
 
     // to improve readability
     const leftSpring = system.leftSpring;
@@ -105,6 +108,7 @@ export default class SeriesSystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.value,
       centerY: yOrigin,
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
@@ -139,6 +143,7 @@ export default class SeriesSystemNode extends Node {
       equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by rightSpring.rightProperty
         y: rightSpringForceVectorNode.y,
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
@@ -155,6 +160,7 @@ export default class SeriesSystemNode extends Node {
         x: equilibriumPositionNode.centerX,
         // top determined empirically, leftSpringNode.bottom is not accurate because we're using boundMethod:'none'
         top: leftSpringNode.y + 50,
+        visibleProperty: viewProperties.displacementVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
@@ -165,7 +171,6 @@ export default class SeriesSystemNode extends Node {
       tandem: options.tandem.createTandem( 'springControls' )
     } );
 
-    assert && assert( !options.children, 'SeriesSystemNode sets children' );
     options.children = [
       equilibriumPositionNode, roboticArmNode, leftSpringNode, rightSpringNode, wallNode, nibNode,
       leftSpringForceVectorNode, leftAppliedForceVectorNode, rightSpringForceVectorNode,
@@ -175,11 +180,6 @@ export default class SeriesSystemNode extends Node {
 
     //------------------------------------------------
     // Property observers
-
-    // Attach visibility properties to their respective nodes.
-    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
-    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
-    viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // move the right spring
     rightSpring.leftProperty.link( left => {

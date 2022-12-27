@@ -1,17 +1,19 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * View for the "Systems" screen.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import ScreenView from '../../../../joist/js/ScreenView.js';
 import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.js';
 import { VBox } from '../../../../scenery/js/imports.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
+import SystemsModel from '../model/SystemsModel.js';
 import ParallelSystemNode from './ParallelSystemNode.js';
 import SeriesSystemNode from './SeriesSystemNode.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
@@ -20,11 +22,8 @@ import SystemType from './SystemType.js';
 import SystemTypeRadioButtonGroup from './SystemTypeRadioButtonGroup.js';
 
 export default class SystemsScreenView extends ScreenView {
-  /**
-   * @param {SystemsModel} model
-   * @param {Tandem} tandem
-   */
-  constructor( model, tandem ) {
+
+  public constructor( model: SystemsModel, tandem: Tandem ) {
 
     super( {
       tandem: tandem
@@ -59,7 +58,7 @@ export default class SystemsScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.systemTypeProperty.value === SystemType.SERIES,
+      visibleProperty: new DerivedProperty( [ viewProperties.systemTypeProperty ], systemType => ( systemType === SystemType.SERIES ) ),
       tandem: tandem.createTandem( 'seriesSystemNode' )
     } );
     this.addChild( seriesSystemNode );
@@ -69,7 +68,7 @@ export default class SystemsScreenView extends ScreenView {
       unitDisplacementLength: unitDisplacementLength,
       left: seriesSystemNode.left,
       centerY: this.layoutBounds.centerY,
-      visible: viewProperties.systemTypeProperty.value === SystemType.PARALLEL,
+      visibleProperty: new DerivedProperty( [ viewProperties.systemTypeProperty ], systemType => ( systemType === SystemType.PARALLEL ) ),
       tandem: tandem.createTandem( 'parallelSystemNode' )
     } );
     assert && assert( parallelSystemNode.height < this.layoutBounds.height, 'parallel system is too tall' );
@@ -86,12 +85,6 @@ export default class SystemsScreenView extends ScreenView {
       tandem: tandem.createTandem( 'resetAllButton' )
     } );
     this.addChild( resetAllButton );
-
-    // Make one of the 2 systems visible
-    viewProperties.systemTypeProperty.lazyLink( systemType => {
-      seriesSystemNode.visible = ( systemType === SystemType.SERIES );
-      parallelSystemNode.visible = ( systemType === SystemType.PARALLEL );
-    } );
   }
 }
 

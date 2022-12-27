@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Two springs in parallel, a robotic arm, and all of the visual representations that go with them.
  * Origin is at the point where the springs attach to the wall.
@@ -12,9 +11,9 @@ import Multilink from '../../../../axon/js/Multilink.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { Line, Node } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import optionize from '../../../../phet-core/js/optionize.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { Line, Node, NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceVectorNode from '../../common/view/AppliedForceVectorNode.js';
@@ -26,25 +25,32 @@ import RoboticArmNode from '../../common/view/RoboticArmNode.js';
 import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
 import hookesLaw from '../../hookesLaw.js';
+import ParallelSystem from '../model/ParallelSystem.js';
 import ParallelSpringControls from './ParallelSpringControls.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
+import SystemsViewProperties from './SystemsViewProperties.js';
 
 // constants
 const WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
 
+type SelfOptions = {
+  unitDisplacementLength?: number; // view length of 1 meter of displacement
+};
+
+type ParallelSystemNodeNodeOptions = SelfOptions & NodeTranslationOptions &
+  PickRequired<NodeOptions, 'tandem' | 'visibleProperty'>;
+
 export default class ParallelSystemNode extends Node {
 
-  /**
-   * @param {ParallelSystem} system
-   * @param {SystemViewProperties} viewProperties
-   * @param {Object} [options]
-   */
-  constructor( system, viewProperties, options ) {
+  public constructor( system: ParallelSystem, viewProperties: SystemsViewProperties, providedOptions: ParallelSystemNodeNodeOptions ) {
 
-    options = merge( {
-      unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      tandem: Tandem.REQUIRED
-    }, options );
+    const options = optionize<ParallelSystemNodeNodeOptions, SelfOptions, NodeOptions>()( {
+
+      // SelfOptions
+      unitDisplacementLength: 1
+    }, providedOptions );
+
+    assert && assert( options.unitDisplacementLength > 0 );
 
     // to improve readability
     const topSpring = system.topSpring;
@@ -116,6 +122,7 @@ export default class ParallelSystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.value,
       centerY: yOrigin,
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
@@ -124,6 +131,7 @@ export default class ParallelSystemNode extends Node {
         // x is determined by bottomSpring.rightProperty
         // bottom determined empirically, topSpringNode.top is not accurate because we're using boundsMethod:'none'
         bottom: topSpringNode.y - 80,
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
@@ -158,6 +166,7 @@ export default class ParallelSystemNode extends Node {
         x: equilibriumPositionNode.centerX,
         // top determined empirically, bottomSpringNode.bottom is not accurate because we're using boundMethod:'none'
         top: bottomSpringNode.y + 50,
+        visibleProperty: viewProperties.displacementVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
@@ -168,7 +177,6 @@ export default class ParallelSystemNode extends Node {
       tandem: options.tandem.createTandem( 'springControls' )
     } );
 
-    assert && assert( !options.children, 'ParallelSystemNode sets children' );
     options.children = [
       equilibriumPositionNode, roboticArmNode, topSpringNode, bottomSpringNode, wallNode, trussNode, nibNode,
       topSpringForceVectorNode, bottomSpringForceVectorNode,
@@ -178,11 +186,6 @@ export default class ParallelSystemNode extends Node {
 
     //------------------------------------------------
     // Property observers
-
-    // Attach visibility properties to their respective nodes.
-    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
-    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
-    viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // switch between different spring force representations
     Multilink.multilink( [ viewProperties.springForceVectorVisibleProperty, viewProperties.springForceRepresentationProperty ],

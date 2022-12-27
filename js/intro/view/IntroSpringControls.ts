@@ -47,6 +47,8 @@ export default class IntroSpringControls extends HBox {
       spacing: 10
     }, providedOptions );
 
+    assert && assert( Number.isInteger( options.systemNumber ) && options.systemNumber >= 1 );
+
     // Tandems for Panels that contain the controls
     const springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
     const appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
