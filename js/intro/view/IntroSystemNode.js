@@ -37,7 +37,7 @@ export default class IntroSystemNode extends Node {
 
     options = merge( {
       unitDisplacementLength: 1, // {number} view length of 1 meter of displacement
-      number: 1, // integer used to label the system
+      systemNumber: 1, // integer used to label the system
 
       // phet-io
       tandem: Tandem.REQUIRED
@@ -122,7 +122,7 @@ export default class IntroSystemNode extends Node {
       } );
 
     const springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {
-      number: options.number,
+      systemNumber: options.systemNumber,
       centerX: wallNode.left + ( roboticArmNode.right - wallNode.left ) / 2,
       top: wallNode.bottom + 10,
       maxWidth: roboticArmNode.right - wallNode.left, // constrain width for i18n

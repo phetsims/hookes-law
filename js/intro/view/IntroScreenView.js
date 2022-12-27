@@ -56,7 +56,7 @@ export default class IntroScreenView extends ScreenView {
     // System 1
     const system1Node = new IntroSystemNode( model.system1, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
-      number: 1,
+      systemNumber: 1,
       left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: ( viewProperties.numberOfSystemsProperty.value === 1 ) ? this.layoutBounds.centerY : ( 0.25 * this.layoutBounds.height ),
       tandem: tandem.createTandem( 'system1Node' )
@@ -67,7 +67,7 @@ export default class IntroScreenView extends ScreenView {
     // System 2
     const system2Node = new IntroSystemNode( model.system2, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
-      number: 2,
+      systemNumber: 2,
       left: system1Node.left,
       centerY: 0.75 * this.layoutBounds.height,
       visible: ( viewProperties.numberOfSystemsProperty.value === 2 ),

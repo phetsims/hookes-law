@@ -1,6 +1,5 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Spring controls for the "Intro" screen.
  *
@@ -10,36 +9,44 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import merge from '../../../../phet-core/js/merge.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
-import { HBox } from '../../../../scenery/js/imports.js';
+import { HBox, HBoxOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
 import Panel from '../../../../sun/js/Panel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
+import Spring from '../../common/model/Spring.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import Property from '../../../../axon/js/Property.js';
+import optionize from '../../../../phet-core/js/optionize.js';
 
 // constants
 const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
+type SelfOptions = {
+  systemNumber: number; // used to label the controls, eg "Spring Constant 1"
+};
+
+type IntroSpringControlsOptions = SelfOptions & NodeTranslationOptions &
+  PickOptional<HBoxOptions, 'maxWidth'> & PickRequired<HBoxOptions, 'tandem'>;
+
 export default class IntroSpringControls extends HBox {
 
   /**
-   * @param {Spring} spring
-   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
-   * @param {Object} [options]
+   * @param spring
+   * @param numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+   * @param providedOptions
    */
-  constructor( spring, numberOfInteractionsInProgressProperty, options ) {
+  public constructor( spring: Spring, numberOfInteractionsInProgressProperty: Property<number>,
+                      providedOptions: IntroSpringControlsOptions ) {
 
-    options = merge( {
-      number: 1, // {number} used to label the controls, eg "Spring Constant 1"
+    const options = optionize<IntroSpringControlsOptions, SelfOptions, HBoxOptions>()( {
 
-      // HBox options
-      spacing: 10,
-
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
+      // HBoxOptions
+      spacing: 10
+    }, providedOptions );
 
     // Tandems for Panels that contain the controls
     const springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
@@ -48,7 +55,7 @@ export default class IntroSpringControls extends HBox {
     const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       titleStringProperty: new DerivedProperty(
         [ HookesLawStrings.springConstantNumberStringProperty ],
-        pattern => StringUtils.format( pattern, options.number )
+        pattern => StringUtils.format( pattern, options.systemNumber )
       ),
       majorTickValues: [
         spring.springConstantRange.min,
@@ -63,12 +70,11 @@ export default class IntroSpringControls extends HBox {
       numberOfInteractionsInProgressProperty, {
         titleStringProperty: new DerivedProperty(
           [ HookesLawStrings.appliedForceNumberStringProperty ],
-          pattern => StringUtils.format( pattern, options.number )
+          pattern => StringUtils.format( pattern, options.systemNumber )
         ),
         tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
       } );
 
-    assert && assert( !options.children, 'IntroSpringControls sets children' );
     options.children = [
       new Panel( springConstantControl, merge( { tandem: springConstantPanelTandem }, SPRING_PANEL_OPTIONS ) ),
       new Panel( appliedForceControl, merge( { tandem: appliedForcePanelTandem }, SPRING_PANEL_OPTIONS ) )
