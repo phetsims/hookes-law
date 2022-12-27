@@ -19,12 +19,11 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
-import merge from '../../../../phet-core/js/merge.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
-import { Circle, Font, Line, Node, NodeOptions, NodeTranslationOptions, Rectangle, TColor, Text } from '../../../../scenery/js/imports.js';
+import { Circle, Font, Line, LineOptions, Node, NodeOptions, NodeTranslationOptions, Rectangle, TColor, Text } from '../../../../scenery/js/imports.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -92,10 +91,10 @@ export default class XYPointPlot extends Node {
    * @param providedOptions
    */
   protected constructor( xProperty: TReadOnlyProperty<number>,
-               yProperty: TReadOnlyProperty<number>,
-               valuesVisibleProperty: TReadOnlyProperty<boolean>,
-               displacementVectorVisibleProperty: TReadOnlyProperty<boolean>,
-               providedOptions: XYPointPlotOptions ) {
+                         yProperty: TReadOnlyProperty<number>,
+                         valuesVisibleProperty: TReadOnlyProperty<boolean>,
+                         displacementVectorVisibleProperty: TReadOnlyProperty<boolean>,
+                         providedOptions: XYPointPlotOptions ) {
 
     const options = optionize<XYPointPlotOptions, SelfOptions, NodeOptions>()( {
 
@@ -161,7 +160,7 @@ export default class XYPointPlot extends Node {
       font: options.valueFont,
       tandem: options.tandem.createTandem( 'xValueText' )
     } );
-    const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, merge( TICK_OPTIONS, { centerY: 0 } ) );
+    const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, combineOptions<LineOptions>( {}, TICK_OPTIONS, { centerY: 0 } ) );
     const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
     const xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
     const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
@@ -173,7 +172,7 @@ export default class XYPointPlot extends Node {
       font: options.valueFont,
       tandem: options.tandem.createTandem( 'yValueText' )
     } );
-    const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, merge( TICK_OPTIONS, { centerX: 0 } ) );
+    const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, combineOptions<LineOptions>( {}, TICK_OPTIONS, { centerX: 0 } ) );
     const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
     const yValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.yValueBackgroundColor } );
 

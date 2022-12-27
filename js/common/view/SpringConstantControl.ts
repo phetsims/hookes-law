@@ -12,6 +12,7 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import NumberControl, { NumberControlOptions } from '../../../../scenery-phet/js/NumberControl.js';
@@ -28,7 +29,9 @@ type SelfOptions = {
   minorTickSpacing: number;
 };
 
-type SpringConstantControlOptions = SelfOptions & PickRequired<NumberControlOptions, 'tandem'>;
+type SpringConstantControlOptions = SelfOptions &
+  PickOptional<NumberControlOptions, 'sliderOptions'> &
+  PickRequired<NumberControlOptions, 'tandem'>;
 
 export default class SpringConstantControl extends NumberControl {
 

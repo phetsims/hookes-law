@@ -7,11 +7,10 @@
  */
 
 import ScreenIcon from '../../../../joist/js/ScreenIcon.js';
-import merge from '../../../../phet-core/js/merge.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 import ArrowNode, { ArrowNodeOptions } from '../../../../scenery-phet/js/ArrowNode.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
-import ParametricSpringNode from '../../../../scenery-phet/js/ParametricSpringNode.js';
+import ParametricSpringNode, { ParametricSpringNodeOptions } from '../../../../scenery-phet/js/ParametricSpringNode.js';
 import { HBox, Line, Node, Path, Rectangle, TColor, VBox } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
@@ -26,7 +25,7 @@ const COMMON_SPRING_OPTIONS = {
 };
 
 // Spring options for all icons related to scene selection
-const SCENE_SELECTION_SPRING_OPTIONS = merge( {
+const SCENE_SELECTION_SPRING_OPTIONS = combineOptions<ParametricSpringNodeOptions>( {
   frontColor: HookesLawColors.SCENE_SELECTION_SPRING_FRONT,
   middleColor: HookesLawColors.SCENE_SELECTION_SPRING_MIDDLE,
   backColor: HookesLawColors.SCENE_SELECTION_SPRING_BACK,
@@ -55,7 +54,7 @@ const HookesLawIconFactory = {
   createIntroScreenIcon(): ScreenIcon {
 
     // spring
-    const springNode = new ParametricSpringNode( merge( {
+    const springNode = new ParametricSpringNode( combineOptions<ParametricSpringNodeOptions>( {
       frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
       middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
       backColor: HookesLawColors.SINGLE_SPRING_BACK
@@ -85,12 +84,12 @@ const HookesLawIconFactory = {
   createSystemsScreenIcon(): ScreenIcon {
 
     // springs
-    const topSpringNode = new ParametricSpringNode( merge( {
+    const topSpringNode = new ParametricSpringNode( combineOptions<ParametricSpringNodeOptions>( {
       frontColor: HookesLawColors.TOP_SPRING_FRONT,
       middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
       backColor: HookesLawColors.TOP_SPRING_BACK
     }, COMMON_SPRING_OPTIONS ) );
-    const bottomSpringNode = new ParametricSpringNode( merge( {
+    const bottomSpringNode = new ParametricSpringNode( combineOptions<ParametricSpringNodeOptions>( {
       frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
       middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
       backColor: HookesLawColors.BOTTOM_SPRING_BACK

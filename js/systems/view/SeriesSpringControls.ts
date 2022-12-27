@@ -1,45 +1,49 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
-// @ts-nocheck
 /**
  * Spring controls for a system with 2 springs in series.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import Property from '../../../../axon/js/Property.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
-import merge from '../../../../phet-core/js/merge.js';
-import { HBox, VSeparator } from '../../../../scenery/js/imports.js';
-import Panel from '../../../../sun/js/Panel.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
+import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { HBox, HBoxOptions, NodeTranslationOptions, VSeparator } from '../../../../scenery/js/imports.js';
+import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
+import SeriesSystem from '../model/SeriesSystem.js';
 
 // constants
 const SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
 const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
+type SelfOptions = EmptySelfOptions;
+
+type SeriesSpringControlsOptions = SelfOptions & NodeTranslationOptions &
+  PickOptional<HBoxOptions, 'maxWidth'> & PickRequired<HBoxOptions, 'tandem'>;
+
 export default class SeriesSpringControls extends HBox {
 
   /**
-   * @param {SeriesSystem} system
-   * @param {NumberProperty} numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
-   * @param {Object} [options]
+   * @param system
+   * @param numberOfInteractionsInProgressProperty - number of interactions in progress that affect displacement
+   * @param providedOptions
    */
-  constructor( system, numberOfInteractionsInProgressProperty, options ) {
+  public constructor( system: SeriesSystem, numberOfInteractionsInProgressProperty: Property<number>, providedOptions: SeriesSpringControlsOptions ) {
 
-    options = merge( {
+    const options = optionize<SeriesSpringControlsOptions, SelfOptions, HBoxOptions>()( {
 
-      // HBox options
-      spacing: 10,
-
-      // phet-io
-      tandem: Tandem.REQUIRED
-    }, options );
+      // HBoxOptions
+      spacing: 10
+    }, providedOptions );
 
     // Tandems for Panels that contain the controls
     const springConstantsPanelTandem = options.tandem.createTandem( 'springConstantsPanel' );
@@ -92,10 +96,11 @@ export default class SeriesSpringControls extends HBox {
         tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
       } );
 
-    assert && assert( !options.children, 'SeriesSpringControls sets children' );
     options.children = [
-      new Panel( springControls, merge( { tandem: springConstantsPanelTandem }, SPRING_PANEL_OPTIONS ) ),
-      new Panel( appliedForceControl, merge( { tandem: appliedForcePanelTandem }, SPRING_PANEL_OPTIONS ) )
+      new Panel( springControls,
+        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: springConstantsPanelTandem } ) ),
+      new Panel( appliedForceControl,
+        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: appliedForcePanelTandem } ) )
     ];
 
     super( options );

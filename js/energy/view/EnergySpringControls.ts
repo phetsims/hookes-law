@@ -61,8 +61,10 @@ export default class EnergySpringControls extends HBox {
     } );
 
     options.children = [
-      new Panel( springConstantControl, combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: springConstantPanelTandem } ) ),
-      new Panel( displacementControl, combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: displacementPanelTandem } ) )
+      new Panel( springConstantControl,
+        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: springConstantPanelTandem } ) ),
+      new Panel( displacementControl,
+        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: displacementPanelTandem } ) )
     ];
 
     super( options );

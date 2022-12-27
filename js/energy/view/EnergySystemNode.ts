@@ -99,6 +99,7 @@ export default class EnergySystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * spring.equilibriumXProperty.value,
       centerY: yOrigin,
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
       tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
     } );
 
@@ -108,6 +109,7 @@ export default class EnergySystemNode extends Node {
         // x is determined by spring.rightProperty
         // bottom determined empirically, springNode.top is not accurate because we're using boundMethod:'none'
         bottom: springNode.y - 50,
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
 
@@ -117,6 +119,7 @@ export default class EnergySystemNode extends Node {
         x: equilibriumPositionNode.centerX,
         // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
         top: springNode.y + 50,
+        visibleProperty: viewProperties.displacementVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );
 
@@ -135,11 +138,6 @@ export default class EnergySystemNode extends Node {
 
     //------------------------------------------------
     // Property observers
-
-    // Attach visibility properties to their respective nodes.
-    viewProperties.appliedForceVectorVisibleProperty.linkAttribute( appliedForceVectorNode, 'visible' );
-    viewProperties.displacementVectorVisibleProperty.linkAttribute( displacementVectorNode, 'visible' );
-    viewProperties.equilibriumPositionVisibleProperty.linkAttribute( equilibriumPositionNode, 'visible' );
 
     // Position the force vectors at the right end of the spring.
     spring.rightProperty.link( right => {
