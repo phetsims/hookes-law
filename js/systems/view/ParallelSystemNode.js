@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * Two springs in parallel, a robotic arm, and all of the visual representations that go with them.
  * Origin is at the point where the springs attach to the wall.

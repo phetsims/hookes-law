@@ -1,5 +1,6 @@
 // Copyright 2015-2022, University of Colorado Boulder
 
+// @ts-nocheck
 /**
  * SeriesSystemNode is two springs in series, a robotic arm, and all visual representations that go with them.
  * The origin is at the point where the spring attaches to the wall.
