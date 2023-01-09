@@ -14,8 +14,8 @@ import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import hookesLaw from '../../hookesLaw.js';
 
 type SelfOptions = {
-  left: number;  // {number} initial x position of the left (movable) end of the arm, units = m
-  right: number; // {number} initial x position of the right (fixed) end of the arm, units = m
+  left?: number;  // {number} initial x position of the left (movable) end of the arm, units = m
+  right?: number; // {number} initial x position of the right (fixed) end of the arm, units = m
 };
 
 type RoboticArmOptions = SelfOptions & PickRequired<PhetioObjectOptions, 'tandem'>;
