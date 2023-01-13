@@ -20,12 +20,12 @@ export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioBut
     const items: RectangularRadioButtonGroupItem<number>[] = [
       {
         value: 1,
-        createNode: tandem => HookesLawIconFactory.createSingleSpringIcon(),
+        createNode: () => HookesLawIconFactory.createSingleSpringIcon(),
         tandemName: `oneSystem${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
       },
       {
         value: 2,
-        createNode: tandem => HookesLawIconFactory.createTwoSpringsIcon(),
+        createNode: () => HookesLawIconFactory.createTwoSpringsIcon(),
         tandemName: `twoSystems${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
       }
     ];

@@ -21,12 +21,12 @@ export default class SystemTypeRadioButtonGroup extends RectangularRadioButtonGr
     const items: RectangularRadioButtonGroupItem<SystemType>[] = [
       {
         value: SystemType.PARALLEL,
-        createNode: tandem => HookesLawIconFactory.createParallelSystemIcon(),
+        createNode: () => HookesLawIconFactory.createParallelSystemIcon(),
         tandemName: `parallel${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
       },
       {
         value: SystemType.SERIES,
-        createNode: tandem => HookesLawIconFactory.createSeriesSystemIcon(),
+        createNode: () => HookesLawIconFactory.createSeriesSystemIcon(),
         tandemName: `series${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
       }
     ];
