@@ -15,7 +15,7 @@ import IntroScreenView from './view/IntroScreenView.js';
 import HookesLawColors from '../common/HookesLawColors.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 
-export default class IntroScreen extends Screen {
+export default class IntroScreen extends Screen<IntroModel, IntroScreenView> {
 
   public constructor( tandem: Tandem ) {
 

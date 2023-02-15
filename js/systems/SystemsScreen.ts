@@ -15,7 +15,7 @@ import SystemsScreenView from './view/SystemsScreenView.js';
 import HookesLawColors from '../common/HookesLawColors.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 
-export default class SystemsScreen extends Screen {
+export default class SystemsScreen extends Screen<SystemsModel, SystemsScreenView> {
 
   public constructor( tandem: Tandem ) {
 
