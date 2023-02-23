@@ -39,7 +39,7 @@ export default class HookesLawSpringNode extends ParametricSpringNode {
       pointsPerLoop: 40, // number of points per loop
       radius: 10, // radius of a loop with aspect ratio of 1:1
       aspectRatio: 4, // y:x aspect ratio of the loop radius
-      boundsMethod: 'none' // method used to compute bounds for scenery.Path components, see Path.boundsMethod
+      boundsMethod: 'none' // method used to compute bounds for phet.scenery.Path components, see Path.boundsMethod
     }, providedOptions );
 
     super( options );
