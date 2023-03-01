@@ -77,7 +77,7 @@ export default class EnergyBarGraph extends Node {
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
-      valueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+      valueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), HookesLawStrings.joules );
       valueText.left = barNode.right + 5;
       if ( !barNode.visible || barNode.height < valueText.height / 2 ) {

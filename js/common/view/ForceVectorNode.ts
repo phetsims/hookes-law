@@ -86,7 +86,7 @@ export default class ForceVectorNode extends Node {
       }
 
       // update the value
-      valueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+      valueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( Math.abs( value ), options.decimalPlaces ), HookesLawStrings.newtons );
 
       // value position

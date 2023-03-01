@@ -83,7 +83,7 @@ export default class DisplacementVectorNode extends Node {
 
       // update the value
       const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      valueText.text = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
+      valueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
 
       // center value on arrow
       valueText.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
