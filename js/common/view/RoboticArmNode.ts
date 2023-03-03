@@ -169,7 +169,7 @@ export default class RoboticArmNode extends Node {
       },
 
       // phet-io
-      tandem: options.tandem.createTandem( 'dragHandler' )
+      tandem: options.tandem.createTandem( 'dragListener' )
     } );
     draggableNode.addInputListener( dragHandler );
 
