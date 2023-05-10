@@ -17,6 +17,11 @@
     "requirejsNamespace": "HOOKES_LAW",
     "preload": [
       "../sherpa/lib/Tween-r12.js"
+    ],
+    "screenNameKeys": [
+      "HOOKES_LAW/intro",
+      "HOOKES_LAW/systems",
+      "HOOKES_LAW/energy"
     ]
   }
 }
