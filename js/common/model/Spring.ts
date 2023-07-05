@@ -38,7 +38,6 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Disposable from '../../../../axon/js/Disposable.js';
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
@@ -95,6 +94,9 @@ export default class Spring extends PhetioObject {
       springConstantRange: new RangeWithValue( 100, 1000, 200 ),
       appliedForceRange: null,
       displacementRange: null,
+
+      // PhetioObjectOptions
+      isDisposable: false,
       phetioState: false // since this type has no inherent state to save, to avoid circular JSON error
     }, providedOptions );
 
@@ -281,11 +283,6 @@ export default class Spring extends PhetioObject {
         tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
       } );
     phet.log && this.potentialEnergyProperty.link( potentialEnergy => phet.log( `${options.logName} potentialEnergy=${potentialEnergy}` ) );
-  }
-
-  public override dispose(): void {
-    Disposable.assertNotDisposable();
-    super.dispose();
   }
 
   public reset(): void {
