@@ -12,11 +12,11 @@ import hookesLaw from '../../hookesLaw.js';
 import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOptions } from '../../../../sun/js/AquaRadioButtonGroup.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import { Text, TextOptions } from '../../../../scenery/js/imports.js';
+import { Text } from '../../../../scenery/js/imports.js';
 import Property from '../../../../axon/js/Property.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
-import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = EmptySelfOptions;
 
@@ -35,26 +35,17 @@ export default class EnergyGraphRadioButtonGroup extends AquaRadioButtonGroup<En
     const items: AquaRadioButtonGroupItem<EnergyGraph>[] = [
       {
         value: EnergyGraph.BAR_GRAPH,
-        createNode: tandem => new Text( HookesLawStrings.barGraphStringProperty,
-          combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
-            tandem: tandem.createTandem( 'text' )
-          } ) ),
+        createNode: () => new Text( HookesLawStrings.barGraphStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'barGraphRadioButton'
       },
       {
         value: EnergyGraph.ENERGY_PLOT,
-        createNode: tandem => new Text( HookesLawStrings.energyPlotStringProperty,
-          combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
-            tandem: tandem.createTandem( 'text' )
-          } ) ),
+        createNode: () => new Text( HookesLawStrings.energyPlotStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'energyPlotRadioButton'
       },
       {
         value: EnergyGraph.FORCE_PLOT,
-        createNode: tandem => new Text( HookesLawStrings.forcePlotStringProperty,
-          combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
-            tandem: tandem.createTandem( 'text' )
-          } ) ),
+        createNode: () => new Text( HookesLawStrings.forcePlotStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
         tandemName: 'forcePlotRadioButton'
       }
     ];

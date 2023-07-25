@@ -18,6 +18,7 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 
 // constants
 const BAR_WIDTH = 20;
@@ -50,8 +51,7 @@ export default class EnergyBarGraph extends Node {
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
       right: yAxisNode.left - 1,
       centerY: yAxisNode.centerY,
-      maxWidth: 0.85 * yAxisNode.height, // constrain for i18n
-      tandem: options.tandem.createTandem( 'yAxisText' )
+      maxWidth: 0.85 * yAxisNode.height // constrain for i18n
     } );
 
     const barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
@@ -59,12 +59,15 @@ export default class EnergyBarGraph extends Node {
       centerX: xAxisNode.centerX
     } );
 
-    const valueText = new Text( '', {
+    const valueStringProperty = new StringProperty( '', {
+      tandem: options.tandem.createTandem( 'valueStringProperty' ),
+      phetioReadOnly: true
+    } );
+    const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 100, // i18n
       fill: HookesLawColors.ENERGY,
-      font: HookesLawConstants.BAR_GRAPH_VALUE_FONT,
-      tandem: options.tandem.createTandem( 'valueText' )
+      font: HookesLawConstants.BAR_GRAPH_VALUE_FONT
     } );
 
     options.children = [ barNode, valueText, xAxisNode, yAxisNode, yAxisText ];
@@ -77,7 +80,7 @@ export default class EnergyBarGraph extends Node {
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
-      valueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+      valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), HookesLawStrings.joules );
       valueText.left = barNode.right + 5;
       if ( !barNode.visible || barNode.height < valueText.height / 2 ) {

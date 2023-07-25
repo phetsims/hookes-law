@@ -8,10 +8,10 @@
  */
 
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
-import optionize, { combineOptions, EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import BracketNode from '../../../../scenery-phet/js/BracketNode.js';
-import { HBox, Text, TextOptions, VBox } from '../../../../scenery/js/imports.js';
+import { HBox, Text, VBox } from '../../../../scenery/js/imports.js';
 import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOptions } from '../../../../sun/js/AquaRadioButtonGroup.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
@@ -59,10 +59,7 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
         value: SpringForceRepresentation.TOTAL,
         createNode: tandem => new HBox( {
           children: [
-            new Text( HookesLawStrings.totalStringProperty,
-              combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
-                tandem: tandem.createTandem( 'text' )
-              } ) ),
+            new Text( HookesLawStrings.totalStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
             HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
           ],
           spacing: 10
@@ -73,10 +70,7 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
         value: SpringForceRepresentation.COMPONENTS,
         createNode: tandem => new HBox( {
           children: [
-            new Text( HookesLawStrings.componentsStringProperty,
-              combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
-                tandem: tandem.createTandem( 'text' )
-              } ) ),
+            new Text( HookesLawStrings.componentsStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
             new BracketNode( {
               orientation: 'left',
               bracketLength: componentsIcons.height

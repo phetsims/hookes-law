@@ -54,8 +54,7 @@ export default class XYAxes extends Node {
       font: options.font,
       left: xAxisNode.right + 4,
       centerY: xAxisNode.centerY,
-      maxWidth: options.xLabelMaxWidth, // constrain for i18n
-      tandem: options.tandem.createTandem( 'xAxisText' )
+      maxWidth: options.xLabelMaxWidth // constrain for i18n
     } );
 
     // y-axis, arrow in positive direction only
@@ -64,8 +63,7 @@ export default class XYAxes extends Node {
       font: options.font,
       centerX: yAxisNode.centerX,
       bottom: yAxisNode.top - 2,
-      maxWidth: 0.85 * xAxisNode.width, // constrain for i18n
-      tandem: options.tandem.createTandem( 'yAxisText' )
+      maxWidth: 0.85 * xAxisNode.width // constrain for i18n
     } );
 
     options.children = [ xAxisNode, xAxisText, yAxisNode, yAxisText ];

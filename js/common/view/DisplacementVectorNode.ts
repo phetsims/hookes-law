@@ -18,6 +18,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 
 type SelfOptions = {
   verticalLineVisible?: boolean;
@@ -48,13 +49,16 @@ export default class DisplacementVectorNode extends Node {
       tailLineWidth: 3
     } );
 
-    const valueText = new Text( '', {
+    const valueStringProperty = new StringProperty( '', {
+      tandem: options.tandem.createTandem( 'valueStringProperty' ),
+      phetioReadOnly: true
+    } );
+    const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 150, // i18n
       fill: HookesLawColors.DISPLACEMENT,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
-      top: arrowNode.bottom + 2, // below the arrow,
-      tandem: options.tandem.createTandem( 'valueText' )
+      top: arrowNode.bottom + 2 // below the arrow
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
@@ -83,7 +87,7 @@ export default class DisplacementVectorNode extends Node {
 
       // update the value
       const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      valueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
+      valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
 
       // center value on arrow
       valueText.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;

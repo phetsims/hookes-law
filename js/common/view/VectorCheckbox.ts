@@ -8,11 +8,11 @@
 
 import Property from '../../../../axon/js/Property.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import { combineOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
+import { optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
-import { AlignBox, AlignBoxOptions, HBox, TColor, Text, TextOptions } from '../../../../scenery/js/imports.js';
+import { AlignBox, AlignBoxOptions, HBox, TColor, Text } from '../../../../scenery/js/imports.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import HookesLawIconFactory from './HookesLawIconFactory.js';
@@ -35,10 +35,7 @@ export default class VectorCheckbox extends Checkbox {
     const options = optionize3<VectorCheckboxOptions, StrictOmit<SelfOptions, 'textAlignBoxOptions'>, CheckboxOptions>()(
       {}, HookesLawConstants.CHECKBOX_OPTIONS, providedOptions );
 
-    const text = new Text( stringProperty,
-      combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
-        tandem: options.tandem.createTandem( 'text' )
-      } ) );
+    const text = new Text( stringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
 
     const textAlignBox = new AlignBox( text, options.textAlignBoxOptions );
 

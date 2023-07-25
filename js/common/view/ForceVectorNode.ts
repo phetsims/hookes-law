@@ -17,6 +17,7 @@ import { Node, NodeOptions, NodeTranslationOptions, Rectangle, TColor, Text } fr
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 
 type SelfOptions = {
   fill?: TColor;
@@ -59,13 +60,16 @@ export default class ForceVectorNode extends Node {
       headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height
     } );
 
-    const valueText = new Text( '', {
+    const valueStringProperty = new StringProperty( '', {
+      tandem: options.tandem.createTandem( 'valueStringProperty' ),
+      phetioReadOnly: true
+    } );
+    const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 150,
       fill: options.fill,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
-      bottom: arrowNode.top - 2, // above the arrow
-      tandem: options.tandem.createTandem( 'valueText' )
+      bottom: arrowNode.top - 2 // above the arrow
     } );
 
     // translucent background, so that value isn't difficult to read when it overlaps with other UI components
@@ -86,7 +90,7 @@ export default class ForceVectorNode extends Node {
       }
 
       // update the value
-      valueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
+      valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( Math.abs( value ), options.decimalPlaces ), HookesLawStrings.newtons );
 
       // value position

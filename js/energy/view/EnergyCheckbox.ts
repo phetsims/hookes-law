@@ -12,9 +12,9 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
-import { combineOptions, EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
+import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { HBox, Path, Text, TextOptions } from '../../../../scenery/js/imports.js';
+import { HBox, Path, Text } from '../../../../scenery/js/imports.js';
 import { Shape } from '../../../../kite/js/imports.js';
 
 type SelfOptions = EmptySelfOptions;
@@ -28,10 +28,7 @@ export default class EnergyCheckbox extends Checkbox {
     const options = optionize3<EnergyCheckboxOptions, SelfOptions, CheckboxOptions>()(
       {}, HookesLawConstants.CHECKBOX_OPTIONS, providedOptions );
 
-    const text = new Text( HookesLawStrings.energyStringProperty,
-      combineOptions<TextOptions>( {}, HookesLawConstants.CONTROL_TEXT_OPTIONS, {
-        tandem: options.tandem.createTandem( 'text' )
-      } ) );
+    const text = new Text( HookesLawStrings.energyStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
 
     const triangle = new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), {
       fill: HookesLawColors.ENERGY

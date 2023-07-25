@@ -29,6 +29,7 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYAxes from './XYAxes.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 
 // constants
 const VALUE_X_MARGIN = 6;
@@ -154,11 +155,14 @@ export default class XYPointPlot extends Node {
     } );
 
     // x nodes
-    const xValueText = new Text( '', {
+    const xValueStringProperty = new StringProperty( '', {
+      tandem: options.tandem.createTandem( 'xValueStringProperty' ),
+      phetioReadOnly: true
+    } );
+    const xValueText = new Text( xValueStringProperty, {
       maxWidth: 150, // i18n
       fill: options.xValueFill,
-      font: options.valueFont,
-      tandem: options.tandem.createTandem( 'xValueText' )
+      font: options.valueFont
     } );
     const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, combineOptions<LineOptions>( {}, TICK_OPTIONS, { centerY: 0 } ) );
     const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
@@ -166,11 +170,14 @@ export default class XYPointPlot extends Node {
     const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
 
     // y nodes
-    const yValueText = new Text( '', {
+    const yValueStringProperty = new StringProperty( '', {
+      tandem: options.tandem.createTandem( 'yValueStringProperty' ),
+      phetioReadOnly: true
+    } );
+    const yValueText = new Text( yValueStringProperty, {
       maxWidth: 150, // i18n
       fill: options.yValueFill,
-      font: options.valueFont,
-      tandem: options.tandem.createTandem( 'yValueText' )
+      font: options.valueFont
     } );
     const yTickNode = new Line( 0, 0, TICK_LENGTH, 0, combineOptions<LineOptions>( {}, TICK_OPTIONS, { centerX: 0 } ) );
     const yLeaderLine = new Line( 0, 0, 1, 0, LEADER_LINE_OPTIONS );
@@ -220,7 +227,7 @@ export default class XYPointPlot extends Node {
 
       // x value
       const xString = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      xValueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xString, options.xUnits );
+      xValueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xString, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
       if ( options.minY === 0 ) {
@@ -266,7 +273,7 @@ export default class XYPointPlot extends Node {
 
       // y value
       const yString = Utils.toFixed( yFixed, options.yDecimalPlaces );
-      yValueText.string = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yString, options.yUnits );
+      yValueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yString, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes
       const X_SPACING = 10;
