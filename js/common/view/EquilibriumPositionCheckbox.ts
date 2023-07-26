@@ -1,4 +1,4 @@
-// Copyright 2022, University of Colorado Boulder
+// Copyright 2022-2023, University of Colorado Boulder
 
 /**
  * EquilibriumPositionCheckbox is the 'Equilibrium Position' checkbox that appears in control panels.

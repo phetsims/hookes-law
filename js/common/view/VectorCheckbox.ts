@@ -1,4 +1,4 @@
-// Copyright 2022, University of Colorado Boulder
+// Copyright 2022-2023, University of Colorado Boulder
 
 /**
  * VectorCheckbox is the checkbox used for visibility of a vector in control panels, labeled with text and a vector icon.
