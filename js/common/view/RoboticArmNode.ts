@@ -139,7 +139,7 @@ export default class RoboticArmNode extends Node {
 
     // Drag the pincers or hinge
     let startOffsetX = 0;
-    const dragHandler = new DragListener( {
+    const dragListener = new DragListener( {
 
       allowTouchSnag: true,
 
@@ -171,7 +171,7 @@ export default class RoboticArmNode extends Node {
       // phet-io
       tandem: options.tandem.createTandem( 'dragListener' )
     } );
-    draggableNode.addInputListener( dragHandler );
+    draggableNode.addInputListener( dragListener );
 
     roboticArm.leftProperty.link( left => {
 
