@@ -52,7 +52,7 @@ export default class SystemsVisibilityPanel extends Panel {
 
     const springForceCheckbox = new VectorCheckbox( properties.springForceVectorVisibleProperty, HookesLawStrings.springForceStringProperty, {
       vectorType: 'force',
-      arrowFill: HookesLawColors.SINGLE_SPRING_MIDDLE,
+      arrowFill: HookesLawColors.singleSpringMiddleColorProperty,
       textAlignBoxOptions: textAlignBoxOptions,
       tandem: options.tandem.createTandem( 'springForceCheckbox' )
     } );

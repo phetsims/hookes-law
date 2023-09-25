@@ -55,14 +55,14 @@ const HookesLawIconFactory = {
 
     // spring
     const springNode = new ParametricSpringNode( combineOptions<ParametricSpringNodeOptions>( {
-      frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
-      middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
-      backColor: HookesLawColors.SINGLE_SPRING_BACK
+      frontColor: HookesLawColors.singleSpringFrontColorProperty,
+      middleColor: HookesLawColors.singleSpringMiddleColorProperty,
+      backColor: HookesLawColors.singleSpringBackColorProperty
     }, COMMON_SPRING_OPTIONS ) );
 
     // piece that pincers grab
     const nibNode = new NibNode( {
-      fill: HookesLawColors.SINGLE_SPRING_MIDDLE,
+      fill: HookesLawColors.singleSpringMiddleColorProperty,
       x: springNode.right,
       centerY: springNode.centerY
     } );

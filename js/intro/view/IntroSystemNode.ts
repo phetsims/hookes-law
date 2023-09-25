@@ -73,9 +73,9 @@ export default class IntroSystemNode extends Node {
     } );
 
     const springNode = new HookesLawSpringNode( spring, {
-      frontColor: HookesLawColors.SINGLE_SPRING_FRONT,
-      middleColor: HookesLawColors.SINGLE_SPRING_MIDDLE,
-      backColor: HookesLawColors.SINGLE_SPRING_BACK,
+      frontColor: HookesLawColors.singleSpringFrontColorProperty,
+      middleColor: HookesLawColors.singleSpringMiddleColorProperty,
+      backColor: HookesLawColors.singleSpringBackColorProperty,
       loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
@@ -85,7 +85,7 @@ export default class IntroSystemNode extends Node {
 
     // pincers grab this
     const nibNode = new NibNode( {
-      fill: HookesLawColors.SINGLE_SPRING_MIDDLE,
+      fill: HookesLawColors.singleSpringMiddleColorProperty,
       // x is based on rightSpring.leftProperty
       centerY: yOrigin
     } );

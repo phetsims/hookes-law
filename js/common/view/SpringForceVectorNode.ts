@@ -26,7 +26,7 @@ export default class SpringForceVectorNode extends ForceVectorNode {
     const options = optionize<SpringForceVectorNodeOptions, SelfOptions, ForceVectorNodeOptions>()( {
 
       // ForceVectorNodeOptions
-      fill: HookesLawColors.SINGLE_SPRING_MIDDLE,
+      fill: HookesLawColors.singleSpringMiddleColorProperty,
       decimalPlaces: HookesLawConstants.SPRING_FORCE_DECIMAL_PLACES,
       alignZero: 'right' // AppliedForceVectorNode uses 'left', so we use 'right' so that '0' values won't overlap
     }, providedOptions );

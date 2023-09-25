@@ -65,7 +65,7 @@ export default class EnergyPlot extends XYPointPlot {
       yValueBackgroundColor: 'rgba( 255, 255, 255, 0.7)', // translucent background, because value sometimes overlaps the curve
 
       // point
-      pointFill: HookesLawColors.SINGLE_SPRING_MIDDLE
+      pointFill: HookesLawColors.singleSpringMiddleColorProperty
     }, providedOptions );
 
     super( spring.displacementProperty, spring.potentialEnergyProperty,

@@ -10,11 +10,6 @@ import PhetColorScheme from '../../../scenery-phet/js/PhetColorScheme.js';
 import { Color, ProfileColorProperty } from '../../../scenery/js/imports.js';
 import hookesLaw from '../hookesLaw.js';
 
-// colors for the spring in single-spring systems
-const SINGLE_SPRING_FRONT = new Color( 150, 150, 255 );
-const SINGLE_SPRING_MIDDLE = new Color( 0, 0, 255 ); // the dominant color
-const SINGLE_SPRING_BACK = new Color( 0, 0, 200 );
-
 // colors for the first spring (top or left) in 2-spring systems
 const SPRING1_FRONT = new Color( 221, 191, 255 );
 const SPRING1_MIDDLE = new Color( 146, 64, 255 ); // the dominant color
@@ -43,9 +38,15 @@ const HookesLawColors = {
   } ),
 
   // colors for single spring
-  SINGLE_SPRING_FRONT: SINGLE_SPRING_FRONT,
-  SINGLE_SPRING_MIDDLE: SINGLE_SPRING_MIDDLE,
-  SINGLE_SPRING_BACK: SINGLE_SPRING_BACK,
+  singleSpringFrontColorProperty: new ProfileColorProperty( hookesLaw, 'singleSpringFrontColor', {
+    default: 'rgb( 150, 150, 255 )'
+  } ),
+  singleSpringMiddleColorProperty: new ProfileColorProperty( hookesLaw, 'singleSpringMiddleColor', {
+    default: 'rgb( 0, 0, 255 )'
+  } ),
+  singleSpringBackColorProperty: new ProfileColorProperty( hookesLaw, 'singleSpringBackColor', {
+    default: 'rgb( 0, 0, 200 )'
+  } ),
 
   // colors for series springs
   LEFT_SPRING_FRONT: SPRING1_FRONT,
@@ -68,7 +69,7 @@ const HookesLawColors = {
     default: 'rgb( 100, 100, 100 )'
   } ),
   sceneSelectionSpringMiddleColorProperty: new ProfileColorProperty( hookesLaw, 'sceneSelectionSpringMiddleColor', {
-    default: 'rgb( 50, 50, 50 )'
+    default: 'rgb( 50, 50, 50 )' // the dominant color
   } ),
   sceneSelectionSpringBackColorProperty: new ProfileColorProperty( hookesLaw, 'sceneSelectionSpringBackColor', {
     default: 'black'
