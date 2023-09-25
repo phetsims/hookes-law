@@ -21,7 +21,7 @@ export default class EnergyScreen extends Screen<EnergyModel, EnergyScreenView> 
 
     const options = {
       name: HookesLawStrings.energyStringProperty,
-      backgroundColorProperty: HookesLawColors.SCREEN_VIEW_BACKGROUND,
+      backgroundColorProperty: HookesLawColors.screenBackgroundColorProperty,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
       tandem: tandem
     };

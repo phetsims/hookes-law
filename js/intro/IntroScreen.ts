@@ -21,7 +21,7 @@ export default class IntroScreen extends Screen<IntroModel, IntroScreenView> {
 
     const options = {
       name: HookesLawStrings.introStringProperty,
-      backgroundColorProperty: HookesLawColors.SCREEN_VIEW_BACKGROUND,
+      backgroundColorProperty: HookesLawColors.screenBackgroundColorProperty,
       homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
       tandem: tandem
     };

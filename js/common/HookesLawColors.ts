@@ -6,9 +6,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import Property from '../../../axon/js/Property.js';
 import PhetColorScheme from '../../../scenery-phet/js/PhetColorScheme.js';
-import { Color } from '../../../scenery/js/imports.js';
+import { Color, ProfileColorProperty } from '../../../scenery/js/imports.js';
 import hookesLaw from '../hookesLaw.js';
 
 // colors for the spring in single-spring systems
@@ -28,7 +27,9 @@ const SPRING2_BACK = new Color( 217, 163, 0 );
 
 const HookesLawColors = {
 
-  SCREEN_VIEW_BACKGROUND: new Property( 'white' ),
+  screenBackgroundColorProperty: new ProfileColorProperty( hookesLaw, 'screenBackgroundColor', {
+    default: 'white'
+  } ),
 
   // UI components
   CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),

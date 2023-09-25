@@ -21,7 +21,7 @@ export default class SystemsScreen extends Screen<SystemsModel, SystemsScreenVie
 
     const options = {
       name: HookesLawStrings.systemsStringProperty,
-      backgroundColorProperty: HookesLawColors.SCREEN_VIEW_BACKGROUND,
+      backgroundColorProperty: HookesLawColors.screenBackgroundColorProperty,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
       tandem: tandem
     };
