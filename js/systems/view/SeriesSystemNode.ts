@@ -72,9 +72,9 @@ export default class SeriesSystemNode extends Node {
     const leftSpringNode = new HookesLawSpringNode( leftSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.LEFT_SPRING_FRONT,
-      middleColor: HookesLawColors.LEFT_SPRING_MIDDLE,
-      backColor: HookesLawColors.LEFT_SPRING_BACK,
+      frontColor: HookesLawColors.spring1FrontColorProperty,
+      middleColor: HookesLawColors.spring1MiddleColorProperty,
+      backColor: HookesLawColors.spring1BackColorProperty,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * leftSpring.leftProperty.value,
       y: yOrigin
@@ -83,9 +83,9 @@ export default class SeriesSystemNode extends Node {
     const rightSpringNode = new HookesLawSpringNode( rightSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.RIGHT_SPRING_FRONT,
-      middleColor: HookesLawColors.RIGHT_SPRING_MIDDLE,
-      backColor: HookesLawColors.RIGHT_SPRING_BACK,
+      frontColor: HookesLawColors.spring2FrontColorProperty,
+      middleColor: HookesLawColors.spring2MiddleColorProperty,
+      backColor: HookesLawColors.spring2BackColorProperty,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       // x is based on rightSpring.leftProperty
       y: yOrigin
@@ -93,7 +93,7 @@ export default class SeriesSystemNode extends Node {
 
     // pincers grab this
     const nibNode = new NibNode( {
-      fill: HookesLawColors.RIGHT_SPRING_MIDDLE,
+      fill: HookesLawColors.spring2MiddleColorProperty,
       // x is based on rightSpring.rightProperty
       centerY: yOrigin
     } );
@@ -114,7 +114,7 @@ export default class SeriesSystemNode extends Node {
 
     const leftSpringForceVectorNode = new SpringForceVectorNode(
       leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.LEFT_SPRING_MIDDLE,
+        fill: HookesLawColors.spring1MiddleColorProperty,
         decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by leftSpring.rightProperty
         // bottom determined empirically, leftSpringNode.top is not accurate because we're using boundsMethod:'none'
@@ -124,7 +124,7 @@ export default class SeriesSystemNode extends Node {
 
     const leftAppliedForceVectorNode = new AppliedForceVectorNode(
       leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.RIGHT_SPRING_MIDDLE,
+        fill: HookesLawColors.spring2MiddleColorProperty,
         // x is determined by leftSpring.rightProperty
         y: leftSpringForceVectorNode.y,
         tandem: options.tandem.createTandem( 'leftAppliedForceVectorNode' )
@@ -132,7 +132,7 @@ export default class SeriesSystemNode extends Node {
 
     const rightSpringForceVectorNode = new SpringForceVectorNode(
       rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.RIGHT_SPRING_MIDDLE,
+        fill: HookesLawColors.spring2MiddleColorProperty,
         decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by rightSpring.rightProperty
         bottom: leftSpringForceVectorNode.top - 10,

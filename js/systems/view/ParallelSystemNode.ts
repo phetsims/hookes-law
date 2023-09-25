@@ -79,9 +79,9 @@ export default class ParallelSystemNode extends Node {
     const topSpringNode = new HookesLawSpringNode( topSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.TOP_SPRING_FRONT,
-      middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
-      backColor: HookesLawColors.TOP_SPRING_BACK,
+      frontColor: HookesLawColors.spring1FrontColorProperty,
+      middleColor: HookesLawColors.spring1MiddleColorProperty,
+      backColor: HookesLawColors.spring1BackColorProperty,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * topSpring.leftProperty.value,
       y: wallNode.top + ( 0.25 * wallNode.height )
@@ -90,9 +90,9 @@ export default class ParallelSystemNode extends Node {
     const bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
       loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
-      middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
-      backColor: HookesLawColors.BOTTOM_SPRING_BACK,
+      frontColor: HookesLawColors.spring2FrontColorProperty,
+      middleColor: HookesLawColors.spring2MiddleColorProperty,
+      backColor: HookesLawColors.spring2BackColorProperty,
       // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * bottomSpring.leftProperty.value,
       y: wallNode.bottom - ( 0.25 * wallNode.height )
@@ -144,7 +144,7 @@ export default class ParallelSystemNode extends Node {
 
     const topSpringForceVectorNode = new SpringForceVectorNode(
       topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.TOP_SPRING_MIDDLE,
+        fill: HookesLawColors.spring1MiddleColorProperty,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by topSpring.rightProperty
         centerY: totalSpringForceVectorNode.top,
@@ -153,7 +153,7 @@ export default class ParallelSystemNode extends Node {
 
     const bottomSpringForceVectorNode = new SpringForceVectorNode(
       bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.BOTTOM_SPRING_MIDDLE,
+        fill: HookesLawColors.spring2MiddleColorProperty,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by bottomSpring.rightProperty
         centerY: totalSpringForceVectorNode.bottom,

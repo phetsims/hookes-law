@@ -7,18 +7,8 @@
  */
 
 import PhetColorScheme from '../../../scenery-phet/js/PhetColorScheme.js';
-import { Color, ProfileColorProperty } from '../../../scenery/js/imports.js';
+import { ProfileColorProperty } from '../../../scenery/js/imports.js';
 import hookesLaw from '../hookesLaw.js';
-
-// colors for the first spring (top or left) in 2-spring systems
-const SPRING1_FRONT = new Color( 221, 191, 255 );
-const SPRING1_MIDDLE = new Color( 146, 64, 255 ); // the dominant color
-const SPRING1_BACK = new Color( 124, 54, 217 );
-
-// colors for the second spring (bottom or right) in 2-spring systems
-const SPRING2_FRONT = new Color( 255, 223, 127 );
-const SPRING2_MIDDLE = new Color( 255, 191, 0 ); // the dominant color
-const SPRING2_BACK = new Color( 217, 163, 0 );
 
 const HookesLawColors = {
 
@@ -42,27 +32,33 @@ const HookesLawColors = {
     default: 'rgb( 150, 150, 255 )'
   } ),
   singleSpringMiddleColorProperty: new ProfileColorProperty( hookesLaw, 'singleSpringMiddleColor', {
-    default: 'rgb( 0, 0, 255 )'
+    default: 'rgb( 0, 0, 255 )' // the dominant color
   } ),
   singleSpringBackColorProperty: new ProfileColorProperty( hookesLaw, 'singleSpringBackColor', {
     default: 'rgb( 0, 0, 200 )'
   } ),
 
-  // colors for series springs
-  LEFT_SPRING_FRONT: SPRING1_FRONT,
-  LEFT_SPRING_MIDDLE: SPRING1_MIDDLE,
-  LEFT_SPRING_BACK: SPRING1_BACK,
-  RIGHT_SPRING_FRONT: SPRING2_FRONT,
-  RIGHT_SPRING_MIDDLE: SPRING2_MIDDLE,
-  RIGHT_SPRING_BACK: SPRING2_BACK,
-
-  // colors for parallel springs
-  TOP_SPRING_FRONT: SPRING1_FRONT,
-  TOP_SPRING_MIDDLE: SPRING1_MIDDLE,
-  TOP_SPRING_BACK: SPRING1_BACK,
-  BOTTOM_SPRING_FRONT: SPRING2_FRONT,
-  BOTTOM_SPRING_MIDDLE: SPRING2_MIDDLE,
-  BOTTOM_SPRING_BACK: SPRING2_BACK,
+  // colors for 2-spring systems
+  // series: spring1 = left, spring2 = right
+  // parallel: spring1 = top, spring2 = bottom
+  spring1FrontColorProperty: new ProfileColorProperty( hookesLaw, 'spring1FrontColor', {
+    default: 'rgb( 221, 191, 255 )'
+  } ),
+  spring1MiddleColorProperty: new ProfileColorProperty( hookesLaw, 'spring1MiddleColor', {
+    default: 'rgb( 146, 64, 255 )' // the dominant color
+  } ),
+  spring1BackColorProperty: new ProfileColorProperty( hookesLaw, 'spring1BackColorBackColor', {
+    default: 'rgb( 124, 54, 217 )'
+  } ),
+  spring2FrontColorProperty: new ProfileColorProperty( hookesLaw, 'spring2FrontColor', {
+    default: 'rgb( 255, 223, 127 )'
+  } ),
+  spring2MiddleColorProperty: new ProfileColorProperty( hookesLaw, 'spring2MiddleColor', {
+    default: 'rgb( 255, 191, 0 )' // the dominant color
+  } ),
+  spring2BackColorProperty: new ProfileColorProperty( hookesLaw, 'spring2BackColorBackColor', {
+    default: 'rgb( 217, 163, 0 )'
+  } ),
 
   // colors for springs in scene selection icons
   sceneSelectionSpringFrontColorProperty: new ProfileColorProperty( hookesLaw, 'sceneSelectionSpringFrontColor', {

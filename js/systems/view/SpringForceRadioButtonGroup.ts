@@ -41,17 +41,15 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
     }, providedOptions );
 
     // Label for 'Components' radio button
-    const componentsIcon1 = HookesLawIconFactory.createForceVectorIcon();
-    const componentsIcon2 = HookesLawIconFactory.createForceVectorIcon();
+    const componentsIcon1 = HookesLawIconFactory.createForceVectorIcon( {
+      fill: HookesLawColors.spring1MiddleColorProperty
+    } );
+    const componentsIcon2 = HookesLawIconFactory.createForceVectorIcon( {
+      fill: HookesLawColors.spring2MiddleColorProperty
+    } );
     const componentsIcons = new VBox( {
       children: [ componentsIcon1, componentsIcon2 ],
       spacing: 10
-    } );
-
-    // Set the component vector colors to match the spring system
-    systemTypeProperty.link( systemType => {
-      componentsIcon1.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.LEFT_SPRING_MIDDLE : HookesLawColors.TOP_SPRING_MIDDLE;
-      componentsIcon2.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.RIGHT_SPRING_MIDDLE : HookesLawColors.BOTTOM_SPRING_MIDDLE;
     } );
 
     const items: AquaRadioButtonGroupItem<SpringForceRepresentation>[] = [

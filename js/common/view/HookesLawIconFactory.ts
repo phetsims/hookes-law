@@ -85,14 +85,14 @@ const HookesLawIconFactory = {
 
     // springs
     const topSpringNode = new ParametricSpringNode( combineOptions<ParametricSpringNodeOptions>( {
-      frontColor: HookesLawColors.TOP_SPRING_FRONT,
-      middleColor: HookesLawColors.TOP_SPRING_MIDDLE,
-      backColor: HookesLawColors.TOP_SPRING_BACK
+      frontColor: HookesLawColors.spring1FrontColorProperty,
+      middleColor: HookesLawColors.spring1MiddleColorProperty,
+      backColor: HookesLawColors.spring1BackColorProperty
     }, COMMON_SPRING_OPTIONS ) );
     const bottomSpringNode = new ParametricSpringNode( combineOptions<ParametricSpringNodeOptions>( {
-      frontColor: HookesLawColors.BOTTOM_SPRING_FRONT,
-      middleColor: HookesLawColors.BOTTOM_SPRING_MIDDLE,
-      backColor: HookesLawColors.BOTTOM_SPRING_BACK
+      frontColor: HookesLawColors.spring2FrontColorProperty,
+      middleColor: HookesLawColors.spring2MiddleColorProperty,
+      backColor: HookesLawColors.spring2BackColorProperty
     }, COMMON_SPRING_OPTIONS ) );
     const springsBox = new VBox( {
       spacing: 10,
