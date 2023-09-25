@@ -42,7 +42,7 @@ export default class DisplacementVectorNode extends Node {
     }, providedOptions );
 
     const arrowNode = new LineArrowNode( 0, 0, 1, 0, {
-      stroke: HookesLawColors.DISPLACEMENT,
+      stroke: HookesLawColors.displacementColorProperty,
       headWidth: 20,
       headHeight: 10,
       headLineWidth: 3,
@@ -56,7 +56,7 @@ export default class DisplacementVectorNode extends Node {
     const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 150, // i18n
-      fill: HookesLawColors.DISPLACEMENT,
+      fill: HookesLawColors.displacementColorProperty,
       font: HookesLawConstants.VECTOR_VALUE_FONT,
       top: arrowNode.bottom + 2 // below the arrow
     } );

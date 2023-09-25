@@ -50,7 +50,7 @@ export default class EnergyPlot extends XYPointPlot {
       xString: HookesLawStrings.displacement,
       xUnits: HookesLawStrings.meters,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
-      xValueFill: HookesLawColors.DISPLACEMENT,
+      xValueFill: HookesLawColors.displacementColorProperty,
       xUnitLength: unitDisplacementLength,
       xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
@@ -60,7 +60,7 @@ export default class EnergyPlot extends XYPointPlot {
       yString: HookesLawStrings.potentialEnergy,
       yUnits: HookesLawStrings.joules,
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
-      yValueFill: HookesLawColors.ENERGY,
+      yValueFill: HookesLawColors.energyColorProperty,
       yUnitLength: HookesLawConstants.UNIT_ENERGY_Y, // length of a 1J energy vector
       yValueBackgroundColor: 'rgba( 255, 255, 255, 0.7)', // translucent background, because value sometimes overlaps the curve
 
@@ -73,7 +73,7 @@ export default class EnergyPlot extends XYPointPlot {
 
     // Parabola that corresponds to E = ( k * x * x ) / 2
     const energyParabolaNode = new Path( null, {
-      stroke: HookesLawColors.ENERGY,
+      stroke: HookesLawColors.energyColorProperty,
       lineWidth: 3
     } );
     this.addChild( energyParabolaNode );

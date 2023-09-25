@@ -42,7 +42,7 @@ export default class IntroVisibilityPanel extends Panel {
 
     const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty, HookesLawStrings.appliedForceStringProperty, {
       vectorType: 'force',
-      arrowFill: HookesLawColors.APPLIED_FORCE,
+      arrowFill: HookesLawColors.appliedForceColorProperty,
       textAlignBoxOptions: textAlignBoxOptions,
       tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
     } );
@@ -56,7 +56,7 @@ export default class IntroVisibilityPanel extends Panel {
 
     const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
       vectorType: 'displacement',
-      arrowFill: HookesLawColors.DISPLACEMENT,
+      arrowFill: HookesLawColors.displacementColorProperty,
       textAlignBoxOptions: textAlignBoxOptions,
       tandem: options.tandem.createTandem( 'displacementCheckbox' )
     } );

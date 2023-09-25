@@ -166,7 +166,7 @@ export default class XYPointPlot extends Node {
     } );
     const xTickNode = new Line( 0, 0, 0, TICK_LENGTH, combineOptions<LineOptions>( {}, TICK_OPTIONS, { centerY: 0 } ) );
     const xLeaderLine = new Line( 0, 0, 0, 1, LEADER_LINE_OPTIONS );
-    const xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.DISPLACEMENT } );
+    const xVectorNode = new Line( 0, 0, 1, 0, { lineWidth: 3, stroke: HookesLawColors.displacementColorProperty } );
     const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
 
     // y nodes

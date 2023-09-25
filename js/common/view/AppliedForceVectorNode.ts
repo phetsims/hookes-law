@@ -26,7 +26,7 @@ export default class AppliedForceVectorNode extends ForceVectorNode {
     const options = optionize<AppliedForceVectorNodeOptions, SelfOptions, ForceVectorNodeOptions>()( {
 
       // ForceVectorNodeOptions
-      fill: HookesLawColors.APPLIED_FORCE,
+      fill: HookesLawColors.appliedForceColorProperty,
       decimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES
     }, providedOptions );
 

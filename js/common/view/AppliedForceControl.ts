@@ -100,7 +100,7 @@ export default class AppliedForceControl extends NumberControl {
       sliderOptions: {
         majorTicks: majorTicks,
         minorTickSpacing: MINOR_TICK_SPACING,
-        thumbFill: HookesLawColors.APPLIED_FORCE,
+        thumbFill: HookesLawColors.appliedForceColorProperty,
         constrainValue: value => {
           return Utils.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
         }

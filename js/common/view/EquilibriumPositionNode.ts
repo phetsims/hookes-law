@@ -25,7 +25,7 @@ export default class EquilibriumPositionNode extends Line {
     const options = optionize<EquilibriumPositionNodeOptions, SelfOptions, LineOptions>()( {
 
       // LineOptions
-      stroke: HookesLawColors.EQUILIBRIUM_POSITION,
+      stroke: HookesLawColors.equilibriumPositionColorProperty,
       lineWidth: 2,
       lineDash: [ 3, 3 ]
     }, providedOptions );

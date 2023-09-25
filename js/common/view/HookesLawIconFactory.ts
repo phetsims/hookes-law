@@ -145,7 +145,7 @@ const HookesLawIconFactory = {
     } );
 
     const barNode = new Rectangle( 0, 0, 30, 100, {
-      fill: HookesLawColors.ENERGY,
+      fill: HookesLawColors.energyColorProperty,
       left: yAxisNode.right + 10,
       bottom: yAxisNode.bottom
     } );

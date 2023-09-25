@@ -83,10 +83,18 @@ const HookesLawColors = {
   WALL_FILL: new Color( 180, 180, 180 ),
 
   // various quantities
-  APPLIED_FORCE: PhetColorScheme.RED_COLORBLIND,
-  DISPLACEMENT: new Color( 0, 180, 0 ),
-  ENERGY: PhetColorScheme.ELASTIC_POTENTIAL_ENERGY,
-  EQUILIBRIUM_POSITION: new Color( 0, 180, 0 )
+  appliedForceColorProperty: new ProfileColorProperty( hookesLaw, 'appliedForceColor', {
+    default: PhetColorScheme.RED_COLORBLIND
+  } ),
+  displacementColorProperty: new ProfileColorProperty( hookesLaw, 'displacementColor', {
+    default: 'rgb( 0, 180, 0 )'
+  } ),
+  energyColorProperty: new ProfileColorProperty( hookesLaw, 'energyColor', {
+    default: PhetColorScheme.ELASTIC_POTENTIAL_ENERGY
+  } ),
+  equilibriumPositionColorProperty: new ProfileColorProperty( hookesLaw, 'equilibriumPositionColor', {
+    default: 'rgb( 0, 180, 0 )'
+  } )
 };
 
 hookesLaw.register( 'HookesLawColors', HookesLawColors );

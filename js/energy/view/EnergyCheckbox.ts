@@ -31,7 +31,7 @@ export default class EnergyCheckbox extends Checkbox {
     const text = new Text( HookesLawStrings.energyStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
 
     const triangle = new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), {
-      fill: HookesLawColors.ENERGY
+      fill: HookesLawColors.energyColorProperty
     } );
 
     const content = new HBox( {

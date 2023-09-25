@@ -55,7 +55,7 @@ export default class EnergyBarGraph extends Node {
     } );
 
     const barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
-      fill: HookesLawColors.ENERGY,
+      fill: HookesLawColors.energyColorProperty,
       centerX: xAxisNode.centerX
     } );
 
@@ -66,7 +66,7 @@ export default class EnergyBarGraph extends Node {
     const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 100, // i18n
-      fill: HookesLawColors.ENERGY,
+      fill: HookesLawColors.energyColorProperty,
       font: HookesLawConstants.BAR_GRAPH_VALUE_FONT
     } );
 

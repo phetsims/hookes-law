@@ -55,7 +55,7 @@ export default class ForcePlot extends XYPointPlot {
       xString: HookesLawStrings.displacement,
       xUnits: HookesLawStrings.meters,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
-      xValueFill: HookesLawColors.DISPLACEMENT,
+      xValueFill: HookesLawColors.displacementColorProperty,
       xUnitLength: unitDisplacementLength,
       xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
@@ -65,7 +65,7 @@ export default class ForcePlot extends XYPointPlot {
       yString: HookesLawStrings.appliedForce,
       yUnits: HookesLawStrings.newtons,
       yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
-      yValueFill: HookesLawColors.APPLIED_FORCE,
+      yValueFill: HookesLawColors.appliedForceColorProperty,
       yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
 
       // point
@@ -77,7 +77,7 @@ export default class ForcePlot extends XYPointPlot {
 
     // The line that corresponds to F = kx
     const forceLineNode = new Line( 0, 0, 1, 1, {
-      stroke: HookesLawColors.APPLIED_FORCE,
+      stroke: HookesLawColors.appliedForceColorProperty,
       lineWidth: 3
     } );
     this.addChild( forceLineNode );
@@ -85,7 +85,7 @@ export default class ForcePlot extends XYPointPlot {
 
     // energy area
     const energyPath = new Path( null, {
-      fill: HookesLawColors.ENERGY
+      fill: HookesLawColors.energyColorProperty
     } );
     this.addChild( energyPath );
     energyPath.moveToBack();

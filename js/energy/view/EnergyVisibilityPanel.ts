@@ -59,13 +59,13 @@ export default class EnergyVisibilityPanel extends Panel {
     const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
       HookesLawStrings.appliedForceStringProperty, {
         vectorType: 'force',
-        arrowFill: HookesLawColors.APPLIED_FORCE,
+        arrowFill: HookesLawColors.appliedForceColorProperty,
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       } );
 
     const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
       vectorType: 'displacement',
-      arrowFill: HookesLawColors.DISPLACEMENT,
+      arrowFill: HookesLawColors.displacementColorProperty,
       tandem: options.tandem.createTandem( 'displacementCheckbox' )
     } );
 

@@ -77,7 +77,7 @@ export default class DisplacementControl extends NumberControl {
       sliderOptions: {
         majorTicks: majorTicks,
         minorTickSpacing: displacementRange.getLength() / 10,
-        thumbFill: HookesLawColors.DISPLACEMENT,
+        thumbFill: HookesLawColors.displacementColorProperty,
         constrainValue: value => {
           // constrain to multiples of a specific interval, see #54
           return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
