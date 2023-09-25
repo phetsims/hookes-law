@@ -23,7 +23,7 @@ export default class WallNode extends ShadedRectangle {
   public constructor( size: Dimension2, providedOptions?: WallNodeOptions ) {
 
     const options = optionize<WallNodeOptions, SelfOptions, ShadedRectangleOptions>()( {
-      baseColor: HookesLawColors.WALL_FILL,
+      baseColor: HookesLawColors.wallFillProperty,
       cornerRadius: 6
     }, providedOptions );
 

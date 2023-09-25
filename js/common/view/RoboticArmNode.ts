@@ -28,14 +28,14 @@ const PINCER_LINE_WIDTH = 6;
 const PINCER_OVERLAP = 2;
 const ARM_HEIGHT = 14;
 const ARM_GRADIENT = new LinearGradient( 0, 0, 0, ARM_HEIGHT )
-  .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
+  .addColorStop( 0, HookesLawColors.roboticArmFillProperty )
   .addColorStop( 0.3, 'white' )
-  .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
+  .addColorStop( 1, HookesLawColors.roboticArmFillProperty );
 const BOX_SIZE = new Dimension2( 20, 60 );
 const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
-  .addColorStop( 0, HookesLawColors.ROBOTIC_ARM_FILL )
+  .addColorStop( 0, HookesLawColors.roboticArmFillProperty )
   .addColorStop( 0.5, 'white' )
-  .addColorStop( 1, HookesLawColors.ROBOTIC_ARM_FILL );
+  .addColorStop( 1, HookesLawColors.roboticArmFillProperty );
 
 type SelfOptions = {
   unitDisplacementLength?: number; // view length of a 1m displacement
@@ -71,7 +71,7 @@ export default class RoboticArmNode extends Node {
     // red box at right end of the arm, origin is at left-center
     const redBox = new Rectangle( 0, 0, 7, 30, {
       stroke: 'black',
-      fill: HookesLawColors.HINGE, // same color as hinge
+      fill: HookesLawColors.hingeColorProperty, // same color as hinge
       lineWidth: 0.5,
       left: 0,
       centerY: 0
@@ -89,33 +89,33 @@ export default class RoboticArmNode extends Node {
     // arm will be sized and positioned by Property observer
     const armNode = new Rectangle( 0, 0, 1, ARM_HEIGHT, {
       fill: ARM_GRADIENT,
-      stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
+      stroke: HookesLawColors.roboticArmStrokeProperty,
       lineWidth: 0.5
     } );
 
     const topPincerClosedNode = createTopPincerClosed( {
-      stroke: HookesLawColors.PINCERS_STROKE,
+      stroke: HookesLawColors.pincersStrokeProperty,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
       bottom: PINCER_OVERLAP
     } );
 
     const topPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 ), {
-      stroke: HookesLawColors.PINCERS_STROKE,
+      stroke: HookesLawColors.pincersStrokeProperty,
       lineWidth: PINCER_LINE_WIDTH,
       right: topPincerClosedNode.right,
       bottom: 0
     } );
 
     const bottomPincerClosedNode = createBottomPincerClosed( {
-      stroke: HookesLawColors.PINCERS_STROKE,
+      stroke: HookesLawColors.pincersStrokeProperty,
       lineWidth: PINCER_LINE_WIDTH,
       left: 0,
       top: -PINCER_OVERLAP
     } );
 
     const bottomPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true ), {
-      stroke: HookesLawColors.PINCERS_STROKE,
+      stroke: HookesLawColors.pincersStrokeProperty,
       lineWidth: PINCER_LINE_WIDTH,
       right: bottomPincerClosedNode.right,
       top: 0
@@ -214,13 +214,13 @@ export default class RoboticArmNode extends Node {
   public static createIcon( options: NodeOptions ): Node {
 
     const topPincerNode = createTopPincerClosed( {
-      stroke: HookesLawColors.PINCERS_STROKE,
+      stroke: HookesLawColors.pincersStrokeProperty,
       lineWidth: PINCER_LINE_WIDTH,
       bottom: PINCER_OVERLAP
     } );
 
     const bottomPincerNode = createBottomPincerClosed( {
-      stroke: HookesLawColors.PINCERS_STROKE,
+      stroke: HookesLawColors.pincersStrokeProperty,
       lineWidth: PINCER_LINE_WIDTH,
       top: -PINCER_OVERLAP
     } );
@@ -232,7 +232,7 @@ export default class RoboticArmNode extends Node {
 
     const armNode = new Rectangle( 0, 0, 20, ARM_HEIGHT, {
       fill: ARM_GRADIENT,
-      stroke: HookesLawColors.ROBOTIC_ARM_STROKE,
+      stroke: HookesLawColors.roboticArmStrokeProperty,
       lineWidth: 0.5,
       left: hingeNode.right - 5,
       centerY: hingeNode.centerY

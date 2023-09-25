@@ -74,13 +74,23 @@ const HookesLawColors = {
   SCENE_SELECTION_SPRING_BACK: 'black',
 
   // robotic arm
-  ROBOTIC_ARM_FILL: new Color( 210, 210, 210 ),
-  ROBOTIC_ARM_STROKE: 'black',
-  PINCERS_STROKE: 'black',
-  HINGE: new Color( 236, 35, 23 ),
+  roboticArmFillProperty: new ProfileColorProperty( hookesLaw, 'roboticArmFill', {
+    default: 'rgb( 210, 210, 210 )'
+  } ),
+  roboticArmStrokeProperty: new ProfileColorProperty( hookesLaw, 'roboticArmStroke', {
+    default: 'black'
+  } ),
+  pincersStrokeProperty: new ProfileColorProperty( hookesLaw, 'pincersStroke', {
+    default: 'black'
+  } ),
+  hingeColorProperty: new ProfileColorProperty( hookesLaw, 'hingeColor', {
+    default: 'rgb( 236, 35, 23 )'
+  } ),
 
   // walls that spring and robotic arm are connected to
-  WALL_FILL: new Color( 180, 180, 180 ),
+  wallFillProperty: new ProfileColorProperty( hookesLaw, 'wallFill', {
+    default: 'rgb( 180, 180, 180 )'
+  } ),
 
   // various quantities
   appliedForceColorProperty: new ProfileColorProperty( hookesLaw, 'appliedForceColor', {

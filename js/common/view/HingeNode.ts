@@ -37,7 +37,7 @@ export default class HingeNode extends Node {
       .lineTo( PIVOT_SIZE.width, 0.5 * PIVOT_SIZE.height )
       .lineTo( 0, 0.25 * PIVOT_SIZE.height )
       .close(), {
-      fill: HookesLawColors.HINGE,
+      fill: HookesLawColors.hingeColorProperty,
       stroke: 'black'
     } );
 
@@ -63,7 +63,7 @@ export default class HingeNode extends Node {
       .lineTo( 0, 0.5 * BODY_SIZE.height )
       .lineTo( 0, -0.5 * BODY_SIZE.height )
       .close(), {
-      fill: HookesLawColors.HINGE,
+      fill: HookesLawColors.hingeColorProperty,
       stroke: 'black',
       left: pivotNode.right - 1,
       centerY: pivotNode.centerY
