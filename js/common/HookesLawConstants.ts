@@ -39,7 +39,7 @@ const CONTROL_TEXT_OPTIONS: StrictOmit<TextOptions, 'tandem'> = {
 };
 
 const HSEPARATOR_OPTIONS: HSeparatorOptions = {
-  stroke: HookesLawColors.SEPARATOR_STROKE
+  stroke: HookesLawColors.separatorStrokeProperty
 };
 
 const MAJOR_TICK_LABEL_OPTIONS: StrictOmit<TextOptions, 'tandem'> = {
@@ -47,15 +47,15 @@ const MAJOR_TICK_LABEL_OPTIONS: StrictOmit<TextOptions, 'tandem'> = {
 };
 
 const SPRING_PANEL_OPTIONS: StrictOmit<PanelOptions, 'tandem'> = {
-  fill: HookesLawColors.CONTROL_PANEL_FILL,
-  stroke: HookesLawColors.CONTROL_PANEL_STROKE,
+  fill: HookesLawColors.controlPanelFillProperty,
+  stroke: HookesLawColors.controlPanelStrokeProperty,
   xMargin: 20,
   yMargin: 5
 };
 
 const VISIBILITY_PANEL_OPTIONS: StrictOmit<PanelOptions, 'tandem'> = {
-  fill: HookesLawColors.CONTROL_PANEL_FILL,
-  stroke: HookesLawColors.CONTROL_PANEL_STROKE,
+  fill: HookesLawColors.controlPanelFillProperty,
+  stroke: HookesLawColors.controlPanelStrokeProperty,
   xMargin: 15,
   yMargin: 15
 };

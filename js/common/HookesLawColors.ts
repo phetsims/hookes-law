@@ -32,9 +32,15 @@ const HookesLawColors = {
   } ),
 
   // UI components
-  CONTROL_PANEL_FILL: new Color( 243, 243, 243 ),
-  CONTROL_PANEL_STROKE: new Color( 125, 125, 125 ),
-  SEPARATOR_STROKE: new Color( 125, 125, 125 ),
+  controlPanelFillProperty: new ProfileColorProperty( hookesLaw, 'controlPanelFill', {
+    default: 'rgb( 243, 243, 243 )'
+  } ),
+  controlPanelStrokeProperty: new ProfileColorProperty( hookesLaw, 'controlPanelStroke', {
+    default: 'rgb( 125, 125, 125 )'
+  } ),
+  separatorStrokeProperty: new ProfileColorProperty( hookesLaw, 'separatorStroke', {
+    default: 'rgb( 125, 125, 125 )'
+  } ),
 
   // colors for single spring
   SINGLE_SPRING: SINGLE_SPRING_MIDDLE,
