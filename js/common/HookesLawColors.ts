@@ -69,9 +69,15 @@ const HookesLawColors = {
   BOTTOM_SPRING_BACK: SPRING2_BACK,
 
   // colors for springs in scene selection icons
-  SCENE_SELECTION_SPRING_FRONT: new Color( 100, 100, 100 ),
-  SCENE_SELECTION_SPRING_MIDDLE: new Color( 50, 50, 50 ),
-  SCENE_SELECTION_SPRING_BACK: 'black',
+  sceneSelectionSpringFrontColorProperty: new ProfileColorProperty( hookesLaw, 'sceneSelectionSpringFrontColor', {
+    default: 'rgb( 100, 100, 100 )'
+  } ),
+  sceneSelectionSpringMiddleColorProperty: new ProfileColorProperty( hookesLaw, 'sceneSelectionSpringMiddleColor', {
+    default: 'rgb( 50, 50, 50 )'
+  } ),
+  sceneSelectionSpringBackColorProperty: new ProfileColorProperty( hookesLaw, 'sceneSelectionSpringBackColor', {
+    default: 'black'
+  } ),
 
   // robotic arm
   roboticArmFillProperty: new ProfileColorProperty( hookesLaw, 'roboticArmFill', {

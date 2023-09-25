@@ -26,9 +26,9 @@ const COMMON_SPRING_OPTIONS = {
 
 // Spring options for all icons related to scene selection
 const SCENE_SELECTION_SPRING_OPTIONS = combineOptions<ParametricSpringNodeOptions>( {
-  frontColor: HookesLawColors.SCENE_SELECTION_SPRING_FRONT,
-  middleColor: HookesLawColors.SCENE_SELECTION_SPRING_MIDDLE,
-  backColor: HookesLawColors.SCENE_SELECTION_SPRING_BACK,
+  frontColor: HookesLawColors.sceneSelectionSpringFrontColorProperty,
+  middleColor: HookesLawColors.sceneSelectionSpringMiddleColorProperty,
+  backColor: HookesLawColors.sceneSelectionSpringBackColorProperty,
   scale: 0.3
 }, COMMON_SPRING_OPTIONS );
 
