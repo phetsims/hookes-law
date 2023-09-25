@@ -69,7 +69,7 @@ export default class ForcePlot extends XYPointPlot {
       yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
 
       // point
-      pointFill: HookesLawColors.SINGLE_SPRING
+      pointFill: HookesLawColors.SINGLE_SPRING_MIDDLE
     }, providedOptions );
 
     super( spring.displacementProperty, spring.appliedForceProperty,

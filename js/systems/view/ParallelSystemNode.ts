@@ -144,7 +144,7 @@ export default class ParallelSystemNode extends Node {
 
     const topSpringForceVectorNode = new SpringForceVectorNode(
       topSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.TOP_SPRING,
+        fill: HookesLawColors.TOP_SPRING_MIDDLE,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by topSpring.rightProperty
         centerY: totalSpringForceVectorNode.top,
@@ -153,7 +153,7 @@ export default class ParallelSystemNode extends Node {
 
     const bottomSpringForceVectorNode = new SpringForceVectorNode(
       bottomSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.BOTTOM_SPRING,
+        fill: HookesLawColors.BOTTOM_SPRING_MIDDLE,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by bottomSpring.rightProperty
         centerY: totalSpringForceVectorNode.bottom,

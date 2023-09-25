@@ -114,7 +114,7 @@ export default class SeriesSystemNode extends Node {
 
     const leftSpringForceVectorNode = new SpringForceVectorNode(
       leftSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.LEFT_SPRING,
+        fill: HookesLawColors.LEFT_SPRING_MIDDLE,
         decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by leftSpring.rightProperty
         // bottom determined empirically, leftSpringNode.top is not accurate because we're using boundsMethod:'none'
@@ -124,7 +124,7 @@ export default class SeriesSystemNode extends Node {
 
     const leftAppliedForceVectorNode = new AppliedForceVectorNode(
       leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.RIGHT_SPRING,
+        fill: HookesLawColors.RIGHT_SPRING_MIDDLE,
         // x is determined by leftSpring.rightProperty
         y: leftSpringForceVectorNode.y,
         tandem: options.tandem.createTandem( 'leftAppliedForceVectorNode' )
@@ -132,7 +132,7 @@ export default class SeriesSystemNode extends Node {
 
     const rightSpringForceVectorNode = new SpringForceVectorNode(
       rightSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
-        fill: HookesLawColors.RIGHT_SPRING,
+        fill: HookesLawColors.RIGHT_SPRING_MIDDLE,
         decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by rightSpring.rightProperty
         bottom: leftSpringForceVectorNode.top - 10,

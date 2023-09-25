@@ -50,8 +50,8 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
 
     // Set the component vector colors to match the spring system
     systemTypeProperty.link( systemType => {
-      componentsIcon1.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.LEFT_SPRING : HookesLawColors.TOP_SPRING;
-      componentsIcon2.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.RIGHT_SPRING : HookesLawColors.BOTTOM_SPRING;
+      componentsIcon1.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.LEFT_SPRING_MIDDLE : HookesLawColors.TOP_SPRING_MIDDLE;
+      componentsIcon2.fill = ( systemType === SystemType.SERIES ) ? HookesLawColors.RIGHT_SPRING_MIDDLE : HookesLawColors.BOTTOM_SPRING_MIDDLE;
     } );
 
     const items: AquaRadioButtonGroupItem<SpringForceRepresentation>[] = [
@@ -60,7 +60,7 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
         createNode: tandem => new HBox( {
           children: [
             new Text( HookesLawStrings.totalStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
-            HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING } )
+            HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.SINGLE_SPRING_MIDDLE } )
           ],
           spacing: 10
         } ),

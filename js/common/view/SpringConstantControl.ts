@@ -84,7 +84,7 @@ export default class SpringConstantControl extends NumberControl {
       sliderOptions: {
         majorTicks: majorTicks,
         minorTickSpacing: provideOptions.minorTickSpacing,
-        thumbFill: HookesLawColors.SINGLE_SPRING,
+        thumbFill: HookesLawColors.SINGLE_SPRING_MIDDLE,
         constrainValue: value => {
           return Utils.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
         }

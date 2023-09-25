@@ -60,7 +60,7 @@ export default class ParallelSpringControls extends HBox {
       ],
       minorTickSpacing: 100,
       sliderOptions: {
-        thumbFill: HookesLawColors.TOP_SPRING,
+        thumbFill: HookesLawColors.TOP_SPRING_MIDDLE,
         trackSize: SPRING_CONSTANT_TRACK_SIZE
       },
       tandem: springConstantsPanelTandem.createTandem( 'topSpringConstantControl' )
@@ -77,7 +77,7 @@ export default class ParallelSpringControls extends HBox {
         ],
         minorTickSpacing: 100,
         sliderOptions: {
-          thumbFill: HookesLawColors.BOTTOM_SPRING,
+          thumbFill: HookesLawColors.BOTTOM_SPRING_MIDDLE,
           trackSize: SPRING_CONSTANT_TRACK_SIZE
         },
         tandem: springConstantsPanelTandem.createTandem( 'bottomSpringConstantControl' )
