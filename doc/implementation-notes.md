@@ -6,9 +6,9 @@ This document contains notes that will be helpful to developers and future maint
 
 Start by reading the model description in https://github.com/phetsims/hookes-law/blob/main/doc/model.md
 
-Type [Spring](https://github.com/phetsims/hookes-law/blob/main/js/common/model/Spring.js) is the heart of the model,
-start there. Type [SeriesSystem](https://github.com/phetsims/hookes-law/blob/main/js/systems/model/SeriesSystem.js)
-and [ParallelSystem](https://github.com/phetsims/hookes-law/blob/main/js/systems/model/ParallelSystem.js) expand the
+Type [Spring](https://github.com/phetsims/hookes-law/blob/main/js/common/model/Spring.ts) is the heart of the model,
+start there. Type [SeriesSystem](https://github.com/phetsims/hookes-law/blob/main/js/systems/model/SeriesSystem.ts)
+and [ParallelSystem](https://github.com/phetsims/hookes-law/blob/main/js/systems/model/ParallelSystem.ts) expand the
 model to describe series and parallel configurations of 2 springs.
 
 The model is 1 dimensional. Everything occurs along the x (horizontal) axis, with positive values to the right.
@@ -33,7 +33,7 @@ violations.
 Because the model is 1 dimensional, the 2D model-view transform (`ModelViewTransform2`) that is typically found in PhET
 simulations is not required. All conversions between model and view coordinate frames are done using unit vectors
 lengths for the various 1-dimensional quantities (displacement, force, energy).
-See [HookesLawConstants](https://github.com/phetsims/hookes-law/blob/main/js/common/HookesLawConstants.js)`.UNIT_*`.
+See [HookesLawConstants](https://github.com/phetsims/hookes-law/blob/main/js/common/HookesLawConstants.ts)`.UNIT_*`.
 
 The robotic arm has a pair of pincers that are open when displacement is zero and no user interaction is taking place.
 In order to determine whether user interaction is taking place, Property
@@ -44,7 +44,7 @@ is decremented. The pincers are opened only
 when `( displacement === 0 && numberOfInteractionsInProgressProperty.get() === 0 )`.
 
 The implementation of the spring view is based on a parametric equation known as the prolate cycloid. See the
-documentation in [ParametricSpringNode](https://github.com/phetsims/scenery-phet/blob/main/js/ParametricSpringNode.js)
+documentation in [ParametricSpringNode](https://github.com/phetsims/scenery-phet/blob/main/js/ParametricSpringNode.ts)
 for details.
 
 ## Reentrant Properties
@@ -56,12 +56,12 @@ The first relationship is _x_ = _p_ - _e_, where _x_ is the spring's displacemen
 _p_ is the position of the robotic arm's pincer, and _e_ is the spring's equilibrium position. The user can change _x_ (
 via a slider) or _p_ (by dragging the robotic arm). Changing _x_ results in computation of _p_; changing _p_ results in
 computation of _p_. So the Properties for _x_ and _p_, `displacementProperty`
-in Spring.js and `leftProperty` in RoboticArm.js respectively, have `reentrant: true`.
+in `Spring` and `leftProperty` in `RoboticArm` respectively, have `reentrant: true`.
 
 The second relationship is _F_ = _kx_, where _F_ is applied force, _k_ is spring constant, and _x_ is the spring's
 displacement from equilibrium. The user can change _F_, _k_ and _x_. Changing _x_ results in computation of _F_;
 changing _F_ results in computation of _x_.  (_k_ can be ignored for the purposes of this discussion.) So the Properties
-for _x_ and _F_, `displacementProperty` and `appliedForceProperty` respectively in Spring.js, require `reentrant: true`.
+for _x_ and _F_, `displacementProperty` and `appliedForceProperty` respectively in `Spring`, require `reentrant: true`.
 
 ## Miscellaneous
 
@@ -71,4 +71,4 @@ sim. So there is no need to call the various memory-management functions associa
 (unlink, dispose, detach, etc.)
 
 For a list of query parameters that are specific to this simulation,
-see [HookesLawQueryParameters](https://github.com/phetsims/hookes-law/blob/main/js/common/HookesLawQueryParameters.js).
+see [HookesLawQueryParameters](https://github.com/phetsims/hookes-law/blob/main/js/common/HookesLawQueryParameters.ts).
