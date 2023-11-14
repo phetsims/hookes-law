@@ -247,7 +247,7 @@ export default class Spring extends PhetioObject {
         assert && assert( right - left > 0, `right must be > left, right=${right}, left=${left}` );
         return right;
       }, {
-        accessNonDependencies: true
+        accessNonDependencies: true //TODO https://github.com/phetsims/hookes-law/issues/84
       } );
     phet.log && this.rightProperty.link( right => phet.log( `${options.logName} right=${right}` ) );
 
