@@ -246,6 +246,8 @@ export default class Spring extends PhetioObject {
         const right = equilibriumX + displacement;
         assert && assert( right - left > 0, `right must be > left, right=${right}, left=${left}` );
         return right;
+      }, {
+        accessNonDependencies: true
       } );
     phet.log && this.rightProperty.link( right => phet.log( `${options.logName} right=${right}` ) );
 
