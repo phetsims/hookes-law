@@ -240,14 +240,12 @@ export default class Spring extends PhetioObject {
     );
     phet.log && this.equilibriumXProperty.link( equilibriumX => phet.log( `${options.logName} equilibriumX=${equilibriumX}` ) );
 
-    this.rightProperty = new DerivedProperty( [ this.equilibriumXProperty, this.displacementProperty ],
-      ( equilibriumX, displacement ) => {
-        const left = this.leftProperty.value;
+    this.rightProperty = new DerivedProperty(
+      [ this.leftProperty, this.equilibriumXProperty, this.displacementProperty ],
+      ( left, equilibriumX, displacement ) => {
         const right = equilibriumX + displacement;
         assert && assert( right - left > 0, `right must be > left, right=${right}, left=${left}` );
         return right;
-      }, {
-        accessNonDependencies: true //TODO https://github.com/phetsims/hookes-law/issues/84
       } );
     phet.log && this.rightProperty.link( right => phet.log( `${options.logName} right=${right}` ) );
 
