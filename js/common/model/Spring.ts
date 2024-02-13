@@ -43,7 +43,6 @@ import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
@@ -217,9 +216,7 @@ export default class Spring extends PhetioObject {
       // Constrain to range, needed due to floating-point error.
       appliedForce = this.appliedForceRange.constrainValue( appliedForce );
 
-      // TODO: this is not good enough, but it fixes the infinite loop created in the linked issue. Definitely ask
-      //  responsible dev for a real solution, https://github.com/phetsims/axon/issues/447
-      this.appliedForceProperty.value = Utils.toFixedNumber( appliedForce, 10 );
+      this.appliedForceProperty.value = appliedForce;
     } );
 
     //------------------------------------------------
