@@ -43,6 +43,7 @@ import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
+import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
@@ -216,7 +217,8 @@ export default class Spring extends PhetioObject {
       // Constrain to range, needed due to floating-point error.
       appliedForce = this.appliedForceRange.constrainValue( appliedForce );
 
-      this.appliedForceProperty.value = appliedForce;
+      // An infinite loop can occur from floating point error between appliedForce and displacement. Rounding eagerly cuts the infinite loop. See https://github.com/phetsims/axon/issues/447
+      this.appliedForceProperty.value = Utils.toFixedNumber( appliedForce, 10 );
     } );
 
     //------------------------------------------------
@@ -242,7 +244,12 @@ export default class Spring extends PhetioObject {
 
     this.rightProperty = new DerivedProperty(
       [ this.equilibriumXProperty, this.displacementProperty ],
-      ( equilibriumX, displacement ) => equilibriumX + displacement );
+      ( equilibriumX, displacement ) => equilibriumX + displacement, {
+
+        // Encountered a need for this when there is a random listener order such that displacement and/or appliedForce
+        // could have not yet been updated. This was encountered while working on queue-based reentrant notification in https://github.com/phetsims/axon/issues/447
+        reentrant: true
+      } );
     phet.log && this.rightProperty.link( right => {
       assert && assert( right > this.leftProperty.value, `right must be > left, right=${right}, left=${this.leftProperty.value}` );
       phet.log( `${options.logName} right=${right}` );
