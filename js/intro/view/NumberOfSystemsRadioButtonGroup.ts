@@ -7,7 +7,6 @@
  */
 
 import Property from '../../../../axon/js/Property.js';
-import RectangularRadioButton from '../../../../sun/js/buttons/RectangularRadioButton.js';
 import RectangularRadioButtonGroup, { RectangularRadioButtonGroupItem } from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
@@ -21,12 +20,12 @@ export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioBut
       {
         value: 1,
         createNode: () => HookesLawIconFactory.createSingleSpringIcon(),
-        tandemName: `oneSystem${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+        tandemName: 'oneSystemRadioButton'
       },
       {
         value: 2,
         createNode: () => HookesLawIconFactory.createTwoSpringsIcon(),
-        tandemName: `twoSystems${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+        tandemName: 'twoSystemsRadioButton'
       }
     ];
 

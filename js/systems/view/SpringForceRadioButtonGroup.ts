@@ -12,7 +12,6 @@ import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import BracketNode from '../../../../scenery-phet/js/BracketNode.js';
 import { HBox, Text, VBox } from '../../../../scenery/js/imports.js';
-import AquaRadioButton from '../../../../sun/js/AquaRadioButton.js';
 import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOptions } from '../../../../sun/js/AquaRadioButtonGroup.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -62,7 +61,7 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
           ],
           spacing: 10
         } ),
-        tandemName: `total${AquaRadioButton.TANDEM_NAME_SUFFIX}`
+        tandemName: 'totalRadioButton'
       },
       {
         value: SpringForceRepresentation.COMPONENTS,
@@ -77,7 +76,7 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
           ],
           spacing: 10
         } ),
-        tandemName: `components${AquaRadioButton.TANDEM_NAME_SUFFIX}`
+        tandemName: 'componentsRadioButton'
       }
     ];
 

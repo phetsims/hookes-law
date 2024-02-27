@@ -7,7 +7,6 @@
  */
 
 import EnumerationProperty from '../../../../axon/js/EnumerationProperty.js';
-import RectangularRadioButton from '../../../../sun/js/buttons/RectangularRadioButton.js';
 import RectangularRadioButtonGroup, { RectangularRadioButtonGroupItem } from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
@@ -22,12 +21,12 @@ export default class SystemTypeRadioButtonGroup extends RectangularRadioButtonGr
       {
         value: SystemType.PARALLEL,
         createNode: () => HookesLawIconFactory.createParallelSystemIcon(),
-        tandemName: `parallel${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+        tandemName: 'parallelRadioButton'
       },
       {
         value: SystemType.SERIES,
         createNode: () => HookesLawIconFactory.createSeriesSystemIcon(),
-        tandemName: `series${RectangularRadioButton.TANDEM_NAME_SUFFIX}`
+        tandemName: 'seriesRadioButton'
       }
     ];
 
