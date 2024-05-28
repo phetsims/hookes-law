@@ -70,7 +70,7 @@ export default class SpringConstantControl extends NumberControl {
         phet.log && phet.log( '>>>>> SpringConstantControl end interaction' );
       },
       titleNodeOptions: {
-        maxWidth: 200, // i18n, determined empirically
+        maxWidth: 175, // i18n, determined empirically
         font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
       },
       numberDisplayOptions: {

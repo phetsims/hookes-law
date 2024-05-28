@@ -86,7 +86,6 @@ export default class ParallelSpringControls extends HBox {
     // "top" control above "bottom" control, to reflect layout of system
     const springControls = new VBox( {
       spacing: 5,
-      resize: false,
       children: [
         topSpringConstantControl,
         new HSeparator( HookesLawConstants.HSEPARATOR_OPTIONS ),
