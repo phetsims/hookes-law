@@ -35,7 +35,10 @@ export default class VectorCheckbox extends Checkbox {
     const options = optionize3<VectorCheckboxOptions, StrictOmit<SelfOptions, 'textAlignBoxOptions'>, CheckboxOptions>()(
       {}, HookesLawConstants.CHECKBOX_OPTIONS, providedOptions );
 
-    const text = new Text( stringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const text = new Text( stringProperty, {
+      font: HookesLawConstants.CONTROL_TEXT_FONT,
+      maxWidth: 100
+    } );
 
     const textAlignBox = new AlignBox( text, options.textAlignBoxOptions );
 

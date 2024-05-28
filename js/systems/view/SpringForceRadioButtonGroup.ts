@@ -56,7 +56,10 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
         value: SpringForceRepresentation.TOTAL,
         createNode: tandem => new HBox( {
           children: [
-            new Text( HookesLawStrings.totalStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+            new Text( HookesLawStrings.totalStringProperty, {
+              font: HookesLawConstants.CONTROL_TEXT_FONT,
+              maxWidth: 100
+            } ),
             HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.singleSpringMiddleColorProperty } )
           ],
           spacing: 10
@@ -67,7 +70,10 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
         value: SpringForceRepresentation.COMPONENTS,
         createNode: tandem => new HBox( {
           children: [
-            new Text( HookesLawStrings.componentsStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+            new Text( HookesLawStrings.componentsStringProperty, {
+              font: HookesLawConstants.CONTROL_TEXT_FONT,
+              maxWidth: 100
+            } ),
             new BracketNode( {
               orientation: 'left',
               bracketLength: componentsIcons.height

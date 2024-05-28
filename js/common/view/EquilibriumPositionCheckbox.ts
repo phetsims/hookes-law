@@ -22,7 +22,8 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
   public constructor( equilibriumPositionVisibleProperty: Property<boolean>, tandem: Tandem ) {
 
     const text = new Text( HookesLawStrings.equilibriumPositionStringProperty, {
-      font: new PhetFont( 18 )
+      font: new PhetFont( 18 ),
+      maxWidth: 125
     } );
 
     const line = new EquilibriumPositionNode( text.height, {

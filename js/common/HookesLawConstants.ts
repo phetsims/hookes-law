@@ -34,10 +34,6 @@ const CHECKBOX_OPTIONS: StrictOmit<CheckboxOptions, 'tandem'> = {
   spacing: 8
 };
 
-const CONTROL_TEXT_OPTIONS: StrictOmit<TextOptions, 'tandem'> = {
-  font: new PhetFont( 18 )
-};
-
 const HSEPARATOR_OPTIONS: HSeparatorOptions = {
   stroke: HookesLawColors.separatorStrokeProperty
 };
@@ -94,6 +90,7 @@ const HookesLawConstants = {
   // fonts
   CONTROL_PANEL_TITLE_FONT: new PhetFont( 18 ),
   CONTROL_PANEL_VALUE_FONT: new PhetFont( 18 ),
+  CONTROL_TEXT_FONT: new PhetFont( 18 ),
   VECTOR_VALUE_FONT: new PhetFont( 18 ),
   BAR_GRAPH_VALUE_FONT: new PhetFont( 18 ),
   BAR_GRAPH_AXIS_FONT: new PhetFont( 16 ),
@@ -118,7 +115,6 @@ const HookesLawConstants = {
   AQUA_RADIO_BUTTON_OPTIONS: AQUA_RADIO_BUTTON_OPTIONS,
   ARROW_BUTTON_OPTIONS: ARROW_BUTTON_OPTIONS,
   CHECKBOX_OPTIONS: CHECKBOX_OPTIONS,
-  CONTROL_TEXT_OPTIONS: CONTROL_TEXT_OPTIONS,
   HSEPARATOR_OPTIONS: HSEPARATOR_OPTIONS,
   MAJOR_TICK_LABEL_OPTIONS: MAJOR_TICK_LABEL_OPTIONS,
   SPRING_PANEL_OPTIONS: SPRING_PANEL_OPTIONS,

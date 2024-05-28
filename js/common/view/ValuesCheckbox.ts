@@ -19,7 +19,10 @@ export default class ValuesCheckbox extends Checkbox {
 
   public constructor( valuesVisibleProperty: Property<boolean>, tandem: Tandem ) {
 
-    const text = new Text( HookesLawStrings.valuesStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS );
+    const text = new Text( HookesLawStrings.valuesStringProperty, {
+      font: HookesLawConstants.CONTROL_TEXT_FONT,
+      maxWidth: 125
+    } );
 
     super( valuesVisibleProperty, text, combineOptions<CheckboxOptions>( {}, HookesLawConstants.CHECKBOX_OPTIONS, {
       tandem: tandem

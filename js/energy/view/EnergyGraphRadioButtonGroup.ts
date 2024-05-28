@@ -35,17 +35,26 @@ export default class EnergyGraphRadioButtonGroup extends AquaRadioButtonGroup<En
     const items: AquaRadioButtonGroupItem<EnergyGraph>[] = [
       {
         value: EnergyGraph.BAR_GRAPH,
-        createNode: () => new Text( HookesLawStrings.barGraphStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        createNode: () => new Text( HookesLawStrings.barGraphStringProperty, {
+          font: HookesLawConstants.CONTROL_TEXT_FONT,
+          maxWidth: 125
+        } ),
         tandemName: 'barGraphRadioButton'
       },
       {
         value: EnergyGraph.ENERGY_PLOT,
-        createNode: () => new Text( HookesLawStrings.energyPlotStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        createNode: () => new Text( HookesLawStrings.energyPlotStringProperty, {
+          font: HookesLawConstants.CONTROL_TEXT_FONT,
+          maxWidth: 125
+        } ),
         tandemName: 'energyPlotRadioButton'
       },
       {
         value: EnergyGraph.FORCE_PLOT,
-        createNode: () => new Text( HookesLawStrings.forcePlotStringProperty, HookesLawConstants.CONTROL_TEXT_OPTIONS ),
+        createNode: () => new Text( HookesLawStrings.forcePlotStringProperty, {
+          font: HookesLawConstants.CONTROL_TEXT_FONT,
+          maxWidth: 125
+        } ),
         tandemName: 'forcePlotRadioButton'
       }
     ];
