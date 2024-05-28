@@ -19,6 +19,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 
 type SelfOptions = {
   verticalLineVisible?: boolean;
@@ -77,26 +78,27 @@ export default class DisplacementVectorNode extends Node {
 
     options.children = [ verticalLine, arrowNode, backgroundNode, valueText ];
 
-    displacementProperty.link( displacement => {
+    Multilink.multilink(
+      [ displacementProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.metersStringProperty ],
+      ( displacement, patternString, metersString ) => {
 
-      // update the vector
-      arrowNode.visible = ( displacement !== 0 ); // since we can't draw a zero-length arrow
-      if ( displacement !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, options.unitDisplacementLength * displacement, 0 );
-      }
+        // update the vector
+        arrowNode.visible = ( displacement !== 0 ); // since we can't draw a zero-length arrow
+        if ( displacement !== 0 ) {
+          arrowNode.setTailAndTip( 0, 0, options.unitDisplacementLength * displacement, 0 );
+        }
 
-      // update the value
-      const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
-      valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
+        // update the value
+        const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        valueStringProperty.value = StringUtils.format( patternString, displacementText, metersString );
 
-      // center value on arrow
-      valueText.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
+        // center value on arrow
+        valueText.centerX = ( displacement === 0 ) ? 0 : arrowNode.centerX;
 
-      // resize the background behind the value
-      backgroundNode.setRect( 0, 0, 1.1 * valueText.width, 1.1 * valueText.height, 5, 5 );
-      backgroundNode.center = valueText.center;
-    } );
+        // resize the background behind the value
+        backgroundNode.setRect( 0, 0, 1.1 * valueText.width, 1.1 * valueText.height, 5, 5 );
+        backgroundNode.center = valueText.center;
+      } );
 
     super( options );
   }

@@ -18,6 +18,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 
 type SelfOptions = {
   fill?: TColor;
@@ -81,43 +82,44 @@ export default class ForceVectorNode extends Node {
 
     options.children = [ arrowNode, backgroundNode, valueText ];
 
-    forceProperty.link( value => {
+    Multilink.multilink(
+      [ forceProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.newtonsStringProperty ],
+      ( force, patternString, newtonsString ) => {
 
-      // update the arrow
-      arrowNode.visible = ( value !== 0 ); // since we can't draw a zero-length arrow
-      if ( value !== 0 ) {
-        arrowNode.setTailAndTip( 0, 0, value * options.unitLength, 0 );
-      }
+        // update the arrow
+        arrowNode.visible = ( force !== 0 ); // since we can't draw a zero-length arrow
+        if ( force !== 0 ) {
+          arrowNode.setTailAndTip( 0, 0, force * options.unitLength, 0 );
+        }
 
-      // update the value
-      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
-      valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
-        Utils.toFixed( Math.abs( value ), options.decimalPlaces ), HookesLawStrings.newtons );
+        // update the value
+        valueStringProperty.value = StringUtils.format( patternString,
+          Utils.toFixed( Math.abs( force ), options.decimalPlaces ), newtonsString );
 
-      // value position
-      const margin = 5;
-      if ( value === 0 ) {
-        if ( options.alignZero === 'left' ) {
+        // value position
+        const margin = 5;
+        if ( force === 0 ) {
+          if ( options.alignZero === 'left' ) {
+            valueText.left = margin;
+          }
+          else {
+            valueText.right = -margin;
+          }
+        }
+        else if ( valueText.width + ( 2 * margin ) < arrowNode.width ) {
+          valueText.centerX = arrowNode.centerX;
+        }
+        else if ( force > 0 ) {
           valueText.left = margin;
         }
         else {
           valueText.right = -margin;
         }
-      }
-      else if ( valueText.width + ( 2 * margin ) < arrowNode.width ) {
-        valueText.centerX = arrowNode.centerX;
-      }
-      else if ( value > 0 ) {
-        valueText.left = margin;
-      }
-      else {
-        valueText.right = -margin;
-      }
 
-      // resize the background behind the value
-      backgroundNode.setRect( 0, 0, 1.1 * valueText.width, 1.1 * valueText.height, 5, 5 );
-      backgroundNode.center = valueText.center;
-    } );
+        // resize the background behind the value
+        backgroundNode.setRect( 0, 0, 1.1 * valueText.width, 1.1 * valueText.height, 5, 5 );
+        backgroundNode.center = valueText.center;
+      } );
 
     super( options );
   }
