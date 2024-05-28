@@ -38,7 +38,6 @@ export default class IntroScreenView extends ScreenView {
 
     // Visibility controls
     const visibilityPanel = new IntroVisibilityPanel( viewProperties, {
-      maxWidth: 250, // constrain width for i18n, determining empirically
       tandem: tandem.createTandem( 'visibilityPanel' )
     } );
 

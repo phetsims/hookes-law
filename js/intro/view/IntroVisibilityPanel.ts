@@ -8,7 +8,6 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
-import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { AlignBoxOptions, AlignGroup, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
@@ -23,9 +22,7 @@ import IntroViewProperties from './IntroViewProperties.js';
 
 type SelfOptions = EmptySelfOptions;
 
-type IntroVisibilityPanelOptions = SelfOptions &
-  PickOptional<PanelOptions, 'maxWidth'> &
-  PickRequired<PanelOptions, 'tandem'>;
+type IntroVisibilityPanelOptions = SelfOptions & PickRequired<PanelOptions, 'tandem'>;
 
 export default class IntroVisibilityPanel extends Panel {
 
@@ -89,7 +86,8 @@ export default class IntroVisibilityPanel extends Panel {
     const content = new VBox( {
       children: checkboxes,
       align: 'left',
-      spacing: spacing
+      spacing: spacing,
+      minContentWidth: 172
     } );
 
     super( content, options );

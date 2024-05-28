@@ -8,7 +8,6 @@
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
-import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { HSeparator, NodeTranslationOptions, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
@@ -29,9 +28,7 @@ const Y_SPACING = 20;
 
 type SelfOptions = EmptySelfOptions;
 
-type EnergyVisibilityPanelOptions = SelfOptions & NodeTranslationOptions &
-  PickOptional<PanelOptions, 'maxWidth'> &
-  PickRequired<PanelOptions, 'tandem'>;
+type EnergyVisibilityPanelOptions = SelfOptions & NodeTranslationOptions & PickRequired<PanelOptions, 'tandem'>;
 
 export default class EnergyVisibilityPanel extends Panel {
 
@@ -98,7 +95,8 @@ export default class EnergyVisibilityPanel extends Panel {
         valuesCheckbox
       ],
       align: 'left',
-      spacing: Y_SPACING
+      spacing: Y_SPACING,
+      minContentWidth: 175
     } );
 
     super( content, options );

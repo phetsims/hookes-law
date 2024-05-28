@@ -37,7 +37,6 @@ export default class SystemsScreenView extends ScreenView {
 
     // Visibility controls
     const visibilityPanel = new SystemsVisibilityPanel( viewProperties, {
-      maxWidth: 260, // constrain width for i18n, determining empirically
       tandem: tandem.createTandem( 'visibilityPanel' )
     } );
 

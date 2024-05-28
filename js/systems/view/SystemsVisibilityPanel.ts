@@ -9,7 +9,6 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
-import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { AlignBoxOptions, AlignGroup, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
@@ -25,9 +24,7 @@ import SystemsViewProperties from './SystemsViewProperties.js';
 
 type SelfOptions = EmptySelfOptions;
 
-type SystemsVisibilityPanelOptions = SelfOptions &
-  PickOptional<PanelOptions, 'maxWidth'> &
-  PickRequired<PanelOptions, 'tandem'>;
+type SystemsVisibilityPanelOptions = SelfOptions & PickRequired<PanelOptions, 'tandem'>;
 
 export default class SystemsVisibilityPanel extends Panel {
 
@@ -112,7 +109,8 @@ export default class SystemsVisibilityPanel extends Panel {
         valuesCheckbox
       ],
       align: 'left',
-      spacing: spacing
+      spacing: spacing,
+      minContentWidth: 190
     } );
 
     super( content, options );
