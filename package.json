@@ -23,7 +23,8 @@
     "simFeatures": {
       "colorProfiles": [
         "default"
-      ]
+      ],
+      "supportsDynamicLocale": true
     },
     "simulation": true,
     "phet-io": {
