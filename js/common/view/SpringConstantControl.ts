@@ -50,6 +50,7 @@ export default class SpringConstantControl extends NumberControl {
       } );
     }
 
+    //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
     const valuePatternProperty = new DerivedProperty(
       [ HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.newtonsPerMeterStringProperty ],
       ( pattern, newtonsPerMeterString ) => StringUtils.format( pattern, SunConstants.VALUE_NUMBERED_PLACEHOLDER, newtonsPerMeterString )

@@ -227,6 +227,7 @@ export default class XYPointPlot extends Node {
 
       // x value
       const xString = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
       xValueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xString, options.xUnits );
 
       // placement of x value, so that it doesn't collide with y value or axes
@@ -273,6 +274,7 @@ export default class XYPointPlot extends Node {
 
       // y value
       const yString = Utils.toFixed( yFixed, options.yDecimalPlaces );
+      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
       yValueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yString, options.yUnits );
 
       // placement of y value, so that it doesn't collide with x value or axes

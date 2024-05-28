@@ -82,6 +82,7 @@ export default class EnergyBarGraph extends Node {
       barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
       // change the value
+      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
       valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), HookesLawStrings.joules );
       valueText.left = barNode.right + 5;

@@ -90,6 +90,7 @@ export default class ForceVectorNode extends Node {
       }
 
       // update the value
+      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
       valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
         Utils.toFixed( Math.abs( value ), options.decimalPlaces ), HookesLawStrings.newtons );
 

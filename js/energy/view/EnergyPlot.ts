@@ -47,8 +47,8 @@ export default class EnergyPlot extends XYPointPlot {
       // x-axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
       maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
-      xString: HookesLawStrings.displacement,
-      xUnits: HookesLawStrings.meters,
+      xString: HookesLawStrings.displacement, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
+      xUnits: HookesLawStrings.meters, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.displacementColorProperty,
       xUnitLength: unitDisplacementLength,
@@ -57,8 +57,8 @@ export default class EnergyPlot extends XYPointPlot {
       // y-axis
       minY: 0,
       maxY: HookesLawConstants.ENERGY_Y_AXIS_LENGTH,
-      yString: HookesLawStrings.potentialEnergy,
-      yUnits: HookesLawStrings.joules,
+      yString: HookesLawStrings.potentialEnergy, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
+      yUnits: HookesLawStrings.joules, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
       yDecimalPlaces: HookesLawConstants.ENERGY_DECIMAL_PLACES,
       yValueFill: HookesLawColors.energyColorProperty,
       yUnitLength: HookesLawConstants.UNIT_ENERGY_Y, // length of a 1J energy vector

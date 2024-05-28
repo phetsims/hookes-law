@@ -87,6 +87,7 @@ export default class DisplacementVectorNode extends Node {
 
       // update the value
       const displacementText = Utils.toFixed( Math.abs( displacement ), HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
       valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], displacementText, HookesLawStrings.meters );
 
       // center value on arrow
