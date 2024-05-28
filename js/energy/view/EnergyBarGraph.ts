@@ -19,6 +19,7 @@ import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
+import Multilink from '../../../../axon/js/Multilink.js';
 
 // constants
 const BAR_WIDTH = 20;
@@ -74,25 +75,26 @@ export default class EnergyBarGraph extends Node {
 
     options.children = [ barNode, valueText, xAxisNode, yAxisNode, yAxisText ];
 
-    spring.potentialEnergyProperty.link( energy => {
+    Multilink.multilink(
+      [ spring.potentialEnergyProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.joulesStringProperty ],
+      ( potentialEnergy, patternString, joulesString ) => {
 
-      // resize the bar
-      barNode.visible = ( energy > 0 ); // because we can't create a zero height rectangle
-      const height = Math.max( 1, energy * HookesLawConstants.UNIT_ENERGY_Y ); // bar must have non-zero size
-      barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
+        // resize the bar
+        barNode.visible = ( potentialEnergy > 0 ); // because we can't create a zero height rectangle
+        const height = Math.max( 1, potentialEnergy * HookesLawConstants.UNIT_ENERGY_Y ); // bar must have non-zero size
+        barNode.setRect( 0, -height, BAR_WIDTH, height ); // bar grows up
 
-      // change the value
-      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
-      valueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ],
-        Utils.toFixed( energy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), HookesLawStrings.joules );
-      valueText.left = barNode.right + 5;
-      if ( !barNode.visible || barNode.height < valueText.height / 2 ) {
-        valueText.bottom = xAxisNode.bottom;
-      }
-      else {
-        valueText.centerY = barNode.top;
-      }
-    } );
+        // change the value
+        valueStringProperty.value = StringUtils.format( patternString,
+          Utils.toFixed( potentialEnergy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
+        valueText.left = barNode.right + 5;
+        if ( !barNode.visible || barNode.height < valueText.height / 2 ) {
+          valueText.bottom = xAxisNode.bottom;
+        }
+        else {
+          valueText.centerY = barNode.top;
+        }
+      } );
 
     super( options );
   }

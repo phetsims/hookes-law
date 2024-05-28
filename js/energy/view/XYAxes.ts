@@ -13,6 +13,7 @@ import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Font, Node, NodeOptions, Text } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 // constants
 const AXIS_OPTIONS = {
@@ -29,10 +30,9 @@ type SelfOptions = {
   maxX: number;
   minY: number;
   maxY: number;
-  xString: string;
-  yString: string;
+  xStringProperty: TReadOnlyProperty<string>;
+  yStringProperty: TReadOnlyProperty<string>;
   font?: Font;
-  xLabelMaxWidth?: number | null;
 };
 
 type XYAxesOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
@@ -44,26 +44,29 @@ export default class XYAxes extends Node {
     const options = optionize<XYAxesOptions, SelfOptions, NodeOptions>()( {
 
       // SelfOptions
-      font: DEFAULT_FONT,
-      xLabelMaxWidth: null
+      font: DEFAULT_FONT
     }, providedOptions );
 
     // x-axis, arrow in positive direction only
     const xAxisNode = new ArrowNode( options.minX, 0, options.maxX, 0, AXIS_OPTIONS );
-    const xAxisText = new Text( options.xString, {
+    const xAxisText = new Text( options.xStringProperty, {
       font: options.font,
-      left: xAxisNode.right + 4,
-      centerY: xAxisNode.centerY,
-      maxWidth: options.xLabelMaxWidth // constrain for i18n
+      maxWidth: 100 // constrain for i18n
+    } );
+    xAxisText.localBoundsProperty.link( () => {
+      xAxisText.left = xAxisNode.right + 4;
+      xAxisText.centerY = xAxisNode.centerY;
     } );
 
     // y-axis, arrow in positive direction only
     const yAxisNode = new ArrowNode( 0, -options.minY, 0, -options.maxY, AXIS_OPTIONS );
-    const yAxisText = new Text( options.yString, {
+    const yAxisText = new Text( options.yStringProperty, {
       font: options.font,
-      centerX: yAxisNode.centerX,
-      bottom: yAxisNode.top - 2,
-      maxWidth: 0.85 * xAxisNode.width // constrain for i18n
+      maxWidth: 0.5 * xAxisNode.width // constrain for i18n
+    } );
+    yAxisText.localBoundsProperty.link( () => {
+      yAxisText.centerX = yAxisNode.centerX;
+      yAxisText.bottom = yAxisNode.top - 2;
     } );
 
     options.children = [ xAxisNode, xAxisText, yAxisNode, yAxisText ];

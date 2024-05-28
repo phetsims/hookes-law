@@ -57,20 +57,19 @@ type SelfOptions = {
   // x-axis
   minX?: number;
   maxX?: number;
-  xString?: string;
+  xStringProperty: TReadOnlyProperty<string>;
+  xUnitsStringProperty: TReadOnlyProperty<string>;
   xDecimalPlaces?: number;
-  xUnits?: string;
   xValueFill?: TColor;
   xUnitLength?: number;
-  xLabelMaxWidth?: number | null;
   xValueBackgroundColor?: TColor;
 
   // y-axis
   minY?: number;
   maxY?: number;
-  yString?: string;
+  yStringProperty: TReadOnlyProperty<string>;
+  yUnitsStringProperty: TReadOnlyProperty<string>;
   yDecimalPlaces?: number;
-  yUnits?: string;
   yValueFill?: TColor;
   yUnitLength?: number;
   yValueBackgroundColor?: TColor;
@@ -107,20 +106,15 @@ export default class XYPointPlot extends Node {
       // x-axis
       minX: -1,
       maxX: 1,
-      xString: 'x',
       xDecimalPlaces: 0,
-      xUnits: '',
       xValueFill: 'black',
       xUnitLength: 1,
-      xLabelMaxWidth: null,
       xValueBackgroundColor: null,
 
       // y-axis
       minY: -1,
       maxY: 1,
-      yString: 'y',
       yDecimalPlaces: 0,
-      yUnits: '',
       yValueFill: 'black',
       yUnitLength: 1,
       yValueBackgroundColor: null,
@@ -142,10 +136,9 @@ export default class XYPointPlot extends Node {
       maxX: options.maxX,
       minY: options.minY,
       maxY: options.maxY,
-      xString: options.xString,
-      yString: options.yString,
+      xStringProperty: options.xStringProperty,
+      yStringProperty: options.yStringProperty,
       font: options.axisFont,
-      xLabelMaxWidth: options.xLabelMaxWidth,
       tandem: options.tandem.createTandem( 'axesNode' )
     } );
 
@@ -210,99 +203,99 @@ export default class XYPointPlot extends Node {
       yLeaderLine.visible = visible;
     } );
 
-    xProperty.link( x => {
+    Multilink.multilink( [ xProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], options.xUnitsStringProperty ],
+      ( x, patternString, xUnitsString ) => {
 
-      const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
-      const xView = options.xUnitLength * xFixed;
+        const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
+        const xView = options.xUnitLength * xFixed;
 
-      // x vector
-      xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.value ); // can't draw a zero-length arrow
-      if ( xFixed !== 0 ) {
-        xVectorNode.setLine( 0, 0, xView, 0 );
-      }
+        // x vector
+        xVectorNode.visible = ( xFixed !== 0 && displacementVectorVisibleProperty.value ); // can't draw a zero-length arrow
+        if ( xFixed !== 0 ) {
+          xVectorNode.setLine( 0, 0, xView, 0 );
+        }
 
-      // x tick mark
-      xTickNode.visible = ( xFixed !== 0 && valuesVisibleProperty.value );
-      xTickNode.centerX = xView;
+        // x tick mark
+        xTickNode.visible = ( xFixed !== 0 && valuesVisibleProperty.value );
+        xTickNode.centerX = xView;
 
-      // x value
-      const xString = Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
-      xValueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], xString, options.xUnits );
+        // x value
+        xValueStringProperty.value = StringUtils.format( patternString,
+          Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), xUnitsString );
 
-      // placement of x value, so that it doesn't collide with y value or axes
-      if ( options.minY === 0 ) {
-        xValueText.centerX = xView; // centered on the tick
-        xValueText.top = 12; // below the x
-      }
-      else {
-        const X_SPACING = 6;
-        if ( Math.abs( xView ) > ( X_SPACING + xValueText.width / 2 ) ) {
+        // placement of x value, so that it doesn't collide with y value or axes
+        if ( options.minY === 0 ) {
           xValueText.centerX = xView; // centered on the tick
-        }
-        else if ( xFixed >= 0 ) {
-          xValueText.left = X_SPACING; // to the right of the y-axis
+          xValueText.top = 12; // below the x
         }
         else {
-          xValueText.right = -X_SPACING; // to the left of the y-axis
+          const X_SPACING = 6;
+          if ( Math.abs( xView ) > ( X_SPACING + xValueText.width / 2 ) ) {
+            xValueText.centerX = xView; // centered on the tick
+          }
+          else if ( xFixed >= 0 ) {
+            xValueText.left = X_SPACING; // to the right of the y-axis
+          }
+          else {
+            xValueText.right = -X_SPACING; // to the left of the y-axis
+          }
+
+          const Y_SPACING = 12;
+          if ( yProperty.value >= 0 ) {
+            xValueText.top = Y_SPACING; // below the x-axis
+          }
+          else {
+            xValueText.bottom = -Y_SPACING; // above the x-axis
+          }
         }
 
-        const Y_SPACING = 12;
-        if ( yProperty.value >= 0 ) {
-          xValueText.top = Y_SPACING; // below the x-axis
+        // x value background
+        xValueBackgroundNode.setRect( 0, 0,
+          xValueText.width + ( 2 * VALUE_X_MARGIN ), xValueText.height + ( 2 * VALUE_Y_MARGIN ),
+          VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
+        xValueBackgroundNode.center = xValueText.center;
+      } );
+
+    Multilink.multilink(
+      [ yProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], options.yUnitsStringProperty ],
+      ( y, patternString, yUnitsString ) => {
+
+        const yFixed = Utils.toFixedNumber( y, options.yDecimalPlaces );
+        const yView = yFixed * options.yUnitLength;
+
+        // y tick mark
+        yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.value );
+        yTickNode.centerY = -yView;
+
+        // y value
+        yValueStringProperty.value = StringUtils.format( patternString, Utils.toFixed( yFixed, options.yDecimalPlaces ), yUnitsString );
+
+        // placement of y value, so that it doesn't collide with x value or axes
+        const X_SPACING = 10;
+        if ( xProperty.value >= 0 ) {
+          yValueText.right = -X_SPACING; // to the left of the y-axis
         }
         else {
-          xValueText.bottom = -Y_SPACING; // above the x-axis
+          yValueText.left = X_SPACING; // to the right of the y-axis
         }
-      }
 
-      // x value background
-      xValueBackgroundNode.setRect( 0, 0,
-        xValueText.width + ( 2 * VALUE_X_MARGIN ), xValueText.height + ( 2 * VALUE_Y_MARGIN ),
-        VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
-      xValueBackgroundNode.center = xValueText.center;
-    } );
+        const Y_SPACING = 4;
+        if ( Math.abs( yView ) > Y_SPACING + yValueText.height / 2 ) {
+          yValueText.centerY = -yView; // centered on the tick
+        }
+        else if ( yFixed >= 0 ) {
+          yValueText.bottom = -Y_SPACING; // above the x-axis
+        }
+        else {
+          yValueText.top = Y_SPACING; // below the x-axis
+        }
 
-    yProperty.link( y => {
-
-      const yFixed = Utils.toFixedNumber( y, options.yDecimalPlaces );
-      const yView = yFixed * options.yUnitLength;
-
-      // y tick mark
-      yTickNode.visible = ( yFixed !== 0 && valuesVisibleProperty.value );
-      yTickNode.centerY = -yView;
-
-      // y value
-      const yString = Utils.toFixed( yFixed, options.yDecimalPlaces );
-      //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
-      yValueStringProperty.value = StringUtils.format( HookesLawStrings.pattern[ '0value' ][ '1units' ], yString, options.yUnits );
-
-      // placement of y value, so that it doesn't collide with x value or axes
-      const X_SPACING = 10;
-      if ( xProperty.value >= 0 ) {
-        yValueText.right = -X_SPACING; // to the left of the y-axis
-      }
-      else {
-        yValueText.left = X_SPACING; // to the right of the y-axis
-      }
-
-      const Y_SPACING = 4;
-      if ( Math.abs( yView ) > Y_SPACING + yValueText.height / 2 ) {
-        yValueText.centerY = -yView; // centered on the tick
-      }
-      else if ( yFixed >= 0 ) {
-        yValueText.bottom = -Y_SPACING; // above the x-axis
-      }
-      else {
-        yValueText.top = Y_SPACING; // below the x-axis
-      }
-
-      // y value background
-      yValueBackgroundNode.setRect( 0, 0,
-        yValueText.width + ( 2 * VALUE_X_MARGIN ), yValueText.height + ( 2 * VALUE_Y_MARGIN ),
-        VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
-      yValueBackgroundNode.center = yValueText.center;
-    } );
+        // y value background
+        yValueBackgroundNode.setRect( 0, 0,
+          yValueText.width + ( 2 * VALUE_X_MARGIN ), yValueText.height + ( 2 * VALUE_Y_MARGIN ),
+          VALUE_BACKGROUND_CORNER_RADIUS, VALUE_BACKGROUND_CORNER_RADIUS );
+        yValueBackgroundNode.center = yValueText.center;
+      } );
 
     // Move point and leader lines
     Multilink.multilink( [ xProperty, yProperty ],

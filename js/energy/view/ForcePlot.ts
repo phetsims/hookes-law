@@ -52,18 +52,17 @@ export default class ForcePlot extends XYPointPlot {
       // x-axis
       minX: unitDisplacementLength * ( 1.1 * spring.displacementRange.min ),
       maxX: unitDisplacementLength * ( 1.1 * spring.displacementRange.max ),
-      xString: HookesLawStrings.displacement, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
-      xUnits: HookesLawStrings.meters, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
+      xStringProperty: HookesLawStrings.displacementStringProperty,
+      xUnitsStringProperty: HookesLawStrings.metersStringProperty,
       xDecimalPlaces: HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES,
       xValueFill: HookesLawColors.displacementColorProperty,
       xUnitLength: unitDisplacementLength,
-      xLabelMaxWidth: 100, // constrain width for i18n, determined empirically
 
       // y-axis
       minY: -HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
       maxY: HookesLawConstants.FORCE_Y_AXIS_LENGTH / 2,
-      yString: HookesLawStrings.appliedForce, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
-      yUnits: HookesLawStrings.newtons, //TODO https://github.com/phetsims/hookes-law/issues/81 dynamic locale
+      yStringProperty: HookesLawStrings.appliedForceStringProperty,
+      yUnitsStringProperty: HookesLawStrings.newtonsStringProperty,
       yDecimalPlaces: HookesLawConstants.APPLIED_FORCE_DECIMAL_PLACES,
       yValueFill: HookesLawColors.appliedForceColorProperty,
       yUnitLength: HookesLawConstants.UNIT_FORCE_Y,
