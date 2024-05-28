@@ -46,12 +46,14 @@ export default class IntroScreenView extends ScreenView {
     const numberOfSystemsRadioButtonGroup = new NumberOfSystemsRadioButtonGroup( viewProperties.numberOfSystemsProperty,
       tandem.createTandem( 'numberOfSystemsRadioButtonGroup' ) );
 
-    // horizontally center the controls
+    // Controls at top right
     const controls = new VBox( {
       spacing: 10,
-      children: [ visibilityPanel, numberOfSystemsRadioButtonGroup ],
-      right: this.layoutBounds.right - 10,
-      top: this.layoutBounds.top + 10
+      children: [ visibilityPanel, numberOfSystemsRadioButtonGroup ]
+    } );
+    controls.localBoundsProperty.link( () => {
+      controls.right = this.layoutBounds.right - 10;
+      controls.top = this.layoutBounds.top + 10;
     } );
 
     // System 1

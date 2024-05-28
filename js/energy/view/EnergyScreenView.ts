@@ -38,10 +38,12 @@ export default class EnergyScreenView extends ScreenView {
 
     // Visibility controls
     const visibilityPanel = new EnergyVisibilityPanel( viewProperties, {
-      right: this.layoutBounds.right - 10,
-      top: 10,
       maxWidth: 235, // constrain width for i18n, determining empirically
       tandem: tandem.createTandem( 'visibilityPanel' )
+    } );
+    visibilityPanel.localBoundsProperty.link( () => {
+      visibilityPanel.right = this.layoutBounds.right - 10;
+      visibilityPanel.top = this.layoutBounds.top + 10;
     } );
 
     // System

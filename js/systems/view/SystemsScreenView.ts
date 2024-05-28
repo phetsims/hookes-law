@@ -45,12 +45,14 @@ export default class SystemsScreenView extends ScreenView {
     const systemTypeRadioButtonGroup = new SystemTypeRadioButtonGroup( viewProperties.systemTypeProperty,
       tandem.createTandem( 'systemTypeRadioButtonGroup' ) );
 
-    // horizontally center the controls
+    // Controls at top right
     const controls = new VBox( {
       spacing: 10,
-      children: [ visibilityPanel, systemTypeRadioButtonGroup ],
-      right: this.layoutBounds.right - 10,
-      top: this.layoutBounds.top + 10
+      children: [ visibilityPanel, systemTypeRadioButtonGroup ]
+    } );
+    controls.localBoundsProperty.link( () => {
+      controls.right = this.layoutBounds.right - 10;
+      controls.top = this.layoutBounds.top + 10;
     } );
 
     // Series system
