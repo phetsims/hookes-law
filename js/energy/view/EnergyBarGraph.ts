@@ -49,9 +49,11 @@ export default class EnergyBarGraph extends Node {
     const yAxisText = new Text( HookesLawStrings.potentialEnergyStringProperty, {
       rotation: -Math.PI / 2,
       font: HookesLawConstants.BAR_GRAPH_AXIS_FONT,
-      right: yAxisNode.left - 1,
-      centerY: yAxisNode.centerY,
-      maxWidth: 0.85 * yAxisNode.height // constrain for i18n
+      maxWidth: 0.65 * yAxisNode.height // constrain for i18n
+    } );
+    yAxisText.localBoundsProperty.link( localBounds => {
+      yAxisText.right = yAxisNode.left - 1;
+      yAxisText.centerY = yAxisNode.centerY;
     } );
 
     const barNode = new Rectangle( 0, 0, BAR_WIDTH, 1, {
