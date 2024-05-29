@@ -1,4 +1,4 @@
-// Copyright 2015-2023, University of Colorado Boulder
+// Copyright 2015-2024, University of Colorado Boulder
 
 /**
  * SystemsVisibilityPanel contains controls for the visibility of various representations in the "Systems" screen.

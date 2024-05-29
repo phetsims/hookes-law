@@ -1,4 +1,4 @@
-// Copyright 2022-2023, University of Colorado Boulder
+// Copyright 2022-2024, University of Colorado Boulder
 
 /**
  * EnergyCheckboxOptions is 'Energy' check box in the control panel on the 'Energy' screen.
