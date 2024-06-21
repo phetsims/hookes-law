@@ -219,6 +219,7 @@ const HookesLawIconFactory = {
   createTwoSpringsIcon(): Node {
     return new VBox( {
       spacing: 5,
+      sizable: false,
       children: [
         new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS ),
         new ParametricSpringNode( SCENE_SELECTION_SPRING_OPTIONS )
@@ -239,6 +240,7 @@ const HookesLawIconFactory = {
     } );
     return new HBox( {
       spacing: 0,
+      sizable: false,
       children: [ wallNode, leftSpringNode, rightSpringNode ]
     } );
   },
@@ -259,6 +261,7 @@ const HookesLawIconFactory = {
     } );
     return new HBox( {
       spacing: 0,
+      sizable: false,
       children: [ wallNode, springsBox ]
     } );
   }
