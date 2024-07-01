@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.1.0-dev.18 Thu Jun 27 2024 17:58:58 GMT-0400 (Eastern Daylight Time)",
+  "comment": "# hookes-law 1.1.0-dev.19 Mon Jul 01 2024 17:06:14 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "4eaabfefb0b88b213e98b9c7f32d6c570c3fc122",
     "branch": "main"
@@ -13,7 +13,7 @@
     "branch": "main"
   },
   "chipper": {
-    "sha": "d0883809f99bafe8ba5ce1dfda62e8e1f36f4675",
+    "sha": "cbc1e24fbb0997fd989c401351e9906be219d880",
     "branch": "main"
   },
   "dot": {
@@ -21,7 +21,7 @@
     "branch": "main"
   },
   "hookes-law": {
-    "sha": "0f59b8b18e42239624f988d0d32f760c00035170",
+    "sha": "3ac95aa97e0cbaa420620394b8add4c15c4841a7",
     "branch": "main"
   },
   "joist": {
@@ -33,7 +33,7 @@
     "branch": "main"
   },
   "perennial-alias": {
-    "sha": "e13e952c1535894bfbd22f9b454d67e8465c5b6a",
+    "sha": "251746f9f078339b5c585095b3ff319ae775c3f5",
     "branch": "main"
   },
   "phet-core": {
@@ -41,15 +41,15 @@
     "branch": "main"
   },
   "phet-io": {
-    "sha": "8fc9b453aafa29b33f30a7f10a9a75d188bc77ec",
+    "sha": "61bd53be3ef3cff176dda2c5d0dc5c9143f790f2",
     "branch": "main"
   },
   "phet-io-sim-specific": {
-    "sha": "df963b992d05944b43aac9f449d316e296dd8058",
+    "sha": "6efe91d6cedc817850b74ca1bcb820051e2889c8",
     "branch": "main"
   },
   "phet-io-wrappers": {
-    "sha": "c9d4e089f0e7e9ca92cd8dadde21447e2b764bef",
+    "sha": "b38824944a92a8079c33b2d1297751986071209e",
     "branch": "main"
   },
   "phetcommon": {
@@ -65,11 +65,11 @@
     "branch": "main"
   },
   "scenery": {
-    "sha": "8e3dab9221bcd09f531230d1226d7f4f02596f58",
+    "sha": "5b7c4c167f77aac204d9b0f387bcab71fba9904e",
     "branch": "main"
   },
   "scenery-phet": {
-    "sha": "e1d063709def87011597a2edcaf12a6f465efc9c",
+    "sha": "74f11211b54233e4355a5694ad1a7c331035cf50",
     "branch": "main"
   },
   "sherpa": {
@@ -81,7 +81,7 @@
     "branch": "main"
   },
   "sun": {
-    "sha": "eec0449cc1afd5b7885682250a167ae4d472e700",
+    "sha": "d66714118c023f905a4a1eb57ee3d87a95f23209",
     "branch": "main"
   },
   "tambo": {
