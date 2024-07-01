@@ -12,7 +12,6 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import EquilibriumPositionNode from './EquilibriumPositionNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import { HBox, Text } from '../../../../scenery/js/imports.js';
-import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
@@ -22,8 +21,8 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
   public constructor( equilibriumPositionVisibleProperty: Property<boolean>, tandem: Tandem ) {
 
     const text = new Text( HookesLawStrings.equilibriumPositionStringProperty, {
-      font: new PhetFont( 18 ),
-      maxWidth: 125
+      font: HookesLawConstants.CONTROL_TEXT_FONT,
+      maxWidth: 145
     } );
 
     const line = new EquilibriumPositionNode( text.height, {
@@ -32,7 +31,7 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
 
     const content = new HBox( {
       children: [ text, line ],
-      spacing: 8
+      spacing: 6
     } );
 
     super( equilibriumPositionVisibleProperty, content, combineOptions<CheckboxOptions>( {

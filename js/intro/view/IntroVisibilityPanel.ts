@@ -89,7 +89,7 @@ export default class IntroVisibilityPanel extends Panel {
       children: checkboxes,
       align: 'left',
       spacing: spacing,
-      minContentWidth: 172
+      minContentWidth: 185
     } );
 
     super( content, options );
