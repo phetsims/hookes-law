@@ -80,7 +80,9 @@ export default class IntroVisibilityPanel extends Panel {
       valuesCheckbox
     ];
     for ( let i = 0; i < checkboxes.length; i++ ) {
-      checkboxes[ i ].touchArea = checkboxes[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+      checkboxes[ i ].localBoundsProperty.link( localBounds => {
+        checkboxes[ i ].touchArea = localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+      } );
     }
 
     const content = new VBox( {
