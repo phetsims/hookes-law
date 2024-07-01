@@ -27,7 +27,7 @@ simLauncher.launch( () => {
       leadDesign: 'Amy Rouinfar',
       softwareDevelopment: 'Chris Malley (PixelZoom, Inc.)',
       team: 'Michael Dubson, Bruna Shinohara de Mendon\u00e7a, Ariel Paul, Kathy Perkins, Martin Veillette',
-      qualityAssurance: 'Steele Dalton, Brooklyn Lash, Elise Morgan, Oliver Orejola, Bryan Yoelin',
+      qualityAssurance: 'Steele Dalton, Jaron Droder, Brooklyn Lash, Matthew Moore, Elise Morgan, Oliver Orejola, Nancy Salpepi, Kathryn Woessner, Bryan Yoelin',
       graphicArts: 'Mariah Hermsmeyer'
     }
   } );
