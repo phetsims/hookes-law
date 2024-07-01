@@ -22,6 +22,8 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
 
+const Y_SPACING = 20;
+
 type SelfOptions = EmptySelfOptions;
 
 type SystemsVisibilityPanelOptions = SelfOptions & PickRequired<PanelOptions, 'tandem'>;
@@ -86,17 +88,19 @@ export default class SystemsVisibilityPanel extends Panel {
         valuesCheckbox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
-    // Adjust touch areas
-    const spacing = 20;
-    const controls = [
+    const checkboxes = [
       appliedForceCheckbox,
       springForceCheckbox,
       displacementCheckbox,
       equilibriumPositionCheckbox,
       valuesCheckbox
     ];
-    for ( let i = 0; i < controls.length; i++ ) {
-      controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+
+    // Adjust touch areas dynamically.
+    for ( let i = 0; i < checkboxes.length; i++ ) {
+      checkboxes[ i ].localBoundsProperty.link( localBounds => {
+        checkboxes[ i ].touchArea = localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
+      } );
     }
 
     const content = new VBox( {
@@ -109,7 +113,7 @@ export default class SystemsVisibilityPanel extends Panel {
         valuesCheckbox
       ],
       align: 'left',
-      spacing: spacing,
+      spacing: Y_SPACING,
       minContentWidth: 190
     } );
 

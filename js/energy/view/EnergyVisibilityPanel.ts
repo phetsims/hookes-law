@@ -23,7 +23,6 @@ import EnergyGraph from './EnergyGraph.js';
 import EnergyGraphRadioButtonGroup from './EnergyGraphRadioButtonGroup.js';
 import EnergyViewProperties from './EnergyViewProperties.js';
 
-// constants
 const Y_SPACING = 20;
 
 type SelfOptions = EmptySelfOptions;
@@ -71,7 +70,6 @@ export default class EnergyVisibilityPanel extends Panel {
 
     const valuesCheckbox = new ValuesCheckbox( properties.valuesVisibleProperty, options.tandem.createTandem( 'valuesCheckbox' ) );
 
-    // Adjust touch areas
     const controls = [
       energyGraphRadioButtonGroup,
       energyCheckbox,
@@ -80,8 +78,12 @@ export default class EnergyVisibilityPanel extends Panel {
       equilibriumPositionCheckbox,
       valuesCheckbox
     ];
+
+    // Adjust touch areas dynamically.
     for ( let i = 0; i < controls.length; i++ ) {
-      controls[ i ].touchArea = controls[ i ].localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
+      controls[ i ].localBoundsProperty.link( localBounds => {
+        controls[ i ].touchArea = localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
+      } );
     }
 
     const content = new VBox( {

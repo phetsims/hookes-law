@@ -20,6 +20,8 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import IntroViewProperties from './IntroViewProperties.js';
 
+const Y_SPACING = 20;
+
 type SelfOptions = EmptySelfOptions;
 
 type IntroVisibilityPanelOptions = SelfOptions & PickRequired<PanelOptions, 'tandem'>;
@@ -70,8 +72,6 @@ export default class IntroVisibilityPanel extends Panel {
         valuesCheckbox.enabled = ( appliedForceVectorVisible || springForceVectorVisible || displacementVectorVisible );
       } );
 
-    // Adjust touch areas
-    const spacing = 20;
     const checkboxes = [
       appliedForceCheckbox,
       springForceCheckbox,
@@ -79,16 +79,18 @@ export default class IntroVisibilityPanel extends Panel {
       equilibriumPositionCheckbox,
       valuesCheckbox
     ];
+
+    // Adjust touch areas dynamically.
     for ( let i = 0; i < checkboxes.length; i++ ) {
       checkboxes[ i ].localBoundsProperty.link( localBounds => {
-        checkboxes[ i ].touchArea = localBounds.dilatedXY( 10, ( spacing / 2 ) - 1 );
+        checkboxes[ i ].touchArea = localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
       } );
     }
 
     const content = new VBox( {
       children: checkboxes,
       align: 'left',
-      spacing: spacing,
+      spacing: Y_SPACING,
       minContentWidth: 185
     } );
 
