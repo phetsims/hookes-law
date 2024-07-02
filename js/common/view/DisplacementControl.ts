@@ -54,10 +54,10 @@ export default class DisplacementControl extends NumberControl {
       // NumberControlOptions
       delta: HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL,
       startCallback: () => {
-        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value + 1 );
+        numberOfInteractionsInProgressProperty.value += 1;
       },
       endCallback: () => {
-        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value - 1 );
+        numberOfInteractionsInProgressProperty.value -= 1;
       },
       titleNodeOptions: {
         maxWidth: 200, // i18n, determined empirically

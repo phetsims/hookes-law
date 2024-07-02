@@ -143,7 +143,7 @@ export default class RoboticArmNode extends Node {
       allowTouchSnag: true,
 
       start: event => {
-        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value + 1 );
+        numberOfInteractionsInProgressProperty.value += 1;
         const length = options.unitDisplacementLength * ( roboticArm.leftProperty.value - roboticArm.right );
         startOffsetX = draggableNode.globalToParentPoint( event.pointer.point ).x - length;
       },
@@ -163,7 +163,7 @@ export default class RoboticArmNode extends Node {
       },
 
       end: () => {
-        numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value - 1 );
+        numberOfInteractionsInProgressProperty.value -= 1;
       },
 
       // phet-io
