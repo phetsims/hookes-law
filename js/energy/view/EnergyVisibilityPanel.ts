@@ -67,8 +67,7 @@ export default class EnergyVisibilityPanel extends Panel {
 
     const valuesCheckbox = new ValuesCheckbox( properties.valuesVisibleProperty, options.tandem.createTandem( 'valuesCheckbox' ) );
 
-    const controls = [
-      energyGraphRadioButtonGroup,
+    const checkboxes = [
       energyCheckbox,
       appliedForceCheckbox,
       displacementCheckbox,
@@ -77,9 +76,9 @@ export default class EnergyVisibilityPanel extends Panel {
     ];
 
     // Adjust touch areas dynamically.
-    for ( let i = 0; i < controls.length; i++ ) {
-      controls[ i ].localBoundsProperty.link( localBounds => {
-        controls[ i ].touchArea = localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
+    for ( let i = 0; i < checkboxes.length; i++ ) {
+      checkboxes[ i ].localBoundsProperty.link( localBounds => {
+        checkboxes[ i ].touchArea = localBounds.dilatedXY( 10, ( Y_SPACING / 2 ) - 1 );
       } );
     }
 
