@@ -10,9 +10,8 @@ import Property from '../../../../axon/js/Property.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import { optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
-import { AlignBox, AlignBoxOptions, HBox, TColor, Text } from '../../../../scenery/js/imports.js';
+import { HBox, TColor, Text } from '../../../../scenery/js/imports.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import HookesLawIconFactory from './HookesLawIconFactory.js';
@@ -21,7 +20,6 @@ import hookesLaw from '../../hookesLaw.js';
 type SelfOptions = {
   vectorType: 'force' | 'displacement';
   arrowFill: TColor;
-  textAlignBoxOptions?: StrictOmit<AlignBoxOptions, 'tandem'>; // to give text labels the same effective width
 };
 
 type VectorCheckboxOptions = SelfOptions & PickRequired<CheckboxOptions, 'tandem'>;
@@ -32,15 +30,13 @@ export default class VectorCheckbox extends Checkbox {
                       stringProperty: TReadOnlyProperty<string>,
                       providedOptions: VectorCheckboxOptions ) {
 
-    const options = optionize3<VectorCheckboxOptions, StrictOmit<SelfOptions, 'textAlignBoxOptions'>, CheckboxOptions>()(
+    const options = optionize3<VectorCheckboxOptions, SelfOptions, CheckboxOptions>()(
       {}, HookesLawConstants.CHECKBOX_OPTIONS, providedOptions );
 
     const text = new Text( stringProperty, {
       font: HookesLawConstants.CONTROL_TEXT_FONT,
       maxWidth: 110
     } );
-
-    const textAlignBox = new AlignBox( text, options.textAlignBoxOptions );
 
     let arrowNode;
     if ( options.vectorType === 'force' ) {
@@ -59,7 +55,7 @@ export default class VectorCheckbox extends Checkbox {
     }
 
     const content = new HBox( {
-      children: [ textAlignBox, arrowNode ],
+      children: [ text, arrowNode ],
       spacing: 10
     } );
 

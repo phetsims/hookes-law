@@ -10,7 +10,7 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { AlignBoxOptions, AlignGroup, VBox } from '../../../../scenery/js/imports.js';
+import { VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -35,24 +35,16 @@ export default class SystemsVisibilityPanel extends Panel {
     const options = optionize3<SystemsVisibilityPanelOptions, SelfOptions, PanelOptions>()(
       {}, HookesLawConstants.VISIBILITY_PANEL_OPTIONS, providedOptions );
 
-    // So that text labels on the vector checkboxes all have the same effective size
-    const textAlignBoxOptions: AlignBoxOptions = {
-      group: new AlignGroup(),
-      xAlign: 'left'
-    };
-
     const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
       HookesLawStrings.appliedForceStringProperty, {
         vectorType: 'force',
         arrowFill: HookesLawColors.appliedForceColorProperty,
-        textAlignBoxOptions: textAlignBoxOptions,
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       } );
 
     const springForceCheckbox = new VectorCheckbox( properties.springForceVectorVisibleProperty, HookesLawStrings.springForceStringProperty, {
       vectorType: 'force',
       arrowFill: HookesLawColors.singleSpringMiddleColorProperty,
-      textAlignBoxOptions: textAlignBoxOptions,
       tandem: options.tandem.createTandem( 'springForceCheckbox' )
     } );
 
@@ -72,7 +64,6 @@ export default class SystemsVisibilityPanel extends Panel {
     const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
       vectorType: 'displacement',
       arrowFill: HookesLawColors.displacementColorProperty,
-      textAlignBoxOptions: textAlignBoxOptions,
       tandem: options.tandem.createTandem( 'displacementCheckbox' )
     } );
 
