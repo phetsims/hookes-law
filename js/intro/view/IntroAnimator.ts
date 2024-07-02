@@ -15,7 +15,6 @@ import Animation from '../../../../twixt/js/Animation.js';
 import Easing from '../../../../twixt/js/Easing.js';
 import hookesLaw from '../../hookesLaw.js';
 
-// constants
 const STEPPER = null; // step method must be called by the client
 const TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation, in seconds
 const OPACITY_DURATION = 0.5; // duration of system 2 opacity animation, in seconds

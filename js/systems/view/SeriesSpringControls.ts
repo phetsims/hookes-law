@@ -21,7 +21,6 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SeriesSystem from '../model/SeriesSystem.js';
 
-// constants
 const SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
 
 type SelfOptions = EmptySelfOptions;

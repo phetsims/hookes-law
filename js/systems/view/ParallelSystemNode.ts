@@ -30,7 +30,6 @@ import ParallelSpringControls from './ParallelSpringControls.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
 
-// constants
 const WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
 
 type SelfOptions = {

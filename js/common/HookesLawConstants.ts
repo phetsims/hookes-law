@@ -17,7 +17,6 @@ import { PanelOptions } from '../../../sun/js/Panel.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawColors from './HookesLawColors.js';
 
-// constants
 const APPLIED_FORCE_DECIMAL_PLACES = 1;
 
 const AQUA_RADIO_BUTTON_OPTIONS: StrictOmit<AquaRadioButtonOptions, 'tandem'> = {

@@ -31,7 +31,6 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import XYAxes from './XYAxes.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
 
-// constants
 const VALUE_X_MARGIN = 6;
 const VALUE_Y_MARGIN = 3;
 const VALUE_BACKGROUND_CORNER_RADIUS = 3;

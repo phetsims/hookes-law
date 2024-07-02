@@ -13,7 +13,6 @@ import { Circle, Node, NodeOptions, NodeTranslationOptions, Path } from '../../.
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 
-// constants
 const BODY_SIZE = new Dimension2( 9, 40 );
 const PIVOT_SIZE = new Dimension2( 26, 25 );
 const SCREW_RADIUS = 3;

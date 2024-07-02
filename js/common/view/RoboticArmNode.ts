@@ -22,7 +22,6 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
-// constants
 const PINCER_RADIUS = 35;
 const PINCER_LINE_WIDTH = 6;
 const PINCER_OVERLAP = 2;

@@ -21,7 +21,6 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
 import Multilink from '../../../../axon/js/Multilink.js';
 
-// constants
 const BAR_WIDTH = 20;
 
 type SelfOptions = EmptySelfOptions;

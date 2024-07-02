@@ -22,7 +22,6 @@ import optionize from '../../../../phet-core/js/optionize.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 
-// constants
 const MINOR_TICK_SPACING = 10;
 
 type SelfOptions = {

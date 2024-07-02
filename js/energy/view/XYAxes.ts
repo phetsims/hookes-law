@@ -15,7 +15,6 @@ import { Font, Node, NodeOptions, Text } from '../../../../scenery/js/imports.js
 import hookesLaw from '../../hookesLaw.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
-// constants
 const AXIS_OPTIONS = {
   headHeight: 10,
   headWidth: 10,
