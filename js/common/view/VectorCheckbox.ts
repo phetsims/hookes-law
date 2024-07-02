@@ -38,14 +38,15 @@ export default class VectorCheckbox extends Checkbox {
       maxWidth: 110
     } );
 
-    let arrowNode;
+    // vector icon
+    let icon;
     if ( options.vectorType === 'force' ) {
-      arrowNode = HookesLawIconFactory.createForceVectorIcon( {
+      icon = HookesLawIconFactory.createForceVectorIcon( {
         fill: options.arrowFill
       } );
     }
     else {
-      arrowNode = new LineArrowNode( 0, 0, 30, 0, {
+      icon = new LineArrowNode( 0, 0, 30, 0, {
         stroke: options.arrowFill,
         headWidth: HookesLawConstants.VECTOR_HEAD_SIZE.width,
         headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height,
@@ -55,9 +56,9 @@ export default class VectorCheckbox extends Checkbox {
     }
 
     const content = new HBox( {
-      children: [ text, arrowNode ],
+      children: [ text, icon ],
       spacing: 10,
-      justify: 'left'
+      justify: 'left' // constant space between text and icon
     } );
 
     super( visibleProperty, content, options );

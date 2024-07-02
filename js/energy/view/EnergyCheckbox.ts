@@ -33,14 +33,15 @@ export default class EnergyCheckbox extends Checkbox {
       maxWidth: 80
     } );
 
-    const triangle = new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), {
+    // triangle
+    const icon = new Path( new Shape().moveTo( 0, 0 ).lineTo( 20, 0 ).lineTo( 20, -10 ).close(), {
       fill: HookesLawColors.energyColorProperty
     } );
 
     const content = new HBox( {
-      children: [ text, triangle ],
+      children: [ text, icon ],
       spacing: 6,
-      justify: 'left'
+      justify: 'left' // constant space between text and icon
     } );
 
     super( energyOnForcePlotVisibleProperty, content, options );

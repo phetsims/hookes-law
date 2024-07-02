@@ -25,14 +25,15 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
       maxWidth: 155
     } );
 
-    const line = new EquilibriumPositionNode( text.height, {
+    // vertical dashed line
+    const icon = new EquilibriumPositionNode( text.height, {
       tandem: Tandem.OPT_OUT
     } );
 
     const content = new HBox( {
-      children: [ text, line ],
+      children: [ text, icon ],
       spacing: 6,
-      justify: 'left'
+      justify: 'left' // constant space between text and icon
     } );
 
     super( equilibriumPositionVisibleProperty, content, combineOptions<CheckboxOptions>( {
