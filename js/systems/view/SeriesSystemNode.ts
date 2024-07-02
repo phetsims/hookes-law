@@ -1,4 +1,4 @@
-// Copyright 2015-2023, University of Colorado Boulder
+// Copyright 2015-2024, University of Colorado Boulder
 
 /**
  * SeriesSystemNode is two springs in series, a robotic arm, and all visual representations that go with them.
