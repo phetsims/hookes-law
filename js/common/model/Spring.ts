@@ -217,7 +217,8 @@ export default class Spring extends PhetioObject {
       // Constrain to range, needed due to floating-point error.
       appliedForce = this.appliedForceRange.constrainValue( appliedForce );
 
-      // An infinite loop can occur from floating point error between appliedForce and displacement. Rounding eagerly cuts the infinite loop. See https://github.com/phetsims/axon/issues/447
+      // An infinite loop can occur from floating point error between appliedForce and displacement. Rounding eagerly
+      // defeats the infinite loop. See https://github.com/phetsims/axon/issues/447
       this.appliedForceProperty.value = Utils.toFixedNumber( appliedForce, 10 );
     } );
 
@@ -247,7 +248,8 @@ export default class Spring extends PhetioObject {
       ( equilibriumX, displacement ) => equilibriumX + displacement, {
 
         // Encountered a need for this when there is a random listener order such that displacement and/or appliedForce
-        // could have not yet been updated. This was encountered while working on queue-based reentrant notification in https://github.com/phetsims/axon/issues/447
+        // could have not yet been updated. This was encountered while working on queue-based reentrant notification in
+        // https://github.com/phetsims/axon/issues/447.
         reentrant: true
       } );
     phet.log && this.rightProperty.link( right => {
