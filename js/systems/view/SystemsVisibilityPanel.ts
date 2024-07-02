@@ -10,7 +10,7 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { VBox } from '../../../../scenery/js/imports.js';
+import { Text, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -21,6 +21,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
+import Checkbox from '../../../../sun/js/Checkbox.js';
 
 const Y_SPACING = 20;
 
@@ -42,11 +43,13 @@ export default class SystemsVisibilityPanel extends Panel {
         tandem: options.tandem.createTandem( 'appliedForceCheckbox' )
       } );
 
-    const springForceCheckbox = new VectorCheckbox( properties.springForceVectorVisibleProperty, HookesLawStrings.springForceStringProperty, {
-      vectorType: 'force',
-      arrowFill: HookesLawColors.singleSpringMiddleColorProperty,
-      tandem: options.tandem.createTandem( 'springForceCheckbox' )
-    } );
+    const springForceCheckbox = new Checkbox( properties.springForceVectorVisibleProperty,
+      new Text( HookesLawStrings.springForceStringProperty, {
+        font: HookesLawConstants.CONTROL_TEXT_FONT,
+        maxWidth: 110
+      } ), {
+        tandem: options.tandem.createTandem( 'springForceCheckbox' )
+      } );
 
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
       properties.springForceRepresentationProperty, properties.systemTypeProperty, {
