@@ -81,6 +81,7 @@ export default class IntroVisibilityPanel extends Panel {
     const content = new VBox( {
       children: checkboxes,
       align: 'left',
+      stretch: true,
       spacing: Y_SPACING,
       minContentWidth: 150
     } );
