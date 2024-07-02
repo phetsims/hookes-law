@@ -94,6 +94,7 @@ export default class EnergyVisibilityPanel extends Panel {
         valuesCheckbox
       ],
       align: 'left',
+      stretch: true,
       spacing: Y_SPACING,
       minContentWidth: 172
     } );

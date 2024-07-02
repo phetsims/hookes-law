@@ -99,6 +99,7 @@ export default class SystemsVisibilityPanel extends Panel {
         valuesCheckbox
       ],
       align: 'left',
+      stretch: true,
       spacing: Y_SPACING,
       minContentWidth: 195
     } );
