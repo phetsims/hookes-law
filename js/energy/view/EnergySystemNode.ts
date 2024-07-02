@@ -74,7 +74,6 @@ export default class EnergySystemNode extends Node {
       backColor: HookesLawColors.singleSpringBackColorProperty,
       loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
-      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * spring.leftProperty.value,
       y: yOrigin
     } );

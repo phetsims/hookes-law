@@ -81,7 +81,6 @@ export default class ParallelSystemNode extends Node {
       frontColor: HookesLawColors.spring1FrontColorProperty,
       middleColor: HookesLawColors.spring1MiddleColorProperty,
       backColor: HookesLawColors.spring1BackColorProperty,
-      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * topSpring.leftProperty.value,
       y: wallNode.top + ( 0.25 * wallNode.height )
     } );
@@ -92,7 +91,6 @@ export default class ParallelSystemNode extends Node {
       frontColor: HookesLawColors.spring2FrontColorProperty,
       middleColor: HookesLawColors.spring2MiddleColorProperty,
       backColor: HookesLawColors.spring2BackColorProperty,
-      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * bottomSpring.leftProperty.value,
       y: wallNode.bottom - ( 0.25 * wallNode.height )
     } );
@@ -128,8 +126,7 @@ export default class ParallelSystemNode extends Node {
     const appliedForceVectorNode = new AppliedForceVectorNode(
       equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by bottomSpring.rightProperty
-        // bottom determined empirically, topSpringNode.top is not accurate because we're using boundsMethod:'none'
-        bottom: topSpringNode.y - 80,
+        bottom: topSpringNode.y - 80, // determined empirically
         visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );

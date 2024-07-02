@@ -78,7 +78,6 @@ export default class IntroSystemNode extends Node {
       backColor: HookesLawColors.singleSpringBackColorProperty,
       loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
-      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: xOrigin,
       y: yOrigin
     } );
@@ -107,8 +106,7 @@ export default class IntroSystemNode extends Node {
     const appliedForceVectorNode = new AppliedForceVectorNode(
       spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
-        // bottom determined empirically, springNode.top is not accurate because we're using boundsMethod:'none'
-        bottom: springNode.y - 50,
+        bottom: springNode.y - 50, // determined empirically
         visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
       } );
@@ -125,8 +123,7 @@ export default class IntroSystemNode extends Node {
       spring.displacementProperty, viewProperties.valuesVisibleProperty, {
         unitDisplacementLength: options.unitDisplacementLength,
         x: equilibriumPositionNode.centerX,
-        // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
-        top: springNode.y + 50,
+        top: springNode.y + 50, // determined empirically
         visibleProperty: viewProperties.displacementVectorVisibleProperty,
         tandem: options.tandem.createTandem( 'displacementVectorNode' )
       } );

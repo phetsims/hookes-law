@@ -75,7 +75,6 @@ export default class SeriesSystemNode extends Node {
       frontColor: HookesLawColors.spring1FrontColorProperty,
       middleColor: HookesLawColors.spring1MiddleColorProperty,
       backColor: HookesLawColors.spring1BackColorProperty,
-      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       x: options.unitDisplacementLength * leftSpring.leftProperty.value,
       y: yOrigin
     } );
@@ -86,7 +85,6 @@ export default class SeriesSystemNode extends Node {
       frontColor: HookesLawColors.spring2FrontColorProperty,
       middleColor: HookesLawColors.spring2MiddleColorProperty,
       backColor: HookesLawColors.spring2BackColorProperty,
-      // use x,y exclusively for layout, other translation options are inaccurate because we're using boundsMethod:'none'
       // x is based on rightSpring.leftProperty
       y: yOrigin
     } );
@@ -117,8 +115,7 @@ export default class SeriesSystemNode extends Node {
         fill: HookesLawColors.spring1MiddleColorProperty,
         decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by leftSpring.rightProperty
-        // bottom determined empirically, leftSpringNode.top is not accurate because we're using boundsMethod:'none'
-        bottom: leftSpringNode.y - 65,
+        bottom: leftSpringNode.y - 65, // determined empirically
         tandem: options.tandem.createTandem( 'leftSpringForceVectorNode' )
       } );
 
@@ -183,7 +180,6 @@ export default class SeriesSystemNode extends Node {
 
     // move the right spring
     rightSpring.leftProperty.link( left => {
-      // use x for positioning, other translation options are inaccurate because we're using boundsMethod:'none'
       rightSpringNode.x = ( options.unitDisplacementLength * left );
     } );
 
