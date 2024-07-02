@@ -1,5 +1,5 @@
 {
-  "comment": "# hookes-law 1.1.0-dev.19 Mon Jul 01 2024 17:06:14 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# hookes-law 1.1.0-rc.0 Tue Jul 02 2024 16:07:09 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "4eaabfefb0b88b213e98b9c7f32d6c570c3fc122",
     "branch": "main"
@@ -21,8 +21,8 @@
     "branch": "main"
   },
   "hookes-law": {
-    "sha": "3ac95aa97e0cbaa420620394b8add4c15c4841a7",
-    "branch": "main"
+    "sha": "9dbf345a09bea5897ae7c11cb123c171b9ed6482",
+    "branch": "1.1"
   },
   "joist": {
     "sha": "e5af0ef284c20bc71bd833d30502f380fa9cde51",
@@ -33,7 +33,7 @@
     "branch": "main"
   },
   "perennial-alias": {
-    "sha": "251746f9f078339b5c585095b3ff319ae775c3f5",
+    "sha": "7aea298e04251ec6fc58c3a56877d05f659aba1c",
     "branch": "main"
   },
   "phet-core": {
@@ -45,7 +45,7 @@
     "branch": "main"
   },
   "phet-io-sim-specific": {
-    "sha": "6efe91d6cedc817850b74ca1bcb820051e2889c8",
+    "sha": "b4249e72b5830c92e450969c58e3910a99ea6bec",
     "branch": "main"
   },
   "phet-io-wrappers": {
