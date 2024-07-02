@@ -22,7 +22,7 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
 
     const text = new Text( HookesLawStrings.equilibriumPositionStringProperty, {
       font: HookesLawConstants.CONTROL_TEXT_FONT,
-      maxWidth: 145
+      maxWidth: 155
     } );
 
     const line = new EquilibriumPositionNode( text.height, {

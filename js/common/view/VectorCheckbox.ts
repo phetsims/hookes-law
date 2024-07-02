@@ -37,7 +37,7 @@ export default class VectorCheckbox extends Checkbox {
 
     const text = new Text( stringProperty, {
       font: HookesLawConstants.CONTROL_TEXT_FONT,
-      maxWidth: 100
+      maxWidth: 110
     } );
 
     const textAlignBox = new AlignBox( text, options.textAlignBoxOptions );
