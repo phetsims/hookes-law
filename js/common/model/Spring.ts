@@ -178,8 +178,6 @@ export default class Spring extends PhetioObject {
 
     // F: When applied force changes, maintain spring constant, change displacement.
     this.appliedForceProperty.link( appliedForce => {
-      assert && assert( this.appliedForceRange.contains( appliedForce ),
-        `appliedForce is out of range: ${appliedForce}` );
 
       // x = F/k
       this.displacementProperty.value = ( appliedForce / this.springConstantProperty.value );
@@ -187,8 +185,6 @@ export default class Spring extends PhetioObject {
 
     // k: When spring constant changes, adjust either applied force or displacement.
     this.springConstantProperty.link( springConstant => {
-      assert && assert( this.springConstantRange.contains( springConstant ),
-        `springConstant is out of range: ${springConstant}` );
 
       if ( options.appliedForceRange ) {
 
@@ -208,8 +204,6 @@ export default class Spring extends PhetioObject {
 
     // x: When displacement changes, maintain the spring constant, change applied force.
     this.displacementProperty.link( displacement => {
-      assert && assert( this.displacementRange.contains( displacement ),
-        `displacement is out of range: ${displacement}` );
 
       // F = kx
       let appliedForce = this.springConstantProperty.value * displacement;
