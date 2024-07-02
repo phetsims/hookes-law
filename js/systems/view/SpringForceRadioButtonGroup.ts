@@ -24,7 +24,7 @@ import SystemType from './SystemType.js';
 type SelfOptions = EmptySelfOptions;
 
 type SpringForceRadioButtonGroupOptions = SelfOptions &
-  PickRequired<AquaRadioButtonGroupOptions, 'tandem' | 'enabledProperty'>;
+  PickRequired<AquaRadioButtonGroupOptions, 'tandem' | 'visibleProperty' | 'enabledProperty' | 'layoutOptions'>;
 
 export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<SpringForceRepresentation> {
 

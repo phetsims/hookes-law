@@ -19,7 +19,7 @@ import { Shape } from '../../../../kite/js/imports.js';
 
 type SelfOptions = EmptySelfOptions;
 
-type EnergyCheckboxOptions = SelfOptions & PickRequired<CheckboxOptions, 'tandem' | 'enabledProperty'>;
+type EnergyCheckboxOptions = SelfOptions & PickRequired<CheckboxOptions, 'tandem' | 'visibleProperty' | 'enabledProperty' | 'layoutOptions'>;
 
 export default class EnergyCheckbox extends Checkbox {
 

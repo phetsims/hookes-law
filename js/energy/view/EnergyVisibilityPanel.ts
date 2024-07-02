@@ -42,14 +42,11 @@ export default class EnergyVisibilityPanel extends Panel {
     } );
 
     const energyCheckbox = new EnergyCheckbox( properties.energyOnForcePlotVisibleProperty, {
+      // If the energyGraphRadioButtonGroup is hidden, hide energyCheckbox.
+      visibleProperty: energyGraphRadioButtonGroup.getButton( EnergyGraph.FORCE_PLOT ).visibleProperty,
+      layoutOptions: { leftMargin: 25 }, // indented from check boxes
       enabledProperty: new DerivedProperty( [ properties.graphProperty ], graph => ( graph === EnergyGraph.FORCE_PLOT ) ),
       tandem: options.tandem.createTandem( 'energyCheckbox' )
-    } );
-
-    const energyCheckboxWrapper = new VBox( {
-      children: [ energyCheckbox ],
-      layoutOptions: { leftMargin: 25 }, // indented from check boxes
-      visibleProperty: energyGraphRadioButtonGroup.getButton( EnergyGraph.FORCE_PLOT ).visibleProperty
     } );
 
     const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
@@ -89,7 +86,7 @@ export default class EnergyVisibilityPanel extends Panel {
     const content = new VBox( {
       children: [
         energyGraphRadioButtonGroup,
-        energyCheckboxWrapper,
+        energyCheckbox,
         new HSeparator( HookesLawConstants.HSEPARATOR_OPTIONS ),
         appliedForceCheckbox,
         displacementCheckbox,
