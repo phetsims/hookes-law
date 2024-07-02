@@ -54,12 +54,10 @@ export default class DisplacementControl extends NumberControl {
       // NumberControlOptions
       delta: HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL,
       startCallback: () => {
-        phet.log && phet.log( '>>>>> DisplacementControl start interaction' );
         numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value + 1 );
       },
       endCallback: () => {
         numberOfInteractionsInProgressProperty.value = ( numberOfInteractionsInProgressProperty.value - 1 );
-        phet.log && phet.log( '>>>>> DisplacementControl end interaction' );
       },
       titleNodeOptions: {
         maxWidth: 200, // i18n, determined empirically

@@ -62,12 +62,6 @@ export default class SpringConstantControl extends NumberControl {
 
       // NumberControlOptions
       delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
-      startCallback: () => {
-        phet.log && phet.log( '>>>>> SpringConstantControl start interaction' );
-      },
-      endCallback: () => {
-        phet.log && phet.log( '>>>>> SpringConstantControl end interaction' );
-      },
       titleNodeOptions: {
         maxWidth: 175, // i18n, determined empirically
         font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT

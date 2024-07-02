@@ -159,7 +159,6 @@ export default class RoboticArmNode extends Node {
         }
         left = Utils.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
 
-        phet.log && phet.log( '>>>>> RoboticArmNode drag' );
         roboticArm.leftProperty.value = left;
       },
 
