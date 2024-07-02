@@ -96,7 +96,7 @@ export default class EnergyVisibilityPanel extends Panel {
       align: 'left',
       stretch: true,
       spacing: Y_SPACING,
-      minContentWidth: 172
+      minContentWidth: 150
     } );
 
     super( content, options );

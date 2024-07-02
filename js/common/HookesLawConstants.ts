@@ -31,7 +31,7 @@ const ARROW_BUTTON_OPTIONS: StrictOmit<ArrowButtonOptions, 'tandem'> = {
 
 const CHECKBOX_OPTIONS: StrictOmit<CheckboxOptions, 'tandem'> = {
   boxWidth: 18,
-  spacing: 4
+  spacing: 8
 };
 
 const HSEPARATOR_OPTIONS: HSeparatorOptions = {

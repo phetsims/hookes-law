@@ -62,7 +62,8 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
             } ),
             HookesLawIconFactory.createForceVectorIcon( { fill: HookesLawColors.singleSpringMiddleColorProperty } )
           ],
-          spacing: 10
+          spacing: 10,
+          justify: 'left'
         } ),
         tandemName: 'totalRadioButton'
       },
@@ -80,7 +81,8 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
             } ),
             componentsIcons
           ],
-          spacing: 10
+          spacing: 10,
+          justify: 'left'
         } ),
         tandemName: 'componentsRadioButton'
       }

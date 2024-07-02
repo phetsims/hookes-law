@@ -31,7 +31,8 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
 
     const content = new HBox( {
       children: [ text, line ],
-      spacing: 6
+      spacing: 6,
+      justify: 'left'
     } );
 
     super( equilibriumPositionVisibleProperty, content, combineOptions<CheckboxOptions>( {

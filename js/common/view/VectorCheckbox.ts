@@ -56,7 +56,8 @@ export default class VectorCheckbox extends Checkbox {
 
     const content = new HBox( {
       children: [ text, arrowNode ],
-      spacing: 10
+      spacing: 10,
+      justify: 'left'
     } );
 
     super( visibleProperty, content, options );

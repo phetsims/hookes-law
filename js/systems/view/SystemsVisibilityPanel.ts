@@ -104,7 +104,7 @@ export default class SystemsVisibilityPanel extends Panel {
       align: 'left',
       stretch: true,
       spacing: Y_SPACING,
-      minContentWidth: 195
+      minContentWidth: 150
     } );
 
     super( content, options );
