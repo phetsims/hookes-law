@@ -20,6 +20,10 @@ import HookesLawConstants from '../HookesLawConstants.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
 import Multilink from '../../../../axon/js/Multilink.js';
 
+// Margins for the translucent background behind the vector value.
+const BACKGROUND_X_MARGIN = 3;
+const BACKGROUND_Y_MARGIN = 2;
+
 type SelfOptions = {
   fill?: TColor;
   stroke?: TColor;
@@ -73,7 +77,7 @@ export default class ForceVectorNode extends Node {
       bottom: arrowNode.top - 2 // above the arrow
     } );
 
-    // translucent background, so that value isn't difficult to read when it overlaps with other UI components
+    // Translucent background, so that value isn't difficult to read when it overlaps with other UI components.
     const backgroundNode = new Rectangle( 0, 0, 1, 1, {
       fill: 'rgba( 255, 255, 255, 0.8 )',
       cornerRadius: 5,
@@ -86,17 +90,17 @@ export default class ForceVectorNode extends Node {
       [ forceProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], HookesLawStrings.newtonsStringProperty ],
       ( force, patternString, newtonsString ) => {
 
-        // update the arrow
+        // Update the arrow.
         arrowNode.visible = ( force !== 0 ); // since we can't draw a zero-length arrow
         if ( force !== 0 ) {
           arrowNode.setTailAndTip( 0, 0, force * options.unitLength, 0 );
         }
 
-        // update the value
+        // Update the value.
         valueStringProperty.value = StringUtils.format( patternString,
           Utils.toFixed( Math.abs( force ), options.decimalPlaces ), newtonsString );
 
-        // value position
+        // Reposition the value.
         const margin = 5;
         if ( force === 0 ) {
           if ( options.alignZero === 'left' ) {
@@ -115,11 +119,13 @@ export default class ForceVectorNode extends Node {
         else {
           valueText.right = -margin;
         }
-
-        // resize the background behind the value
-        backgroundNode.setRect( 0, 0, 1.1 * valueText.width, 1.1 * valueText.height, 5, 5 );
-        backgroundNode.center = valueText.center;
       } );
+
+    // Resize the background to fit the value.
+    valueText.boundsProperty.link( () => {
+      backgroundNode.setRect( 0, 0, valueText.width + 2 * BACKGROUND_X_MARGIN, valueText.height + 2 * BACKGROUND_Y_MARGIN, 5, 5 );
+      backgroundNode.center = valueText.center;
+    } );
 
     super( options );
   }
