@@ -18,9 +18,6 @@ import DisplacementControl from '../../common/view/DisplacementControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLaw from '../../hookesLaw.js';
 
-// constants
-const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
-
 type SelfOptions = EmptySelfOptions;
 
 type EnergySpringControlsOptions = SelfOptions & NodeTranslationOptions &
@@ -62,9 +59,19 @@ export default class EnergySpringControls extends HBox {
 
     options.children = [
       new Panel( springConstantControl,
-        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: springConstantPanelTandem } ) ),
+        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+          layoutOptions: {
+            stretch: true
+          },
+          tandem: springConstantPanelTandem
+        } ) ),
       new Panel( displacementControl,
-        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: displacementPanelTandem } ) )
+        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+          layoutOptions: {
+            stretch: true
+          },
+          tandem: displacementPanelTandem
+        } ) )
     ];
 
     super( options );

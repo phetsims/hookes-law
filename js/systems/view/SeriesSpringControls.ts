@@ -23,7 +23,6 @@ import SeriesSystem from '../model/SeriesSystem.js';
 
 // constants
 const SPRING_CONSTANT_TRACK_SIZE = new Dimension2( 120, 3 );
-const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
 
 type SelfOptions = EmptySelfOptions;
 
@@ -98,9 +97,19 @@ export default class SeriesSpringControls extends HBox {
 
     options.children = [
       new Panel( springControls,
-        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: springConstantsPanelTandem } ) ),
+        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+          layoutOptions: {
+            stretch: true
+          },
+          tandem: springConstantsPanelTandem
+        } ) ),
       new Panel( appliedForceControl,
-        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: appliedForcePanelTandem } ) )
+        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+          layoutOptions: {
+            stretch: true
+          },
+          tandem: appliedForcePanelTandem
+        } ) )
     ];
 
     super( options );

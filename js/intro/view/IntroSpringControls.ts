@@ -21,9 +21,6 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Property from '../../../../axon/js/Property.js';
 import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 
-// constants
-const SPRING_PANEL_OPTIONS = HookesLawConstants.SPRING_PANEL_OPTIONS;
-
 type SelfOptions = {
   systemNumber: number; // used to label the controls, eg "Spring Constant 1"
 };
@@ -78,9 +75,19 @@ export default class IntroSpringControls extends HBox {
 
     options.children = [
       new Panel( springConstantControl,
-        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: springConstantPanelTandem } ) ),
+        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+          layoutOptions: {
+            stretch: true
+          },
+          tandem: springConstantPanelTandem
+        } ) ),
       new Panel( appliedForceControl,
-        combineOptions<PanelOptions>( {}, SPRING_PANEL_OPTIONS, { tandem: appliedForcePanelTandem } ) )
+        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+          layoutOptions: {
+            stretch: true
+          },
+          tandem: appliedForcePanelTandem
+        } ) )
     ];
 
     super( options );
