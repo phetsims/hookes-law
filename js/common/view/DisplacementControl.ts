@@ -77,7 +77,7 @@ export default class DisplacementControl extends NumberControl {
         minorTickSpacing: displacementRange.getLength() / 10,
         thumbFill: HookesLawColors.displacementColorProperty,
         constrainValue: value => {
-          // constrain to multiples of a specific interval, see #54
+          // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
           return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
         }
       }

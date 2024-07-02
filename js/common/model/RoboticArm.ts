@@ -44,7 +44,7 @@ export default class RoboticArm {
 
       // The left end of the robotic arm and the spring's displacement (x) participate in a 2-way relationship,
       // where changing one of them results in recalculation of the other.  For some values, this results in
-      // floating-point error that causes reentrant behavior.  See #63.
+      // floating-point error that causes reentrant behavior.  See https://github.com/phetsims/hookes-law/issues/63
       reentrant: true,
       isValidValue: value => ( value < this.right ),
       tandem: options.tandem.createTandem( 'leftProperty' ),

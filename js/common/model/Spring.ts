@@ -143,7 +143,7 @@ export default class Spring extends PhetioObject {
 
       // Applied force (F) and displacement (x) participate in a 2-way relationship, where changing
       // one of them results in recalculation of the other.  For some values, this results in floating-point
-      // error that causes reentrant behavior.  See #63.
+      // error that causes reentrant behavior.  See https://github.com/phetsims/hookes-law/issues/63.
       reentrant: true,
       range: this.appliedForceRange,
       units: 'N',
@@ -162,7 +162,7 @@ export default class Spring extends PhetioObject {
 
       // Applied force (F) and displacement (x) participate in a 2-way relationship, where changing
       // one of them results in recalculation of the other.  For some values, this results in floating-point
-      // error that causes reentrant behavior.  See #63.
+      // error that causes reentrant behavior.  See https://github.com/phetsims/hookes-law/issues/63.
       reentrant: true,
       range: this.displacementRange,
       units: 'm',

@@ -153,7 +153,7 @@ export default class RoboticArmNode extends Node {
         const length = parentX / options.unitDisplacementLength;
         let left = leftRangeProperty.value.constrainValue( roboticArm.right + length );
 
-        // constrain to multiples of a specific interval, see #54
+        // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
         if ( options.displacementInterval ) {
           left = Utils.roundToInterval( left, options.displacementInterval );
         }

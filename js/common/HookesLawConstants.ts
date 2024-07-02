@@ -77,7 +77,7 @@ const HookesLawConstants = {
   DISPLACEMENT_TWEAKER_INTERVAL: 0.01, // m
 
   // drag intervals
-  ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.05, // m, Energy screen only, see #54
+  ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.05, // m, Energy screen only, see https://github.com/phetsims/hookes-law/issues/54
 
   // unit vectors, for 1-dimensional model-view transforms
   UNIT_DISPLACEMENT_X: 225, // view length of a 1m displacement vector, when drawn in the x dimension
