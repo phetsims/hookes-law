@@ -8,7 +8,7 @@
  */
 
 import Multilink from '../../../../axon/js/Multilink.js';
-import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
+import { combineOptions, EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { Text, VBox } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
@@ -21,7 +21,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
-import Checkbox from '../../../../sun/js/Checkbox.js';
+import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 
 const Y_SPACING = 20;
 
@@ -47,9 +47,9 @@ export default class SystemsVisibilityPanel extends Panel {
       new Text( HookesLawStrings.springForceStringProperty, {
         font: HookesLawConstants.CONTROL_TEXT_FONT,
         maxWidth: 110
-      } ), {
+      } ), combineOptions<CheckboxOptions>( {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
-      } );
+      }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
       properties.springForceRepresentationProperty, properties.systemTypeProperty, {
