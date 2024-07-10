@@ -14,7 +14,6 @@ import { Shape } from '../../../../kite/js/imports.js';
 import { DragListener, LinearGradient, Node, NodeOptions, NodeTranslationOptions, Path, PathOptions, Rectangle } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
-import HookesLawConstants from '../HookesLawConstants.js';
 import HingeNode from './HingeNode.js';
 import RoboticArm from '../model/RoboticArm.js';
 import Property from '../../../../axon/js/Property.js';
@@ -157,7 +156,6 @@ export default class RoboticArmNode extends Node {
         if ( options.displacementInterval ) {
           left = Utils.roundToInterval( left, options.displacementInterval );
         }
-        left = Utils.toFixedNumber( left, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
 
         roboticArm.leftProperty.value = left;
       },
