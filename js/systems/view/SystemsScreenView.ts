@@ -57,7 +57,7 @@ export default class SystemsScreenView extends ScreenView {
     // Series system
     const seriesSystemNode = new SeriesSystemNode( model.seriesSystem, viewProperties, {
       unitDisplacementLength: unitDisplacementLength,
-      left: this.layoutBounds.left + 15, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
+      left: this.layoutBounds.left + 30, //careful! position this so that max applied force vector doesn't go offscreen or overlap control panel
       centerY: this.layoutBounds.centerY,
       visibleProperty: new DerivedProperty( [ viewProperties.systemTypeProperty ], systemType => ( systemType === SystemType.SERIES ) ),
       tandem: tandem.createTandem( 'seriesSystemNode' )
