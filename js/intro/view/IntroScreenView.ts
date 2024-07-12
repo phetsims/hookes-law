@@ -75,6 +75,12 @@ export default class IntroScreenView extends ScreenView {
     } );
     assert && assert( system2Node.height <= this.layoutBounds.height / 2, 'system2Node is taller than the space available for it' );
 
+    // Interrupt interaction with the systems when the number of systems changes.
+    viewProperties.numberOfSystemsProperty.link( () => {
+      system1Node.interruptSubtreeInput();
+      system2Node.interruptSubtreeInput();
+    } );
+
     // Reset All button, bottom right
     const resetAllButton = new ResetAllButton( {
       listener: () => {
