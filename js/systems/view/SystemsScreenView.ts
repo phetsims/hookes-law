@@ -73,6 +73,12 @@ export default class SystemsScreenView extends ScreenView {
     } );
     assert && assert( parallelSystemNode.height < this.layoutBounds.height, 'parallel system is too tall' );
 
+    // Interrupt interaction with the systems when the system type changes.
+    viewProperties.systemTypeProperty.link( () => {
+      seriesSystemNode.interruptSubtreeInput();
+      parallelSystemNode.interruptSubtreeInput();
+    } );
+
     // Reset All button, bottom right
     const resetAllButton = new ResetAllButton( {
       listener: () => {
