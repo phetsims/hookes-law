@@ -57,6 +57,11 @@
               "ts-nocheck": true
             }
           ]
+        },
+        "parserOptions": {
+          "project": [
+            "../hookes-law/tsconfig.json"
+          ]
         }
       }
     ]
