@@ -57,11 +57,6 @@
               "ts-nocheck": true
             }
           ]
-        },
-        "parserOptions": {
-          "project": [
-            "../chipper/tsconfig/eslint-all/tsconfig.json"
-          ]
         }
       }
     ]
