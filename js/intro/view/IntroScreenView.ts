@@ -84,7 +84,6 @@ export default class IntroScreenView extends ScreenView {
     // Reset All button, bottom right
     const resetAllButton = new ResetAllButton( {
       listener: () => {
-        this.interruptSubtreeInput();
         model.reset();
         viewProperties.reset();
       },
