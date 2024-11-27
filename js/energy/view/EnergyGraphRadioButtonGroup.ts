@@ -7,16 +7,16 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import EnergyGraph from './EnergyGraph.js';
-import hookesLaw from '../../hookesLaw.js';
-import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOptions } from '../../../../sun/js/AquaRadioButtonGroup.js';
-import HookesLawStrings from '../../HookesLawStrings.js';
-import HookesLawConstants from '../../common/HookesLawConstants.js';
-import { Text } from '../../../../scenery/js/imports.js';
 import Property from '../../../../axon/js/Property.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
+import { Text } from '../../../../scenery/js/imports.js';
+import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOptions } from '../../../../sun/js/AquaRadioButtonGroup.js';
+import HookesLawConstants from '../../common/HookesLawConstants.js';
+import hookesLaw from '../../hookesLaw.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
+import EnergyGraph from './EnergyGraph.js';
 
 type SelfOptions = EmptySelfOptions;
 

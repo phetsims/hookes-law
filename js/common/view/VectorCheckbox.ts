@@ -13,9 +13,9 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import { HBox, TColor, Text } from '../../../../scenery/js/imports.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
+import hookesLaw from '../../hookesLaw.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import HookesLawIconFactory from './HookesLawIconFactory.js';
-import hookesLaw from '../../hookesLaw.js';
 
 type SelfOptions = {
   vectorType: 'force' | 'displacement';

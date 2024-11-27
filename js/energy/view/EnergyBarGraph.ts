@@ -6,6 +6,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import Multilink from '../../../../axon/js/Multilink.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
@@ -18,8 +20,6 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
-import StringProperty from '../../../../axon/js/StringProperty.js';
-import Multilink from '../../../../axon/js/Multilink.js';
 
 const BAR_WIDTH = 20;
 

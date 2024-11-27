@@ -7,14 +7,14 @@
  */
 
 import Property from '../../../../axon/js/Property.js';
-import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
-import HookesLawStrings from '../../HookesLawStrings.js';
-import EquilibriumPositionNode from './EquilibriumPositionNode.js';
-import hookesLaw from '../../hookesLaw.js';
-import { HBox, Text } from '../../../../scenery/js/imports.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
-import HookesLawConstants from '../HookesLawConstants.js';
 import { combineOptions } from '../../../../phet-core/js/optionize.js';
+import { HBox, Text } from '../../../../scenery/js/imports.js';
+import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import hookesLaw from '../../hookesLaw.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
+import HookesLawConstants from '../HookesLawConstants.js';
+import EquilibriumPositionNode from './EquilibriumPositionNode.js';
 
 export default class EquilibriumPositionCheckbox extends Checkbox {
 

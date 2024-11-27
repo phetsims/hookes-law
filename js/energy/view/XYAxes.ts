@@ -7,13 +7,13 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import { Font, Node, NodeOptions, Text } from '../../../../scenery/js/imports.js';
 import hookesLaw from '../../hookesLaw.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 
 const AXIS_OPTIONS = {
   headHeight: 10,

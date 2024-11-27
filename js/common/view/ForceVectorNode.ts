@@ -6,6 +6,8 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
+import Multilink from '../../../../axon/js/Multilink.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
@@ -17,8 +19,6 @@ import { Node, NodeOptions, NodeTranslationOptions, Rectangle, TColor, Text } fr
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
-import StringProperty from '../../../../axon/js/StringProperty.js';
-import Multilink from '../../../../axon/js/Multilink.js';
 
 // Margins for the translucent background behind the vector value.
 const BACKGROUND_X_MARGIN = 3;

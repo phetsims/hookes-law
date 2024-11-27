@@ -7,15 +7,15 @@
  */
 
 import Property from '../../../../axon/js/Property.js';
-import hookesLaw from '../../hookesLaw.js';
-import HookesLawStrings from '../../HookesLawStrings.js';
-import HookesLawConstants from '../../common/HookesLawConstants.js';
-import HookesLawColors from '../../common/HookesLawColors.js';
-import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
+import { Shape } from '../../../../kite/js/imports.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { HBox, Path, Text } from '../../../../scenery/js/imports.js';
-import { Shape } from '../../../../kite/js/imports.js';
+import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
+import HookesLawColors from '../../common/HookesLawColors.js';
+import HookesLawConstants from '../../common/HookesLawConstants.js';
+import hookesLaw from '../../hookesLaw.js';
+import HookesLawStrings from '../../HookesLawStrings.js';
 
 type SelfOptions = EmptySelfOptions;
 

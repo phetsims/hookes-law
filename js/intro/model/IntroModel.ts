@@ -7,12 +7,12 @@
  */
 
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
+import TModel from '../../../../joist/js/TModel.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
-import hookesLaw from '../../hookesLaw.js';
 import { SpringOptions } from '../../common/model/Spring.js';
-import { combineOptions } from '../../../../phet-core/js/optionize.js';
-import TModel from '../../../../joist/js/TModel.js';
+import hookesLaw from '../../hookesLaw.js';
 
 export default class IntroModel implements TModel {
 

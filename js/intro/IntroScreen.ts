@@ -7,13 +7,13 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
+import Tandem from '../../../tandem/js/Tandem.js';
+import HookesLawColors from '../common/HookesLawColors.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
 import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import IntroModel from './model/IntroModel.js';
 import IntroScreenView from './view/IntroScreenView.js';
-import HookesLawColors from '../common/HookesLawColors.js';
-import Tandem from '../../../tandem/js/Tandem.js';
 
 export default class IntroScreen extends Screen<IntroModel, IntroScreenView> {
 

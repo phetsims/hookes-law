@@ -11,9 +11,9 @@ import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import { Text } from '../../../../scenery/js/imports.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 
 export default class ValuesCheckbox extends Checkbox {
 

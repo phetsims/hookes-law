@@ -17,6 +17,7 @@
  */
 
 import Multilink from '../../../../axon/js/Multilink.js';
+import StringProperty from '../../../../axon/js/StringProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
@@ -29,7 +30,6 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYAxes from './XYAxes.js';
-import StringProperty from '../../../../axon/js/StringProperty.js';
 
 const VALUE_X_MARGIN = 6;
 const VALUE_Y_MARGIN = 3;

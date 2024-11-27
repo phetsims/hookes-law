@@ -11,6 +11,7 @@ import Multilink from '../../../../axon/js/Multilink.js';
 import { combineOptions, EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { Text, VBox } from '../../../../scenery/js/imports.js';
+import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
@@ -21,7 +22,6 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
-import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 
 const Y_SPACING = 20;
 

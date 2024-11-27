@@ -7,19 +7,19 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import Property from '../../../../axon/js/Property.js';
+import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import { HBox, HBoxOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
+import Spring from '../../common/model/Spring.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
-import Spring from '../../common/model/Spring.js';
-import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import Property from '../../../../axon/js/Property.js';
-import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 
 type SelfOptions = {
   systemNumber: number; // used to label the controls, eg "Spring Constant 1"
