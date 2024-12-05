@@ -29,19 +29,23 @@ export default class ViewProperties {
   protected constructor( tandem: Tandem ) {
 
     this.appliedForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-      tandem: tandem.createTandem( 'appliedForceVectorVisibleProperty' )
+      tandem: tandem.createTandem( 'appliedForceVectorVisibleProperty' ),
+      phetioFeatured: true
     } );
 
     this.displacementVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-      tandem: tandem.createTandem( 'displacementVectorVisibleProperty' )
+      tandem: tandem.createTandem( 'displacementVectorVisibleProperty' ),
+      phetioFeatured: true
     } );
 
     this.equilibriumPositionVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-      tandem: tandem.createTandem( 'equilibriumPositionVisibleProperty' )
+      tandem: tandem.createTandem( 'equilibriumPositionVisibleProperty' ),
+      phetioFeatured: true
     } );
 
     this.valuesVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-      tandem: tandem.createTandem( 'valuesVisibleProperty' )
+      tandem: tandem.createTandem( 'valuesVisibleProperty' ),
+      phetioFeatured: true
     } );
   }
 

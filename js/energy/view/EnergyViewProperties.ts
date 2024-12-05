@@ -32,7 +32,8 @@ export default class EnergyViewProperties extends ViewProperties {
     } );
 
     this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-      tandem: tandem.createTandem( 'energyOnForcePlotVisibleProperty' )
+      tandem: tandem.createTandem( 'energyOnForcePlotVisibleProperty' ),
+      phetioFeatured: true
     } );
   }
 

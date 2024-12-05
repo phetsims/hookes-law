@@ -32,7 +32,8 @@ export default class IntroViewProperties extends ViewProperties {
     } );
 
     this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
-      tandem: tandem.createTandem( 'springForceVectorVisibleProperty' )
+      tandem: tandem.createTandem( 'springForceVectorVisibleProperty' ),
+      phetioFeatured: true
     } );
   }
 
