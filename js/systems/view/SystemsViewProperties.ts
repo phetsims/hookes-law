@@ -32,7 +32,8 @@ export default class SystemsViewProperties extends ViewProperties {
     super( tandem );
 
     this.systemTypeProperty = new EnumerationProperty( SystemType.PARALLEL, {
-      tandem: tandem.createTandem( 'systemTypeProperty' )
+      tandem: tandem.createTandem( 'systemTypeProperty' ),
+      phetioFeatured: true
     } );
 
     this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
@@ -41,7 +42,8 @@ export default class SystemsViewProperties extends ViewProperties {
     } );
 
     this.springForceRepresentationProperty = new EnumerationProperty( SpringForceRepresentation.TOTAL, {
-      tandem: tandem.createTandem( 'springForceRepresentationProperty' )
+      tandem: tandem.createTandem( 'springForceRepresentationProperty' ),
+      phetioFeatured: true
     } );
   }
 

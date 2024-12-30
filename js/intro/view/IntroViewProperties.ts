@@ -28,7 +28,8 @@ export default class IntroViewProperties extends ViewProperties {
 
     this.numberOfSystemsProperty = new NumberProperty( 1, {
       validValues: [ 1, 2 ],
-      tandem: tandem.createTandem( 'numberOfSystemsProperty' )
+      tandem: tandem.createTandem( 'numberOfSystemsProperty' ),
+      phetioFeatured: true
     } );
 
     this.springForceVectorVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {

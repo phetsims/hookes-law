@@ -28,7 +28,8 @@ export default class EnergyViewProperties extends ViewProperties {
     super( tandem );
 
     this.graphProperty = new EnumerationProperty( EnergyGraph.BAR_GRAPH, {
-      tandem: tandem.createTandem( 'graphProperty' )
+      tandem: tandem.createTandem( 'graphProperty' ),
+      phetioFeatured: true
     } );
 
     this.energyOnForcePlotVisibleProperty = new BooleanProperty( HookesLawQueryParameters.checkAll, {
