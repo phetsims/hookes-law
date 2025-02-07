@@ -12,7 +12,8 @@ import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
-import { HBox, HBoxOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
+import HBox, { HBoxOptions } from '../../../../scenery/js/layout/nodes/HBox.js';
+import { NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import Panel, { PanelOptions } from '../../../../sun/js/Panel.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';

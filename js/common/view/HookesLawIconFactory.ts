@@ -11,7 +11,13 @@ import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js
 import ArrowNode, { ArrowNodeOptions } from '../../../../scenery-phet/js/ArrowNode.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import ParametricSpringNode, { ParametricSpringNodeOptions } from '../../../../scenery-phet/js/ParametricSpringNode.js';
-import { HBox, Line, Node, Path, Rectangle, TColor, VBox } from '../../../../scenery/js/imports.js';
+import HBox from '../../../../scenery/js/layout/nodes/HBox.js';
+import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
+import Line from '../../../../scenery/js/nodes/Line.js';
+import Node from '../../../../scenery/js/nodes/Node.js';
+import Path from '../../../../scenery/js/nodes/Path.js';
+import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
+import TColor from '../../../../scenery/js/util/TColor.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';

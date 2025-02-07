@@ -9,7 +9,8 @@
 import Dimension2 from '../../../dot/js/Dimension2.js';
 import StrictOmit from '../../../phet-core/js/types/StrictOmit.js';
 import PhetFont from '../../../scenery-phet/js/PhetFont.js';
-import { HSeparatorOptions, TextOptions } from '../../../scenery/js/imports.js';
+import { HSeparatorOptions } from '../../../scenery/js/layout/nodes/HSeparator.js';
+import { TextOptions } from '../../../scenery/js/nodes/Text.js';
 import { AquaRadioButtonOptions } from '../../../sun/js/AquaRadioButton.js';
 import { ArrowButtonOptions } from '../../../sun/js/buttons/ArrowButton.js';
 import { CheckboxOptions } from '../../../sun/js/Checkbox.js';

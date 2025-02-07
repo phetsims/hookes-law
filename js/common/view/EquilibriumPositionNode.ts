@@ -9,7 +9,8 @@
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import { Line, LineOptions, NodeTranslationOptions } from '../../../../scenery/js/imports.js';
+import Line, { LineOptions } from '../../../../scenery/js/nodes/Line.js';
+import { NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 
