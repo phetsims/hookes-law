@@ -1,4 +1,4 @@
-// Copyright 2022-2024, University of Colorado Boulder
+// Copyright 2022-2025, University of Colorado Boulder
 
 /**
  * EnergyGraphRadioButtonGroup is the radio button group that appears in the 'Energy' screen, for choosing
