@@ -18,6 +18,7 @@ import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import NumberControl, { NumberControlOptions } from '../../../../scenery-phet/js/NumberControl.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
@@ -64,7 +65,8 @@ export default class SpringConstantControl extends NumberControl {
       delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
       titleNodeOptions: {
         maxWidth: 175, // i18n, determined empirically
-        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
+        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+        tandem: Tandem.OPT_OUT
       },
       numberDisplayOptions: {
         maxWidth: 100, // i18n, determined empirically

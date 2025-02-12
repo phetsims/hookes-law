@@ -22,6 +22,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 const MINOR_TICK_SPACING = 10;
 
@@ -87,7 +88,8 @@ export default class AppliedForceControl extends NumberControl {
       },
       titleNodeOptions: {
         maxWidth: 200, // i18n, determined empirically
-        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT
+        font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
+        tandem: Tandem.OPT_OUT
       },
       numberDisplayOptions: {
         maxWidth: 100, // i18n, determined empirically
