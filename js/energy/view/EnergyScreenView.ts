@@ -101,6 +101,19 @@ export default class EnergyScreenView extends ScreenView {
     } );
     this.addChild( screenViewRootNode );
 
+    // Play Area focus order
+    this.pdomPlayAreaNode.pdomOrder = [
+      //TODO https://github.com/phetsims/hookes-law/issues/106
+      systemNode
+    ];
+
+    // Control Area focus order
+    this.pdomControlAreaNode.pdomOrder = [
+      //TODO https://github.com/phetsims/hookes-law/issues/106
+      visibilityPanel,
+      resetAllButton
+    ];
+
     // Position the Bar Graph
     viewProperties.graphProperty.link( graph => {
       if ( graph === EnergyGraph.BAR_GRAPH ) {
