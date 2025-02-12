@@ -92,8 +92,7 @@ export default class ParallelSpringControls extends HBox {
         topSpringConstantControl,
         new HSeparator( HookesLawConstants.HSEPARATOR_OPTIONS ),
         bottomSpringConstantControl
-      ],
-      tandem: options.tandem.createTandem( 'springControls' )
+      ]
     } );
 
     const appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
