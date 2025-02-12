@@ -58,6 +58,11 @@ type SelfOptions = {
   springConstantRange?: RangeWithValue; // {spring constant range and initial value, units = N/m
   appliedForceRange?: RangeWithValue | null; // applied force range and initial value, units = N
   displacementRange?: RangeWithValue | null;  // displacement range and initial value, units = m
+
+  // phetioReadOnly value for various Properties herein. See https://github.com/phetsims/hookes-law/issues/110.
+  appliedForcePropertyPhetioReadOnly?: boolean;
+  displacementPropertyPhetioReadOnly?: boolean;
+  springConstantPropertyPhetioReadOnly?: boolean;
 };
 
 export type SpringOptions = SelfOptions &
@@ -95,6 +100,11 @@ export default class Spring extends PhetioObject {
       springConstantRange: new RangeWithValue( 100, 1000, 200 ),
       appliedForceRange: null,
       displacementRange: null,
+
+      // See https://github.com/phetsims/hookes-law/issues/110#issuecomment-2654248415 for defaults.
+      appliedForcePropertyPhetioReadOnly: false, // false except for series and parallel Springs, and the Energy screen
+      displacementPropertyPhetioReadOnly: true, // true except for Energy screen
+      springConstantPropertyPhetioReadOnly: false, // true only for equivalentSpring
 
       // PhetioObjectOptions
       isDisposable: false,
@@ -147,14 +157,16 @@ export default class Spring extends PhetioObject {
       reentrant: true,
       range: this.appliedForceRange,
       units: 'N',
-      tandem: options.tandem.createTandem( 'appliedForceProperty' )
+      tandem: options.tandem.createTandem( 'appliedForceProperty' ),
+      phetioReadOnly: options.appliedForcePropertyPhetioReadOnly
     } );
     phet.log && this.appliedForceProperty.link( appliedForce => phet.log( `${options.logName} appliedForce=${appliedForce}` ) );
 
     this.springConstantProperty = new NumberProperty( this.springConstantRange.defaultValue, {
       range: this.springConstantRange,
       units: 'N/m',
-      tandem: options.tandem.createTandem( 'springConstantProperty' )
+      tandem: options.tandem.createTandem( 'springConstantProperty' ),
+      phetioReadOnly: options.springConstantPropertyPhetioReadOnly
     } );
     phet.log && this.springConstantProperty.link( springConstant => phet.log( `${options.logName} springConstant= ${springConstant}` ) );
 
@@ -166,7 +178,8 @@ export default class Spring extends PhetioObject {
       reentrant: true,
       range: this.displacementRange,
       units: 'm',
-      tandem: options.tandem.createTandem( 'displacementProperty' )
+      tandem: options.tandem.createTandem( 'displacementProperty' ),
+      phetioReadOnly: options.displacementPropertyPhetioReadOnly
     } );
     phet.log && this.displacementProperty.link( displacement => phet.log( `${options.logName} displacement=${displacement}` ) );
 
