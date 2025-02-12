@@ -101,8 +101,7 @@ export default class EnergySystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * spring.equilibriumXProperty.value,
       centerY: yOrigin,
-      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
-      tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty
     } );
 
     const appliedForceVectorNode = new AppliedForceVectorNode(
@@ -111,8 +110,7 @@ export default class EnergySystemNode extends Node {
         // x is determined by spring.rightProperty
         // bottom determined empirically, springNode.top is not accurate because we're using boundMethod:'none'
         bottom: springNode.y - 50,
-        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty
       } );
 
     const displacementVectorNode = new DisplacementVectorNode(
@@ -121,8 +119,7 @@ export default class EnergySystemNode extends Node {
         x: equilibriumPositionNode.centerX,
         // top determined empirically, springNode.bottom is not accurate because we're using boundMethod:'none'
         top: springNode.y + 50,
-        visibleProperty: viewProperties.displacementVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'displacementVectorNode' )
+        visibleProperty: viewProperties.displacementVectorVisibleProperty
       } );
 
     const springControls = new EnergySpringControls( spring, numberOfInteractionsInProgressProperty, {

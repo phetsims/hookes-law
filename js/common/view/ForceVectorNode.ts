@@ -12,7 +12,6 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
@@ -35,9 +34,8 @@ type SelfOptions = {
   alignZero?: 'left' | 'right'; // how to align zero ('0 N') values, relative to the arrow tail
 };
 
-export type ForceVectorNodeOptions = SelfOptions & NodeTranslationOptions &
-  PickOptional<NodeOptions, 'visibleProperty'> &
-  PickRequired<NodeOptions, 'tandem'>;
+// No PhET-iO instrumentation, see https://github.com/phetsims/hookes-law/issues/111.
+export type ForceVectorNodeOptions = SelfOptions & NodeTranslationOptions & PickOptional<NodeOptions, 'visibleProperty'>;
 
 export default class ForceVectorNode extends Node {
 
@@ -48,7 +46,7 @@ export default class ForceVectorNode extends Node {
    */
   protected constructor( forceProperty: TReadOnlyProperty<number>,
                          valueVisibleProperty: TReadOnlyProperty<boolean>,
-                         providedOptions: ForceVectorNodeOptions ) {
+                         providedOptions?: ForceVectorNodeOptions ) {
 
     const options = optionize<ForceVectorNodeOptions, SelfOptions, NodeOptions>()( {
 
@@ -68,10 +66,7 @@ export default class ForceVectorNode extends Node {
       headHeight: HookesLawConstants.VECTOR_HEAD_SIZE.height
     } );
 
-    const valueStringProperty = new StringProperty( '', {
-      tandem: options.tandem.createTandem( 'valueStringProperty' ),
-      phetioReadOnly: true
-    } );
+    const valueStringProperty = new StringProperty( '' );
     const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 150,

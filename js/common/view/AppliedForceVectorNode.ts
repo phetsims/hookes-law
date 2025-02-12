@@ -21,7 +21,7 @@ export default class AppliedForceVectorNode extends ForceVectorNode {
 
   public constructor( appliedForceProperty: TReadOnlyProperty<number>,
                       valueVisibleProperty: TReadOnlyProperty<boolean>,
-                      providedOptions: AppliedForceVectorNodeOptions ) {
+                      providedOptions?: AppliedForceVectorNodeOptions ) {
 
     const options = optionize<AppliedForceVectorNodeOptions, SelfOptions, ForceVectorNodeOptions>()( {
 

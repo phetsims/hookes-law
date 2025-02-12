@@ -27,9 +27,7 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
     } );
 
     // vertical dashed line
-    const icon = new EquilibriumPositionNode( text.height, {
-      tandem: Tandem.OPT_OUT
-    } );
+    const icon = new EquilibriumPositionNode( text.height );
 
     const content = new HBox( {
       children: [ text, icon ],

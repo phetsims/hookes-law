@@ -106,8 +106,7 @@ export default class SeriesSystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.value,
       centerY: yOrigin,
-      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
-      tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty
     } );
 
     const leftSpringForceVectorNode = new SpringForceVectorNode(
@@ -115,16 +114,14 @@ export default class SeriesSystemNode extends Node {
         fill: HookesLawColors.spring1MiddleColorProperty,
         decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by leftSpring.rightProperty
-        bottom: leftSpringNode.y - 65, // determined empirically
-        tandem: options.tandem.createTandem( 'leftSpringForceVectorNode' )
+        bottom: leftSpringNode.y - 65 // determined empirically
       } );
 
     const leftAppliedForceVectorNode = new AppliedForceVectorNode(
       leftSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         fill: HookesLawColors.spring2MiddleColorProperty,
         // x is determined by leftSpring.rightProperty
-        y: leftSpringForceVectorNode.y,
-        tandem: options.tandem.createTandem( 'leftAppliedForceVectorNode' )
+        y: leftSpringForceVectorNode.y
       } );
 
     const rightSpringForceVectorNode = new SpringForceVectorNode(
@@ -132,23 +129,20 @@ export default class SeriesSystemNode extends Node {
         fill: HookesLawColors.spring2MiddleColorProperty,
         decimalPlaces: HookesLawConstants.SERIES_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by rightSpring.rightProperty
-        bottom: leftSpringForceVectorNode.top - 10,
-        tandem: options.tandem.createTandem( 'rightSpringForceVectorNode' )
+        bottom: leftSpringForceVectorNode.top - 10
       } );
 
     const appliedForceVectorNode = new AppliedForceVectorNode(
       equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by rightSpring.rightProperty
         y: rightSpringForceVectorNode.y,
-        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty
       } );
 
     const totalSpringForceVectorNode = new SpringForceVectorNode(
       equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by rightSpring.rightProperty
-        y: appliedForceVectorNode.y,
-        tandem: options.tandem.createTandem( 'totalSpringForceVectorNode' )
+        y: appliedForceVectorNode.y
       } );
 
     const displacementVectorNode = new DisplacementVectorNode(
@@ -157,8 +151,7 @@ export default class SeriesSystemNode extends Node {
         x: equilibriumPositionNode.centerX,
         // top determined empirically, leftSpringNode.bottom is not accurate because we're using boundMethod:'none'
         top: leftSpringNode.y + 50,
-        visibleProperty: viewProperties.displacementVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'displacementVectorNode' )
+        visibleProperty: viewProperties.displacementVectorVisibleProperty
       } );
 
     const springControls = new SeriesSpringControls( system, numberOfInteractionsInProgressProperty, {

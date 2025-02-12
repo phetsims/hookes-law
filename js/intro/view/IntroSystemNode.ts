@@ -102,24 +102,21 @@ export default class IntroSystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * spring.equilibriumXProperty.value,
       centerY: yOrigin,
-      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
-      tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty
     } );
 
     const appliedForceVectorNode = new AppliedForceVectorNode(
       spring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
         bottom: springNode.y - 50, // determined empirically
-        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty
       } );
 
     const springForceVectorNode = new SpringForceVectorNode(
       spring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by spring.rightProperty
         y: appliedForceVectorNode.y,
-        visibleProperty: viewProperties.springForceVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'springForceVectorNode' )
+        visibleProperty: viewProperties.springForceVectorVisibleProperty
       } );
 
     const displacementVectorNode = new DisplacementVectorNode(
@@ -127,8 +124,7 @@ export default class IntroSystemNode extends Node {
         unitDisplacementLength: options.unitDisplacementLength,
         x: equilibriumPositionNode.centerX,
         top: springNode.y + 50, // determined empirically
-        visibleProperty: viewProperties.displacementVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'displacementVectorNode' )
+        visibleProperty: viewProperties.displacementVectorVisibleProperty
       } );
 
     const springControls = new IntroSpringControls( spring, numberOfInteractionsInProgressProperty, {

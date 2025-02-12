@@ -12,7 +12,6 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
@@ -33,14 +32,13 @@ type SelfOptions = {
   unitDisplacementLength?: number;
 };
 
-type DisplacementVectorNodeOptions = SelfOptions & NodeTranslationOptions &
-  PickOptional<NodeOptions, 'visibleProperty'> & PickRequired<NodeOptions, 'tandem'>;
+type DisplacementVectorNodeOptions = SelfOptions & NodeTranslationOptions & PickOptional<NodeOptions, 'visibleProperty'>;
 
 export default class DisplacementVectorNode extends Node {
 
   public constructor( displacementProperty: TReadOnlyProperty<number>,
                       valueVisibleProperty: TReadOnlyProperty<boolean>,
-                      providedOptions: DisplacementVectorNodeOptions ) {
+                      providedOptions?: DisplacementVectorNodeOptions ) {
 
     const options = optionize<DisplacementVectorNodeOptions, SelfOptions, NodeOptions>()( {
 
@@ -57,10 +55,7 @@ export default class DisplacementVectorNode extends Node {
       tailLineWidth: 3
     } );
 
-    const valueStringProperty = new StringProperty( '', {
-      tandem: options.tandem.createTandem( 'valueStringProperty' ),
-      phetioReadOnly: true
-    } );
+    const valueStringProperty = new StringProperty( '' );
     const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 150, // i18n

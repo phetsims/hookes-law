@@ -8,7 +8,6 @@
 
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Line, { LineOptions } from '../../../../scenery/js/nodes/Line.js';
 import { NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -16,12 +15,13 @@ import HookesLawColors from '../HookesLawColors.js';
 
 type SelfOptions = EmptySelfOptions;
 
+// No PhET-iO instrumentation, see https://github.com/phetsims/hookes-law/issues/111.
 type EquilibriumPositionNodeOptions = SelfOptions & NodeTranslationOptions &
-  PickOptional<LineOptions, 'visibleProperty'> & PickRequired<LineOptions, 'tandem'>;
+  PickOptional<LineOptions, 'visibleProperty'>;
 
 export default class EquilibriumPositionNode extends Line {
 
-  public constructor( length: number, providedOptions: EquilibriumPositionNodeOptions ) {
+  public constructor( length: number, providedOptions?: EquilibriumPositionNodeOptions ) {
 
     const options = optionize<EquilibriumPositionNodeOptions, SelfOptions, LineOptions>()( {
 

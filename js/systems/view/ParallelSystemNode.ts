@@ -120,23 +120,20 @@ export default class ParallelSystemNode extends Node {
     const equilibriumPositionNode = new EquilibriumPositionNode( wallNode.height, {
       centerX: options.unitDisplacementLength * equivalentSpring.equilibriumXProperty.value,
       centerY: yOrigin,
-      visibleProperty: viewProperties.equilibriumPositionVisibleProperty,
-      tandem: options.tandem.createTandem( 'equilibriumPositionNode' )
+      visibleProperty: viewProperties.equilibriumPositionVisibleProperty
     } );
 
     const appliedForceVectorNode = new AppliedForceVectorNode(
       equivalentSpring.appliedForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by bottomSpring.rightProperty
         bottom: topSpringNode.y - 80, // determined empirically
-        visibleProperty: viewProperties.appliedForceVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'appliedForceVectorNode' )
+        visibleProperty: viewProperties.appliedForceVectorVisibleProperty
       } );
 
     const totalSpringForceVectorNode = new SpringForceVectorNode(
       equivalentSpring.springForceProperty, viewProperties.valuesVisibleProperty, {
         // x is determined by bottomSpring.rightProperty
-        centerY: appliedForceVectorNode.centerY,
-        tandem: options.tandem.createTandem( 'totalSpringForceVectorNode' )
+        centerY: appliedForceVectorNode.centerY
       } );
 
     const topSpringForceVectorNode = new SpringForceVectorNode(
@@ -144,8 +141,7 @@ export default class ParallelSystemNode extends Node {
         fill: HookesLawColors.spring1MiddleColorProperty,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by topSpring.rightProperty
-        centerY: totalSpringForceVectorNode.top,
-        tandem: options.tandem.createTandem( 'topSpringForceVectorNode' )
+        centerY: totalSpringForceVectorNode.top
       } );
 
     const bottomSpringForceVectorNode = new SpringForceVectorNode(
@@ -153,8 +149,7 @@ export default class ParallelSystemNode extends Node {
         fill: HookesLawColors.spring2MiddleColorProperty,
         decimalPlaces: HookesLawConstants.PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES,
         // x is determined by bottomSpring.rightProperty
-        centerY: totalSpringForceVectorNode.bottom,
-        tandem: options.tandem.createTandem( 'bottomSpringForceVectorNode' )
+        centerY: totalSpringForceVectorNode.bottom
       } );
 
     const displacementVectorNode = new DisplacementVectorNode(
@@ -163,8 +158,7 @@ export default class ParallelSystemNode extends Node {
         x: equilibriumPositionNode.centerX,
         // top determined empirically, bottomSpringNode.bottom is not accurate because we're using boundMethod:'none'
         top: bottomSpringNode.y + 50,
-        visibleProperty: viewProperties.displacementVectorVisibleProperty,
-        tandem: options.tandem.createTandem( 'displacementVectorNode' )
+        visibleProperty: viewProperties.displacementVectorVisibleProperty
       } );
 
     const springControls = new ParallelSpringControls( system, numberOfInteractionsInProgressProperty, {

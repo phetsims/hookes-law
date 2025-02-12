@@ -21,7 +21,7 @@ export default class SpringForceVectorNode extends ForceVectorNode {
 
   public constructor( springForceProperty: TReadOnlyProperty<number>,
                       valueVisibleProperty: TReadOnlyProperty<boolean>,
-                      providedOptions: SpringForceVectorNodeOptions ) {
+                      providedOptions?: SpringForceVectorNodeOptions ) {
 
     const options = optionize<SpringForceVectorNodeOptions, SelfOptions, ForceVectorNodeOptions>()( {
 
