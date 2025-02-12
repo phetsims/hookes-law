@@ -21,10 +21,11 @@
       "adapted-from-phet"
     ],
     "simFeatures": {
+      "supportsInteractiveDescription": true,
+      "supportsDynamicLocale": true,
       "colorProfiles": [
         "default"
-      ],
-      "supportsDynamicLocale": true
+      ]
     },
     "simulation": true,
     "phet-io": {
