@@ -49,7 +49,7 @@ export default class SeriesSystem {
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of Feq, units = N
       appliedForcePropertyPhetioReadOnly: true,
       tandem: tandem.createTandem( 'leftSpring' ),
-      phetioDocumentation: 'The left spring in the series system'
+      phetioDocumentation: 'The left spring in the series system.'
     } );
 
     this.rightSpring = new Spring( {
@@ -60,7 +60,7 @@ export default class SeriesSystem {
       appliedForceRange: this.leftSpring.appliedForceRange,
       appliedForcePropertyPhetioReadOnly: true,
       tandem: tandem.createTandem( 'rightSpring' ),
-      phetioDocumentation: 'The right spring in the series system'
+      phetioDocumentation: 'The right spring in the series system.'
     } );
 
     this.equivalentSpring = new Spring( {
@@ -75,7 +75,7 @@ export default class SeriesSystem {
       appliedForceRange: this.leftSpring.appliedForceRange, // Feq = F1 = F2
       springConstantPropertyPhetioReadOnly: true,
       tandem: tandem.createTandem( 'equivalentSpring' ),
-      phetioDocumentation: 'The single spring that is equivalent to the 2 springs in series'
+      phetioDocumentation: 'The single spring that is equivalent to the 2 springs in series.'
     } );
     assert && assert( this.equivalentSpring.displacementProperty.value === 0 ); // equivalent spring is at equilibrium
 

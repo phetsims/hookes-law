@@ -49,7 +49,7 @@ export default class ParallelSystem {
       appliedForceRange: new RangeWithValue( -100, 100, 0 ), // range and initial value of F1, units = N
       appliedForcePropertyPhetioReadOnly: true,
       tandem: tandem.createTandem( 'topSpring' ),
-      phetioDocumentation: 'The top spring in the parallel system'
+      phetioDocumentation: 'The top spring in the parallel system.'
     } );
 
     this.bottomSpring = new Spring( {
@@ -60,7 +60,7 @@ export default class ParallelSystem {
       appliedForceRange: this.topSpring.appliedForceRange,
       appliedForcePropertyPhetioReadOnly: true,
       tandem: tandem.createTandem( 'bottomSpring' ),
-      phetioDocumentation: 'The bottom spring in the parallel system'
+      phetioDocumentation: 'The bottom spring in the parallel system.'
     } );
 
     // verify that springs are indeed parallel
@@ -82,7 +82,7 @@ export default class ParallelSystem {
       appliedForceRange: this.topSpring.appliedForceRange,
       springConstantPropertyPhetioReadOnly: true,
       tandem: tandem.createTandem( 'equivalentSpring' ),
-      phetioDocumentation: 'The single spring that is equivalent to the 2 springs in parallel'
+      phetioDocumentation: 'The single spring that is equivalent to the 2 springs in parallel.'
     } );
     assert && assert( this.equivalentSpring.displacementProperty.value === 0 ); // equivalent spring is at equilibrium
 
