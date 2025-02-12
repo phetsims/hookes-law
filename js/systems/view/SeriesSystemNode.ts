@@ -71,22 +71,28 @@ export default class SeriesSystemNode extends Node {
 
     const leftSpringNode = new HookesLawSpringNode( leftSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.spring1FrontColorProperty,
-      middleColor: HookesLawColors.spring1MiddleColorProperty,
-      backColor: HookesLawColors.spring1BackColorProperty,
+      parametricSpringNodeOptions: {
+        loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
+        frontColor: HookesLawColors.spring1FrontColorProperty,
+        middleColor: HookesLawColors.spring1MiddleColorProperty,
+        backColor: HookesLawColors.spring1BackColorProperty
+      },
       x: options.unitDisplacementLength * leftSpring.leftProperty.value,
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'leftSpringNode' )
     } );
 
     const rightSpringNode = new HookesLawSpringNode( rightSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.spring2FrontColorProperty,
-      middleColor: HookesLawColors.spring2MiddleColorProperty,
-      backColor: HookesLawColors.spring2BackColorProperty,
+      parametricSpringNodeOptions: {
+        loops: HookesLawConstants.SERIES_SPRINGS_LOOPS,
+        frontColor: HookesLawColors.spring2FrontColorProperty,
+        middleColor: HookesLawColors.spring2MiddleColorProperty,
+        backColor: HookesLawColors.spring2BackColorProperty
+      },
       // x is based on rightSpring.leftProperty
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'rightSpringNode' )
     } );
 
     // pincers grab this

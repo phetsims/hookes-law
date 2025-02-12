@@ -78,22 +78,28 @@ export default class ParallelSystemNode extends Node {
 
     const topSpringNode = new HookesLawSpringNode( topSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.spring1FrontColorProperty,
-      middleColor: HookesLawColors.spring1MiddleColorProperty,
-      backColor: HookesLawColors.spring1BackColorProperty,
+      parametricSpringNodeOptions: {
+        loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
+        frontColor: HookesLawColors.spring1FrontColorProperty,
+        middleColor: HookesLawColors.spring1MiddleColorProperty,
+        backColor: HookesLawColors.spring1BackColorProperty
+      },
       x: options.unitDisplacementLength * topSpring.leftProperty.value,
-      y: wallNode.top + ( 0.25 * wallNode.height )
+      y: wallNode.top + ( 0.25 * wallNode.height ),
+      tandem: options.tandem.createTandem( 'topSpringNode' )
     } );
 
     const bottomSpringNode = new HookesLawSpringNode( bottomSpring, {
       unitDisplacementLength: options.unitDisplacementLength,
-      loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
-      frontColor: HookesLawColors.spring2FrontColorProperty,
-      middleColor: HookesLawColors.spring2MiddleColorProperty,
-      backColor: HookesLawColors.spring2BackColorProperty,
+      parametricSpringNodeOptions: {
+        loops: HookesLawConstants.PARALLEL_SPRINGS_LOOPS,
+        frontColor: HookesLawColors.spring2FrontColorProperty,
+        middleColor: HookesLawColors.spring2MiddleColorProperty,
+        backColor: HookesLawColors.spring2BackColorProperty
+      },
       x: options.unitDisplacementLength * bottomSpring.leftProperty.value,
-      y: wallNode.bottom - ( 0.25 * wallNode.height )
+      y: wallNode.bottom - ( 0.25 * wallNode.height ),
+      tandem: options.tandem.createTandem( 'bottomSpringNode' )
     } );
 
     const roboticArmNode = new RoboticArmNode( roboticArm, equivalentSpring.rightRangeProperty, numberOfInteractionsInProgressProperty, {

@@ -72,13 +72,16 @@ export default class EnergySystemNode extends Node {
     } );
 
     const springNode = new HookesLawSpringNode( spring, {
-      frontColor: HookesLawColors.singleSpringFrontColorProperty,
-      middleColor: HookesLawColors.singleSpringMiddleColorProperty,
-      backColor: HookesLawColors.singleSpringBackColorProperty,
-      loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
       unitDisplacementLength: options.unitDisplacementLength,
+      parametricSpringNodeOptions: {
+        loops: HookesLawConstants.SINGLE_SPRING_LOOPS,
+        frontColor: HookesLawColors.singleSpringFrontColorProperty,
+        middleColor: HookesLawColors.singleSpringMiddleColorProperty,
+        backColor: HookesLawColors.singleSpringBackColorProperty
+      },
       x: options.unitDisplacementLength * spring.leftProperty.value,
-      y: yOrigin
+      y: yOrigin,
+      tandem: options.tandem.createTandem( 'springNode' )
     } );
 
     // pincers grab this
