@@ -23,6 +23,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
+import { GatedVisibleProperty } from '../../../../axon/js/GatedBooleanProperty.js';
 
 const Y_SPACING = 20;
 
@@ -52,12 +53,17 @@ export default class SystemsVisibilityPanel extends Panel {
         tandem: options.tandem.createTandem( 'springForceCheckbox' )
       }, HookesLawConstants.CHECKBOX_OPTIONS ) );
 
+    const springForceRadioButtonGroupTandem = options.tandem.createTandem( 'springForceRadioButtonGroup' );
+
+    // If the springForceCheckbox is hidden, hide springForceRadioButtonGroup. PhET-iO clients can permanently hide
+    // the group via springForceRadioButtonGroup.selfVisibleProperty.
+    const springForceRadioButtonGroupGatedVisibleProperty = new GatedVisibleProperty( springForceCheckbox.visibleProperty, springForceRadioButtonGroupTandem );
     const springForceRadioButtonGroup = new SpringForceRadioButtonGroup(
       properties.springForceRepresentationProperty, properties.systemTypeProperty, {
-        visibleProperty: springForceCheckbox.visibleProperty, // If the springForceCheckbox is hidden, hide springForceRadioButtonGroup.
+        visibleProperty: springForceRadioButtonGroupGatedVisibleProperty,
         layoutOptions: { leftMargin: 25 }, // indented from check boxes
         enabledProperty: properties.springForceVectorVisibleProperty, // enabled only if 'spring force' is checked
-        tandem: options.tandem.createTandem( 'springForceRadioButtonGroup' )
+        tandem: springForceRadioButtonGroupTandem
       } );
 
     const displacementCheckbox = new VectorCheckbox( properties.displacementVectorVisibleProperty, HookesLawStrings.displacementStringProperty, {
