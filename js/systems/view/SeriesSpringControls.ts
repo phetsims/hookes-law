@@ -42,7 +42,8 @@ export default class SeriesSpringControls extends HBox {
     const options = optionize<SeriesSpringControlsOptions, SelfOptions, HBoxOptions>()( {
 
       // HBoxOptions
-      spacing: 10
+      spacing: 10,
+      excludeInvisibleChildrenFromBounds: false
     }, providedOptions );
 
     // Tandems for Panels that contain the controls

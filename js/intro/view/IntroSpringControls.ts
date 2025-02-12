@@ -42,7 +42,8 @@ export default class IntroSpringControls extends HBox {
     const options = optionize<IntroSpringControlsOptions, SelfOptions, HBoxOptions>()( {
 
       // HBoxOptions
-      spacing: 10
+      spacing: 10,
+      excludeInvisibleChildrenFromBounds: false
     }, providedOptions );
 
     assert && assert( Number.isInteger( options.systemNumber ) && options.systemNumber >= 1 );

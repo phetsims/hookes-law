@@ -45,7 +45,8 @@ export default class ParallelSpringControls extends HBox {
     const options = optionize<ParallelSpringControlsOptions, SelfOptions, HBoxOptions>()( {
 
       // HBoxOptions
-      spacing: 10
+      spacing: 10,
+      excludeInvisibleChildrenFromBounds: false
     }, providedOptions );
 
     // Tandems for Panels that contain the controls
