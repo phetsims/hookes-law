@@ -36,7 +36,8 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
     } );
 
     super( equilibriumPositionVisibleProperty, content, combineOptions<CheckboxOptions>( {
-      tandem: tandem
+      tandem: tandem,
+      phetioDisplayOnlyPropertyInstrumented: true
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
   }
 }

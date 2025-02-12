@@ -8,7 +8,7 @@
 
 import Property from '../../../../axon/js/Property.js';
 import Shape from '../../../../kite/js/Shape.js';
-import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
+import { EmptySelfOptions, optionize4 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import HBox from '../../../../scenery/js/layout/nodes/HBox.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
@@ -27,8 +27,10 @@ export default class EnergyCheckbox extends Checkbox {
 
   public constructor( energyOnForcePlotVisibleProperty: Property<boolean>, providedOptions: EnergyCheckboxOptions ) {
 
-    const options = optionize3<EnergyCheckboxOptions, SelfOptions, CheckboxOptions>()(
-      {}, HookesLawConstants.CHECKBOX_OPTIONS, providedOptions );
+    const options = optionize4<EnergyCheckboxOptions, SelfOptions, CheckboxOptions>()(
+      {}, HookesLawConstants.CHECKBOX_OPTIONS, {
+        phetioDisplayOnlyPropertyInstrumented: true
+      }, providedOptions );
 
     const text = new Text( HookesLawStrings.energyStringProperty, {
       font: HookesLawConstants.CONTROL_TEXT_FONT,

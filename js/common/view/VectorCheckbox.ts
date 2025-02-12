@@ -8,7 +8,7 @@
 
 import Property from '../../../../axon/js/Property.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import { optionize3 } from '../../../../phet-core/js/optionize.js';
+import { optionize4 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import LineArrowNode from '../../../../scenery-phet/js/LineArrowNode.js';
 import HBox from '../../../../scenery/js/layout/nodes/HBox.js';
@@ -32,8 +32,10 @@ export default class VectorCheckbox extends Checkbox {
                       stringProperty: TReadOnlyProperty<string>,
                       providedOptions: VectorCheckboxOptions ) {
 
-    const options = optionize3<VectorCheckboxOptions, SelfOptions, CheckboxOptions>()(
-      {}, HookesLawConstants.CHECKBOX_OPTIONS, providedOptions );
+    const options = optionize4<VectorCheckboxOptions, SelfOptions, CheckboxOptions>()(
+      {}, HookesLawConstants.CHECKBOX_OPTIONS, {
+        phetioDisplayOnlyPropertyInstrumented: true
+      }, providedOptions );
 
     const text = new Text( stringProperty, {
       font: HookesLawConstants.CONTROL_TEXT_FONT,
