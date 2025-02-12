@@ -14,6 +14,7 @@ import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import IntroModel from './model/IntroModel.js';
 import IntroScreenView from './view/IntroScreenView.js';
+import HookesLawKeyboardHelpContent from '../common/view/HookesLawKeyboardHelpContent.js';
 
 export default class IntroScreen extends Screen<IntroModel, IntroScreenView> {
 
@@ -23,6 +24,7 @@ export default class IntroScreen extends Screen<IntroModel, IntroScreenView> {
       name: HookesLawStrings.introStringProperty,
       backgroundColorProperty: HookesLawColors.screenBackgroundColorProperty,
       homeScreenIcon: HookesLawIconFactory.createIntroScreenIcon(),
+      createKeyboardHelpNode: () => new HookesLawKeyboardHelpContent(),
       tandem: tandem
     };
 

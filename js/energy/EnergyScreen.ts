@@ -14,6 +14,7 @@ import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import EnergyModel from './model/EnergyModel.js';
 import EnergyScreenView from './view/EnergyScreenView.js';
+import HookesLawKeyboardHelpContent from '../common/view/HookesLawKeyboardHelpContent.js';
 
 export default class EnergyScreen extends Screen<EnergyModel, EnergyScreenView> {
 
@@ -23,6 +24,7 @@ export default class EnergyScreen extends Screen<EnergyModel, EnergyScreenView> 
       name: HookesLawStrings.energyStringProperty,
       backgroundColorProperty: HookesLawColors.screenBackgroundColorProperty,
       homeScreenIcon: HookesLawIconFactory.createEnergyScreenIcon(),
+      createKeyboardHelpNode: () => new HookesLawKeyboardHelpContent(),
       tandem: tandem
     };
 

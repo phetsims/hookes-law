@@ -14,6 +14,7 @@ import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import SystemsModel from './model/SystemsModel.js';
 import SystemsScreenView from './view/SystemsScreenView.js';
+import HookesLawKeyboardHelpContent from '../common/view/HookesLawKeyboardHelpContent.js';
 
 export default class SystemsScreen extends Screen<SystemsModel, SystemsScreenView> {
 
@@ -23,6 +24,7 @@ export default class SystemsScreen extends Screen<SystemsModel, SystemsScreenVie
       name: HookesLawStrings.systemsStringProperty,
       backgroundColorProperty: HookesLawColors.screenBackgroundColorProperty,
       homeScreenIcon: HookesLawIconFactory.createSystemsScreenIcon(),
+      createKeyboardHelpNode: () => new HookesLawKeyboardHelpContent(),
       tandem: tandem
     };
 
