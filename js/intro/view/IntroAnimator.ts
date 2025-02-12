@@ -14,6 +14,7 @@ import Tandem from '../../../../tandem/js/Tandem.js';
 import Animation from '../../../../twixt/js/Animation.js';
 import Easing from '../../../../twixt/js/Easing.js';
 import hookesLaw from '../../hookesLaw.js';
+import isSettingPhetioStateProperty from '../../../../tandem/js/isSettingPhetioStateProperty.js';
 
 const STEPPER = null; // step method must be called by the client
 const TRANSLATION_DURATION = 0.5; // duration of system 1 translation animation, in seconds
@@ -43,10 +44,7 @@ export default class IntroAnimator {
 
     // Vertical position of system 1, instrumented for PhET-iO to support record/playback,
     // see https://github.com/phetsims/hookes-law/issues/53.
-    const system1CenterYProperty = new NumberProperty( system1Node.centerY, {
-      tandem: tandem.createTandem( 'system1CenterYProperty' ),
-      phetioReadOnly: true
-    } );
+    const system1CenterYProperty = new NumberProperty( system1Node.centerY );
     system1CenterYProperty.link( centerY => {
       system1Node.centerY = centerY;
     } );
@@ -54,9 +52,7 @@ export default class IntroAnimator {
     // Opacity of system 2, instrumented for PhET-iO to support record/playback,
     // see https://github.com/phetsims/hookes-law/issues/53.
     const system2OpacityProperty = new NumberProperty( system2Node.opacity, {
-      isValidValue: value => ( value >= 0 && value <= 1 ),
-      tandem: tandem.createTandem( 'system2OpacityProperty' ),
-      phetioReadOnly: true
+      isValidValue: value => ( value >= 0 && value <= 1 )
     } );
     system2OpacityProperty.link( opacity => {
       system2Node.opacity = opacity;
@@ -65,6 +61,12 @@ export default class IntroAnimator {
     let system1Animation: Animation | null = null; // animation for system 1 translation
     let system2Animation: Animation | null = null; // animation for system 2 opacity (fade)
 
+    // Position of system 1 when there is 1 system, vertically centered in the screen.
+    const system1CenterXForOneSystem = layoutBounds.centerY;
+
+    // Position of system 1 when there are 2 systems, towards the top of the screen.
+    const system1CenterXForTwoSystem = layoutBounds.minY + ( 0.25 * layoutBounds.height );
+
     // unlink not needed
     numberOfSystemsProperty.link( numberOfSystems => {
 
@@ -72,92 +74,102 @@ export default class IntroAnimator {
       system1Animation && system1Animation.stop();
       system2Animation && system2Animation.stop();
 
-      if ( numberOfSystems === 1 ) {
+      if ( isSettingPhetioStateProperty.value ) {
 
-        // Fade out system 2, then move system 1 to vertical center of layoutBounds.
-
-        // Fade out system 2.
-        system2Animation = new Animation( {
-          stepEmitter: STEPPER,
-          duration: OPACITY_DURATION,
-          targets: [ {
-            property: system2OpacityProperty,
-            easing: Easing.LINEAR,
-            to: 0
-          } ]
-        } );
-
-        // Translate system 1.
-        system1Animation = new Animation( {
-          stepEmitter: STEPPER,
-          duration: TRANSLATION_DURATION,
-          targets: [ {
-            property: system1CenterYProperty,
-            easing: Easing.LINEAR,
-            to: layoutBounds.centerY // to centerY of layout bounds
-          } ]
-        } );
-
-        // When the fade of system 2 completes, switch to translation of system 1.
-        system2Animation.finishEmitter.addListener( () => {
-          system2Node.visible = false; // Make system 2 invisible, so you can't interact with it.
-          this.activeAnimation = system1Animation;
-          assert && assert( system1Animation );
-          system1Animation!.start();
-        } );
-
-        // When the translation of system 1 completes, notify that the animation has completed.
-        system1Animation.finishEmitter.addListener( () => {
-          this.activeAnimation = null;
-        } );
-
-        // Start with the fade of system 2.
-        this.activeAnimation = system2Animation;
+        // PhET typically does not instrument Animations; they are considered transient and not necessary for state.
+        // So if setting PhET-iO state, skip the animation and move directly to the final state.
+        system1CenterYProperty.value = ( numberOfSystems === 1 ) ? system1CenterXForOneSystem : system1CenterXForTwoSystem;
+        system2OpacityProperty.value = ( numberOfSystems === 1 ) ? 0 : 1;
+        system2Node.visible = ( numberOfSystems === 2 );
       }
       else {
+        if ( numberOfSystems === 1 ) {
 
-        // Move system 1 to top of layoutBounds, then fade in system 2.
+          // Fade out system 2, then move system 1 to vertical center of layoutBounds.
 
-        // Translate system 1.
-        system1Animation = new Animation( {
-          stepEmitter: STEPPER,
-          duration: TRANSLATION_DURATION,
-          targets: [ {
-            property: system1CenterYProperty,
-            easing: Easing.LINEAR,
-            to: layoutBounds.minY + ( 0.25 * layoutBounds.height ) // towards top of layoutBounds
-          } ]
-        } );
+          // Fade out system 2.
+          system2Animation = new Animation( {
+            stepEmitter: STEPPER,
+            duration: OPACITY_DURATION,
+            targets: [ {
+              property: system2OpacityProperty,
+              easing: Easing.LINEAR,
+              to: 0
+            } ]
+          } );
 
-        // Fade in system 2.
-        system2Animation = new Animation( {
-          stepEmitter: STEPPER,
-          duration: OPACITY_DURATION,
-          targets: [ {
-            property: system2OpacityProperty,
-            easing: Easing.LINEAR,
-            to: 1
-          } ]
-        } );
+          // Translate system 1.
+          system1Animation = new Animation( {
+            stepEmitter: STEPPER,
+            duration: TRANSLATION_DURATION,
+            targets: [ {
+              property: system1CenterYProperty,
+              easing: Easing.LINEAR,
+              to: system1CenterXForOneSystem
+            } ]
+          } );
 
-        // When translation of system 1 completes, switch to fade of system 2.
-        system1Animation.finishEmitter.addListener( () => {
-          system2Node.visible = true; // Make system 2 visible.
+          // When the fade of system 2 completes, switch to translation of system 1.
+          system2Animation.finishEmitter.addListener( () => {
+            system2Node.visible = false; // Make system 2 invisible, so you can't interact with it.
+            this.activeAnimation = system1Animation;
+            assert && assert( system1Animation );
+            system1Animation!.start();
+          } );
+
+          // When the translation of system 1 completes, notify that the animation has completed.
+          system1Animation.finishEmitter.addListener( () => {
+            this.activeAnimation = null;
+          } );
+
+          // Start with the fade of system 2.
           this.activeAnimation = system2Animation;
-          assert && assert( system2Animation );
-          system2Animation!.start();
-        } );
+        }
+        else {
 
-        // When fade of system 2 completes, notify that the animation has completed.
-        system2Animation.finishEmitter.addListener( () => {
-          this.activeAnimation = null;
-        } );
+          // Move system 1 to top of layoutBounds, then fade in system 2.
 
-        // Start the translation of system 1.
-        this.activeAnimation = system1Animation;
+          // Translate system 1.
+          system1Animation = new Animation( {
+            stepEmitter: STEPPER,
+            duration: TRANSLATION_DURATION,
+            targets: [ {
+              property: system1CenterYProperty,
+              easing: Easing.LINEAR,
+              to: system1CenterXForTwoSystem
+            } ]
+          } );
+
+          // Fade in system 2.
+          system2Animation = new Animation( {
+            stepEmitter: STEPPER,
+            duration: OPACITY_DURATION,
+            targets: [ {
+              property: system2OpacityProperty,
+              easing: Easing.LINEAR,
+              to: 1
+            } ]
+          } );
+
+          // When translation of system 1 completes, switch to fade of system 2.
+          system1Animation.finishEmitter.addListener( () => {
+            system2Node.visible = true; // Make system 2 visible.
+            this.activeAnimation = system2Animation;
+            assert && assert( system2Animation );
+            system2Animation!.start();
+          } );
+
+          // When fade of system 2 completes, notify that the animation has completed.
+          system2Animation.finishEmitter.addListener( () => {
+            this.activeAnimation = null;
+          } );
+
+          // Start the translation of system 1.
+          this.activeAnimation = system1Animation;
+        }
+
+        this.activeAnimation.start();
       }
-
-      this.activeAnimation.start();
     } );
   }
 
