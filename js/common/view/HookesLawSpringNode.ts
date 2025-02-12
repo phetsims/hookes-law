@@ -39,6 +39,7 @@ export default class HookesLawSpringNode extends Node {
       rightEndLength: 25,
 
       // NodeOptions
+      phetioFeatured: true,
       phetioVisiblePropertyInstrumented: false
     }, providedOptions );
 

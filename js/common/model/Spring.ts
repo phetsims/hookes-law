@@ -108,6 +108,7 @@ export default class Spring extends PhetioObject {
 
       // PhetioObjectOptions
       isDisposable: false,
+      phetioFeatured: true,
       phetioState: false // since this type has no inherent state to save, to avoid circular JSON error
     }, providedOptions );
 
