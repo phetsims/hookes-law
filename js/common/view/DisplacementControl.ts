@@ -20,10 +20,13 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 
 type SelfOptions = EmptySelfOptions;
 
-type DisplacementControlOptions = SelfOptions & PickRequired<NumberControlOptions, 'tandem'>;
+type DisplacementControlOptions = SelfOptions &
+  PickOptional<NumberControlOptions, 'phetioVisiblePropertyInstrumented'> &
+  PickRequired<NumberControlOptions, 'tandem'>;
 
 export default class DisplacementControl extends NumberControl {
 

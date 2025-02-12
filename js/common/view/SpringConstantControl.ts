@@ -30,7 +30,7 @@ type SelfOptions = {
 };
 
 type SpringConstantControlOptions = SelfOptions &
-  PickOptional<NumberControlOptions, 'sliderOptions'> &
+  PickOptional<NumberControlOptions, 'sliderOptions' | 'phetioVisiblePropertyInstrumented'> &
   PickRequired<NumberControlOptions, 'tandem'>;
 
 export default class SpringConstantControl extends NumberControl {

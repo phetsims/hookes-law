@@ -21,6 +21,7 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
+import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 
 const MINOR_TICK_SPACING = 10;
 
@@ -28,7 +29,9 @@ type SelfOptions = {
   titleStringProperty?: TReadOnlyProperty<string>;
 };
 
-type AppliedForceControlOptions = SelfOptions & PickRequired<NumberControlOptions, 'tandem'>;
+type AppliedForceControlOptions = SelfOptions &
+  PickOptional<NumberControlOptions, 'phetioVisiblePropertyInstrumented'> &
+  PickRequired<NumberControlOptions, 'tandem'>;
 
 export default class AppliedForceControl extends NumberControl {
 

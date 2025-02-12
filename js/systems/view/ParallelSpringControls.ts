@@ -98,7 +98,8 @@ export default class ParallelSpringControls extends HBox {
 
     const appliedForceControl = new AppliedForceControl( system.equivalentSpring.appliedForceProperty,
       system.equivalentSpring.appliedForceRange, numberOfInteractionsInProgressProperty, {
-        tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
+        tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' ),
+        phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
       } );
 
     options.children = [

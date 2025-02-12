@@ -62,7 +62,8 @@ export default class IntroSpringControls extends HBox {
         spring.springConstantRange.max
       ],
       minorTickSpacing: 100,
-      tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
+      tandem: springConstantPanelTandem.createTandem( 'springConstantControl' ),
+      phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     } );
 
     const appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
@@ -71,7 +72,8 @@ export default class IntroSpringControls extends HBox {
           [ HookesLawStrings.appliedForceNumberStringProperty ],
           pattern => StringUtils.format( pattern, options.systemNumber )
         ),
-        tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' )
+        tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' ),
+        phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
       } );
 
     options.children = [

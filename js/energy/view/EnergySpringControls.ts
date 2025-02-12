@@ -51,11 +51,13 @@ export default class EnergySpringControls extends HBox {
     const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
       majorTickValues: springConstantMajorTickValues,
       minorTickSpacing: 50,
-      tandem: springConstantPanelTandem.createTandem( 'springConstantControl' )
+      tandem: springConstantPanelTandem.createTandem( 'springConstantControl' ),
+      phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     } );
 
     const displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
-      tandem: displacementPanelTandem.createTandem( 'displacementControl' )
+      tandem: displacementPanelTandem.createTandem( 'displacementControl' ),
+      phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     } );
 
     options.children = [
