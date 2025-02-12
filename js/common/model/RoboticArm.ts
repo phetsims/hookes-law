@@ -48,6 +48,7 @@ export default class RoboticArm {
       reentrant: true,
       isValidValue: value => ( value < this.right ),
       tandem: options.tandem.createTandem( 'leftProperty' ),
+      phetioDocumentation: 'x-coordinate of the left end of the robotic arm. The right end is fixed.',
       phetioReadOnly: true // because you should adjust the appliedForceProperty instead
     } );
     phet.log && this.leftProperty.link( left => phet.log( `roboticArm left=${left}` ) );
