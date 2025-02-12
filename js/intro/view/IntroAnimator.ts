@@ -10,7 +10,6 @@ import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 import Animation from '../../../../twixt/js/Animation.js';
 import Easing from '../../../../twixt/js/Easing.js';
 import hookesLaw from '../../hookesLaw.js';
@@ -27,7 +26,7 @@ export default class IntroAnimator {
 
   public constructor( numberOfSystemsProperty: TReadOnlyProperty<number>,
                       system1Node: Node, system2Node: Node,
-                      layoutBounds: Bounds2, tandem: Tandem ) {
+                      layoutBounds: Bounds2 ) {
 
     this.activeAnimation = null;
 
@@ -60,10 +59,10 @@ export default class IntroAnimator {
     let system2Animation: Animation | null = null; // animation for system 2 opacity (fade in/out)
 
     // Position of system 1 when there is 1 system, vertically centered in the screen.
-    const system1CenterXForOneSystem = layoutBounds.centerY;
+    const system1CenterYForOneSystem = layoutBounds.centerY;
 
     // Position of system 1 when there are 2 systems, towards the top of the screen.
-    const system1CenterXForTwoSystem = layoutBounds.minY + ( 0.25 * layoutBounds.height );
+    const system1CenterXForTwoSystems = layoutBounds.minY + ( 0.25 * layoutBounds.height );
 
     // unlink not needed
     numberOfSystemsProperty.link( numberOfSystems => {
@@ -76,7 +75,7 @@ export default class IntroAnimator {
 
         // PhET typically does not instrument Animations; they are considered transient and not necessary for state.
         // So if setting PhET-iO state, skip the animation and move directly to the final state.
-        system1CenterYProperty.value = ( numberOfSystems === 1 ) ? system1CenterXForOneSystem : system1CenterXForTwoSystem;
+        system1CenterYProperty.value = ( numberOfSystems === 1 ) ? system1CenterYForOneSystem : system1CenterXForTwoSystems;
         system2OpacityProperty.value = ( numberOfSystems === 1 ) ? 0 : 1;
         system2Node.visible = ( numberOfSystems === 2 );
       }
@@ -103,7 +102,7 @@ export default class IntroAnimator {
             targets: [ {
               property: system1CenterYProperty,
               easing: Easing.LINEAR,
-              to: system1CenterXForOneSystem
+              to: system1CenterYForOneSystem
             } ]
           } );
 
@@ -134,7 +133,7 @@ export default class IntroAnimator {
             targets: [ {
               property: system1CenterYProperty,
               easing: Easing.LINEAR,
-              to: system1CenterXForTwoSystem
+              to: system1CenterXForTwoSystems
             } ]
           } );
 

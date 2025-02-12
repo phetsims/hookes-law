@@ -103,8 +103,7 @@ export default class IntroScreenView extends ScreenView {
     } );
     this.addChild( screenViewRootNode );
 
-    this.animator = new IntroAnimator( viewProperties.numberOfSystemsProperty, system1Node, system2Node,
-      this.layoutBounds, tandem.createTandem( 'animator' ) );
+    this.animator = new IntroAnimator( viewProperties.numberOfSystemsProperty, system1Node, system2Node, this.layoutBounds );
   }
 
   /**
