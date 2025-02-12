@@ -7,6 +7,7 @@
  */
 
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import { GatedVisibleProperty } from '../../../../axon/js/GatedBooleanProperty.js';
 import { EmptySelfOptions, optionize3 } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import HSeparator from '../../../../scenery/js/layout/nodes/HSeparator.js';
@@ -43,12 +44,14 @@ export default class EnergyVisibilityPanel extends Panel {
       tandem: options.tandem.createTandem( 'energyGraphRadioButtonGroup' )
     } );
 
+    const energyCheckboxTandem = options.tandem.createTandem( 'energyCheckbox' );
     const energyCheckbox = new EnergyCheckbox( properties.energyOnForcePlotVisibleProperty, {
-      // If the energyGraphRadioButtonGroup is hidden, hide energyCheckbox.
-      visibleProperty: energyGraphRadioButtonGroup.getButton( EnergyGraph.FORCE_PLOT ).visibleProperty,
+      // If the energyGraphRadioButtonGroup is hidden, hide energyCheckbox. But provide PhET-iO clients with
+      // a way to permanently hide the checkbox via energyCheckbox.selfVisibleProperty.
+      visibleProperty: new GatedVisibleProperty( energyGraphRadioButtonGroup.getButton( EnergyGraph.FORCE_PLOT ).visibleProperty, energyCheckboxTandem ),
       layoutOptions: { leftMargin: 25 }, // indented from check boxes
       enabledProperty: new DerivedProperty( [ properties.graphProperty ], graph => ( graph === EnergyGraph.FORCE_PLOT ) ),
-      tandem: options.tandem.createTandem( 'energyCheckbox' )
+      tandem: energyCheckboxTandem
     } );
 
     const appliedForceCheckbox = new VectorCheckbox( properties.appliedForceVectorVisibleProperty,
