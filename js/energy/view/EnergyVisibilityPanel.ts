@@ -45,10 +45,16 @@ export default class EnergyVisibilityPanel extends Panel {
     } );
 
     const energyCheckboxTandem = options.tandem.createTandem( 'energyCheckbox' );
+
+    // If the energyGraphRadioButtonGroup or energyGraphRadioButtonGroup.forcePlotRadioButton are hidden, then hide energyCheckbox.
+    const energyCheckboxVisibleProperty = DerivedProperty.and(
+      [ energyGraphRadioButtonGroup.visibleProperty, energyGraphRadioButtonGroup.getButton( EnergyGraph.FORCE_PLOT ).visibleProperty ] );
+
+    // Provide PhET-iO clients with a way to permanently hide energyCheckbox via energyCheckbox.selfVisibleProperty
+    const energyCheckboxGatedVisibleProperty = new GatedVisibleProperty( energyCheckboxVisibleProperty, energyCheckboxTandem );
+
     const energyCheckbox = new EnergyCheckbox( properties.energyOnForcePlotVisibleProperty, {
-      // If the energyGraphRadioButtonGroup is hidden, hide energyCheckbox. But provide PhET-iO clients with
-      // a way to permanently hide the checkbox via energyCheckbox.selfVisibleProperty.
-      visibleProperty: new GatedVisibleProperty( energyGraphRadioButtonGroup.getButton( EnergyGraph.FORCE_PLOT ).visibleProperty, energyCheckboxTandem ),
+      visibleProperty: energyCheckboxGatedVisibleProperty,
       layoutOptions: { leftMargin: 25 }, // indented from check boxes
       enabledProperty: new DerivedProperty( [ properties.graphProperty ], graph => ( graph === EnergyGraph.FORCE_PLOT ) ),
       tandem: energyCheckboxTandem
