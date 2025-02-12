@@ -21,6 +21,7 @@
       "adapted-from-phet"
     ],
     "simFeatures": {
+      "supportsSound": true,
       "supportsInteractiveDescription": true,
       "supportsDynamicLocale": true,
       "colorProfiles": [
