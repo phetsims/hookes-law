@@ -84,7 +84,7 @@ type SelfOptions = {
   pointRadius?: number;
 };
 
-export type XYPointPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem' | 'visibleProperty'>;
+export type XYPointPlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'visibleProperty'>;
 
 export default class XYPointPlot extends Node {
 
@@ -143,8 +143,7 @@ export default class XYPointPlot extends Node {
       maxY: options.maxY,
       xStringProperty: options.xStringProperty,
       yStringProperty: options.yStringProperty,
-      font: options.axisFont,
-      tandem: options.tandem.createTandem( 'axesNode' )
+      font: options.axisFont
     } );
 
     // point
@@ -153,10 +152,7 @@ export default class XYPointPlot extends Node {
     } );
 
     // x nodes
-    const xValueStringProperty = new StringProperty( '', {
-      tandem: options.tandem.createTandem( 'xValueStringProperty' ),
-      phetioReadOnly: true
-    } );
+    const xValueStringProperty = new StringProperty( '' );
     const xValueText = new Text( xValueStringProperty, {
       maxWidth: 150, // i18n
       fill: options.xValueFill,
@@ -168,10 +164,7 @@ export default class XYPointPlot extends Node {
     const xValueBackgroundNode = new Rectangle( 0, 0, 1, 1, { fill: options.xValueBackgroundColor } );
 
     // y nodes
-    const yValueStringProperty = new StringProperty( '', {
-      tandem: options.tandem.createTandem( 'yValueStringProperty' ),
-      phetioReadOnly: true
-    } );
+    const yValueStringProperty = new StringProperty( '' );
     const yValueText = new Text( yValueStringProperty, {
       maxWidth: 150, // i18n
       fill: options.yValueFill,

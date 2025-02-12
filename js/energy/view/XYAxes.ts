@@ -9,7 +9,6 @@
 
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import optionize from '../../../../phet-core/js/optionize.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
@@ -36,7 +35,7 @@ type SelfOptions = {
   font?: Font;
 };
 
-type XYAxesOptions = SelfOptions & PickRequired<NodeOptions, 'tandem'>;
+type XYAxesOptions = SelfOptions;
 
 export default class XYAxes extends Node {
 

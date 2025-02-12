@@ -25,7 +25,7 @@ import XYPointPlot, { XYPointPlotOptions } from './XYPointPlot.js';
 
 type SelfOptions = EmptySelfOptions;
 
-type ForcePlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<XYPointPlotOptions, 'tandem' | 'visibleProperty'>;
+type ForcePlotOptions = SelfOptions & NodeTranslationOptions & PickRequired<XYPointPlotOptions, 'visibleProperty'>;
 
 export default class ForcePlot extends XYPointPlot {
 

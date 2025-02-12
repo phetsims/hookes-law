@@ -11,7 +11,6 @@ import StringProperty from '../../../../axon/js/StringProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Utils from '../../../../dot/js/Utils.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
-import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
@@ -28,7 +27,7 @@ const BAR_WIDTH = 20;
 
 type SelfOptions = EmptySelfOptions;
 
-type EnergyBarGraphOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
+type EnergyBarGraphOptions = SelfOptions & NodeTranslationOptions;
 
 export default class EnergyBarGraph extends Node {
 
@@ -64,10 +63,7 @@ export default class EnergyBarGraph extends Node {
       centerX: xAxisNode.centerX
     } );
 
-    const valueStringProperty = new StringProperty( '', {
-      tandem: options.tandem.createTandem( 'valueStringProperty' ),
-      phetioReadOnly: true
-    } );
+    const valueStringProperty = new StringProperty( '' );
     const valueText = new Text( valueStringProperty, {
       visibleProperty: valueVisibleProperty,
       maxWidth: 100, // i18n
