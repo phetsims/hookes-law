@@ -6,7 +6,7 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
+import DerivedStringProperty from '../../../../axon/js/DerivedStringProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
@@ -51,10 +51,12 @@ export default class IntroSpringControls extends HBox {
     const springConstantPanelTandem = options.tandem.createTandem( 'springConstantPanel' );
     const appliedForcePanelTandem = options.tandem.createTandem( 'appliedForcePanel' );
 
+    const springConstantControlTandem = springConstantPanelTandem.createTandem( 'springConstantControl' );
     const springConstantControl = new SpringConstantControl( spring.springConstantProperty, spring.springConstantRange, {
-      titleStringProperty: new DerivedProperty(
-        [ HookesLawStrings.springConstantNumberStringProperty ],
-        pattern => StringUtils.format( pattern, options.systemNumber )
+      titleStringProperty: new DerivedStringProperty( [ HookesLawStrings.springConstantNumberStringProperty ],
+        pattern => StringUtils.format( pattern, options.systemNumber ), {
+          tandem: springConstantControlTandem.createTandem( 'titleStringProperty' )
+        }
       ),
       majorTickValues: [
         spring.springConstantRange.min,
@@ -62,17 +64,18 @@ export default class IntroSpringControls extends HBox {
         spring.springConstantRange.max
       ],
       minorTickSpacing: 100,
-      tandem: springConstantPanelTandem.createTandem( 'springConstantControl' ),
+      tandem: springConstantControlTandem,
       phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     } );
 
+    const appliedForceControlTandem = appliedForcePanelTandem.createTandem( 'appliedForceControl' );
     const appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
       numberOfInteractionsInProgressProperty, {
-        titleStringProperty: new DerivedProperty(
-          [ HookesLawStrings.appliedForceNumberStringProperty ],
-          pattern => StringUtils.format( pattern, options.systemNumber )
-        ),
-        tandem: appliedForcePanelTandem.createTandem( 'appliedForceControl' ),
+        titleStringProperty: new DerivedStringProperty( [ HookesLawStrings.appliedForceNumberStringProperty ],
+          pattern => StringUtils.format( pattern, options.systemNumber ), {
+            tandem: appliedForceControlTandem.createTandem( 'titleStringProperty' )
+          } ),
+        tandem: appliedForceControlTandem,
         phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
       } );
 
