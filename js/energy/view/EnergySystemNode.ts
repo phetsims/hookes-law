@@ -41,7 +41,10 @@ export default class EnergySystemNode extends Node {
     const options = optionize<EnergySystemNodeOptions, SelfOptions, NodeOptions>()( {
 
       // SelfOptions
-      unitDisplacementLength: 1
+      unitDisplacementLength: 1,
+
+      // NodeOptions
+      phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     }, providedOptions );
 
     assert && assert( options.unitDisplacementLength > 0 );

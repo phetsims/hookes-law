@@ -43,7 +43,10 @@ export default class IntroSystemNode extends Node {
     const options = optionize<IntroSystemNodeOptions, SelfOptions, NodeOptions>()( {
 
       // SelfOptions
-      unitDisplacementLength: 1
+      unitDisplacementLength: 1,
+
+      // NodeOptions
+      phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     }, providedOptions );
 
     assert && assert( Number.isInteger( options.systemNumber ) && options.systemNumber >= 1 );

@@ -67,7 +67,7 @@ export default class RoboticArmNode extends Node {
       // NodeOptions
       cursor: 'pointer',
       phetioInputEnabledPropertyInstrumented: true,
-      visiblePropertyOptions: { phetioReadOnly: true }
+      phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     }, providedOptions );
 
     // red box at right end of the arm, origin is at left-center
