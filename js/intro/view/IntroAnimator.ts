@@ -42,15 +42,13 @@ export default class IntroAnimator {
     }
     system2Node.centerY = 0.75 * layoutBounds.height;
 
-    // Vertical position of system 1, instrumented for PhET-iO to support record/playback,
-    // see https://github.com/phetsims/hookes-law/issues/53.
+    // Vertical position of system 1.
     const system1CenterYProperty = new NumberProperty( system1Node.centerY );
     system1CenterYProperty.link( centerY => {
       system1Node.centerY = centerY;
     } );
 
-    // Opacity of system 2, instrumented for PhET-iO to support record/playback,
-    // see https://github.com/phetsims/hookes-law/issues/53.
+    // Opacity of system 2.
     const system2OpacityProperty = new NumberProperty( system2Node.opacity, {
       isValidValue: value => ( value >= 0 && value <= 1 )
     } );
@@ -58,8 +56,8 @@ export default class IntroAnimator {
       system2Node.opacity = opacity;
     } );
 
-    let system1Animation: Animation | null = null; // animation for system 1 translation
-    let system2Animation: Animation | null = null; // animation for system 2 opacity (fade)
+    let system1Animation: Animation | null = null; // animation for system 1 translation (up/down)
+    let system2Animation: Animation | null = null; // animation for system 2 opacity (fade in/out)
 
     // Position of system 1 when there is 1 system, vertically centered in the screen.
     const system1CenterXForOneSystem = layoutBounds.centerY;
