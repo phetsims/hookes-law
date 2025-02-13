@@ -1,4 +1,4 @@
-// Copyright 2015-2024, University of Colorado Boulder
+// Copyright 2015-2025, University of Colorado Boulder
 
 /**
  * HookesLawSpringNode is a specialization of ParametricSpringNode that adapts it to the Hooke's Law spring model.
