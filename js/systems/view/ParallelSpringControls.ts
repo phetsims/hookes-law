@@ -46,7 +46,10 @@ export default class ParallelSpringControls extends HBox {
 
       // HBoxOptions
       spacing: 10,
-      excludeInvisibleChildrenFromBounds: false
+      excludeInvisibleChildrenFromBounds: false,
+      visiblePropertyOptions: {
+        phetioFeatured: true
+      }
     }, providedOptions );
 
     // Tandems for Panels that contain the controls

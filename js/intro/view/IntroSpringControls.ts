@@ -43,7 +43,10 @@ export default class IntroSpringControls extends HBox {
 
       // HBoxOptions
       spacing: 10,
-      excludeInvisibleChildrenFromBounds: false
+      excludeInvisibleChildrenFromBounds: false,
+      visiblePropertyOptions: {
+        phetioFeatured: true
+      }
     }, providedOptions );
 
     assert && assert( Number.isInteger( options.systemNumber ) && options.systemNumber >= 1 );
