@@ -159,6 +159,7 @@ export default class Spring extends PhetioObject {
       range: this.appliedForceRange,
       units: 'N',
       tandem: options.tandem.createTandem( 'appliedForceProperty' ),
+      phetioFeatured: true,
       phetioReadOnly: options.appliedForcePropertyPhetioReadOnly
     } );
     phet.log && this.appliedForceProperty.link( appliedForce => phet.log( `${options.logName} appliedForce=${appliedForce}` ) );
@@ -167,6 +168,7 @@ export default class Spring extends PhetioObject {
       range: this.springConstantRange,
       units: 'N/m',
       tandem: options.tandem.createTandem( 'springConstantProperty' ),
+      phetioFeatured: true,
       phetioReadOnly: options.springConstantPropertyPhetioReadOnly
     } );
     phet.log && this.springConstantProperty.link( springConstant => phet.log( `${options.logName} springConstant= ${springConstant}` ) );
@@ -180,6 +182,7 @@ export default class Spring extends PhetioObject {
       range: this.displacementRange,
       units: 'm',
       tandem: options.tandem.createTandem( 'displacementProperty' ),
+      phetioFeatured: true,
       phetioReadOnly: options.displacementPropertyPhetioReadOnly
     } );
     phet.log && this.displacementProperty.link( displacement => phet.log( `${options.logName} displacement=${displacement}` ) );
@@ -238,8 +241,9 @@ export default class Spring extends PhetioObject {
       [ this.appliedForceProperty ],
       appliedForce => -appliedForce, {
         units: 'N',
-        phetioValueType: NumberIO,
-        tandem: options.tandem.createTandem( 'springForceProperty' )
+        tandem: options.tandem.createTandem( 'springForceProperty' ),
+        phetioFeatured: true,
+        phetioValueType: NumberIO
       } );
     phet.log && this.springForceProperty.link( springForce => phet.log( `${options.logName} springForce=${springForce}` ) );
 
@@ -295,8 +299,9 @@ export default class Spring extends PhetioObject {
       [ this.springConstantProperty, this.displacementProperty ],
       ( springConstant, displacement ) => ( springConstant * displacement * displacement ) / 2, {
         units: 'J',
-        phetioValueType: NumberIO,
-        tandem: options.tandem.createTandem( 'potentialEnergyProperty' )
+        tandem: options.tandem.createTandem( 'potentialEnergyProperty' ),
+        phetioFeatured: true,
+        phetioValueType: NumberIO
       } );
     phet.log && this.potentialEnergyProperty.link( potentialEnergy => phet.log( `${options.logName} potentialEnergy=${potentialEnergy}` ) );
   }
