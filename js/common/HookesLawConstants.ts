@@ -46,14 +46,20 @@ const SPRING_PANEL_OPTIONS: StrictOmit<PanelOptions, 'tandem'> = {
   fill: HookesLawColors.controlPanelFillProperty,
   stroke: HookesLawColors.controlPanelStrokeProperty,
   xMargin: 20,
-  yMargin: 5
+  yMargin: 5,
+  visiblePropertyOptions: {
+    phetioFeatured: true
+  }
 };
 
 const VISIBILITY_PANEL_OPTIONS: StrictOmit<PanelOptions, 'tandem'> = {
   fill: HookesLawColors.controlPanelFillProperty,
   stroke: HookesLawColors.controlPanelStrokeProperty,
   xMargin: 15,
-  yMargin: 15
+  yMargin: 15,
+  visiblePropertyOptions: {
+    phetioFeatured: true
+  }
 };
 
 const HookesLawConstants = {
