@@ -12,7 +12,7 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Range from '../../../../dot/js/Range.js';
 import Utils from '../../../../dot/js/Utils.js';
-import optionize from '../../../../phet-core/js/optionize.js';
+import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
@@ -20,8 +20,9 @@ import LinearGradient from '../../../../scenery/js/util/LinearGradient.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import RoboticArm from '../model/RoboticArm.js';
-import SoundRichDragListener from '../../../../scenery-phet/js/SoundRichDragListener.js';
 import RoboticHandNode from './RoboticHandNode.js';
+import SoundDragListener from '../../../../scenery-phet/js/SoundDragListener.js';
+import SoundKeyboardDragListener, { SoundKeyboardDragListenerOptions } from '../../../../scenery-phet/js/SoundKeyboardDragListener.js';
 
 const BOX_SIZE = new Dimension2( 20, 60 );
 const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
@@ -97,16 +98,9 @@ export default class RoboticArmNode extends Node {
 
     // Drag the hand.
     let startOffsetX = 0;
-    const dragListener = new SoundRichDragListener( {
+    const dragListener = new SoundDragListener( {
 
-      dragListenerOptions: {
-        allowTouchSnag: true,
-        tandem: roboticHandNodeTandem.createTandem( 'dragListener' )
-      },
-
-      keyboardDragListenerOptions: {
-        tandem: roboticHandNodeTandem.createTandem( 'keyboardDragListener' )
-      },
+      allowTouchSnag: true,
 
       start: event => {
         numberOfInteractionsInProgressProperty.value += 1;
@@ -129,9 +123,42 @@ export default class RoboticArmNode extends Node {
 
       end: () => {
         numberOfInteractionsInProgressProperty.value -= 1;
-      }
+      },
+
+      tandem: roboticHandNodeTandem.createTandem( 'dragListener' )
     } );
     roboticHandNode.addInputListener( dragListener );
+
+    let soundKeyboardDragListenerOptions: SoundKeyboardDragListenerOptions;
+    if ( options.displacementInterval ) {
+
+      // Options for stepwise dragging.
+      // These values were tuned empirically, and are relevant to the Energy screen.
+      soundKeyboardDragListenerOptions = {
+        moveOnHoldInterval: 400, // ms
+        dragDelta: 2 * options.displacementInterval,
+        shiftDragDelta: options.displacementInterval
+      };
+    }
+    else {
+
+      // Options for continuous dragging, in distance/s.
+      // These values were tuned empirically, and are relevant to the Intro and Systems screens.
+      soundKeyboardDragListenerOptions = {
+        dragSpeed: 0.5,
+        shiftDragSpeed: 0.1
+      };
+    }
+
+    const keyboardDragListener = new SoundKeyboardDragListener( combineOptions<SoundKeyboardDragListenerOptions>(
+      soundKeyboardDragListenerOptions, {
+      drag: ( event, listener ) => {
+        const newLeft = roboticArm.leftProperty.value + listener.modelDelta.x;
+        roboticArm.leftProperty.value = leftRangeProperty.value.constrainValue( newLeft );
+      },
+      tandem: roboticHandNodeTandem.createTandem( 'keyboardDragListener' )
+    } ) );
+    roboticHandNode.addInputListener( keyboardDragListener );
 
     roboticArm.leftProperty.link( left => {
 
