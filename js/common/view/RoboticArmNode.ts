@@ -1,8 +1,8 @@
 // Copyright 2015-2025, University of Colorado Boulder
 
 /**
- * The robotic arm used to pull the spring(s).
- * Origin is at the left-center of the red box.
+ * RoboticArmNode is the view of the robotic arm used to pull the spring(s).
+ * Origin is at the left-center of subcomponent redBox, at the right (fixed) end of the arm.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -12,27 +12,17 @@ import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Range from '../../../../dot/js/Range.js';
 import Utils from '../../../../dot/js/Utils.js';
-import Shape from '../../../../kite/js/Shape.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
-import SoundDragListener from '../../../../scenery-phet/js/SoundDragListener.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
-import Path, { PathOptions } from '../../../../scenery/js/nodes/Path.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import LinearGradient from '../../../../scenery/js/util/LinearGradient.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import RoboticArm from '../model/RoboticArm.js';
-import HingeNode from './HingeNode.js';
+import SoundRichDragListener from '../../../../scenery-phet/js/SoundRichDragListener.js';
+import RoboticHandNode from './RoboticHandNode.js';
 
-const PINCER_RADIUS = 35;
-const PINCER_LINE_WIDTH = 6;
-const PINCER_OVERLAP = 2;
-const ARM_HEIGHT = 14;
-const ARM_GRADIENT = new LinearGradient( 0, 0, 0, ARM_HEIGHT )
-  .addColorStop( 0, HookesLawColors.roboticArmFillProperty )
-  .addColorStop( 0.3, 'white' )
-  .addColorStop( 1, HookesLawColors.roboticArmFillProperty );
 const BOX_SIZE = new Dimension2( 20, 60 );
 const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
   .addColorStop( 0, HookesLawColors.roboticArmFillProperty )
@@ -48,10 +38,17 @@ type RoboticArmNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired
 
 export default class RoboticArmNode extends Node {
 
-  private readonly topPincerClosedNode: Node;
-  private readonly topPincerOpenNode: Node;
-  private readonly bottomPincerClosedNode: Node;
-  private readonly bottomPincerOpenNode: Node;
+  // Robotic hand, the draggable part of the robotic arm, attached to the left end of the telescoping arm.
+  private readonly roboticHandNode: RoboticHandNode;
+
+  // Height of the telescoping arm.
+  public static readonly ARM_HEIGHT = 14;
+
+  // Gradient for the telescoping arm.
+  public static readonly ARM_GRADIENT = new LinearGradient( 0, 0, 0, RoboticArmNode.ARM_HEIGHT )
+    .addColorStop( 0, HookesLawColors.roboticArmFillProperty )
+    .addColorStop( 0.3, 'white' )
+    .addColorStop( 1, HookesLawColors.roboticArmFillProperty );
 
   public constructor( roboticArm: RoboticArm,
                       leftRangeProperty: TReadOnlyProperty<Range>, // dynamic range of the left (movable) end of the arm, units = m
@@ -65,12 +62,10 @@ export default class RoboticArmNode extends Node {
       displacementInterval: null,
 
       // NodeOptions
-      cursor: 'pointer',
-      phetioInputEnabledPropertyInstrumented: true,
       phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     }, providedOptions );
 
-    // red box at right end of the arm, origin is at left-center
+    // Red box at right end of the arm. Origin is at left-center.
     const redBox = new Rectangle( 0, 0, 7, 30, {
       stroke: 'black',
       fill: HookesLawColors.hingeColorProperty, // same color as hinge
@@ -79,7 +74,7 @@ export default class RoboticArmNode extends Node {
       centerY: 0
     } );
 
-    // gradient box to the right of red box
+    // Gradient box to the right of red box.
     const gradientBox = new Rectangle( 0, 0, BOX_SIZE.width, BOX_SIZE.height, {
       stroke: 'black',
       fill: BOX_GRADIENT,
@@ -88,71 +83,39 @@ export default class RoboticArmNode extends Node {
       centerY: 0
     } );
 
-    // arm will be sized and positioned by Property observer
-    const armNode = new Rectangle( 0, 0, 1, ARM_HEIGHT, {
-      fill: ARM_GRADIENT,
+    // Telescoping arm will be sized and positioned by roboticArm.leftProperty listener.
+    const armNode = new Rectangle( 0, 0, 1, RoboticArmNode.ARM_HEIGHT, {
+      fill: RoboticArmNode.ARM_GRADIENT,
       stroke: HookesLawColors.roboticArmStrokeProperty,
       lineWidth: 0.5
     } );
 
-    const topPincerClosedNode = createTopPincerClosed( {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      left: 0,
-      bottom: PINCER_OVERLAP
-    } );
+    // Robotic hand is draggable, other parts are not.
+    const roboticHandNodeTandem = options.tandem.createTandem( 'roboticHandNode' );
+    const roboticHandNode = new RoboticHandNode( roboticHandNodeTandem );
+    roboticHandNode.touchArea = roboticHandNode.localBounds.dilatedXY( 0.3 * roboticHandNode.width, 0.2 * roboticHandNode.height );
 
-    const topPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 ), {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      right: topPincerClosedNode.right,
-      bottom: 0
-    } );
-
-    const bottomPincerClosedNode = createBottomPincerClosed( {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      left: 0,
-      top: -PINCER_OVERLAP
-    } );
-
-    const bottomPincerOpenNode = new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true ), {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      right: bottomPincerClosedNode.right,
-      top: 0
-    } );
-
-    // hinge, where the pincers are attached
-    const hingeNode = new HingeNode( {
-      x: topPincerClosedNode.right - 12, // dependent on image file
-      centerY: 0 // dependent on image file
-    } );
-
-    // pincers and hinge are draggable, other parts are not
-    const draggableNode = new Node( {
-      children: [
-        topPincerClosedNode, topPincerOpenNode,
-        bottomPincerClosedNode, bottomPincerOpenNode,
-        hingeNode
-      ]
-    } );
-    draggableNode.touchArea = draggableNode.localBounds.dilatedXY( 0.3 * draggableNode.width, 0.2 * draggableNode.height );
-
-    // Drag the pincers or hinge
+    // Drag the pincers or hinge.
     let startOffsetX = 0;
-    const dragListener = new SoundDragListener( {
+    const dragListener = new SoundRichDragListener( {
 
-      allowTouchSnag: true,
+      dragListenerOptions: {
+        allowTouchSnag: true,
+        tandem: roboticHandNodeTandem.createTandem( 'dragListener' )
+      },
+
+      keyboardDragListenerOptions: {
+        tandem: roboticHandNodeTandem.createTandem( 'keyboardDragListener' )
+      },
 
       start: event => {
         numberOfInteractionsInProgressProperty.value += 1;
         const length = options.unitDisplacementLength * ( roboticArm.leftProperty.value - roboticArm.right );
-        startOffsetX = draggableNode.globalToParentPoint( event.pointer.point ).x - length;
+        startOffsetX = roboticHandNode.globalToParentPoint( event.pointer.point ).x - length;
       },
 
       drag: event => {
-        const parentX = draggableNode.globalToParentPoint( event.pointer.point ).x - startOffsetX;
+        const parentX = roboticHandNode.globalToParentPoint( event.pointer.point ).x - startOffsetX;
         const length = parentX / options.unitDisplacementLength;
         let left = leftRangeProperty.value.constrainValue( roboticArm.right + length );
 
@@ -166,95 +129,33 @@ export default class RoboticArmNode extends Node {
 
       end: () => {
         numberOfInteractionsInProgressProperty.value -= 1;
-      },
-
-      // phet-io
-      tandem: options.tandem.createTandem( 'dragListener' )
+      }
     } );
-    draggableNode.addInputListener( dragListener );
+    roboticHandNode.addInputListener( dragListener );
 
     roboticArm.leftProperty.link( left => {
 
-      // move the pincers and hinge
-      draggableNode.x = options.unitDisplacementLength * ( left - roboticArm.right );
+      // Move the hand.
+      roboticHandNode.x = options.unitDisplacementLength * ( left - roboticArm.right );
 
-      // resize the arm
+      // Resize the telescoping arm.
       const overlap = 10; // hide ends of arm behind hinge and box
-      const armLength = ( gradientBox.left - draggableNode.right ) + ( 2 * overlap );
-      armNode.setRect( 0, 0, armLength, ARM_HEIGHT );
+      const armLength = ( gradientBox.left - roboticHandNode.right ) + ( 2 * overlap );
+      armNode.setRect( 0, 0, armLength, RoboticArmNode.ARM_HEIGHT );
       armNode.right = gradientBox.left + overlap;
       armNode.centerY = 0;
     } );
 
-    options.children = [ armNode, redBox, gradientBox, draggableNode ];
+    options.children = [ armNode, redBox, gradientBox, roboticHandNode ];
 
     super( options );
 
-    // We are not PhET-iO instrumenting the subcomponents of this Node, and it is one of those subcomponents
-    // that is draggable.  So instrument this Node's inputEnabledProperty, and use it to control the interactivity
-    // of the subcomponent.
-    this.inputEnabledProperty.link( inputEnabled => {
-      draggableNode.inputEnabledProperty.value = inputEnabled;
-    } );
-
-    this.topPincerClosedNode = topPincerClosedNode;
-    this.topPincerOpenNode = topPincerOpenNode;
-    this.bottomPincerClosedNode = bottomPincerClosedNode;
-    this.bottomPincerOpenNode = bottomPincerOpenNode;
+    this.roboticHandNode = roboticHandNode;
   }
 
   public setPincersOpen( pincersOpen: boolean ): void {
-    this.topPincerOpenNode.visible = this.bottomPincerOpenNode.visible = pincersOpen;
-    this.topPincerClosedNode.visible = this.bottomPincerClosedNode.visible = !pincersOpen;
+    this.roboticHandNode.setPincersOpen( pincersOpen );
   }
-
-  /**
-   * Creates an icon that represents this node.
-   */
-  public static createIcon( options: NodeOptions ): Node {
-
-    const topPincerNode = createTopPincerClosed( {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      bottom: PINCER_OVERLAP
-    } );
-
-    const bottomPincerNode = createBottomPincerClosed( {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      top: -PINCER_OVERLAP
-    } );
-
-    const hingeNode = new HingeNode( {
-      left: topPincerNode.right - 12,
-      centerY: 0
-    } );
-
-    const armNode = new Rectangle( 0, 0, 20, ARM_HEIGHT, {
-      fill: ARM_GRADIENT,
-      stroke: HookesLawColors.roboticArmStrokeProperty,
-      lineWidth: 0.5,
-      left: hingeNode.right - 5,
-      centerY: hingeNode.centerY
-    } );
-
-    options.children = [ topPincerNode, bottomPincerNode, armNode, hingeNode ];
-    return new Node( options );
-  }
-}
-
-/**
- * Creates the top pincer in closed position.
- */
-function createTopPincerClosed( options: PathOptions ): Node {
-  return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI ), options );
-}
-
-/**
- * Creates the bottom pincer in closed position.
- */
-function createBottomPincerClosed( options: PathOptions ): Node {
-  return new Path( new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true ), options );
 }
 
 hookesLaw.register( 'RoboticArmNode', RoboticArmNode );

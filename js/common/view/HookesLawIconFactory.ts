@@ -1,7 +1,7 @@
 // Copyright 2015-2025, University of Colorado Boulder
 
 /**
- * Factory for creating various icons that appear in the sim.
+ * Functions for creating various icons that appear in the sim.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -14,7 +14,7 @@ import ParametricSpringNode, { ParametricSpringNodeOptions } from '../../../../s
 import HBox from '../../../../scenery/js/layout/nodes/HBox.js';
 import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
-import Node from '../../../../scenery/js/nodes/Node.js';
+import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import TColor from '../../../../scenery/js/util/TColor.js';
@@ -23,6 +23,8 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import NibNode from './NibNode.js';
 import RoboticArmNode from './RoboticArmNode.js';
+import RoboticHandNode from './RoboticHandNode.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
 
 // Spring options common to all icons
 const COMMON_SPRING_OPTIONS = {
@@ -66,7 +68,7 @@ const HookesLawIconFactory = {
       backColor: HookesLawColors.singleSpringBackColorProperty
     }, COMMON_SPRING_OPTIONS ) );
 
-    // piece that pincers grab
+    // piece on the spring that robotic arm grabs
     const nibNode = new NibNode( {
       fill: HookesLawColors.singleSpringMiddleColorProperty,
       x: springNode.right,
@@ -74,7 +76,7 @@ const HookesLawIconFactory = {
     } );
 
     // robotic arm
-    const armNode = RoboticArmNode.createIcon( {
+    const armNode = HookesLawIconFactory.createRoboticArmIcon( {
       left: springNode.right,
       centerY: springNode.centerY
     } );
@@ -113,7 +115,7 @@ const HookesLawIconFactory = {
       centerY: springsBox.centerY
     } );
 
-    // piece that pincers grab
+    // piece on the spring that robotic arm grabs
     const nibNode = new NibNode( {
       fill: 'black',
       x: verticalLineNode.x,
@@ -121,7 +123,7 @@ const HookesLawIconFactory = {
     } );
 
     // robotic arm
-    const armNode = RoboticArmNode.createIcon( {
+    const armNode = HookesLawIconFactory.createRoboticArmIcon( {
       left: verticalLineNode.right,
       centerY: verticalLineNode.centerY
     } );
@@ -159,6 +161,27 @@ const HookesLawIconFactory = {
     const iconNode = new Node( { children: [ barNode, yAxisNode ] } );
 
     return new ScreenIcon( iconNode );
+  },
+
+  /**
+   * Creates an icon for the robotic arm.
+   */
+  createRoboticArmIcon( options: NodeOptions ): Node {
+
+    const roboticHandNode = new RoboticHandNode( Tandem.OPT_OUT );
+    roboticHandNode.setPincersOpen( false );
+    roboticHandNode.pickable = false;
+
+    const armNode = new Rectangle( 0, 0, 20, RoboticArmNode.ARM_HEIGHT, {
+      fill: RoboticArmNode.ARM_GRADIENT,
+      stroke: HookesLawColors.roboticArmStrokeProperty,
+      lineWidth: 0.5,
+      left: roboticHandNode.right - 5,
+      centerY: roboticHandNode.centerY
+    } );
+
+    options.children = [ armNode, roboticHandNode ];
+    return new Node( options );
   },
 
   /**
