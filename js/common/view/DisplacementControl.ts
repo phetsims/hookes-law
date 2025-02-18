@@ -22,6 +22,12 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
+
+// Keyboards steps for slider.
+const KEYBOARD_STEP = HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL;
+const SHIFT_KEYBOARD_STEP = HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL;
+const PAGE_KEYBOARD_STEP = 2 * KEYBOARD_STEP;
 
 type SelfOptions = EmptySelfOptions;
 
@@ -84,10 +90,13 @@ export default class DisplacementControl extends NumberControl {
         constrainValue: value => {
           // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
           return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
-        }
+        },
+        keyboardStep: KEYBOARD_STEP,
+        shiftKeyboardStep: SHIFT_KEYBOARD_STEP,
+        pageKeyboardStep: PAGE_KEYBOARD_STEP
       },
       valueChangeSoundGeneratorOptions: {
-        numberOfMiddleThresholds: displacementRange.getLength() / HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL
+        numberOfMiddleThresholds: toFixedNumber( displacementRange.getLength() / KEYBOARD_STEP, 0 )
       }
     }, providedOptions );
 

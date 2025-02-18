@@ -23,6 +23,12 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
+
+// Keyboards steps for slider.
+const KEYBOARD_STEP = HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL;
+const SHIFT_KEYBOARD_STEP = HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL;
+const PAGE_KEYBOARD_STEP = 2 * KEYBOARD_STEP;
 
 type SelfOptions = {
   titleStringProperty?: TReadOnlyProperty<string>;
@@ -83,10 +89,13 @@ export default class SpringConstantControl extends NumberControl {
         thumbFill: HookesLawColors.singleSpringMiddleColorProperty,
         constrainValue: value => {
           return Utils.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
-        }
+        },
+        keyboardStep: KEYBOARD_STEP,
+        shiftKeyboardStep: SHIFT_KEYBOARD_STEP,
+        pageKeyboardStep: PAGE_KEYBOARD_STEP
       },
       valueChangeSoundGeneratorOptions: {
-        numberOfMiddleThresholds: springConstantRange.getLength() / HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL
+        numberOfMiddleThresholds: toFixedNumber( springConstantRange.getLength() / KEYBOARD_STEP, 0 )
       }
     }, provideOptions );
 

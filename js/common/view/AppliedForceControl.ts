@@ -23,8 +23,14 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 
 const MINOR_TICK_SPACING = 10;
+
+// Keyboards steps for slider.
+const KEYBOARD_STEP = HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL;
+const SHIFT_KEYBOARD_STEP = HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL;
+const PAGE_KEYBOARD_STEP = 2 * KEYBOARD_STEP;
 
 type SelfOptions = {
   titleStringProperty?: TReadOnlyProperty<string>;
@@ -105,11 +111,14 @@ export default class AppliedForceControl extends NumberControl {
         thumbFill: HookesLawColors.appliedForceColorProperty,
         constrainValue: value => {
           return Utils.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
-        }
+        },
+        keyboardStep: KEYBOARD_STEP,
+        shiftKeyboardStep: SHIFT_KEYBOARD_STEP,
+        pageKeyboardStep: PAGE_KEYBOARD_STEP
       },
       arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
       valueChangeSoundGeneratorOptions: {
-        numberOfMiddleThresholds: appliedForceRange.getLength() / HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL
+        numberOfMiddleThresholds: toFixedNumber( appliedForceRange.getLength() / KEYBOARD_STEP, 0 )
       }
     }, providedOptions );
 
