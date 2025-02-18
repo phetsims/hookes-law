@@ -1,7 +1,7 @@
 // Copyright 2015-2025, University of Colorado Boulder
 
 /**
- * Hinge for the robotic arm. This is the red piece that the pincers are connected to.
+ * Hinge for the robotic arm. This is the red piece that the grippers are connected to.
  *
  * @author Chris Malley (PixelZoom, Inc.)
  */
@@ -31,7 +31,7 @@ export default class HingeNode extends Node {
       // because we're setting options.children below
     }, providedOptions );
 
-    // piece that the pincers pivot in, shape described clockwise from upper-left
+    // piece that the grippers pivot in, shape described clockwise from upper-left
     const pivotNode = new Path( new Shape()
       .moveTo( 0, -0.25 * PIVOT_SIZE.height )
       .lineTo( PIVOT_SIZE.width, -0.5 * PIVOT_SIZE.height )

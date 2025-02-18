@@ -15,61 +15,62 @@ import HingeNode from './HingeNode.js';
 import hookesLaw from '../../hookesLaw.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 
-const PINCER_RADIUS = 35;
-const PINCER_LINE_WIDTH = 6;
-const PINCER_OVERLAP = 2;
+// Attributes of the grippers, the finger-like parts of the hand.
+const GRIPPER_RADIUS = 35;
+const GRIPPER_LINE_WIDTH = 6;
+const GRIPPER_OVERLAP = 2;
 
 export default class RoboticHandNode extends InteractiveHighlighting( Node ) {
 
-  private readonly topPincerClosedNode: Node;
-  private readonly topPincerOpenNode: Node;
-  private readonly bottomPincerClosedNode: Node;
-  private readonly bottomPincerOpenNode: Node;
+  private readonly topGripperClosedNode: Node;    // Top gripper in the closed position.
+  private readonly topGripperOpenNode: Node;      // Top gripper in the open position.
+  private readonly bottomGripperClosedNode: Node; // Bottom gripper in the closed position.
+  private readonly bottomGripperOpenNode: Node;   // Bottom gripper in the open position.
 
   public constructor( tandem: Tandem ) {
 
-    const topPincerClosedShape = new Shape().arc( 0, 0, PINCER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI );
-    const topPincerClosedNode = new Path( topPincerClosedShape, {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
+    const topGripperClosedShape = new Shape().arc( 0, 0, GRIPPER_RADIUS, -0.9 * Math.PI, -0.1 * Math.PI );
+    const topGripperClosedNode = new Path( topGripperClosedShape, {
+      stroke: HookesLawColors.grippersStrokeProperty,
+      lineWidth: GRIPPER_LINE_WIDTH,
       left: 0,
-      bottom: PINCER_OVERLAP
+      bottom: GRIPPER_OVERLAP
     } );
 
-    const topPincerOpenShape = new Shape().arc( 0, 0, PINCER_RADIUS, -0.8 * Math.PI, 0 );
-    const topPincerOpenNode = new Path( topPincerOpenShape, {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      right: topPincerClosedNode.right,
+    const topGripperOpenShape = new Shape().arc( 0, 0, GRIPPER_RADIUS, -0.8 * Math.PI, 0 );
+    const topGripperOpenNode = new Path( topGripperOpenShape, {
+      stroke: HookesLawColors.grippersStrokeProperty,
+      lineWidth: GRIPPER_LINE_WIDTH,
+      right: topGripperClosedNode.right,
       bottom: 0
     } );
 
-    const bottomPincerClosedShape = new Shape().arc( 0, 0, PINCER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true );
-    const bottomPincerClosedNode = new Path( bottomPincerClosedShape, {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
+    const bottomGripperClosedShape = new Shape().arc( 0, 0, GRIPPER_RADIUS, 0.9 * Math.PI, 0.1 * Math.PI, true );
+    const bottomGripperClosedNode = new Path( bottomGripperClosedShape, {
+      stroke: HookesLawColors.grippersStrokeProperty,
+      lineWidth: GRIPPER_LINE_WIDTH,
       left: 0,
-      top: -PINCER_OVERLAP
+      top: -GRIPPER_OVERLAP
     } );
 
-    const bottomPincerOpenShape = new Shape().arc( 0, 0, PINCER_RADIUS, 0.8 * Math.PI, 0, true );
-    const bottomPincerOpenNode = new Path( bottomPincerOpenShape, {
-      stroke: HookesLawColors.pincersStrokeProperty,
-      lineWidth: PINCER_LINE_WIDTH,
-      right: bottomPincerClosedNode.right,
+    const bottomGripperOpenShape = new Shape().arc( 0, 0, GRIPPER_RADIUS, 0.8 * Math.PI, 0, true );
+    const bottomGripperOpenNode = new Path( bottomGripperOpenShape, {
+      stroke: HookesLawColors.grippersStrokeProperty,
+      lineWidth: GRIPPER_LINE_WIDTH,
+      right: bottomGripperClosedNode.right,
       top: 0
     } );
 
-    // hinge, where the pincers are attached
+    // hinge, where the grippers are attached
     const hingeNode = new HingeNode( {
-      x: topPincerClosedNode.right - 12, // dependent on image file
+      x: topGripperClosedNode.right - 12, // dependent on image file
       centerY: 0 // dependent on image file
     } );
 
     super( {
       children: [
-        topPincerClosedNode, topPincerOpenNode,
-        bottomPincerClosedNode, bottomPincerOpenNode,
+        topGripperClosedNode, topGripperOpenNode,
+        bottomGripperClosedNode, bottomGripperOpenNode,
         hingeNode
       ],
       cursor: 'pointer',
@@ -80,15 +81,18 @@ export default class RoboticHandNode extends InteractiveHighlighting( Node ) {
       phetioVisiblePropertyInstrumented: false
     } );
 
-    this.topPincerClosedNode = topPincerClosedNode;
-    this.topPincerOpenNode = topPincerOpenNode;
-    this.bottomPincerClosedNode = bottomPincerClosedNode;
-    this.bottomPincerOpenNode = bottomPincerOpenNode;
+    this.topGripperClosedNode = topGripperClosedNode;
+    this.topGripperOpenNode = topGripperOpenNode;
+    this.bottomGripperClosedNode = bottomGripperClosedNode;
+    this.bottomGripperOpenNode = bottomGripperOpenNode;
   }
 
-  public setPincersOpen( pincersOpen: boolean ): void {
-    this.topPincerOpenNode.visible = this.bottomPincerOpenNode.visible = pincersOpen;
-    this.topPincerClosedNode.visible = this.bottomPincerClosedNode.visible = !pincersOpen;
+  /**
+   * Used to open and close the grippers, the finger-like parts of the hand.
+   */
+  public setGrippersOpen( grippersOpen: boolean ): void {
+    this.topGripperOpenNode.visible = this.bottomGripperOpenNode.visible = grippersOpen;
+    this.topGripperClosedNode.visible = this.bottomGripperClosedNode.visible = !grippersOpen;
   }
 }
 

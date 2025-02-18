@@ -169,7 +169,7 @@ const HookesLawIconFactory = {
   createRoboticArmIcon( options: NodeOptions ): Node {
 
     const roboticHandNode = new RoboticHandNode( Tandem.OPT_OUT );
-    roboticHandNode.setPincersOpen( false );
+    roboticHandNode.setGrippersOpen( false );
     roboticHandNode.pickable = false;
 
     const armNode = new Rectangle( 0, 0, 20, RoboticArmNode.ARM_HEIGHT, {

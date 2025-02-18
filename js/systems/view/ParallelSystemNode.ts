@@ -116,7 +116,7 @@ export default class ParallelSystemNode extends Node {
       stroke: 'black'
     } );
 
-    // pincers grab this
+    // Piece on the spring the is grabbed by the robotic arm's grippers.
     const nibNode = new NibNode( {
       fill: 'black',
       // x is determined by rightSpring.leftProperty
@@ -207,12 +207,12 @@ export default class ParallelSystemNode extends Node {
       bottomSpringForceVectorNode.x = options.unitDisplacementLength * right;
     } );
 
-    // Open pincers when displacement is zero and no user interactions affecting displacement are talking place.
+    // Open robotic arm's grippers when displacement is zero and no user interactions affecting displacement are talking place.
     Multilink.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
       ( numberOfInteractions, displacement ) => {
         assert && assert( numberOfInteractions >= 0 );
         const fixedDisplacement = Utils.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
-        roboticArmNode.setPincersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
+        roboticArmNode.setGrippersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 
     super( options );

@@ -78,7 +78,7 @@ const HookesLawColors = {
   roboticArmStrokeProperty: new ProfileColorProperty( hookesLaw, 'roboticArmStroke', {
     default: 'black'
   } ),
-  pincersStrokeProperty: new ProfileColorProperty( hookesLaw, 'pincersStroke', {
+  grippersStrokeProperty: new ProfileColorProperty( hookesLaw, 'grippersStroke', {
     default: 'black'
   } ),
   hingeColorProperty: new ProfileColorProperty( hookesLaw, 'hingeColor', {

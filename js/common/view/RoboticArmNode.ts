@@ -95,7 +95,7 @@ export default class RoboticArmNode extends Node {
     const roboticHandNode = new RoboticHandNode( roboticHandNodeTandem );
     roboticHandNode.touchArea = roboticHandNode.localBounds.dilatedXY( 0.3 * roboticHandNode.width, 0.2 * roboticHandNode.height );
 
-    // Drag the pincers or hinge.
+    // Drag the hand.
     let startOffsetX = 0;
     const dragListener = new SoundRichDragListener( {
 
@@ -153,8 +153,8 @@ export default class RoboticArmNode extends Node {
     this.roboticHandNode = roboticHandNode;
   }
 
-  public setPincersOpen( pincersOpen: boolean ): void {
-    this.roboticHandNode.setPincersOpen( pincersOpen );
+  public setGrippersOpen( grippersOpen: boolean ): void {
+    this.roboticHandNode.setGrippersOpen( grippersOpen );
   }
 }
 
