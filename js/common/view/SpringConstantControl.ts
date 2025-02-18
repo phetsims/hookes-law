@@ -84,6 +84,9 @@ export default class SpringConstantControl extends NumberControl {
         constrainValue: value => {
           return Utils.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
         }
+      },
+      valueChangeSoundGeneratorOptions: {
+        numberOfMiddleThresholds: springConstantRange.getLength() / HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL
       }
     }, provideOptions );
 

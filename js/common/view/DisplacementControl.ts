@@ -85,6 +85,9 @@ export default class DisplacementControl extends NumberControl {
           // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
           return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
         }
+      },
+      valueChangeSoundGeneratorOptions: {
+        numberOfMiddleThresholds: displacementRange.getLength() / HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL
       }
     }, providedOptions );
 

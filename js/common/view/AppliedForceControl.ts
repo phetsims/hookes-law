@@ -107,7 +107,10 @@ export default class AppliedForceControl extends NumberControl {
           return Utils.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
         }
       },
-      arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS
+      arrowButtonOptions: HookesLawConstants.ARROW_BUTTON_OPTIONS,
+      valueChangeSoundGeneratorOptions: {
+        numberOfMiddleThresholds: appliedForceRange.getLength() / HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL
+      }
     }, providedOptions );
 
     super( options.titleStringProperty, appliedForceProperty, appliedForceRange, options );
