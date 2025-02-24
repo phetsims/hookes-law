@@ -73,16 +73,6 @@ const HookesLawConstants = {
   DISPLACEMENT_DECIMAL_PLACES: 3,
   ENERGY_DECIMAL_PLACES: 1,
 
-  // slider thumb intervals
-  APPLIED_FORCE_THUMB_INTERVAL: 5, // N
-  SPRING_CONSTANT_THUMB_INTERVAL: 10, // N/m
-  DISPLACEMENT_THUMB_INTERVAL: 0.05, // m
-
-  // tweaker intervals
-  APPLIED_FORCE_TWEAKER_INTERVAL: 1, // N
-  SPRING_CONSTANT_TWEAKER_INTERVAL: 1, // N/m
-  DISPLACEMENT_TWEAKER_INTERVAL: 0.01, // m
-
   // drag intervals
   ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.05, // m, Energy screen only, see https://github.com/phetsims/hookes-law/issues/54
 

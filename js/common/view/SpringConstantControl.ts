@@ -25,10 +25,13 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 
-// Keyboards steps for slider.
-const KEYBOARD_STEP = HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL;
-const SHIFT_KEYBOARD_STEP = HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL;
-const PAGE_KEYBOARD_STEP = 2 * KEYBOARD_STEP;
+// Steps for slider thumb, arrow buttons, and keyboard, in N.
+// See https://github.com/phetsims/hookes-law/issues/106 for keyboard steps.
+const SLIDER_THUMB_INTERVAL = 10;
+const ARROW_BUTTON_INTERVAL = 1;
+const KEYBOARD_STEP = 20;
+const SHIFT_KEYBOARD_STEP = ARROW_BUTTON_INTERVAL;
+const PAGE_KEYBOARD_STEP = 100;
 
 type SelfOptions = {
   titleStringProperty?: TReadOnlyProperty<string>;
@@ -68,7 +71,7 @@ export default class SpringConstantControl extends NumberControl {
       titleStringProperty: HookesLawStrings.springConstantStringProperty,
 
       // NumberControlOptions
-      delta: HookesLawConstants.SPRING_CONSTANT_TWEAKER_INTERVAL,
+      delta: ARROW_BUTTON_INTERVAL,
       titleNodeOptions: {
         maxWidth: 175, // i18n, determined empirically
         font: HookesLawConstants.CONTROL_PANEL_TITLE_FONT,
@@ -88,7 +91,7 @@ export default class SpringConstantControl extends NumberControl {
         minorTickSpacing: provideOptions.minorTickSpacing,
         thumbFill: HookesLawColors.singleSpringMiddleColorProperty,
         constrainValue: value => {
-          return Utils.roundToInterval( value, HookesLawConstants.SPRING_CONSTANT_THUMB_INTERVAL );
+          return Utils.roundToInterval( value, SLIDER_THUMB_INTERVAL );
         },
         keyboardStep: KEYBOARD_STEP,
         shiftKeyboardStep: SHIFT_KEYBOARD_STEP,

@@ -24,10 +24,13 @@ import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 
-// Keyboards steps for slider.
-const KEYBOARD_STEP = HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL;
-const SHIFT_KEYBOARD_STEP = HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL;
-const PAGE_KEYBOARD_STEP = 2 * KEYBOARD_STEP;
+// Steps for slider thumb, arrow buttons, and keyboard, in m.
+// See https://github.com/phetsims/hookes-law/issues/106 for keyboard steps.
+const SLIDER_THUMB_INTERVAL = 0.05;
+const ARROW_BUTTON_INTERVAL = 0.01;
+const KEYBOARD_STEP = 0.10;
+const SHIFT_KEYBOARD_STEP = ARROW_BUTTON_INTERVAL;
+const PAGE_KEYBOARD_STEP = 0.20;
 
 type SelfOptions = EmptySelfOptions;
 
@@ -62,7 +65,7 @@ export default class DisplacementControl extends NumberControl {
     const options = optionize<DisplacementControlOptions, SelfOptions, NumberControlOptions>()( {
 
       // NumberControlOptions
-      delta: HookesLawConstants.DISPLACEMENT_TWEAKER_INTERVAL,
+      delta: ARROW_BUTTON_INTERVAL,
       startCallback: () => {
         numberOfInteractionsInProgressProperty.value += 1;
       },
@@ -89,7 +92,7 @@ export default class DisplacementControl extends NumberControl {
         thumbFill: HookesLawColors.displacementColorProperty,
         constrainValue: value => {
           // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
-          return Utils.roundToInterval( value, HookesLawConstants.DISPLACEMENT_THUMB_INTERVAL );
+          return Utils.roundToInterval( value, SLIDER_THUMB_INTERVAL );
         },
         keyboardStep: KEYBOARD_STEP,
         shiftKeyboardStep: SHIFT_KEYBOARD_STEP,

@@ -27,10 +27,13 @@ import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 
 const MINOR_TICK_SPACING = 10;
 
-// Keyboards steps for slider.
-const KEYBOARD_STEP = HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL;
-const SHIFT_KEYBOARD_STEP = HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL;
-const PAGE_KEYBOARD_STEP = 2 * KEYBOARD_STEP;
+// Steps for slider thumb, arrow buttons, and keyboard, in N/m.
+// See https://github.com/phetsims/hookes-law/issues/106 for keyboard steps.
+const SLIDER_THUMB_INTERVAL = 5;
+const ARROW_BUTTON_INTERVAL = 1;
+const KEYBOARD_STEP = 10;
+const SHIFT_KEYBOARD_STEP = ARROW_BUTTON_INTERVAL;
+const PAGE_KEYBOARD_STEP = 25;
 
 type SelfOptions = {
   titleStringProperty?: TReadOnlyProperty<string>;
@@ -85,7 +88,7 @@ export default class AppliedForceControl extends NumberControl {
       titleStringProperty: HookesLawStrings.appliedForceColonStringProperty,
 
       // NumberControlOptions
-      delta: HookesLawConstants.APPLIED_FORCE_TWEAKER_INTERVAL,
+      delta: ARROW_BUTTON_INTERVAL,
       startCallback: () => {
         numberOfInteractionsInProgressProperty.value += 1;
       },
@@ -110,7 +113,7 @@ export default class AppliedForceControl extends NumberControl {
         minorTickSpacing: MINOR_TICK_SPACING,
         thumbFill: HookesLawColors.appliedForceColorProperty,
         constrainValue: value => {
-          return Utils.roundToInterval( value, HookesLawConstants.APPLIED_FORCE_THUMB_INTERVAL );
+          return Utils.roundToInterval( value, SLIDER_THUMB_INTERVAL );
         },
         keyboardStep: KEYBOARD_STEP,
         shiftKeyboardStep: SHIFT_KEYBOARD_STEP,
