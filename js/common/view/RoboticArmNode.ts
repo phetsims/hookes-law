@@ -129,6 +129,7 @@ export default class RoboticArmNode extends Node {
     } );
     roboticHandNode.addInputListener( dragListener );
 
+    // See https://github.com/phetsims/hookes-law/issues/106 for design history.
     let soundKeyboardDragListenerOptions: SoundKeyboardDragListenerOptions;
     if ( options.displacementInterval ) {
 
@@ -136,8 +137,8 @@ export default class RoboticArmNode extends Node {
       // These values were tuned empirically, and are relevant to the Energy screen.
       soundKeyboardDragListenerOptions = {
         moveOnHoldInterval: 400, // ms
-        dragDelta: 2 * options.displacementInterval,
-        shiftDragDelta: options.displacementInterval
+        dragDelta: options.displacementInterval,
+        shiftDragDelta: options.displacementInterval // drag & shift-drag are the same!
       };
     }
     else {
