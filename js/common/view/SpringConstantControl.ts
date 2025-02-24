@@ -32,6 +32,8 @@ const ARROW_BUTTON_INTERVAL = 1;
 const KEYBOARD_STEP = 20;
 const SHIFT_KEYBOARD_STEP = ARROW_BUTTON_INTERVAL;
 const PAGE_KEYBOARD_STEP = 100;
+assert && assert( KEYBOARD_STEP % SLIDER_THUMB_INTERVAL === 0,
+  'KEYBOARD_STEP must be an integer multiple of SLIDER_THUMB_INTERVAL because of constrainValue.' );
 
 type SelfOptions = {
   titleStringProperty?: TReadOnlyProperty<string>;
