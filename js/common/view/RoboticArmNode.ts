@@ -136,7 +136,7 @@ export default class RoboticArmNode extends Node {
       // Options for stepwise dragging.
       // These values were tuned empirically, and are relevant to the Energy screen.
       soundKeyboardDragListenerOptions = {
-        moveOnHoldInterval: 400, // ms
+        moveOnHoldInterval: 100, // ms
         dragDelta: options.displacementInterval,
         shiftDragDelta: options.displacementInterval // drag & shift-drag are the same!
       };
