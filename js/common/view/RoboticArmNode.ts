@@ -151,14 +151,20 @@ export default class RoboticArmNode extends Node {
       };
     }
 
-    const keyboardDragListener = new SoundKeyboardDragListener( combineOptions<SoundKeyboardDragListenerOptions>(
-      soundKeyboardDragListenerOptions, {
-      drag: ( event, listener ) => {
-        const newLeft = roboticArm.leftProperty.value + listener.modelDelta.x;
-        roboticArm.leftProperty.value = leftRangeProperty.value.constrainValue( newLeft );
-      },
-      tandem: roboticHandNodeTandem.createTandem( 'keyboardDragListener' )
-    } ) );
+    const keyboardDragListener = new SoundKeyboardDragListener(
+      combineOptions<SoundKeyboardDragListenerOptions>( soundKeyboardDragListenerOptions, {
+        start: event => {
+          numberOfInteractionsInProgressProperty.value += 1;
+        },
+        drag: ( event, listener ) => {
+          const newLeft = roboticArm.leftProperty.value + listener.modelDelta.x;
+          roboticArm.leftProperty.value = leftRangeProperty.value.constrainValue( newLeft );
+        },
+        end: () => {
+          numberOfInteractionsInProgressProperty.value -= 1;
+        },
+        tandem: roboticHandNodeTandem.createTandem( 'keyboardDragListener' )
+      } ) );
     roboticHandNode.addInputListener( keyboardDragListener );
 
     roboticArm.leftProperty.link( left => {
