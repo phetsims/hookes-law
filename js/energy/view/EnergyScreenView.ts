@@ -103,13 +103,11 @@ export default class EnergyScreenView extends ScreenView {
 
     // Play Area focus order
     this.pdomPlayAreaNode.pdomOrder = [
-      //TODO https://github.com/phetsims/hookes-law/issues/106
       systemNode
     ];
 
     // Control Area focus order
     this.pdomControlAreaNode.pdomOrder = [
-      //TODO https://github.com/phetsims/hookes-law/issues/106
       visibilityPanel,
       resetAllButton
     ];

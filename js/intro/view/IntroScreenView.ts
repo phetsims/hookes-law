@@ -105,14 +105,12 @@ export default class IntroScreenView extends ScreenView {
 
     // Play Area focus order
     this.pdomPlayAreaNode.pdomOrder = [
-      //TODO https://github.com/phetsims/hookes-law/issues/106
       system1Node,
       system2Node
     ];
 
     // Control Area focus order
     this.pdomControlAreaNode.pdomOrder = [
-      //TODO https://github.com/phetsims/hookes-law/issues/106
       controls,
       resetAllButton
     ];
