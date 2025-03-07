@@ -10,7 +10,7 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
-import Utils from '../../../../dot/js/Utils.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
@@ -156,7 +156,7 @@ export default class IntroSystemNode extends Node {
     Multilink.multilink( [ numberOfInteractionsInProgressProperty, spring.displacementProperty ],
       ( numberOfInteractions, displacement ) => {
         assert && assert( numberOfInteractions >= 0 );
-        const fixedDisplacement = Utils.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        const fixedDisplacement = toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setGrippersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 

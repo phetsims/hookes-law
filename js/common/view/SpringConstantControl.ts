@@ -10,7 +10,6 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
@@ -24,6 +23,7 @@ import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
+import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
 
 // Steps for slider thumb, arrow buttons, and keyboard, in N.
 // See https://github.com/phetsims/hookes-law/issues/106 for keyboard steps.
@@ -92,9 +92,7 @@ export default class SpringConstantControl extends NumberControl {
         majorTicks: majorTicks,
         minorTickSpacing: provideOptions.minorTickSpacing,
         thumbFill: HookesLawColors.singleSpringMiddleColorProperty,
-        constrainValue: value => {
-          return Utils.roundToInterval( value, SLIDER_THUMB_INTERVAL );
-        },
+        constrainValue: value => roundToInterval( value, SLIDER_THUMB_INTERVAL ),
         keyboardStep: KEYBOARD_STEP,
         shiftKeyboardStep: SHIFT_KEYBOARD_STEP,
         pageKeyboardStep: PAGE_KEYBOARD_STEP

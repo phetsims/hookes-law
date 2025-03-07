@@ -9,7 +9,6 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Range from '../../../../dot/js/Range.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
@@ -23,6 +22,7 @@ import HookesLawConstants from '../HookesLawConstants.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
+import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
 
 // Steps for slider thumb, arrow buttons, and keyboard, in m.
 // See https://github.com/phetsims/hookes-law/issues/106 for keyboard steps.
@@ -92,10 +92,9 @@ export default class DisplacementControl extends NumberControl {
         majorTicks: majorTicks,
         minorTickSpacing: displacementRange.getLength() / 10,
         thumbFill: HookesLawColors.displacementColorProperty,
-        constrainValue: value => {
-          // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
-          return Utils.roundToInterval( value, SLIDER_THUMB_INTERVAL );
-        },
+
+        // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
+        constrainValue: value => roundToInterval( value, SLIDER_THUMB_INTERVAL ),
         keyboardStep: KEYBOARD_STEP,
         shiftKeyboardStep: SHIFT_KEYBOARD_STEP,
         pageKeyboardStep: PAGE_KEYBOARD_STEP

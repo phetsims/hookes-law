@@ -43,7 +43,7 @@ import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
 import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
-import Utils from '../../../../dot/js/Utils.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
@@ -230,7 +230,7 @@ export default class Spring extends PhetioObject {
 
       // An infinite loop can occur from floating point error between appliedForce and displacement. Rounding eagerly
       // defeats the infinite loop. See https://github.com/phetsims/axon/issues/447
-      this.appliedForceProperty.value = Utils.toFixedNumber( appliedForce, 10 );
+      this.appliedForceProperty.value = toFixedNumber( appliedForce, 10 );
     } );
 
     //------------------------------------------------

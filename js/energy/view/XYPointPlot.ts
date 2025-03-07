@@ -19,7 +19,6 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
@@ -36,6 +35,8 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYAxes from './XYAxes.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
+import { toFixed } from '../../../../dot/js/util/toFixed.js';
 
 const VALUE_X_MARGIN = 6;
 const VALUE_Y_MARGIN = 3;
@@ -183,7 +184,7 @@ export default class XYPointPlot extends Node {
 
     // visibility
     displacementVectorVisibleProperty.link( visible => {
-      const xFixed = Utils.toFixedNumber( xProperty.value, options.xDecimalPlaces ); // the displayed value
+      const xFixed = toFixedNumber( xProperty.value, options.xDecimalPlaces ); // the displayed value
       xVectorNode.visible = ( visible && xFixed !== 0 );
     } );
     valuesVisibleProperty.link( visible => {
@@ -204,7 +205,7 @@ export default class XYPointPlot extends Node {
     Multilink.multilink( [ xProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], options.xUnitsStringProperty ],
       ( x, patternString, xUnitsString ) => {
 
-        const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
+        const xFixed = toFixedNumber( x, options.xDecimalPlaces );
         const xView = options.xUnitLength * xFixed;
 
         // x vector
@@ -219,7 +220,7 @@ export default class XYPointPlot extends Node {
 
         // x value
         xValueStringProperty.value = StringUtils.format( patternString,
-          Utils.toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), xUnitsString );
+          toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), xUnitsString );
 
         // placement of x value, so that it doesn't collide with y value or axes
         if ( options.minY === 0 ) {
@@ -258,7 +259,7 @@ export default class XYPointPlot extends Node {
       [ yProperty, HookesLawStrings.pattern[ '0value' ][ '1unitsStringProperty' ], options.yUnitsStringProperty ],
       ( y, patternString, yUnitsString ) => {
 
-        const yFixed = Utils.toFixedNumber( y, options.yDecimalPlaces );
+        const yFixed = toFixedNumber( y, options.yDecimalPlaces );
         const yView = yFixed * options.yUnitLength;
 
         // y tick mark
@@ -266,7 +267,7 @@ export default class XYPointPlot extends Node {
         yTickNode.centerY = -yView;
 
         // y value
-        yValueStringProperty.value = StringUtils.format( patternString, Utils.toFixed( yFixed, options.yDecimalPlaces ), yUnitsString );
+        yValueStringProperty.value = StringUtils.format( patternString, toFixed( yFixed, options.yDecimalPlaces ), yUnitsString );
 
         // placement of y value, so that it doesn't collide with x value or axes
         const X_SPACING = 10;
@@ -299,7 +300,7 @@ export default class XYPointPlot extends Node {
     Multilink.multilink( [ xProperty, yProperty ],
       ( x, y ) => {
 
-        const xFixed = Utils.toFixedNumber( x, options.xDecimalPlaces );
+        const xFixed = toFixedNumber( x, options.xDecimalPlaces );
         const xView = options.xUnitLength * xFixed;
         const yView = -y * options.yUnitLength;
 

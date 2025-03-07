@@ -9,7 +9,6 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import ArrowNode from '../../../../scenery-phet/js/ArrowNode.js';
@@ -22,6 +21,7 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
+import { toFixed } from '../../../../dot/js/util/toFixed.js';
 
 const BAR_WIDTH = 20;
 
@@ -84,7 +84,7 @@ export default class EnergyBarGraph extends Node {
 
         // change the value
         valueStringProperty.value = StringUtils.format( patternString,
-          Utils.toFixed( potentialEnergy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
+          toFixed( potentialEnergy, HookesLawConstants.ENERGY_DECIMAL_PLACES ), joulesString );
         valueText.left = barNode.right + 5;
         if ( !barNode.visible || barNode.height < valueText.height / 2 ) {
           valueText.bottom = xAxisNode.bottom;

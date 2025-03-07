@@ -10,7 +10,6 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Line from '../../../../scenery/js/nodes/Line.js';
@@ -30,6 +29,7 @@ import ParallelSystem from '../model/ParallelSystem.js';
 import ParallelSpringControls from './ParallelSpringControls.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 
 const WALL_SIZE = new Dimension2( HookesLawConstants.WALL_SIZE.width, 300 ); // wall is taller than other systems
 
@@ -211,7 +211,7 @@ export default class ParallelSystemNode extends Node {
     Multilink.multilink( [ numberOfInteractionsInProgressProperty, equivalentSpring.displacementProperty ],
       ( numberOfInteractions, displacement ) => {
         assert && assert( numberOfInteractions >= 0 );
-        const fixedDisplacement = Utils.toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
+        const fixedDisplacement = toFixedNumber( displacement, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES );
         roboticArmNode.setGrippersOpen( numberOfInteractions === 0 && fixedDisplacement === 0 );
       } );
 

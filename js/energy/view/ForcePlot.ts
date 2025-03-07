@@ -9,7 +9,6 @@
 
 import Multilink from '../../../../axon/js/Multilink.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import Utils from '../../../../dot/js/Utils.js';
 import Shape from '../../../../kite/js/Shape.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
@@ -22,6 +21,7 @@ import Spring from '../../common/model/Spring.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYPointPlot, { XYPointPlotOptions } from './XYPointPlot.js';
+import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 
 type SelfOptions = EmptySelfOptions;
 
@@ -107,7 +107,7 @@ export default class ForcePlot extends XYPointPlot {
     // update energy area (triangle)
     Multilink.multilink( [ spring.displacementProperty, spring.appliedForceProperty, energyVisibleProperty ],
       ( displacement, appliedForce, visible ) => {
-        const fixedDisplacement = Utils.toFixedNumber( displacement, options.xDecimalPlaces );
+        const fixedDisplacement = toFixedNumber( displacement, options.xDecimalPlaces );
         const x = options.xUnitLength * fixedDisplacement;
         const y = -appliedForce * options.yUnitLength;
         energyPath.visible = ( fixedDisplacement !== 0 && visible );

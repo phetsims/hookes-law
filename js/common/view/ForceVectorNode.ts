@@ -9,7 +9,6 @@
 import Multilink from '../../../../axon/js/Multilink.js';
 import StringProperty from '../../../../axon/js/StringProperty.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
@@ -21,6 +20,7 @@ import TColor from '../../../../scenery/js/util/TColor.js';
 import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
+import { toFixed } from '../../../../dot/js/util/toFixed.js';
 
 // Margins for the translucent background behind the vector value.
 const BACKGROUND_X_MARGIN = 3;
@@ -96,7 +96,7 @@ export default class ForceVectorNode extends Node {
 
         // Update the value.
         valueStringProperty.value = StringUtils.format( patternString,
-          Utils.toFixed( Math.abs( force ), options.decimalPlaces ), newtonsString );
+          toFixed( Math.abs( force ), options.decimalPlaces ), newtonsString );
 
         // Reposition the value.
         const margin = 5;

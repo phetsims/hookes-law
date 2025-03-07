@@ -10,7 +10,6 @@ import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Range from '../../../../dot/js/Range.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
@@ -24,6 +23,7 @@ import HookesLawConstants from '../HookesLawConstants.js';
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
+import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
 
 const MINOR_TICK_SPACING = 10;
 
@@ -114,9 +114,7 @@ export default class AppliedForceControl extends NumberControl {
         majorTicks: majorTicks,
         minorTickSpacing: MINOR_TICK_SPACING,
         thumbFill: HookesLawColors.appliedForceColorProperty,
-        constrainValue: value => {
-          return Utils.roundToInterval( value, SLIDER_THUMB_INTERVAL );
-        },
+        constrainValue: value => roundToInterval( value, SLIDER_THUMB_INTERVAL ),
         keyboardStep: KEYBOARD_STEP,
         shiftKeyboardStep: SHIFT_KEYBOARD_STEP,
         pageKeyboardStep: PAGE_KEYBOARD_STEP

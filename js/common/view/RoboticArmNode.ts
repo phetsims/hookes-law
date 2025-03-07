@@ -11,7 +11,6 @@ import Property from '../../../../axon/js/Property.js';
 import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
 import Dimension2 from '../../../../dot/js/Dimension2.js';
 import Range from '../../../../dot/js/Range.js';
-import Utils from '../../../../dot/js/Utils.js';
 import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
@@ -23,6 +22,7 @@ import RoboticArm from '../model/RoboticArm.js';
 import RoboticHandNode from './RoboticHandNode.js';
 import SoundDragListener from '../../../../scenery-phet/js/SoundDragListener.js';
 import SoundKeyboardDragListener, { SoundKeyboardDragListenerOptions } from '../../../../scenery-phet/js/SoundKeyboardDragListener.js';
+import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
 
 const BOX_SIZE = new Dimension2( 20, 60 );
 const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
@@ -115,7 +115,7 @@ export default class RoboticArmNode extends Node {
 
         // constrain to multiples of a specific interval, see https://github.com/phetsims/hookes-law/issues/54
         if ( options.displacementInterval ) {
-          left = Utils.roundToInterval( left, options.displacementInterval );
+          left = roundToInterval( left, options.displacementInterval );
         }
 
         roboticArm.leftProperty.value = left;
