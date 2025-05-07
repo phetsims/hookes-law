@@ -1,103 +1,103 @@
 {
-  "comment": "# hookes-law 1.2.0-dev.2 Thu Feb 20 2025 12:59:26 GMT-0700 (Mountain Standard Time)",
+  "comment": "# hookes-law 1.2.0-dev.3 Wed May 07 2025 11:26:55 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "f6d41b399ad32df2a00ab4b329981be0c574d77a",
     "branch": "main"
   },
   "axon": {
-    "sha": "5c08471924c1669919dd1982b57a88c0d1590f6a",
+    "sha": "7339accb2a1a19dc266b48e4d15ea006e88a8754",
     "branch": "main"
   },
   "brand": {
-    "sha": "b7d7379fccdfd74affae1f7610bf6ebee5de1701",
+    "sha": "d25022090316640bbb47b8265b8de7b1b4e1e6c2",
     "branch": "main"
   },
   "chipper": {
-    "sha": "abc94918d9c5ee45cfbbc57f711ead1ab10d92d1",
+    "sha": "d483b8f4348eb08aa0ef58b29f9bb80d60d3eaa7",
     "branch": "main"
   },
   "dot": {
-    "sha": "a483beb1f20baaa838895e9acdd2ea95e23cab63",
+    "sha": "9ab9044515dff4cb3a5dbf51c9f350bb1a4a2fae",
     "branch": "main"
   },
   "hookes-law": {
-    "sha": "c99b1c5925917cc595fb2b45057139c6f9739241",
+    "sha": "66c44cc9c3a8bcccc3446ecd2156dc2b79151cc7",
     "branch": "main"
   },
   "joist": {
-    "sha": "d58f74b669e7b595082aff0339b0181764f9e7d9",
+    "sha": "bb6a94e05e03c82aa75dfb9717459e5be07a4507",
     "branch": "main"
   },
   "kite": {
-    "sha": "0f6bd61fe56f6af59ede1edb30c9e888a92bceb3",
+    "sha": "e80437357c1393c5f58d6d1fd7b417c54072773c",
     "branch": "main"
   },
   "perennial-alias": {
-    "sha": "b97b6185270c7e8bb2870c9f23157ef7ae7d76b4",
+    "sha": "cd1b9f24e2f61336dd03a24b8697ada1271869bf",
     "branch": "main"
   },
   "phet-core": {
-    "sha": "5643fef3bc7e86492a1817cbd6749da5f3f2fc60",
+    "sha": "a509474c8405366e098cf283b44cf2e32c70993e",
     "branch": "main"
   },
   "phet-io": {
-    "sha": "81b6818064bf7fab191e68bbd1452959bdb30ee1",
+    "sha": "903dd6192e3d8611d1f87948ac7495942fc91c74",
     "branch": "main"
   },
   "phet-io-sim-specific": {
-    "sha": "93c9228e269d3589c97a0eef379f470fe753d7b1",
+    "sha": "5365a291a4fcf4e5046f334b20375584885bfca5",
     "branch": "main"
   },
   "phet-io-wrappers": {
-    "sha": "3f2831137c431fe23ae8c7761946c9ea7023593f",
+    "sha": "e9df572a4c49a8ab04d0b235eecb83e0ed326e76",
     "branch": "main"
   },
   "phetcommon": {
-    "sha": "4569db1a24207120658c4eba6109799e7d074c57",
+    "sha": "e2d88782c579e34f5d0ed5e728f179a1fc5c4493",
     "branch": "main"
   },
   "phetmarks": {
-    "sha": "505f6d72f64d4d42687014a35898079fbc5ac197",
+    "sha": "ac4c2816e5e998cb0e4eebfdd2e9d624e3255f05",
     "branch": "main"
   },
   "query-string-machine": {
-    "sha": "7ba3af15b52c50f6c0532775be2d88c851addaca",
+    "sha": "145690b54d129fa8343b746ed8fdc0b78e706711",
     "branch": "main"
   },
   "scenery": {
-    "sha": "7c57b908ed20028b3e35ce592a55ccb92fd8f5b3",
+    "sha": "7dcf67a50183ad7422379b5a64991acd489f9ccb",
     "branch": "main"
   },
   "scenery-phet": {
-    "sha": "947c789a02d91967f7fac519464bdc49a4394543",
+    "sha": "5a91ec98da7266d76e9f6062d8acbb1e985ce3de",
     "branch": "main"
   },
   "sherpa": {
-    "sha": "31359345005b34e35ffa68ea5aec9d615eae5917",
+    "sha": "3820b66a4f0fb05ff65d6f6bbb1d12d652acac42",
     "branch": "main"
   },
   "studio": {
-    "sha": "08d3b6010bec544d3755f6dbdd38c64810ca5a80",
+    "sha": "0254103f342b17890c5fe862aae6df3b400620a8",
     "branch": "main"
   },
   "sun": {
-    "sha": "5635dc46e752a66bdf2af03a7c83d958a6188fbd",
+    "sha": "8a737a30763f6f099db1763691049abb8c63f0aa",
     "branch": "main"
   },
   "tambo": {
-    "sha": "88c05c4bf24b15bd21fe534b8c3d5b82f1c7dea9",
+    "sha": "bd06610ae80bedbf423c840a837747d503f2f884",
     "branch": "main"
   },
   "tandem": {
-    "sha": "d92443811d2b5754f3b9900e3d7dbe1bfb743362",
+    "sha": "db5ec379bbdcce0e08c4f27c6c6e750900ee2537",
     "branch": "main"
   },
   "twixt": {
-    "sha": "12e79ba1ae505efcc6b97887dd1f8b7c7e58ade4",
+    "sha": "8e7b76db00f358dffc7fa90e05c753f7a5a8f09c",
     "branch": "main"
   },
   "utterance-queue": {
-    "sha": "c2a9e27d2318247a05c26335f3f7799d4a2a9cdf",
+    "sha": "fa9a57fa4a8f440d676b800c47a66b7dd74e632b",
     "branch": "main"
   }
 }
