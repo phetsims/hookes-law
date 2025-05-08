@@ -45,6 +45,7 @@ const MAJOR_TICK_LABEL_OPTIONS: StrictOmit<TextOptions, 'tandem'> = {
 const SPRING_PANEL_OPTIONS: StrictOmit<PanelOptions, 'tandem'> = {
   fill: HookesLawColors.controlPanelFillProperty,
   stroke: HookesLawColors.controlPanelStrokeProperty,
+  align: 'center',
   xMargin: 20,
   yMargin: 5,
   visiblePropertyOptions: {
