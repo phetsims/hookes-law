@@ -72,6 +72,14 @@ export default class IntroSpringControls extends HBox {
       phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     } );
 
+    const springConstantPanel = new Panel( springConstantControl,
+      combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+        layoutOptions: {
+          stretch: true
+        },
+        tandem: springConstantPanelTandem
+      } ) );
+
     const appliedForceControlTandem = appliedForcePanelTandem.createTandem( 'appliedForceControl' );
     const appliedForceControl = new AppliedForceControl( spring.appliedForceProperty, spring.appliedForceRange,
       numberOfInteractionsInProgressProperty, {
@@ -83,22 +91,15 @@ export default class IntroSpringControls extends HBox {
         phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
       } );
 
-    options.children = [
-      new Panel( springConstantControl,
-        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
-          layoutOptions: {
-            stretch: true
-          },
-          tandem: springConstantPanelTandem
-        } ) ),
-      new Panel( appliedForceControl,
-        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
-          layoutOptions: {
-            stretch: true
-          },
-          tandem: appliedForcePanelTandem
-        } ) )
-    ];
+    const appliedForcePanel = new Panel( appliedForceControl,
+      combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+        layoutOptions: {
+          stretch: true
+        },
+        tandem: appliedForcePanelTandem
+      } ) );
+
+    options.children = [ springConstantPanel, appliedForcePanel ];
 
     super( options );
   }

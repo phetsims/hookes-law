@@ -59,27 +59,28 @@ export default class EnergySpringControls extends HBox {
       phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     } );
 
+    const springConstantPanel = new Panel( springConstantControl,
+      combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+        layoutOptions: {
+          stretch: true
+        },
+        tandem: springConstantPanelTandem
+      } ) );
+
     const displacementControl = new DisplacementControl( spring.displacementProperty, spring.displacementRange, numberOfInteractionsInProgressProperty, {
       tandem: displacementPanelTandem.createTandem( 'displacementControl' ),
       phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
     } );
 
-    options.children = [
-      new Panel( springConstantControl,
-        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
-          layoutOptions: {
-            stretch: true
-          },
-          tandem: springConstantPanelTandem
-        } ) ),
-      new Panel( displacementControl,
-        combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
-          layoutOptions: {
-            stretch: true
-          },
-          tandem: displacementPanelTandem
-        } ) )
-    ];
+    const displacementPanel = new Panel( displacementControl,
+      combineOptions<PanelOptions>( {}, HookesLawConstants.SPRING_PANEL_OPTIONS, {
+        layoutOptions: {
+          stretch: true
+        },
+        tandem: displacementPanelTandem
+      } ) );
+
+    options.children = [ springConstantPanel, displacementPanel ];
 
     super( options );
   }
