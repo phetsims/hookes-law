@@ -23,6 +23,7 @@ import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
+import { springControlLayoutFunction } from '../HookesLawUtils.js';
 
 // Steps for slider thumb, arrow buttons, and keyboard, in m.
 // See https://github.com/phetsims/hookes-law/issues/106 for keyboard steps.
@@ -67,6 +68,7 @@ export default class DisplacementControl extends NumberControl {
     const options = optionize<DisplacementControlOptions, SelfOptions, NumberControlOptions>()( {
 
       // NumberControlOptions
+      layoutFunction: springControlLayoutFunction,
       delta: ARROW_BUTTON_INTERVAL,
       startCallback: () => {
         numberOfInteractionsInProgressProperty.value += 1;

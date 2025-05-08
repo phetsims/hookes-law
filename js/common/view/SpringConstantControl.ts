@@ -24,6 +24,7 @@ import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
+import { springControlLayoutFunction } from '../HookesLawUtils.js';
 
 // Steps for slider thumb, arrow buttons, and keyboard, in N.
 // See https://github.com/phetsims/hookes-law/issues/106 for keyboard steps.
@@ -73,6 +74,7 @@ export default class SpringConstantControl extends NumberControl {
       titleStringProperty: HookesLawStrings.springConstantStringProperty,
 
       // NumberControlOptions
+      layoutFunction: springControlLayoutFunction,
       delta: ARROW_BUTTON_INTERVAL,
       titleNodeOptions: {
         maxWidth: 175, // i18n, determined empirically

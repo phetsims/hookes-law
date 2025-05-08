@@ -24,6 +24,7 @@ import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
 import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
+import { springControlLayoutFunction } from '../HookesLawUtils.js';
 
 const MINOR_TICK_SPACING = 10;
 
@@ -90,6 +91,7 @@ export default class AppliedForceControl extends NumberControl {
       titleStringProperty: HookesLawStrings.appliedForceColonStringProperty,
 
       // NumberControlOptions
+      layoutFunction: springControlLayoutFunction,
       delta: ARROW_BUTTON_INTERVAL,
       startCallback: () => {
         numberOfInteractionsInProgressProperty.value += 1;
