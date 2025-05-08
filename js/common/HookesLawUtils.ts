@@ -14,7 +14,7 @@ import VBox from '../../../scenery/js/layout/nodes/VBox.js';
 import HBox from '../../../scenery/js/layout/nodes/HBox.js';
 
 /**
- * layoutFunction option value to be used with spring-related NumberControls.
+ * Use this function as the layoutFunction option for spring-related NumberControls.
  * See https://github.com/phetsims/hookes-law/issues/125.
  */
 export function springControlLayoutFunction( titleNode: Node, numberDisplay: NumberDisplay, slider: Slider,
