@@ -157,7 +157,10 @@ export default class RoboticArmNode extends Node {
           numberOfInteractionsInProgressProperty.value += 1;
         },
         drag: ( event, listener ) => {
-          const newLeft = roboticArm.leftProperty.value + listener.modelDelta.x;
+          // To support all arrow keys and WASD keys, use the modelDelta component that is non-zero.
+          // See https://github.com/phetsims/hookes-law/issues/130.
+          const delta = ( listener.modelDelta.x !== 0 ) ? listener.modelDelta.x : listener.modelDelta.y;
+          const newLeft = roboticArm.leftProperty.value + delta;
           roboticArm.leftProperty.value = leftRangeProperty.value.constrainValue( newLeft );
         },
         end: () => {
