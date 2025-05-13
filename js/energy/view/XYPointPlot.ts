@@ -36,7 +36,6 @@ import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYAxes from './XYAxes.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
-import { toFixed } from '../../../../dot/js/util/toFixed.js';
 
 const VALUE_X_MARGIN = 6;
 const VALUE_Y_MARGIN = 3;
@@ -267,7 +266,8 @@ export default class XYPointPlot extends Node {
         yTickNode.centerY = -yView;
 
         // y value
-        yValueStringProperty.value = StringUtils.format( patternString, toFixed( yFixed, options.yDecimalPlaces ), yUnitsString );
+        yValueStringProperty.value = StringUtils.format( patternString,
+          StringUtils.toSafeFixed( yFixed, options.yDecimalPlaces ), yUnitsString );
 
         // placement of y value, so that it doesn't collide with x value or axes
         const X_SPACING = 10;
