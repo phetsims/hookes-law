@@ -220,7 +220,7 @@ export default class XYPointPlot extends Node {
 
         // x value
         xValueStringProperty.value = StringUtils.format( patternString,
-          toFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), xUnitsString );
+          StringUtils.toSafeFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), xUnitsString );
 
         // placement of x value, so that it doesn't collide with y value or axes
         if ( options.minY === 0 ) {
