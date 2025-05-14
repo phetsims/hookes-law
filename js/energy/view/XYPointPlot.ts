@@ -219,7 +219,7 @@ export default class XYPointPlot extends Node {
 
         // x value
         xValueStringProperty.value = StringUtils.format( patternString,
-          StringUtils.toSafeFixed( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), xUnitsString );
+          StringUtils.toFixedLTR( xFixed, HookesLawConstants.DISPLACEMENT_DECIMAL_PLACES ), xUnitsString );
 
         // placement of x value, so that it doesn't collide with y value or axes
         if ( options.minY === 0 ) {
@@ -267,7 +267,7 @@ export default class XYPointPlot extends Node {
 
         // y value
         yValueStringProperty.value = StringUtils.format( patternString,
-          StringUtils.toSafeFixed( yFixed, options.yDecimalPlaces ), yUnitsString );
+          StringUtils.toFixedLTR( yFixed, options.yDecimalPlaces ), yUnitsString );
 
         // placement of y value, so that it doesn't collide with x value or axes
         const X_SPACING = 10;
