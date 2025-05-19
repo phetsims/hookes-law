@@ -26,6 +26,7 @@ When releasing a new version, add a release section to the top of the doc. -->
 * Interactive Highlights
 * UI Sounds
 * PhET-iO support, including PhET Studio
+* TypeScript implementation
    
 ### Bug Fixes
 *
