@@ -72,7 +72,7 @@ const HookesLawConstants = {
   PARALLEL_SPRING_FORCE_COMPONENTS_DECIMAL_PLACES: APPLIED_FORCE_DECIMAL_PLACES + 1, // parallel system
   SPRING_CONSTANT_DECIMAL_PLACES: 0,
   DISPLACEMENT_DECIMAL_PLACES: 3,
-  ENERGY_DECIMAL_PLACES: 1,
+  ENERGY_DECIMAL_PLACES: 2, // see https://github.com/phetsims/hookes-law/issues/131
 
   // drag intervals
   ROBOTIC_ARM_DISPLACEMENT_INTERVAL: 0.01, // see https://github.com/phetsims/hookes-law/issues/131
