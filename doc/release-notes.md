@@ -26,7 +26,6 @@ When releasing a new version, add a release section to the top of the doc. -->
 * Interactive Highlights
 * UI Sounds
 * PhET-iO support, including PhET Studio
-* TypeScript implementation
    
 ### Bug Fixes
 *
@@ -39,5 +38,6 @@ When releasing a new version, add a release section to the top of the doc. -->
 ### New Features
 * Preferences
 * Dynamic locale: see _Preferences > Localization_
+* TypeScript implementation
 
 ## 1.0 (2015-10-21)
