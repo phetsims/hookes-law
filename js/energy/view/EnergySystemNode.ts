@@ -93,9 +93,6 @@ export default class EnergySystemNode extends Node {
 
     const roboticArmNode = new RoboticArmNode( roboticArm, spring.rightRangeProperty, numberOfInteractionsInProgressProperty, {
       unitDisplacementLength: options.unitDisplacementLength,
-
-      // constrain dragging to multiples of this interval, see https://github.com/phetsims/hookes-law/issues/54
-      displacementInterval: HookesLawConstants.ROBOTIC_ARM_DISPLACEMENT_INTERVAL,
       x: options.unitDisplacementLength * roboticArm.right,
       y: yOrigin,
       tandem: options.tandem.createTandem( 'roboticArmNode' )
