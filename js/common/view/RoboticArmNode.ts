@@ -23,6 +23,7 @@ import RoboticHandNode from './RoboticHandNode.js';
 import SoundDragListener from '../../../../scenery-phet/js/SoundDragListener.js';
 import SoundKeyboardDragListener, { SoundKeyboardDragListenerOptions } from '../../../../scenery-phet/js/SoundKeyboardDragListener.js';
 import { roundToInterval } from '../../../../dot/js/util/roundToInterval.js';
+import HookesLawConstants from '../HookesLawConstants.js';
 
 const BOX_SIZE = new Dimension2( 20, 60 );
 const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
@@ -32,7 +33,7 @@ const BOX_GRADIENT = new LinearGradient( 0, 0, 0, BOX_SIZE.height )
 
 type SelfOptions = {
   unitDisplacementLength?: number; // view length of a 1m displacement
-  displacementInterval?: number | null; // dragging the arm will snap to multiples of this interval, null if no snapping
+  displacementInterval?: number; // dragging the arm will snap to multiples of this interval
 };
 
 type RoboticArmNodeOptions = SelfOptions & NodeTranslationOptions & PickRequired<NodeOptions, 'tandem'>;
@@ -60,7 +61,7 @@ export default class RoboticArmNode extends Node {
 
       // SelfOptions
       unitDisplacementLength: 1,
-      displacementInterval: null,
+      displacementInterval: HookesLawConstants.ROBOTIC_ARM_DISPLACEMENT_INTERVAL,
 
       // NodeOptions
       phetioVisiblePropertyInstrumented: false // see https://github.com/phetsims/hookes-law/issues/111
