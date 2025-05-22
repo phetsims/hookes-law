@@ -19,7 +19,7 @@ When releasing a new version, add a release section to the top of the doc. -->
 * 
 -->
 
-## 1.2 (in progress)
+## 1.2 (2025-05-21)
 
 ### New Features
 * Alternative Input
