@@ -31,7 +31,7 @@ When releasing a new version, add a release section to the top of the doc. -->
 * Small non-zero Displacement values were incorrectly displayed as "0.000 m".  This was fixed by limiting the movement of the robotic hand to 0.01 m intervals in all screens.
 * In the Energy screen, the robotic hand can now be moved more smoothly, in 0.01 m intervals. Previous versions moved in 0.05 m intervals and felt too jerky.
 * Small non-zero Potential Energy values were incorrectly displayed as "0.0 J". This was fixed by increasing the precision to 2 decimal places.
-* Right-to-left (RTL) languages displayed the minus sign on the wrong side of negative numbers. For example, 10- instead of -10.
+* Right-to-left (RTL) languages displayed the minus sign on the wrong side of negative numbers. For example, `10-` instead of `-10`.
 
 ## 1.1 (2024-07-15)
 
