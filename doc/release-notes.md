@@ -7,7 +7,7 @@ When releasing a new version, add a release section to the top of the doc. -->
 ## [1.2] 2000-01-31
 
 ### New Features
-* Add tier 1 description [link to issue](url)
+* Add core description [link to issue](url)
 * 
 
 ### Bug Fixes
