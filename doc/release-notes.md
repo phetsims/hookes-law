@@ -24,7 +24,7 @@ When releasing a new version, add a release section to the top of the doc. -->
 ### New Features
 * Alternative Input
 * Interactive Highlights
-* UI Sounds
+* Basic Sound
 * PhET-iO support, including PhET Studio
    
 ### Bug Fixes
