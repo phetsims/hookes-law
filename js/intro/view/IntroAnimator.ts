@@ -7,7 +7,7 @@
  */
 
 import NumberProperty from '../../../../axon/js/NumberProperty.js';
-import TReadOnlyProperty from '../../../../axon/js/TReadOnlyProperty.js';
+import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Animation from '../../../../twixt/js/Animation.js';
