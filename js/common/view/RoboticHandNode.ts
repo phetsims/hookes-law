@@ -6,14 +6,16 @@
  * @author Chris Malley (PixelZoom, Inc.)
  */
 
-import InteractiveHighlighting from '../../../../scenery/js/accessibility/voicing/InteractiveHighlighting.js';
-import Node from '../../../../scenery/js/nodes/Node.js';
 import Shape from '../../../../kite/js/Shape.js';
+import { combineOptions } from '../../../../phet-core/js/optionize.js';
+import AccessibleDraggableOptions from '../../../../scenery-phet/js/accessibility/grab-drag/AccessibleDraggableOptions.js';
+import InteractiveHighlighting from '../../../../scenery/js/accessibility/voicing/InteractiveHighlighting.js';
+import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
+import Tandem from '../../../../tandem/js/Tandem.js';
+import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HingeNode from './HingeNode.js';
-import hookesLaw from '../../hookesLaw.js';
-import Tandem from '../../../../tandem/js/Tandem.js';
 
 // Attributes of the grippers, the finger-like parts of the hand.
 const GRIPPER_RADIUS = 35;
@@ -67,7 +69,7 @@ export default class RoboticHandNode extends InteractiveHighlighting( Node ) {
       centerY: 0 // dependent on image file
     } );
 
-    super( {
+    super( combineOptions<NodeOptions>( {
       children: [
         topGripperClosedNode, topGripperOpenNode,
         bottomGripperClosedNode, bottomGripperOpenNode,
@@ -79,7 +81,7 @@ export default class RoboticHandNode extends InteractiveHighlighting( Node ) {
       tandem: tandem,
       phetioInputEnabledPropertyInstrumented: true,
       phetioVisiblePropertyInstrumented: false
-    } );
+    }, AccessibleDraggableOptions ) );
 
     this.topGripperClosedNode = topGripperClosedNode;
     this.topGripperOpenNode = topGripperOpenNode;
