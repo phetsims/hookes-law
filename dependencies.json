@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "5fcb387b3a0ff4f758fbef3323c5a7c8fee7ffca",
+    "sha": "0a95b3326a66ee59f2d1b792536568ef2e65e5b1",
     "branch": "1.2"
   },
   "joist": {
@@ -69,7 +69,7 @@
     "branch": "HEAD"
   },
   "scenery-phet": {
-    "sha": "6d612506b666e269e7b145ac62b9636e499c719d",
+    "sha": "de8e0d3f875a21f03469c26445cf0d106f9402d8",
     "branch": "HEAD"
   },
   "sherpa": {
