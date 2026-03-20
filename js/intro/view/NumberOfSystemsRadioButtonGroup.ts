@@ -10,7 +10,6 @@ import Property from '../../../../axon/js/Property.js';
 import RectangularRadioButtonGroup, { RectangularRadioButtonGroupItem } from '../../../../sun/js/buttons/RectangularRadioButtonGroup.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
-import hookesLaw from '../../hookesLaw.js';
 
 export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioButtonGroup<number> {
 
@@ -43,5 +42,3 @@ export default class NumberOfSystemsRadioButtonGroup extends RectangularRadioBut
     } );
   }
 }
-
-hookesLaw.register( 'NumberOfSystemsRadioButtonGroup', NumberOfSystemsRadioButtonGroup );

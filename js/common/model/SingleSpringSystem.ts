@@ -10,7 +10,6 @@ import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import hookesLaw from '../../hookesLaw.js';
 import RoboticArm from './RoboticArm.js';
 import Spring, { SpringOptions } from './Spring.js';
 
@@ -73,5 +72,3 @@ export default class SingleSpringSystem {
     this.roboticArm.reset();
   }
 }
-
-hookesLaw.register( 'SingleSpringSystem', SingleSpringSystem );

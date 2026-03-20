@@ -17,7 +17,6 @@ import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/j
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import TColor from '../../../../scenery/js/util/TColor.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import { toFixed } from '../../../../dot/js/util/toFixed.js';
@@ -128,5 +127,3 @@ export default class ForceVectorNode extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'ForceVectorNode', ForceVectorNode );

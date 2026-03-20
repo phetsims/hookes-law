@@ -15,7 +15,6 @@ import { AquaRadioButtonOptions } from '../../../sun/js/AquaRadioButton.js';
 import { ArrowButtonOptions } from '../../../sun/js/buttons/ArrowButton.js';
 import { CheckboxOptions } from '../../../sun/js/Checkbox.js';
 import { PanelOptions } from '../../../sun/js/Panel.js';
-import hookesLaw from '../hookesLaw.js';
 import HookesLawColors from './HookesLawColors.js';
 
 const APPLIED_FORCE_DECIMAL_PLACES = 1;
@@ -117,7 +116,5 @@ const HookesLawConstants = {
   SPRING_PANEL_OPTIONS: SPRING_PANEL_OPTIONS,
   VISIBILITY_PANEL_OPTIONS: VISIBILITY_PANEL_OPTIONS
 };
-
-hookesLaw.register( 'HookesLawConstants', HookesLawConstants );
 
 export default HookesLawConstants;

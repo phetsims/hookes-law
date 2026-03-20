@@ -32,7 +32,6 @@ import Font from '../../../../scenery/js/util/Font.js';
 import TColor from '../../../../scenery/js/util/TColor.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYAxes from './XYAxes.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
@@ -316,5 +315,3 @@ export default class XYPointPlot extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'XYPointPlot', XYPointPlot );

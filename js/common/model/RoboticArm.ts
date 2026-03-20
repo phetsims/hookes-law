@@ -12,7 +12,6 @@ import Property from '../../../../axon/js/Property.js';
 import optionize from '../../../../phet-core/js/optionize.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
-import hookesLaw from '../../hookesLaw.js';
 
 type SelfOptions = {
   left?: number;  // {number} initial x position of the left (movable) end of the arm, units = m
@@ -63,5 +62,3 @@ export default class RoboticArm {
     this.leftProperty.reset();
   }
 }
-
-hookesLaw.register( 'RoboticArm', RoboticArm );

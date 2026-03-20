@@ -17,7 +17,6 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';
 import DisplacementControl from '../../common/view/DisplacementControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
-import hookesLaw from '../../hookesLaw.js';
 
 type SelfOptions = EmptySelfOptions;
 
@@ -85,5 +84,3 @@ export default class EnergySpringControls extends HBox {
     super( options );
   }
 }
-
-hookesLaw.register( 'EnergySpringControls', EnergySpringControls );

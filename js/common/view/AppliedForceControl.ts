@@ -16,7 +16,6 @@ import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import NumberControl, { NumberControlOptions } from '../../../../scenery-phet/js/NumberControl.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
@@ -130,5 +129,3 @@ export default class AppliedForceControl extends NumberControl {
     super( options.titleStringProperty, appliedForceProperty, appliedForceRange, options );
   }
 }
-
-hookesLaw.register( 'AppliedForceControl', AppliedForceControl );

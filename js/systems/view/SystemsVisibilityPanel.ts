@@ -19,7 +19,6 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
 import ValuesCheckbox from '../../common/view/ValuesCheckbox.js';
 import VectorCheckbox from '../../common/view/VectorCheckbox.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRadioButtonGroup from './SpringForceRadioButtonGroup.js';
 import SystemsViewProperties from './SystemsViewProperties.js';
@@ -117,5 +116,3 @@ export default class SystemsVisibilityPanel extends Panel {
     super( content, options );
   }
 }
-
-hookesLaw.register( 'SystemsVisibilityPanel', SystemsVisibilityPanel );

@@ -15,7 +15,6 @@ import StringUtils from '../../../../phetcommon/js/util/StringUtils.js';
 import NumberControl, { NumberControlOptions } from '../../../../scenery-phet/js/NumberControl.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
@@ -109,5 +108,3 @@ export default class DisplacementControl extends NumberControl {
     super( HookesLawStrings.displacementColonStringProperty, displacementProperty, displacementRange, options );
   }
 }
-
-hookesLaw.register( 'DisplacementControl', DisplacementControl );

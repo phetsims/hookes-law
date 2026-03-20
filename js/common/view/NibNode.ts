@@ -10,7 +10,6 @@ import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.
 import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import { NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import Rectangle, { RectangleOptions } from '../../../../scenery/js/nodes/Rectangle.js';
-import hookesLaw from '../../hookesLaw.js';
 
 type SelfOptions = EmptySelfOptions;
 
@@ -28,5 +27,3 @@ export default class NibNode extends Rectangle {
     super( 0, 0, 10, 8, options );
   }
 }
-
-hookesLaw.register( 'NibNode', NibNode );

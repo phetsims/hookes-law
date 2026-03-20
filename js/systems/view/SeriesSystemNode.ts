@@ -23,7 +23,6 @@ import NibNode from '../../common/view/NibNode.js';
 import RoboticArmNode from '../../common/view/RoboticArmNode.js';
 import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
-import hookesLaw from '../../hookesLaw.js';
 import SeriesSystem from '../model/SeriesSystem.js';
 import SeriesSpringControls from './SeriesSpringControls.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
@@ -218,5 +217,3 @@ export default class SeriesSystemNode extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'SeriesSystemNode', SeriesSystemNode );

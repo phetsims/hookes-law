@@ -12,7 +12,6 @@ import ResetAllButton from '../../../../scenery-phet/js/buttons/ResetAllButton.j
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import EnergyModel from '../model/EnergyModel.js';
 import EnergyBarGraph from './EnergyBarGraph.js';
 import EnergyGraph from './EnergyGraph.js';
@@ -125,5 +124,3 @@ export default class EnergyScreenView extends ScreenView {
     } );
   }
 }
-
-hookesLaw.register( 'EnergyScreenView', EnergyScreenView );

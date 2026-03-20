@@ -12,7 +12,6 @@ import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import IntroModel from '../model/IntroModel.js';
 import IntroAnimator from './IntroAnimator.js';
 import IntroSystemNode from './IntroSystemNode.js';
@@ -127,5 +126,3 @@ export default class IntroScreenView extends ScreenView {
     super.step( dt );
   }
 }
-
-hookesLaw.register( 'IntroScreenView', IntroScreenView );

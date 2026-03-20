@@ -9,7 +9,6 @@
 import BasicActionsKeyboardHelpSection from '../../../../scenery-phet/js/keyboard/help/BasicActionsKeyboardHelpSection.js';
 import SliderControlsKeyboardHelpSection from '../../../../scenery-phet/js/keyboard/help/SliderControlsKeyboardHelpSection.js';
 import TwoColumnKeyboardHelpContent from '../../../../scenery-phet/js/keyboard/help/TwoColumnKeyboardHelpContent.js';
-import hookesLaw from '../../hookesLaw.js';
 import MoveDraggableItemsKeyboardHelpSection from '../../../../scenery-phet/js/keyboard/help/MoveDraggableItemsKeyboardHelpSection.js';
 
 export default class HookesLawKeyboardHelpContent extends TwoColumnKeyboardHelpContent {
@@ -34,5 +33,3 @@ export default class HookesLawKeyboardHelpContent extends TwoColumnKeyboardHelpC
     } );
   }
 }
-
-hookesLaw.register( 'HookesLawKeyboardHelpContent', HookesLawKeyboardHelpContent );

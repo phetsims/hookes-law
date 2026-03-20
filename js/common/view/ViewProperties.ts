@@ -9,7 +9,6 @@
 import BooleanProperty from '../../../../axon/js/BooleanProperty.js';
 import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawQueryParameters from '../HookesLawQueryParameters.js';
 
 export default class ViewProperties {
@@ -56,5 +55,3 @@ export default class ViewProperties {
     this.valuesVisibleProperty.reset();
   }
 }
-
-hookesLaw.register( 'ViewProperties', ViewProperties );

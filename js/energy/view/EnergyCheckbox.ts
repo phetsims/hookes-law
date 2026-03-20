@@ -16,7 +16,6 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 
 type SelfOptions = EmptySelfOptions;
@@ -51,5 +50,3 @@ export default class EnergyCheckbox extends Checkbox {
     super( energyOnForcePlotVisibleProperty, content, options );
   }
 }
-
-hookesLaw.register( 'EnergyCheckbox', EnergyCheckbox );

@@ -13,7 +13,6 @@ import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import SystemsModel from '../model/SystemsModel.js';
 import ParallelSystemNode from './ParallelSystemNode.js';
 import SeriesSystemNode from './SeriesSystemNode.js';
@@ -114,5 +113,3 @@ export default class SystemsScreenView extends ScreenView {
     ];
   }
 }
-
-hookesLaw.register( 'SystemsScreenView', SystemsScreenView );

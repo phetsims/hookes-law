@@ -12,7 +12,6 @@ import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
-import hookesLaw from '../../hookesLaw.js';
 import EnergyGraph from './EnergyGraph.js';
 
 export default class EnergyViewProperties extends ViewProperties {
@@ -45,5 +44,3 @@ export default class EnergyViewProperties extends ViewProperties {
     super.reset();
   }
 }
-
-hookesLaw.register( 'EnergyViewProperties', EnergyViewProperties );

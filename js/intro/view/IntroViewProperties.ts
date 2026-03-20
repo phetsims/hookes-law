@@ -12,7 +12,6 @@ import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
-import hookesLaw from '../../hookesLaw.js';
 
 export default class IntroViewProperties extends ViewProperties {
 
@@ -44,5 +43,3 @@ export default class IntroViewProperties extends ViewProperties {
     super.reset();
   }
 }
-
-hookesLaw.register( 'IntroViewProperties', IntroViewProperties );

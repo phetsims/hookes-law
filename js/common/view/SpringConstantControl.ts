@@ -18,7 +18,6 @@ import NumberControl, { NumberControlOptions } from '../../../../scenery-phet/js
 import Text from '../../../../scenery/js/nodes/Text.js';
 import SunConstants from '../../../../sun/js/SunConstants.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
@@ -107,5 +106,3 @@ export default class SpringConstantControl extends NumberControl {
     super( options.titleStringProperty, springConstantProperty, springConstantRange, options );
   }
 }
-
-hookesLaw.register( 'SpringConstantControl', SpringConstantControl );

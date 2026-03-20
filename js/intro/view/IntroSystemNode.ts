@@ -25,7 +25,6 @@ import NibNode from '../../common/view/NibNode.js';
 import RoboticArmNode from '../../common/view/RoboticArmNode.js';
 import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
-import hookesLaw from '../../hookesLaw.js';
 import IntroSpringControls from './IntroSpringControls.js';
 import IntroViewProperties from './IntroViewProperties.js';
 
@@ -163,5 +162,3 @@ export default class IntroSystemNode extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'IntroSystemNode', IntroSystemNode );

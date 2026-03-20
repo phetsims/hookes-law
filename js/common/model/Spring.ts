@@ -49,7 +49,6 @@ import PickOptional from '../../../../phet-core/js/types/PickOptional.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import PhetioObject, { PhetioObjectOptions } from '../../../../tandem/js/PhetioObject.js';
 import NumberIO from '../../../../tandem/js/types/NumberIO.js';
-import hookesLaw from '../../hookesLaw.js';
 
 type SelfOptions = {
   logName?: string | null; // name that appears in log messages
@@ -313,5 +312,3 @@ export default class Spring extends PhetioObject {
     this.leftProperty.reset();
   }
 }
-
-hookesLaw.register( 'Spring', Spring );

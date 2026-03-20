@@ -19,7 +19,6 @@ import Text from '../../../../scenery/js/nodes/Text.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import { toFixed } from '../../../../dot/js/util/toFixed.js';
 
@@ -97,5 +96,3 @@ export default class EnergyBarGraph extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'EnergyBarGraph', EnergyBarGraph );

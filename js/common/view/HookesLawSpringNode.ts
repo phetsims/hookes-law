@@ -8,7 +8,6 @@
 
 import optionize, { combineOptions } from '../../../../phet-core/js/optionize.js';
 import ParametricSpringNode, { ParametricSpringNodeOptions } from '../../../../scenery-phet/js/ParametricSpringNode.js';
-import hookesLaw from '../../hookesLaw.js';
 import Spring from '../model/Spring.js';
 import StrictOmit from '../../../../phet-core/js/types/StrictOmit.js';
 import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
@@ -73,5 +72,3 @@ export default class HookesLawSpringNode extends Node {
     this.addLinkedElement( spring );
   }
 }
-
-hookesLaw.register( 'HookesLawSpringNode', HookesLawSpringNode );

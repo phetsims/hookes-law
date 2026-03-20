@@ -23,7 +23,6 @@ import HookesLawSpringNode from '../../common/view/HookesLawSpringNode.js';
 import NibNode from '../../common/view/NibNode.js';
 import RoboticArmNode from '../../common/view/RoboticArmNode.js';
 import WallNode from '../../common/view/WallNode.js';
-import hookesLaw from '../../hookesLaw.js';
 import EnergySpringControls from './EnergySpringControls.js';
 import EnergyViewProperties from './EnergyViewProperties.js';
 import { toFixedNumber } from '../../../../dot/js/util/toFixedNumber.js';
@@ -154,5 +153,3 @@ export default class EnergySystemNode extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'EnergySystemNode', EnergySystemNode );

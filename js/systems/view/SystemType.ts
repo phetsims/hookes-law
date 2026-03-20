@@ -8,7 +8,6 @@
 
 import Enumeration from '../../../../phet-core/js/Enumeration.js';
 import EnumerationValue from '../../../../phet-core/js/EnumerationValue.js';
-import hookesLaw from '../../hookesLaw.js';
 
 export default class SystemType extends EnumerationValue {
 
@@ -17,5 +16,3 @@ export default class SystemType extends EnumerationValue {
 
   public static readonly enumeration = new Enumeration( SystemType );
 }
-
-hookesLaw.register( 'SystemType', SystemType );

@@ -15,7 +15,6 @@ import Path from '../../../../scenery/js/nodes/Path.js';
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import XYPointPlot, { XYPointPlotOptions } from './XYPointPlot.js';
 
@@ -119,5 +118,3 @@ export default class EnergyPlot extends XYPointPlot {
     } );
   }
 }
-
-hookesLaw.register( 'EnergyPlot', EnergyPlot );

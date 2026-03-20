@@ -12,7 +12,6 @@ import Bounds2 from '../../../../dot/js/Bounds2.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Animation from '../../../../twixt/js/Animation.js';
 import Easing from '../../../../twixt/js/Easing.js';
-import hookesLaw from '../../hookesLaw.js';
 import isSettingPhetioStateProperty from '../../../../tandem/js/isSettingPhetioStateProperty.js';
 
 const STEPPER = null; // step method must be called by the client
@@ -174,5 +173,3 @@ export default class IntroAnimator {
     this.activeAnimation && this.activeAnimation.step( dt );
   }
 }
-
-hookesLaw.register( 'IntroAnimator', IntroAnimator );

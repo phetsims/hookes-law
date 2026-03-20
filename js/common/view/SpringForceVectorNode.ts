@@ -8,7 +8,6 @@
 
 import { TReadOnlyProperty } from '../../../../axon/js/TReadOnlyProperty.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import ForceVectorNode, { ForceVectorNodeOptions } from './ForceVectorNode.js';
@@ -34,5 +33,3 @@ export default class SpringForceVectorNode extends ForceVectorNode {
     super( springForceProperty, valueVisibleProperty, options );
   }
 }
-
-hookesLaw.register( 'SpringForceVectorNode', SpringForceVectorNode );

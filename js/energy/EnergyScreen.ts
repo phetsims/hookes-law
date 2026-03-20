@@ -10,7 +10,6 @@ import Screen from '../../../joist/js/Screen.js';
 import Tandem from '../../../tandem/js/Tandem.js';
 import HookesLawColors from '../common/HookesLawColors.js';
 import HookesLawIconFactory from '../common/view/HookesLawIconFactory.js';
-import hookesLaw from '../hookesLaw.js';
 import HookesLawStrings from '../HookesLawStrings.js';
 import EnergyModel from './model/EnergyModel.js';
 import EnergyScreenView from './view/EnergyScreenView.js';
@@ -35,5 +34,3 @@ export default class EnergyScreen extends Screen<EnergyModel, EnergyScreenView> 
     );
   }
 }
-
-hookesLaw.register( 'EnergyScreen', EnergyScreen );

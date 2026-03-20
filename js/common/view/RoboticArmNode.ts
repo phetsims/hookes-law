@@ -16,7 +16,6 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import LinearGradient from '../../../../scenery/js/util/LinearGradient.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import RoboticArm from '../model/RoboticArm.js';
 import RoboticHandNode from './RoboticHandNode.js';
@@ -195,5 +194,3 @@ export default class RoboticArmNode extends Node {
     this.roboticHandNode.setGrippersOpen( grippersOpen );
   }
 }
-
-hookesLaw.register( 'RoboticArmNode', RoboticArmNode );

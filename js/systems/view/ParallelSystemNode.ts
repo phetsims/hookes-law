@@ -24,7 +24,6 @@ import NibNode from '../../common/view/NibNode.js';
 import RoboticArmNode from '../../common/view/RoboticArmNode.js';
 import SpringForceVectorNode from '../../common/view/SpringForceVectorNode.js';
 import WallNode from '../../common/view/WallNode.js';
-import hookesLaw from '../../hookesLaw.js';
 import ParallelSystem from '../model/ParallelSystem.js';
 import ParallelSpringControls from './ParallelSpringControls.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
@@ -218,5 +217,3 @@ export default class ParallelSystemNode extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'ParallelSystemNode', ParallelSystemNode );

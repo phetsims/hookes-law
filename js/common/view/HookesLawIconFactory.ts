@@ -18,7 +18,6 @@ import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import TColor from '../../../../scenery/js/util/TColor.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import NibNode from './NibNode.js';
@@ -295,7 +294,5 @@ const HookesLawIconFactory = {
     } );
   }
 };
-
-hookesLaw.register( 'HookesLawIconFactory', HookesLawIconFactory );
 
 export default HookesLawIconFactory;

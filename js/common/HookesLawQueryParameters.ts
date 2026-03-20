@@ -8,7 +8,6 @@
 
 import logGlobal from '../../../phet-core/js/logGlobal.js';
 import { QueryStringMachine } from '../../../query-string-machine/js/QueryStringMachineModule.js';
-import hookesLaw from '../hookesLaw.js';
 
 const HookesLawQueryParameters = QueryStringMachine.getAll( {
 
@@ -16,8 +15,6 @@ const HookesLawQueryParameters = QueryStringMachine.getAll( {
   // For internal use only.
   checkAll: { type: 'flag' }
 } );
-
-hookesLaw.register( 'HookesLawQueryParameters', HookesLawQueryParameters );
 
 // Log query parameters
 logGlobal( 'phet.chipper.queryParameters' );

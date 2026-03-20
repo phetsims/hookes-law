@@ -14,7 +14,6 @@ import PhetFont from '../../../../scenery-phet/js/PhetFont.js';
 import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Font from '../../../../scenery/js/util/Font.js';
-import hookesLaw from '../../hookesLaw.js';
 
 const AXIS_OPTIONS = {
   headHeight: 10,
@@ -74,5 +73,3 @@ export default class XYAxes extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'XYAxes', XYAxes );

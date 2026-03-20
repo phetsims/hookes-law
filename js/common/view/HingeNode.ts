@@ -12,7 +12,6 @@ import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.
 import Circle from '../../../../scenery/js/nodes/Circle.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 
 const BODY_SIZE = new Dimension2( 9, 40 );
@@ -86,5 +85,3 @@ export default class HingeNode extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'HingeNode', HingeNode );

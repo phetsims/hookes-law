@@ -20,7 +20,6 @@ import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import ParallelSystem from '../model/ParallelSystem.js';
 
@@ -116,5 +115,3 @@ export default class ParallelSpringControls extends HBox {
     super( options );
   }
 }
-
-hookesLaw.register( 'ParallelSpringControls', ParallelSpringControls );

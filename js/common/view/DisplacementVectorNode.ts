@@ -17,7 +17,6 @@ import Line from '../../../../scenery/js/nodes/Line.js';
 import Node, { NodeOptions, NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
 import Rectangle from '../../../../scenery/js/nodes/Rectangle.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HookesLawConstants from '../HookesLawConstants.js';
@@ -107,5 +106,3 @@ export default class DisplacementVectorNode extends Node {
     super( options );
   }
 }
-
-hookesLaw.register( 'DisplacementVectorNode', DisplacementVectorNode );

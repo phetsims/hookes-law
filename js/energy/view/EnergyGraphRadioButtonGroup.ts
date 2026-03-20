@@ -14,7 +14,6 @@ import PickRequired from '../../../../phet-core/js/types/PickRequired.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOptions } from '../../../../sun/js/AquaRadioButtonGroup.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import EnergyGraph from './EnergyGraph.js';
 
@@ -62,5 +61,3 @@ export default class EnergyGraphRadioButtonGroup extends AquaRadioButtonGroup<En
     super( graphProperty, items, options );
   }
 }
-
-hookesLaw.register( 'EnergyGraphRadioButtonGroup', EnergyGraphRadioButtonGroup );

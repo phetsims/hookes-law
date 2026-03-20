@@ -8,7 +8,6 @@
 
 import TModel from '../../../../joist/js/TModel.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLaw from '../../hookesLaw.js';
 import ParallelSystem from './ParallelSystem.js';
 import SeriesSystem from './SeriesSystem.js';
 
@@ -27,5 +26,3 @@ export default class SystemsModel implements TModel {
     this.parallelSystem.reset();
   }
 }
-
-hookesLaw.register( 'SystemsModel', SystemsModel );

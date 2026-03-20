@@ -12,7 +12,6 @@ import { combineOptions } from '../../../../phet-core/js/optionize.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import SingleSpringSystem from '../../common/model/SingleSpringSystem.js';
 import { SpringOptions } from '../../common/model/Spring.js';
-import hookesLaw from '../../hookesLaw.js';
 
 export default class IntroModel implements TModel {
 
@@ -46,5 +45,3 @@ export default class IntroModel implements TModel {
     this.system2.reset();
   }
 }
-
-hookesLaw.register( 'IntroModel', IntroModel );

@@ -15,7 +15,6 @@ import HBox from '../../../../scenery/js/layout/nodes/HBox.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import TColor from '../../../../scenery/js/util/TColor.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import HookesLawIconFactory from './HookesLawIconFactory.js';
 
@@ -68,5 +67,3 @@ export default class VectorCheckbox extends Checkbox {
     super( visibleProperty, content, options );
   }
 }
-
-hookesLaw.register( 'VectorCheckbox', VectorCheckbox );

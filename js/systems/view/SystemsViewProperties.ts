@@ -12,7 +12,6 @@ import Property from '../../../../axon/js/Property.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import HookesLawQueryParameters from '../../common/HookesLawQueryParameters.js';
 import ViewProperties from '../../common/view/ViewProperties.js';
-import hookesLaw from '../../hookesLaw.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
 
@@ -54,5 +53,3 @@ export default class SystemsViewProperties extends ViewProperties {
     super.reset();
   }
 }
-
-hookesLaw.register( 'SystemsViewProperties', SystemsViewProperties );

@@ -12,7 +12,6 @@ import HBox from '../../../../scenery/js/layout/nodes/HBox.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import Checkbox, { CheckboxOptions } from '../../../../sun/js/Checkbox.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import HookesLawConstants from '../HookesLawConstants.js';
 import EquilibriumPositionNode from './EquilibriumPositionNode.js';
@@ -41,5 +40,3 @@ export default class EquilibriumPositionCheckbox extends Checkbox {
     }, HookesLawConstants.CHECKBOX_OPTIONS ) );
   }
 }
-
-hookesLaw.register( 'EquilibriumPositionCheckbox', EquilibriumPositionCheckbox );

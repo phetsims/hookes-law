@@ -27,7 +27,6 @@ import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import RoboticArm from '../../common/model/RoboticArm.js';
 import Spring from '../../common/model/Spring.js';
-import hookesLaw from '../../hookesLaw.js';
 
 export default class SeriesSystem {
 
@@ -147,5 +146,3 @@ export default class SeriesSystem {
     this.equivalentSpring.reset();
   }
 }
-
-hookesLaw.register( 'SeriesSystem', SeriesSystem );

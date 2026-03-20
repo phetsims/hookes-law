@@ -11,7 +11,6 @@ import Dimension2 from '../../../../dot/js/Dimension2.js';
 import optionize, { EmptySelfOptions } from '../../../../phet-core/js/optionize.js';
 import ShadedRectangle, { ShadedRectangleOptions } from '../../../../scenery-phet/js/ShadedRectangle.js';
 import { NodeTranslationOptions } from '../../../../scenery/js/nodes/Node.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 
 type SelfOptions = EmptySelfOptions;
@@ -30,5 +29,3 @@ export default class WallNode extends ShadedRectangle {
     super( new Bounds2( 0, 0, size.width, size.height ), options );
   }
 }
-
-hookesLaw.register( 'WallNode', WallNode );

@@ -105,6 +105,4 @@ const HookesLawColors = {
   } )
 };
 
-hookesLaw.register( 'HookesLawColors', HookesLawColors );
-
 export default HookesLawColors;

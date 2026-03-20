@@ -18,7 +18,6 @@ import AquaRadioButtonGroup, { AquaRadioButtonGroupItem, AquaRadioButtonGroupOpt
 import HookesLawColors from '../../common/HookesLawColors.js';
 import HookesLawConstants from '../../common/HookesLawConstants.js';
 import HookesLawIconFactory from '../../common/view/HookesLawIconFactory.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import SpringForceRepresentation from './SpringForceRepresentation.js';
 import SystemType from './SystemType.js';
@@ -93,5 +92,3 @@ export default class SpringForceRadioButtonGroup extends AquaRadioButtonGroup<Sp
     super( springForceRepresentationProperty, items, options );
   }
 }
-
-hookesLaw.register( 'SpringForceRadioButtonGroup', SpringForceRadioButtonGroup );

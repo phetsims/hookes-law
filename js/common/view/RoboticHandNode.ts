@@ -13,7 +13,6 @@ import InteractiveHighlighting from '../../../../scenery/js/accessibility/voicin
 import Node, { NodeOptions } from '../../../../scenery/js/nodes/Node.js';
 import Path from '../../../../scenery/js/nodes/Path.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawColors from '../HookesLawColors.js';
 import HingeNode from './HingeNode.js';
 
@@ -97,5 +96,3 @@ export default class RoboticHandNode extends InteractiveHighlighting( Node ) {
     this.topGripperClosedNode.visible = this.bottomGripperClosedNode.visible = !grippersOpen;
   }
 }
-
-hookesLaw.register( 'RoboticHandNode', RoboticHandNode );

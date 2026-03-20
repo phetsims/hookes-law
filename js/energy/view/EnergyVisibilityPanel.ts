@@ -19,7 +19,6 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
 import ValuesCheckbox from '../../common/view/ValuesCheckbox.js';
 import VectorCheckbox from '../../common/view/VectorCheckbox.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import EnergyCheckbox from './EnergyCheckbox.js';
 import EnergyGraph from './EnergyGraph.js';
@@ -112,5 +111,3 @@ export default class EnergyVisibilityPanel extends Panel {
     super( content, options );
   }
 }
-
-hookesLaw.register( 'EnergyVisibilityPanel', EnergyVisibilityPanel );

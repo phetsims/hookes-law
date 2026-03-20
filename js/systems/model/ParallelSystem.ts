@@ -27,7 +27,6 @@ import RangeWithValue from '../../../../dot/js/RangeWithValue.js';
 import Tandem from '../../../../tandem/js/Tandem.js';
 import RoboticArm from '../../common/model/RoboticArm.js';
 import Spring from '../../common/model/Spring.js';
-import hookesLaw from '../../hookesLaw.js';
 
 export default class ParallelSystem {
 
@@ -153,5 +152,3 @@ export default class ParallelSystem {
     this.equivalentSpring.reset();
   }
 }
-
-hookesLaw.register( 'ParallelSystem', ParallelSystem );

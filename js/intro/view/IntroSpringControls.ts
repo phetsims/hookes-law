@@ -19,7 +19,6 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import Spring from '../../common/model/Spring.js';
 import AppliedForceControl from '../../common/view/AppliedForceControl.js';
 import SpringConstantControl from '../../common/view/SpringConstantControl.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 
 type SelfOptions = {
@@ -104,5 +103,3 @@ export default class IntroSpringControls extends HBox {
     super( options );
   }
 }
-
-hookesLaw.register( 'IntroSpringControls', IntroSpringControls );

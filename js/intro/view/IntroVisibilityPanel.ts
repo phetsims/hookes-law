@@ -16,7 +16,6 @@ import HookesLawConstants from '../../common/HookesLawConstants.js';
 import EquilibriumPositionCheckbox from '../../common/view/EquilibriumPositionCheckbox.js';
 import ValuesCheckbox from '../../common/view/ValuesCheckbox.js';
 import VectorCheckbox from '../../common/view/VectorCheckbox.js';
-import hookesLaw from '../../hookesLaw.js';
 import HookesLawStrings from '../../HookesLawStrings.js';
 import IntroViewProperties from './IntroViewProperties.js';
 
@@ -89,5 +88,3 @@ export default class IntroVisibilityPanel extends Panel {
     super( content, options );
   }
 }
-
-hookesLaw.register( 'IntroVisibilityPanel', IntroVisibilityPanel );
