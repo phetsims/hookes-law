@@ -51,4 +51,6 @@ type StringsType = {
 
 const HookesLawStrings = getStringModule( 'HOOKES_LAW' ) as StringsType;
 
+hookesLaw.register( 'HookesLawStrings', HookesLawStrings );
+
 export default HookesLawStrings;
