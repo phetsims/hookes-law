@@ -1,4 +1,4 @@
-// Copyright 2025, University of Colorado Boulder
+// Copyright 2025-2026, University of Colorado Boulder
 
 /**
  * RoboticHandNode is the hand part of the robotic arm. It's the part that is draggable.
