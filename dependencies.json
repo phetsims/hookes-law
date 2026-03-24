@@ -9,7 +9,7 @@
     "branch": "HEAD"
   },
   "brand": {
-    "sha": "106cdc23171e640943c67151de4e0bf7cf2896c3",
+    "sha": "605697dbb35a5623aeb4b4c417d8315356ee6cb0",
     "branch": "HEAD"
   },
   "chipper": {
@@ -21,7 +21,7 @@
     "branch": "HEAD"
   },
   "hookes-law": {
-    "sha": "f13cf9f2df4b9f704c994644225be1fe4963f5f2",
+    "sha": "979e961d96b9cdaa5d8d15a704925516a7f45d03",
     "branch": "1.2"
   },
   "joist": {
